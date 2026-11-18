@@ -34,11 +34,12 @@ o en copia.
 > Verificar PRIMERO. Si `git rev-parse HEAD` no coincide, la auditoría es inválida.
 
 ```
-commit            <completar con git rev-parse HEAD antes de auditar>
+commit            9cb5f7da9de928f6fa0437e5b902c8ed865250e0
 rama              crecetrader-limpio
-store.db          <sha256>
-dashboard/index   <sha256>
-playbook          <sha256>
+store.db          24e5dd246c8be39421d3f9c3643d599b55152d37568af34df8b290874ccf8876
+dashboard/index   9a16746cd8871b624a5f10c46197f279dffbb24480bc3cc5a26fd53160850836
+playbook          c98e710ce48526582905d05b9de54c690c5ea0c66ccfbcb2a58d07083d1c6b50
+suite             16 read-only OK · 1 integracion OK · 0 fallos · FUENTES INTACTAS
 ```
 
 ```bash
