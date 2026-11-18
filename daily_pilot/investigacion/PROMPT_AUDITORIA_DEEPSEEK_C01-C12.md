@@ -70,12 +70,18 @@ Verificá `store.db` = 42 vídeos / 34.061 cues / 6.831 claims y que `.control.j
 
 ### 5. Líneas de separación (lo que **NO** debe estar mezclado)
 - `PAPER_ONLY=true` en `risk_manager/risk_manager.py` y `core/allocacion.py` — ¿se respeta?
-- El **sistema viejo** (Harness/CHIEF/Quantfury/Telegram) debe estar **fuera**: sin cron, sin
-  LaunchAgents, sin `.env` activo. Verificá:
+- El **sistema viejo** (Harness/CHIEF/Quantfury/Telegram/Discord) debe estar **fuera**: sin cron, sin
+  LaunchAgents, sin `.env` activo, sin skills de Telegram/Discord, sin `composer-pastes`.
+  Verificá:
   - `crontab -l` → solo `rss_4h_scheduler.sh`
   - `launchctl list | grep -iE 'harness|chief|quantfury'` → **vacío**
   - `~/.hermes/cron/jobs.json` → los 3 jobs viejos con `enabled: false`
-- **Backup**: `~/backups-limpieza-20261118/` (`harness_completo.tar.gz` 119 MB + hermes + LaunchAgents).
+  - `ls ~/.hermes/composer-pastes` → **no existe** (respaldado)
+  - `ls ~/.hermes/skills | grep -iE 'telegram|harness|trading-strategy'` → **vacío**
+- **Backup completo**: `~/backups-limpieza-20261118/` (142 MB: Harness 119 MB + Hermes + LaunchAgents
+  + skills viejas + pastes + crontab).
+- **Discord queda para después**: se integrará cuando el sistema esté validado. **No** debe quedar
+  nada funcionando ahora.
 
 ## Entregable
 
