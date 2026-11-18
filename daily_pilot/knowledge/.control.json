@@ -108,11 +108,11 @@
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/y9gsOU6_Bzw/y9gsOU6_Bzw_transcript.json": "c6be00ea7ff36e2a8f588e33302fb90251da6c72298a262fd6eebc2543e2bb3c",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/zUk0hNQ0YCs/zUk0hNQ0YCs_transcript.json": "6ea8466048092f7090ef00c13a027ab7e767f8893e0abb756c68ee6d90e1188e"
   },
-  "store_sha256": "6055bfe62625cea976bc156fdc5383770770c98cc9128e525012d5aa855026a9",
-  "manifest_sha256": "71321061d1bb4ca4351f6e7030a9daee1750324659e7636ae25e0b0e344d0229",
+  "store_sha256": "24e5dd246c8be39421d3f9c3643d599b55152d37568af34df8b290874ccf8876",
+  "manifest_sha256": "86e2aace9bf2f3529b8a5accf19c5d9e1dcc719cdc1482b204bb7e6655ad130f",
   "hashes_store": {
     "pre": "dd1658e388c82ab1a02ac1efe13fa092b49bc4b83dd1670c9a951ec6ec2f87f6",
-    "post": "6055bfe62625cea976bc156fdc5383770770c98cc9128e525012d5aa855026a9"
+    "post": "24e5dd246c8be39421d3f9c3643d599b55152d37568af34df8b290874ccf8876"
   },
   "sellado": "orden canonico: store -> manifiesto -> .control"
 }

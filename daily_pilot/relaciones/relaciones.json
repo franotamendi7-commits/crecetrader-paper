@@ -1,7 +1,7 @@
 {
   "metodo": "instrumento y sentido por regex; nivel normalizado es-ES; agrupacion por banda relativa 0.5%; sin vision",
-  "n_claims": 6831,
-  "niveles_descartados": 4034,
+  "n_claims": 18562,
+  "niveles_descartados": 10179,
   "niveles_sin_instrumento": {
     "0prmrS6nnRk": 119,
     "5KtjJ8kefQ4": 43,
@@ -44,9 +44,87 @@
     "lwb4Qxy8D9w": 57,
     "nqzn3DsZzKU": 118,
     "xHR9d-0ToXU": 48,
-    "y9gsOU6_Bzw": 110
+    "y9gsOU6_Bzw": 110,
+    "S2AhXNvm95c": 56,
+    "c9KMl8CWFWI": 72,
+    "pCwjNPf36PY": 48,
+    "096wAcVObwM": 127,
+    "7BW8iO89LAw": 34,
+    "J-x4ajzssEg": 103,
+    "K5k1Izu8HpI": 86,
+    "KGdLkKB9F3I": 156,
+    "UaYwhePm5o4": 93,
+    "f_fNGA5bg54": 92,
+    "4n4fcf7PbPw": 124,
+    "80lSC4zwUbc": 34,
+    "AclAlC4qa4I": 53,
+    "DpF29UWR0oA": 72,
+    "TfFDXuVvXM4": 69,
+    "Vl-vnvisZxs": 149,
+    "ZdKdUO_uz_M": 114,
+    "he6DTc8LpwE": 40,
+    "i1_b44lFTXM": 63,
+    "pcLPlMqE-OU": 63,
+    "BwExWdR5xq4": 146,
+    "EJVuXU84aKo": 143,
+    "TT5Ei2OXKD8": 127,
+    "Vcg8J7Isliw": 187,
+    "WsFTLU4lHDQ": 72,
+    "aKG-ETLimAs": 188,
+    "jyQT9igqWhY": 140,
+    "tMqpZuA3ito": 124,
+    "vrgXNRJ7O58": 116,
+    "zUk0hNQ0YCs": 83,
+    "-SpwGV1Ks1U": 85,
+    "0KyhQjD8ZKI": 145,
+    "2Sw5-yTKD3M": 128,
+    "F2Ipeuidcus": 118,
+    "O1HCpmdKIag": 69,
+    "VtOa2iIb0zA": 80,
+    "gJwMmWDcs0k": 129,
+    "hK_bOmmmRf4": 136,
+    "tQxbQf773QI": 157,
+    "uvN83CwTmZ4": 80,
+    "-b6m3xpzuyE": 129,
+    "14ILxz3mMbU": 92,
+    "2nNCsRt6XxY": 58,
+    "4mwCaOkx5lU": 144,
+    "C9brZLTsSa0": 59,
+    "Y445aDKlIXs": 80,
+    "bMMnh8suDqY": 66,
+    "dPLRma0uwDA": 144,
+    "haGbuj4NAeo": 135,
+    "qIdDEiZRmtc": 104,
+    "1AT8NRqOXrw": 102,
+    "4yYmTEqdo3c": 89,
+    "G5Zu-BX2cHY": 133,
+    "KCT7c1zKSxg": 97,
+    "_qLOyw7La74": 72,
+    "hzKGqhFaN8I": 55,
+    "m_oNNNdQJWI": 169,
+    "pCGF6DfbgQg": 137,
+    "rCHQI0XSN2w": 65,
+    "vV4ZcSK9mk4": 95
   },
   "niveles_repetidos": [
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 83366.0,
+      "variantes": [
+        83366.0
+      ],
+      "n_videos": 9,
+      "videos": [
+        "2Sw5-yTKD3M",
+        "J-x4ajzssEg",
+        "K5k1Izu8HpI",
+        "S2AhXNvm95c",
+        "Vcg8J7Isliw",
+        "Vl-vnvisZxs",
+        "haGbuj4NAeo",
+        "jyQT9igqWhY"
+      ]
+    },
     {
       "instrumento": "BTCUSD",
       "nivel_aproximado": 69997.0,
@@ -54,11 +132,61 @@
         69997.0,
         70000.0
       ],
-      "n_videos": 3,
+      "n_videos": 5,
       "videos": [
+        "1AT8NRqOXrw",
+        "KCT7c1zKSxg",
         "Vm7nUxLCMZQ",
         "bCc--rvyHpY",
         "subONxt5iag"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 78746.0,
+      "variantes": [
+        78746.0
+      ],
+      "n_videos": 5,
+      "videos": [
+        "-SpwGV1Ks1U",
+        "XLgPycsN0ls",
+        "hK_bOmmmRf4",
+        "qIdDEiZRmtc",
+        "subONxt5iag"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 80000.0,
+      "variantes": [
+        80000.0,
+        80200.0,
+        80308.0
+      ],
+      "n_videos": 5,
+      "videos": [
+        "14ILxz3mMbU",
+        "G3GPk1mxPcQ",
+        "gJwMmWDcs0k",
+        "haGbuj4NAeo",
+        "qIdDEiZRmtc"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 76107.0,
+      "variantes": [
+        76107.0,
+        76229.0,
+        76400.0
+      ],
+      "n_videos": 4,
+      "videos": [
+        "F2Ipeuidcus",
+        "tMqpZuA3ito",
+        "tQxbQf773QI",
+        "vrgXNRJ7O58"
       ]
     },
     {
@@ -115,15 +243,51 @@
       ]
     },
     {
-      "instrumento": "BTCUSD",
-      "nivel_aproximado": 78746.0,
+      "instrumento": "XAUUSD",
+      "nivel_aproximado": 3623.0,
       "variantes": [
-        78746.0
+        3623.0
       ],
       "n_videos": 2,
       "videos": [
-        "XLgPycsN0ls",
-        "subONxt5iag"
+        "Vl-vnvisZxs",
+        "o6n6UDNVtCk"
+      ]
+    },
+    {
+      "instrumento": "XAUUSD",
+      "nivel_aproximado": 4400.0,
+      "variantes": [
+        4400.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "pCGF6DfbgQg",
+        "vV4ZcSK9mk4"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 87496.0,
+      "variantes": [
+        87496.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "5KtjJ8kefQ4",
+        "zUk0hNQ0YCs"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 77000.0,
+      "variantes": [
+        77000.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "2Sw5-yTKD3M",
+        "XLgPycsN0ls"
       ]
     },
     {
@@ -137,10 +301,169 @@
         "bCc--rvyHpY",
         "i0qXzL0eSYs"
       ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 77371.0,
+      "variantes": [
+        77371.0,
+        77400.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "o6n6UDNVtCk",
+        "vrgXNRJ7O58"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 76627.0,
+      "variantes": [
+        76627.0,
+        76674.0,
+        76804.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "s3KxjqkzwKM",
+        "vrgXNRJ7O58"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 78000.0,
+      "variantes": [
+        78000.0,
+        78225.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "hK_bOmmmRf4",
+        "scJ-ai2FRiE"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 5000.0,
+      "variantes": [
+        5000.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "C9brZLTsSa0",
+        "TfFDXuVvXM4"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 79000.0,
+      "variantes": [
+        79000.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "0KyhQjD8ZKI",
+        "haGbuj4NAeo"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 77700.0,
+      "variantes": [
+        77700.0,
+        77924.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "O1HCpmdKIag",
+        "VtOa2iIb0zA"
+      ]
+    },
+    {
+      "instrumento": "ETHUSD",
+      "nivel_aproximado": 2478.0,
+      "variantes": [
+        2478.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "K5k1Izu8HpI",
+        "qIdDEiZRmtc"
+      ]
     }
   ],
   "contradicciones": [],
   "linea_de_tiempo": {
+    "-SpwGV1Ks1U": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          1000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:04.960"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:20:52.840"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:20:56.190"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:20:56.200"
+      }
+    ],
+    "0KyhQjD8ZKI": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          79458.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:16.520"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          79000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:04:33.320"
+      }
+    ],
     "0prmrS6nnRk": [
       {
         "published": "2026-11-06T09:32:22+00:00",
@@ -154,6 +477,103 @@
         "start": "00:09:42.657"
       }
     ],
+    "14ILxz3mMbU": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:42.519"
+      }
+    ],
+    "1AT8NRqOXrw": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          70000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:57.039"
+      }
+    ],
+    "2Sw5-yTKD3M": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          77000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:05.600"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          56750.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:13.360"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:16.119"
+      }
+    ],
+    "2nNCsRt6XxY": [
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          7940.0,
+          30170.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:41.720"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30170.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:44.749"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30170.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:44.759"
+      }
+    ],
     "3OZ2vJPj92o": [
       {
         "published": "2026-10-28",
@@ -165,6 +585,69 @@
         ],
         "sentido": "neutro",
         "start": "00:09:00.360"
+      }
+    ],
+    "4mwCaOkx5lU": [
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          77000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:52.159"
+      }
+    ],
+    "4n4fcf7PbPw": [
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4261.0,
+          3955.0
+        ],
+        "sentido": "bajista",
+        "start": "00:19:13.679"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3955.0
+        ],
+        "sentido": "bajista",
+        "start": "00:19:16.950"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3955.0,
+          3756.0
+        ],
+        "sentido": "bajista",
+        "start": "00:19:16.960"
+      }
+    ],
+    "4yYmTEqdo3c": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          64500.0
+        ],
+        "sentido": "neutro",
+        "start": "00:05:05.760"
       }
     ],
     "5KtjJ8kefQ4": [
@@ -205,6 +688,54 @@
         "start": "00:05:38.454"
       }
     ],
+    "BwExWdR5xq4": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          85964.0
+        ],
+        "sentido": "neutro",
+        "start": "00:17:24.640"
+      }
+    ],
+    "C9brZLTsSa0": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:30.360"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:33.350"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:33.360"
+      }
+    ],
     "CmbG9QntQ10": [
       {
         "published": "2026-10-27",
@@ -216,6 +747,30 @@
         ],
         "sentido": "neutro",
         "start": "00:09:16.040"
+      }
+    ],
+    "F2Ipeuidcus": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76107.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:08.160"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          29247.0
+        ],
+        "sentido": "neutro",
+        "start": "00:21:14.640"
       }
     ],
     "G3GPk1mxPcQ": [
@@ -332,6 +887,114 @@
         "start": "00:07:57.135"
       }
     ],
+    "G5Zu-BX2cHY": [
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30574.0
+        ],
+        "sentido": "neutro",
+        "start": "00:19:14.520"
+      }
+    ],
+    "J-x4ajzssEg": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:51.200"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30000.0,
+          29000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:43.520"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:14.880"
+      }
+    ],
+    "K5k1Izu8HpI": [
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2478.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:50.200"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2478.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:53.390"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:55.600"
+      }
+    ],
+    "KCT7c1zKSxg": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          70000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:34.360"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          64000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:17.440"
+      }
+    ],
     "LFHkc5dUoLw": [
       {
         "published": "2026-10-29T18:37:26+00:00",
@@ -380,6 +1043,126 @@
         "start": "00:00:16.760"
       }
     ],
+    "O1HCpmdKIag": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          77700.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:41.760"
+      }
+    ],
+    "S2AhXNvm95c": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          87219.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:01.840"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:44.360"
+      }
+    ],
+    "TfFDXuVvXM4": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5000.0
+        ],
+        "sentido": "alcista",
+        "start": "00:11:05.440"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5000.0
+        ],
+        "sentido": "alcista",
+        "start": "00:11:07.310"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5000.0
+        ],
+        "sentido": "alcista",
+        "start": "00:11:07.320"
+      }
+    ],
+    "Vcg8J7Isliw": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:21.640"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          2670.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:27.440"
+      }
+    ],
+    "Vl-vnvisZxs": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:16:54.720"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3623.0
+        ],
+        "sentido": "neutro",
+        "start": "00:17:35.320"
+      }
+    ],
     "Vm7nUxLCMZQ": [
       {
         "published": "2026-11-13T09:53:40+00:00",
@@ -391,6 +1174,76 @@
         ],
         "sentido": "neutro",
         "start": "00:01:51.000"
+      }
+    ],
+    "VtOa2iIb0zA": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          77924.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:01.440"
+      }
+    ],
+    "WsFTLU4lHDQ": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5800.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:07.640"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          5800.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:01.639"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2935.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:13.839"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2935.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:17.350"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2935.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:17.360"
       }
     ],
     "XLgPycsN0ls": [
@@ -427,6 +1280,41 @@
         ],
         "sentido": "neutro",
         "start": "00:10:31.938"
+      }
+    ],
+    "aKG-ETLimAs": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:14.600"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:17.150"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:17.160"
       }
     ],
     "ac6-r7g8pao": [
@@ -589,6 +1477,30 @@
         "start": "00:19:16.903"
       }
     ],
+    "c9KMl8CWFWI": [
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          81000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:13.480"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2500.0
+        ],
+        "sentido": "bajista",
+        "start": "00:11:24.120"
+      }
+    ],
     "cH2KY5vnsVQ": [
       {
         "published": "2026-11-18T09:43:08+00:00",
@@ -613,6 +1525,271 @@
         ],
         "sentido": "neutro",
         "start": "00:14:23.759"
+      }
+    ],
+    "dPLRma0uwDA": [
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30574.0
+        ],
+        "sentido": "alcista",
+        "start": "00:20:23.320"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30574.0
+        ],
+        "sentido": "neutro",
+        "start": "00:20:26.190"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          30574.0
+        ],
+        "sentido": "neutro",
+        "start": "00:20:26.200"
+      }
+    ],
+    "gJwMmWDcs0k": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:22.359"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          2500.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:42.399"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          2500.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:44.949"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          2500.0,
+          4442.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:44.959"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4466.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:10.800"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          29535.0
+        ],
+        "sentido": "neutro",
+        "start": "00:16:54.120"
+      }
+    ],
+    "hK_bOmmmRf4": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:38.200"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78225.0
+        ],
+        "sentido": "bajista",
+        "start": "00:01:38.119"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          29535.0
+        ],
+        "sentido": "neutro",
+        "start": "00:20:42.400"
+      }
+    ],
+    "haGbuj4NAeo": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:00.840"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:03.670"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:03.680"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0,
+          79000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:21.400"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:10.840"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:03:42.040"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:29.160"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:23:30.960"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:23:33.270"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:23:33.280"
+      }
+    ],
+    "he6DTc8LpwE": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          84122.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:34.600"
       }
     ],
     "i0qXzL0eSYs": [
@@ -670,6 +1847,19 @@
         ],
         "sentido": "neutro",
         "start": "00:15:18.920"
+      }
+    ],
+    "i1_b44lFTXM": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          3366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:05.400"
       }
     ],
     "j06_M-fADjM": [
@@ -742,6 +1932,75 @@
         "start": "00:08:44.959"
       }
     ],
+    "jyQT9igqWhY": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83000.0,
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:24.480"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:00.920"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:03.750"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:03.760"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:16.520"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:45.280"
+      }
+    ],
     "lwb4Qxy8D9w": [
       {
         "published": "2026-10-28",
@@ -764,6 +2023,108 @@
         ],
         "sentido": "neutro",
         "start": "00:11:52.320"
+      }
+    ],
+    "m_oNNNdQJWI": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          63000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:02.440"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          63000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:04.710"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          63000.0,
+          63100.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:04.720"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4330.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:17.680"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4330.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:20.550"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4330.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:20.560"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          1890.0
+        ],
+        "sentido": "neutro",
+        "start": "00:12:47.480"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          2026.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:29.839"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          2026.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:33.800"
       }
     ],
     "mv2VdVtXvDw": [
@@ -825,6 +2186,210 @@
         ],
         "sentido": "alcista",
         "start": "00:16:26.382"
+      }
+    ],
+    "pCGF6DfbgQg": [
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          1911.0
+        ],
+        "sentido": "neutro",
+        "start": "00:10:15.560"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          1907.0
+        ],
+        "sentido": "neutro",
+        "start": "00:10:52.360"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:21.600"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:24.550"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:24.560"
+      }
+    ],
+    "qIdDEiZRmtc": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:21.320"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:24.830"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:24.840"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          777235.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:15.720"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:57.520"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:42.320"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:43.990"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:44.000"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2478.0
+        ],
+        "sentido": "neutro",
+        "start": "00:18:20.800"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          60000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:31:35.440"
+      }
+    ],
+    "rCHQI0XSN2w": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          63816.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:01.920"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          63816.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:06.510"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          63816.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:06.520"
       }
     ],
     "rX2wj_FXvT4": [
@@ -960,6 +2525,113 @@
         "start": "00:09:34.197"
       }
     ],
+    "tMqpZuA3ito": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:08:59.000"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76229.0
+        ],
+        "sentido": "neutro",
+        "start": "00:19:58.640"
+      }
+    ],
+    "tQxbQf773QI": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76229.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:02.639"
+      }
+    ],
+    "vV4ZcSK9mk4": [
+      {
+        "published": null,
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:25.480"
+      }
+    ],
+    "vrgXNRJ7O58": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76804.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:19.680"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          77371.0
+        ],
+        "sentido": "neutro",
+        "start": "00:03:23.519"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76229.0
+        ],
+        "sentido": "neutro",
+        "start": "00:04:00.200"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76229.0
+        ],
+        "sentido": "neutro",
+        "start": "00:04:03.670"
+      },
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76229.0
+        ],
+        "sentido": "neutro",
+        "start": "00:04:03.680"
+      }
+    ],
     "xHR9d-0ToXU": [
       {
         "published": "2026-10-29",
@@ -995,6 +2667,19 @@
         ],
         "sentido": "neutro",
         "start": "00:00:43.480"
+      }
+    ],
+    "zUk0hNQ0YCs": [
+      {
+        "published": null,
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          87496.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:44.200"
       }
     ]
   }
