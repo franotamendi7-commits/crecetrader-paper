@@ -1,0 +1,368 @@
+{
+  "video_id": "WsFTLU4lHDQ",
+  "analizado_at": "2026-11-18T22:24:57Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 953,
+  "sha256_transcript": "88f3428a26c3bb4fc5e3c18a42bbcd31f8b622b6a76e8fbe61b40fdf3b7cfbba",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/WsFTLU4lHDQ/WsFTLU4lHDQ_transcript.json",
+  "instrumentos": {
+    "BTC": 24,
+    "ETH": 6,
+    "XAUUSD": 6,
+    "NQ": 3
+  },
+  "temporalidades": {
+    "Daily": 12,
+    "4H": 11
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 24,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    },
+    "tendencia": {
+      "menciones": 27,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:04",
+        "00:05",
+        "00:05"
+      ]
+    },
+    "stop": {
+      "menciones": 12,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:11",
+        "00:11",
+        "00:11"
+      ]
+    },
+    "objetivo": {
+      "menciones": 27,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "entrada": {
+      "menciones": 6,
+      "primeros": [
+        "00:16",
+        "00:16",
+        "00:16",
+        "00:18",
+        "00:18",
+        "00:18"
+      ]
+    },
+    "volumen": {
+      "menciones": 3,
+      "primeros": [
+        "00:17",
+        "00:17",
+        "00:17"
+      ]
+    },
+    "reversal": {
+      "menciones": 9,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "76229",
+      "menciones": 18,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "buscara liquidez hacia la zona de los 71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "71,509. perdiendo los 76,229. Y fíjate, hubo un primer cierre"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 15,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "buscara liquidez hacia la zona de los 71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "71,509. perdiendo los 76,229. Y fíjate, hubo un primer cierre"
+        }
+      ]
+    },
+    {
+      "valor": "5800",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "mercado tensionado y Bitcoin ha perdido su base. $5,800."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "su base. $5,800."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "su base. $5,800. Y aunque aquí te estoy diciendo que la"
+        }
+      ]
+    },
+    {
+      "valor": "74716",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "esta fase se podía extender hasta el primer objetivo, 74,716."
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "primer objetivo, 74,716."
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "primer objetivo, 74,716. Ayer prácticamente llegó hasta ahí, le"
+        }
+      ]
+    },
+    {
+      "valor": "72000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "nos está formando es una fase dos y podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "podría ir a buscar estos 72,000 $70,000 porque es la zona de compras para donde"
+        }
+      ]
+    },
+    {
+      "valor": "70000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "nos está formando es una fase dos y podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "podría ir a buscar estos 72,000 $70,000 porque es la zona de compras para donde"
+        }
+      ]
+    },
+    {
+      "valor": "80799",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "esto había llegado en el otro mapa a objetivos, al número cuatro, los 80,799."
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "objetivos, al número cuatro, los 80,799."
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "objetivos, al número cuatro, los 80,799. Vale, pues lo vemos limpio. Ahora nos"
+        }
+      ]
+    },
+    {
+      "valor": "5000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "respecto, ¿vale? Está en la zona de los $5,000."
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "$5,000."
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "$5,000. Vale, bien. Hoy de momento va en rojo."
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "cuenta ya que va en una fase 4 que ha llegado a objetivos como 78,746,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "llegado a objetivos como 78,746,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "llegado a objetivos como 78,746, primer objetivo alcista de la semana,"
+        }
+      ]
+    },
+    {
+      "valor": "699997",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "incluso hasta los 71,509, el tercero incluso hasta los 699,997."
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "incluso hasta los 699,997."
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "incluso hasta los 699,997. Bueno, pues habrá que planificar"
+        }
+      ]
+    },
+    {
+      "valor": "71500",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "72, 70 y 67. Al venirnos a 4 horas nos está llevando hacia esa zona 72, 71,500"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "está llevando hacia esa zona 72, 71,500"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "está llevando hacia esa zona 72, 71,500 70,997"
+        }
+      ]
+    },
+    {
+      "valor": "70997",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "está llevando hacia esa zona 72, 71,500 70,997"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "70,997"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "70,997 y 69,000. Es decir, esto es lo que está"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "70,997 y 69,000. Es decir, esto es lo que está"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "y 69,000. Es decir, esto es lo que está"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "y 69,000. Es decir, esto es lo que está confirmado, ¿vale? Si a mí me lo"
+        }
+      ]
+    },
+    {
+      "valor": "2935",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:12",
+          "contexto": "es la primera referencia condicional. Ethereum, ahora lo veremos, $2,935"
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "Ethereum, ahora lo veremos, $2,935"
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "Ethereum, ahora lo veremos, $2,935 cuando yo comencé esto y está ahí"
+        }
+      ]
+    },
+    {
+      "valor": "77371",
+      "menciones": 2,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "situándose por debajo de qué nivel, de estos 77,371."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "ahora mismo va más de un 20%. Vale, bien. Se ha metido por debajo de 77,371,"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

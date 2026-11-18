@@ -1,69 +1,96 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CreceTrader · HOY</title><style>
-:root{--bg:#0d1117;--card:#161b22;--fg:#e6edf3;--muted:#8b949e;--bd:#30363d}
+<title>YouTubeTradingAgent · Bitcoin frenado antes de las actas de la</title><style>
+:root{--bg:#0b0f14;--card:#151b23;--fg:#e6edf3;--muted:#8b949e;--bd:#262d36;--acc:#8b5cf6;--ok:#3fb950;--rojo:#f85149;--ambar:#d29922}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:20px}
-.wrap{max-width:1000px;margin:0 auto;display:grid;gap:14px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px 18px}
-.card h2{margin:0 0 10px;font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-.kicker{font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-h1{margin:4px 0 2px;font-size:21px;line-height:1.25}
-.muted{color:var(--muted);font-size:12px}
-.hero-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
-.badge{background:#1f6feb22;border:1px solid #1f6feb;color:#58a6ff;border-radius:8px;padding:8px 12px;
-       text-align:center;font-size:11px;letter-spacing:.06em;white-space:nowrap}
-.badge span{color:var(--muted)}
-.niveles-col{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 8px;align-items:center}
-.nivel{display:flex;align-items:baseline;gap:6px}
-.pct{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
-.graf{margin:10px 0 4px}
-.pill{background:#21262d;border:1px solid var(--bd);border-radius:20px;padding:3px 10px;
-      font-variant-numeric:tabular-nums;font-size:13px}
-.situ{font-size:14px;margin-top:6px}
-.razones{margin:0;padding-left:20px;display:grid;gap:8px}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.tab{background:#21262d;border:1px solid var(--bd);color:var(--fg);border-radius:6px;padding:5px 12px;cursor:pointer;font-size:13px}
-.tab.activo{background:#1f6feb;border-color:#1f6feb;color:#fff}
-.panel{display:none}.panel.activo{display:block}
-table.det{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
-table.det th{text-align:left;color:var(--muted);font-weight:500;width:90px;vertical-align:top;padding:3px 0}
-.sys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.sys-grid .k{display:block;color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
-.sys-grid b{font-size:15px}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:16px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:12px}
+header{display:flex;justify-content:space-between;align-items:center}
+h1{font-size:18px;margin:0}
+.sub{color:var(--muted);font-size:12px}
+.pill-only{background:#0c2b16;border:1px solid var(--ok);color:var(--ok);border-radius:20px;padding:4px 12px;font-size:11px;letter-spacing:.06em}
+.ticks{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.tick{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;text-align:left;color:var(--fg);cursor:pointer}
+.tick.activo{border-color:var(--acc)}
+.t-k{display:block;color:var(--muted);font-size:11px;letter-spacing:.06em}
+.t-v{display:block;font-size:17px;font-weight:600;margin-top:2px;font-variant-numeric:tabular-nums}
+.grid-main{display:grid;grid-template-columns:1.7fr 1fr;gap:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px 14px}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px 14px}
+.panel-h{font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.tag{background:var(--acc);color:#fff;border-radius:4px;padding:2px 7px;font-size:10px;letter-spacing:.08em}
+.fila{display:flex;gap:8px;align-items:baseline;padding:3px 0;border-bottom:1px solid #ffffff08;font-size:13px}
+.fila span:first-child{color:var(--muted);min-width:96px}
+.pill{background:#21262d;border:1px solid var(--bd);border-radius:14px;padding:2px 9px;font-variant-numeric:tabular-nums;font-size:12px}
+.pct{color:var(--muted);font-size:12px}
+.muted{color:var(--muted);font-size:11px}
+.nota{color:var(--muted);font-size:12px;margin-top:8px}
+.rojo{color:var(--rojo)}
+.sinfeed{color:var(--muted);font-size:13px;font-weight:400}
+.alerta{background:#2d1b0e;border:1px solid var(--ambar);color:var(--ambar);border-radius:6px;padding:6px 9px;font-size:12px;margin-top:8px}
+.leyenda{border-top:1px solid #ffffff10;padding-top:6px;margin-top:10px}
+.barra-fila{margin:6px 0}
+.barra-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:3px}
+.barra{height:7px;background:#21262d;border-radius:4px;overflow:hidden}
+.barra i{display:block;height:100%;background:var(--acc);border-radius:4px}
+.verdict{font-weight:600;padding:6px 10px;border-radius:6px;background:#0c2b16;color:var(--ok);display:inline-block}
+.chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
 </style></head>
 <body><div class="wrap">
+<header>
+  <div><h1>YouTubeTradingAgent</h1><div class="sub">Análisis · Señales · Gestión de Capital</div></div>
+  <div class="pill-only">● PAPER ONLY</div>
+</header>
 
-  <section class="card hero">
-    <div class="hero-top">
-      <div>
-        <div class="kicker">HOY · 2026-11-18</div>
-        <h1>Bitcoin frenado antes de las actas de la FED: lo que vigilo hoy</h1>
-        <div class="muted">precio de referencia del video: 64.620</div>
-      </div>
-      <div class="badge">PAPER ONLY<br><span>no ejecuta</span></div>
+<div class="ticks"><div class="tick activo"><span class="t-k">BTC</span><span class="t-v">64.620</span></div><div class="tick off"><span class="t-k">mas pares</span><span class="t-v sinfeed">sin feed aun</span></div></div>
+
+<div class="grid-main">
+  <div class="card">
+    <div class="chart-head"><b>ESCENARIO · cH2KY5vnsVQ</b><span class="muted">video 2026-11-18 · actualizado 2026-11-18 22:24Z</span></div>
+    <div class="chart"><div class="chart-head"><b>NIVELES DEL VIDEO · TF: Daily, 4H, Weekly</b><span class="muted">no es un chart real · sin feed</span></div><svg viewBox="0 0 900 260" preserveAspectRatio="none" style="width:100%;height:260px"><line x1="0" y1="234.0" x2="900" y2="234.0" stroke="#30363d"/><text x="894" y="230.0" fill="#8b949e" font-size="11" text-anchor="end">56.750 · entrada</text><line x1="0" y1="157.6" x2="900" y2="157.6" stroke="#30363d"/><text x="894" y="153.6" fill="#8b949e" font-size="11" text-anchor="end">61.247</text><line x1="0" y1="141.2" x2="900" y2="141.2" stroke="#30363d"/><text x="894" y="137.2" fill="#8b949e" font-size="11" text-anchor="end">62.216</text><line x1="0" y1="112.5" x2="900" y2="112.5" stroke="#30363d"/><text x="894" y="108.5" fill="#8b949e" font-size="11" text-anchor="end">63.904</text><line x1="0" y1="100.2" x2="900" y2="100.2" stroke="#30363d"/><text x="894" y="96.2" fill="#8b949e" font-size="11" text-anchor="end">64.629</text><line x1="0" y1="96.0" x2="900" y2="96.0" stroke="#30363d"/><text x="894" y="92.0" fill="#8b949e" font-size="11" text-anchor="end">64.877</text><line x1="0" y1="85.1" x2="900" y2="85.1" stroke="#30363d"/><text x="894" y="81.1" fill="#8b949e" font-size="11" text-anchor="end">65.520</text><line x1="0" y1="26.0" x2="900" y2="26.0" stroke="#30363d"/><text x="894" y="22.0" fill="#8b949e" font-size="11" text-anchor="end">69.000</text><line x1="0" y1="100.4" x2="900" y2="100.4" stroke="#e6edf3" stroke-width="2.5" stroke-dasharray="7 3"/><text x="6" y="114.4" fill="#e6edf3" font-size="12" font-weight="600">PRECIO VIDEO 64.620</text></svg></div>
+    <div class="nota">NIVELES DICHOS EN EL VIDEO · el precio es el del video, no un feed.</div>
+  </div>
+  <div style="display:grid;gap:12px;align-content:start">
+    <div class="panel">
+      <div class="panel-h">PLAN DE TRADING <span class="tag">LONG</span></div>
+      <div class="fila"><span>entrada</span><b>65.520</b><span class="pct">+1.4%</span></div>
+      <div class="alerta">⚠ STOP SIN DEFINIR — C08 lo cierra, no lo inventa</div>
+      <div class="fila"><span>objetivo</span><b>extensiones C05 (50/100/150/200%)</b></div>
+      <div class="fila"><span>confianza</span><b>alta (100%) · riesgo 5%</b></div>
+      <div class="nota">la presión que ejerzan los futuros por debajo de los 65,520</div>
+      <div class="nota leyenda">C05 = retrocesos/extensiones fibo · C08 = invalidacion (no-ocurrencia
+      del cambio) · C02 = 30% oferta / 70% confirmacion. Paper only, sin feed.</div>
     </div>
-    <div class="niveles-col"><div class="nivel"><span class="pill">69.000</span><span class="pct">+6.8%</span></div><div class="nivel"><span class="pill">65.520</span><span class="pct">+1.4%</span></div><div class="nivel"><span class="pill">65.300</span><span class="pct">+1.1%</span></div><div class="nivel"><span class="pill">65.278</span><span class="pct">+1.0%</span></div><div class="nivel"><span class="pill">65.125</span><span class="pct">+0.8%</span></div><div class="nivel"><span class="pill">64.877</span><span class="pct">+0.4%</span></div></div>
-    <div class="graf"><div class="muted">rango 63.904 – 69.000</div><svg viewBox="0 0 960 150" preserveAspectRatio="none" style="width:100%;height:150px"><line x1="0" y1="8.0" x2="960" y2="8.0" stroke="#30363d" stroke-width="1"/><text x="956" y="5.0" fill="#8b949e" font-size="10" text-anchor="end">69.000</text><line x1="0" y1="99.5" x2="960" y2="99.5" stroke="#30363d" stroke-width="1"/><text x="956" y="96.5" fill="#8b949e" font-size="10" text-anchor="end">65.520</text><line x1="0" y1="105.3" x2="960" y2="105.3" stroke="#30363d" stroke-width="1"/><text x="956" y="102.3" fill="#8b949e" font-size="10" text-anchor="end">65.300</text><line x1="0" y1="105.9" x2="960" y2="105.9" stroke="#30363d" stroke-width="1"/><text x="956" y="102.9" fill="#8b949e" font-size="10" text-anchor="end">65.278</text><line x1="0" y1="109.9" x2="960" y2="109.9" stroke="#30363d" stroke-width="1"/><text x="956" y="106.9" fill="#8b949e" font-size="10" text-anchor="end">65.125</text><line x1="0" y1="116.4" x2="960" y2="116.4" stroke="#30363d" stroke-width="1"/><text x="956" y="113.4" fill="#8b949e" font-size="10" text-anchor="end">64.877</text><line x1="0" y1="122.9" x2="960" y2="122.9" stroke="#30363d" stroke-width="1"/><text x="956" y="119.9" fill="#8b949e" font-size="10" text-anchor="end">64.629</text><line x1="0" y1="142.0" x2="960" y2="142.0" stroke="#30363d" stroke-width="1"/><text x="956" y="139.0" fill="#8b949e" font-size="10" text-anchor="end">63.904</text><line x1="0" y1="123.2" x2="960" y2="123.2" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4 3"/><text x="4" y="119.2" fill="#f85149" font-size="10">ref</text></svg></div>
-    <div class="situ">Último análisis real: s_GjovZxQqY · 1056 cues · instrumentos [&#x27;BTC&#x27;, &#x27;NQ&#x27;, &#x27;XAUUSD&#x27;, &#x27;ETH&#x27;]</div>
-  </section>
-<section class="card"><h2>POR QUÉ</h2><ol class="razones"><li><b>BTCUSD</b> alcista · nivel <b>71509</b> <span class="muted">[06:26]</span><br>precios objetivos de largo plazo; soporte 69.000</li><li><b>BTCUSD</b> bajista · nivel <b>56750</b> <span class="muted">[12:48]</span><br>maximos y minimos decrecientes; sin reversión en 4H el precio puede seguir cayendo</li><li><b>BTCUSD</b> neutral · nivel <b>66617</b> <span class="muted">[14:47]</span><br>horquilla intradia entre 66.617 y 64.004; partida 65.310</li></ol></section>
-<section class="card"><h2>MERCADO</h2><div class="tabs"><button class="tab activo" data-i="0">BTCUSD</button><button class="tab" data-i="1">ETHUSD</button><button class="tab" data-i="2">SPX</button><button class="tab" data-i="3">QQQ</button><button class="tab" data-i="4">XAUUSD</button></div><div class="panel activo" data-i="0"><span class="pill">71.509</span><span class="pill">69.000</span><span class="pill">65.520</span><span class="pill">56.750</span><span class="pill">64.004</span><span class="pill">66.617</span><table class="det"><tr><th>Semanal</th><td>acumulacion / maximos y minimos decrecientes</td></tr><tr><th>Diario</th><td>soporte 69.000-71.509; posible reversal</td></tr><tr><th>4H</th><td>max/min decrecientes, sin reversal confirmada</td></tr></table></div><div class="panel" data-i="1"><span class="pill">1.780</span><span class="pill">1.890</span><span class="pill">2.025</span><span class="pill">2.286</span><table class="det"><tr><th>Semanal</th><td>NO_DETERMINADO</td></tr><tr><th>Diario</th><td>zona de compra 1.890-2.286</td></tr><tr><th>4H</th><td>NO_DETERMINADO</td></tr></table></div><div class="panel" data-i="2"><span class="pill">7.592</span><span class="pill">6.612</span><table class="det"><tr><th>Semanal</th><td>NO_DETERMINADO</td></tr><tr><th>Diario</th><td>correccion posible a 6.612</td></tr><tr><th>4H</th><td>NO_DETERMINADO</td></tr></table></div><div class="panel" data-i="3"><span class="pill">28.400</span><span class="pill">28.026</span><span class="pill">25.479</span><span class="pill">25.400</span><span class="pill">22.931</span><table class="det"><tr><th>Semanal</th><td>NO_DETERMINADO</td></tr><tr><th>Diario</th><td>28.400 precio vendedor; 25.479/25.400</td></tr><tr><th>4H</th><td>NO_DETERMINADO</td></tr></table></div><div class="panel" data-i="4"><span class="pill">3.906</span><span class="pill">3.623</span><table class="det"><tr><th>Semanal</th><td>correccion</td></tr><tr><th>Diario</th><td>3.906 cierra el paso; objetivo 3.623</td></tr><tr><th>4H</th><td>NO_DETERMINADO</td></tr></table></div></section>
-<section class="card sys">
-    <h2>SISTEMA</h2>
-    <div class="sys-grid">
-      <div><span class="k">Estado</span><b>VIDEO NUEVO ANALIZADO</b></div>
-      <div><span class="k">Riesgo/operación</span><b>NO DISPONIBLE</b></div>
-      <div><span class="k">Expectativa</span><b>NO DISPONIBLE</b></div>
-      <div><span class="k">Última revisión</span><b>2026-11-18 21:35:17</b></div>
+    <div class="panel"><div class="panel-h">RISK MANAGER</div>
+      <div class="fila"><span>capital operable</span><b>$450</b></div>
+      <div class="fila"><span>tope activo</span><b>$450 (45%)</b></div>
+      <div class="fila"><span>tramos</span><b>30% · 35% · 35%</b></div>
+      <div class="nota">C02: 30% oferta + 70% confirmacion (2x35%). Paper only.</div>
     </div>
-    <div class="muted">Expectativa teórica: aún no hay resultados reales.</div>
-  </section>
-</div><script>document.querySelectorAll('.tab').forEach(function(t){
-  t.addEventListener('click',function(){
-    var i=t.getAttribute('data-i');
-    document.querySelectorAll('.tab,.panel').forEach(function(x){x.classList.remove('activo');});
-    t.classList.add('activo');
-    document.querySelector('.panel[data-i="'+i+'"]').classList.add('activo');
-  });
-});</script></body></html>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="panel"><div class="panel-h">NIVELES CLAVE</div><div class="fila"><span class="pill">69.000</span><span class="pct">+6.8%</span><span class="muted">x6</span></div><div class="fila"><span class="pill">65.520</span><span class="pct">+1.4%</span><span class="muted">x15</span></div><div class="fila"><span class="pill">65.300</span><span class="pct">+1.1%</span><span class="muted">x3</span></div><div class="fila"><span class="pill">65.278</span><span class="pct">+1.0%</span><span class="muted">x3</span></div><div class="fila"><span class="pill">65.125</span><span class="pct">+0.8%</span><span class="muted">x3</span></div><div class="fila"><span class="pill">64.877</span><span class="pct">+0.4%</span><span class="muted">x3</span></div><div class="fila"><span class="pill">64.629</span><span class="pct">+0.0%</span><span class="muted">x3</span></div><div class="fila"><span class="pill">63.904</span><span class="pct">-1.1%</span><span class="muted">x3</span></div></div>
+  <div class="panel"><div class="panel-h">DECISIÓN</div>
+      <div class="verdict ok">OPERACIÓN PROPUESTA</div>
+      <div class="nota">motivo: la presión que ejerzan los futuros por debajo de los 65,520</div>
+      <div class="nota">estado: <b>EN OBSERVACIÓN</b> · paper only</div>
+    </div>
+</div>
+
+<div class="grid-4">
+  <div class="panel"><div class="panel-h">FUNDAMENTAL</div>
+      <div class="nota">NO DISPONIBLE: el corpus no tiene feed fundamental.
+      Lo que el canal diga aparece en la transcripción.</div></div>
+  <div class="panel"><div class="panel-h">SENTIMIENTO</div>
+      <div class="nota">NO DISPONIBLE: sin feed de Fear&Greed / VIX.
+      No se inventa.</div></div>
+  <div class="panel"><div class="panel-h">DISTRIBUCIÓN (C02)</div><div class="barra-fila"><div class="barra-label"><span>BTCUSD</span><b>45% · $450</b></div><div class="barra"><i style="width:45%"></i></div></div><div class="barra-fila"><div class="barra-label"><span>ETHUSD</span><b>20% · $200</b></div><div class="barra"><i style="width:20%"></i></div></div><div class="barra-fila"><div class="barra-label"><span>QQQ</span><b>10% · $100</b></div><div class="barra"><i style="width:10%"></i></div></div><div class="barra-fila"><div class="barra-label"><span>XAUUSD</span><b>10% · $100</b></div><div class="barra"><i style="width:10%"></i></div></div><div class="nota">Tope por activo sobre $1000. No es una orden: es el máximo permitido. BTC 45%, ETH 20%, QQQ/XAU 10%.</div></div>
+  <div class="panel"><div class="panel-h">FUENTE</div>
+    <div class="nota">video: cH2KY5vnsVQ<br>transcripción + claims + playbook C01–C12.<br>
+    Sin feed en tiempo real.</div></div>
+</div>
+</div></body></html>

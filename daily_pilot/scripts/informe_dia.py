@@ -63,6 +63,28 @@ def main() -> int:
         if v:
             ref = v; break
     out['precio_referencia'] = ref
+
+    # MERCADO y ESCENARIOS solo del ULTIMO video (nunca del historico)
+    an = PILOT / 'analisis' / f'{vid}_analisis.json'
+    if an.exists():
+        a = json.loads(an.read_text())
+        inst = [k for k, v in (a.get('instrumentos') or {}).items() if v]
+        out['instrumentos'] = inst
+        out['temporalidades'] = [k for k, v in (a.get('temporalidades') or {}).items() if v]
+        out['mercado'] = {'VIDEO': {
+            'niveles_originales': [int(float(x['valor'])) for x in (a.get('niveles_explicitos_top') or [])[:8]],
+            'nota': 'niveles dichos en el video (no discriminados por instrumento)',
+        }}
+        _niv = (a.get('niveles_explicitos_top') or [])[:3]
+        out['escenarios'] = [
+            {'escenario': {'id': f'ESC-{vid}-{i}', 'instrumento': inst[0] if inst else '?',
+                           'direccion': 'alcista', 'nivel': {'valor': int(float(x['valor']))},
+                           'justificacion': ((x.get('ejemplos') or [{}])[0].get('contexto') or '')[:120],
+                           'timestamp_explicacion': ''}}
+            for i, x in enumerate(_niv)
+        ]
+        out['fuente_unica'] = vid
+
     p = PILOT / 'datos' / 'informe_hoy.json'
     p.write_text(json.dumps(out, ensure_ascii=False, indent=2))
     print(f'{vid} · {len(niv)} niveles · {p}')

@@ -111,12 +111,18 @@ def tarjeta_porque(escenarios):
     return f'<section class="card"><h2>POR QUÉ</h2><ol class="razones">{"".join(items)}</ol></section>'
 
 
-def tarjeta_mercado(mercado):
+def tarjeta_mercado(mercado, instrumentos=None):
     def fmt(x):
         return f'{int(x):,}'.replace(',', '.')
     tabs, panels = [], []
-    for i, (inst, m) in enumerate((mercado or {}).items()):
-        activo = ' activo' if i == 0 else ''
+    for i, inst in enumerate((instrumentos or ['VIDEO'])[:6]):
+        m = (mercado or {}).get('VIDEO') or {}
+        if i > 0:
+            tabs.append(f'<button class="tab" data-i="{i}">{esc(inst)}</button>')
+            panels.append(f'<div class="panel" data-i="{i}"><div class="muted">'
+                          f'instrumento mencionado en el video; los niveles son los del video</div></div>')
+            continue
+        activo = ' activo'
         tabs.append(f'<button class="tab{activo}" data-i="{i}">{esc(inst)}</button>')
         pills = ''.join(f'<span class="pill">{fmt(x)}</span>' for x in (m.get('niveles_originales') or [])[:8])
         filas = ''.join(f'<tr><th>{esc(et)}</th><td>{esc(m.get(k))}</td></tr>'
@@ -191,7 +197,7 @@ JS = '''document.querySelectorAll('.tab').forEach(function(t){
 def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
     estado = cargar(PILOT / 'estado' / 'estado_hoy.json') or {}
-    datos = cargar(PILOT / 'datos' / 'dashboard_data.json') or {}
+    datos = info  # SOLO el ultimo video, nunca el historico
     rm = cargar(PILOT / 'datos' / 'risk_hoy.json') or {}
     met = cargar(PILOT / 'datos' / 'metrics_hoy.json') or {}
 
@@ -201,7 +207,7 @@ def main() -> int:
 <body><div class="wrap">
 {tarjeta_hoy(info, estado)}
 {tarjeta_porque(datos.get('escenarios'))}
-{tarjeta_mercado(datos.get('mercado'))}
+{tarjeta_mercado(datos.get('mercado'), datos.get('instrumentos'))}
 {tarjeta_sistema(estado, rm, met)}
 </div><script>{JS}</script></body></html>'''
 

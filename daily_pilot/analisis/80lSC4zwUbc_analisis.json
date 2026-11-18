@@ -1,0 +1,254 @@
+{
+  "video_id": "80lSC4zwUbc",
+  "analizado_at": "2026-11-18T22:23:06Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 1000,
+  "sha256_transcript": "29febde7b0a41224647f4ff33aef0b8d63a9c5a194a28dbe567637f5bba0fc69",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/80lSC4zwUbc/80lSC4zwUbc_transcript.json",
+  "instrumentos": {
+    "BTC": 30,
+    "ETH": 6,
+    "XAUUSD": 5,
+    "NQ": 6
+  },
+  "temporalidades": {
+    "Daily": 18,
+    "4H": 14,
+    "Intradia": 3,
+    "Weekly": 3
+  },
+  "conceptos": {
+    "acumulacion": {
+      "menciones": 6,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:12",
+        "00:12",
+        "00:12"
+      ]
+    },
+    "holders": {
+      "menciones": 3,
+      "primeros": [
+        "00:10",
+        "00:10",
+        "00:10"
+      ]
+    },
+    "resistencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "objetivo": {
+      "menciones": 3,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "entrada": {
+      "menciones": 33,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "reversal": {
+      "menciones": 3,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "divergencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:10",
+        "00:10",
+        "00:10"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "87496",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "la última vez o la primera vez que subió casi casi llegó a los 87,496,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "casi casi llegó a los 87,496,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "casi casi llegó a los 87,496, aquí tengo este objetivo tercero de los"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 4,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "toda esta zona es de toma de beneficios, incluidos los 83,366."
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "quedó la semana pasada con este apoyo encontró compras en los 83,366."
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "encontró compras en los 83,366."
+        }
+      ]
+    },
+    {
+      "valor": "98000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "calculado muy cerquita, que son los 98,000, perdón, 88,418."
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "98,000, perdón, 88,418."
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "98,000, perdón, 88,418. Bueno, el precio todavía podría subir,"
+        }
+      ]
+    },
+    {
+      "valor": "88418",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "calculado muy cerquita, que son los 98,000, perdón, 88,418."
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "98,000, perdón, 88,418."
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "98,000, perdón, 88,418. Bueno, el precio todavía podría subir,"
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "el viernes con las nóminas no agrícolas, mira hasta dónde cayó, hasta los 84,122,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "mira hasta dónde cayó, hasta los 84,122,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "mira hasta dónde cayó, hasta los 84,122, que es el que lo ha impulsado ahora. Y"
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "mira dónde lo tienen aquí detenido, en los 85,964,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "en los 85,964,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "en los 85,964, para que veas"
+        }
+      ]
+    },
+    {
+      "valor": "86580",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "beneficios. Y en cuanto vuelven a cerrar por encima de este precio, 86,580,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "por encima de este precio, 86,580,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "por encima de este precio, 86,580, vuelven a tomar beneficios."
+        }
+      ]
+    },
+    {
+      "valor": "89648",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:11",
+          "contexto": "incluso 89,648,"
+        },
+        {
+          "minuto": "00:11",
+          "contexto": "89,648,"
+        },
+        {
+          "minuto": "00:11",
+          "contexto": "89,648, pues esto sería, oye, uno lo aprovecha"
+        }
+      ]
+    },
+    {
+      "valor": "83000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "Y este es prácticamente estaba ahí en los 83,000."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "prácticamente estaba ahí en los 83,000."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "prácticamente estaba ahí en los 83,000. Mira, de hecho,"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

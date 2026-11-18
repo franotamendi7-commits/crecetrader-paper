@@ -1,0 +1,332 @@
+{
+  "video_id": "TfFDXuVvXM4",
+  "analizado_at": "2026-11-18T22:23:06Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 723,
+  "sha256_transcript": "f3e9b7b27cdfc5795825138b146e9f19e0fa5f1033b85d981f237430304e8916",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/TfFDXuVvXM4/TfFDXuVvXM4_transcript.json",
+  "instrumentos": {
+    "BTC": 12
+  },
+  "temporalidades": {
+    "Daily": 15,
+    "4H": 15,
+    "Intradia": 11,
+    "Weekly": 14
+  },
+  "conceptos": {
+    "acumulacion": {
+      "menciones": 6,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:09",
+        "00:09",
+        "00:09"
+      ]
+    },
+    "holders": {
+      "menciones": 6,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "tendencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "rango": {
+      "menciones": 11,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "objetivo": {
+      "menciones": 9,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "entrada": {
+      "menciones": 24,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "reversal": {
+      "menciones": 3,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "83366",
+      "menciones": 30,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "Mira. 83,366."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "83,366."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "83,366. Mira dónde está el precio ahora mismo,"
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "que le cerró el paso. 84,122."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "84,122."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "84,122. Y mira cómo el precio ha estado detenido"
+        }
+      ]
+    },
+    {
+      "valor": "5000",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:10",
+          "contexto": "¿Tiene más poder de subir? ¿Qué más me da si sube ahora 5.000 dólares?"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "da si sube ahora 5.000 dólares?"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "da si sube ahora 5.000 dólares? Si yo voy diciendo todos estos días,"
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "corto plazo calculados previamente. 85,964"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "85,964"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "85,964 que le cerró el paso."
+        }
+      ]
+    },
+    {
+      "valor": "56750",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "Nosotros también teníamos en cuenta la llegada a los 56.750,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "llegada a los 56.750,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "llegada a los 56.750, que era donde podía haber una reversión"
+        }
+      ]
+    },
+    {
+      "valor": "83432",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "donde vamos siguiendo 83.432,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "83.432,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "83.432, 83.366,"
+        }
+      ]
+    },
+    {
+      "valor": "85544",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "vale, teníamos en el día de hoy 85.544"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "85.544"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "85.544 como eje central de operaciones, cómo"
+        }
+      ]
+    },
+    {
+      "valor": "83833",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "en el momento en que yo hice el primer análisis de hoy, 83.833"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "análisis de hoy, 83.833"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "análisis de hoy, 83.833 vale, lo devolvieron al anterior,"
+        }
+      ]
+    },
+    {
+      "valor": "84261",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "vale, lo devolvieron al anterior, 84.261,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "84.261,"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "84.261, cuando acaba la hora aparecen otra vez"
+        }
+      ]
+    },
+    {
+      "valor": "87000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:10",
+          "contexto": "Y aunque suba y llega a 87.000 y 88.000, vuelvo a lo"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "y llega a 87.000 y 88.000, vuelvo a lo"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "y llega a 87.000 y 88.000, vuelvo a lo mismo."
+        }
+      ]
+    },
+    {
+      "valor": "88000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:10",
+          "contexto": "Y aunque suba y llega a 87.000 y 88.000, vuelvo a lo"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "y llega a 87.000 y 88.000, vuelvo a lo"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "y llega a 87.000 y 88.000, vuelvo a lo mismo."
+        }
+      ]
+    },
+    {
+      "valor": "83000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:11",
+          "contexto": "compra en 67, 70, 70, hombre, esto sí, entonces llegas a 83.000 y vendes."
+        },
+        {
+          "minuto": "00:11",
+          "contexto": "entonces llegas a 83.000 y vendes."
+        },
+        {
+          "minuto": "00:11",
+          "contexto": "entonces llegas a 83.000 y vendes. Pero ahora mismo,"
+        }
+      ]
+    },
+    {
+      "valor": "82281",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:11",
+          "contexto": "precio está consolidando, vamos a vigilar estos 82.281"
+        },
+        {
+          "minuto": "00:11",
+          "contexto": "vigilar estos 82.281"
+        },
+        {
+          "minuto": "00:11",
+          "contexto": "vigilar estos 82.281 que están por debajo de 83.366."
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

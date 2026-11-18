@@ -1,0 +1,281 @@
+{
+  "video_id": "AclAlC4qa4I",
+  "analizado_at": "2026-11-18T22:23:06Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 1165,
+  "sha256_transcript": "7154e7a17de9dc58136c45f45d98eecda020f2de5000fbe5f8ff9624ea70956d",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/AclAlC4qa4I/AclAlC4qa4I_transcript.json",
+  "instrumentos": {
+    "XAUUSD": 6,
+    "ETH": 6,
+    "BTC": 3
+  },
+  "temporalidades": {
+    "4H": 14,
+    "Daily": 18,
+    "Weekly": 9
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 3,
+      "primeros": [
+        "00:20",
+        "00:20",
+        "00:20"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 3,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "holders": {
+      "menciones": 3,
+      "primeros": [
+        "00:17",
+        "00:17",
+        "00:17"
+      ]
+    },
+    "tendencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05"
+      ]
+    },
+    "resistencia": {
+      "menciones": 20,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    },
+    "stop": {
+      "menciones": 3,
+      "primeros": [
+        "00:15",
+        "00:15",
+        "00:15"
+      ]
+    },
+    "entrada": {
+      "menciones": 15,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:08",
+        "00:08",
+        "00:08"
+      ]
+    },
+    "reversal": {
+      "menciones": 6,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:11",
+        "00:11",
+        "00:11"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "83366",
+      "menciones": 12,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "bueno, lo han traído, está intentando consolidar por encima de los 83,366."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "consolidar por encima de los 83,366."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "consolidar por encima de los 83,366. Pero claro,"
+        }
+      ]
+    },
+    {
+      "valor": "87496",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "máximos que no consiguen llegar, pues a este precio, los 87,496,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "este precio, los 87,496,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "este precio, los 87,496, esa línea amarilla con la que yo"
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "hace ya tiempo, desde hace ya un par de semanas, el objetivo de los 85.964"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "semanas, el objetivo de los 85.964"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "semanas, el objetivo de los 85.964 en 4 horas"
+        }
+      ]
+    },
+    {
+      "valor": "29000",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "que estés informado, igual que lo estoy yo, el empleo quedó en 29.000 puestos,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "yo, el empleo quedó en 29.000 puestos,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "yo, el empleo quedó en 29.000 puestos, lo ayer, los las nóminas no agrícolas,"
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "en 4 horas y los 84.122"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "y los 84.122"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "y los 84.122 y claro, todo esto viene, toda esta fase"
+        }
+      ]
+    },
+    {
+      "valor": "77000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "Teníamos puesto por aquí y zona de compras desde los 77,000"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "compras desde los 77,000"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "compras desde los 77,000 860, 78,597,"
+        }
+      ]
+    },
+    {
+      "valor": "78597",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "compras desde los 77,000 860, 78,597,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "860, 78,597,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "860, 78,597, 79,334."
+        }
+      ]
+    },
+    {
+      "valor": "79334",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "860, 78,597, 79,334."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "79,334."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "79,334. Bueno, volvemos a dejar el precio a la"
+        }
+      ]
+    },
+    {
+      "valor": "89000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:10",
+          "contexto": "Primero teníamos los 87.496, por aquí arriba están los 89.000 y estos precios,"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "arriba están los 89.000 y estos precios,"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "arriba están los 89.000 y estos precios, todos estos. Y claro, cuando lo"
+        }
+      ]
+    },
+    {
+      "valor": "85000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "solo 29.000 nuevos puestos o empleos frente a los 85.000 que se esperaba,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "frente a los 85.000 que se esperaba,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "frente a los 85.000 que se esperaba, claro. ¿Qué pasó con esto? Que el paro"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

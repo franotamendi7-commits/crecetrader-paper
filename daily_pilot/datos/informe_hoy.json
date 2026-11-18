@@ -58,5 +58,71 @@
     "resumen": "El motor aplica C01-C12 sobre la transcripcion. Sin validar contra el grafico.",
     "estado": "PAPER_ONLY"
   },
-  "precio_referencia": 64620
+  "precio_referencia": 64620,
+  "instrumentos": [
+    "BTC",
+    "NQ",
+    "ETH",
+    "XAUUSD"
+  ],
+  "temporalidades": [
+    "Daily",
+    "4H",
+    "Weekly",
+    "Intradia"
+  ],
+  "mercado": {
+    "VIDEO": {
+      "niveles_originales": [
+        65520,
+        56750,
+        61247,
+        69000,
+        62216,
+        64877,
+        64629,
+        63904
+      ],
+      "nota": "niveles dichos en el video (no discriminados por instrumento)"
+    }
+  },
+  "escenarios": [
+    {
+      "escenario": {
+        "id": "ESC-cH2KY5vnsVQ-0",
+        "instrumento": "BTC",
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 65520
+        },
+        "justificacion": "la presión que ejerzan los futuros por debajo de los 65,520",
+        "timestamp_explicacion": ""
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-cH2KY5vnsVQ-1",
+        "instrumento": "BTC",
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 56750
+        },
+        "justificacion": "pullback hasta esta zona y no descartemos los 56,750.",
+        "timestamp_explicacion": ""
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-cH2KY5vnsVQ-2",
+        "instrumento": "BTC",
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 61247
+        },
+        "justificacion": "poco más grande para que lo pueda ver. 61,247",
+        "timestamp_explicacion": ""
+      }
+    }
+  ],
+  "fuente_unica": "cH2KY5vnsVQ"
 }

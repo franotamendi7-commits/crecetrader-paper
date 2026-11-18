@@ -1,0 +1,275 @@
+{
+  "video_id": "pcLPlMqE-OU",
+  "analizado_at": "2026-11-18T22:23:06Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 718,
+  "sha256_transcript": "9dd1bd867607d672ac3ea3d17cbf2f1c0700a99db71164f2d307c7bbc28ba29a",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/pcLPlMqE-OU/pcLPlMqE-OU_transcript.json",
+  "instrumentos": {
+    "BTC": 27,
+    "ETH": 3
+  },
+  "temporalidades": {
+    "Weekly": 8,
+    "Intradia": 14,
+    "4H": 8,
+    "Daily": 6
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 12,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 3,
+      "primeros": [
+        "00:08",
+        "00:08",
+        "00:08"
+      ]
+    },
+    "tendencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "rango": {
+      "menciones": 6,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "resistencia": {
+      "menciones": 15,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "entrada": {
+      "menciones": 3,
+      "primeros": [
+        "00:11",
+        "00:11",
+        "00:11"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "87496",
+      "menciones": 15,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "comenzó a las 12 de la noche del 1 de enero a cotizar los 87.496."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "enero a cotizar los 87.496."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "enero a cotizar los 87.496. El máximo estuvo en 87.374,"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 12,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "Ayer te comentaba que el precio ha estado refugiado en los 83.366,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "estado refugiado en los 83.366,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "estado refugiado en los 83.366, segundo objetivo conseguido durante ocho"
+        }
+      ]
+    },
+    {
+      "valor": "89648",
+      "menciones": 7,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "de este año, puede ser aprovechada para cerrar posiciones de compra. Y 89.648"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "cerrar posiciones de compra. Y 89.648"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "cerrar posiciones de compra. Y 89.648 también es el tercer objetivo. Igual que"
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "toma de beneficios, 84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "84,122, 85,964, llegó hace un rato."
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "toma de beneficios, 84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "84,122, 85,964, llegó hace un rato."
+        }
+      ]
+    },
+    {
+      "valor": "84455",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "Con el eje central de operaciones en los 84.455,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "84.455,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "84.455, en la sesión de hoy el mínimo en cuanto"
+        }
+      ]
+    },
+    {
+      "valor": "87374",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "enero a cotizar los 87.496. El máximo estuvo en 87.374,"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "El máximo estuvo en 87.374,"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "El máximo estuvo en 87.374, máximo del 21 de septiembre."
+        }
+      ]
+    },
+    {
+      "valor": "86548",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "mapa de 1 hora en con niveles intradia, el último nivel intradia 86.548"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "el último nivel intradia 86.548"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "el último nivel intradia 86.548 ya ha sido alcanzado hace varias horas."
+        }
+      ]
+    },
+    {
+      "valor": "86000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "con el objetivo de 4 horas que acabamos de ver, caen en estos precios de 86.000."
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "de ver, caen en estos precios de 86.000."
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "de ver, caen en estos precios de 86.000. Bien, mira cómo se toman esos"
+        }
+      ]
+    },
+    {
+      "valor": "88000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "y ahora claro, aquí hay uno intermedio que son los 88.000"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "que son los 88.000"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "que son los 88.000 418."
+        }
+      ]
+    },
+    {
+      "valor": "83154",
+      "menciones": 1,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "normal intradia hasta los 83.366 con los 83.154."
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}
