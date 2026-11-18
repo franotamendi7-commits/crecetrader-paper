@@ -1,0 +1,488 @@
+{
+  "video_id": "j06_M-fADjM",
+  "analizado_at": "2026-11-18T20:57:08Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 550,
+  "sha256_transcript": "f452575491a22bdb0f1e46244ce6536e129b2bbb196c28f5e1a1acb220eb7acf",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/j06_M-fADjM/j06_M-fADjM_transcript.json",
+  "instrumentos": {
+    "BTC": 24,
+    "NQ": 12,
+    "ETH": 11,
+    "XAUUSD": 12
+  },
+  "temporalidades": {
+    "4H": 12,
+    "Weekly": 9,
+    "Intradia": 17,
+    "Daily": 9
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 3,
+      "primeros": [
+        "00:08",
+        "00:09",
+        "00:09"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 9,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:05",
+        "00:05",
+        "00:05"
+      ]
+    },
+    "distribucion": {
+      "menciones": 6,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "holders": {
+      "menciones": 3,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01"
+      ]
+    },
+    "estructura": {
+      "menciones": 6,
+      "primeros": [
+        "00:07",
+        "00:08",
+        "00:08",
+        "00:08",
+        "00:08",
+        "00:08"
+      ]
+    },
+    "tendencia": {
+      "menciones": 26,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:01",
+        "00:01",
+        "00:01"
+      ]
+    },
+    "rango": {
+      "menciones": 3,
+      "primeros": [
+        "00:09",
+        "00:09",
+        "00:09"
+      ]
+    },
+    "objetivo": {
+      "menciones": 6,
+      "primeros": [
+        "00:08",
+        "00:08",
+        "00:08",
+        "00:10",
+        "00:10",
+        "00:10"
+      ]
+    },
+    "entrada": {
+      "menciones": 9,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "divergencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "80308",
+      "menciones": 15,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "que veas lo astuto cómo se comporta el mercado. ¿Por qué te digo esto? 80.308."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "mercado. ¿Por qué te digo esto? 80.308."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "mercado. ¿Por qué te digo esto? 80.308. Sabemos que será el precio que ahora"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "en la parte alta, está cayendo. Sabemos que 71.509 es el precio que hay por"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "que 71.509 es el precio que hay por"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "que 71.509 es el precio que hay por debajo, sin embargo,"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "corto plazo muy cercano. En este caso tenemos los 83,366"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "tenemos los 83,366"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "tenemos los 83,366 por la parte de arriba, también los"
+        }
+      ]
+    },
+    {
+      "valor": "25479",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "corrección. Si aquí no aparece liquidez, 25.479"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "25.479"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "25.479 y 400, 25.479"
+        }
+      ]
+    },
+    {
+      "valor": "80116",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "rango entre los 80.731 y cerca de los 80.116, los primeros niveles intradía"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "80.116, los primeros niveles intradía"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "80.116, los primeros niveles intradía alcistas y bajistas, 80.920, 81.228,"
+        }
+      ]
+    },
+    {
+      "valor": "78815",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "caída 80.116, 79.926, 619, 217 y pasamos a los 78.815,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "619, 217 y pasamos a los 78.815,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "619, 217 y pasamos a los 78.815, que si miramos entonces en 4 horas,"
+        }
+      ]
+    },
+    {
+      "valor": "84579",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "precios eh para las ventas en corto como 84.579,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "84.579,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "84.579, 83.764,"
+        }
+      ]
+    },
+    {
+      "valor": "83764",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "84.579, 83.764,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "83.764,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "83.764, en fin, todos estos, ¿no? Pero 80.308"
+        }
+      ]
+    },
+    {
+      "valor": "78580",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "bajista, lo llevó hasta el primer objetivo, 78.580."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "objetivo, 78.580."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "objetivo, 78.580. También hasta el segundo porque he"
+        }
+      ]
+    },
+    {
+      "valor": "73397",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "importante en el día de hoy, porque por debajo todavía tenemos los 73.397"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "debajo todavía tenemos los 73.397"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "debajo todavía tenemos los 73.397 como tercer objetivo y ya después"
+        }
+      ]
+    },
+    {
+      "valor": "69997",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "aparecen los 71.509, 69.997"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "69.997"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "69.997 y los 69.000. Si nos venimos a la serie"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "69.997 y los 69.000. Si nos venimos a la serie"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "y los 69.000. Si nos venimos a la serie"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "y los 69.000. Si nos venimos a la serie diaria, entonces, como te digo, aquí"
+        }
+      ]
+    },
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "por la parte de arriba, también los 81,446."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "81,446."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "81,446. Bueno, pues ya sabemos toda esa parte"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "que hay y que además los mejores precios de compras no lo llegó a tocar, 75,518,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "de compras no lo llegó a tocar, 75,518,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "de compras no lo llegó a tocar, 75,518, pero son los mejores precios de compras"
+        }
+      ]
+    },
+    {
+      "valor": "2373",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "rápidamente Ethereum que ha roto con fuerza los 2,373. Vamos a ver si"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "fuerza los 2,373. Vamos a ver si"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "fuerza los 2,373. Vamos a ver si consolida por encima de este precio,"
+        }
+      ]
+    },
+    {
+      "valor": "28400",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "lo tienen apoyado exactamente en los 28.400 refugio a largo plazo, 28.026,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "28.400 refugio a largo plazo, 28.026,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "28.400 refugio a largo plazo, 28.026, ese era nuestro escenario primero de"
+        }
+      ]
+    },
+    {
+      "valor": "28026",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "lo tienen apoyado exactamente en los 28.400 refugio a largo plazo, 28.026,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "28.400 refugio a largo plazo, 28.026,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "28.400 refugio a largo plazo, 28.026, ese era nuestro escenario primero de"
+        }
+      ]
+    },
+    {
+      "valor": "80423",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "intradía para la jornada de hoy con el punto de partida 80.423,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "punto de partida 80.423,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "punto de partida 80.423, vemos que se ha estado moviendo en un"
+        }
+      ]
+    },
+    {
+      "valor": "80731",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "vemos que se ha estado moviendo en un rango entre los 80.731 y cerca de los"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "rango entre los 80.731 y cerca de los"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "rango entre los 80.731 y cerca de los 80.116, los primeros niveles intradía"
+        }
+      ]
+    },
+    {
+      "valor": "80920",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "80.116, los primeros niveles intradía alcistas y bajistas, 80.920, 81.228,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "alcistas y bajistas, 80.920, 81.228,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "alcistas y bajistas, 80.920, 81.228, 630 y 82.032 por la parte de arriba. En"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

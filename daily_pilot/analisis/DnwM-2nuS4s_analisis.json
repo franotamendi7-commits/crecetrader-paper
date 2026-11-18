@@ -1,0 +1,258 @@
+{
+  "video_id": "DnwM-2nuS4s",
+  "analizado_at": "2026-11-18T20:57:08Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 469,
+  "sha256_transcript": "49f55e87df3a1a4b20610295a9276f119eef52770cc95799a874ec2003eec588",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/DnwM-2nuS4s/DnwM-2nuS4s_transcript.json",
+  "instrumentos": {
+    "BTC": 18,
+    "XAUUSD": 9,
+    "ETH": 11
+  },
+  "temporalidades": {
+    "Intradia": 9,
+    "4H": 10,
+    "Daily": 11
+  },
+  "conceptos": {
+    "fomo": {
+      "menciones": 3,
+      "primeros": [
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "estructura": {
+      "menciones": 3,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "tendencia": {
+      "menciones": 23,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:01",
+        "00:01",
+        "00:01"
+      ]
+    },
+    "rango": {
+      "menciones": 3,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    },
+    "objetivo": {
+      "menciones": 14,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:06"
+      ]
+    },
+    "entrada": {
+      "menciones": 11,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:05",
+        "00:05",
+        "00:05"
+      ]
+    },
+    "reversal": {
+      "menciones": 18,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "80308",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "estaban precios vendedores, lo dejaron estos 80.308, que es donde yo digo, ahí"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "estos 80.308, que es donde yo digo, ahí"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "estos 80.308, que es donde yo digo, ahí es donde notablemente puede entrar la"
+        }
+      ]
+    },
+    {
+      "valor": "75580",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "Mañana tenemos nóminas no agrícolas. Se habían completado dos objetivos, 75.580,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "habían completado dos objetivos, 75.580,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "habían completado dos objetivos, 75.580, 76.000 ese de 76.853,"
+        }
+      ]
+    },
+    {
+      "valor": "76000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "habían completado dos objetivos, 75.580, 76.000 ese de 76.853,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "76.000 ese de 76.853,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "76.000 ese de 76.853, 73.397 no se había conseguido y ese"
+        }
+      ]
+    },
+    {
+      "valor": "76853",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "habían completado dos objetivos, 75.580, 76.000 ese de 76.853,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "76.000 ese de 76.853,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "76.000 ese de 76.853, 73.397 no se había conseguido y ese"
+        }
+      ]
+    },
+    {
+      "valor": "73397",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "76.000 ese de 76.853, 73.397 no se había conseguido y ese"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "73.397 no se había conseguido y ese"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "73.397 no se había conseguido y ese puede empujar al precio hasta la zona,"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "frena exactamente en este precio calculado, los 75.518."
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "calculado, los 75.518."
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "calculado, los 75.518. ¿Ves la diferencia? Es decir, justo el"
+        }
+      ]
+    },
+    {
+      "valor": "75000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "resto y en esta lo rompieron y están yendo hacia la Bueno, los 75.000 es este"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "yendo hacia la Bueno, los 75.000 es este"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "yendo hacia la Bueno, los 75.000 es este precio"
+        }
+      ]
+    },
+    {
+      "valor": "80000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "vendedores como pasó en 4 horas. En 4 horas ese precio eran los 80.000, no"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "horas ese precio eran los 80.000, no"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "horas ese precio eran los 80.000, no tengo espacio. Sé que tengo precios"
+        }
+      ]
+    },
+    {
+      "valor": "2373",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "diaria, ¿correcto? Nos pasa lo mismo. Además, es que atravesó los 2.373, cerró"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "Además, es que atravesó los 2.373, cerró"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "Además, es que atravesó los 2.373, cerró por arriba y pum. Y están Estaba"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

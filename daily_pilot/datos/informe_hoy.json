@@ -1,0 +1,61 @@
+{
+  "video_id": "cH2KY5vnsVQ",
+  "titulo": "Bitcoin frenado antes de las actas de la FED: lo que vigilo hoy",
+  "publicado": "2026-11-18T09:43:08+00:00",
+  "fuente": "registro",
+  "papel_only": true,
+  "niveles_top": [
+    {
+      "precio": 65520,
+      "menciones": 15
+    },
+    {
+      "precio": 56750,
+      "menciones": 9
+    },
+    {
+      "precio": 61247,
+      "menciones": 6
+    },
+    {
+      "precio": 69000,
+      "menciones": 6
+    },
+    {
+      "precio": 62216,
+      "menciones": 3
+    },
+    {
+      "precio": 64877,
+      "menciones": 3
+    },
+    {
+      "precio": 64629,
+      "menciones": 3
+    },
+    {
+      "precio": 63904,
+      "menciones": 3
+    },
+    {
+      "precio": 63580,
+      "menciones": 3
+    },
+    {
+      "precio": 65125,
+      "menciones": 3
+    },
+    {
+      "precio": 65278,
+      "menciones": 3
+    },
+    {
+      "precio": 65300,
+      "menciones": 3
+    }
+  ],
+  "propuesta": {
+    "resumen": "El motor aplica C01-C12 sobre la transcripcion. Sin validar contra el grafico.",
+    "estado": "PAPER_ONLY"
+  }
+}
