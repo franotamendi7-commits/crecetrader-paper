@@ -1,0 +1,257 @@
+{
+  "video_id": "hzKGqhFaN8I",
+  "analizado_at": "2026-11-18T22:28:50Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 732,
+  "sha256_transcript": "a648c610475c601e7e2116ea9102138ced7e387ed1fb5230d59f0c97df777054",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/hzKGqhFaN8I/hzKGqhFaN8I_transcript.json",
+  "instrumentos": {
+    "BTC": 18,
+    "ETH": 12,
+    "XAUUSD": 12,
+    "NQ": 3
+  },
+  "temporalidades": {
+    "4H": 16,
+    "Daily": 15,
+    "Intradia": 33,
+    "Weekly": 6
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 3,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "holders": {
+      "menciones": 3,
+      "primeros": [
+        "00:03",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "tendencia": {
+      "menciones": 21,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "stop": {
+      "menciones": 6,
+      "primeros": [
+        "00:09",
+        "00:09",
+        "00:09",
+        "00:10",
+        "00:10",
+        "00:10"
+      ]
+    },
+    "objetivo": {
+      "menciones": 6,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "entrada": {
+      "menciones": 3,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "reversal": {
+      "menciones": 3,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "64193",
+      "menciones": 12,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "después del primer análisis, cómo ha reaccionado en los 64,193"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "reaccionado en los 64,193"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "reaccionado en los 64,193 como de que se conoció el dato, el"
+        }
+      ]
+    },
+    {
+      "valor": "61247",
+      "menciones": 12,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "y sobre todo hacia el objetivo de la semana, 61,247 porque como ves aquí hay"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "semana, 61,247 porque como ves aquí hay"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "semana, 61,247 porque como ves aquí hay un objetivo de esta caída, es decir"
+        }
+      ]
+    },
+    {
+      "valor": "63297",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "intradiario que conocíamos en la jornada de hoy, los 63,297"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "de hoy, los 63,297"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "de hoy, los 63,297 que te comentaba esta mañana, que junto"
+        }
+      ]
+    },
+    {
+      "valor": "61416",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "esto está apuntando hacia el objetivo de los 61.416"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "los 61.416"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "los 61.416 y a dónde nos lleva eso, 61.247."
+        }
+      ]
+    },
+    {
+      "valor": "63438",
+      "menciones": 4,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "63,816, 63,438,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "63,438,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "63,438, está ahora mismo le cierra el paso"
+        }
+      ]
+    },
+    {
+      "valor": "63816",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "ventas, 64,193, 63,816,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "63,816,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "63,816, 63,438,"
+        }
+      ]
+    },
+    {
+      "valor": "62266",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "y eso puede derivar a que el precio caiga hacia los 62,266"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "caiga hacia los 62,266"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "caiga hacia los 62,266 y sobre todo hacia el objetivo de la"
+        }
+      ]
+    },
+    {
+      "valor": "62269",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "Se nos viene, tenemos precios hoy hasta los 62.269."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "los 62.269."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "los 62.269. Entonces, mira además en la subida"
+        }
+      ]
+    },
+    {
+      "valor": "61000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "tienen un stop por la zona de los 61,000, esta sería la forma en que les"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "61,000, esta sería la forma en que les"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "61,000, esta sería la forma en que les iba a ayudar y que continúe entonces"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

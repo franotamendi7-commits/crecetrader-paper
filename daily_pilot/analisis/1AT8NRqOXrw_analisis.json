@@ -1,0 +1,488 @@
+{
+  "video_id": "1AT8NRqOXrw",
+  "analizado_at": "2026-11-18T22:28:50Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 1493,
+  "sha256_transcript": "c71009db8c5d42969ea071bffc6d43821f8f665c296b791ad37295d32ff8fd59",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/1AT8NRqOXrw/1AT8NRqOXrw_transcript.json",
+  "instrumentos": {
+    "BTC": 18,
+    "ETH": 9,
+    "XAUUSD": 9,
+    "NQ": 9
+  },
+  "temporalidades": {
+    "Weekly": 36,
+    "4H": 30,
+    "Intradia": 33,
+    "Daily": 36
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 6,
+      "primeros": [
+        "00:26",
+        "00:26",
+        "00:26",
+        "00:26",
+        "00:26",
+        "00:26"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 6,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:23",
+        "00:23",
+        "00:23"
+      ]
+    },
+    "distribucion": {
+      "menciones": 6,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:23",
+        "00:23",
+        "00:23"
+      ]
+    },
+    "fomo": {
+      "menciones": 3,
+      "primeros": [
+        "00:10",
+        "00:10",
+        "00:10"
+      ]
+    },
+    "estructura": {
+      "menciones": 3,
+      "primeros": [
+        "00:22",
+        "00:22",
+        "00:22"
+      ]
+    },
+    "tendencia": {
+      "menciones": 43,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:01",
+        "00:01",
+        "00:01"
+      ]
+    },
+    "rango": {
+      "menciones": 15,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:19",
+        "00:19",
+        "00:19"
+      ]
+    },
+    "soporte": {
+      "menciones": 3,
+      "primeros": [
+        "00:17",
+        "00:17",
+        "00:17"
+      ]
+    },
+    "resistencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:28",
+        "00:28",
+        "00:28"
+      ]
+    },
+    "entrada": {
+      "menciones": 35,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "69000",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "66,921, rompió con fuerza y vino a los 69,000 y a ese primer objetivo calculado"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "69,000 y a ese primer objetivo calculado"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "69,000 y a ese primer objetivo calculado en los 69,217."
+        }
+      ]
+    },
+    {
+      "valor": "69997",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "de una sola tajada, los 66,074, los 69,000 y los 69,997,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "69,000 y los 69,997,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "69,000 y los 69,997, que de hecho yo te decía, bueno, vamos a"
+        }
+      ]
+    },
+    {
+      "valor": "69217",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "2 y 3, que aquí la teníamos como validada con un objetivo en 69,217."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "validada con un objetivo en 69,217."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "validada con un objetivo en 69,217. El segundo lo tenemos en 71,514, pero"
+        }
+      ]
+    },
+    {
+      "valor": "66074",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "y desde ahí partíamos con un primer objetivo alcista semanal en los 66,074,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "objetivo alcista semanal en los 66,074,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "objetivo alcista semanal en los 66,074, que es ese precio que había calculado"
+        }
+      ]
+    },
+    {
+      "valor": "64290",
+      "menciones": 4,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "Habían tenido al precio, ¿te acuerdas? En los 64,290."
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "Así lo teníamos ayer por un lado, en los 64,290."
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "64,290."
+        }
+      ]
+    },
+    {
+      "valor": "71514",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "validada con un objetivo en 69,217. El segundo lo tenemos en 71,514, pero"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "El segundo lo tenemos en 71,514, pero"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "El segundo lo tenemos en 71,514, pero enseguida paso a contarte todo esto"
+        }
+      ]
+    },
+    {
+      "valor": "70000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "histórico en criptos. Bitcoin pues ha tocado prácticamente los $70,000."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "tocado prácticamente los $70,000."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "tocado prácticamente los $70,000. Se han liquidado en el día de ayer"
+        }
+      ]
+    },
+    {
+      "valor": "57670",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "algunos para comprar desde esta zona calculada de suelo de los 57,670,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "calculada de suelo de los 57,670,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "calculada de suelo de los 57,670, que es la que ha impedido que el precio"
+        }
+      ]
+    },
+    {
+      "valor": "56750",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "que es la que ha impedido que el precio llegara a los 56,750."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "llegara a los 56,750."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "llegara a los 56,750. Bien, y incluso ayer estábamos eh"
+        }
+      ]
+    },
+    {
+      "valor": "66921",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "fuerza. Ni siquiera se frenaron en los 66,921, rompió con fuerza y vino a los"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "66,921, rompió con fuerza y vino a los"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "66,921, rompió con fuerza y vino a los 69,000 y a ese primer objetivo calculado"
+        }
+      ]
+    },
+    {
+      "valor": "68361",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "ves cómo ha ido. Y tercer objetivo calculado, 68,361,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "calculado, 68,361,"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "calculado, 68,361, que se lo ha llevado por delante."
+        }
+      ]
+    },
+    {
+      "valor": "64193",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "jornada de ayer. Y ayer en el análisis estábamos viendo 64,193"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "estábamos viendo 64,193"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "estábamos viendo 64,193 eran precios"
+        }
+      ]
+    },
+    {
+      "valor": "70684",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "significancia. Simplemente ves que el último precio intradiario 70,684,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "último precio intradiario 70,684,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "último precio intradiario 70,684, pues ya acaban de de estarlo tocando."
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:10",
+          "contexto": "habíamos dicho precisamente que en el caso de que llegara a los 69,000 71,509,"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "caso de que llegara a los 69,000 71,509,"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "caso de que llegara a los 69,000 71,509, ¿qué puede ocurrir? pues que aprovechen"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:10",
+          "contexto": "como lo mismo puede seguir hacia los 83,366,"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "83,366,"
+        },
+        {
+          "minuto": "00:10",
+          "contexto": "83,366, pero claro, ya es querer entrar a toro"
+        }
+      ]
+    },
+    {
+      "valor": "210000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "el consenso del mercado es que habrán 210,000 nuevos peticiones de desempleo."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "210,000 nuevos peticiones de desempleo."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "210,000 nuevos peticiones de desempleo. también el índice manufacturero de la"
+        }
+      ]
+    },
+    {
+      "valor": "4556",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:16",
+          "contexto": "operaciones para la jornada de hoy con el eje central en 4,556,"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "el eje central en 4,556,"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "el eje central en 4,556, el último calculado 4602 y un poquito"
+        }
+      ]
+    },
+    {
+      "valor": "4642",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "donde puede aumentar esa presión bajista los 4,642"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "los 4,642"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "los 4,642 con un objetivo en los 7,139, que es el"
+        }
+      ]
+    },
+    {
+      "valor": "7139",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "los 4,642 con un objetivo en los 7,139, que es el"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "con un objetivo en los 7,139, que es el"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "con un objetivo en los 7,139, que es el de mediano plazo."
+        }
+      ]
+    },
+    {
+      "valor": "29617",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:18",
+          "contexto": "jornada de hoy, que son estos precios desde los 29,617,"
+        },
+        {
+          "minuto": "00:18",
+          "contexto": "desde los 29,617,"
+        },
+        {
+          "minuto": "00:18",
+          "contexto": "desde los 29,617, alcanzando hasta la apertura de la"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

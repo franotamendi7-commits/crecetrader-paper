@@ -1,0 +1,457 @@
+{
+  "video_id": "tQxbQf773QI",
+  "analizado_at": "2026-11-18T22:26:45Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 997,
+  "sha256_transcript": "bc0a94ea5a78830606d7b1d1a007748fc11d9d9bf08ea801a939f9401b2d6c1c",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/tQxbQf773QI/tQxbQf773QI_transcript.json",
+  "instrumentos": {
+    "BTC": 18,
+    "ETH": 6,
+    "XAUUSD": 6
+  },
+  "temporalidades": {
+    "Weekly": 27,
+    "Daily": 24,
+    "4H": 19,
+    "Intradia": 3
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 12,
+      "primeros": [
+        "00:09",
+        "00:09",
+        "00:09",
+        "00:09",
+        "00:09",
+        "00:09"
+      ]
+    },
+    "estructura": {
+      "menciones": 6,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:16",
+        "00:16",
+        "00:16"
+      ]
+    },
+    "tendencia": {
+      "menciones": 32,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "stop": {
+      "menciones": 3,
+      "primeros": [
+        "00:16",
+        "00:16",
+        "00:16"
+      ]
+    },
+    "objetivo": {
+      "menciones": 3,
+      "primeros": [
+        "00:14",
+        "00:14",
+        "00:14"
+      ]
+    },
+    "entrada": {
+      "menciones": 18,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06",
+        "00:08",
+        "00:08",
+        "00:08"
+      ]
+    },
+    "reversal": {
+      "menciones": 3,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "78746",
+      "menciones": 30,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "es bueno, ¿será este el apoyo necesario como para romper los 78,746"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "como para romper los 78,746"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "como para romper los 78,746 y dar el salto a los 83,366?"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 18,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "toda esta subida y reversión, a los 83,366."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "83,366."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "83,366. Ahora vamos a ver el mediano plazo, la"
+        }
+      ]
+    },
+    {
+      "valor": "76229",
+      "menciones": 15,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "Saludos cordiales. Bitcoin ha vuelto a defender ese mínimo, los 76,229"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "defender ese mínimo, los 76,229"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "defender ese mínimo, los 76,229 que dejó el pasado 2 de septiembre, tal"
+        }
+      ]
+    },
+    {
+      "valor": "79255",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "79,969, 79,255"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "79,255"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "79,255 y 78,540."
+        }
+      ]
+    },
+    {
+      "valor": "76804",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "ya tenemos el mapa para la semana con un eje central en los 76,804,"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "eje central en los 76,804,"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "eje central en los 76,804, el mínimo de los 76,229,"
+        }
+      ]
+    },
+    {
+      "valor": "78540",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "79,255 y 78,540."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "y 78,540."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "y 78,540. Es decir, como te señalo aquí, esta fase"
+        }
+      ]
+    },
+    {
+      "valor": "28400",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "eje central para la semana. Primer objetivo bajista semanal 28,400 y es que"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "objetivo bajista semanal 28,400 y es que"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "objetivo bajista semanal 28,400 y es que en 4 horas tenemos esa nuevamente"
+        }
+      ]
+    },
+    {
+      "valor": "80799",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "estuvimos viendo y que llegó a los objetivos el último aquí en los 80,799"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "objetivos el último aquí en los 80,799"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "objetivos el último aquí en los 80,799 y que desde ahí, fíjate el movimiento"
+        }
+      ]
+    },
+    {
+      "valor": "80700",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "y que desde ahí, fíjate el movimiento 80,700 te dije 700 199, no, hasta los"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "80,700 te dije 700 199, no, hasta los"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "80,700 te dije 700 199, no, hasta los 76,107. Y esto está provocando ahora la"
+        }
+      ]
+    },
+    {
+      "valor": "76107",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "80,700 te dije 700 199, no, hasta los 76,107. Y esto está provocando ahora la"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "76,107. Y esto está provocando ahora la"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "76,107. Y esto está provocando ahora la subida. Es decir, son objetivos de toma"
+        }
+      ]
+    },
+    {
+      "valor": "56750",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "conserva el gran impulso nacido en la zona de los 56,750,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "zona de los 56,750,"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "zona de los 56,750, como estamos viendo aquí en el gráfico"
+        }
+      ]
+    },
+    {
+      "valor": "87496",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "subida, sea ahora o sea en una fase posterior, los 87,496,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "posterior, los 87,496,"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "posterior, los 87,496, que es el precio de apertura de este año"
+        }
+      ]
+    },
+    {
+      "valor": "77366",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "de grado menor en 4 horas es la que primero muestra mejoría. Recupera 77,366"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "primero muestra mejoría. Recupera 77,366"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "primero muestra mejoría. Recupera 77,366 y deja una reacción compradora desde el"
+        }
+      ]
+    },
+    {
+      "valor": "79969",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "de precios vendedores como son los 79,969,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "79,969,"
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "79,969, 79,255"
+        }
+      ]
+    },
+    {
+      "valor": "6000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "vale, precio ha subido desde la zona de los $6,000 76 77,000. Ahora bien,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "los $6,000 76 77,000. Ahora bien,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "los $6,000 76 77,000. Ahora bien, esto es lo que yo te explicaba y es vas"
+        }
+      ]
+    },
+    {
+      "valor": "77000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "vale, precio ha subido desde la zona de los $6,000 76 77,000. Ahora bien,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "los $6,000 76 77,000. Ahora bien,"
+        },
+        {
+          "minuto": "00:08",
+          "contexto": "los $6,000 76 77,000. Ahora bien, esto es lo que yo te explicaba y es vas"
+        }
+      ]
+    },
+    {
+      "valor": "79900",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:12",
+          "contexto": "que supere los 78,746 y sobre todo los 79,900"
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "y sobre todo los 79,900"
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "y sobre todo los 79,900 969."
+        }
+      ]
+    },
+    {
+      "valor": "61000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "zona de compras como estuvimos cuando 61,000, 62,000, 63,000 no estuvo ahí."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "61,000, 62,000, 63,000 no estuvo ahí."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "61,000, 62,000, 63,000 no estuvo ahí. Ahora está en el principio de esta parte"
+        }
+      ]
+    },
+    {
+      "valor": "62000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "zona de compras como estuvimos cuando 61,000, 62,000, 63,000 no estuvo ahí."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "61,000, 62,000, 63,000 no estuvo ahí."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "61,000, 62,000, 63,000 no estuvo ahí. Ahora está en el principio de esta parte"
+        }
+      ]
+    },
+    {
+      "valor": "63000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "zona de compras como estuvimos cuando 61,000, 62,000, 63,000 no estuvo ahí."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "61,000, 62,000, 63,000 no estuvo ahí."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "61,000, 62,000, 63,000 no estuvo ahí. Ahora está en el principio de esta parte"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}
