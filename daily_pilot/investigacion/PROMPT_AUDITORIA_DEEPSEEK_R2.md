@@ -119,16 +119,16 @@ Verificá `store.db` = 42 vídeos / 34.061 cues / 6.831 claims y que `.control.j
 3. **Afirmaciones del playbook que el corpus no sostiene** (lo más valioso).
 4. **Lo que NO pudiste verificar** y por qué.
 
-## Snapshot (congelado durante la auditoría)
+## Snapshot CONGELADO
 
-> Completá con `git rev-parse HEAD` **antes** de empezar y no dejes que se mueva.
+> **Ver `daily_pilot/investigacion/SNAPSHOT_R3.md`** (commit + sha256 completos).
+> Si `git rev-parse HEAD` no es `939440c…`, la auditoría es inválida.
 
 ```
-commit            <git rev-parse HEAD>
-rama              crecetrader-limpio
-store.db          6826b7e148fe13da   (42 / 34.061 / 6.831)
-dashboard/index   <sha256>
-estado_hoy.json   <sha256>
-dashboard_data    d92faf246999b876
-tests             12 read-only OK · 2 integracion OK · 0 fallos · FUENTES INTACTAS
+commit            939440c4431f6568b96bcec0753a9a063d0a9017
+store.db          6826b7e148fe13da9ecf58841d6a0f30627b2bc191541252d7411cdcedc76976
+dashboard/index   4c73f494b46682c2f92b7d004a120b4eb94337b8c8c97d20224d2e90a611d9a6
+estado_hoy.json   e530689e5b9e8eb70e1dbce92cacd88c08cfa56096bad55212eb901d4cba9475
+dashboard_data    d92faf246999b87635ad7114b53ead7fbf8ab8cce7eb6f88e7f639b7a17b5f7e
+tests             14 read-only OK · 2 integracion (en copia) · 0 fallos
 ```
