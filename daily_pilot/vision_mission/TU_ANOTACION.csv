@@ -1,6 +1,20 @@
 frame,instrumento,tf,estructura,niveles_que_se_ven,vela,vos_que_harias,nota
-scene_001_8.3s.jpg,,,,,,,
-scene_003_196.8s.jpg,,,,,,,
-scene_006_439.2s.jpg,,,,,,,
-scene_007_449.9s.jpg,,,,,,,
-scene_016_678.4s.jpg,,,,,,,
+01 · 000_0.0s,NO_GRAFICO,,,,,,disclaimer legal de Esteban
+02 · 001_8.3s,BTCUSD,no_se_ve,maximos_decrecientes,87825;81830;75835;73838;69840;79999;65520,,,"fibo 0.25/0.50/0.61/0.78 desde minimo ~58.000; 65.520 calculado largo plazo"
+03 · 002_10.1s,BTCUSD,zoom,maximos_decrecientes,53994,,,mismo grafico con zoom,"nivel largo plazo linea azul 53.994"
+04 · 003_196.8s,NO_GRAFICO,,,,,,Esteban hablando sin grafico
+05 · 004_303.7s,BTCUSD,no_se_ve,rango,83366;71506;69000;56760;51565;44100,,,"fase acumulacion arriba y reversion semanal abajo; rompe 65.555; 6 lineas azules largo plazo"
+06 · 005_350.8s,BTCUSD,4H,rango,,,,"fibos + niveles largo plazo; precio frenado; probable 0.78"
+07 · 006_439.2s,BTCUSD,4H,rango,,,,"mismo grafico menos zoom; 2 precios en rojo arriba (zona de reversal)"
+08 · 007_449.9s,NO_GRAFICO,,,,,,promo curso "Mi Metodo CreceTrade" (Esteban dando clase)
+09 · 008_451.7s,NO_GRAFICO,,,,,,igual al 08
+10 · 009_463.4s,NO_GRAFICO,,,,,,igual al 09 con mas detalle (precio del curso)
+11 · 010_466.5s,BTCUSD,5m_o_1H,intradia,,75522,,"valores intradia arriba y abajo con lineas negras; empieza en 75.522"
+12 · 011_529.6s,NO_GRAFICO,,,,,,pantalla negra "ethereum" (titulo)
+13 · 012_584.5s,ETHUSD,no_se_ve,rango,3042;2478;1830;1529,,,"4 niveles calculados largo plazo"
+14 · 013_596.2s,NO_GRAFICO,,,,,,panel fundamental: crypto fear and greed, VIX 25
+15 · 014_634.9s,NO_GRAFICO,,,,,,calendario macro EE.UU.
+16 · 015_636.7s,NO_GRAFICO,,,,,,calendario macro: IPC China, gobernador Inglaterra, IPC US/Alemania, veteranos
+17 · 016_678.4s,SPX,no_se_ve,maximos_crecientes,,,,"niveles mediano plazo amarillo; linea roja min->max y la reversion; medicion en %"
+18 · 017_783.5s,NO_GRAFICO,,,,,,pantalla "que vigilar" (martes/miercoles/viernes de noviembre)
+19 · 018_836.2s,NO_GRAFICO,,,,,,Esteban hablando solo

@@ -27,7 +27,13 @@ def main() -> int:
     a = ap.parse_args()
 
     vlm = json.loads(Path(a.vlm).read_text())
-    por_frame = {r['frame']: r for r in vlm['frames']}
+    def norm(s):
+        """05 · 004_303.7s  <->  scene_004_303.7s.jpg"""
+        s = str(s).strip()
+        s = s.replace('scene_', '').replace('.jpg', '')
+        s = s.split(' · ')[-1] if ' · ' in s else s
+        return s.replace(' ', '')
+    por_frame = {norm(r['frame']): r for r in vlm['frames']}
 
     filas = list(csv.DictReader(open(a.humano)))
     filas = [f for f in filas if (f.get('instrumento') or '').strip()]
@@ -41,7 +47,7 @@ def main() -> int:
 
     for f in filas:
         fr = f['frame']
-        r = por_frame.get(fr)
+        r = por_frame.get(norm(fr))
         if not r or not r.get('json_valido'):
             print(f'  {fr:26s} SIN LECTURA DEL VLM')
             continue
@@ -58,7 +64,7 @@ def main() -> int:
             if any(abs(l - real) / real <= a.tolerancia for l in leidos):
                 niveles_ok += 1
         niveles_encontrados += len(leidos)
-        print(f"  {fr:26s} VLM={d.get('instrumento'):7s}/{d.get('estructura'):20s} "
+        print(f"  {fr:26s} VLM={str(d.get('instrumento')):8s}/{str(d.get('estructura')):20s} "
               f"niveles_leidos={len(leidos)} niveles_tuyos={len(reales)}")
 
     print('\n=== ACUERDO POR CAMPO ===')

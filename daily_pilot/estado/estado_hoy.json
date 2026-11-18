@@ -3,7 +3,7 @@
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
   "estado": "VIDEO NUEVO ANALIZADO",
-  "ultima_revision": "2026-11-18T19:35:16Z",
+  "ultima_revision": "2026-11-18T21:35:17Z",
   "deteccion_at": "2026-11-18T11:25:21Z",
   "analisis_at": "2026-11-18T11:30:42Z",
   "video": {
@@ -14,50 +14,50 @@
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
-    "frase": "Último análisis real: cH2KY5vnsVQ · 646 cues · instrumentos ['BTC', 'NQ', 'ETH', 'XAUUSD']",
+    "frase": "Último análisis real: s_GjovZxQqY · 1056 cues · instrumentos ['BTC', 'NQ', 'XAUUSD', 'ETH']",
     "instrumento": [
       "BTC",
       "NQ",
-      "ETH",
-      "XAUUSD"
+      "XAUUSD",
+      "ETH"
     ],
     "temporalidad": "NO DISPONIBLE",
     "evidencia": {
-      "video_id": "cH2KY5vnsVQ",
-      "analizado_at": "2026-11-18T11:30:42Z",
-      "sha256_transcript": "fa5a9b634058c60559105ca423dfd8858b48b4af715ade62ce55a4fdc91c7601"
+      "video_id": "s_GjovZxQqY",
+      "analizado_at": "2026-11-18T20:57:09Z",
+      "sha256_transcript": "174f74188d29470d77442093a727e6f54ea90fb92432013c916c79c413c4f6d8"
     },
     "limitaciones": [
       "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
       "Los numeros provienen de la transcripcion; no contrastados con feed.",
       "No se infirieron niveles: solo se transcribio lo dicho."
     ],
-    "fuente": "analisis/cH2KY5vnsVQ_analisis.json"
+    "fuente": "analisis/s_GjovZxQqY_analisis.json"
   },
   "escenarios": {
-    "video_id": "cH2KY5vnsVQ",
+    "video_id": "s_GjovZxQqY",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "macro": {
-    "video_id": "cH2KY5vnsVQ",
+    "video_id": "s_GjovZxQqY",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "ultimo_analizado": {
-    "video_id": "cH2KY5vnsVQ",
-    "analizado_at": "2026-11-18T11:30:42Z",
-    "n_cues": 646,
-    "sha256_transcript": "fa5a9b634058c60559105ca423dfd8858b48b4af715ade62ce55a4fdc91c7601",
-    "archivo": "daily_pilot/analisis/cH2KY5vnsVQ_analisis.json"
+    "video_id": "s_GjovZxQqY",
+    "analizado_at": "2026-11-18T20:57:09Z",
+    "n_cues": 1056,
+    "sha256_transcript": "174f74188d29470d77442093a727e6f54ea90fb92432013c916c79c413c4f6d8",
+    "archivo": "daily_pilot/analisis/s_GjovZxQqY_analisis.json"
   },
   "errores": [],
   "ultimo_analisis_completo": {
-    "video_id": "cH2KY5vnsVQ",
-    "analizado_at": "2026-11-18T11:30:42Z",
-    "n_cues": 646,
-    "sha256_transcript": "fa5a9b634058c60559105ca423dfd8858b48b4af715ade62ce55a4fdc91c7601",
-    "archivo": "daily_pilot/analisis/cH2KY5vnsVQ_analisis.json"
+    "video_id": "s_GjovZxQqY",
+    "analizado_at": "2026-11-18T20:57:09Z",
+    "n_cues": 1056,
+    "sha256_transcript": "174f74188d29470d77442093a727e6f54ea90fb92432013c916c79c413c4f6d8",
+    "archivo": "daily_pilot/analisis/s_GjovZxQqY_analisis.json"
   },
   "escenarios_estado": null
 }
