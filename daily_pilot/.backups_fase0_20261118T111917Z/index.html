@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouTube Analyst — Dashboard</title>
+<style>
+:root{--bg:#121417;--panel:#1b1f24;--panel2:#22272e;--border:#2d333b;--fg:#e6e9ee;--muted:#9aa4b0;
+--blue:#4da3ff;--green:#3ecf8e;--amber:#f0b429;--red:#ff5c5c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:22px 18px 60px}
+header.top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+h1{font-size:19px;margin:0}
+.aviso{font-size:12px;letter-spacing:.06em;color:var(--amber);border:1px solid var(--amber);
+border-radius:8px;padding:3px 8px;text-transform:uppercase}
+.estado{display:flex;align-items:center;gap:10px;margin-top:10px;font-weight:600;flex-wrap:wrap}
+.badge{border-radius:10px;padding:6px 12px;font-size:13px;border:1px solid var(--border)}
+.b-VERDE{color:var(--green);border-color:var(--green)} .b-AZUL{color:var(--blue);border-color:var(--blue)}
+.b-AMBAR{color:var(--amber);border-color:var(--amber)} .b-ROJO{color:var(--red);border-color:var(--red)}
+.b-GRIS{color:var(--muted);border-color:var(--border)}
+nav.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tab{background:var(--panel);border:1px solid var(--border);color:var(--fg);border-radius:10px;
+padding:9px 14px;cursor:pointer;font-size:14px}
+.tab.active{border-color:var(--blue);color:var(--blue)}
+section{display:none}
+section.active{display:block}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin:12px 0}
+.card h2{font-size:16px;margin:0 0 10px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.kv{flex:1 1 200px;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.kv label{display:block;color:var(--muted);font-size:12px}
+.kv b{font-size:14px}
+.pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:1px 8px;font-size:11px;margin:1px 3px 1px 0}
+.p-A{color:var(--green);border-color:var(--green)} .p-B{color:var(--blue);border-color:var(--blue)}
+.p-C{color:var(--amber);border-color:var(--amber)} .p-D{color:#c792ea;border-color:#c792ea}
+.p-none{color:var(--muted);border-color:var(--border)}
+.missing{color:var(--muted);font-style:italic}
+.btn{background:var(--panel2);border:1px solid var(--border);color:var(--fg);border-radius:9px;
+padding:7px 11px;cursor:pointer;font-size:13px;margin:4px 6px 4px 0}
+.btn:hover{border-color:var(--blue)}
+.btn.amber:hover{border-color:var(--amber)} .btn.red:hover{border-color:var(--red)}
+.foot{color:var(--muted);font-size:12px;margin-top:18px;border-top:1px solid var(--border);padding-top:10px}
+.estado-item{border-left:3px solid var(--border);padding:8px 10px;margin:8px 0;background:var(--panel2);border-radius:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>YouTube Analyst — Dashboard</h1>
+      <div id="h-ultima" style="color:var(--muted);font-size:13px"></div>
+    </div>
+    <div style="text-align:right">
+      <span class="aviso">PAPER ONLY · no ejecuta órdenes</span>
+      <div id="h-hash" style="color:var(--muted);font-size:11px;margin-top:6px"></div>
+    </div>
+  </header>
+
+  <div class="card" id="estado-card">
+    <h2>Estado diario del YouTube Analyst</h2>
+    <div class="estado"><span id="estado-badge" class="badge b-GRIS">—</span>
+      <span id="estado-text" style="color:var(--muted);font-size:13px"></span></div>
+    <div class="row" style="margin-top:12px" id="estado-kv"></div>
+  </div>
+  <div id="estimacion-card"></div>
+  <div id="risk-card"></div>
+  <div id="metrics-card"></div>
+  <div id="claims-card"></div>
+  <div id="relaciones-card"></div>
+  <div id="escenarios-card"></div>
+  <div id="temporalidad-card"></div>
+  <div id="seguimiento-card"></div>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="mercado">MERCADO</button>
+    <button class="tab" data-tab="planes">PLANES</button>
+    <button class="tab" data-tab="manager">MANAGER</button>
+    <button class="tab" data-tab="seguimiento">SEGUIMIENTO</button>
+    <button class="tab" data-tab="decision">DECISIÓN</button>
+  </nav>
+
+  <section id="mercado" class="active"></section>
+  <section id="planes"></section>
+  <section id="manager"></section>
+  <section id="seguimiento"></section>
+  <section id="decision"></section>
+
+  <div class="foot" id="pie"></div>
+</div>
+
+<script type="application/json" id="estado-data">{"red": "ok", "rss": [{"video_id": "i0qXzL0eSYs", "titulo": "Bitcoin: ¿está en tiempo y en precio de compra? (timing vs pricing)", "publicado": "2026-11-17T10:50:16+00:00"}, {"video_id": "s_GjovZxQqY", "titulo": "Bitcoin pierde la media de 200: por qué no es capitulación (todavía)", "publicado": "2026-11-16T09:55:48+00:00"}, {"video_id": "bCc--rvyHpY", "titulo": "Bitcoin por debajo de 69.000: por qué no compro todavía", "publicado": "2026-11-14T14:00:05+00:00"}, {"video_id": "Vm7nUxLCMZQ", "titulo": "Bitcoin toca los 69.000: ¿empieza la reversión o queda un mínimo más bajo?", "publicado": "2026-11-13T09:53:40+00:00"}, {"video_id": "rX2wj_FXvT4", "titulo": "Bitcoin atrapado en zona de compras: los 6 precios que espera el dinero institucional", "publicado": "2026-11-12T10:16:27+00:00"}, {"video_id": "mv2VdVtXvDw", "titulo": "¿Ha tocado techo Bitcoin? Lo que hace falta para ir a por los 134.000", "publicado": "2026-11-11T10:00:02+00:00"}, {"video_id": "subONxt5iag", "titulo": "Bitcoin aguanta pese a las salidas de los ETF: zona de compras antes del IPC", "publicado": "2026-11-10T09:40:55+00:00"}, {"video_id": "rTtXDLq2kOQ", "titulo": "Bitcoin y los futuros de Chicago: dónde espera el dinero institucional", "publicado": "2026-11-09T09:10:08+00:00"}, {"video_id": "o6n6UDNVtCk", "titulo": "Bitcoin en zona de compras, pero yo no compro aquí: mi plan para la próxima semana", "publicado": "2026-11-07T14:00:16+00:00"}, {"video_id": "0prmrS6nnRk", "titulo": "Bitcoin cae un 5,9% y se frena en 75.518: qué hago ahora", "publicado": "2026-11-06T09:32:22+00:00"}, {"video_id": "DnwM-2nuS4s", "titulo": "Bitcoin cae desde los 80.308 tras abrir Nueva York: el plan se cumple", "publicado": "2026-11-05T18:49:09+00:00"}, {"video_id": "j06_M-fADjM", "titulo": "Bitcoin refugiado en 80.308: ¿quién le da la patada al balón?", "publicado": "2026-11-05T09:20:28+00:00"}, {"video_id": "5KtjJ8kefQ4", "titulo": "Bitcoin rebota tras las elecciones: ¿es el principio de la reversión?", "publicado": "2026-11-04T18:44:04+00:00"}, {"video_id": "scJ-ai2FRiE", "titulo": "Bitcoin recupera los 78.241 tras las elecciones de medio mandato: ¿reversión o trampa?", "publicado": "2026-11-04T09:00:49+00:00"}, {"video_id": "LzPTdClLo_w", "titulo": "Bitcoin rebota tras la apertura de Wall Street, pero nada ha cambiado: 78.241 manda", "publicado": "2026-11-03T18:32:40+00:00"}], "ultimo_analizado": {"video_id": "i0qXzL0eSYs", "analizado_at": "2026-11-17T21:43:39Z"}, "errores": [], "paper_only": true, "situacion": {"frase": "NO DISPONIBLE · el video todavía no fue analizado por el flujo diario.", "instrumento": "NO DISPONIBLE", "temporalidad": "NO DISPONIBLE", "escenario_principal": "NO DISPONIBLE", "proximo_control": "NO DISPONIBLE", "invalidacion": "NO DISPONIBLE", "evidencia_video_min": null}, "escenarios_estado": {"alcista": {"confianza": "NO DISPONIBLE", "a_favor": [], "en_contra": [], "activacion": null, "invalidacion": null, "fuente": null}, "bajista": {"confianza": "NO DISPONIBLE", "a_favor": [], "en_contra": [], "activacion": null, "invalidacion": null, "fuente": null}, "lateral": {"confianza": "NO DISPONIBLE", "a_favor": [], "en_contra": [], "activacion": null, "invalidacion": null, "fuente": null}}, "macro": {"mencionado_por_crecetrader": [], "hechos_externos": [], "no_determinado": ["Sin análisis del video todavía; no hay menciones de contexto macro verificables."]}, "estado": "VIDEO NUEVO ANALIZADO", "fuente_estado": "RSS + registro.json + evidencia", "ultimo_video": {"video_id": "i0qXzL0eSYs", "titulo": "Bitcoin: ¿está en tiempo y en precio de compra? (timing vs pricing)", "publicado": "2026-11-17T10:50:16+00:00"}, "deteccion_at": "2026-11-17T21:43:00.015636+00:00", "analisis_at": "2026-11-17T21:43:39Z", "evidencia_analisis": {"archivo": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/analisis/i0qXzL0eSYs_analisis.json", "analizado_at": "2026-11-17T21:43:39Z", "n_cues": 915, "sha256": "41e9204cdbf44976fbd54ac49506bcabeff38a55c14e32f1712bb38c4283d3d3"}, "ultima_revision": "2026-11-18T02:27:35Z", "generado_el": "2026-11-18T02:27:35Z", "hash_estado": "2eb1f0c31586a9fc", "hash_datos": "d92faf246999b876", "estimacion": {"disponible": true, "metodo": "puntuacion por evidencia declarada (condicion+2, entrada+2, objetivos+2, niveles A +1 c/u max 3, veredicto no FALTA_INFORMACION +1), normalizado a 100%", "advertencia": "Estimación del sistema, no certeza. Sin calibrar con backtest.", "porcentajes": {"alcista": 37, "bajista": 50, "lateral": 13}, "puntos": {"alcista": 20.0, "bajista": 27.0, "lateral": 7.0}, "detalle": [{"id": "ESC-sG-01-weekly", "direccion": "alcista", "puntos": 10.0}, {"id": "ESC-sG-02-4h", "direccion": "bajista", "puntos": 7.0}, {"id": "ESC-sG-03-intradia", "direccion": "lateral", "puntos": 6.0}, {"id": "ESC-sG-04-vigilar", "direccion": "lateral", "puntos": 1.0}, {"id": "ESC-sG-05-eth", "direccion": "alcista", "puntos": 10.0}, {"id": "ESC-sG-06-oro", "direccion": "bajista", "puntos": 9.0}, {"id": "ESC-sG-07-sp500", "direccion": "bajista", "puntos": 4.0}, {"id": "ESC-sG-08-nq", "direccion": "bajista", "puntos": 7.0}]}, "risk_manager": {"paper_only": true, "decision": "RECHAZAR", "razones": [], "exposicion_total": 500.0, "por_nivel": {"nivel_informativo": 0, "escenario": 4, "candidata": 1, "no_operable": 1}, "senales": [{"id": "S1-BTC-69-71", "instrument": "BTCUSD", "direction": "compra", "tipo": "SIN_OPERACION", "nivel": "no_operable", "decision": "NO_EVALUABLE", "razones": ["tipo SIN_OPERACION: no es candidata operativa"], "risk": {}, "paper_only": true}, {"id": "S3-BTC-65520", "instrument": "BTCUSD", "direction": "compra", "nivel": "escenario", "decision": "ACEPTAR", "razones": [], "risk": {"risk_per_unit": 1516, "position_size": 0.065963, "perdida_potencial": 100.0, "r_multiples": [2.3]}, "paper_only": true}, {"id": "S4-ETH", "instrument": "ETHUSD", "direction": "compra", "nivel": "escenario", "decision": "ACEPTAR", "razones": [], "risk": {"risk_per_unit": 135.0, "position_size": 0.740741, "perdida_potencial": 100.0, "r_multiples": [1.41, 3.34]}, "paper_only": true}, {"id": "S5-XAU", "instrument": "XAUUSD", "direction": "venta", "nivel": "escenario", "decision": "REVISION MANUAL", "razones": ["confianza 0.4 \u003c 0.5"], "risk": {"risk_per_unit": 74, "position_size": 1.351351, "perdida_potencial": 100.0, "r_multiples": [3.82]}, "paper_only": true}, {"id": "S2-BTC-56750", "instrument": "BTCUSD", "direction": "compra", "nivel": "escenario", "decision": "RECHAZAR", "razones": ["invalidacion invalida: 0 (debe ser \u003e 0)"], "risk": {"risk_per_unit": 56750, "position_size": 0.001762, "perdida_potencial": 100.0, "r_multiples": [0.09]}, "paper_only": true}, {"id": "S6-BTC-explícita", "instrument": "BTCUSD", "direction": "compra", "nivel": "candidata", "decision": "REVISION MANUAL", "razones": ["exceso de senales para BTCUSD"], "risk": {"risk_per_unit": 500, "position_size": 0.2, "perdida_potencial": 100.0, "r_multiples": [7.11]}, "paper_only": true}]}, "metricas": {"paper_only": true, "n_senales": 6, "n_resultados": 0, "tasa_acierto": null, "r_medio": null, "expectativa": null, "drawdown_max": null, "disponible": false, "motivo": "sin resultados reales registrados (NO DISPONIBLE, no se inventa)", "expectativa_teorica_r": 3.0117, "advertencia": "expectativa derivada de R múltiplos DECLARADOS, no de resultados reales. No calibrada."}, "claims": {"disponible": true, "n_claims": 3802, "n_videos": 21, "por_tipo": {"ESCENARIO_CONDICIONAL": 1972, "NIVEL_MENCIONADO": 1428, "ZONA_DE_INTERES": 157, "NO_DETERMINABLE": 136, "SENAL_EXPLICITA": 101, "SIN_OPERACION": 8}, "procedencia": {"A": 3802}, "integrity": "ok"}, "extra": {"relaciones": {"niveles_repetidos": [{"instrumento": "BTCUSD", "nivel_aproximado": 69997.0, "variantes": [69997.0, 70000.0], "n_videos": 3, "videos": ["Vm7nUxLCMZQ", "bCc--rvyHpY", "subONxt5iag"]}, {"instrumento": "BTCUSD", "nivel_aproximado": 69000.0, "variantes": [69000.0], "n_videos": 3, "videos": ["bCc--rvyHpY", "i0qXzL0eSYs", "jeOFS1TZYQA"]}, {"instrumento": "XAUUSD", "nivel_aproximado": 3906.0, "variantes": [3906.0], "n_videos": 2, "videos": ["0prmrS6nnRk", "i0qXzL0eSYs"]}, {"instrumento": "BTCUSD", "nivel_aproximado": 78746.0, "variantes": [78746.0], "n_videos": 2, "videos": ["XLgPycsN0ls", "subONxt5iag"]}], "contradicciones": [], "niveles_descartados": 25}, "escenarios_vigentes": {"XAUUSD": [{"fecha": "2026-11-06", "video_id": "0prmrS6nnRk", "start": "00:09:40.537", "nivel": 1890.0, "banda": 1513, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "los 1.890. A continuación vemos el oro en la serie"}, {"fecha": "2026-10-30", "video_id": "XLgPycsN0ls", "start": "00:10:31.938", "nivel": 2077.0, "banda": 1532, "sentido": "neutro", "tipo": "ESCENARIO_CONDICIONAL", "procedencia": "A", "texto": "segundo objetivo, 2132, 2077 igual que en el oro, o sea, si vamos"}, {"fecha": "2026-10-30", "video_id": "XLgPycsN0ls", "start": "00:10:31.938", "nivel": 2132.0, "banda": 1537, "sentido": "neutro", "tipo": "ESCENARIO_CONDICIONAL", "procedencia": "A", "texto": "segundo objetivo, 2132, 2077 igual que en el oro, o sea, si vamos"}, {"fecha": "2026-11-07", "video_id": "o6n6UDNVtCk", "start": "00:16:26.382", "nivel": 3623.0, "banda": 1643, "sentido": "alcista", "tipo": "SENAL_EXPLICITA", "procedencia": "A", "texto": "para mí el importante está en los 3623, si yo quisiera comprar oro."}, {"fecha": "2026-11-06", "video_id": "0prmrS6nnRk", "start": "00:09:42.657", "nivel": 3906.0, "banda": 1658, "sentido": "alcista", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "A continuación vemos el oro en la serie diaria y tras el rebote en los 3.906,"}], "BTCUSD": [{"fecha": "2026-11-14", "video_id": "bCc--rvyHpY", "start": "00:07:15.495", "nivel": 69000.0, "banda": 2234, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "precisamente a los 69.000 dólares en Bitcoin, pero claro, está 4.000 dólares"}, {"fecha": "2026-11-14", "video_id": "bCc--rvyHpY", "start": "00:02:13.192", "nivel": 70000.0, "banda": 2237, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "embargo, bitcoin casi un 10% de pérdidas esta semana y pierde los 70.000 dólares."}, {"fecha": "2026-11-12", "video_id": "rX2wj_FXvT4", "start": "00:09:08.480", "nivel": 71509.0, "banda": 2241, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "le va la semana Bitcoin? Cada vez más cerca de los 71,509. Fase de"}, {"fecha": "2026-11-12", "video_id": "rX2wj_FXvT4", "start": "00:03:36.959", "nivel": 72554.0, "banda": 2244, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "aquí Bitcoin ya sabemos que le faltó muy poquito para llegar a los 72,554 y los"}, {"fecha": "2026-11-14", "video_id": "bCc--rvyHpY", "start": "00:01:24.300", "nivel": 74738.0, "banda": 2250, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "Bitcoin. El pasado sábado cotizaba en 74.738"}, {"fecha": "2026-11-03", "video_id": "s3KxjqkzwKM", "start": "00:10:08.017", "nivel": 76674.0, "banda": 2255, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "minutos, que es donde el bitcoin vemos bastante mejor esta negociación. 76.674"}, {"fecha": "2026-10-30", "video_id": "XLgPycsN0ls", "start": "00:03:15.372", "nivel": 77000.0, "banda": 2256, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "dice Bitcoin cae bajo. Los 77.000 dólares, alarma de Binance"}, {"fecha": "2026-11-07", "video_id": "o6n6UDNVtCk", "start": "00:01:19.120", "nivel": 77400.0, "banda": 2257, "sentido": "neutro", "tipo": "ESCENARIO_CONDICIONAL", "procedencia": "A", "texto": "precio de Bitcoin, estaba aquí en la zona de los 77,400 cuando hicimos el"}, {"fecha": "2026-11-04", "video_id": "scJ-ai2FRiE", "start": "00:14:00.579", "nivel": 78000.0, "banda": 2259, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "siempre, echando un vistazo a Bitcoin, ahora mismo frenado en los 78.000 o 241,"}, {"fecha": "2026-11-10", "video_id": "subONxt5iag", "start": "00:09:34.197", "nivel": 78746.0, "banda": 2260, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "En bitcoin lo tenemos en los 78,746 y 69,997."}, {"fecha": "2026-11-04", "video_id": "5KtjJ8kefQ4", "start": "00:05:38.454", "nivel": 87496.0, "banda": 2282, "sentido": "neutro", "tipo": "NIVEL_MENCIONADO", "procedencia": "A", "texto": "del año 2026 en Bitcoin contado, 87.496, es decir, para que esto fuera para mí"}], "ETHUSD": [{"fecha": "2026-11-05", "video_id": "j06_M-fADjM", "start": "00:07:46.895", "nivel": 2373.0, "banda": 1558, "sentido": "neutro", "tipo": "ESCENARIO_CONDICIONAL", "procedencia": "A", "texto": "rápidamente Ethereum que ha roto con fuerza los 2,373. Vamos a ver si"}]}, "temporalidad": {"4h": 51, "diario": 45, "intradia": 24, "neutro": 3562, "semanal": 120}}}</script>
+<script type="application/json" id="detalle-data">{"titulo": "YouTube Analyst — Dashboard", "fuente": "s_GjovZxQqY (2026-11-16)", "aviso": "Analisis TEXTUAL parcial. Sin verificacion visual. Ninguna alerta es una operacion.", "paper_only": true, "contrato": "daily_pilot/contracts/contrato_analista_manager.md", "mercado": {"BTCUSD": {"precio_referencia": {"valor": 64620, "procedencia": "A", "nota": "dicho por CreceTrader 03:17; sin feed en tiempo real"}, "tendencia_weekly": "acumulacion / maximos y minimos decrecientes", "contexto_diario": "soporte 69.000-71.509; posible reversal", "estructura_4h": "max/min decrecientes, sin reversal confirmada", "niveles_originales": [71509, 69000, 65520, 56750, 64004, 66617], "niveles_calculados": [], "zonas_liquidez": ["por encima de 69.000", "por debajo hacia 56.750"], "escenario_alcista": "recuperacion a 69.000 -\u003e 71.509/75.518", "escenario_bajista": "sin reversal 4H -\u003e 56.750", "actualizacion": "2026-11-16"}, "ETHUSD": {"precio_referencia": {"valor": 1780, "procedencia": "A"}, "tendencia_weekly": "NO_DETERMINADO", "contexto_diario": "zona de compra 1.890-2.286", "estructura_4h": "NO_DETERMINADO", "niveles_originales": [1780, 1890, 2025, 2286], "niveles_calculados": [], "zonas_liquidez": [], "escenario_alcista": "reversal en 1.780/1.890", "escenario_bajista": "NO_DETERMINADO", "actualizacion": "2026-11-16"}, "SPX": {"precio_referencia": {"valor": 7592, "procedencia": "A"}, "tendencia_weekly": "NO_DETERMINADO", "contexto_diario": "correccion posible a 6.612", "estructura_4h": "NO_DETERMINADO", "niveles_originales": [7592, 6612], "niveles_calculados": [], "zonas_liquidez": [], "escenario_alcista": "NO_DETERMINADO", "escenario_bajista": "correccion a 6.612", "actualizacion": "2026-11-16"}, "QQQ": {"precio_referencia": {"valor": null, "procedencia": null, "nota": "equivalente NQ citado: 28.026"}, "tendencia_weekly": "NO_DETERMINADO", "contexto_diario": "28.400 precio vendedor; 25.479/25.400", "estructura_4h": "NO_DETERMINADO", "niveles_originales": [28400, 28026, 25479, 25400, 22931], "niveles_calculados": [], "zonas_liquidez": [], "escenario_alcista": "NO_DETERMINADO", "escenario_bajista": "28.400 -\u003e 25.479/25.400", "actualizacion": "2026-11-16"}, "XAUUSD": {"precio_referencia": {"valor": 3906, "procedencia": "A"}, "tendencia_weekly": "correccion", "contexto_diario": "3.906 cierra el paso; objetivo 3.623", "estructura_4h": "NO_DETERMINADO", "niveles_originales": [3906, 3623], "niveles_calculados": [], "zonas_liquidez": [], "escenario_alcista": "NO_DETERMINADO", "escenario_bajista": "correccion a 3.623", "actualizacion": "2026-11-16"}}, "escenarios": [{"escenario": {"id": "ESC-sG-01-weekly", "instrumento": "BTCUSD", "timestamp_explicacion": "06:26", "temporalidades": ["Weekly", "Daily"], "direccion": "alcista", "nivel": {"valor": 71509, "procedencia": "A"}, "justificacion": "precios objetivos de largo plazo; soporte 69.000", "evidencia": ["transcripcion 00:59-01:05", "06:26-07:01"], "condicion_activacion": {"valor": "recuperacion hacia 69.000", "procedencia": "A"}, "entrada": {"valor": 69000, "procedencia": "A"}, "objetivos": [{"valor": 71509, "procedencia": "A"}, {"valor": 72554, "procedencia": "A"}, {"valor": 75518, "procedencia": "A"}], "info_faltante": ["stop no declarado"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "Weekly", "metodo_calculo": null, "clasificacion": "PLAN_OPERATIVO_INCOMPLETO", "veredicto": "ESPERAR_CONFIRMACION", "motivos_manager": ["plan incompleto; se propone invalidacion (D)", "propuesta de invalidacion (D): 68655.0 — metodo: por debajo del minimo de la zona de entrada (0.5%)"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-01-weekly", "clasificacion": "PLAN_OPERATIVO_INCOMPLETO", "dimensiones": {"calidad_analisis": "alta", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "ESPERAR_CONFIRMACION"}}, "veredicto": "ESPERAR_CONFIRMACION", "motivos": ["plan incompleto; se propone invalidacion (D)", "propuesta de invalidacion (D): 68655.0 — metodo: por debajo del minimo de la zona de entrada (0.5%)"], "condiciones_faltantes": ["invalidacion no declarada"], "que_se_necesita": ["invalidacion", "invalidacion no declarada"], "propuesta_stop": {"valor": 68655.0, "procedencia": "D", "metodo": "por debajo del minimo de la zona de entrada (0.5%)"}, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": 0.289855, "perdida_potencial": 100.0, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-02-4h", "instrumento": "BTCUSD", "timestamp_explicacion": "12:48", "temporalidades": ["4H"], "direccion": "bajista", "nivel": {"valor": 56750, "procedencia": "A"}, "justificacion": "maximos y minimos decrecientes; sin reversión en 4H el precio puede seguir cayendo", "evidencia": ["transcripcion 12:48-12:57"], "condicion_activacion": {"valor": "que no haya reversal en 4H", "procedencia": "A"}, "entrada": {"valor": null, "procedencia": null}, "objetivos": [{"valor": 56750, "procedencia": "A"}], "info_faltante": ["entrada no declarada", "stop no declarado"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "4H", "metodo_calculo": null, "clasificacion": "ESCENARIO_CONDICIONAL", "veredicto": "ESPERAR_CONFIRMACION", "motivos_manager": ["plan condicionado; falta entrada/invalidacion/objetivos"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-02-4h", "clasificacion": "ESCENARIO_CONDICIONAL", "dimensiones": {"calidad_analisis": "media", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "ESPERAR_CONFIRMACION"}}, "veredicto": "ESPERAR_CONFIRMACION", "motivos": ["plan condicionado; falta entrada/invalidacion/objetivos"], "condiciones_faltantes": ["entrada no declarada", "invalidacion no declarada", "objetivos no declarados"], "que_se_necesita": ["entrada", "entrada no declarada", "invalidacion", "invalidacion no declarada", "objetivos", "objetivos no declarados"], "propuesta_stop": null, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": null, "perdida_potencial": null, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-03-intradia", "instrumento": "BTCUSD", "timestamp_explicacion": "14:47", "temporalidades": ["Intradia"], "direccion": "neutral", "nivel": {"valor": 66617, "procedencia": "A"}, "justificacion": "horquilla intradia entre 66.617 y 64.004; partida 65.310", "evidencia": ["transcripcion 13:49-14:58"], "entrada": {"valor": 66617, "procedencia": "A"}, "objetivos": [{"valor": 64004, "procedencia": "A"}], "info_faltante": ["stop no declarado", "condicion de activacion no explicita"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "Intradia", "metodo_calculo": null, "clasificacion": "ZONA_DE_INTERES", "veredicto": "FALTA_INFORMACION", "motivos_manager": ["ZONA_DE_INTERES: no es un plan operativo"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-03-intradia", "clasificacion": "ZONA_DE_INTERES", "dimensiones": {"calidad_analisis": "media", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "FALTA_INFORMACION"}}, "veredicto": "FALTA_INFORMACION", "motivos": ["ZONA_DE_INTERES: no es un plan operativo"], "condiciones_faltantes": ["sin condicion de activacion"], "que_se_necesita": ["condicion", "entrada", "invalidacion", "objetivos", "sin condicion de activacion"], "propuesta_stop": null, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": 0.001501, "perdida_potencial": 100.0, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-04-vigilar", "instrumento": "BTCUSD", "timestamp_explicacion": "02:01", "temporalidades": ["4H"], "direccion": "neutral", "nivel": {"valor": 65520, "procedencia": "A"}, "justificacion": "habia que vigilar el precio en 65.520; tambien en futuros CME", "evidencia": ["transcripcion 02:01-03:11", "10:48-11:21"], "info_faltante": ["condicion de activacion", "entrada", "stop"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "4H", "metodo_calculo": null, "clasificacion": "ZONA_DE_INTERES", "veredicto": "FALTA_INFORMACION", "motivos_manager": ["ZONA_DE_INTERES: no es un plan operativo"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-04-vigilar", "clasificacion": "ZONA_DE_INTERES", "dimensiones": {"calidad_analisis": "alta", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "FALTA_INFORMACION"}}, "veredicto": "FALTA_INFORMACION", "motivos": ["ZONA_DE_INTERES: no es un plan operativo"], "condiciones_faltantes": ["sin condicion de activacion"], "que_se_necesita": ["condicion", "entrada", "invalidacion", "objetivos", "sin condicion de activacion"], "propuesta_stop": null, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": null, "perdida_potencial": null, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-05-eth", "instrumento": "ETHUSD", "timestamp_explicacion": "16:49", "temporalidades": ["Daily"], "direccion": "alcista", "nivel": {"valor": 1780, "procedencia": "A"}, "justificacion": "1.780 sirve de freno; zona de compra 1.890-2.286", "evidencia": ["transcripcion 16:49-17:14"], "condicion_activacion": {"valor": "si 1.780 junto con 1.890 hace que haya reversal", "procedencia": "A"}, "entrada": {"valor": 1780, "procedencia": "A"}, "objetivos": [{"valor": 2025, "procedencia": "A"}, {"valor": 2286, "procedencia": "A"}], "info_faltante": ["stop no declarado"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "Daily", "metodo_calculo": null, "clasificacion": "PLAN_OPERATIVO_INCOMPLETO", "veredicto": "ESPERAR_CONFIRMACION", "motivos_manager": ["plan incompleto; se propone invalidacion (D)", "propuesta de invalidacion (D): 1771.1 — metodo: por debajo del minimo de la zona de entrada (0.5%)"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-05-eth", "clasificacion": "PLAN_OPERATIVO_INCOMPLETO", "dimensiones": {"calidad_analisis": "media", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "ESPERAR_CONFIRMACION"}}, "veredicto": "ESPERAR_CONFIRMACION", "motivos": ["plan incompleto; se propone invalidacion (D)", "propuesta de invalidacion (D): 1771.1 — metodo: por debajo del minimo de la zona de entrada (0.5%)"], "condiciones_faltantes": ["invalidacion no declarada"], "que_se_necesita": ["invalidacion", "invalidacion no declarada"], "propuesta_stop": {"valor": 1771.1, "procedencia": "D", "metodo": "por debajo del minimo de la zona de entrada (0.5%)"}, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": 11.235955, "perdida_potencial": 100.0, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-06-oro", "instrumento": "XAUUSD", "timestamp_explicacion": "17:36", "temporalidades": ["Daily"], "direccion": "bajista", "nivel": {"valor": 3906, "procedencia": "A"}, "justificacion": "el oro seguira corrigiendo; 3.906 cierra el paso; objetivo 3.623", "evidencia": ["transcripcion 17:36-17:53"], "condicion_activacion": {"valor": "correccion en curso", "procedencia": "A"}, "entrada": {"valor": 3906, "procedencia": "A"}, "objetivos": [{"valor": 3623, "procedencia": "A"}], "info_faltante": ["stop no declarado"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "Daily", "metodo_calculo": null, "clasificacion": "PLAN_OPERATIVO_INCOMPLETO", "veredicto": "ESPERAR_CONFIRMACION", "motivos_manager": ["plan incompleto; se propone invalidacion (D)", "propuesta de invalidacion (D): 3925.53 — metodo: por debajo del minimo de la zona de entrada (0.5%)"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-06-oro", "clasificacion": "PLAN_OPERATIVO_INCOMPLETO", "dimensiones": {"calidad_analisis": "media", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "ESPERAR_CONFIRMACION"}}, "veredicto": "ESPERAR_CONFIRMACION", "motivos": ["plan incompleto; se propone invalidacion (D)", "propuesta de invalidacion (D): 3925.53 — metodo: por debajo del minimo de la zona de entrada (0.5%)"], "condiciones_faltantes": ["invalidacion no declarada"], "que_se_necesita": ["invalidacion", "invalidacion no declarada"], "propuesta_stop": {"valor": 3925.53, "procedencia": "D", "metodo": "por debajo del minimo de la zona de entrada (0.5%)"}, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": 5.120328, "perdida_potencial": 100.0, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-07-sp500", "instrumento": "SPX", "timestamp_explicacion": "18:16", "temporalidades": ["Daily"], "direccion": "bajista", "nivel": {"valor": 7592, "procedencia": "A"}, "justificacion": "SP500 aguanta en 7.592; correccion posible a 6.612", "evidencia": ["transcripcion 18:16-18:38"], "objetivos": [{"valor": 6612, "procedencia": "A"}], "info_faltante": ["condicion de activacion", "entrada", "stop"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "Daily", "metodo_calculo": null, "clasificacion": "NIVEL_REFERENCIADO", "veredicto": "FALTA_INFORMACION", "motivos_manager": ["NIVEL_REFERENCIADO: no es un plan operativo"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-07-sp500", "clasificacion": "NIVEL_REFERENCIADO", "dimensiones": {"calidad_analisis": "media", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "FALTA_INFORMACION"}}, "veredicto": "FALTA_INFORMACION", "motivos": ["NIVEL_REFERENCIADO: no es un plan operativo"], "condiciones_faltantes": ["sin informacion operativa"], "que_se_necesita": ["condicion", "entrada", "invalidacion", "objetivos", "sin informacion operativa"], "propuesta_stop": null, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": null, "perdida_potencial": null, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}, {"escenario": {"id": "ESC-sG-08-nq", "instrumento": "NQ", "timestamp_explicacion": "18:43", "temporalidades": ["Daily"], "direccion": "bajista", "nivel": {"valor": 28026, "procedencia": "A"}, "justificacion": "Nasdaq 28.026; 28.400 precio vendedor; objetivos 25.479/25.400", "evidencia": ["transcripcion 18:43-19:21"], "entrada": {"valor": 28400, "procedencia": "A"}, "objetivos": [{"valor": 25479, "procedencia": "A"}, {"valor": 25400, "procedencia": "A"}, {"valor": 22931, "procedencia": "A"}], "info_faltante": ["stop no declarado", "condicion de activacion no explicita"], "video_id": "s_GjovZxQqY", "fuente": "transcripcion", "temporalidad_origen": "Daily", "metodo_calculo": null, "clasificacion": "ZONA_DE_INTERES", "veredicto": "FALTA_INFORMACION", "motivos_manager": ["ZONA_DE_INTERES: no es un plan operativo"], "demo": false}, "evaluacion": {"escenario_id": "ESC-sG-08-nq", "clasificacion": "ZONA_DE_INTERES", "dimensiones": {"calidad_analisis": "media", "completitud_plan": "incompleto", "viabilidad_tecnica": "sin contradicciones", "riesgo_y_capital": {"risk_reward": null, "veredicto": "FALTA_INFORMACION"}}, "veredicto": "FALTA_INFORMACION", "motivos": ["ZONA_DE_INTERES: no es un plan operativo"], "condiciones_faltantes": ["sin condicion de activacion"], "que_se_necesita": ["condicion", "entrada", "invalidacion", "objetivos", "sin condicion de activacion"], "propuesta_stop": null, "risk_reward": null, "capital": {"disponible": 10000.0, "riesgo_pct": 0.01, "tamano_propuesto": 0.003521, "perdida_potencial": 100.0, "exposicion_maxima": 500.0}, "paper_only": true, "decision_usuario": "pendiente"}}]}</script>
+<script>
+var ESTADO = JSON.parse(document.getElementById('estado-data').textContent);
+var DATOS  = JSON.parse(document.getElementById('detalle-data').textContent);
+var ND = 'NO DISPONIBLE';
+function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function prov(p){ if(!p) return '<span class="pill p-none">SIN PROCEDENCIA</span>';
+  var m={A:'p-A',B:'p-B',C:'p-C',D:'p-D'}; return '<span class="pill '+(m[p]||'p-none')+'">'+esc(p)+'</span>'; }
+function lista(arr){ if(!arr||!arr.length) return '<span class="missing">'+ND+'</span>';
+  return arr.map(esc).join(' · '); }
+function kv(k,v,raw){ if(v==null||v===''){return '<div class="kv"><label>'+esc(k)+'</label><b><span class="missing">'+ND+'</span></b></div>';}
+  return '<div class="kv"><label>'+esc(k)+'</label><b>'+(raw?v:esc(v))+'</b></div>'; }
+var LIT={'SIN VIDEO NUEVO':'SIN VIDEO NUEVO','VIDEO NUEVO ENCONTRADO':'VIDEO NUEVO ENCONTRADO',
+ 'ANALISIS PENDIENTE':'ANÁLISIS PENDIENTE','VIDEO NUEVO ANALIZADO':'VIDEO NUEVO ANALIZADO',
+ 'ERROR DE ANALISIS':'ERROR DE ANÁLISIS'};
+function badge(estado){
+  var c={'SIN VIDEO NUEVO':'b-AZUL','VIDEO NUEVO ENCONTRADO':'b-AMBAR','ANALISIS PENDIENTE':'b-AMBAR',
+         'VIDEO NUEVO ANALIZADO':'b-VERDE','ERROR DE ANALISIS':'b-ROJO'}[estado]||'b-GRIS';
+  return '<span class="badge '+c+'">'+esc(LIT[estado]||estado)+'</span>';
+}
+function decs(){ try{return JSON.parse(localStorage.getItem('ytra_dashboard_decisions_v2'))||{};}catch(e){return {};} }
+function estadoEsc(id){
+  var d=(decs()[id]||{});
+  if(d.resultado==='objetivo_alcanzado') return 'OBJETIVO_ALCANZADO';
+  if(d.resultado==='invalidado') return 'INVALIDADO';
+  if(d.resultado==='expirado') return 'EXPIRADO';
+  if(d.decision==='operar_manual') return 'ACTIVADO';
+  if(d.decision==='seguimiento') return 'EN_SEGUIMIENTO';
+  if(d.decision==='esperar') return 'ESPERANDO_ACTIVACION';
+  return 'EN_OBSERVACION';
+}
+
+(function(){
+  document.getElementById('h-ultima').textContent = 'Última revisión: '+(ESTADO.ultima_revision||ND);
+  document.getElementById('h-hash').textContent = 'estado '+(ESTADO.hash_estado||'—')+' · datos '+(ESTADO.hash_datos||'—');
+  document.getElementById('estado-badge').outerHTML = badge(ESTADO.estado);
+  document.getElementById('estado-text').textContent = 'Fuente: '+(ESTADO.fuente_estado||ND)+
+    (ESTADO.red&&ESTADO.red!=='ok'?' · red: '+ESTADO.red:'');
+  var v=ESTADO.ultimo_video||{};
+  var h = kv('Estado', LIT[ESTADO.estado]||ESTADO.estado) +
+    kv('ID', v.video_id) + kv('Título', v.titulo) + kv('Publicado', v.publicado) +
+    kv('Última revisión', ESTADO.ultima_revision) +
+    kv('Detección', ESTADO.deteccion_at) + kv('Análisis', ESTADO.analisis_at) +
+    kv('Enlace', v.url?('<a href="'+esc(v.url)+'" target="_blank" style="color:var(--blue)">ver video</a>'):null, true);
+  if (ESTADO.errores && ESTADO.errores.length) h += kv('Errores', ESTADO.errores.join(' · '));
+  if (ESTADO.evidencia_analisis) h += kv('Evidencia de análisis', ESTADO.evidencia_analisis.archivo);
+  document.getElementById('estado-kv').innerHTML = h;
+})();
+
+(function(){
+  var e=ESTADO.estimacion||{};
+  var out='<div class="card"><h2>Escenarios comparados — estimación del sistema</h2>';
+  if(!e.disponible){ out+='<span class="missing">NO DISPONIBLE'+(e.motivo?' · '+esc(e.motivo):'')+'</span>'; }
+  else{
+    var col={alcista:'var(--green)',bajista:'var(--red)',lateral:'var(--amber)'};
+    ['alcista','bajista','lateral'].forEach(function(k){
+      out+='<div style="margin-top:10px"><div style="display:flex;justify-content:space-between">'+
+        '<b style="color:'+col[k]+'">'+k.charAt(0).toUpperCase()+k.slice(1)+'</b>'+
+        '<b>'+esc(e.porcentajes[k])+'%</b></div>'+
+        '<div style="background:var(--panel2);border:1px solid var(--border);border-radius:8px;height:10px;margin-top:4px">'+
+        '<div style="width:'+esc(e.porcentajes[k])+'%;background:'+col[k]+';height:10px;border-radius:8px"></div></div></div>';
+    });
+    out+='<div style="color:var(--amber);font-size:12px;margin-top:8px">'+esc(e.advertencia)+'</div>'+
+         '<div style="color:var(--muted);font-size:12px;margin-top:4px">Método: '+esc(e.metodo)+'</div>'+
+         '<div style="color:var(--muted);font-size:12px;margin-top:4px">Puntos: '+esc(JSON.stringify(e.puntos))+'</div>';
+  }
+  out+='</div>'; document.getElementById('estimacion-card').innerHTML=out;
+})();
+
+(function(){
+  var r=ESTADO.risk_manager||{};
+  var out='<div class="card"><h2>Risk Manager <span class="badge blue">PAPER ONLY · no ejecuta órdenes</span></h2>';
+  if(!r.disponible && r.paper_only===undefined && !r.decision){
+    out+='<span class="missing">NO DISPONIBLE'+(r.motivo?' · '+esc(r.motivo):'')+'</span></div>';
+    document.getElementById('risk-card').innerHTML=out; return;
+  }
+  var col={'ACEPTAR':'var(--green)','RECHAZAR':'var(--red)','REVISION MANUAL':'var(--amber)','NO_EVALUABLE':'var(--muted)'};
+  out+='<div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">'+
+    '<div><span class="muted">Decisión</span><br><b style="color:'+(col[r.decision]||'var(--muted)')+'">'+esc(r.decision)+'</b></div>'+
+    '<div><span class="muted">Exposición total</span><br><b>'+esc(r.exposicion_total!=null?('$'+r.exposicion_total):'NO DISPONIBLE')+'</b></div>'+
+    '<div><span class="muted">Por nivel</span><br><b>'+esc(JSON.stringify(r.por_nivel||{}))+'</b></div></div>';
+  out+='<div style="color:var(--muted);font-size:12px;margin-top:6px">Niveles: nivel informativo (mencionado) · escenario (zona/condicional) · candidata (señal explícita) · no operable. El Manager cuantifica escenarios y candidatas; no activa operaciones.</div>';
+  if((r.razones||[]).length){ out+='<div style="margin-top:8px">'; (r.razones||[]).forEach(function(x){out+='<div style="color:var(--amber);font-size:13px">'+esc(x)+'</div>';}); out+='</div>'; }
+  out+='<div style="margin-top:10px">';
+  (r.senales||[]).forEach(function(s){
+    out+='<div style="border-top:1px solid var(--border);padding:8px 0">'+
+      '<div style="display:flex;justify-content:space-between;flex-wrap:wrap"><b>'+esc(s.id)+'</b>'+
+      '<span style="color:'+(col[s.decision]||'var(--muted)')+'">'+esc(s.decision)+'</span></div>'+
+      '<div style="color:var(--muted);font-size:12px">'+esc(s.instrument||'')+' · '+esc(s.direction||'')+' · nivel '+esc(s.nivel||'')+
+      (s.tipo?' · '+esc(s.tipo):'')+'</div>';
+    if(s.razones && s.razones.length){ s.razones.forEach(function(x){ out+='<div style="color:var(--amber);font-size:12px">· '+esc(x)+'</div>'; }); }
+    if(s.risk && s.risk.perdida_potencial!=null){
+      out+='<div style="color:var(--muted);font-size:12px;margin-top:2px">Riesgo/unidad '+esc(s.risk.risk_per_unit)+' · tamaño '+esc(s.risk.position_size)+
+        ' · pérdida potencial '+esc(s.risk.perdida_potencial)+' · R múltiplos '+esc(JSON.stringify(s.risk.r_multiples||[]))+'</div>';
+    }
+    out+='</div>';
+  });
+  out+='</div></div>';
+  document.getElementById('risk-card').innerHTML=out;
+})();
+
+(function(){
+  var m=ESTADO.metricas||{};
+  var out='<div class="card"><h2>Métricas del piloto <span class="badge blue">PAPER ONLY · sin backtest</span></h2>';
+  if(!m.paper_only && m.decision===undefined && !m.n_senales){
+    out+='<span class="missing">NO DISPONIBLE'+(m.motivo?' · '+esc(m.motivo):'')+'</span></div>';
+    document.getElementById('metrics-card').innerHTML=out; return;
+  }
+  var kv=[['Señales registradas',m.n_senales],['Resultados reales',m.n_resultados],
+          ['Tasa de acierto',m.tasa_acierto!=null?m.tasa_acierto:'NO DISPONIBLE'],
+          ['R medio',m.r_medio!=null?m.r_medio:'NO DISPONIBLE'],
+          ['Expectativa',m.expectativa!=null?m.expectativa:'NO DISPONIBLE'],
+          ['Drawdown máx',m.drawdown_max!=null?m.drawdown_max:'NO DISPONIBLE']];
+  out+='<div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">';
+  kv.forEach(function(x){ out+='<div><span class="muted">'+x[0]+'</span><br><b>'+esc(String(x[1]))+'</b></div>'; });
+  out+='</div>';
+  if(m.expectativa_teorica_r!=null){
+    out+='<div style="color:var(--amber);font-size:13px;margin-top:8px">Expectativa TEÓRICA (R múltiplos declarados): '+
+      esc(String(m.expectativa_teorica_r))+'</div>';
+  }
+  out+='<div style="color:var(--muted);font-size:12px;margin-top:6px">'+esc(m.advertencia||m.motivo||'')+'</div></div>';
+  document.getElementById('metrics-card').innerHTML=out;
+})();
+
+(function(){
+  var c=ESTADO.claims||{};
+  var out='<div class="card"><h2>Claims extraídos del Knowledge Store</h2>';
+  if(!c.disponible){
+    out+='<span class="missing">NO DISPONIBLE'+(c.motivo?' · '+esc(c.motivo):'')+'</span></div>';
+    document.getElementById('claims-card').innerHTML=out; return;
+  }
+  out+='<div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">'+
+    '<div><span class="muted">Claims</span><br><b>'+esc(String(c.n_claims))+'</b></div>'+
+    '<div><span class="muted">Vídeos</span><br><b>'+esc(String(c.n_videos))+'</b></div>'+
+    '<div><span class="muted">Procedencia</span><br><b>'+esc(JSON.stringify(c.procedencia||{}))+'</b></div>'+
+    '<div><span class="muted">Integrity</span><br><b>'+esc(String(c.integrity))+'</b></div></div>';
+  out+='<div style="margin-top:10px"><span class="muted">Por tipo</span><div style="margin-top:6px">';
+  Object.keys(c.por_tipo||{}).forEach(function(k){
+    out+='<div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding:5px 0">'+
+      '<span>'+esc(k)+'</span><b>'+esc(String(c.por_tipo[k]))+'</b></div>';
+  });
+  out+='</div></div>';
+  out+='<div style="color:var(--muted);font-size:12px;margin-top:8px">Procedencia A = DICHO por CreceTrader (transcripción). No incluye B (observado), C (calculado) ni D (Manager): el extractor no los infiere.</div></div>';
+  document.getElementById('claims-card').innerHTML=out;
+})();
+
+(function(){
+  var x=ESTADO.extra||{};
+  /* --- relaciones --- */
+  var r=x.relaciones||{};
+  var out='<div class="card"><h2>Niveles repetidos entre vídeos</h2>';
+  out+='<div style="color:var(--muted);font-size:12px">Descartados por filtro de plausibilidad: '+
+    esc(String(r.niveles_descartados!=null?r.niveles_descartados:'NO DISPONIBLE'))+'</div><div style="margin-top:8px">';
+  (r.niveles_repetidos||[]).forEach(function(n){
+    out+='<div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding:5px 0">'+
+      '<span>'+esc(n.instrumento)+' <b>'+esc(String(n.nivel_aproximado))+'</b></span>'+
+      '<span style="color:var(--muted)">'+esc(String(n.n_videos))+' vídeos</span></div>';
+  });
+  if(!(r.niveles_repetidos||[]).length){ out+='<span class="missing">NO DISPONIBLE</span>'; }
+  out+='</div>';
+  var cc=(r.contradicciones||[]).length;
+  out+='<div style="margin-top:8px;color:'+(cc?'var(--red)':'var(--muted)')+'">Contradicciones: '+esc(String(cc))+'</div></div>';
+  document.getElementById('relaciones-card').innerHTML=out;
+  /* --- escenarios vigentes --- */
+  var v=x.escenarios_vigentes||{};
+  var out2='<div class="card"><h2>Escenarios vigentes por instrumento (última versión)</h2>';
+  var keys=Object.keys(v);
+  if(!keys.length){ out2+='<span class="missing">NO DISPONIBLE</span>'; }
+  keys.forEach(function(inst){
+    out2+='<div style="margin-top:10px"><b>'+esc(inst)+'</b><div style="margin-top:4px">';
+    (v[inst]||[]).forEach(function(e){
+      var col=e.sentido==='alcista'?'var(--green)':(e.sentido==='bajista'?'var(--red)':'var(--muted)');
+      out2+='<div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding:4px 0">'+
+        '<span>'+esc(String(e.nivel))+' <span style="color:'+col+'">'+esc(e.sentido)+'</span></span>'+
+        '<span style="color:var(--muted)">'+esc(e.fecha)+' · '+esc(e.video_id)+'</span></div>';
+    });
+    out2+='</div></div>';
+  });
+  out2+='<div style="color:var(--muted);font-size:12px;margin-top:8px">No es recomendación. Historial completo en daily_pilot/escenarios/historial.json</div></div>';
+  document.getElementById('escenarios-card').innerHTML=out2;
+  /* --- temporalidad --- */
+  var t=x.temporalidad||{};
+  var out3='<div class="card"><h2>Temporalidad declarada en los claims</h2><div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px">';
+  Object.keys(t).forEach(function(k){ out3+='<div><span class="muted">'+esc(k)+'</span><br><b>'+esc(String(t[k]))+'</b></div>'; });
+  out3+='</div><div style="color:var(--muted);font-size:12px;margin-top:8px">Clasificación por declaración explícita en el texto; "neutro" = no declara temporalidad.</div></div>';
+  document.getElementById('temporalidad-card').innerHTML=out3;
+  /* --- seguimiento --- */
+  var s=x.seguimiento||{};
+  var out4='<div class="card"><h2>Seguimiento de escenarios <span class="badge blue">PAPER ONLY</span></h2>';
+  out4+='<div style="color:var(--muted);font-size:13px">Registros: '+esc(String(s.n_registros!=null?s.n_registros:0))+'</div>';
+  var ea=s.estado_actual||{};
+  var ks=Object.keys(ea);
+  if(!ks.length){ out4+='<span class="missing">SIN REGISTROS — los estados se cargan al confirmar seguimiento (no automático)</span>'; }
+  ks.forEach(function(k){
+    out4+='<div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding:5px 0">'+
+      '<span>'+esc(k)+'</span><b>'+esc(ea[k])+'</b></div>';
+  });
+  out4+='</div>';
+  document.getElementById('seguimiento-card').innerHTML=out4;
+})();
+
+(function(){
+  var m = DATOS.mercado||{}; var orden=['BTCUSD','ETHUSD','SPX','QQQ','XAUUSD'];
+  var out='<div class="card"><h2>Mercado</h2><div style="color:var(--muted);font-size:13px;margin-bottom:10px">Fuente: '+
+    esc(DATOS.fuente||ND)+' · '+esc(DATOS.aviso||'')+'</div>';
+  orden.forEach(function(k){ var x=m[k]; if(!x) return;
+    out+='<div class="card"><h2>'+esc(k)+'</h2><div class="row">'+
+      kv('Precio de referencia', (x.precio_referencia&&x.precio_referencia.valor!=null)?x.precio_referencia.valor:null)+
+      kv('Procedencia', prov(x.precio_referencia&&x.precio_referencia.procedencia), true)+
+      kv('Actualización', x.actualizacion)+
+      '</div><div class="row" style="margin-top:10px">'+
+      kv('Weekly', x.tendencia_weekly)+kv('Daily', x.contexto_diario)+kv('4H', x.estructura_4h)+'</div>'+
+      '<div style="margin-top:10px">Niveles originales: '+lista(x.niveles_originales)+'<br>'+
+      'Niveles calculados: '+lista(x.niveles_calculados)+'<br>Zonas de liquidez: '+lista(x.zonas_liquidez)+'<br>'+
+      'Escenario alcista: '+esc(x.escenario_alcista||ND)+'<br>Escenario bajista: '+esc(x.escenario_bajista||ND)+
+      (x.precio_referencia&&x.precio_referencia.nota?'<div style="color:var(--muted);font-size:12px;margin-top:6px">'+esc(x.precio_referencia.nota)+'</div>':'')+
+      '</div></div>';
+  });
+  out+='</div>';
+  if (ESTADO.situacion) {
+    var s=ESTADO.situacion;
+    out+='<div class="card"><h2>Situación y contexto (estado diario)</h2><div class="row">'+
+      kv('Frase', s.frase)+kv('Instrumento', s.instrumento)+kv('Temporalidad', s.temporalidad)+
+      kv('Escenario principal', s.escenario_principal)+kv('Próximo control', s.proximo_control)+
+      kv('Invalidación', s.invalidacion)+kv('Evidencia (video·min)', s.evidencia_video_min)+'</div></div>';
+  }
+  if (ESTADO.macro) {
+    var mc=ESTADO.macro;
+    out+='<div class="card"><h2>Contexto macro y fundamental</h2>'+
+      '<div style="margin-top:6px"><b>Mencionado por CreceTrader</b><br>'+lista(mc.mencionado_por_crecetrader)+'</div>'+
+      '<div style="margin-top:6px"><b>Hechos externos documentados</b><br>'+lista(mc.hechos_externos)+'</div>'+
+      '<div style="margin-top:6px"><b>No determinado</b><br>'+lista(mc.no_determinado)+'</div></div>';
+  }
+  document.getElementById('mercado').innerHTML=out;
+})();
+
+(function(){
+  var out='<div class="card"><h2>Planes — escenarios del YouTube Analyst</h2>'+
+    '<div style="color:var(--muted);font-size:13px">Original del Analyst, separado del Manager.</div></div>';
+  (DATOS.escenarios||[]).forEach(function(e){
+    var s=e.escenario||{};
+    out+='<div class="card"><div class="row">'+
+      kv('ID', s.id)+kv('Instrumento', s.instrumento)+kv('Dirección', s.direccion)+
+      kv('Temporalidades', (s.temporalidades||[]).join(', '))+kv('Clasificación', s.clasificacion)+'</div>'+
+      '<div class="row" style="margin-top:10px">'+
+      kv('Nivel', (s.nivel&&s.nivel.valor!=null)?s.nivel.valor:null)+prov(s.nivel&&s.nivel.procedencia)+
+      kv('Entrada', (s.entrada&&s.entrada.valor!=null)?s.entrada.valor:null)+prov(s.entrada&&s.entrada.procedencia)+
+      kv('Stop/Invalidación (Analyst)', (s.stop&&s.stop.valor!=null)?s.stop.valor:'no declarado')+'</div>'+
+      '<div style="margin-top:10px">Justificación: '+esc(s.justificacion||ND)+'<br>'+
+      'Evidencia del video: '+lista(s.evidencia)+'<br>'+
+      'Condición de activación: '+esc((s.condicion_activacion&&s.condicion_activacion.valor)||ND)+'<br>'+
+      'Objetivos: '+lista((s.objetivos||[]).map(function(o){return o.valor;}))+'<br>'+
+      'Método de cálculo: '+esc(s.metodo_calculo||ND)+'<br>'+
+      'Video de origen: '+esc(s.video_id||ND)+' · '+esc(s.timestamp_explicacion||ND)+'<br>'+
+      'Información faltante: '+lista(s.info_faltante)+'</div></div>';
+  });
+  document.getElementById('planes').innerHTML=out;
+})();
+
+(function(){
+  var out='<div class="card"><h2>Manager — evaluación independiente</h2>'+
+    '<div style="color:var(--muted);font-size:13px">Propuestas del Manager, no decisiones ejecutadas.</div></div>';
+  (DATOS.escenarios||[]).forEach(function(e){
+    var s=e.escenario||{}; var ev=e.evaluacion||{}; var d=ev.dimensiones||{}; var ry=d.riesgo_y_capital||{};
+    out+='<div class="card"><div class="row">'+kv('Escenario', ev.escenario_id||s.id)+kv('Veredicto', ev.veredicto||s.veredicto)+'</div>'+
+      '<div class="row" style="margin-top:10px">'+
+      kv('Calidad del análisis', d.calidad_analisis)+kv('Completitud', d.completitud_plan)+
+      kv('Viabilidad técnica', d.viabilidad_tecnica)+kv('Riesgo y capital', ry.veredicto)+'</div>'+
+      '<div style="margin-top:10px">Motivos: '+lista(ev.motivos)+'<br>Condiciones faltantes: '+lista(ev.condiciones_faltantes)+
+      '<br>Qué necesita: '+esc(ev.que_se_necesita||ND)+'<br>'+
+      'Propuesta de stop: '+(ev.propuesta_stop?esc(ev.propuesta_stop.valor)+' ('+esc(ev.propuesta_stop.metodo)+')':ND)+
+      '<br>Riesgo/beneficio: '+esc(ev.risk_reward||ND)+'<br>Capital: '+esc(ev.capital?JSON.stringify(ev.capital):null)+
+      '<br>Decisión del usuario: '+esc(ev.decision_usuario||'pendiente')+'</div></div>';
+  });
+  document.getElementById('manager').innerHTML=out;
+})();
+
+function renderSeguimiento(){
+  var out='<div class="card"><h2>Seguimiento por escenario</h2>'+
+    '<div style="color:var(--muted);font-size:13px">Tocar un nivel NO activa la operación. La activación depende de la condición del escenario.</div>';
+  (DATOS.escenarios||[]).forEach(function(e){
+    var s=e.escenario||{}; var ev=e.evaluacion||{};
+    var st=estadoEsc(s.id);
+    var inval=(s.stop&&s.stop.valor!=null)?esc(s.stop.valor):'sin stop declarado por el Analyst'+
+      (ev.propuesta_stop?' · propuesta Manager: '+esc(ev.propuesta_stop.valor)+' ('+prov(ev.propuesta_stop.procedencia)+')':'');
+    out+='<div class="estado-item"><b>'+esc(s.id||'')+'</b> · '+esc(s.instrumento||'')+' · '+esc(s.direccion||'')+
+      '<div style="color:var(--muted);font-size:12px;margin-top:4px">Condición: '+
+      esc((s.condicion_activacion&&s.condicion_activacion.valor)||ND)+'</div>'+
+      '<div style="color:var(--muted);font-size:12px;margin-top:4px">Invalidación: '+inval+'</div>'+
+      '<div class="pill pill-estado" style="margin-top:6px">'+esc(st)+'</div></div>';
+  });
+  out+='</div>'; document.getElementById('seguimiento').innerHTML=out;
+}
+
+function renderDecision(){
+  var LS='ytra_dashboard_decisions_v2';
+  function load(){ try{return JSON.parse(localStorage.getItem(LS))||{};}catch(e){return {};} }
+  function save(d){ try{localStorage.setItem(LS,JSON.stringify(d));}catch(e){} }
+  function pinta(id){ var d=load()[id]||{}; var el=document.getElementById('dec-'+id); if(!el) return;
+    el.textContent='Actual: '+(d.decision||'sin decisión')+(d.resultado?' · '+d.resultado:''); }
+  var out='<div class="card"><h2>Decisión del usuario (local)</h2>'+
+    '<div style="color:var(--muted);font-size:13px">Manual y local. No ejecuta operaciones.</div>';
+  (DATOS.escenarios||[]).forEach(function(e){
+    var id=(e.escenario||{}).id;
+    out+='<div class="card"><b>'+esc(id)+'</b><div style="margin-top:8px">'+
+      '<button class="btn" onclick="decAct(\''+esc(id)+'\',\'seguimiento\')">Aceptar seguimiento</button>'+
+      '<button class="btn amber" onclick="decAct(\''+esc(id)+'\',\'esperar\')">Esperar</button>'+
+      '<button class="btn" onclick="decAct(\''+esc(id)+'\',\'operar_manual\')">Operar manualmente</button>'+
+      '<button class="btn red" onclick="decAct(\''+esc(id)+'\',\'descartar\')">Descartar</button></div>'+
+      '<div style="margin-top:8px">'+
+      '<button class="btn" onclick="decRes(\''+esc(id)+'\',\'objetivo_alcanzado\')">Objetivo alcanzado</button>'+
+      '<button class="btn red" onclick="decRes(\''+esc(id)+'\',\'invalidado\')">Invalidado</button>'+
+      '<button class="btn" onclick="decRes(\''+esc(id)+'\',\'expirado\')">Expirado</button></div>'+
+      '<div id="dec-'+esc(id)+'" style="color:var(--muted);font-size:12px;margin-top:6px">Actual: sin decisión</div></div>';
+  });
+  out+='</div>'; document.getElementById('decision').innerHTML=out;
+  (DATOS.escenarios||[]).forEach(function(e){ pinta((e.escenario||{}).id); });
+  window._decLoad=load; window._decSave=save; window._decPinta=pinta;
+}
+window.decAct=function(id,accion){ var d=window._decLoad(); d[id]=d[id]||{}; d[id].decision=accion; d[id].ts=new Date().toISOString(); window._decSave(d);
+  renderDecision(); renderSeguimiento(); };
+window.decRes=function(id,res){ var d=window._decLoad(); d[id]=d[id]||{}; d[id].resultado=res; d[id].ts=new Date().toISOString(); window._decSave(d);
+  renderDecision(); renderSeguimiento(); };
+renderDecision();
+renderSeguimiento();
+
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');});
+    document.querySelectorAll('section').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active'); document.getElementById(t.dataset.tab).classList.add('active');
+  });
+});
+
+document.getElementById('pie').innerHTML =
+  'PAPER ONLY · no ejecuta órdenes · sin servidor (file://) · datos: dashboard_data.json + estado_hoy.json · '+
+  'generado '+esc(ESTADO.generado_el||'')+' · hash estado '+esc(ESTADO.hash_estado||'—')+' · hash datos '+esc(ESTADO.hash_datos||'—');
+</script>
+</body>
+</html>

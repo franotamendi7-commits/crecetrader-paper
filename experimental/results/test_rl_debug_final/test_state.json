@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "managed_at": 1794520526.109856,
+  "state": "idle",
+  "last_update": 1794520526.110921,
+  "last_error": null,
+  "models": [],
+  "processes": [],
+  "resources_before": null,
+  "resources_after": null,
+  "checkpoints": {
+    "test": {
+      "data": {
+        "progress": 0.5
+      },
+      "created_at": 1794520526.1102872,
+      "updated_at": 1794520526.1102872
+    }
+  },
+  "pressure": {
+    "temperature": null,
+    "memory_pressure": null,
+    "cpu_pressure": null,
+    "swap_used": null
+  },
+  "history": []
+}

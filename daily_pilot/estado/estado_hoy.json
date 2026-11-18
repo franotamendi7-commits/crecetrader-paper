@@ -1,0 +1,63 @@
+{
+  "schema": "ytra_estado_v1",
+  "paper_only": true,
+  "aviso": "PAPER ONLY · no ejecuta órdenes",
+  "estado": "VIDEO NUEVO ANALIZADO",
+  "ultima_revision": "2026-11-18T15:35:14Z",
+  "deteccion_at": "2026-11-18T11:25:21Z",
+  "analisis_at": "2026-11-18T11:30:42Z",
+  "video": {
+    "video_id": "cH2KY5vnsVQ",
+    "titulo": "Bitcoin frenado antes de las actas de la FED: lo que vigilo hoy",
+    "url": "https://www.youtube.com/watch?v=cH2KY5vnsVQ",
+    "publicado": "2026-11-18T09:43:08+00:00",
+    "fuente": "RSS CreceTrader"
+  },
+  "situacion": {
+    "frase": "Último análisis real: cH2KY5vnsVQ · 646 cues · instrumentos ['BTC', 'NQ', 'ETH', 'XAUUSD']",
+    "instrumento": [
+      "BTC",
+      "NQ",
+      "ETH",
+      "XAUUSD"
+    ],
+    "temporalidad": "NO DISPONIBLE",
+    "evidencia": {
+      "video_id": "cH2KY5vnsVQ",
+      "analizado_at": "2026-11-18T11:30:42Z",
+      "sha256_transcript": "fa5a9b634058c60559105ca423dfd8858b48b4af715ade62ce55a4fdc91c7601"
+    },
+    "limitaciones": [
+      "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+      "Los numeros provienen de la transcripcion; no contrastados con feed.",
+      "No se infirieron niveles: solo se transcribio lo dicho."
+    ],
+    "fuente": "analisis/cH2KY5vnsVQ_analisis.json"
+  },
+  "escenarios": {
+    "video_id": "cH2KY5vnsVQ",
+    "estado": "NO DETERMINADO",
+    "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
+  },
+  "macro": {
+    "video_id": "cH2KY5vnsVQ",
+    "estado": "NO DETERMINADO",
+    "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
+  },
+  "ultimo_analizado": {
+    "video_id": "cH2KY5vnsVQ",
+    "analizado_at": "2026-11-18T11:30:42Z",
+    "n_cues": 646,
+    "sha256_transcript": "fa5a9b634058c60559105ca423dfd8858b48b4af715ade62ce55a4fdc91c7601",
+    "archivo": "daily_pilot/analisis/cH2KY5vnsVQ_analisis.json"
+  },
+  "errores": [],
+  "ultimo_analisis_completo": {
+    "video_id": "cH2KY5vnsVQ",
+    "analizado_at": "2026-11-18T11:30:42Z",
+    "n_cues": 646,
+    "sha256_transcript": "fa5a9b634058c60559105ca423dfd8858b48b4af715ade62ce55a4fdc91c7601",
+    "archivo": "daily_pilot/analisis/cH2KY5vnsVQ_analisis.json"
+  },
+  "escenarios_estado": null
+}

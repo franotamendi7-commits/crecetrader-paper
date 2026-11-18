@@ -1,0 +1,208 @@
+{
+  "cjUwyMHygEs": {
+    "estado": "OK",
+    "cues": 724,
+    "niveles": 52,
+    "instrumentos": {
+      "BTC": 14,
+      "ETH": 2,
+      "SPX": 7,
+      "NQ": 4,
+      "XAUUSD": 2
+    }
+  },
+  "xHR9d-0ToXU": {
+    "estado": "OK",
+    "cues": 521,
+    "niveles": 32,
+    "instrumentos": {
+      "BTC": 16,
+      "ETH": 4,
+      "XAUUSD": 4
+    }
+  },
+  "lwb4Qxy8D9w": {
+    "estado": "OK",
+    "cues": 1172,
+    "niveles": 34,
+    "instrumentos": {
+      "BTC": 45,
+      "NQ": 4,
+      "ETH": 2,
+      "XAUUSD": 2,
+      "SPX": 2
+    }
+  },
+  "3OZ2vJPj92o": {
+    "estado": "OK",
+    "cues": 541,
+    "niveles": 42,
+    "instrumentos": {
+      "BTC": 6,
+      "ETH": 2
+    }
+  },
+  "CmbG9QntQ10": {
+    "estado": "OK",
+    "cues": 958,
+    "niveles": 31,
+    "instrumentos": {
+      "BTC": 18,
+      "ETH": 8,
+      "XAUUSD": 8,
+      "SPX": 11,
+      "NQ": 2
+    }
+  },
+  "G3GPk1mxPcQ": {
+    "estado": "OK",
+    "cues": 579,
+    "niveles": 72,
+    "instrumentos": {
+      "BTC": 18,
+      "NQ": 2,
+      "ETH": 8,
+      "XAUUSD": 4
+    }
+  },
+  "D6XrdvQVTgk": {
+    "estado": "OK",
+    "cues": 969,
+    "niveles": 68,
+    "instrumentos": {
+      "BTC": 18,
+      "ETH": 8,
+      "XAUUSD": 6,
+      "NQ": 6
+    }
+  },
+  "ac6-r7g8pao": {
+    "estado": "OK",
+    "cues": 1193,
+    "niveles": 78,
+    "instrumentos": {
+      "BTC": 24,
+      "NQ": 5,
+      "XAUUSD": 10,
+      "ETH": 6
+    }
+  },
+  "TT07djUkfhE": {
+    "estado": "OK",
+    "cues": 935,
+    "niveles": 61,
+    "instrumentos": {
+      "BTC": 14,
+      "ETH": 6,
+      "XAUUSD": 8,
+      "NQ": 2
+    }
+  },
+  "B4Vf3bSk5GY": {
+    "estado": "OK",
+    "cues": 657,
+    "niveles": 40,
+    "instrumentos": {
+      "BTC": 4
+    }
+  },
+  "lkMTbT7tK8c": {
+    "estado": "OK",
+    "cues": 730,
+    "niveles": 78,
+    "instrumentos": {
+      "BTC": 12,
+      "ETH": 4,
+      "XAUUSD": 6,
+      "NQ": 2
+    }
+  },
+  "NVZfPTaeuLc": {
+    "estado": "OK",
+    "cues": 553,
+    "niveles": 46,
+    "instrumentos": {
+      "BTC": 8,
+      "ETH": 2
+    }
+  },
+  "0JHYwOCzCKI": {
+    "estado": "OK",
+    "cues": 970,
+    "niveles": 44,
+    "instrumentos": {
+      "BTC": 20,
+      "NQ": 4,
+      "ETH": 6,
+      "XAUUSD": 4
+    }
+  },
+  "avNOZfXdyX8": {
+    "estado": "OK",
+    "cues": 568,
+    "niveles": 41,
+    "instrumentos": {
+      "BTC": 4,
+      "ETH": 2,
+      "XAUUSD": 2
+    }
+  },
+  "2QjLmPdDKlk": {
+    "estado": "OK",
+    "cues": 712,
+    "niveles": 76,
+    "instrumentos": {
+      "BTC": 2,
+      "ETH": 2,
+      "XAUUSD": 2
+    }
+  },
+  "nqzn3DsZzKU": {
+    "estado": "OK",
+    "cues": 550,
+    "niveles": 79,
+    "instrumentos": {
+      "BTC": 2,
+      "ETH": 2,
+      "SPX": 2
+    }
+  },
+  "MgTOoUWEq-M": {
+    "estado": "OK",
+    "cues": 573,
+    "niveles": 42,
+    "instrumentos": {
+      "BTC": 6,
+      "ETH": 3,
+      "XAUUSD": 2,
+      "NQ": 2
+    }
+  },
+  "y9gsOU6_Bzw": {
+    "estado": "OK",
+    "cues": 588,
+    "niveles": 74,
+    "instrumentos": {
+      "BTC": 14
+    }
+  },
+  "FkPGRd7kXnE": {
+    "estado": "OK",
+    "cues": 589,
+    "niveles": 70,
+    "instrumentos": {
+      "BTC": 4
+    }
+  },
+  "_Lxz34x7eGg": {
+    "estado": "OK",
+    "cues": 967,
+    "niveles": 56,
+    "instrumentos": {
+      "BTC": 22,
+      "NQ": 2,
+      "ETH": 8,
+      "XAUUSD": 2
+    }
+  }
+}

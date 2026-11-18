@@ -1,0 +1,446 @@
+{
+  "video_id": "i0qXzL0eSYs",
+  "analizado_at": "2026-11-17T21:43:39Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 915,
+  "sha256_transcript": "452eef912055bdd5208babf4349c6bbfc6aff114a70b6060fedfc9d90f3ccd0c",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/i0qXzL0eSYs/i0qXzL0eSYs_transcript.json",
+  "instrumentos": {
+    "BTC": 42,
+    "XAUUSD": 6,
+    "NQ": 3,
+    "ETH": 3
+  },
+  "temporalidades": {
+    "Daily": 9,
+    "Weekly": 9,
+    "4H": 3,
+    "Intradia": 3
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 3,
+      "primeros": [
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 6,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04",
+        "00:12",
+        "00:12",
+        "00:12"
+      ]
+    },
+    "holders": {
+      "menciones": 18,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "estructura": {
+      "menciones": 6,
+      "primeros": [
+        "00:10",
+        "00:10",
+        "00:10",
+        "00:10",
+        "00:10",
+        "00:10"
+      ]
+    },
+    "tendencia": {
+      "menciones": 23,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:03"
+      ]
+    },
+    "entrada": {
+      "menciones": 21,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "reversal": {
+      "menciones": 20,
+      "primeros": [
+        "00:10",
+        "00:10",
+        "00:10",
+        "00:10",
+        "00:10",
+        "00:12"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "69000",
+      "menciones": 15,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "interés. El precio está situado entonces en medio de los 69,000 y de los 56,750."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "en medio de los 69,000 y de los 56,750."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "en medio de los 69,000 y de los 56,750. Se puede extender todavía, caer más e ir"
+        }
+      ]
+    },
+    {
+      "valor": "56750",
+      "menciones": 12,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "interés. El precio está situado entonces en medio de los 69,000 y de los 56,750."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "en medio de los 69,000 y de los 56,750."
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "en medio de los 69,000 y de los 56,750. Se puede extender todavía, caer más e ir"
+        }
+      ]
+    },
+    {
+      "valor": "65520",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "ese gap alcista fue lo llevaron nuevamente a los 65,520"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "nuevamente a los 65,520"
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "nuevamente a los 65,520 y desde ahí pues lleva en sesión"
+        }
+      ]
+    },
+    {
+      "valor": "61247",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "con la línea naranja, 69,997 e incluso 61,247"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "e incluso 61,247"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "e incluso 61,247 que está próximo a esos 56, ¿vale?"
+        }
+      ]
+    },
+    {
+      "valor": "6902",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:15",
+          "contexto": "de mediano plazo, fíjate que partimos este año en 6,902. 6,902 es el primer"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "de mediano plazo, fíjate que partimos este año en 6,902. 6,902 es el primer"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "este año en 6,902. 6,902 es el primer"
+        }
+      ]
+    },
+    {
+      "valor": "62616",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "Si abro el gráfico, sabemos que estos 62,616"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "62,616"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "62,616 son los dólares que cotizó en el mínimo"
+        }
+      ]
+    },
+    {
+      "valor": "71500",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "manifestaban en los comentarios, según llegó a 71,500"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "llegó a 71,500"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "llegó a 71,500 empezaron las compras en 69,000 e"
+        }
+      ]
+    },
+    {
+      "valor": "83000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:07",
+          "contexto": "pondrán por encima de 50 hasta que el precio haya llegado ya a 83,000, por"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "precio haya llegado ya a 83,000, por"
+        },
+        {
+          "minuto": "00:07",
+          "contexto": "precio haya llegado ya a 83,000, por ejemplo. Es decir, tarda bastante más,"
+        }
+      ]
+    },
+    {
+      "valor": "69997",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:08",
+          "contexto": "otro.\" Y ahí aparece, entonces lo marco con la línea naranja, 69,997"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "con la línea naranja, 69,997"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "con la línea naranja, 69,997 e incluso 61,247"
+        }
+      ]
+    },
+    {
+      "valor": "75835",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "importante está aquí arriba, desde los 75,835,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "75,835,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "75,835, etcétera. Y vienen coincidiendo, fíjate"
+        }
+      ]
+    },
+    {
+      "valor": "64835",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "para la jornada de hoy comienzan en 64,835,"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "64,835,"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "64,835, 64,434."
+        }
+      ]
+    },
+    {
+      "valor": "64434",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "64,835, 64,434."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "64,434."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "64,434. Ahora mismo está apoyado en 64,187 y nos"
+        }
+      ]
+    },
+    {
+      "valor": "64187",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "64,434. Ahora mismo está apoyado en 64,187 y nos"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "Ahora mismo está apoyado en 64,187 y nos"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "Ahora mismo está apoyado en 64,187 y nos quedan dos. 863 63,000 y 538. Por la"
+        }
+      ]
+    },
+    {
+      "valor": "63000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "Ahora mismo está apoyado en 64,187 y nos quedan dos. 863 63,000 y 538. Por la"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "quedan dos. 863 63,000 y 538. Por la"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "quedan dos. 863 63,000 y 538. Por la parte de arriba, 65,083"
+        }
+      ]
+    },
+    {
+      "valor": "65083",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "quedan dos. 863 63,000 y 538. Por la parte de arriba, 65,083"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "parte de arriba, 65,083"
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "parte de arriba, 65,083 483 80 66,132."
+        }
+      ]
+    },
+    {
+      "valor": "66132",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:13",
+          "contexto": "parte de arriba, 65,083 483 80 66,132."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "483 80 66,132."
+        },
+        {
+          "minuto": "00:13",
+          "contexto": "483 80 66,132. En el pulso de mercado ya estamos viendo"
+        }
+      ]
+    },
+    {
+      "valor": "2286",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:15",
+          "contexto": "estando calculada a partir de aquí, sobre todo hasta los 2,286,"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "sobre todo hasta los 2,286,"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "sobre todo hasta los 2,286, que ahí ya sería una extensión que iría"
+        }
+      ]
+    },
+    {
+      "valor": "3906",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:15",
+          "contexto": "confirmando la reversión del precio si eso ocurre. El oro pierde los 3,906,"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "eso ocurre. El oro pierde los 3,906,"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "eso ocurre. El oro pierde los 3,906, los tiene perdidos ahora mismo y ya"
+        }
+      ]
+    },
+    {
+      "valor": "7592",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:15",
+          "contexto": "beneficio donde ha estado todo este verano situado, los $7,592,"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "verano situado, los $7,592,"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "verano situado, los $7,592, objetivo de mediano plazo y ya vemos"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "video_id": "avNOZfXdyX8",
+  "titulo": "Bitcoin is up today but TRAPPING buyers in SELLING ZONE with false signals",
+  "fecha_titulo": "2026-10-21",
+  "duracion_s": "648",
+  "n_cues": 568,
+  "instrumentos_mencionados": {
+    "BTC": 4,
+    "ETH": 2,
+    "XAUUSD": 2
+  },
+  "instrumentos_ts": {
+    "BTC": [
+      "00:00",
+      "00:00",
+      "00:00",
+      "00:00"
+    ],
+    "ETH": [
+      "00:10",
+      "00:10"
+    ],
+    "XAUUSD": [
+      "00:10",
+      "00:10"
+    ]
+  },
+  "temporalidades": {
+    "Weekly": 4,
+    "Daily": 4,
+    "4H": 12,
+    "Intradia": 10
+  },
+  "niveles_explicitos": [
+    {
+      "valor": "81,690",
+      "ts": "00:00",
+      "contexto": "Y teníamos como precio en 4 horas 81,690"
+    },
+    {
+      "valor": "81,690",
+      "ts": "00:00",
+      "contexto": "Y teníamos como precio en 4 horas 81,690"
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "81,446"
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "81,446"
+    },
+    {
+      "valor": "82,333",
+      "ts": "00:01",
+      "contexto": "Vamos a verlo. Aquí se frenó en 82,333"
+    },
+    {
+      "valor": "82,333",
+      "ts": "00:01",
+      "contexto": "Vamos a verlo. Aquí se frenó en 82,333"
+    },
+    {
+      "valor": "82,333",
+      "ts": "00:01",
+      "contexto": "Vamos a verlo. Aquí se frenó en 82,333"
+    },
+    {
+      "valor": "82,833",
+      "ts": "00:01",
+      "contexto": "perdón, en 82,833"
+    },
+    {
+      "valor": "82,833",
+      "ts": "00:01",
+      "contexto": "perdón, en 82,833"
+    },
+    {
+      "valor": "83,366",
+      "ts": "00:01",
+      "contexto": "y no había llegado a los 83,366."
+    },
+    {
+      "valor": "83,366",
+      "ts": "00:01",
+      "contexto": "y no había llegado a los 83,366."
+    },
+    {
+      "valor": "83,366",
+      "ts": "00:01",
+      "contexto": "máximo que no logra superar los 83,366"
+    },
+    {
+      "valor": "83,366",
+      "ts": "00:01",
+      "contexto": "máximo que no logra superar los 83,366"
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:04",
+      "contexto": "hasta los 78.746."
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:04",
+      "contexto": "hasta los 78.746."
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:06",
+      "contexto": "Entonces, 87.496"
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:06",
+      "contexto": "Entonces, 87.496"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "mismo 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "mismo 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "plazo y 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "plazo y 83.366"
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:08",
+      "contexto": "sino 71.509."
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:08",
+      "contexto": "sino 71.509."
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:08",
+      "contexto": "precio intermedio que serían los 78.746."
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:08",
+      "contexto": "precio intermedio que serían los 78.746."
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:08",
+      "contexto": "fuerte que son los 87.496."
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:08",
+      "contexto": "fuerte que son los 87.496."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "llevaran a los 83.366,"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "llevaran a los 83.366,"
+    },
+    {
+      "valor": "81.840",
+      "ts": "00:09",
+      "contexto": "los 81.840,"
+    },
+    {
+      "valor": "81.840",
+      "ts": "00:09",
+      "contexto": "los 81.840,"
+    },
+    {
+      "valor": "83.068",
+      "ts": "00:09",
+      "contexto": "83.068"
+    },
+    {
+      "valor": "83.068",
+      "ts": "00:09",
+      "contexto": "83.068"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "hasta los 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "hasta los 83.366"
+    },
+    {
+      "valor": "83.477",
+      "ts": "00:09",
+      "contexto": "y 83.477."
+    },
+    {
+      "valor": "83.477",
+      "ts": "00:09",
+      "contexto": "y 83.477."
+    },
+    {
+      "valor": "82.658",
+      "ts": "00:10",
+      "contexto": "apoyado, 82.658."
+    },
+    {
+      "valor": "82.658",
+      "ts": "00:10",
+      "contexto": "apoyado, 82.658."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:10",
+      "contexto": "Bueno, ¿cómo ha llegado a los 83.366?"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:10",
+      "contexto": "Bueno, ¿cómo ha llegado a los 83.366?"
+    }
+  ],
+  "n_niveles": 41,
+  "conceptos": {
+    "liquidez": {
+      "menciones": 8,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "tendencia": {
+      "menciones": 8,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:04",
+        "00:04",
+        "00:09",
+        "00:09"
+      ]
+    },
+    "rango": {
+      "menciones": 2,
+      "primeros": [
+        "00:04",
+        "00:04"
+      ]
+    },
+    "stop": {
+      "menciones": 2,
+      "primeros": [
+        "00:04",
+        "00:04"
+      ]
+    },
+    "objetivo": {
+      "menciones": 8,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06",
+        "00:06",
+        "00:09",
+        "00:09"
+      ]
+    },
+    "entrada": {
+      "menciones": 2,
+      "primeros": [
+        "00:07",
+        "00:07"
+      ]
+    }
+  },
+  "escenarios": {
+    "alcista": [
+      {
+        "ts": "00:00",
+        "texto": "compras, el precio va a subir."
+      },
+      {
+        "ts": "00:00",
+        "texto": "compras, el precio va a subir."
+      },
+      {
+        "ts": "00:01",
+        "texto": "alcista."
+      },
+      {
+        "ts": "00:01",
+        "texto": "alcista."
+      },
+      {
+        "ts": "00:04",
+        "texto": "alcista."
+      },
+      {
+        "ts": "00:04",
+        "texto": "alcista."
+      },
+      {
+        "ts": "00:08",
+        "texto": "el precio sube, es que tiene una barrera"
+      },
+      {
+        "ts": "00:08",
+        "texto": "el precio sube, es que tiene una barrera"
+      }
+    ],
+    "bajista": [
+      {
+        "ts": "00:04",
+        "texto": "entonces podríamos ver caer el precio"
+      },
+      {
+        "ts": "00:04",
+        "texto": "entonces podríamos ver caer el precio"
+      },
+      {
+        "ts": "00:04",
+        "texto": "Vale. Hacen caer el precio."
+      },
+      {
+        "ts": "00:04",
+        "texto": "Vale. Hacen caer el precio."
+      },
+      {
+        "ts": "00:04",
+        "texto": "haciendo caer el precio."
+      },
+      {
+        "ts": "00:04",
+        "texto": "haciendo caer el precio."
+      },
+      {
+        "ts": "00:05",
+        "texto": "Lo difícil es no caer en trampas"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Lo difícil es no caer en trampas"
+      }
+    ]
+  },
+  "condiciones": {
+    "activacion": [
+      {
+        "ts": "00:01",
+        "texto": "y tendría, y entonces si nos centramos"
+      },
+      {
+        "ts": "00:01",
+        "texto": "y tendría, y entonces si nos centramos"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Entonces, si yo no veo por ejemplo"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Entonces, si yo no veo por ejemplo"
+      },
+      {
+        "ts": "00:04",
+        "texto": "si reacciona las ventas aquí,"
+      },
+      {
+        "ts": "00:04",
+        "texto": "si reacciona las ventas aquí,"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Si estudiamos bien el precio, incluso"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Si estudiamos bien el precio, incluso"
+      }
+    ],
+    "entrada": [
+      {
+        "ts": "00:07",
+        "texto": "comprar? Este hecho ahora mismo es una"
+      },
+      {
+        "ts": "00:07",
+        "texto": "comprar? Este hecho ahora mismo es una"
+      }
+    ],
+    "invalidacion": [
+      {
+        "ts": "00:02",
+        "texto": "por debajo de 83366."
+      },
+      {
+        "ts": "00:02",
+        "texto": "por debajo de 83366."
+      },
+      {
+        "ts": "00:03",
+        "texto": "que esto rompa con fuerza y que el"
+      },
+      {
+        "ts": "00:03",
+        "texto": "que esto rompa con fuerza y que el"
+      },
+      {
+        "ts": "00:03",
+        "texto": "pero que rompa con fuerza y que después"
+      },
+      {
+        "ts": "00:03",
+        "texto": "pero que rompa con fuerza y que después"
+      },
+      {
+        "ts": "00:04",
+        "texto": "Cogen el stop. Tienes pérdidas."
+      },
+      {
+        "ts": "00:04",
+        "texto": "Cogen el stop. Tienes pérdidas."
+      }
+    ]
+  },
+  "limitaciones": [
+    "Analisis TEXTUAL unicamente: sin verificacion visual de graficos.",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "Los niveles son historicos; no tratar como vigentes sin confirmacion."
+  ]
+}

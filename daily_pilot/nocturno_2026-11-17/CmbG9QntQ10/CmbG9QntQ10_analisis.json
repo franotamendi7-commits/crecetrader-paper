@@ -1,0 +1,448 @@
+{
+  "video_id": "CmbG9QntQ10",
+  "titulo": "WHAT WILL BITCOIN DO TODAY 10/27/26 (08:00) ",
+  "fecha_titulo": "2026-10-27",
+  "duracion_s": " BTC-ETH-GOLD-SP500-NASDAQ Technical-Fundamental Ana...",
+  "n_cues": 958,
+  "instrumentos_mencionados": {
+    "BTC": 18,
+    "ETH": 8,
+    "XAUUSD": 8,
+    "SPX": 11,
+    "NQ": 2
+  },
+  "instrumentos_ts": {
+    "BTC": [
+      "00:00",
+      "00:00",
+      "00:00",
+      "00:00",
+      "00:00",
+      "00:00"
+    ],
+    "ETH": [
+      "00:00",
+      "00:00",
+      "00:08",
+      "00:08",
+      "00:08",
+      "00:08"
+    ],
+    "XAUUSD": [
+      "00:00",
+      "00:00",
+      "00:08",
+      "00:08",
+      "00:09",
+      "00:09"
+    ],
+    "SPX": [
+      "00:09",
+      "00:09",
+      "00:09",
+      "00:10",
+      "00:10",
+      "00:10"
+    ],
+    "NQ": [
+      "00:09",
+      "00:09"
+    ]
+  },
+  "temporalidades": {
+    "Weekly": 6,
+    "Daily": 10,
+    "4H": 8,
+    "Intradia": 17
+  },
+  "niveles_explicitos": [
+    {
+      "valor": "87,496",
+      "ts": "00:00",
+      "contexto": "cercana a los 87,496,"
+    },
+    {
+      "valor": "87,496",
+      "ts": "00:00",
+      "contexto": "cercana a los 87,496,"
+    },
+    {
+      "valor": "83,000",
+      "ts": "00:00",
+      "contexto": "en medio están los 83,000"
+    },
+    {
+      "valor": "83,000",
+      "ts": "00:00",
+      "contexto": "en medio están los 83,000"
+    },
+    {
+      "valor": "83,366",
+      "ts": "00:00",
+      "contexto": "83,366."
+    },
+    {
+      "valor": "83,366",
+      "ts": "00:00",
+      "contexto": "83,366."
+    },
+    {
+      "valor": "82,833",
+      "ts": "00:01",
+      "contexto": "Entre ellos los 82,833,"
+    },
+    {
+      "valor": "82,833",
+      "ts": "00:01",
+      "contexto": "Entre ellos los 82,833,"
+    },
+    {
+      "valor": "78,746",
+      "ts": "00:01",
+      "contexto": "el llegar a atacar a los 78,746,"
+    },
+    {
+      "valor": "78,746",
+      "ts": "00:01",
+      "contexto": "el llegar a atacar a los 78,746,"
+    },
+    {
+      "valor": "75.554",
+      "ts": "00:02",
+      "contexto": "75.554"
+    },
+    {
+      "valor": "69.590",
+      "ts": "00:02",
+      "contexto": "Y 69.590"
+    },
+    {
+      "valor": "69.590",
+      "ts": "00:02",
+      "contexto": "Y 69.590"
+    },
+    {
+      "valor": "69.590",
+      "ts": "00:02",
+      "contexto": "Y 69.590"
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:07",
+      "contexto": "Voy a comprar en 78.746."
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:07",
+      "contexto": "Voy a comprar en 78.746."
+    },
+    {
+      "valor": "2.300",
+      "ts": "00:08",
+      "contexto": "presión bajista, los 2.300 lo han tenido"
+    },
+    {
+      "valor": "2.300",
+      "ts": "00:08",
+      "contexto": "presión bajista, los 2.300 lo han tenido"
+    },
+    {
+      "valor": "2.077",
+      "ts": "00:08",
+      "contexto": "objetivos calculados hasta los 2.077,"
+    },
+    {
+      "valor": "2.077",
+      "ts": "00:08",
+      "contexto": "objetivos calculados hasta los 2.077,"
+    },
+    {
+      "valor": "5.000",
+      "ts": "00:08",
+      "contexto": "desde haber tocado los 5.000, el"
+    },
+    {
+      "valor": "5.000",
+      "ts": "00:08",
+      "contexto": "desde haber tocado los 5.000, el"
+    },
+    {
+      "valor": "5.407",
+      "ts": "00:08",
+      "contexto": "Porque 5.407 era el precio calculado"
+    },
+    {
+      "valor": "5.407",
+      "ts": "00:09",
+      "contexto": "Porque 5.407 era el precio calculado"
+    },
+    {
+      "valor": "5.407",
+      "ts": "00:09",
+      "contexto": "Porque 5.407 era el precio calculado"
+    },
+    {
+      "valor": "5.407",
+      "ts": "00:09",
+      "contexto": "tal y como ha ocurrido. Y entre 5.407"
+    },
+    {
+      "valor": "5.407",
+      "ts": "00:09",
+      "contexto": "tal y como ha ocurrido. Y entre 5.407"
+    },
+    {
+      "valor": "3.624",
+      "ts": "00:09",
+      "contexto": "importante sino los 3.624, por eso he"
+    },
+    {
+      "valor": "3.624",
+      "ts": "00:09",
+      "contexto": "importante sino los 3.624, por eso he"
+    },
+    {
+      "valor": "4.106",
+      "ts": "00:09",
+      "contexto": "cómo ahora los 4.106 ya los ha perdido y"
+    },
+    {
+      "valor": "4.106",
+      "ts": "00:09",
+      "contexto": "cómo ahora los 4.106 ya los ha perdido y"
+    }
+  ],
+  "n_niveles": 31,
+  "conceptos": {
+    "liquidez": {
+      "menciones": 6,
+      "primeros": [
+        "00:16",
+        "00:16",
+        "00:16",
+        "00:16",
+        "00:16",
+        "00:16"
+      ]
+    },
+    "tendencia": {
+      "menciones": 20,
+      "primeros": [
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:01",
+        "00:01"
+      ]
+    },
+    "resistencia": {
+      "menciones": 2,
+      "primeros": [
+        "00:06",
+        "00:06"
+      ]
+    },
+    "stop": {
+      "menciones": 2,
+      "primeros": [
+        "00:01",
+        "00:01"
+      ]
+    },
+    "objetivo": {
+      "menciones": 38,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:01",
+        "00:01"
+      ]
+    },
+    "entrada": {
+      "menciones": 6,
+      "primeros": [
+        "00:07",
+        "00:07",
+        "00:14",
+        "00:14",
+        "00:18",
+        "00:18"
+      ]
+    },
+    "reversal": {
+      "menciones": 4,
+      "primeros": [
+        "00:00",
+        "00:01",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "techo_techo": {
+      "menciones": 2,
+      "primeros": [
+        "00:06",
+        "00:06"
+      ]
+    },
+    "catalizador": {
+      "menciones": 10,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:05"
+      ]
+    }
+  },
+  "escenarios": {
+    "alcista": [
+      {
+        "ts": "00:01",
+        "texto": "la parte de los alcistas como por la"
+      },
+      {
+        "ts": "00:01",
+        "texto": "la parte de los alcistas como por la"
+      },
+      {
+        "ts": "00:02",
+        "texto": "pauta alcista de cinco fases"
+      },
+      {
+        "ts": "00:02",
+        "texto": "pauta alcista de cinco fases"
+      },
+      {
+        "ts": "00:03",
+        "texto": "alcista"
+      },
+      {
+        "ts": "00:03",
+        "texto": "alcista"
+      },
+      {
+        "ts": "00:04",
+        "texto": "para subir con ellos en el precio y"
+      },
+      {
+        "ts": "00:04",
+        "texto": "para subir con ellos en el precio y"
+      }
+    ],
+    "bajista": [
+      {
+        "ts": "00:01",
+        "texto": "la presión bajista."
+      },
+      {
+        "ts": "00:01",
+        "texto": "la presión bajista."
+      },
+      {
+        "ts": "00:01",
+        "texto": "parte de los bajistas,"
+      },
+      {
+        "ts": "00:01",
+        "texto": "parte de los bajistas,"
+      },
+      {
+        "ts": "00:02",
+        "texto": "Como para detener la caída"
+      },
+      {
+        "ts": "00:02",
+        "texto": "Como para detener la caída"
+      },
+      {
+        "ts": "00:02",
+        "texto": "que tenemos ahora mismo de corrección"
+      },
+      {
+        "ts": "00:02",
+        "texto": "que tenemos ahora mismo de corrección"
+      }
+    ]
+  },
+  "condiciones": {
+    "activacion": [
+      {
+        "ts": "00:02",
+        "texto": "a ver si las órdenes son suficientes las"
+      },
+      {
+        "ts": "00:02",
+        "texto": "a ver si las órdenes son suficientes las"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Si lo observamos Y tomamos como"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Si lo observamos Y tomamos como"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Si aquí no aparecen suficientes"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Si aquí no aparecen suficientes"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Si la oferta lo trae, serían precios"
+      },
+      {
+        "ts": "00:05",
+        "texto": "Si la oferta lo trae, serían precios"
+      }
+    ],
+    "entrada": [
+      {
+        "ts": "00:02",
+        "texto": "zona de compras"
+      },
+      {
+        "ts": "00:02",
+        "texto": "zona de compras"
+      },
+      {
+        "ts": "00:03",
+        "texto": "sería zona de compras donde podría"
+      },
+      {
+        "ts": "00:03",
+        "texto": "sería zona de compras donde podría"
+      },
+      {
+        "ts": "00:07",
+        "texto": "Voy a comprar en 78.746."
+      },
+      {
+        "ts": "00:07",
+        "texto": "Voy a comprar en 78.746."
+      },
+      {
+        "ts": "00:14",
+        "texto": "comprarla por parte de esta compañía."
+      },
+      {
+        "ts": "00:14",
+        "texto": "comprarla por parte de esta compañía."
+      }
+    ]
+  },
+  "limitaciones": [
+    "Analisis TEXTUAL unicamente: sin verificacion visual de graficos.",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "Los niveles son historicos; no tratar como vigentes sin confirmacion."
+  ]
+}

@@ -1,0 +1,11 @@
+# --- sistema viejo / pesado: NO versionar ---
+.venv/
+experimental/.venv/
+node_modules/
+*.pyc
+__pycache__/
+*.log
+data_hist/*.vtt
+*.wav
+*.mp4
+*.mov

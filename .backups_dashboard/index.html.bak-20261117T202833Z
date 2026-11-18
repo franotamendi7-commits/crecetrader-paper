@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YouTube Analyst — Dashboard (PAPER_ONLY)</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1b2130; --border:#2b3342; --border2:#364052;
+    --text:#e6edf3; --muted:#9aa7b4; --faint:#6e7681;
+    --accent:#4f8cff; --ok:#3fb950; --warn:#f0a020; --bad:#f85149;
+    --purple:#a371f7; --cyan:#39c5cf; --orange:#db6d28;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--text);
+    font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .top{border-bottom:1px solid var(--border);background:linear-gradient(180deg,#11161f,#0d1117);position:sticky;top:0;z-index:20}
+  .top-inner{max-width:1400px;margin:0 auto;padding:16px 20px 0}
+  .title-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  h1{font-size:20px;margin:0;font-weight:700;letter-spacing:.2px}
+  .fuente{margin:6px 0 0;color:var(--muted);font-size:13px}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.4px;padding:3px 8px;border-radius:20px;border:1px solid var(--border2);text-transform:uppercase}
+  .tag-paper{color:#0d1117;background:var(--warn);border-color:var(--warn)}
+  .tag-offline{color:var(--muted);background:var(--panel2)}
+  .avisos{display:grid;gap:8px;margin:14px 0 0}
+  .aviso{padding:9px 12px;border-radius:8px;font-size:13px;border:1px solid}
+  .aviso-rojo{background:rgba(248,81,73,.10);border-color:rgba(248,81,73,.45);color:#ffb4ae}
+  .aviso-amarillo{background:rgba(240,160,32,.10);border-color:rgba(240,160,32,.45);color:#ffd48a}
+  .aviso-azul{background:rgba(79,140,255,.10);border-color:rgba(79,140,255,.45);color:#b9d2ff}
+  .aviso b{color:inherit}
+  .tabs{display:flex;gap:6px;margin-top:16px;flex-wrap:wrap}
+  .tab{background:transparent;border:1px solid transparent;border-bottom:none;color:var(--muted);
+       padding:10px 14px;border-radius:8px 8px 0 0;cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.3px}
+  .tab:hover{color:var(--text);background:var(--panel)}
+  .tab.active{color:var(--text);background:var(--panel);border-color:var(--border);position:relative;top:1px}
+  main{max-width:1400px;margin:0 auto;padding:20px}
+  .panel{display:none}
+  .panel.active{display:block}
+  .section-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:6px}
+  .section-title{font-size:17px;font-weight:700;margin:0}
+  .section-sub{color:var(--muted);font-size:13px}
+  .section-note{color:var(--faint);font-size:12px;margin:2px 0 16px;max-width:1100px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;padding:10px 12px;background:var(--panel);border:1px solid var(--border);border-radius:8px;margin-bottom:16px;font-size:12px;color:var(--muted)}
+  .legend b{color:var(--text)}
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+  table{border-collapse:collapse;width:100%;min-width:980px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}
+  th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:rgba(79,140,255,.05)}
+  .cell-main{font-weight:600}
+  .cell-sub{margin-top:4px}
+  .cell-note{margin-top:4px;color:var(--muted);font-size:12px}
+  .num{font-variant-numeric:tabular-nums}
+  .missing{color:var(--faint);font-style:italic;font-weight:400}
+  .muted{color:var(--muted)}
+  .small{font-size:12px}
+  .proc{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.3px;padding:1px 6px;border-radius:4px;border:1px solid transparent;white-space:nowrap;vertical-align:middle}
+  .prov-A{color:#7ee787;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4)}
+  .prov-B{color:#79c0ff;background:rgba(79,140,255,.12);border-color:rgba(79,140,255,.4)}
+  .prov-C{color:#d2a8ff;background:rgba(163,113,247,.12);border-color:rgba(163,113,247,.4)}
+  .prov-D{color:#ffa657;background:rgba(219,109,40,.14);border-color:rgba(219,109,40,.45)}
+  .prov-none{color:var(--faint);background:transparent;border-color:var(--border2)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.3px;padding:3px 8px;border-radius:6px;border:1px solid;white-space:nowrap}
+  .badge-c-nivel{color:#9aa4b2;border-color:#3a4250;background:rgba(154,164,178,.08)}
+  .badge-c-zona{color:#79c0ff;border-color:rgba(79,140,255,.5);background:rgba(79,140,255,.10)}
+  .badge-c-cond{color:#ffd48a;border-color:rgba(240,160,32,.5);background:rgba(240,160,32,.10)}
+  .badge-c-plan{color:#7ee787;border-color:rgba(63,185,80,.5);background:rgba(63,185,80,.10)}
+  .badge-c-planinc{color:#ffd48a;border-color:rgba(240,160,32,.5);background:rgba(240,160,32,.10)}
+  .badge-c-oport{color:#d2a8ff;border-color:rgba(163,113,247,.5);background:rgba(163,113,247,.10)}
+  .badge-c-valid{color:#7ee787;border-color:rgba(63,185,80,.5);background:rgba(63,185,80,.10)}
+  .badge-c-noope,.badge-c-desc{color:#ff9b95;border-color:rgba(248,81,73,.5);background:rgba(248,81,73,.10)}
+  .badge-c-indet{color:#e3b341;border-color:rgba(227,179,65,.5);background:rgba(227,179,65,.10)}
+  .badge-v-apto{color:#7ee787;border-color:rgba(63,185,80,.5);background:rgba(63,185,80,.10)}
+  .badge-v-esperar{color:#ffd48a;border-color:rgba(240,160,32,.5);background:rgba(240,160,32,.10)}
+  .badge-v-falta{color:#ff9b95;border-color:rgba(248,81,73,.5);background:rgba(248,81,73,.10)}
+  .badge-v-riesgo{color:#ffa657;border-color:rgba(219,109,40,.5);background:rgba(219,109,40,.10)}
+  .badge-v-noope{color:#ff9b95;border-color:rgba(248,81,73,.5);background:rgba(248,81,73,.10)}
+  .badge-v-invalid{color:#9aa4b2;border-color:#3a4250;background:rgba(154,164,178,.08)}
+  .badge-estado{color:#79c0ff;border-color:rgba(79,140,255,.5);background:rgba(79,140,255,.10)}
+  .badge-demo{color:#0d1117;background:var(--warn);border-color:var(--warn)}
+  .cards{display:grid;gap:14px}
+  .card{background:var(--panel);border:1px solid var(--border);border-left:4px solid var(--faint);border-radius:10px;overflow:hidden}
+  .card.c-nivel{border-left-color:#9aa4b2}
+  .card.c-zona{border-left-color:var(--accent)}
+  .card.c-cond{border-left-color:var(--warn)}
+  .card.c-plan{border-left-color:var(--ok)}
+  .card.c-planinc{border-left-color:var(--warn)}
+  .card.c-oport{border-left-color:var(--purple)}
+  .card.c-valid{border-left-color:var(--ok)}
+  .card.c-noope,.card.c-desc{border-left-color:var(--bad)}
+  .card.c-indet{border-left-color:#e3b341}
+  .card-head{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--panel2);flex-wrap:wrap;align-items:center}
+  .card-id{font-weight:700;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .card-sub{color:var(--muted);font-size:12px;margin-top:3px}
+  .card-badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .card-body{padding:12px 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .field{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:9px 11px}
+  .field label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--faint);margin-bottom:5px;font-weight:700}
+  .field-val{font-size:13px;word-break:break-word}
+  .field-val .proc{margin-left:4px}
+  .lista{margin:0;padding-left:18px}
+  .lista li{margin:2px 0}
+  .pill{display:inline-block;background:var(--panel2);border:1px solid var(--border2);border-radius:6px;padding:1px 7px;margin:2px 3px 2px 0;font-size:12px;font-variant-numeric:tabular-nums}
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px;align-items:start}
+  .board-col{background:var(--panel);border:1px solid var(--border);border-radius:10px;min-height:90px;overflow:hidden}
+  .board-col h3{margin:0;padding:9px 11px;font-size:12px;letter-spacing:.4px;text-transform:uppercase;border-bottom:1px solid var(--border);background:var(--panel2)}
+  .board-col .col-body{padding:9px;display:grid;gap:8px}
+  .board-col .vacio{color:var(--faint);font-size:12px;font-style:italic;padding:2px 2px}
+  .chip{border:1px solid var(--border);border-left:3px solid var(--faint);border-radius:7px;padding:7px 9px;background:var(--panel2)}
+  .chip-id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:700}
+  .chip-inst{font-size:12px;color:var(--muted);margin-top:2px}
+  .chip-meta{font-size:11px;color:var(--faint);margin-top:4px}
+  .chip .mini{margin-top:6px}
+  .btn{background:var(--panel2);color:var(--text);border:1px solid var(--border2);border-radius:7px;padding:7px 11px;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.2px}
+  .btn:hover{border-color:var(--accent);color:#fff}
+  .btn-mini{padding:3px 8px;font-size:11px}
+  .btn-aceptar{border-color:rgba(63,185,80,.55);color:#7ee787}
+  .btn-esperar{border-color:rgba(240,160,32,.55);color:#ffd48a}
+  .btn-operar{border-color:rgba(163,113,247,.55);color:#d2a8ff}
+  .btn-descartar{border-color:rgba(248,81,73,.55);color:#ff9b95}
+  .btn-resultado{border-color:rgba(57,197,207,.55);color:#6fd6de}
+  .btn-reset{width:100%;margin-top:14px}
+  .decision-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:12px}
+  .decision-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+  .decision-current{font-size:12px;color:var(--muted)}
+  .decision-actions{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+  select{background:var(--panel2);color:var(--text);border:1px solid var(--border2);border-radius:7px;padding:6px 8px;font-size:12px}
+  .kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:8px}
+  .kv div{background:var(--panel2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;font-size:12px}
+  .kv span{display:block;color:var(--faint);font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+  .summary{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .summary .sum{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--muted)}
+  .summary .sum b{color:var(--text)}
+  footer{max-width:1400px;margin:0 auto;padding:18px 20px 40px;color:var(--faint);font-size:12px;border-top:1px solid var(--border)}
+  footer p{margin:4px 0}
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+
+  /* --- desplegable por instrumento --- */
+  tr.inst-row{cursor:pointer}
+  tr.inst-row:focus{outline:2px solid var(--accent);outline-offset:-2px}
+  tr.inst-row:hover{background:rgba(79,140,255,.07)}
+  tr.inst-row td:first-child::before{content:"\25B8  ";color:var(--accent);font-size:11px}
+  tr.inst-row.open td:first-child::before{content:"\25BE  "}
+  tr.detail-row{display:none}
+  tr.detail-row.open{display:table-row}
+  tr.detail-row > td{background:var(--panel2);padding:14px;border-bottom:1px solid var(--border)}
+  .detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+  .detail h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:6px}
+  .detail .field{margin-bottom:8px}
+  .esc-mini{border:1px solid var(--border);border-left:3px solid var(--faint);border-radius:8px;padding:9px 11px;margin-bottom:8px;background:var(--panel)}
+  .esc-mini .mi{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:700}
+  .esc-mini .ms{font-size:11px;color:var(--muted);margin:2px 0 6px}
+  .esc-mini .campo{font-size:12px;margin:3px 0;line-height:1.45}
+  .esc-mini .campo > b{color:var(--faint);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.4px;margin-right:5px}
+  .hint{font-size:11px;color:var(--faint);margin:0 0 10px}
+
+  /* --- grupos de planes --- */
+  .group{margin-bottom:26px}
+  .group-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);border-left:4px solid var(--faint);background:var(--panel);margin-bottom:12px}
+  .group-head h3{margin:0;font-size:14px}
+  .group-head .cnt{color:var(--muted);font-size:12px}
+  .group-head .dsc{color:var(--faint);font-size:11px}
+  .group.g-incompletos .group-head{border-left-color:var(--warn)}
+  .group.g-completos .group-head{border-left-color:var(--ok)}
+  .group.g-oportunidades .group-head{border-left-color:var(--purple)}
+  .group.g-otras .group-head{border-left-color:var(--bad)}
+  .group .vacio{color:var(--faint);font-size:12px;font-style:italic;padding:10px 12px;background:var(--panel);border:1px dashed var(--border2);border-radius:8px}
+  .prov-sum{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+
+  /* --- manager --- */
+  .dim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin-bottom:12px}
+  .dim{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:9px 11px}
+  .dim > label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--faint);margin-bottom:5px;font-weight:700}
+  .dim .dv{font-size:13px}
+  .stop-box{border:1px dashed rgba(219,109,40,.55);background:rgba(219,109,40,.08);border-radius:8px;padding:10px 12px;margin-top:10px}
+  .stop-box b{color:#ffa657}
+  .stop-box .field{margin-bottom:6px}
+  @media (max-width:720px){
+    h1{font-size:17px}
+    .top-inner{padding:12px 12px 0}
+    main{padding:12px}
+    .tab{padding:9px 10px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="title-row">
+      <h1 id="titulo">YouTube Analyst — Dashboard</h1>
+      <span class="tag tag-paper">PAPER_ONLY</span>
+      <span class="tag tag-offline">Sin conexión · file://</span>
+    </div>
+    <p class="fuente" id="fuente"></p>
+    <div class="avisos" id="avisos"></div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="mercado">MERCADO</button>
+      <button class="tab" data-tab="planes">PLANES</button>
+      <button class="tab" data-tab="manager">MANAGER</button>
+      <button class="tab" data-tab="seguimiento">SEGUIMIENTO</button>
+      <button class="tab" data-tab="decision">DECISIÓN</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="panel active" id="panel-mercado"></section>
+  <section class="panel" id="panel-planes"></section>
+  <section class="panel" id="panel-manager"></section>
+  <section class="panel" id="panel-seguimiento"></section>
+  <section class="panel" id="panel-decision"></section>
+</main>
+
+<footer id="pie"></footer>
+
+<script id="dashboard-data" type="application/json">{
+  "titulo": "YouTube Analyst — Dashboard",
+  "fuente": "s_GjovZxQqY (2026-11-16)",
+  "aviso": "Analisis TEXTUAL parcial. Sin verificacion visual. Ninguna alerta es una operacion.",
+  "paper_only": true,
+  "contrato": "daily_pilot/contracts/contrato_analista_manager.md",
+  "mercado": {
+    "BTCUSD": {
+      "precio_referencia": {
+        "valor": 64620,
+        "procedencia": "A",
+        "nota": "dicho por CreceTrader 03:17; sin feed en tiempo real"
+      },
+      "tendencia_weekly": "acumulacion / maximos y minimos decrecientes",
+      "contexto_diario": "soporte 69.000-71.509; posible reversal",
+      "estructura_4h": "max/min decrecientes, sin reversal confirmada",
+      "niveles_originales": [
+        71509,
+        69000,
+        65520,
+        56750,
+        64004,
+        66617
+      ],
+      "niveles_calculados": [],
+      "zonas_liquidez": [
+        "por encima de 69.000",
+        "por debajo hacia 56.750"
+      ],
+      "escenario_alcista": "recuperacion a 69.000 -> 71.509/75.518",
+      "escenario_bajista": "sin reversal 4H -> 56.750",
+      "actualizacion": "2026-11-16"
+    },
+    "ETHUSD": {
+      "precio_referencia": {
+        "valor": 1780,
+        "procedencia": "A"
+      },
+      "tendencia_weekly": "NO_DETERMINADO",
+      "contexto_diario": "zona de compra 1.890-2.286",
+      "estructura_4h": "NO_DETERMINADO",
+      "niveles_originales": [
+        1780,
+        1890,
+        2025,
+        2286
+      ],
+      "niveles_calculados": [],
+      "zonas_liquidez": [],
+      "escenario_alcista": "reversal en 1.780/1.890",
+      "escenario_bajista": "NO_DETERMINADO",
+      "actualizacion": "2026-11-16"
+    },
+    "SPX": {
+      "precio_referencia": {
+        "valor": 7592,
+        "procedencia": "A"
+      },
+      "tendencia_weekly": "NO_DETERMINADO",
+      "contexto_diario": "correccion posible a 6.612",
+      "estructura_4h": "NO_DETERMINADO",
+      "niveles_originales": [
+        7592,
+        6612
+      ],
+      "niveles_calculados": [],
+      "zonas_liquidez": [],
+      "escenario_alcista": "NO_DETERMINADO",
+      "escenario_bajista": "correccion a 6.612",
+      "actualizacion": "2026-11-16"
+    },
+    "QQQ": {
+      "precio_referencia": {
+        "valor": null,
+        "procedencia": null,
+        "nota": "equivalente NQ citado: 28.026"
+      },
+      "tendencia_weekly": "NO_DETERMINADO",
+      "contexto_diario": "28.400 precio vendedor; 25.479/25.400",
+      "estructura_4h": "NO_DETERMINADO",
+      "niveles_originales": [
+        28400,
+        28026,
+        25479,
+        25400,
+        22931
+      ],
+      "niveles_calculados": [],
+      "zonas_liquidez": [],
+      "escenario_alcista": "NO_DETERMINADO",
+      "escenario_bajista": "28.400 -> 25.479/25.400",
+      "actualizacion": "2026-11-16"
+    },
+    "XAUUSD": {
+      "precio_referencia": {
+        "valor": 3906,
+        "procedencia": "A"
+      },
+      "tendencia_weekly": "correccion",
+      "contexto_diario": "3.906 cierra el paso; objetivo 3.623",
+      "estructura_4h": "NO_DETERMINADO",
+      "niveles_originales": [
+        3906,
+        3623
+      ],
+      "niveles_calculados": [],
+      "zonas_liquidez": [],
+      "escenario_alcista": "NO_DETERMINADO",
+      "escenario_bajista": "correccion a 3.623",
+      "actualizacion": "2026-11-16"
+    }
+  },
+  "escenarios": [
+    {
+      "escenario": {
+        "id": "ESC-sG-01-weekly",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "06:26",
+        "temporalidades": [
+          "Weekly",
+          "Daily"
+        ],
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 71509,
+          "procedencia": "A"
+        },
+        "justificacion": "precios objetivos de largo plazo; soporte 69.000",
+        "evidencia": [
+          "transcripcion 00:59-01:05",
+          "06:26-07:01"
+        ],
+        "condicion_activacion": {
+          "valor": "recuperacion hacia 69.000",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": 69000,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 71509,
+            "procedencia": "A"
+          },
+          {
+            "valor": 72554,
+            "procedencia": "A"
+          },
+          {
+            "valor": 75518,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Weekly",
+        "metodo_calculo": null,
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 68655.0 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-01-weekly",
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "dimensiones": {
+          "calidad_analisis": "alta",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 68655.0 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "condiciones_faltantes": [
+          "invalidacion no declarada"
+        ],
+        "que_se_necesita": [
+          "invalidacion",
+          "invalidacion no declarada"
+        ],
+        "propuesta_stop": {
+          "valor": 68655.0,
+          "procedencia": "D",
+          "metodo": "por debajo del minimo de la zona de entrada (0.5%)"
+        },
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 0.289855,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-02-4h",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "12:48",
+        "temporalidades": [
+          "4H"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 56750,
+          "procedencia": "A"
+        },
+        "justificacion": "maximos y minimos decrecientes; sin reversión en 4H el precio puede seguir cayendo",
+        "evidencia": [
+          "transcripcion 12:48-12:57"
+        ],
+        "condicion_activacion": {
+          "valor": "que no haya reversal en 4H",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": null,
+          "procedencia": null
+        },
+        "objetivos": [
+          {
+            "valor": 56750,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "entrada no declarada",
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "4H",
+        "metodo_calculo": null,
+        "clasificacion": "ESCENARIO_CONDICIONAL",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan condicionado; falta entrada/invalidacion/objetivos"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-02-4h",
+        "clasificacion": "ESCENARIO_CONDICIONAL",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan condicionado; falta entrada/invalidacion/objetivos"
+        ],
+        "condiciones_faltantes": [
+          "entrada no declarada",
+          "invalidacion no declarada",
+          "objetivos no declarados"
+        ],
+        "que_se_necesita": [
+          "entrada",
+          "entrada no declarada",
+          "invalidacion",
+          "invalidacion no declarada",
+          "objetivos",
+          "objetivos no declarados"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": null,
+          "perdida_potencial": null,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-03-intradia",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "14:47",
+        "temporalidades": [
+          "Intradia"
+        ],
+        "direccion": "neutral",
+        "nivel": {
+          "valor": 66617,
+          "procedencia": "A"
+        },
+        "justificacion": "horquilla intradia entre 66.617 y 64.004; partida 65.310",
+        "evidencia": [
+          "transcripcion 13:49-14:58"
+        ],
+        "entrada": {
+          "valor": 66617,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 64004,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado",
+          "condicion de activacion no explicita"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Intradia",
+        "metodo_calculo": null,
+        "clasificacion": "ZONA_DE_INTERES",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-03-intradia",
+        "clasificacion": "ZONA_DE_INTERES",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin condicion de activacion"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin condicion de activacion"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 0.001501,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-04-vigilar",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "02:01",
+        "temporalidades": [
+          "4H"
+        ],
+        "direccion": "neutral",
+        "nivel": {
+          "valor": 65520,
+          "procedencia": "A"
+        },
+        "justificacion": "habia que vigilar el precio en 65.520; tambien en futuros CME",
+        "evidencia": [
+          "transcripcion 02:01-03:11",
+          "10:48-11:21"
+        ],
+        "info_faltante": [
+          "condicion de activacion",
+          "entrada",
+          "stop"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "4H",
+        "metodo_calculo": null,
+        "clasificacion": "ZONA_DE_INTERES",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-04-vigilar",
+        "clasificacion": "ZONA_DE_INTERES",
+        "dimensiones": {
+          "calidad_analisis": "alta",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin condicion de activacion"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin condicion de activacion"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": null,
+          "perdida_potencial": null,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-05-eth",
+        "instrumento": "ETHUSD",
+        "timestamp_explicacion": "16:49",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 1780,
+          "procedencia": "A"
+        },
+        "justificacion": "1.780 sirve de freno; zona de compra 1.890-2.286",
+        "evidencia": [
+          "transcripcion 16:49-17:14"
+        ],
+        "condicion_activacion": {
+          "valor": "si 1.780 junto con 1.890 hace que haya reversal",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": 1780,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 2025,
+            "procedencia": "A"
+          },
+          {
+            "valor": 2286,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 1771.1 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-05-eth",
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 1771.1 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "condiciones_faltantes": [
+          "invalidacion no declarada"
+        ],
+        "que_se_necesita": [
+          "invalidacion",
+          "invalidacion no declarada"
+        ],
+        "propuesta_stop": {
+          "valor": 1771.1,
+          "procedencia": "D",
+          "metodo": "por debajo del minimo de la zona de entrada (0.5%)"
+        },
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 11.235955,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-06-oro",
+        "instrumento": "XAUUSD",
+        "timestamp_explicacion": "17:36",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 3906,
+          "procedencia": "A"
+        },
+        "justificacion": "el oro seguira corrigiendo; 3.906 cierra el paso; objetivo 3.623",
+        "evidencia": [
+          "transcripcion 17:36-17:53"
+        ],
+        "condicion_activacion": {
+          "valor": "correccion en curso",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": 3906,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 3623,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 3925.53 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-06-oro",
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 3925.53 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "condiciones_faltantes": [
+          "invalidacion no declarada"
+        ],
+        "que_se_necesita": [
+          "invalidacion",
+          "invalidacion no declarada"
+        ],
+        "propuesta_stop": {
+          "valor": 3925.53,
+          "procedencia": "D",
+          "metodo": "por debajo del minimo de la zona de entrada (0.5%)"
+        },
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 5.120328,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-07-sp500",
+        "instrumento": "SPX",
+        "timestamp_explicacion": "18:16",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 7592,
+          "procedencia": "A"
+        },
+        "justificacion": "SP500 aguanta en 7.592; correccion posible a 6.612",
+        "evidencia": [
+          "transcripcion 18:16-18:38"
+        ],
+        "objetivos": [
+          {
+            "valor": 6612,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "condicion de activacion",
+          "entrada",
+          "stop"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "NIVEL_REFERENCIADO",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "NIVEL_REFERENCIADO: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-07-sp500",
+        "clasificacion": "NIVEL_REFERENCIADO",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "NIVEL_REFERENCIADO: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin informacion operativa"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin informacion operativa"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": null,
+          "perdida_potencial": null,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-08-nq",
+        "instrumento": "NQ",
+        "timestamp_explicacion": "18:43",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 28026,
+          "procedencia": "A"
+        },
+        "justificacion": "Nasdaq 28.026; 28.400 precio vendedor; objetivos 25.479/25.400",
+        "evidencia": [
+          "transcripcion 18:43-19:21"
+        ],
+        "entrada": {
+          "valor": 28400,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 25479,
+            "procedencia": "A"
+          },
+          {
+            "valor": 25400,
+            "procedencia": "A"
+          },
+          {
+            "valor": 22931,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado",
+          "condicion de activacion no explicita"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "ZONA_DE_INTERES",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-08-nq",
+        "clasificacion": "ZONA_DE_INTERES",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin condicion de activacion"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin condicion de activacion"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 0.003521,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    }
+  ]
+}</script>
+<script>
+(function () {
+  'use strict';
+
+  var DATA = JSON.parse(document.getElementById('dashboard-data').textContent);
+  var LS_KEY = 'ytra_dashboard_decisions_v2';
+
+  /* ---------- utilidades ---------- */
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function fmtNum(v) {
+    if (typeof v !== 'number' || !isFinite(v)) return esc(String(v));
+    return v.toLocaleString('es-ES', { maximumFractionDigits: 6 });
+  }
+  function fmtValor(v) {
+    if (v === null || v === undefined || v === '') return '<span class="missing">NO DECLARADO</span>';
+    return '<span class="num">' + fmtNum(v) + '</span>';
+  }
+  function texto(v, vacio) {
+    if (v === null || v === undefined || v === '') return '<span class="missing">' + (vacio || 'NO DECLARADO') + '</span>';
+    if (v === 'NO_DETERMINADO') return '<span class="missing">NO_DETERMINADO</span>';
+    return esc(v);
+  }
+  function listaTexto(items, vacio) {
+    if (!Array.isArray(items) || !items.length) return '<span class="missing">' + (vacio || 'FALTA INFORMACION') + '</span>';
+    return '<ul class="lista">' + items.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+  }
+  function listaObjetos(items, campo, vacio) {
+    if (!Array.isArray(items) || !items.length) return '<span class="missing">' + (vacio || 'NO DECLARADO') + '</span>';
+    return '<ul class="lista">' + items.map(function (o) {
+      var val = (o && typeof o === 'object') ? o.valor : o;
+      var prov = (o && typeof o === 'object') ? o.procedencia : null;
+      return '<li>' + fmtNum(val) + ' ' + provBadge(prov) + '</li>';
+    }).join('') + '</ul>';
+  }
+  function pills(items, vacio) {
+    if (!Array.isArray(items) || !items.length) return '<span class="missing">' + (vacio || 'FALTA INFORMACION') + '</span>';
+    return items.map(function (n) { return '<span class="pill">' + fmtNum(n) + '</span>'; }).join('');
+  }
+
+  var PROV = {
+    A: { label: 'A · EXPLÍCITO', cls: 'prov-A', title: 'Dato dicho por CreceTrader (A).' },
+    B: { label: 'B · OBSERVADO', cls: 'prov-B', title: 'Visible en el gráfico, con evidencia (B).' },
+    C: { label: 'C · CÁLCULO DEL SISTEMA', cls: 'prov-C', title: 'Derivado con metodología documentada (C).' },
+    D: { label: 'D · PROPUESTA DEL MANAGER', cls: 'prov-D', title: 'Recomendación propia del Manager (D).' }
+  };
+  function provBadge(p) {
+    if (!p) return '<span class="proc prov-none" title="El JSON no declara procedencia para este campo">SIN PROCEDENCIA</span>';
+    var x = PROV[p] || { label: String(p), cls: 'prov-none', title: 'Procedencia no reconocida: ' + p };
+    return '<span class="proc ' + x.cls + '" title="' + esc(x.title) + '">' + esc(x.label) + '</span>';
+  }
+  function provNoDeclarada(nota) {
+    return '<span class="proc prov-none" title="' + esc(nota || 'El JSON no declara procedencia para este campo; no se inventa') + '">SIN PROCEDENCIA</span>';
+  }
+  function provCapital(nota) {
+    return '<span class="proc prov-C" title="' + esc(nota || 'Capital simulado y cálculos del sistema según el contrato (§7); el JSON no declara procedencia explícita') + '">C · SISTEMA</span>';
+  }
+
+  var CLASIF = {
+    NIVEL_REFERENCIADO: { cls: 'c-nivel', badge: 'badge-c-nivel', desc: 'Nivel sin información operativa.' },
+    ZONA_DE_INTERES: { cls: 'c-zona', badge: 'badge-c-zona', desc: 'El analista espera una reacción en la zona.' },
+    ESCENARIO_CONDICIONAL: { cls: 'c-cond', badge: 'badge-c-cond', desc: 'Plan sujeto a condición de precio, sin entrada definida.' },
+    PLAN_OPERATIVO_INCOMPLETO: { cls: 'c-planinc', badge: 'badge-c-planinc', desc: 'Con condición y entrada, pero falta invalidación y/o objetivos.' },
+    PLAN_OPERATIVO_COMPLETO: { cls: 'c-plan', badge: 'badge-c-plan', desc: 'Condición + entrada/método + invalidación + objetivos definidos.' },
+    OPORTUNIDAD_VALIDABLE: { cls: 'c-oport', badge: 'badge-c-oport', desc: 'Plan completo que supera el filtro del Manager (sin contradicciones y con R/B).' },
+    NO_OPERABLE: { cls: 'c-noope', badge: 'badge-c-noope', desc: 'Asignado por el Manager o el seguimiento.' },
+    DESCARTADO: { cls: 'c-desc', badge: 'badge-c-desc', desc: 'Asignado por el Manager o el seguimiento.' },
+    INDETERMINADO: { cls: 'c-indet', badge: 'badge-c-indet', desc: 'Información insuficiente o ambigua.' }
+  };
+  var VEREDICTO = {
+    APTO_PARA_EVALUACION: { badge: 'badge-v-apto', desc: 'Apto para evaluación.' },
+    ESPERAR_CONFIRMACION: { badge: 'badge-v-esperar', desc: 'Espera confirmación.' },
+    FALTA_INFORMACION: { badge: 'badge-v-falta', desc: 'Falta información.' },
+    RIESGO_INADECUADO: { badge: 'badge-v-riesgo', desc: 'Riesgo inadecuado.' },
+    NO_OPERABLE: { badge: 'badge-v-noope', desc: 'No operable.' },
+    ESCENARIO_INVALIDADO: { badge: 'badge-v-invalid', desc: 'Escenario invalidado.' }
+  };
+  var ESTADOS = {
+    EN_OBSERVACION: { color: '#4f8cff', desc: 'Aceptado para seguimiento; sin activar.' },
+    ESPERANDO_ACTIVACION: { color: '#f0a020', desc: 'Esperando que se cumpla la condición del plan.' },
+    ACTIVADO: { color: '#a371f7', desc: 'Activado manualmente por el usuario (no implica ejecución real).' },
+    EN_SEGUIMIENTO: { color: '#39c5cf', desc: 'Operativa abierta, en curso.' },
+    OBJETIVO_ALCANZADO: { color: '#3fb950', desc: 'Objetivo alcanzado.' },
+    INVALIDADO: { color: '#f85149', desc: 'Invalidado.' },
+    EXPIRADO: { color: '#8b949e', desc: 'Expirado.' }
+  };
+  var ESTADOS_ORDER = ['EN_OBSERVACION', 'ESPERANDO_ACTIVACION', 'ACTIVADO', 'EN_SEGUIMIENTO', 'OBJETIVO_ALCANZADO', 'INVALIDADO', 'EXPIRADO'];
+  var DECISION_LABEL = {
+    aceptar_seguimiento: 'Aceptar seguimiento (EN_OBSERVACION)',
+    esperar: 'Esperar (ESPERANDO_ACTIVACION)',
+    operada_manual: 'Operada manual (ACTIVADO)',
+    descartado: 'Descartado por el usuario',
+    registrar_resultado: 'Registrar resultado',
+    en_seguimiento: 'Pasado a EN_SEGUIMIENTO'
+  };
+  /* Grupos visuales de PLANES exigidos por el contrato v1.1 */
+  var GRUPOS_PLANES = [
+    { key: 'incompletos', titulo: 'PLANES INCOMPLETOS', cls: 'g-incompletos',
+      desc: 'NIVEL_REFERENCIADO · ZONA_DE_INTERES · ESCENARIO_CONDICIONAL · PLAN_OPERATIVO_INCOMPLETO',
+      tipos: ['NIVEL_REFERENCIADO', 'ZONA_DE_INTERES', 'ESCENARIO_CONDICIONAL', 'PLAN_OPERATIVO_INCOMPLETO'] },
+    { key: 'completos', titulo: 'PLANES COMPLETOS', cls: 'g-completos',
+      desc: 'PLAN_OPERATIVO_COMPLETO',
+      tipos: ['PLAN_OPERATIVO_COMPLETO'] },
+    { key: 'oportunidades', titulo: 'OPORTUNIDADES VALIDADAS', cls: 'g-oportunidades',
+      desc: 'OPORTUNIDAD_VALIDABLE',
+      tipos: ['OPORTUNIDAD_VALIDABLE'] }
+  ];
+  var TIPOS_OTRAS = ['NO_OPERABLE', 'DESCARTADO', 'INDETERMINADO'];
+
+  function clasifMeta(c) { return CLASIF[c] || { cls: 'c-indet', badge: 'badge-c-indet', desc: 'Clasificación no reconocida: ' + c }; }
+  function veredictoMeta(v) { return VEREDICTO[v] || { badge: 'badge-v-invalid', desc: 'Veredicto no reconocido: ' + v }; }
+  function estadoMeta(e) { return ESTADOS[e] || { color: '#8b949e', desc: 'Estado no reconocido.' }; }
+  function badgeClasif(c) { var m = clasifMeta(c); return '<span class="badge ' + m.badge + '" title="' + esc(m.desc) + '">' + esc(c || 'NO DECLARADO') + '</span>'; }
+  function badgeVeredicto(v) { var m = veredictoMeta(v); return '<span class="badge ' + m.badge + '" title="' + esc(m.desc) + '">' + esc(v || 'NO DECLARADO') + '</span>'; }
+  function badgeEstado(e) {
+    if (!e) return '<span class="badge badge-estado">NO DECLARADO</span>';
+    var m = estadoMeta(e);
+    return '<span class="badge badge-estado" style="color:' + m.color + ';border-color:' + m.color + ';background:rgba(0,0,0,.15)" title="' + esc(m.desc) + '">' + esc(e) + '</span>';
+  }
+  function grupoDe(c) {
+    for (var i = 0; i < GRUPOS_PLANES.length; i++) {
+      if (GRUPOS_PLANES[i].tipos.indexOf(c) >= 0) return GRUPOS_PLANES[i].key;
+    }
+    return 'otras';
+  }
+
+  var ESCS = (DATA.escenarios || []).map(function (item) {
+    var e = {};
+    var src = item.escenario || {};
+    for (var k in src) if (src.hasOwnProperty(k)) e[k] = src[k];
+    e.evaluacion = item.evaluacion || {};
+    return e;
+  });
+
+  /* ---------- decisiones (localStorage) ---------- */
+  function loadDecisions() {
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      var d = raw ? JSON.parse(raw) : {};
+      return (d && typeof d === 'object') ? d : {};
+    } catch (err) { return {}; }
+  }
+  function saveDecisions(d) {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(d)); } catch (err) { /* sin almacenamiento */ }
+  }
+  var decisions = loadDecisions();
+
+  function estadoInicial(ev) {
+    var v = ev && ev.veredicto;
+    if (v === 'ESPERAR_CONFIRMACION') return 'ESPERANDO_ACTIVACION';
+    if (v === 'APTO_PARA_EVALUACION') return 'EN_OBSERVACION';
+    if (v === 'ESCENARIO_INVALIDADO') return 'INVALIDADO';
+    if (v === 'NO_OPERABLE') return 'EN_OBSERVACION';
+    return 'EN_OBSERVACION';
+  }
+  function effState(e) {
+    var d = decisions[e.id];
+    if (d && d.descartado) return { key: 'DESCARTADO_USUARIO', origen: 'usuario', ts: d.ts, decision: d.decision };
+    if (d && d.estado) return { key: d.estado, origen: 'usuario', ts: d.ts, decision: d.decision };
+    return { key: estadoInicial(e), origen: 'derivado', ts: null, decision: null };
+  }
+  function marcaOrigen(o) {
+    if (o === 'usuario') return '<span class="proc prov-D" title="Decisión del usuario guardada en localStorage">USUARIO · localStorage</span>';
+    return '<span class="proc prov-C" title="Estado derivado por el sistema a partir del veredicto del Manager">C · DERIVADO DEL VEREDICTO</span>';
+  }
+
+  /* ---------- cabecera ---------- */
+  function renderHeader() {
+    document.getElementById('titulo').textContent = DATA.titulo || 'YouTube Analyst — Dashboard';
+    var nEsc = ESCS.length;
+    var nInst = Object.keys(DATA.mercado || {}).length;
+    document.getElementById('fuente').textContent = 'Fuente: ' + (DATA.fuente || 'NO DECLARADO') +
+      ' · Escenarios: ' + nEsc + ' · Instrumentos: ' + nInst;
+    var avisos = [];
+    avisos.push('<div class="aviso aviso-rojo"><b>PAPER_ONLY=true.</b> Todas las cifras son simuladas. No hay conexión con exchanges ni ejecución real de órdenes.</div>');
+    avisos.push('<div class="aviso aviso-amarillo"><b>Análisis TEXTUAL PARCIAL sin verificación visual.</b> Los niveles no fueron contrastados contra el gráfico. Ninguna alerta es una operación.</div>');
+    avisos.push('<div class="aviso aviso-azul"><b>Tocar un nivel NO activa la operación.</b> Lo activa la condición definida en el plan. Las decisiones de esta página se guardan solo en localStorage de este navegador; no se envía nada a ningún servidor.</div>');
+    if (DATA.aviso) avisos.push('<div class="aviso aviso-amarillo">Aviso del origen: ' + esc(DATA.aviso) + '</div>');
+    document.getElementById('avisos').innerHTML = avisos.join('');
+    var bytes = document.getElementById('dashboard-data').textContent.length;
+    document.getElementById('pie').innerHTML =
+      '<p><b>YouTube Analyst — Dashboard estático y autocontenido.</b> Datos incrustados desde <code>daily_pilot/datos/dashboard_data.json</code> (' + fmtNum(bytes) + ' caracteres en el bloque <code>#dashboard-data</code>) · Fuente: ' + esc(DATA.fuente || 'NO DECLARADA') + '.</p>' +
+      '<p>Contrato: <code>' + esc(DATA.contrato || 'NO DECLARADO') + '</code> · Procedencia: <b>A</b> dato explícito (dicho por CreceTrader) · <b>B</b> observado en el gráfico · <b>C</b> cálculo del sistema · <b>D</b> propuesta del Manager. Los campos sin procedencia declarada en el JSON se muestran como SIN PROCEDENCIA; los valores ausentes como NO DECLARADO / FALTA INFORMACION. No se completa nada por intuición.</p>' +
+      '<p>Decisión del usuario: solo localStorage (clave <code>' + esc(LS_KEY) + '</code>), sin servidor. PAPER_ONLY · sin ejecución · sin verificación visual · sin servicios externos. Respuesta en español.</p>';
+  }
+
+  /* ---------- pestañas ---------- */
+  function activateTab(name) {
+    var tabs = document.querySelectorAll('.tab');
+    for (var i = 0; i < tabs.length; i++) tabs[i].classList.toggle('active', tabs[i].getAttribute('data-tab') === name);
+    var panels = document.querySelectorAll('.panel');
+    for (var j = 0; j < panels.length; j++) panels[j].classList.toggle('active', panels[j].id === 'panel-' + name);
+    if (window.history && history.replaceState) history.replaceState(null, '', '#' + name);
+  }
+  function initTabs() {
+    var tabs = document.querySelectorAll('.tab');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', function () { activateTab(this.getAttribute('data-tab')); });
+    }
+    var h = (location.hash || '').replace('#', '');
+    if (h && document.getElementById('panel-' + h)) activateTab(h);
+  }
+
+  /* ---------- procedencias resumen por escenario (A/B/C/D) ---------- */
+  function procedenciasResumen(e) {
+    var tiene = { A: false, B: false, C: false, D: false };
+    function m(p) { if (p && Object.prototype.hasOwnProperty.call(tiene, p)) tiene[p] = true; }
+    m(e.nivel && e.nivel.procedencia);
+    m(e.condicion_activacion && e.condicion_activacion.procedencia);
+    m(e.entrada && e.entrada.procedencia);
+    (e.objetivos || []).forEach(function (o) { m(o.procedencia); });
+    var ev = e.evaluacion || {};
+    m(ev.propuesta_stop && ev.propuesta_stop.procedencia);
+    if (ev.capital) tiene.C = true;
+    if (effState(e).origen === 'derivado') tiene.C = true;
+    return tiene;
+  }
+  function procSum(e) {
+    var t = procedenciasResumen(e);
+    return '<div class="prov-sum" title="Badges de procedencia A/B/C/D presentes en los campos de este escenario y su evaluación">' +
+      ['A', 'B', 'C', 'D'].map(function (k) {
+        var x = PROV[k];
+        var on = t[k];
+        return '<span class="proc ' + x.cls + '"' + (on ? '' : ' style="opacity:.38"') +
+          ' title="' + esc(x.title) + (on ? ' · presente en este escenario' : ' · el JSON no tiene campos de este tipo para este escenario') + '">' +
+          esc(x.label) + (on ? '' : ' · NO APLICA') + '</span>';
+      }).join('') + '</div>';
+  }
+
+  /* ---------- 1. MERCADO ---------- */
+  var abiertos = {};
+
+  function campo(label, inner) {
+    return '<div class="field"><label>' + esc(label) + '</label><div class="field-val">' + inner + '</div></div>';
+  }
+  function temporalidades(e) {
+    if (!Array.isArray(e.temporalidades) || !e.temporalidades.length) return 'NO DECLARADO';
+    return e.temporalidades.map(esc).join(' · ');
+  }
+  function escenariosDe(inst) {
+    return ESCS.filter(function (e) { return e.instrumento === inst; });
+  }
+
+  function operativoPorEscenario(e) {
+    var ev = e.evaluacion || {};
+    var h = '<div class="esc-mini" data-esc-id="' + esc(e.id) + '">';
+    h += '<div class="mi">' + esc(e.id || 'NO DECLARADO') + '</div>';
+    h += '<div class="ms">' + esc(e.instrumento || 'NO DECLARADO') + ' · ' + texto(e.direccion) + ' · ' + temporalidades(e) +
+      ' · vídeo ' + esc(e.timestamp_explicacion || 'NO DECLARADO') + ' · ' + badgeClasif(e.clasificacion) + '</div>';
+    h += '<div class="campo"><b>Condición de activación</b>' + texto(e.condicion_activacion && e.condicion_activacion.valor) + ' ' + provBadge(e.condicion_activacion && e.condicion_activacion.procedencia) + '</div>';
+    h += '<div class="campo"><b>Entrada</b>' + fmtValor(e.entrada && e.entrada.valor) + ' ' + provBadge(e.entrada && e.entrada.procedencia) + '</div>';
+    h += '<div class="campo"><b>Invalidación (stop)</b>' + fmtValor(e.stop && e.stop.valor) + ' ' + provBadge(e.stop && e.stop.procedencia) +
+      ' <span class="muted small">(el escenario no declara stop; ver propuesta del Manager)</span></div>';
+    h += '<div class="campo"><b>Objetivos</b>' + listaObjetos(e.objetivos, 'valor', 'NO DECLARADO') + '</div>';
+    h += '<div class="campo"><b>Riesgo/beneficio</b>' + fmtValor(ev.risk_reward) + ' ' + provNoDeclarada('El JSON no declara risk/reward para este escenario') + '</div>';
+    h += '<div class="campo"><b>Información faltante</b>' + listaTexto(e.info_faltante, 'NO DECLARADO') + '</div>';
+    if (ev.propuesta_stop) {
+      h += '<div class="campo"><b>Propuesta stop Manager</b>' + fmtNum(ev.propuesta_stop.valor) + ' ' + provBadge(ev.propuesta_stop.procedencia) +
+        (ev.propuesta_stop.metodo ? ' <span class="muted small">(' + esc(ev.propuesta_stop.metodo) + ')</span>' : '') + '</div>';
+    } else {
+      h += '<div class="campo"><b>Propuesta stop Manager</b><span class="missing">NO DECLARADO</span> ' + provNoDeclarada('El Manager no propuso stop para este escenario') + '</div>';
+    }
+    h += '</div>';
+    return h;
+  }
+
+  function detalleInstrumento(k, m) {
+    var r = m || {};
+    var escs = escenariosDe(k);
+    var h = '<div class="detail-grid">';
+
+    h += '<div>';
+    h += '<h4>Contexto de mercado — bloque "mercado" del JSON</h4>';
+    h += campo('Contexto Weekly', texto(r.tendencia_weekly) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += campo('Contexto Daily', texto(r.contexto_diario) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += campo('Estructura 4H', texto(r.estructura_4h) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += campo('Niveles originales de CreceTrader', pills(r.niveles_originales) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia; el nombre indica niveles originales, pero no se asigna A por defecto'));
+    h += campo('Niveles calculados por el sistema', pills(r.niveles_calculados, 'FALTA INFORMACION') + ' ' + provNoDeclarada('El JSON no declara niveles calculados para este instrumento'));
+    h += campo('Zonas de liquidez', listaTexto(r.zonas_liquidez, 'FALTA INFORMACION') + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += campo('Escenario alcista', texto(r.escenario_alcista) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += campo('Escenario bajista', texto(r.escenario_bajista) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += campo('Última actualización', texto(r.actualizacion) + ' ' + provNoDeclarada('El bloque "mercado" no declara procedencia para este campo'));
+    h += '</div>';
+
+    h += '<div>';
+    h += '<h4>Campos operativos — bloques "escenarios" del JSON (' + escs.length + ' vinculado(s))</h4>';
+    if (!escs.length) {
+      h += '<div class="vacio">Ningún escenario del JSON usa el instrumento "' + esc(k) + '". ' +
+        'Condiciones de activación, invalidación, objetivos, riesgo/beneficio e información faltante: <b>FALTA INFORMACION</b>.</div>';
+    } else {
+      h += '<p class="hint">Estos campos no existen en el bloque "mercado": se agregan desde los escenarios de este instrumento, con su procedencia y su id.</p>';
+      escs.forEach(function (e) { h += operativoPorEscenario(e); });
+    }
+    h += '</div>';
+
+    h += '</div>';
+    return h;
+  }
+
+  function renderMercado() {
+    var m = DATA.mercado || {};
+    var order = ['BTCUSD', 'ETHUSD', 'SPX', 'QQQ', 'XAUUSD'];
+    var keys = Object.keys(m);
+    var ordered = [];
+    order.forEach(function (k) { if (keys.indexOf(k) >= 0) ordered.push(k); });
+    keys.forEach(function (k) { if (ordered.indexOf(k) < 0) ordered.push(k); });
+
+    var html = '';
+    html += '<div class="section-head"><h2 class="section-title">Mercado</h2>' +
+      '<span class="section-sub">Una fila por instrumento · clic en la fila para desplegar el detalle</span></div>';
+    html += '<p class="section-note">El precio de referencia es el dicho por CreceTrader; no hay feed en tiempo real. El bloque "mercado" del JSON no declara procedencia para tendencia, contexto, estructura, niveles, zonas ni escenarios: se muestran como SIN PROCEDENCIA (no se inventa). Los campos operativos (condición, entrada, stop, objetivos, R/B, faltante) solo existen en los escenarios y se agregan por instrumento en el desplegable.</p>';
+    html += '<div class="legend">' +
+      '<span><b>Procedencia:</b></span>' +
+      '<span><span class="proc prov-A">A · EXPLÍCITO</span> dicho por CreceTrader</span>' +
+      '<span><span class="proc prov-B">B · OBSERVADO</span> visible en el gráfico</span>' +
+      '<span><span class="proc prov-C">C · CÁLCULO</span> del sistema</span>' +
+      '<span><span class="proc prov-D">D · MANAGER</span> propuesta</span>' +
+      '<span><span class="proc prov-none">SIN PROCEDENCIA</span> no declarada en el JSON</span>' +
+      '</div>';
+    var sinPrecio = ordered.filter(function (k) { return !(m[k].precio_referencia && m[k].precio_referencia.valor !== null && m[k].precio_referencia.valor !== undefined); }).length;
+    html += '<div class="summary">' +
+      '<span class="sum">Instrumentos: <b>' + ordered.length + '</b></span>' +
+      '<span class="sum">Precio NO DECLARADO: <b>' + sinPrecio + '</b></span>' +
+      '<span class="sum">Escenarios: <b>' + ESCS.length + '</b></span>' +
+      '<span class="sum">Última actualización (primer instrumento): <b>' + esc((m[ordered[0]] && m[ordered[0]].actualizacion) || 'NO DECLARADO') + '</b></span>' +
+      '</div>';
+    html += '<div class="table-wrap"><table><thead><tr>' +
+      '<th>Instrumento</th><th>Precio de referencia</th><th>Tendencia Weekly</th><th>Contexto Daily</th>' +
+      '<th>Estructura 4H</th><th>Niveles originales</th><th>Escenarios vinculados</th>' +
+      '</tr></thead><tbody>';
+
+    ordered.forEach(function (k) {
+      var r = m[k] || {};
+      var pr = r.precio_referencia || {};
+      var nEsc = escenariosDe(k).length;
+      var open = !!abiertos[k];
+      html += '<tr class="inst-row' + (open ? ' open' : '') + '" data-inst="' + esc(k) + '" tabindex="0" title="Clic para desplegar el detalle de ' + esc(k) + '">' +
+        '<td><strong>' + esc(k) + '</strong></td>' +
+        '<td><div class="cell-main">' + fmtValor(pr.valor) + '</div><div class="cell-sub">' + provBadge(pr.procedencia) + '</div>' +
+        (pr.nota ? '<div class="cell-note">' + esc(pr.nota) + '</div>' : '') + '</td>' +
+        '<td>' + texto(r.tendencia_weekly) + '</td>' +
+        '<td>' + texto(r.contexto_diario) + '</td>' +
+        '<td>' + texto(r.estructura_4h) + '</td>' +
+        '<td>' + pills(r.niveles_originales) + '</td>' +
+        '<td><span class="pill">' + nEsc + '</span><div class="cell-sub muted small">' + (nEsc ? esc(escenariosDe(k).map(function (e) { return e.id; }).join(', ')) : 'ninguno con este instrumento') + '</div></td>' +
+        '</tr>';
+      html += '<tr class="detail-row' + (open ? ' open' : '') + '" data-detail-for="' + esc(k) + '">' +
+        '<td colspan="7">' + detalleInstrumento(k, r) + '</td></tr>';
+    });
+
+    html += '</tbody></table></div>';
+
+    /* aviso de discrepancia de instrumentos (sin unificar) */
+    var instMercado = Object.keys(m);
+    var instEsc = ESCS.map(function (e) { return e.instrumento; });
+    var huerfanos = [];
+    instEsc.forEach(function (i) { if (instMercado.indexOf(i) < 0 && huerfanos.indexOf(i) < 0) huerfanos.push(i); });
+    if (huerfanos.length) {
+      html += '<div class="aviso aviso-amarillo" style="margin-top:14px"><b>Discrepancia de instrumentos (no unificada, no corregida):</b> ' +
+        'el bloque "mercado" usa ' + instMercado.map(esc).join(', ') + '; los escenarios usan ' + instEsc.map(esc).join(', ') + '. ' +
+        'Instrumento(s) de escenario sin fila de mercado: ' + huerfanos.map(esc).join(', ') + '. ' +
+        'La nota del JSON en QQQ dice "equivalente NQ citado: 28.026", pero no se fusionan las claves: cada dato se muestra con la clave que tiene en el JSON.</div>';
+    }
+    document.getElementById('panel-mercado').innerHTML = html;
+  }
+
+  /* ---------- tarjeta de escenario (vista PLANES) ---------- */
+  function escenarioCard(e) {
+    var m = clasifMeta(e.clasificacion);
+    var ev = e.evaluacion || {};
+    var st = effState(e);
+    var html = '<article class="card ' + m.cls + '" data-card-id="' + esc(e.id) + '">';
+    html += '<div class="card-head"><div>' +
+      '<div class="card-id">' + esc(e.id || 'NO DECLARADO') + '</div>' +
+      '<div class="card-sub">' + esc(e.instrumento || 'NO DECLARADO') + ' · ' + texto(e.direccion) +
+      ' · ' + temporalidades(e) + ' · vídeo ' + esc(e.timestamp_explicacion || 'NO DECLARADO') + '</div>' +
+      '</div><div class="card-badges">' + badgeClasif(e.clasificacion) + badgeVeredicto(e.veredicto) +
+      (e.demo ? ' <span class="badge badge-demo">DEMO</span>' : '') +
+      '<span class="badge badge-estado" style="color:' + estadoMeta(st.key).color + ';border-color:' + estadoMeta(st.key).color + '" title="Estado de seguimiento">' + esc(st.key) + '</span>' +
+      '</div></div>';
+    html += '<div class="card-body">';
+    html += procSum(e);
+    html += '<div class="grid">';
+    html += campo('Nivel / zona', fmtValor(e.nivel && e.nivel.valor) + ' ' + provBadge(e.nivel && e.nivel.procedencia));
+    html += campo('Condición de activación', texto(e.condicion_activacion && e.condicion_activacion.valor) + ' ' + provBadge(e.condicion_activacion && e.condicion_activacion.procedencia));
+    html += campo('Entrada', fmtValor(e.entrada && e.entrada.valor) + ' ' + provBadge(e.entrada && e.entrada.procedencia));
+    html += campo('Stop / invalidación (escenario)', fmtValor(e.stop && e.stop.valor) + ' ' + provBadge(e.stop && e.stop.procedencia) +
+      '<div class="cell-note">El escenario no declara stop; la propuesta del Manager se muestra en la pestaña MANAGER.</div>');
+    html += campo('Objetivos', listaObjetos(e.objetivos, 'valor', 'NO DECLARADO'));
+    html += campo('Riesgo / beneficio', fmtValor(ev.risk_reward) + ' ' + provNoDeclarada('El JSON no declara risk/reward para este escenario'));
+    html += campo('Información faltante', listaTexto(e.info_faltante, 'NO DECLARADO'));
+    html += campo('Evidencia', listaTexto(e.evidencia, 'FALTA INFORMACION'));
+    html += campo('Justificación', texto(e.justificacion));
+    html += campo('Relación de temporalidades / detalle', texto(e.relacion_temporalidades, 'NO DECLARADO'));
+    html += campo('Fuente', texto(e.fuente) + ' ' + provNoDeclarada('El JSON no declara procedencia para la fuente'));
+    html += campo('Temporalidad de origen', texto(e.temporalidad_origen) + ' · método de cálculo: ' + texto(e.metodo_calculo));
+    html += campo('Estado de seguimiento', badgeEstado(st.key) + '<div class="cell-sub">' + marcaOrigen(st.origen) + '</div>');
+    html += '</div>';
+    html += '</div></article>';
+    return html;
+  }
+
+  /* ---------- 2. PLANES ---------- */
+  function renderPlanes() {
+    var html = '';
+    html += '<div class="section-head"><h2 class="section-title">Planes</h2>' +
+      '<span class="section-sub">' + ESCS.length + ' escenarios del vídeo, agrupados por completitud del plan</span></div>';
+    html += '<p class="section-note">Clasificación del Analyst (9 tipos del contrato). Los tres grupos visuales son los exigidos por el contrato v1.1: PLANES INCOMPLETOS, PLANES COMPLETOS y OPORTUNIDADES VALIDADAS. Un plan <b>no</b> es completo por tener solo un nivel y un posible objetivo. Los campos que faltan quedan siempre visibles.</p>';
+    html += '<div class="legend">' +
+      '<span><b>Procedencia (badges A/B/C/D):</b></span>' +
+      '<span><span class="proc prov-A">A · EXPLÍCITO</span> dicho por CreceTrader</span>' +
+      '<span><span class="proc prov-B">B · OBSERVADO</span> visible en el gráfico</span>' +
+      '<span><span class="proc prov-C">C · CÁLCULO</span> del sistema</span>' +
+      '<span><span class="proc prov-D">D · PROPUESTA DEL MANAGER</span> recomendación</span>' +
+      '<span><span class="proc prov-none">SIN PROCEDENCIA</span> no declarada</span>' +
+      '</div>';
+
+    var counts = {};
+    ESCS.forEach(function (e) { counts[e.clasificacion] = (counts[e.clasificacion] || 0) + 1; });
+    html += '<div class="summary">' + Object.keys(counts).map(function (k) {
+      return '<span class="sum"><span class="badge ' + clasifMeta(k).badge + '">' + esc(k) + '</span> × <b>' + counts[k] + '</b></span>';
+    }).join('') + '</div>';
+
+    GRUPOS_PLANES.forEach(function (g) {
+      var items = ESCS.filter(function (e) { return grupoDe(e.clasificacion) === g.key; });
+      html += '<section class="group ' + g.cls + '">';
+      html += '<div class="group-head"><h3>' + esc(g.titulo) + '</h3>' +
+        '<span class="cnt">' + items.length + ' escenario(s)</span>' +
+        '<span class="dsc">' + esc(g.desc) + '</span></div>';
+      if (!items.length) {
+        html += '<div class="vacio">Sin escenarios en esta categoría en el JSON. No se inventa ninguno: el dato real no los tiene.</div>';
+      } else {
+        html += '<div class="cards">' + items.map(escenarioCard).join('') + '</div>';
+      }
+      html += '</section>';
+    });
+
+    var otras = ESCS.filter(function (e) { return grupoDe(e.clasificacion) === 'otras'; });
+    if (otras.length) {
+      html += '<section class="group g-otras">';
+      html += '<div class="group-head"><h3>OTRAS CLASIFICACIONES</h3>' +
+        '<span class="cnt">' + otras.length + ' escenario(s)</span>' +
+        '<span class="dsc">' + TIPOS_OTRAS.map(esc).join(' · ') + ' (no pertenecen a los tres grupos anteriores; se muestran para no ocultarlas)</span></div>';
+      html += '<div class="cards">' + otras.map(escenarioCard).join('') + '</div>';
+      html += '</section>';
+    }
+
+    document.getElementById('panel-planes').innerHTML = html;
+  }
+
+  /* ---------- 3. MANAGER ---------- */
+  function renderManager() {
+    var html = '';
+    html += '<div class="section-head"><h2 class="section-title">Manager</h2>' +
+      '<span class="section-sub">Evaluación por dimensiones, veredicto, motivos, qué se necesita y propuesta de stop</span></div>';
+    html += '<p class="section-note">Las cuatro dimensiones del contrato (§6) van separadas: calidad del análisis, completitud del plan, viabilidad técnica y riesgo/capital. El JSON no declara procedencia para las dimensiones, el veredicto, los motivos ni "que_se_necesita": se muestran como SIN PROCEDENCIA. La <b>propuesta de stop del Manager sí declara procedencia D</b> y se resalta. Capital simulado (§7), separado de la evaluación.</p>';
+    html += '<div class="legend">' +
+      '<span><b>Veredicto:</b></span>' +
+      Object.keys(VEREDICTO).map(function (k) { return '<span><span class="badge ' + VEREDICTO[k].badge + '">' + k + '</span></span>'; }).join('') +
+      '</div>';
+    var counts = {};
+    ESCS.forEach(function (e) { var v = (e.evaluacion && e.evaluacion.veredicto) || e.veredicto; counts[v] = (counts[v] || 0) + 1; });
+    html += '<div class="summary">' + Object.keys(counts).map(function (k) {
+      return '<span class="sum"><span class="badge ' + veredictoMeta(k).badge + '">' + esc(k) + '</span> × <b>' + counts[k] + '</b></span>';
+    }).join('') + '</div>';
+
+    html += '<div class="cards">';
+    ESCS.forEach(function (e) {
+      var ev = e.evaluacion || {};
+      var dims = ev.dimensiones || {};
+      var ry = dims.riesgo_y_capital || {};
+      var cap = ev.capital || {};
+      var v = ev.veredicto || e.veredicto;
+      var stop = ev.propuesta_stop || null;
+      var h = '<article class="card ' + clasifMeta(e.clasificacion).cls + '" data-card-id="' + esc(e.id) + '">';
+      h += '<div class="card-head"><div>' +
+        '<div class="card-id">' + esc(e.id || 'NO DECLARADO') + '</div>' +
+        '<div class="card-sub">' + esc(e.instrumento || 'NO DECLARADO') + ' · ' + texto(e.direccion) + ' · ' + temporalidades(e) +
+        ' · clasificación ' + badgeClasif(e.clasificacion) + '</div>' +
+        '</div><div class="card-badges">' + badgeVeredicto(v) + (ev.paper_only ? ' <span class="badge badge-demo">PAPER_ONLY</span>' : '') + '</div></div>';
+      h += '<div class="card-body">';
+
+      h += '<div class="dim-grid">' +
+        '<div class="dim"><label>1 · Calidad del análisis</label><div class="dv">' + texto(dims.calidad_analisis) + ' ' + provNoDeclarada('Dimensión del Manager (§6); el JSON no declara procedencia') + '</div></div>' +
+        '<div class="dim"><label>2 · Completitud del plan</label><div class="dv">' + texto(dims.completitud_plan) + ' ' + provNoDeclarada('Dimensión del Manager (§6); el JSON no declara procedencia') + '</div></div>' +
+        '<div class="dim"><label>3 · Viabilidad técnica</label><div class="dv">' + texto(dims.viabilidad_tecnica) + ' ' + provNoDeclarada('Dimensión del Manager (§6); el JSON no declara procedencia') + '</div></div>' +
+        '<div class="dim"><label>4 · Riesgo y capital</label><div class="dv">' + texto(ry.veredicto) + ' ' + badgeVeredicto(ry.veredicto) +
+        '<div class="cell-note">risk_reward: ' + fmtValor(ry.risk_reward) + ' ' + provNoDeclarada('El JSON no declara risk/reward') + '</div></div></div>' +
+        '</div>';
+
+      h += '<div class="grid">';
+      h += campo('Veredicto del Manager', badgeVeredicto(v) + ' ' + provNoDeclarada('El JSON no declara procedencia para el veredicto'));
+      h += campo('Motivos', listaTexto(ev.motivos, 'NO DECLARADO'));
+      h += campo('Condiciones faltantes', listaTexto(ev.condiciones_faltantes, 'FALTA INFORMACION'));
+      h += campo('Qué se necesita', listaTexto(ev.que_se_necesita, 'FALTA INFORMACION'));
+      h += campo('Risk / reward (evaluación)', fmtValor(ev.risk_reward) + ' ' + provNoDeclarada('El JSON no declara risk/reward para este escenario'));
+      h += campo('Decisión del usuario', texto(ev.decision_usuario, 'PENDIENTE') + ' <span class="muted small">(se registra solo en localStorage, pestaña DECISIÓN)</span>');
+      h += '</div>';
+
+      h += '<div class="stop-box"><b>Propuesta de stop del Manager</b> ';
+      if (stop) {
+        h += fmtNum(stop.valor) + ' ' + provBadge(stop.procedencia);
+        h += '<div class="field"><label>Método</label><div class="field-val">' + texto(stop.metodo) + ' ' + provBadge(stop.procedencia) + '</div></div>';
+      } else {
+        h += '<span class="missing">NO DECLARADO</span> ' + provNoDeclarada('El Manager no propuso stop para este escenario');
+      }
+      h += '<div class="cell-note">Procedencia D = propuesta propia del Manager; no es un dato dicho por CreceTrader (A) ni un cálculo del sistema (C).</div>';
+      h += '</div>';
+
+      h += '<div class="kv">' +
+        '<div><span>Capital disponible</span>' + fmtValor(cap.disponible) + ' ' + provCapital('Parámetro de entrada del sistema (capital.json, §7); no asume capital real') + '</div>' +
+        '<div><span>Riesgo %</span>' + fmtValor(cap.riesgo_pct) + ' ' + provCapital('Parámetro de entrada del sistema (§7)') + '</div>' +
+        '<div><span>Tamaño propuesto</span>' + fmtValor(cap.tamano_propuesto) + ' ' + provCapital('Cálculo del sistema (§7)') + '</div>' +
+        '<div><span>Pérdida potencial</span>' + fmtValor(cap.perdida_potencial) + ' ' + provCapital('Cálculo del sistema (§7)') + '</div>' +
+        '<div><span>Exposición máxima</span>' + fmtValor(cap.exposicion_maxima) + ' ' + provCapital('Cálculo del sistema (§7)') + '</div>' +
+        '</div>';
+
+      h += '</div></article>';
+      html += h;
+    });
+    html += '</div>';
+    document.getElementById('panel-manager').innerHTML = html;
+  }
+
+  /* ---------- 4. SEGUIMIENTO ---------- */
+  function renderSeguimiento() {
+    var html = '';
+    html += '<div class="section-head"><h2 class="section-title">Seguimiento</h2>' +
+      '<span class="section-sub">7 estados del ciclo de vida de un escenario</span></div>';
+    html += '<div class="aviso aviso-rojo" style="margin-bottom:14px"><b>Tocar un nivel NO activa la operación.</b> Lo activa la condición definida en el plan. La activación solo puede registrarla el usuario manualmente (pestaña DECISIÓN, botón "Operada manual") o el sistema cuando la condición se cumple.</div>';
+    html += '<div class="legend">' +
+      '<span><b>Estados:</b></span>' +
+      ESTADOS_ORDER.map(function (k) { return '<span><span class="badge badge-estado" style="color:' + ESTADOS[k].color + ';border-color:' + ESTADOS[k].color + '">' + k + '</span> <span class="muted">' + esc(ESTADOS[k].desc) + '</span></span>'; }).join('') +
+      '</div>';
+    html += '<p class="section-note">Estado inicial derivado por el sistema a partir del veredicto del Manager (<b>C · DERIVADO</b>). Si el usuario decide en la pestaña DECISIÓN, el estado mostrado es el de localStorage (<b>USUARIO</b>). Ningún estado implica ejecución real: PAPER_ONLY.</p>';
+
+    var grupos = {};
+    ESTADOS_ORDER.forEach(function (k) { grupos[k] = []; });
+    var descartados = [];
+    ESCS.forEach(function (e) {
+      var st = effState(e);
+      if (st.key === 'DESCARTADO_USUARIO') { descartados.push({ e: e, st: st }); return; }
+      if (!grupos[st.key]) grupos[st.key] = [];
+      grupos[st.key].push({ e: e, st: st });
+    });
+
+    html += '<div class="board">';
+    ESTADOS_ORDER.forEach(function (k) {
+      var items = grupos[k];
+      html += '<div class="board-col"><h3 style="color:' + ESTADOS[k].color + '">' + k + ' (' + items.length + ')</h3><div class="col-body">';
+      if (!items.length) { html += '<div class="vacio">sin escenarios</div>'; }
+      items.forEach(function (it) {
+        html += '<div class="chip" style="border-left-color:' + ESTADOS[k].color + '">' +
+          '<div class="chip-id">' + esc(it.e.id || 'NO DECLARADO') + '</div>' +
+          '<div class="chip-inst">' + esc(it.e.instrumento || 'NO DECLARADO') + ' · ' + texto(it.e.direccion) + '</div>' +
+          '<div class="chip-meta">' + marcaOrigen(it.st.origen) + (it.st.ts ? ' · ' + esc(it.st.ts) : '') + '</div>' +
+          (it.st.decision ? '<div class="chip-meta">' + esc(DECISION_LABEL[it.st.decision] || it.st.decision) + '</div>' : '') +
+          (k === 'ACTIVADO' ? '<button class="btn btn-mini btn-operar" data-action="to-seguimiento" data-id="' + esc(it.e.id) + '">→ EN_SEGUIMIENTO</button>' : '') +
+          '</div>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
+
+    html += '<h3 style="margin:22px 0 8px;font-size:13px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)">Descartados por el usuario (' + descartados.length + ')</h3>';
+    if (!descartados.length) {
+      html += '<p class="muted small">Ningún escenario ha sido descartado. Los cambios se guardan solo en localStorage.</p>';
+    } else {
+      html += '<div class="cards">' + descartados.map(function (it) {
+        return '<article class="card c-desc"><div class="card-head"><div>' +
+          '<div class="card-id">' + esc(it.e.id || 'NO DECLARADO') + '</div>' +
+          '<div class="card-sub">' + esc(it.e.instrumento || 'NO DECLARADO') + ' · ' + texto(it.e.direccion) + '</div>' +
+          '</div><div class="card-badges"><span class="badge badge-c-desc">DESCARTADO</span></div></div>' +
+          '<div class="card-body"><div class="cell-sub">' + marcaOrigen('usuario') + (it.st.ts ? ' · ' + esc(it.st.ts) : '') + '</div>' +
+          '<p class="small muted" style="margin:8px 0 0">Descartado por el usuario. No es una invalidación técnica ni una operación.</p></div></article>';
+      }).join('') + '</div>';
+    }
+
+    html += '<div class="summary" style="margin-top:18px">' +
+      '<span class="sum">EN_OBSERVACION: <b>' + grupos.EN_OBSERVACION.length + '</b></span>' +
+      '<span class="sum">ESPERANDO_ACTIVACION: <b>' + grupos.ESPERANDO_ACTIVACION.length + '</b></span>' +
+      '<span class="sum">ACTIVADO: <b>' + grupos.ACTIVADO.length + '</b></span>' +
+      '<span class="sum">EN_SEGUIMIENTO: <b>' + grupos.EN_SEGUIMIENTO.length + '</b></span>' +
+      '<span class="sum">OBJETIVO_ALCANZADO: <b>' + grupos.OBJETIVO_ALCANZADO.length + '</b></span>' +
+      '<span class="sum">INVALIDADO: <b>' + grupos.INVALIDADO.length + '</b></span>' +
+      '<span class="sum">EXPIRADO: <b>' + grupos.EXPIRADO.length + '</b></span>' +
+      '</div>';
+    document.getElementById('panel-seguimiento').innerHTML = html;
+  }
+
+  /* ---------- 5. DECISIÓN ---------- */
+  function renderDecision() {
+    var html = '';
+    html += '<div class="section-head"><h2 class="section-title">Decisión</h2>' +
+      '<span class="section-sub">Acciones registradas por el usuario, solo en localStorage</span></div>';
+    html += '<p class="section-note">Estas acciones <b>no ejecutan operaciones</b> ni envían datos a ningún servidor. Guardan una marca local en este navegador (localStorage, clave <code>' + esc(LS_KEY) + '</code>). El estado resultante se refleja en la pestaña SEGUIMIENTO. Tocar un nivel no activa nada: solo registra tu decisión.</p>';
+    html += '<div class="legend">' +
+      '<span><b>Botones por escenario:</b></span>' +
+      '<span><span class="btn btn-mini btn-aceptar">Aceptar seguimiento</span> → EN_OBSERVACION</span>' +
+      '<span><span class="btn btn-mini btn-esperar">Esperar</span> → ESPERANDO_ACTIVACION</span>' +
+      '<span><span class="btn btn-mini btn-operar">Operada manual</span> → ACTIVADO</span>' +
+      '<span><span class="btn btn-mini btn-resultado">Registrar resultado</span> → OBJETIVO_ALCANZADO / INVALIDADO / EXPIRADO</span>' +
+      '<span><span class="btn btn-mini btn-descartar">Descartar</span> → fuera del tablero</span>' +
+      '</div>';
+
+    ESCS.forEach(function (e) {
+      var d = decisions[e.id] || {};
+      var st = effState(e);
+      var actual = d.decision ? (DECISION_LABEL[d.decision] || d.decision) : 'SIN DECISIÓN REGISTRADA';
+      html += '<div class="decision-card" data-card-id="' + esc(e.id) + '">';
+      html += '<div class="decision-top"><div>' +
+        '<div class="card-id">' + esc(e.id || 'NO DECLARADO') + '</div>' +
+        '<div class="card-sub">' + esc(e.instrumento || 'NO DECLARADO') + ' · ' + texto(e.direccion) + ' · ' + temporalidades(e) + '</div>' +
+        '</div><div class="card-badges">' + badgeClasif(e.clasificacion) + badgeVeredicto(e.veredicto) + badgeEstado(st.key) + '</div></div>';
+      html += '<div class="decision-current">Decisión actual: <b>' + esc(actual) + '</b>' +
+        (d.ts ? ' · ' + esc(d.ts) : '') + ' · origen: ' + (d.decision ? 'USUARIO (localStorage)' : 'derivado del veredicto (C)') + '</div>';
+      html += '<div class="decision-actions">' +
+        '<button class="btn btn-aceptar" data-action="aceptar" data-id="' + esc(e.id) + '">Aceptar seguimiento</button>' +
+        '<button class="btn btn-esperar" data-action="esperar" data-id="' + esc(e.id) + '">Esperar</button>' +
+        '<button class="btn btn-operar" data-action="operada" data-id="' + esc(e.id) + '">Operada manual</button>' +
+        '<select id="resultado-' + esc(e.id) + '">' +
+        '<option value="OBJETIVO_ALCANZADO">OBJETIVO_ALCANZADO</option>' +
+        '<option value="INVALIDADO">INVALIDADO</option>' +
+        '<option value="EXPIRADO">EXPIRADO</option>' +
+        '</select>' +
+        '<button class="btn btn-resultado" data-action="registrar" data-id="' + esc(e.id) + '">Registrar resultado</button>' +
+        '<button class="btn btn-descartar" data-action="descartar" data-id="' + esc(e.id) + '">Descartar</button>' +
+        '</div>';
+      html += '</div>';
+    });
+
+    html += '<button class="btn btn-reset" data-action="reset">Restablecer todas las decisiones (borra localStorage)</button>';
+    html += '<p class="small muted" style="margin-top:10px">PAPER_ONLY · sin ejecución real · sin verificación visual · ninguna alerta es una operación.</p>';
+    document.getElementById('panel-decision').innerHTML = html;
+  }
+
+  /* ---------- acciones ---------- */
+  function aplicarDecision(id, decision, estado, descartado, resultado) {
+    var d = decisions[id] || {};
+    d.decision = decision;
+    d.descartado = !!descartado;
+    d.estado = descartado ? null : estado;
+    d.resultado = resultado || null;
+    d.ts = new Date().toISOString();
+    decisions[id] = d;
+    saveDecisions(decisions);
+    refrescarTodo();
+  }
+  function refrescarTodo() {
+    renderMercado();
+    renderPlanes();
+    renderManager();
+    renderSeguimiento();
+    renderDecision();
+  }
+  function toggleInst(k) {
+    abiertos[k] = !abiertos[k];
+    renderMercado();
+  }
+
+  document.addEventListener('click', function (ev) {
+    var t = ev.target;
+    var actionEl = null, instEl = null;
+    while (t && t !== document) {
+      if (!actionEl && t.getAttribute && t.getAttribute('data-action')) actionEl = t;
+      if (!instEl && t.getAttribute && t.getAttribute('data-inst')) instEl = t;
+      if (actionEl && instEl) break;
+      t = t.parentNode;
+    }
+    if (actionEl) {
+      var action = actionEl.getAttribute('data-action');
+      var id = actionEl.getAttribute('data-id');
+      if (action === 'reset') {
+        if (confirm('¿Borrar todas las decisiones guardadas en localStorage?')) {
+          decisions = {};
+          saveDecisions(decisions);
+          refrescarTodo();
+        }
+        return;
+      }
+      if (!id) return;
+      if (action === 'aceptar') aplicarDecision(id, 'aceptar_seguimiento', 'EN_OBSERVACION');
+      else if (action === 'esperar') aplicarDecision(id, 'esperar', 'ESPERANDO_ACTIVACION');
+      else if (action === 'operada') aplicarDecision(id, 'operada_manual', 'ACTIVADO');
+      else if (action === 'descartar') aplicarDecision(id, 'descartado', null, true);
+      else if (action === 'to-seguimiento') aplicarDecision(id, 'en_seguimiento', 'EN_SEGUIMIENTO');
+      else if (action === 'registrar') {
+        var sel = document.getElementById('resultado-' + id);
+        var val = sel ? sel.value : null;
+        if (!val) { alert('Selecciona un resultado.'); return; }
+        aplicarDecision(id, 'registrar_resultado', val, false, val);
+      }
+      return;
+    }
+    if (instEl) { toggleInst(instEl.getAttribute('data-inst')); return; }
+  });
+
+  document.addEventListener('keydown', function (ev) {
+    var t = ev.target;
+    while (t && t !== document && !(t.getAttribute && t.getAttribute('data-inst'))) t = t.parentNode;
+    if (!t || !t.getAttribute) return;
+    if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); toggleInst(t.getAttribute('data-inst')); }
+  });
+
+  /* ---------- arranque ---------- */
+  renderHeader();
+  renderMercado();
+  renderPlanes();
+  renderManager();
+  renderSeguimiento();
+  renderDecision();
+  initTabs();
+})();
+</script>
+</body>
+</html>

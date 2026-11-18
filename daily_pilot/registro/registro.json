@@ -1,0 +1,407 @@
+{
+  "videos": {
+    "s_GjovZxQqY": {
+      "video_id": "s_GjovZxQqY",
+      "title": "Bitcoin pierde la media de 200: por qué no es capitulación (todavía)",
+      "published": "2026-11-16T09:55:48+00:00",
+      "url": "https://www.youtube.com/watch?v=s_GjovZxQqY",
+      "detectado": "2026-11-16T17:39:27.891034+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/s_GjovZxQqY/s_GjovZxQqY_transcript.json",
+      "estado": "transcrito"
+    },
+    "bCc--rvyHpY": {
+      "video_id": "bCc--rvyHpY",
+      "title": "Bitcoin por debajo de 69.000: por qué no compro todavía",
+      "published": "2026-11-14T14:00:05+00:00",
+      "url": "https://www.youtube.com/watch?v=bCc--rvyHpY",
+      "detectado": "2026-11-16T17:39:38.098320+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/bCc--rvyHpY/bCc--rvyHpY_transcript.json",
+      "estado": "transcrito"
+    },
+    "Vm7nUxLCMZQ": {
+      "video_id": "Vm7nUxLCMZQ",
+      "title": "Bitcoin toca los 69.000: ¿empieza la reversión o queda un mínimo más bajo?",
+      "published": "2026-11-13T09:53:40+00:00",
+      "url": "https://www.youtube.com/watch?v=Vm7nUxLCMZQ",
+      "detectado": "2026-11-16T17:40:00.796452+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/Vm7nUxLCMZQ/Vm7nUxLCMZQ_transcript.json",
+      "estado": "transcrito"
+    },
+    "rX2wj_FXvT4": {
+      "video_id": "rX2wj_FXvT4",
+      "title": "Bitcoin atrapado en zona de compras: los 6 precios que espera el dinero institucional",
+      "published": "2026-11-12T10:16:27+00:00",
+      "url": "https://www.youtube.com/watch?v=rX2wj_FXvT4",
+      "detectado": "2026-11-16T17:40:11.870166+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/rX2wj_FXvT4/rX2wj_FXvT4_transcript.json",
+      "estado": "transcrito"
+    },
+    "mv2VdVtXvDw": {
+      "video_id": "mv2VdVtXvDw",
+      "title": "¿Ha tocado techo Bitcoin? Lo que hace falta para ir a por los 134.000",
+      "published": "2026-11-11T10:00:02+00:00",
+      "url": "https://www.youtube.com/watch?v=mv2VdVtXvDw",
+      "detectado": "2026-11-16T17:40:22.454060+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/mv2VdVtXvDw/mv2VdVtXvDw_transcript.json",
+      "estado": "transcrito"
+    },
+    "subONxt5iag": {
+      "video_id": "subONxt5iag",
+      "title": "Bitcoin aguanta pese a las salidas de los ETF: zona de compras antes del IPC",
+      "published": "2026-11-10T09:40:55+00:00",
+      "url": "https://www.youtube.com/watch?v=subONxt5iag",
+      "detectado": "2026-11-16T17:40:28.631145+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/subONxt5iag/subONxt5iag_transcript.json",
+      "estado": "transcrito"
+    },
+    "rTtXDLq2kOQ": {
+      "video_id": "rTtXDLq2kOQ",
+      "title": "Bitcoin y los futuros de Chicago: dónde espera el dinero institucional",
+      "published": "2026-11-09T09:10:08+00:00",
+      "url": "https://www.youtube.com/watch?v=rTtXDLq2kOQ",
+      "detectado": "2026-11-16T17:40:37.775390+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/rTtXDLq2kOQ/rTtXDLq2kOQ_transcript.json",
+      "estado": "transcrito"
+    },
+    "o6n6UDNVtCk": {
+      "video_id": "o6n6UDNVtCk",
+      "title": "Bitcoin en zona de compras, pero yo no compro aquí: mi plan para la próxima semana",
+      "published": "2026-11-07T14:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=o6n6UDNVtCk",
+      "detectado": "2026-11-16T17:40:46.040206+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/o6n6UDNVtCk/o6n6UDNVtCk_transcript.json",
+      "estado": "transcrito"
+    },
+    "0prmrS6nnRk": {
+      "video_id": "0prmrS6nnRk",
+      "title": "Bitcoin cae un 5,9% y se frena en 75.518: qué hago ahora",
+      "published": "2026-11-06T09:32:22+00:00",
+      "url": "https://www.youtube.com/watch?v=0prmrS6nnRk",
+      "detectado": "2026-11-16T17:40:50.689442+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/0prmrS6nnRk/0prmrS6nnRk_transcript.json",
+      "estado": "transcrito"
+    },
+    "DnwM-2nuS4s": {
+      "video_id": "DnwM-2nuS4s",
+      "title": "Bitcoin cae desde los 80.308 tras abrir Nueva York: el plan se cumple",
+      "published": "2026-11-05T18:49:09+00:00",
+      "url": "https://www.youtube.com/watch?v=DnwM-2nuS4s",
+      "detectado": "2026-11-16T17:40:59.206784+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/DnwM-2nuS4s/DnwM-2nuS4s_transcript.json",
+      "estado": "transcrito"
+    },
+    "j06_M-fADjM": {
+      "video_id": "j06_M-fADjM",
+      "title": "Bitcoin refugiado en 80.308: ¿quién le da la patada al balón?",
+      "published": "2026-11-05T09:20:28+00:00",
+      "url": "https://www.youtube.com/watch?v=j06_M-fADjM",
+      "detectado": "2026-11-16T17:41:07.774595+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/j06_M-fADjM/j06_M-fADjM_transcript.json",
+      "estado": "transcrito"
+    },
+    "5KtjJ8kefQ4": {
+      "video_id": "5KtjJ8kefQ4",
+      "title": "Bitcoin rebota tras las elecciones: ¿es el principio de la reversión?",
+      "published": "2026-11-04T18:44:04+00:00",
+      "url": "https://www.youtube.com/watch?v=5KtjJ8kefQ4",
+      "detectado": "2026-11-16T17:41:25.695739+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/5KtjJ8kefQ4/5KtjJ8kefQ4_transcript.json",
+      "estado": "transcrito"
+    },
+    "scJ-ai2FRiE": {
+      "video_id": "scJ-ai2FRiE",
+      "title": "Bitcoin recupera los 78.241 tras las elecciones de medio mandato: ¿reversión o trampa?",
+      "published": "2026-11-04T09:00:49+00:00",
+      "url": "https://www.youtube.com/watch?v=scJ-ai2FRiE",
+      "detectado": "2026-11-16T17:41:30.943160+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/scJ-ai2FRiE/scJ-ai2FRiE_transcript.json",
+      "estado": "transcrito"
+    },
+    "LzPTdClLo_w": {
+      "video_id": "LzPTdClLo_w",
+      "title": "Bitcoin rebota tras la apertura de Wall Street, pero nada ha cambiado: 78.241 manda",
+      "published": "2026-11-03T18:32:40+00:00",
+      "url": "https://www.youtube.com/watch?v=LzPTdClLo_w",
+      "detectado": "2026-11-16T17:41:37.711862+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/LzPTdClLo_w/LzPTdClLo_w_transcript.json",
+      "estado": "transcrito"
+    },
+    "s3KxjqkzwKM": {
+      "video_id": "s3KxjqkzwKM",
+      "title": "Bitcoin el día de las elecciones: 76.852 es el precio clave (03.11.26)",
+      "published": "2026-11-03T09:00:02+00:00",
+      "url": "https://www.youtube.com/watch?v=s3KxjqkzwKM",
+      "detectado": "2026-11-16T17:41:42.790361+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/s3KxjqkzwKM/s3KxjqkzwKM_transcript.json",
+      "estado": "transcrito"
+    },
+    "i0qXzL0eSYs": {
+      "video_id": "i0qXzL0eSYs",
+      "titulo": "Bitcoin: ¿está en tiempo y en precio de compra? (timing vs pricing)",
+      "published": "2026-11-17T00:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=i0qXzL0eSYs",
+      "detectado": "2026-11-17T21:43:00.015636+00:00",
+      "transcript": "data_hist/i0qXzL0eSYs/i0qXzL0eSYs_transcript.json",
+      "estado": "transcrito"
+    },
+    "cH2KY5vnsVQ": {
+      "video_id": "cH2KY5vnsVQ",
+      "titulo": "Bitcoin frenado antes de las actas de la FED: lo que vigilo hoy",
+      "published": "2026-11-18T09:43:08+00:00",
+      "url": "https://www.youtube.com/watch?v=cH2KY5vnsVQ",
+      "detectado": "2026-11-18T11:25:21Z",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/cH2KY5vnsVQ/cH2KY5vnsVQ_transcript.json",
+      "estado": "transcrito"
+    },
+    "0JHYwOCzCKI": {
+      "video_id": "0JHYwOCzCKI",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/26/21 (08:00) ",
+      "published": "2026-10-21",
+      "url": "https://www.youtube.com/watch?v=0JHYwOCzCKI",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/0JHYwOCzCKI/0JHYwOCzCKI_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "2QjLmPdDKlk": {
+      "video_id": "2QjLmPdDKlk",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/20/26 (08:00) ",
+      "published": "2026-10-20",
+      "url": "https://www.youtube.com/watch?v=2QjLmPdDKlk",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/2QjLmPdDKlk/2QjLmPdDKlk_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "3OZ2vJPj92o": {
+      "video_id": "3OZ2vJPj92o",
+      "titulo": "Bitcoin Scenario Update, Projection, and Plan Today ",
+      "published": "2026-10-28",
+      "url": "https://www.youtube.com/watch?v=3OZ2vJPj92o",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/3OZ2vJPj92o/3OZ2vJPj92o_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "B4Vf3bSk5GY": {
+      "video_id": "B4Vf3bSk5GY",
+      "titulo": "Bitcoin Forecast UPDATE today October 22",
+      "published": "2026-10-22",
+      "url": "https://www.youtube.com/watch?v=B4Vf3bSk5GY",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/B4Vf3bSk5GY/B4Vf3bSk5GY_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "CmbG9QntQ10": {
+      "video_id": "CmbG9QntQ10",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/27/26 (08:00) ",
+      "published": "2026-10-27",
+      "url": "https://www.youtube.com/watch?v=CmbG9QntQ10",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/CmbG9QntQ10/CmbG9QntQ10_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "D6XrdvQVTgk": {
+      "video_id": "D6XrdvQVTgk",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/26/26 (08:00) ",
+      "published": "2026-10-26",
+      "url": "https://www.youtube.com/watch?v=D6XrdvQVTgk",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/D6XrdvQVTgk/D6XrdvQVTgk_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "FkPGRd7kXnE": {
+      "video_id": "FkPGRd7kXnE",
+      "titulo": "Will Bitcoin drop further? My weekly analysis",
+      "published": "2026-10-17",
+      "url": "https://www.youtube.com/watch?v=FkPGRd7kXnE",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/FkPGRd7kXnE/FkPGRd7kXnE_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "G3GPk1mxPcQ": {
+      "video_id": "G3GPk1mxPcQ",
+      "titulo": "BTC UPDATE: $80,000 IS THE PRICE THAT COULD TRIGGER POTENTIAL LOSSES",
+      "published": "2026-10-26",
+      "url": "https://www.youtube.com/watch?v=G3GPk1mxPcQ",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/G3GPk1mxPcQ/G3GPk1mxPcQ_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "MgTOoUWEq-M": {
+      "video_id": "MgTOoUWEq-M",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/26/19 (08:00) ",
+      "published": "2026-10-19",
+      "url": "https://www.youtube.com/watch?v=MgTOoUWEq-M",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/MgTOoUWEq-M/MgTOoUWEq-M_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "NVZfPTaeuLc": {
+      "video_id": "NVZfPTaeuLc",
+      "titulo": "Update: Bitcoin is rising, but with a brake on prices from institutional sellers.",
+      "published": "2026-10-22",
+      "url": "https://www.youtube.com/watch?v=NVZfPTaeuLc",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/NVZfPTaeuLc/NVZfPTaeuLc_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "TT07djUkfhE": {
+      "video_id": "TT07djUkfhE",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/23/26 (08:00) ",
+      "published": "2026-10-23",
+      "url": "https://www.youtube.com/watch?v=TT07djUkfhE",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/TT07djUkfhE/TT07djUkfhE_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "_Lxz34x7eGg": {
+      "video_id": "_Lxz34x7eGg",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/16/26 (08:00) ",
+      "published": "2026-10-16",
+      "url": "https://www.youtube.com/watch?v=_Lxz34x7eGg",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/_Lxz34x7eGg/_Lxz34x7eGg_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "ac6-r7g8pao": {
+      "video_id": "ac6-r7g8pao",
+      "titulo": "How I'm preparing Bitcoin for next week ",
+      "published": "2026-10-24",
+      "url": "https://www.youtube.com/watch?v=ac6-r7g8pao",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/ac6-r7g8pao/ac6-r7g8pao_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "avNOZfXdyX8": {
+      "video_id": "avNOZfXdyX8",
+      "titulo": "Bitcoin is up today but TRAPPING buyers in SELLING ZONE with false signals",
+      "published": "2026-10-21",
+      "url": "https://www.youtube.com/watch?v=avNOZfXdyX8",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/avNOZfXdyX8/avNOZfXdyX8_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "cjUwyMHygEs": {
+      "video_id": "cjUwyMHygEs",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/29/26 (08:00) ",
+      "published": "2026-10-29",
+      "url": "https://www.youtube.com/watch?v=cjUwyMHygEs",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/cjUwyMHygEs/cjUwyMHygEs_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "lkMTbT7tK8c": {
+      "video_id": "lkMTbT7tK8c",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/22/26 (08:00) ",
+      "published": "2026-10-22",
+      "url": "https://www.youtube.com/watch?v=lkMTbT7tK8c",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/lkMTbT7tK8c/lkMTbT7tK8c_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "lwb4Qxy8D9w": {
+      "video_id": "lwb4Qxy8D9w",
+      "titulo": "WHAT WILL BITCOIN DO TODAY 10/28/26 (08:00) ",
+      "published": "2026-10-28",
+      "url": "https://www.youtube.com/watch?v=lwb4Qxy8D9w",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/lwb4Qxy8D9w/lwb4Qxy8D9w_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "nqzn3DsZzKU": {
+      "video_id": "nqzn3DsZzKU",
+      "titulo": "IMPORTANT BITCOIN ANALYSIS UPDATE AFTER STALLING AND FALLING AT $82,000",
+      "published": "2026-10-19",
+      "url": "https://www.youtube.com/watch?v=nqzn3DsZzKU",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/nqzn3DsZzKU/nqzn3DsZzKU_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "xHR9d-0ToXU": {
+      "video_id": "xHR9d-0ToXU",
+      "titulo": "BITCOIN TODAY: UPDATE AND CHECKING PROJECTIONS AND PLANS BEFORE THE FED",
+      "published": "2026-10-29",
+      "url": "https://www.youtube.com/watch?v=xHR9d-0ToXU",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/xHR9d-0ToXU/xHR9d-0ToXU_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "y9gsOU6_Bzw": {
+      "video_id": "y9gsOU6_Bzw",
+      "titulo": "Bitcoin Today 10/18: Is This the Weekly Reversal Signal?",
+      "published": "2026-10-18",
+      "url": "https://www.youtube.com/watch?v=y9gsOU6_Bzw",
+      "detectado": "2026-11-18T11:31:54.945675+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/y9gsOU6_Bzw/y9gsOU6_Bzw_transcript.json",
+      "estado": "importado_nocturno",
+      "fuente": "nocturno_2026-11-17"
+    },
+    "EJoLhxbwYxo": {
+      "video_id": "EJoLhxbwYxo",
+      "titulo": "QUÉ HARÁ BITCOIN HOY 02.11.26 (08:00) | Análisis Técnico-Fundamental BTC-ETH-ORO-SP500-NASDAQ",
+      "published": "2026-11-02T08:50:08+00:00",
+      "url": null,
+      "detectado": "2026-11-02T08:50:08+00:00",
+      "transcript": "data_hist/EJoLhxbwYxo/EJoLhxbwYxo_transcript.json",
+      "estado": "importado_db",
+      "fuente": "store.db (reconciliacion Fase 0)"
+    },
+    "LFHkc5dUoLw": {
+      "video_id": "LFHkc5dUoLw",
+      "titulo": "Bitcoin: la señal que hacía desconfiar del rebote",
+      "published": "2026-10-29T18:37:26+00:00",
+      "url": null,
+      "detectado": "2026-10-29T18:37:26+00:00",
+      "transcript": "data_hist/LFHkc5dUoLw/LFHkc5dUoLw_transcript.json",
+      "estado": "importado_db",
+      "fuente": "store.db (reconciliacion Fase 0)"
+    },
+    "XLgPycsN0ls": {
+      "video_id": "XLgPycsN0ls",
+      "titulo": "QUÉ HARÁ BITCOIN HOY 30.10.26 (08:00) | Análisis Técnico-Fundamental BTC-ETH-ORO-SP500-NASDAQ",
+      "published": "2026-10-30T08:42:17+00:00",
+      "url": null,
+      "detectado": "2026-10-30T08:42:17+00:00",
+      "transcript": "data_hist/XLgPycsN0ls/XLgPycsN0ls_transcript.json",
+      "estado": "importado_db",
+      "fuente": "store.db (reconciliacion Fase 0)"
+    },
+    "dPHvRw1wzYQ": {
+      "video_id": "dPHvRw1wzYQ",
+      "titulo": "Bitcoin SOBREVIVE al peor hackeo de la historia | PRECIOS PARA NEGOCIAR EN NOVIEMBRE",
+      "published": "2026-10-31T14:00:38+00:00",
+      "url": null,
+      "detectado": "2026-10-31T14:00:38+00:00",
+      "transcript": "data_hist/dPHvRw1wzYQ/dPHvRw1wzYQ_transcript.json",
+      "estado": "importado_db",
+      "fuente": "store.db (reconciliacion Fase 0)"
+    },
+    "jeOFS1TZYQA": {
+      "video_id": "jeOFS1TZYQA",
+      "titulo": "Bitcoin no recupera los 78.241: el plan sigue en 71.000–69.000",
+      "published": "2026-11-02T17:51:35+00:00",
+      "url": null,
+      "detectado": "2026-11-02T17:51:35+00:00",
+      "transcript": "data_hist/jeOFS1TZYQA/jeOFS1TZYQA_transcript.json",
+      "estado": "importado_db",
+      "fuente": "store.db (reconciliacion Fase 0)"
+    }
+  }
+}

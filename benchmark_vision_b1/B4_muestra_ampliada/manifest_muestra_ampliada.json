@@ -1,0 +1,122 @@
+[
+  {
+    "video_id": "LFHkc5dUoLw",
+    "frame": "frame_3994.jpg",
+    "idx": 3994,
+    "pts_time": 798.6,
+    "escena": "cierre / rechazo en 81.446 (unica escena)",
+    "motivo": "seleccion fija por orden; representantes de la unica escena disponible"
+  },
+  {
+    "video_id": "LFHkc5dUoLw",
+    "frame": "frame_4006.jpg",
+    "idx": 4006,
+    "pts_time": 801.0,
+    "escena": "cierre / rechazo en 81.446 (unica escena)",
+    "motivo": "seleccion fija por orden; representantes de la unica escena disponible"
+  },
+  {
+    "video_id": "LFHkc5dUoLw",
+    "frame": "frame_4013.jpg",
+    "idx": 4013,
+    "pts_time": 802.4,
+    "escena": "cierre / rechazo en 81.446 (unica escena)",
+    "motivo": "seleccion fija por orden; representantes de la unica escena disponible"
+  },
+  {
+    "video_id": "LzPTdClLo_w",
+    "frame": "frame_0001.jpg",
+    "idx": 1,
+    "pts_time": 0.0,
+    "escena": "tramo 0s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "LzPTdClLo_w",
+    "frame": "frame_0017.jpg",
+    "idx": 17,
+    "pts_time": 480.0,
+    "escena": "tramo 480s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "LzPTdClLo_w",
+    "frame": "frame_0003.jpg",
+    "idx": 3,
+    "pts_time": 60.0,
+    "escena": "tramo 60s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "jeOFS1TZYQA",
+    "frame": "frame_0010.jpg",
+    "idx": 10,
+    "pts_time": 270.0,
+    "escena": "tramo 270s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "jeOFS1TZYQA",
+    "frame": "frame_0018.jpg",
+    "idx": 18,
+    "pts_time": 510.0,
+    "escena": "tramo 510s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "jeOFS1TZYQA",
+    "frame": "frame_0025.jpg",
+    "idx": 25,
+    "pts_time": 720.0,
+    "escena": "tramo 720s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "scJ-ai2FRiE",
+    "frame": "frame_0022.jpg",
+    "idx": 22,
+    "pts_time": 630.0,
+    "escena": "tramo 630s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "scJ-ai2FRiE",
+    "frame": "frame_0025.jpg",
+    "idx": 25,
+    "pts_time": 720.0,
+    "escena": "tramo 720s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "scJ-ai2FRiE",
+    "frame": "frame_0029.jpg",
+    "idx": 29,
+    "pts_time": 840.0,
+    "escena": "tramo 840s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "s3KxjqkzwKM",
+    "frame": "frame_0016.jpg",
+    "idx": 16,
+    "pts_time": 450.0,
+    "escena": "tramo 450s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "s3KxjqkzwKM",
+    "frame": "frame_0020.jpg",
+    "idx": 20,
+    "pts_time": 570.0,
+    "escena": "tramo 570s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  },
+  {
+    "video_id": "s3KxjqkzwKM",
+    "frame": "frame_0030.jpg",
+    "idx": 30,
+    "pts_time": 870.0,
+    "escena": "tramo 870s",
+    "motivo": "maximin: maxima distancia visual respecto de los ya elegidos"
+  }
+]

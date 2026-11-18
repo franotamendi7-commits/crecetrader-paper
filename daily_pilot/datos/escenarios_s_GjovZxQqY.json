@@ -1,0 +1,689 @@
+{
+  "video_id": "s_GjovZxQqY",
+  "escenarios": [
+    {
+      "escenario": {
+        "id": "ESC-sG-01-weekly",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "06:26",
+        "temporalidades": [
+          "Weekly",
+          "Daily"
+        ],
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 71509,
+          "procedencia": "A"
+        },
+        "justificacion": "precios objetivos de largo plazo; soporte 69.000",
+        "evidencia": [
+          "transcripcion 00:59-01:05",
+          "06:26-07:01"
+        ],
+        "condicion_activacion": {
+          "valor": "recuperacion hacia 69.000",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": 69000,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 71509,
+            "procedencia": "A"
+          },
+          {
+            "valor": 72554,
+            "procedencia": "A"
+          },
+          {
+            "valor": 75518,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Weekly",
+        "metodo_calculo": null,
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 68655.0 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-01-weekly",
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "dimensiones": {
+          "calidad_analisis": "alta",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 68655.0 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "condiciones_faltantes": [
+          "invalidacion no declarada"
+        ],
+        "que_se_necesita": [
+          "invalidacion",
+          "invalidacion no declarada"
+        ],
+        "propuesta_stop": {
+          "valor": 68655.0,
+          "procedencia": "D",
+          "metodo": "por debajo del minimo de la zona de entrada (0.5%)"
+        },
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 0.289855,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-02-4h",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "12:48",
+        "temporalidades": [
+          "4H"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 56750,
+          "procedencia": "A"
+        },
+        "justificacion": "maximos y minimos decrecientes; sin reversión en 4H el precio puede seguir cayendo",
+        "evidencia": [
+          "transcripcion 12:48-12:57"
+        ],
+        "condicion_activacion": {
+          "valor": "que no haya reversal en 4H",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": null,
+          "procedencia": null
+        },
+        "objetivos": [
+          {
+            "valor": 56750,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "entrada no declarada",
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "4H",
+        "metodo_calculo": null,
+        "clasificacion": "ESCENARIO_CONDICIONAL",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan condicionado; falta entrada/invalidacion/objetivos"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-02-4h",
+        "clasificacion": "ESCENARIO_CONDICIONAL",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan condicionado; falta entrada/invalidacion/objetivos"
+        ],
+        "condiciones_faltantes": [
+          "entrada no declarada",
+          "invalidacion no declarada",
+          "objetivos no declarados"
+        ],
+        "que_se_necesita": [
+          "entrada",
+          "entrada no declarada",
+          "invalidacion",
+          "invalidacion no declarada",
+          "objetivos",
+          "objetivos no declarados"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": null,
+          "perdida_potencial": null,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-03-intradia",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "14:47",
+        "temporalidades": [
+          "Intradia"
+        ],
+        "direccion": "neutral",
+        "nivel": {
+          "valor": 66617,
+          "procedencia": "A"
+        },
+        "justificacion": "horquilla intradia entre 66.617 y 64.004; partida 65.310",
+        "evidencia": [
+          "transcripcion 13:49-14:58"
+        ],
+        "entrada": {
+          "valor": 66617,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 64004,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado",
+          "condicion de activacion no explicita"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Intradia",
+        "metodo_calculo": null,
+        "clasificacion": "ZONA_DE_INTERES",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-03-intradia",
+        "clasificacion": "ZONA_DE_INTERES",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin condicion de activacion"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin condicion de activacion"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 0.001501,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-04-vigilar",
+        "instrumento": "BTCUSD",
+        "timestamp_explicacion": "02:01",
+        "temporalidades": [
+          "4H"
+        ],
+        "direccion": "neutral",
+        "nivel": {
+          "valor": 65520,
+          "procedencia": "A"
+        },
+        "justificacion": "habia que vigilar el precio en 65.520; tambien en futuros CME",
+        "evidencia": [
+          "transcripcion 02:01-03:11",
+          "10:48-11:21"
+        ],
+        "info_faltante": [
+          "condicion de activacion",
+          "entrada",
+          "stop"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "4H",
+        "metodo_calculo": null,
+        "clasificacion": "ZONA_DE_INTERES",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-04-vigilar",
+        "clasificacion": "ZONA_DE_INTERES",
+        "dimensiones": {
+          "calidad_analisis": "alta",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin condicion de activacion"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin condicion de activacion"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": null,
+          "perdida_potencial": null,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-05-eth",
+        "instrumento": "ETHUSD",
+        "timestamp_explicacion": "16:49",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "alcista",
+        "nivel": {
+          "valor": 1780,
+          "procedencia": "A"
+        },
+        "justificacion": "1.780 sirve de freno; zona de compra 1.890-2.286",
+        "evidencia": [
+          "transcripcion 16:49-17:14"
+        ],
+        "condicion_activacion": {
+          "valor": "si 1.780 junto con 1.890 hace que haya reversal",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": 1780,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 2025,
+            "procedencia": "A"
+          },
+          {
+            "valor": 2286,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 1771.1 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-05-eth",
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 1771.1 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "condiciones_faltantes": [
+          "invalidacion no declarada"
+        ],
+        "que_se_necesita": [
+          "invalidacion",
+          "invalidacion no declarada"
+        ],
+        "propuesta_stop": {
+          "valor": 1771.1,
+          "procedencia": "D",
+          "metodo": "por debajo del minimo de la zona de entrada (0.5%)"
+        },
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 11.235955,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-06-oro",
+        "instrumento": "XAUUSD",
+        "timestamp_explicacion": "17:36",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 3906,
+          "procedencia": "A"
+        },
+        "justificacion": "el oro seguira corrigiendo; 3.906 cierra el paso; objetivo 3.623",
+        "evidencia": [
+          "transcripcion 17:36-17:53"
+        ],
+        "condicion_activacion": {
+          "valor": "correccion en curso",
+          "procedencia": "A"
+        },
+        "entrada": {
+          "valor": 3906,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 3623,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos_manager": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 3925.53 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-06-oro",
+        "clasificacion": "PLAN_OPERATIVO_INCOMPLETO",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "ESPERAR_CONFIRMACION"
+          }
+        },
+        "veredicto": "ESPERAR_CONFIRMACION",
+        "motivos": [
+          "plan incompleto; se propone invalidacion (D)",
+          "propuesta de invalidacion (D): 3925.53 — metodo: por debajo del minimo de la zona de entrada (0.5%)"
+        ],
+        "condiciones_faltantes": [
+          "invalidacion no declarada"
+        ],
+        "que_se_necesita": [
+          "invalidacion",
+          "invalidacion no declarada"
+        ],
+        "propuesta_stop": {
+          "valor": 3925.53,
+          "procedencia": "D",
+          "metodo": "por debajo del minimo de la zona de entrada (0.5%)"
+        },
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 5.120328,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-07-sp500",
+        "instrumento": "SPX",
+        "timestamp_explicacion": "18:16",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 7592,
+          "procedencia": "A"
+        },
+        "justificacion": "SP500 aguanta en 7.592; correccion posible a 6.612",
+        "evidencia": [
+          "transcripcion 18:16-18:38"
+        ],
+        "objetivos": [
+          {
+            "valor": 6612,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "condicion de activacion",
+          "entrada",
+          "stop"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "NIVEL_REFERENCIADO",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "NIVEL_REFERENCIADO: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-07-sp500",
+        "clasificacion": "NIVEL_REFERENCIADO",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "NIVEL_REFERENCIADO: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin informacion operativa"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin informacion operativa"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": null,
+          "perdida_potencial": null,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-sG-08-nq",
+        "instrumento": "NQ",
+        "timestamp_explicacion": "18:43",
+        "temporalidades": [
+          "Daily"
+        ],
+        "direccion": "bajista",
+        "nivel": {
+          "valor": 28026,
+          "procedencia": "A"
+        },
+        "justificacion": "Nasdaq 28.026; 28.400 precio vendedor; objetivos 25.479/25.400",
+        "evidencia": [
+          "transcripcion 18:43-19:21"
+        ],
+        "entrada": {
+          "valor": 28400,
+          "procedencia": "A"
+        },
+        "objetivos": [
+          {
+            "valor": 25479,
+            "procedencia": "A"
+          },
+          {
+            "valor": 25400,
+            "procedencia": "A"
+          },
+          {
+            "valor": 22931,
+            "procedencia": "A"
+          }
+        ],
+        "info_faltante": [
+          "stop no declarado",
+          "condicion de activacion no explicita"
+        ],
+        "video_id": "s_GjovZxQqY",
+        "fuente": "transcripcion",
+        "temporalidad_origen": "Daily",
+        "metodo_calculo": null,
+        "clasificacion": "ZONA_DE_INTERES",
+        "veredicto": "FALTA_INFORMACION",
+        "motivos_manager": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "demo": false
+      },
+      "evaluacion": {
+        "escenario_id": "ESC-sG-08-nq",
+        "clasificacion": "ZONA_DE_INTERES",
+        "dimensiones": {
+          "calidad_analisis": "media",
+          "completitud_plan": "incompleto",
+          "viabilidad_tecnica": "sin contradicciones",
+          "riesgo_y_capital": {
+            "risk_reward": null,
+            "veredicto": "FALTA_INFORMACION"
+          }
+        },
+        "veredicto": "FALTA_INFORMACION",
+        "motivos": [
+          "ZONA_DE_INTERES: no es un plan operativo"
+        ],
+        "condiciones_faltantes": [
+          "sin condicion de activacion"
+        ],
+        "que_se_necesita": [
+          "condicion",
+          "entrada",
+          "invalidacion",
+          "objetivos",
+          "sin condicion de activacion"
+        ],
+        "propuesta_stop": null,
+        "risk_reward": null,
+        "capital": {
+          "disponible": 10000.0,
+          "riesgo_pct": 0.01,
+          "tamano_propuesto": 0.003521,
+          "perdida_potencial": 100.0,
+          "exposicion_maxima": 500.0
+        },
+        "paper_only": true,
+        "decision_usuario": "pendiente"
+      }
+    }
+  ]
+}

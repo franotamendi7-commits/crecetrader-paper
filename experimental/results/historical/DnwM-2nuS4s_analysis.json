@@ -1,0 +1,111 @@
+{
+  "video_id": "DnwM-2nuS4s",
+  "title": "Bitcoin cae desde los 80.308 tras abrir Nueva York: el plan se cumple",
+  "published": "2026-11-05T18:49:09+00:00",
+  "frames_processed": 17,
+  "frame_results": [
+    {
+      "frame": "frame_0001.jpg",
+      "frame_idx": 0,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:14:11Z"
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "frame_idx": 1,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:14:21Z"
+    },
+    {
+      "frame": "frame_0003.jpg",
+      "frame_idx": 2,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [29.629, 31.349, 29.629, 87.496, 82.853, 78.241, 75.840]\nSTRUCTURE: range\nINDICATORS: Fibonacci",
+      "analyzed_at": "2026-11-12T21:14:32Z"
+    },
+    {
+      "frame": "frame_0004.jpg",
+      "frame_idx": 3,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: 4H\nPRICES: [83.068, 81.958, 80.000, 79.000, 78.746, 75.920]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:14:44Z"
+    },
+    {
+      "frame": "frame_0005.jpg",
+      "frame_idx": 4,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [29.639, 31.340, 29.619, 87.178, 87.406, 87.000, 86.000, 85.000, 84.000, 83.000, 82.000, 81.000, 80.000, 79.000, 78.241, 77.000, 76.000, 75.000, 74.000, 73.000, 72.000, 71.000, 70.000, 69.000, 68.000, 67.000, 66.000, 65.000, 64.000, 63.000, 62.000]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:15:02Z"
+    },
+    {
+      "frame": "frame_0006.jpg",
+      "frame_idx": 5,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [85.000, 83.000, 81.000, 80.453, 79.000, 78.000, 77.000, 75.970, 74.000, 73.000]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:15:16Z"
+    },
+    {
+      "frame": "frame_0007.jpg",
+      "frame_idx": 6,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [75.288, 77.000, 78.000, 79.000, 80.000, 81.000]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:15:27Z"
+    },
+    {
+      "frame": "frame_0008.jpg",
+      "frame_idx": 7,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [87496, 82000, 81093, 78241, 75916, 755756]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:15:39Z"
+    },
+    {
+      "frame": "frame_0009.jpg",
+      "frame_idx": 8,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: 1H\nPRICES: [78.241, 77.974, 75.795, 74.600, 74.400]\nSTRUCTURE: range\nINDICATORS: none",
+      "analyzed_at": "2026-11-12T21:15:51Z"
+    },
+    {
+      "frame": "frame_0010.jpg",
+      "frame_idx": 9,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [87496, 82833, 81400, 79241, 78241, 76021, 71506, 69997, 68000]\nSTRUCTURE: range\nINDICATORS: Fibonacci",
+      "analyzed_at": "2026-11-12T21:16:03Z"
+    },
+    {
+      "frame": "frame_0011.jpg",
+      "frame_idx": 10,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: 1H\nPRICES: [78.241, 77.750, 77.000, 76.446, 75.928, 75.250, 74.500]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:16:14Z"
+    },
+    {
+      "frame": "frame_0012.jpg",
+      "frame_idx": 11,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:16:25Z"
+    },
+    {
+      "frame": "frame_0013.jpg",
+      "frame_idx": 12,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [2,129.7, 2,227.7, 2,249.3, 2,272.7, 2,297.7, 2,327.7, 2,357.7, 2,387.7, 2,417.7, 2,447.7, 2,477.7, 2,507.7, 2,537.7, 2,567.7, 2,597.7, 2,627.7, 2,657.7, 2,687.7, 2,717.7, 2,747.7, 2,777.7, 2,807.7, 2,837.7, 2,867.7, 2,897.7, 2,927.7, 2,957.7, 2,987.7, 3,017.7]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:16:45Z"
+    },
+    {
+      "frame": "frame_0014.jpg",
+      "frame_idx": 13,
+      "vision": "INSTRUMENT: ES\nTIMEFRAME: Daily\nPRICES: [4.3400, 4.1121, 3.906, 3.8900, 3.6234, 3.5000, 3.4000, 3.3000]\nSTRUCTURE: range\nINDICATORS: Fibonacci",
+      "analyzed_at": "2026-11-12T21:16:57Z"
+    },
+    {
+      "frame": "frame_0015.jpg",
+      "frame_idx": 14,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:17:08Z"
+    },
+    {
+      "frame": "frame_0016.jpg",
+      "frame_idx": 15,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:17:18Z"
+    },
+    {
+      "frame": "frame_0017.jpg",
+      "frame_idx": 16,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-12T21:17:28Z"
+    }
+  ],
+  "transcript_available": null
+}

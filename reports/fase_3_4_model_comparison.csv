@@ -1,0 +1,11 @@
+Modelo,Repositorio,Licencia,Tipo,Params,RAM_int4_GB,Apple_Silicon,Backend,OCR,Charts,Velocidad_s,Offline,Coste_USD,Notas
+Moondream 2,vikhyat/moondream2,Apache 2.0,Open weights,1.86B,2.0,Si,MLX/Photon,Mejor,Parcial,0.7,Si,0,Recomendado para prueba inicial
+Moondream 3,N/A,Moondream License 1.0,Open weights,N/A,N/A,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,0,Verificar disponibilidad
+Qwen2.5-VL-7B,Qwen/Qwen2.5-VL,Apache 2.0,Open weights,7B,5-7,Si,MLX,Excelente,Excelente,2-3,Si,0,Mayor capacidad pero alto consumo RAM
+Qwen2.5-VL-3B,Qwen/Qwen2.5-VL,Apache 2.0,Open weights,3B,2-3,Si,MLX,Bueno,Bueno,1-2,Si,0,Alternativa recomendada
+Qwen3.5-VL,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,0,Verificar capacidad visual
+InternVL2-2B,OpenGVLab/InternVL,MIT,Open weights,2B,2-3,Si,PyTorch,Bueno,Bueno,1-2,Si,0,Buena alternativa
+SmolVLM-2B,HuggingFaceTB/SmolVLM,Apache 2.0,Open weights,2B,2-3,Si,PyTorch,Bueno,Parcial,Rapido,Si,0,OCR bueno (DocVQA 81.6%)
+Florence-2,microsoft/Florence-2,MIT,Open weights,0.7B,1.5,Si,PyTorch,Bueno,Parcial,Rapido,Si,0,Mejor para deteccion/segmentacion
+FINAR-VL,dlgjr/FINAR-VL,Pendiente,Open weights,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,0,VLM especializado en finanzas
+EOF

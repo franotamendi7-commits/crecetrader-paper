@@ -1,0 +1,52 @@
+ID,Estado,Fuente
+BTC-SPOT-01,verificado,Kraken
+BTC-SPOT-02,verificado,Kraken
+BTC-SPOT-03,verificado,Kraken
+BTC-SPOT-04,verificado,Kraken
+BTC-SPOT-05,verificado,Kraken
+BTC-SPOT-06,verificado,Kraken
+BTC-SPOT-07,verificado,Kraken
+BTC-SPOT-08,verificado,Kraken
+BTC-SPOT-09,verificado,Kraken
+BTC-SPOT-10,verificado,Kraken
+BTC-SPOT-11,verificado,Kraken
+BTC-SPOT-12,verificado,Kraken
+BTC-SPOT-13,verificado,Kraken
+BTC-SPOT-14,verificado,Kraken
+BTC-SPOT-15,verificado,Kraken
+BTC-SPOT-16,verificado,Kraken
+BTC-SPOT-17,verificado,Kraken
+BTC-SPOT-18,verificado,Kraken
+BTC-SPOT-19,verificado,Kraken
+BTC-SPOT-20,verificado,Kraken
+BTC-SPOT-21,verificado,Kraken
+BTC-SPOT-22,verificado,Kraken
+BTC-SPOT-23,verificado,Kraken
+BTC-SPOT-24,verificado,Kraken
+BTC-CME-01,no_evaluable,CME no buscado
+BTC-CME-02,no_evaluable,CME no buscado
+BTC-CME-03,no_evaluable,CME no buscado
+BTC-CME-04,no_evaluable,CME no buscado
+BTC-CME-05,no_evaluable,CME no buscado
+BTC-CME-06,no_evaluable,CME no buscado
+BTC-CME-07,no_evaluable,CME no buscado
+BTC-CME-08,no_evaluable,CME no buscado
+ETH-01,no_evaluable,No buscado
+ETH-02,no_evaluable,No buscado
+ETH-03,no_evaluable,No buscado
+ETH-04,no_evaluable,No buscado
+GOLD-01,no_evaluable,No buscado
+GOLD-02,no_evaluable,No buscado
+GOLD-03,no_evaluable,No buscado
+SPX-01,no_evaluable,No buscado
+SPX-02,no_evaluable,No buscado
+NDX-01,no_evaluable,No buscado
+NDX-02,no_evaluable,No buscado
+NDX-03,no_evaluable,No buscado
+OCR-01,ilegible,N/A
+OCR-02,ilegible,N/A
+OCR-03,ilegible,N/A
+OCR-04,ilegible,N/A
+OCR-05,ilegible,N/A
+OCR-06,ilegible,N/A
+OCR-07,ilegible,N/A

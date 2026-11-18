@@ -1,0 +1,1001 @@
+{
+  "metodo": "instrumento y sentido por regex; nivel normalizado es-ES; agrupacion por banda relativa 0.5%; sin vision",
+  "n_claims": 6831,
+  "niveles_descartados": 4034,
+  "niveles_sin_instrumento": {
+    "0prmrS6nnRk": 119,
+    "5KtjJ8kefQ4": 43,
+    "DnwM-2nuS4s": 27,
+    "EJoLhxbwYxo": 97,
+    "LFHkc5dUoLw": 65,
+    "LzPTdClLo_w": 39,
+    "Vm7nUxLCMZQ": 150,
+    "XLgPycsN0ls": 120,
+    "bCc--rvyHpY": 126,
+    "dPHvRw1wzYQ": 74,
+    "i0qXzL0eSYs": 86,
+    "j06_M-fADjM": 95,
+    "jeOFS1TZYQA": 61,
+    "mv2VdVtXvDw": 129,
+    "o6n6UDNVtCk": 130,
+    "rTtXDLq2kOQ": 130,
+    "rX2wj_FXvT4": 170,
+    "s3KxjqkzwKM": 166,
+    "s_GjovZxQqY": 208,
+    "scJ-ai2FRiE": 83,
+    "subONxt5iag": 85,
+    "0JHYwOCzCKI": 69,
+    "2QjLmPdDKlk": 120,
+    "3OZ2vJPj92o": 62,
+    "B4Vf3bSk5GY": 61,
+    "CmbG9QntQ10": 52,
+    "D6XrdvQVTgk": 121,
+    "FkPGRd7kXnE": 105,
+    "G3GPk1mxPcQ": 103,
+    "MgTOoUWEq-M": 69,
+    "NVZfPTaeuLc": 67,
+    "TT07djUkfhE": 98,
+    "_Lxz34x7eGg": 86,
+    "ac6-r7g8pao": 119,
+    "avNOZfXdyX8": 62,
+    "cH2KY5vnsVQ": 78,
+    "cjUwyMHygEs": 84,
+    "lkMTbT7tK8c": 120,
+    "lwb4Qxy8D9w": 57,
+    "nqzn3DsZzKU": 118,
+    "xHR9d-0ToXU": 48,
+    "y9gsOU6_Bzw": 110
+  },
+  "niveles_repetidos": [
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 69997.0,
+      "variantes": [
+        69997.0,
+        70000.0
+      ],
+      "n_videos": 3,
+      "videos": [
+        "Vm7nUxLCMZQ",
+        "bCc--rvyHpY",
+        "subONxt5iag"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 80498.0,
+      "variantes": [
+        80498.0,
+        80595.0
+      ],
+      "n_videos": 3,
+      "videos": [
+        "3OZ2vJPj92o",
+        "ac6-r7g8pao",
+        "lwb4Qxy8D9w"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 81250.0,
+      "variantes": [
+        81250.0,
+        81446.0
+      ],
+      "n_videos": 3,
+      "videos": [
+        "NVZfPTaeuLc",
+        "cjUwyMHygEs",
+        "y9gsOU6_Bzw"
+      ]
+    },
+    {
+      "instrumento": "ETHUSD",
+      "nivel_aproximado": 2373.0,
+      "variantes": [
+        2373.0
+      ],
+      "n_videos": 3,
+      "videos": [
+        "G3GPk1mxPcQ",
+        "j06_M-fADjM",
+        "xHR9d-0ToXU"
+      ]
+    },
+    {
+      "instrumento": "XAUUSD",
+      "nivel_aproximado": 3906.0,
+      "variantes": [
+        3906.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "0prmrS6nnRk",
+        "i0qXzL0eSYs"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 78746.0,
+      "variantes": [
+        78746.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "XLgPycsN0ls",
+        "subONxt5iag"
+      ]
+    },
+    {
+      "instrumento": "BTCUSD",
+      "nivel_aproximado": 69000.0,
+      "variantes": [
+        69000.0
+      ],
+      "n_videos": 2,
+      "videos": [
+        "bCc--rvyHpY",
+        "i0qXzL0eSYs"
+      ]
+    }
+  ],
+  "contradicciones": [],
+  "linea_de_tiempo": {
+    "0prmrS6nnRk": [
+      {
+        "published": "2026-11-06T09:32:22+00:00",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3906.0
+        ],
+        "sentido": "alcista",
+        "start": "00:09:42.657"
+      }
+    ],
+    "3OZ2vJPj92o": [
+      {
+        "published": "2026-10-28",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80595.0
+        ],
+        "sentido": "neutro",
+        "start": "00:09:00.360"
+      }
+    ],
+    "5KtjJ8kefQ4": [
+      {
+        "published": "2026-11-04T18:44:04+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          2026.0,
+          87496.0
+        ],
+        "sentido": "neutro",
+        "start": "00:05:34.694"
+      },
+      {
+        "published": "2026-11-04T18:44:04+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          2026.0,
+          87496.0
+        ],
+        "sentido": "neutro",
+        "start": "00:05:38.444"
+      },
+      {
+        "published": "2026-11-04T18:44:04+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          2026.0,
+          87496.0
+        ],
+        "sentido": "neutro",
+        "start": "00:05:38.454"
+      }
+    ],
+    "CmbG9QntQ10": [
+      {
+        "published": "2026-10-27",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          5407.0
+        ],
+        "sentido": "neutro",
+        "start": "00:09:16.040"
+      }
+    ],
+    "G3GPk1mxPcQ": [
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80308.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:28.375"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80308.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:31.605"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80308.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:31.615"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2373.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:39.775"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80200.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:47.575"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80200.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:50.965"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80200.0,
+          80308.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:50.975"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          80308.0,
+          2300.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:54.015"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2300.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:57.125"
+      },
+      {
+        "published": "2026-10-26",
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2300.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:57.135"
+      }
+    ],
+    "LFHkc5dUoLw": [
+      {
+        "published": "2026-10-29T18:37:26+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          814446.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:46.079"
+      }
+    ],
+    "NVZfPTaeuLc": [
+      {
+        "published": "2026-10-22",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81446.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:12.200"
+      },
+      {
+        "published": "2026-10-22",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81446.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:16.750"
+      },
+      {
+        "published": "2026-10-22",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81446.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:16.760"
+      }
+    ],
+    "Vm7nUxLCMZQ": [
+      {
+        "published": "2026-11-13T09:53:40+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          69997.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:51.000"
+      }
+    ],
+    "XLgPycsN0ls": [
+      {
+        "published": "2026-10-30T08:42:17+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:16.600"
+      },
+      {
+        "published": "2026-10-30T08:42:17+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          77000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:03:15.372"
+      },
+      {
+        "published": "2026-10-30T08:42:17+00:00",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          2132.0,
+          2077.0
+        ],
+        "sentido": "neutro",
+        "start": "00:10:31.938"
+      }
+    ],
+    "ac6-r7g8pao": [
+      {
+        "published": "2026-10-24",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:42.480"
+      },
+      {
+        "published": "2026-10-24",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          84000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:13:59.720"
+      },
+      {
+        "published": "2026-10-24",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:23.480"
+      },
+      {
+        "published": "2026-10-24",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:25.350"
+      },
+      {
+        "published": "2026-10-24",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:25.360"
+      },
+      {
+        "published": "2026-10-24",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80498.0
+        ],
+        "sentido": "bajista",
+        "start": "00:21:35.040"
+      }
+    ],
+    "bCc--rvyHpY": [
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          69000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:19.600"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          69000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:08.100"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          74738.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:24.300"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          70000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:13.192"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          69000.0,
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:15.495"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:17.885"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          4000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:17.895"
+      },
+      {
+        "published": "2026-11-14T14:00:05+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          28026.0,
+          28400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:19:16.903"
+      }
+    ],
+    "cH2KY5vnsVQ": [
+      {
+        "published": "2026-11-18T09:43:08+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          28026.0
+        ],
+        "sentido": "neutro",
+        "start": "00:10:19.200"
+      }
+    ],
+    "cjUwyMHygEs": [
+      {
+        "published": "2026-10-29",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81250.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:23.759"
+      }
+    ],
+    "i0qXzL0eSYs": [
+      {
+        "published": "2026-11-17T10:50:16+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          2026.0
+        ],
+        "sentido": "alcista",
+        "start": "00:04:01.680"
+      },
+      {
+        "published": "2026-11-17T10:50:16+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          69000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:06:15.759"
+      },
+      {
+        "published": "2026-11-17T10:50:16+00:00",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3906.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:15.800"
+      },
+      {
+        "published": "2026-11-17T10:50:16+00:00",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3906.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:18.910"
+      },
+      {
+        "published": "2026-11-17T10:50:16+00:00",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3906.0
+        ],
+        "sentido": "neutro",
+        "start": "00:15:18.920"
+      }
+    ],
+    "j06_M-fADjM": [
+      {
+        "published": "2026-11-05T09:20:28+00:00",
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2373.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:46.895"
+      }
+    ],
+    "jeOFS1TZYQA": [
+      {
+        "published": "2026-11-02T17:51:35+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          7139.0
+        ],
+        "sentido": "neutro",
+        "start": "00:08:19.680"
+      },
+      {
+        "published": "2026-11-02T17:51:35+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          28400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:08:22.360"
+      },
+      {
+        "published": "2026-11-02T17:51:35+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          25479.0
+        ],
+        "sentido": "neutro",
+        "start": "00:08:42.240"
+      },
+      {
+        "published": "2026-11-02T17:51:35+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          25479.0
+        ],
+        "sentido": "neutro",
+        "start": "00:08:44.949"
+      },
+      {
+        "published": "2026-11-02T17:51:35+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          25479.0
+        ],
+        "sentido": "neutro",
+        "start": "00:08:44.959"
+      }
+    ],
+    "lwb4Qxy8D9w": [
+      {
+        "published": "2026-10-28",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          80595.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:36.400"
+      },
+      {
+        "published": "2026-10-28",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          83366.0
+        ],
+        "sentido": "neutro",
+        "start": "00:11:52.320"
+      }
+    ],
+    "mv2VdVtXvDw": [
+      {
+        "published": "2026-11-11T10:00:02+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          6900.0,
+          28026.0
+        ],
+        "sentido": "neutro",
+        "start": "00:19:09.520"
+      },
+      {
+        "published": "2026-11-11T10:00:02+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          28026.0
+        ],
+        "sentido": "neutro",
+        "start": "00:19:12.750"
+      },
+      {
+        "published": "2026-11-11T10:00:02+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          28026.0,
+          28400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:19:12.760"
+      }
+    ],
+    "o6n6UDNVtCk": [
+      {
+        "published": "2026-11-07T14:00:16+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          77400.0
+        ],
+        "sentido": "neutro",
+        "start": "00:01:19.120"
+      },
+      {
+        "published": "2026-11-07T14:00:16+00:00",
+        "instrumento": [
+          "XAUUSD"
+        ],
+        "numeros": [
+          3623.0
+        ],
+        "sentido": "alcista",
+        "start": "00:16:26.382"
+      }
+    ],
+    "rX2wj_FXvT4": [
+      {
+        "published": "2026-11-12T10:16:27+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          72554.0
+        ],
+        "sentido": "neutro",
+        "start": "00:03:36.959"
+      },
+      {
+        "published": "2026-11-12T10:16:27+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          71509.0
+        ],
+        "sentido": "neutro",
+        "start": "00:09:08.480"
+      }
+    ],
+    "s3KxjqkzwKM": [
+      {
+        "published": "2026-11-03T09:00:02+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76627.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:19.332"
+      },
+      {
+        "published": "2026-11-03T09:00:02+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76627.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:23.002"
+      },
+      {
+        "published": "2026-11-03T09:00:02+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76627.0
+        ],
+        "sentido": "neutro",
+        "start": "00:02:23.012"
+      },
+      {
+        "published": "2026-11-03T09:00:02+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          76674.0
+        ],
+        "sentido": "neutro",
+        "start": "00:10:08.017"
+      }
+    ],
+    "s_GjovZxQqY": [
+      {
+        "published": "2026-11-16T09:55:48+00:00",
+        "instrumento": [
+          "QQQ"
+        ],
+        "numeros": [
+          28026.0
+        ],
+        "sentido": "neutro",
+        "start": "00:18:43.320"
+      }
+    ],
+    "scJ-ai2FRiE": [
+      {
+        "published": "2026-11-04T09:00:49+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78000.0
+        ],
+        "sentido": "neutro",
+        "start": "00:14:00.579"
+      }
+    ],
+    "subONxt5iag": [
+      {
+        "published": "2026-11-10T09:40:55+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          2077.0,
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:09:29.997"
+      },
+      {
+        "published": "2026-11-10T09:40:55+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0
+        ],
+        "sentido": "neutro",
+        "start": "00:09:34.187"
+      },
+      {
+        "published": "2026-11-10T09:40:55+00:00",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          78746.0,
+          69997.0
+        ],
+        "sentido": "neutro",
+        "start": "00:09:34.197"
+      }
+    ],
+    "xHR9d-0ToXU": [
+      {
+        "published": "2026-10-29",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81690.0
+        ],
+        "sentido": "neutro",
+        "start": "00:04:11.534"
+      },
+      {
+        "published": "2026-10-29",
+        "instrumento": [
+          "ETHUSD"
+        ],
+        "numeros": [
+          2373.0
+        ],
+        "sentido": "neutro",
+        "start": "00:07:52.015"
+      }
+    ],
+    "y9gsOU6_Bzw": [
+      {
+        "published": "2026-10-18",
+        "instrumento": [
+          "BTCUSD"
+        ],
+        "numeros": [
+          81446.0
+        ],
+        "sentido": "neutro",
+        "start": "00:00:43.480"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{"video_id": "s_GjovZxQqY", "fecha": "2026-11-16", "id": "S1-BTC-69-71", "instrument": "BTCUSD", "direction": "compra", "nivel": "no_operable", "decision_rm": "NO_EVALUABLE", "r_multiples": [], "perdida_potencial": null}
+{"video_id": "s_GjovZxQqY", "fecha": "2026-11-16", "id": "S3-BTC-65520", "instrument": "BTCUSD", "direction": "compra", "nivel": "escenario", "decision_rm": "ACEPTAR", "r_multiples": [2.3], "perdida_potencial": 100.0}
+{"video_id": "s_GjovZxQqY", "fecha": "2026-11-16", "id": "S4-ETH", "instrument": "ETHUSD", "direction": "compra", "nivel": "escenario", "decision_rm": "ACEPTAR", "r_multiples": [1.41, 3.34], "perdida_potencial": 100.0}
+{"video_id": "s_GjovZxQqY", "fecha": "2026-11-16", "id": "S5-XAU", "instrument": "XAUUSD", "direction": "venta", "nivel": "escenario", "decision_rm": "REVISION MANUAL", "r_multiples": [3.82], "perdida_potencial": 100.0}
+{"video_id": "s_GjovZxQqY", "fecha": "2026-11-16", "id": "S2-BTC-56750", "instrument": "BTCUSD", "direction": "compra", "nivel": "escenario", "decision_rm": "RECHAZAR", "r_multiples": [0.09], "perdida_potencial": 100.0}
+{"video_id": "s_GjovZxQqY", "fecha": "2026-11-16", "id": "S6-BTC-explícita", "instrument": "BTCUSD", "direction": "compra", "nivel": "candidata", "decision_rm": "REVISION MANUAL", "r_multiples": [7.11], "perdida_potencial": 100.0}

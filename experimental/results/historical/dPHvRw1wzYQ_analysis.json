@@ -1,0 +1,129 @@
+{
+  "video_id": "dPHvRw1wzYQ",
+  "title": "dPHvRw1wzYQ",
+  "published": "",
+  "frames_processed": 20,
+  "frame_results": [
+    {
+      "frame": "frame_0048.jpg",
+      "frame_idx": 0,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: (trend, range, support, resistance, or UNKNOWN)\nINDICATORS: (MA, Fibonacci, Volume, or none)",
+      "analyzed_at": "2026-11-15T20:31:28Z"
+    },
+    {
+      "frame": "frame_0049.jpg",
+      "frame_idx": 1,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:31:35Z"
+    },
+    {
+      "frame": "frame_0050.jpg",
+      "frame_idx": 2,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:31:42Z"
+    },
+    {
+      "frame": "frame_0051.jpg",
+      "frame_idx": 3,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:31:49Z"
+    },
+    {
+      "frame": "frame_0052.jpg",
+      "frame_idx": 4,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:31:56Z"
+    },
+    {
+      "frame": "frame_0053.jpg",
+      "frame_idx": 5,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:04Z"
+    },
+    {
+      "frame": "frame_0054.jpg",
+      "frame_idx": 6,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:12Z"
+    },
+    {
+      "frame": "frame_0055.jpg",
+      "frame_idx": 7,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:19Z"
+    },
+    {
+      "frame": "frame_0056.jpg",
+      "frame_idx": 8,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:27Z"
+    },
+    {
+      "frame": "frame_0057.jpg",
+      "frame_idx": 9,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:34Z"
+    },
+    {
+      "frame": "frame_0058.jpg",
+      "frame_idx": 10,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:42Z"
+    },
+    {
+      "frame": "frame_0059.jpg",
+      "frame_idx": 11,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:32:51Z"
+    },
+    {
+      "frame": "frame_0060.jpg",
+      "frame_idx": 12,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:33:00Z"
+    },
+    {
+      "frame": "frame_0061.jpg",
+      "frame_idx": 13,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:33:10Z"
+    },
+    {
+      "frame": "frame_0062.jpg",
+      "frame_idx": 14,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [87496, 82833, 81688, 78746, 77446, 76000, 74500, 73000, 71500, 70000, 69997, 69000]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:33:24Z"
+    },
+    {
+      "frame": "frame_0063.jpg",
+      "frame_idx": 15,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: 15m\nPRICES: [81,690, 80,695, 78,746, 76,852]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:33:37Z"
+    },
+    {
+      "frame": "frame_0064.jpg",
+      "frame_idx": 16,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: 1H\nPRICES: [null]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:33:49Z"
+    },
+    {
+      "frame": "frame_0065.jpg",
+      "frame_idx": 17,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [null]\nSTRUCTURE: range\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:34:01Z"
+    },
+    {
+      "frame": "frame_0066.jpg",
+      "frame_idx": 18,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:34:13Z"
+    },
+    {
+      "frame": "frame_0067.jpg",
+      "frame_idx": 19,
+      "vision": "INSTRUMENT: BTCUSD\nTIMEFRAME: Daily\nPRICES: [list visible prices or null]\nSTRUCTURE: trend\nINDICATORS: MA",
+      "analyzed_at": "2026-11-15T20:34:24Z"
+    }
+  ],
+  "transcript_available": null
+}

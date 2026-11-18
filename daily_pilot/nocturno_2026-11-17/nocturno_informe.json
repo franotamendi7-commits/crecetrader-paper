@@ -1,0 +1,135 @@
+{
+  "lote": "nocturno_2026-11-17",
+  "videos": 20,
+  "cues": 15049,
+  "niveles": 1116,
+  "conceptos_n_videos": {
+    "liquidez": 15,
+    "acumulacion": 13,
+    "estructura": 6,
+    "tendencia": 18,
+    "stop": 13,
+    "objetivo": 20,
+    "entrada": 18,
+    "reversal": 15,
+    "divergencia": 3,
+    "catalizador": 15,
+    "rango": 10,
+    "distribucion": 6,
+    "resistencia": 4,
+    "techo_techo": 4,
+    "volumen": 2,
+    "holders": 3,
+    "invalidacion": 1,
+    "fomo": 1
+  },
+  "niveles_top": {
+    "83366": {
+      "menciones": 132,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:01"
+      ]
+    },
+    "81446": {
+      "menciones": 94,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:00"
+      ]
+    },
+    "78746": {
+      "menciones": 88,
+      "primer": [
+        "2QjLmPdDKlk",
+        "00:04"
+      ]
+    },
+    "80308": {
+      "menciones": 46,
+      "primer": [
+        "2QjLmPdDKlk",
+        "00:06"
+      ]
+    },
+    "81690": {
+      "menciones": 40,
+      "primer": [
+        "2QjLmPdDKlk",
+        "00:06"
+      ]
+    },
+    "82833": {
+      "menciones": 34,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:08"
+      ]
+    },
+    "71509": {
+      "menciones": 30,
+      "primer": [
+        "B4Vf3bSk5GY",
+        "00:06"
+      ]
+    },
+    "87496": {
+      "menciones": 28,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:09"
+      ]
+    },
+    "78580": {
+      "menciones": 28,
+      "primer": [
+        "2QjLmPdDKlk",
+        "00:07"
+      ]
+    },
+    "69000": {
+      "menciones": 28,
+      "primer": [
+        "B4Vf3bSk5GY",
+        "00:06"
+      ]
+    },
+    "83072": {
+      "menciones": 24,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:12"
+      ]
+    },
+    "84455": {
+      "menciones": 22,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:13"
+      ]
+    },
+    "80595": {
+      "menciones": 20,
+      "primer": [
+        "3OZ2vJPj92o",
+        "00:02"
+      ]
+    },
+    "82000": {
+      "menciones": 16,
+      "primer": [
+        "0JHYwOCzCKI",
+        "00:01"
+      ]
+    },
+    "78000": {
+      "menciones": 16,
+      "primer": [
+        "D6XrdvQVTgk",
+        "00:17"
+      ]
+    }
+  },
+  "fibonacci_menciones": 0,
+  "vision": "NO ejecutada (motor no autorizado)"
+}

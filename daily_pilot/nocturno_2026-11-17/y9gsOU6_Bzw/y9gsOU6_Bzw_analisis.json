@@ -1,0 +1,623 @@
+{
+  "video_id": "y9gsOU6_Bzw",
+  "titulo": "Bitcoin Today 10/18: Is This the Weekly Reversal Signal?",
+  "fecha_titulo": "2026-10-18",
+  "duracion_s": "656",
+  "n_cues": 588,
+  "instrumentos_mencionados": {
+    "BTC": 14
+  },
+  "instrumentos_ts": {
+    "BTC": [
+      "00:00",
+      "00:00",
+      "00:02",
+      "00:02",
+      "00:03",
+      "00:03"
+    ]
+  },
+  "temporalidades": {
+    "Weekly": 34,
+    "Daily": 6,
+    "4H": 10,
+    "Intradia": 6
+  },
+  "niveles_explicitos": [
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "Y ayer habíamos hablado de los 81,446."
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "Y ayer habíamos hablado de los 81,446."
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "que perdido este precio, los 81,446,"
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "que perdido este precio, los 81,446,"
+    },
+    {
+      "valor": "78,746",
+      "ts": "00:00",
+      "contexto": "compradores en los 78,746,"
+    },
+    {
+      "valor": "78,746",
+      "ts": "00:00",
+      "contexto": "compradores en los 78,746,"
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "81,446,"
+    },
+    {
+      "valor": "81,446",
+      "ts": "00:00",
+      "contexto": "81,446,"
+    },
+    {
+      "valor": "75,000",
+      "ts": "00:01",
+      "contexto": "los 75,000 518,"
+    },
+    {
+      "valor": "75,000",
+      "ts": "00:01",
+      "contexto": "los 75,000 518,"
+    },
+    {
+      "valor": "72,554",
+      "ts": "00:01",
+      "contexto": "72,554"
+    },
+    {
+      "valor": "72,554",
+      "ts": "00:01",
+      "contexto": "72,554"
+    },
+    {
+      "valor": "69,590",
+      "ts": "00:01",
+      "contexto": "los 69,590."
+    },
+    {
+      "valor": "69,590",
+      "ts": "00:01",
+      "contexto": "los 69,590."
+    },
+    {
+      "valor": "69,000",
+      "ts": "00:01",
+      "contexto": "incluso hasta los 69,000, es decir,"
+    },
+    {
+      "valor": "69,000",
+      "ts": "00:01",
+      "contexto": "incluso hasta los 69,000, es decir,"
+    },
+    {
+      "valor": "78,746",
+      "ts": "00:01",
+      "contexto": "pues como digo, en los 78,746,"
+    },
+    {
+      "valor": "78,746",
+      "ts": "00:01",
+      "contexto": "pues como digo, en los 78,746,"
+    },
+    {
+      "valor": "75,518",
+      "ts": "00:01",
+      "contexto": "75,518,"
+    },
+    {
+      "valor": "75,518",
+      "ts": "00:01",
+      "contexto": "75,518,"
+    },
+    {
+      "valor": "72,554",
+      "ts": "00:01",
+      "contexto": "72,554,"
+    },
+    {
+      "valor": "72,554",
+      "ts": "00:01",
+      "contexto": "72,554,"
+    },
+    {
+      "valor": "71,500",
+      "ts": "00:01",
+      "contexto": "71,500"
+    },
+    {
+      "valor": "71,500",
+      "ts": "00:01",
+      "contexto": "71,500"
+    },
+    {
+      "valor": "69,997",
+      "ts": "00:01",
+      "contexto": "9, largo plazo y los 69,997,"
+    },
+    {
+      "valor": "69,997",
+      "ts": "00:01",
+      "contexto": "9, largo plazo y los 69,997,"
+    },
+    {
+      "valor": "81.010",
+      "ts": "00:02",
+      "contexto": "81.010, cerraría por debajo de los"
+    },
+    {
+      "valor": "81.010",
+      "ts": "00:02",
+      "contexto": "81.010, cerraría por debajo de los"
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:02",
+      "contexto": "81.446."
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:02",
+      "contexto": "81.446."
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:03",
+      "contexto": "los 78.746,"
+    },
+    {
+      "valor": "78.746",
+      "ts": "00:03",
+      "contexto": "los 78.746,"
+    },
+    {
+      "valor": "56.750",
+      "ts": "00:03",
+      "contexto": "desde los 56.750."
+    },
+    {
+      "valor": "56.750",
+      "ts": "00:03",
+      "contexto": "desde los 56.750."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:04",
+      "contexto": "por debajo de 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:04",
+      "contexto": "por debajo de 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:05",
+      "contexto": "83.366,"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:05",
+      "contexto": "83.366,"
+    },
+    {
+      "valor": "101.575",
+      "ts": "00:05",
+      "contexto": "101.575"
+    },
+    {
+      "valor": "101.575",
+      "ts": "00:05",
+      "contexto": "101.575"
+    },
+    {
+      "valor": "109.765",
+      "ts": "00:05",
+      "contexto": "y ya la hemos usado en el pasado 109.765"
+    },
+    {
+      "valor": "109.765",
+      "ts": "00:05",
+      "contexto": "y ya la hemos usado en el pasado 109.765"
+    },
+    {
+      "valor": "134.000",
+      "ts": "00:05",
+      "contexto": "y posteriormente 134.000"
+    },
+    {
+      "valor": "134.000",
+      "ts": "00:05",
+      "contexto": "y posteriormente 134.000"
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:05",
+      "contexto": "hemos visto en diario. Serían 71.509 y"
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:05",
+      "contexto": "hemos visto en diario. Serían 71.509 y"
+    },
+    {
+      "valor": "69.000",
+      "ts": "00:05",
+      "contexto": "69.000"
+    },
+    {
+      "valor": "69.000",
+      "ts": "00:05",
+      "contexto": "69.000"
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:05",
+      "contexto": "lo que había planteado antes, 71.509 y"
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:05",
+      "contexto": "lo que había planteado antes, 71.509 y"
+    },
+    {
+      "valor": "69.000",
+      "ts": "00:05",
+      "contexto": "69.000, donde hay cálculos también"
+    },
+    {
+      "valor": "69.000",
+      "ts": "00:05",
+      "contexto": "69.000, donde hay cálculos también"
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:05",
+      "contexto": "precios, igual que los 81.446 pertenece"
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:05",
+      "contexto": "precios, igual que los 81.446 pertenece"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "83.366"
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:07",
+      "contexto": "y apoyados en los 81.446,"
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:07",
+      "contexto": "y apoyados en los 81.446,"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "de vendedores, fíjate cómo en 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "de vendedores, fíjate cómo en 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "En los 83.366,"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:07",
+      "contexto": "En los 83.366,"
+    },
+    {
+      "valor": "81.000",
+      "ts": "00:07",
+      "contexto": "los 81.000,"
+    },
+    {
+      "valor": "81.000",
+      "ts": "00:07",
+      "contexto": "los 81.000,"
+    },
+    {
+      "valor": "80.308",
+      "ts": "00:08",
+      "contexto": "Eso lo dirigiría a los 80.308 y aquí"
+    },
+    {
+      "valor": "80.308",
+      "ts": "00:08",
+      "contexto": "Eso lo dirigiría a los 80.308 y aquí"
+    },
+    {
+      "valor": "76.842",
+      "ts": "00:08",
+      "contexto": "tiene objetivos, 78 y 76.842."
+    },
+    {
+      "valor": "76.842",
+      "ts": "00:08",
+      "contexto": "tiene objetivos, 78 y 76.842."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "Los 83.366, largo plazo, se están"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "Los 83.366, largo plazo, se están"
+    },
+    {
+      "valor": "69.000",
+      "ts": "00:09",
+      "contexto": "llevar hasta los 69.000, 71.509."
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:09",
+      "contexto": "llevar hasta los 69.000, 71.509."
+    },
+    {
+      "valor": "69.000",
+      "ts": "00:09",
+      "contexto": "llevar hasta los 69.000, 71.509."
+    },
+    {
+      "valor": "71.509",
+      "ts": "00:09",
+      "contexto": "llevar hasta los 69.000, 71.509."
+    }
+  ],
+  "n_niveles": 74,
+  "conceptos": {
+    "liquidez": {
+      "menciones": 8,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:05"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 6,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "holders": {
+      "menciones": 2,
+      "primeros": [
+        "00:04",
+        "00:04"
+      ]
+    },
+    "rango": {
+      "menciones": 6,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "stop": {
+      "menciones": 2,
+      "primeros": [
+        "00:03",
+        "00:03"
+      ]
+    },
+    "objetivo": {
+      "menciones": 14,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "entrada": {
+      "menciones": 4,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:05",
+        "00:05"
+      ]
+    },
+    "reversal": {
+      "menciones": 4,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:02",
+        "00:02"
+      ]
+    },
+    "catalizador": {
+      "menciones": 2,
+      "primeros": [
+        "00:09",
+        "00:09"
+      ]
+    }
+  },
+  "escenarios": {
+    "alcista": [
+      {
+        "ts": "00:05",
+        "texto": "pueda subir y ya sabes que tenemos"
+      },
+      {
+        "ts": "00:05",
+        "texto": "pueda subir y ya sabes que tenemos"
+      }
+    ],
+    "bajista": [
+      {
+        "ts": "00:00",
+        "texto": "esta corrección que lleva,"
+      },
+      {
+        "ts": "00:00",
+        "texto": "esta corrección que lleva,"
+      },
+      {
+        "ts": "00:02",
+        "texto": "corrección, de principio de reversión"
+      },
+      {
+        "ts": "00:02",
+        "texto": "corrección, de principio de reversión"
+      },
+      {
+        "ts": "00:02",
+        "texto": "precio, en esta corrección, fue el 8 de"
+      },
+      {
+        "ts": "00:02",
+        "texto": "precio, en esta corrección, fue el 8 de"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Y el primer objetivo de esta caída son"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Y el primer objetivo de esta caída son"
+      }
+    ]
+  },
+  "condiciones": {
+    "activacion": [
+      {
+        "ts": "00:01",
+        "texto": "buscando compradores. Si no aparece,"
+      },
+      {
+        "ts": "00:01",
+        "texto": "buscando compradores. Si no aparece,"
+      },
+      {
+        "ts": "00:01",
+        "texto": "si pierde este precio, si este precio es"
+      },
+      {
+        "ts": "00:01",
+        "texto": "si pierde este precio, si este precio es"
+      },
+      {
+        "ts": "00:01",
+        "texto": "siempre que cierra por debajo de un"
+      },
+      {
+        "ts": "00:01",
+        "texto": "siempre que cierra por debajo de un"
+      },
+      {
+        "ts": "00:02",
+        "texto": "si no recuerdo mal, vamos a volverla a"
+      },
+      {
+        "ts": "00:02",
+        "texto": "si no recuerdo mal, vamos a volverla a"
+      }
+    ],
+    "entrada": [
+      {
+        "ts": "00:04",
+        "texto": "ese interés de volver a comprar y"
+      },
+      {
+        "ts": "00:04",
+        "texto": "ese interés de volver a comprar y"
+      },
+      {
+        "ts": "00:05",
+        "texto": "tendrían que aparecer y comprar para que"
+      },
+      {
+        "ts": "00:05",
+        "texto": "tendrían que aparecer y comprar para que"
+      }
+    ],
+    "invalidacion": [
+      {
+        "ts": "00:01",
+        "texto": "siempre que cierra por debajo de un"
+      },
+      {
+        "ts": "00:01",
+        "texto": "siempre que cierra por debajo de un"
+      },
+      {
+        "ts": "00:02",
+        "texto": "81.010, cerraría por debajo de los"
+      },
+      {
+        "ts": "00:02",
+        "texto": "81.010, cerraría por debajo de los"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Y un cierre ya por debajo de un precio"
+      },
+      {
+        "ts": "00:03",
+        "texto": "Y un cierre ya por debajo de un precio"
+      },
+      {
+        "ts": "00:04",
+        "texto": "por debajo de 83.366"
+      },
+      {
+        "ts": "00:04",
+        "texto": "por debajo de 83.366"
+      }
+    ]
+  },
+  "limitaciones": [
+    "Analisis TEXTUAL unicamente: sin verificacion visual de graficos.",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "Los niveles son historicos; no tratar como vigentes sin confirmacion."
+  ]
+}

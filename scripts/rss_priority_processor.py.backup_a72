@@ -1,0 +1,1127 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+rss_priority_processor.py
+=========================
+
+Circuito RSS + prioridades + aprendizaje histórico para el proyecto
+YouTubeTradingAgent.
+
+Funcionamiento
+--------------
+1. RSS
+   - Consulta el feed RSS de YouTube del canal CreceTrader
+     (channel_id=UC4DOPLw9NRRBFW4wYjcWxiA) cada ``interval`` segundos
+     (por defecto 4 horas = 14400 s).
+   - Identifica nuevas publicaciones mediante el ID único de YouTube
+     (del campo `atom:id`, `yt:video:ID` -> `VIDEO_ID`).
+
+2. Registro persistente
+   - Archivo de estado: ``experimental/results/historical_progress.json``
+     (sobreescribible con ``--progress-file``).
+   - Cada video lleva un estado: ``detected | pending | processing |
+     completed | error`` y un mapa de progreso de pipeline
+     ``download | frames | transcript | vision | validation``.
+
+3. Prioridades
+   - Nuevo (aparece en el RSS y no estaba en el registro): rango 1,
+     procesado inmediatamente, ordenado por fecha publicación descendente.
+   - Histórico (ya detectado y no completado/error): rango 2, orden inverso
+     cronológico (el más reciente primero, hacia atrás).
+
+4. Pipeline por video (checkpoint por paso)
+   - download -> extract_frames -> extract_transcript -> vision_analysis
+                 -> validate
+   - SÓLO se marca ``completed`` cuando los 5 pasos han concluido con éxito.
+     Descargar/Transcribir por sí solo NO es suficiente.
+
+5. Persistencia
+   - El estado se guarda de forma atómica (fichero tmp + os.replace) y se
+     vuelve a escribir tras cada paso y tras cada video.
+   - Al reiniciar el script se recarga el estado y se reanuda desde el
+     último checkpoint: ni la cola ni el progreso se pierden.
+
+6. Modelo visual
+   - Qwen local a través de Ollama (http://localhost:11434).
+   - Modelos admitidos: qwen3.5:9b-mlx, qwen2.5vl:3b.
+   - Sin dependencia de Gemini.
+
+Uso
+---
+  # Bucle continuo (cron)
+  python3 scripts/rss_priority_processor.py
+
+  # Un solo ciclo (pruebas)
+  python3 scripts/rss_priority_processor.py --once
+
+  # Solo consultar RSS y actualizar estado, sin procesar
+  python3 scripts/rss_priority_processor.py --check-only
+
+  # Procesar con límite, sin visión (pruebas de prioridad)
+  python3 scripts/rss_priority_processor.py --limit 1 --no-vision
+
+  # Puntos de extensión (entorno de pruebas)
+  python3 scripts/rss_priority_processor.py --progress-file /tmp/x.json \\
+        --data-dir /tmp/data --frames-dir /tmp/frames --results-dir /tmp/results
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import signal
+import subprocess
+import sys
+import time
+import urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple, cast
+
+import xml.etree.ElementTree as ET
+# Constantes y configuración por defecto
+# ---------------------------------------------------------------------------
+
+DEFAULT_CHANNEL_ID = "UC4DOPLw9NRRBFW4wYjcWxiA"
+DEFAULT_RSS_URL = (
+    "https://www.youtube.com/feeds/videos.xml?channel_id=" + DEFAULT_CHANNEL_ID
+)
+DEFAULT_INTERVAL_SECONDS = 4 * 60 * 60            # 4 horas
+DEFAULT_MAX_VIDEOS_PER_RUN = 3
+DEFAULT_MAX_FRAMES_PER_VIDEO = 20
+DEFAULT_VISION_TIMEOUT = 180                      # segundos por petición a Ollama
+DEFAULT_FPS = "1/30"
+DEFAULT_OLLAMA_URL = "http://localhost:11434"
+DEFAULT_MAX_RETRIES = 3
+
+# Modelos visuales locales (orden de preferencia)
+VISION_MODELS = ["qwen3.5:9b-mlx", "qwen2.5vl:3b"]
+
+# Prompt estructurado para el análisis visual (coherente con los resultados
+# históricos que ya existen en experimental/results/historical/).
+VISION_PROMPT_TEMPLATE = """Analyze this trading chart. Return ONLY the following fields, one per line, in this exact format:
+
+INSTRUMENT: (BTCUSD, ETHUSD, ES, NQ, XAUUSD, AMD, or UNKNOWN)
+TIMEFRAME: (Weekly, Daily, 4H, 1H, 15m, 5m, or UNKNOWN)
+PRICES: [list visible prices or null]
+STRUCTURE: (trend, range, support, resistance, or UNKNOWN)
+INDICATORS: (MA, Fibonacci, Volume, or none)
+"""
+
+# Estados válidos del registro
+STATUS_DETECTED = "detected"
+STATUS_PENDING = "pending"
+STATUS_PROCESSING = "processing"
+STATUS_COMPLETED = "completed"
+STATUS_ERROR = "error"
+VALID_STATUSES = (STATUS_DETECTED, STATUS_PENDING, STATUS_PROCESSING,
+                  STATUS_COMPLETED, STATUS_ERROR)
+
+# Pasos del pipeline
+STEP_DOWNLOAD = "download"
+STEP_FRAMES = "frames"
+STEP_TRANSCRIPT = "transcript"
+STEP_VISION = "vision"
+STEP_VALIDATION = "validation"
+ALL_STEPS = (STEP_DOWNLOAD, STEP_FRAMES, STEP_TRANSCRIPT, STEP_VISION,
+             STEP_VALIDATION)
+
+# Nombre del fichero de log por defecto (creado junto al fichero de estado).
+DEFAULT_LOG_FILE = "rss_priority_processor.log"
+
+
+# ---------------------------------------------------------------------------
+# Utilerías
+# ---------------------------------------------------------------------------
+
+def now_iso() -> str:
+    """Fecha/hora ISO 8601 actual en UTC."""
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def now_local() -> str:
+    """Fecha/hora local ISO 8601."""
+    return datetime.now().strftime("%Y-%m-%dT%H:%M:%S%z")
+
+
+_GLOBAL_LOG_FILE: Optional[Path] = None
+
+
+def log(msg: str, log_file: Optional[Path] = None, verbose: bool = True) -> None:
+    """Muestra por consola y opcionalmente escribe en el fichero de log."""
+    if log_file is None:
+        log_file = _GLOBAL_LOG_FILE
+    line = f"[{now_local()}] {msg}"
+    # DEBUG
+    print(f"DEBUG log: msg_start={msg[:30]!r}, log_file={log_file}, _GLOBAL_LOG_FILE={_GLOBAL_LOG_FILE}, verbose={verbose}", flush=True)
+    print(f"DEBUG log2: _GLOBAL_LOG_FILE={_GLOBAL_LOG_FILE}", flush=True)
+    if verbose:
+        print(line, flush=True)
+    if log_file is not None:
+        try:
+            with open(log_file, "a", encoding="utf-8") as fh:
+                fh.write(line + "\n")
+        except OSError:
+            pass
+
+
+def error_exit(msg: str, log_file: Optional[Path] = None) -> None:
+    """Error crítico: avisa y termina con código 1."""
+    log(f"ERROR: {msg}", log_file=log_file, verbose=True)
+    sys.exit(1)
+
+
+def parse_iso_datetime(value: str) -> Optional[datetime]:
+    """Intenta parsear una fecha ISO 8601 (con o sin zona horaria)."""
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value)
+    except ValueError:
+        pass
+    candidate = re.sub(r"\.(\d+)Z$", r"\1+00:00", value)
+    try:
+        return datetime.fromisoformat(candidate)
+    except ValueError:
+        return None
+
+
+def rss_published_sort_key(published: str) -> tuple:
+    """Clave de ordenación para publicaciones: más reciente primero."""
+    dt = parse_iso_datetime(published)
+    if dt is not None:
+        return (0, dt)
+    return (1, published)          # fecha ilegible -> al final
+
+
+# ---------------------------------------------------------------------------
+# Gestión del fichero de estado (persistencia)
+# ---------------------------------------------------------------------------
+
+def default_progress_file(base_dir: Path) -> Path:
+    """Ruta por defecto del estado: ``<base>/experimental/results/historical_progress.json``."""
+    return base_dir / "experimental" / "results" / "historical_progress.json"
+
+
+def default_log_file(progress_file: Path) -> Path:
+    return progress_file.parent / DEFAULT_LOG_FILE
+
+
+def _entry_template(title: str = "<anónimo>",
+                    published: str = "") -> Dict[str, Any]:
+    return {
+        "title": title,
+        "published": published,
+        "detected_at": now_iso(),
+        "status": STATUS_DETECTED,
+        "priority_rank": 0,          # 0 = no clasificado aún
+        "priority_order": 0,
+        "retry_count": 0,
+        "last_error": None,
+        "progress": {s: False for s in ALL_STEPS},
+        "artifacts": {k: None for k in
+                      ("video_path", "frames_dir", "transcript_path",
+                       "analysis_file")},
+    }
+
+
+def migrate_legacy_state(state: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Aprovecha un fichero de estado en el formato antiguo
+    ``{processed: [...], pending: [...], last_check: ...}`` y lo convierte
+    al esquema nuevo. Los videos ya en `processed` pasan a `completed`;
+    los de `pending` pasan a `pending`. Los nuevos videos detectados en el
+    RSS se añadirán como `detected`.
+    """
+    if isinstance(state.get("videos"), dict) and state["videos"]:
+        # Ya está en formato nuevo
+        return state
+    legacy = {
+        "processed": state.get("processed", []),
+        "pending": state.get("pending", []),
+        "last_check": state.get("last_check"),
+        "channel_id": state.get("channel_id", DEFAULT_CHANNEL_ID),
+        "rss_url": state.get("rss_url", DEFAULT_RSS_URL),
+        "check_interval_seconds": state.get("check_interval_seconds",
+                                            DEFAULT_INTERVAL_SECONDS),
+    }
+    new_state: Dict[str, Any] = {
+        "channel_id": legacy["channel_id"],
+        "rss_url": legacy["rss_url"],
+        "check_interval_seconds": legacy["check_interval_seconds"],
+        "last_check": legacy["last_check"],
+        "videos": {},
+    }
+    for vid in legacy.get("processed", []):
+        new_state["videos"][vid] = _entry_template("<anónimo>", "")
+        new_state["videos"][vid]["status"] = STATUS_COMPLETED
+    for vid in legacy.get("pending", []):
+        new_state["videos"][vid] = _entry_template("<anónimo>", "")
+        new_state["videos"][vid]["status"] = STATUS_PENDING
+    return new_state
+
+
+def load_state(progress_file: Path) -> Dict[str, Any]:
+    """Carga el estado (migrando si es necesario) o devuelve el estado vacío."""
+    if not progress_file.exists():
+        return {
+            "channel_id": DEFAULT_CHANNEL_ID,
+            "rss_url": DEFAULT_RSS_URL,
+            "check_interval_seconds": DEFAULT_INTERVAL_SECONDS,
+            "last_check": None,
+            "videos": {},
+        }
+    try:
+        raw = json.loads(progress_file.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError("el estado no es un objeto JSON")
+        return migrate_legacy_state(raw)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        error_exit(f"No se pudo leer el estado {progress_file}: {exc}",
+                   log_file=default_log_file(progress_file))
+
+
+def save_state(state: Dict[str, Any], progress_file: Path,
+               log_file: Optional[Path] = None) -> None:
+    """Guarda el estado de forma atómica (tmp + os.replace) y fsync."""
+
+    def coerce(obj: Any) -> Any:
+        """Convierte objetos no serializables (Path) a str para JSON."""
+        if isinstance(obj, dict):
+            return {k: coerce(v) for k, v in obj.items()}
+        if isinstance(obj, (list, tuple)):
+            return [coerce(v) for v in obj]
+        if isinstance(obj, Path):
+            return str(obj)
+        return obj
+
+    progress_file.parent.mkdir(parents=True, exist_ok=True)
+    state = coerce(state)
+    tmp = progress_file.with_suffix(progress_file.suffix + ".tmp")
+    tmp.write_text(json.dumps(state, ensure_ascii=False, indent=2),
+                   encoding="utf-8")
+    try:
+        os.replace(str(tmp), str(progress_file))
+    finally:
+        try:
+            os.unlink(str(tmp))
+        except OSError:
+            pass
+    try:
+        with open(progress_file, "ab") as fh:
+            fh.flush()
+            os.fsync(fh.fileno())
+    except OSError:
+        pass
+    log(f"Estado guardado en {progress_file} ({len(state.get('videos', {}))} videos)",
+        log_file=log_file, verbose=False)
+
+
+def mark_pipeline_complete(state: Dict[str, Any], video_id: str) -> None:
+    """Cuando los 5 pasos del pipeline están marcados, el estado pasa a
+    completed (se usa en validate_video)."""
+    entry = state["videos"].get(video_id)
+    if entry is None:
+        return
+    if all(entry.get("progress", {}).get(s) for s in ALL_STEPS):
+        entry["status"] = STATUS_COMPLETED
+        entry["last_error"] = None
+        entry["retry_count"] = 0
+
+
+# ---------------------------------------------------------------------------
+# RSS
+# ---------------------------------------------------------------------------
+
+def fetch_rss_videos(rss_url: str, timeout: int = 20) -> List[Dict[str, str]]:
+    """
+    Consulta el RSS del canal y devuelve una lista de videos:
+        [{"id": "VIDEO_ID", "title": "...", "published": "..."}, ...]
+    """
+    req = urllib.request.Request(
+        rss_url,
+        headers={"User-Agent": "Mozilla/5.0 (compatible; YouTubeTradingAgent)"},
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        raw = resp.read()
+    root = ET.fromstring(raw)
+    ns = {"atom": "http://www.w3.org/2005/Atom"}
+    videos: List[Dict[str, str]] = []
+    for entry in root.findall("atom:entry", ns):
+        id_el = entry.find("atom:id", ns)
+        title_el = entry.find("atom:title", ns)
+        pub_el = entry.find("atom:published", ns)
+        vid = ""
+        if id_el is not None and id_el.text:
+            vid = id_el.text.replace("yt:video:", "")
+        title = ""
+        if title_el is not None and title_el.text:
+            title = title_el.text.strip()
+        published = ""
+        if pub_el is not None and pub_el.text:
+            published = pub_el.text.strip()
+        if vid:
+            videos.append({"id": vid, "title": title, "published": published})
+    return videos
+
+
+# ---------------------------------------------------------------------------
+# Cola de prioridad
+# ---------------------------------------------------------------------------
+
+def classify_priority(meta: Dict[str, str], state: Dict[str, Any],
+                      known_ids: set) -> Tuple[int, int]:
+    """
+    Asigna (priority_rank, priority_order) a un video:
+      - Nuevo (no estaba en el registro): rank 1, orden = -timestamp
+      - Histórico pendiente / error reintentable: rank 3, orden = -timestamp
+      - Si no se puede saber la fecha, se usa un orden secundario
+        estables (id).
+    """
+    vid = meta["id"]
+    entry = state["videos"].get(vid, {})
+    status = entry.get("status", STATUS_DETECTED)
+    published = meta.get("published", "")
+    
+    # Detectar si es publicación NUEVA (publicado hoy, no en registro)
+    new_publication = False
+    if vid not in known_ids:
+        new_publication = True
+    elif published:
+        try:
+            from datetime import datetime
+            pub_dt = datetime.fromisoformat(published.replace('Z', '+00:00'))
+            today = datetime.now(pub_dt.tzinfo)
+            new_publication = (pub_dt.date() == today.date())
+        except (ValueError, TypeError):
+            new_publication = False
+    
+    # Nuevo = rank 1
+    if new_publication:
+        rank = 1
+    # Histórico pendiente / error reintentable = rank 3
+    elif status in (STATUS_PENDING, STATUS_DETECTED) and not new_publication:
+        rank = 3
+    elif status == STATUS_ERROR and entry.get("retry_count", 0) < DEFAULT_MAX_RETRIES:
+        rank = 2
+    else:
+        rank = 3
+    
+    dt = parse_iso_datetime(published)
+    order = entry.get("priority_order", 0)
+    if order == 0:
+        if dt is not None:
+            order = int(dt.timestamp())
+        else:
+            order = hash(vid) & 0xFFFFFFFF
+    return rank, order
+
+
+def build_queue(state: Dict[str, Any], rss_videos: List[Dict[str, str]]) -> List[str]:
+    """
+    Construye la cola ordenada: nuevos primero, luego errores reintentables,
+    luego históricos; dentro de cada grupo, más recientes primero.
+    """
+    videos = state.setdefault("videos", {})
+    known_ids = set(videos.keys())
+    finished = {vid for vid, e in videos.items()
+                if e.get("status") == STATUS_COMPLETED
+                or (e.get("status") == STATUS_ERROR
+                    and e.get("retry_count", 0) >= DEFAULT_MAX_RETRIES)}
+
+    ranked: List[Tuple[int, int, str]] = []
+    for meta in rss_videos:
+        vid = meta["id"]
+        if vid in finished:
+            continue
+        if vid not in known_ids:
+            known_ids.add(vid)
+            # Añadir la entrada del estado para un video nuevo
+            videos[vid] = {
+                "title": meta.get("title", "<anónimo>"),
+                "published": meta.get("published", ""),
+                "detected_at": now_iso(),
+                "status": STATUS_DETECTED,
+                "priority_rank": 0,
+                "priority_order": 0,
+                "retry_count": 0,
+                "last_error": None,
+                "progress": {s: False for s in ALL_STEPS},
+                "artifacts": {k: None for k in
+                              ("video_path", "frames_dir", "transcript_path",
+                               "analysis_file")},
+            }
+        rank, order = classify_priority(meta, state, known_ids)
+        videos[vid]["priority_rank"] = rank
+        videos[vid]["priority_order"] = order
+        ranked.append((rank, order, vid))
+
+    # Orden: rango ascendente, luego más reciente primero (timestamp mayor)
+    ranked.sort(key=lambda t: (t[0], -t[1]))  # rank ascendente, orden descendente (más reciente primero)
+    return [t[2] for t in ranked]
+
+
+# ---------------------------------------------------------------------------
+# Pipeline: descarga, frames, transcripción
+# ---------------------------------------------------------------------------
+
+def make_video_url(video_id: str) -> str:
+    return f"https://www.youtube.com/watch?v={video_id}"
+
+
+def download_video(video_id: str, data_dir: Path,
+                   max_retries: int = 2) -> Optional[Path]:
+    """
+    Descarga el video con yt-dlp. Si el fichero ya existe se reutiliza.
+    Devuelve la ruta del video o None en caso de fallo.
+    """
+    video_path = data_dir / video_id / f"{video_id}.mp4"
+    video_path.parent.mkdir(parents=True, exist_ok=True)
+    if video_path.exists() and video_path.stat().st_size > 0:
+        return video_path
+    for attempt in range(max_retries + 1):
+        cmd = ["yt-dlp", "-f", "best[height<=720]",
+               "-o", str(video_path), make_video_url(video_id)]
+        try:
+            res = subprocess.run(cmd, capture_output=True, timeout=300)
+            if res.returncode == 0 and video_path.exists():
+                return video_path
+        except (subprocess.TimeoutExpired, OSError) as exc:
+            log(f"  [download retry {attempt}] {exc}", verbose=False)
+        if attempt < max_retries:
+            time.sleep(3)
+    log(f"No se pudo descargar el video {video_id}", verbose=False)
+    return None
+
+
+def extract_frames(video_id: str, video_path: Path, frames_dir: Path,
+                   max_frames: int, fps: str) -> bool:
+    """
+    Extrae frames con ffmpeg (fps=1/30 por defecto). Si ya hay frames se
+    reutilizan. Se guarda max_frames si se excede.
+    """
+    frames_dir.mkdir(parents=True, exist_ok=True)
+    frame_files = sorted(frames_dir.glob("frame_*.jpg"))
+    if frame_files and len(frame_files) >= max_frames:
+        return True
+    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+           "-i", str(video_path), "-vf", f"fps={fps}",
+           "-q:v", "2", str(frames_dir / "frame_%04d.jpg")]
+    try:
+        res = subprocess.run(cmd, capture_output=True, timeout=120)
+        if res.returncode != 0:
+            log(f"ffmpeg err: {res.stderr.decode(errors='replace')[:300]}",
+                verbose=False)
+            return False
+    except (subprocess.TimeoutExpired, OSError) as exc:
+        log(f"ffmpeg error: {exc}", verbose=False)
+        return False
+    files = sorted(frames_dir.glob("frame_*.jpg"))
+    if len(files) > max_frames:
+        for old in files[:-max_frames]:
+            old.unlink(missing_ok=True)
+    return True
+
+
+def extract_transcript(video_id: str, data_dir: Path) -> Optional[Path]:
+    """
+    Extrae la transcripción con yt-dlp --write-auto-sub (solo descarga
+    subtítulos). Devuelve la ruta del fichero JSON o None.
+    """
+    transcript_path = data_dir / video_id / f"{video_id}_transcript.json"
+    if transcript_path.exists():
+        return transcript_path
+    data_dir.mkdir(parents=True, exist_ok=True)
+    cmd = ["yt-dlp", "--write-auto-sub", "--sub-lang", "es,en",
+           "--skip-download", "-o",
+           str(data_dir / video_id / f"{video_id}"),
+           make_video_url(video_id)]
+    try:
+        res = subprocess.run(cmd, capture_output=True, timeout=180)
+        if res.returncode != 0:
+            log(f"yt-dlp subtítulos err: {res.stderr.decode(errors='replace')[:200]}",
+                verbose=False)
+            return None
+    except (subprocess.TimeoutExpired, OSError) as exc:
+        log(f"yt-dlp subtítulos error: {exc}", verbose=False)
+        return None
+
+    # Construye el JSON a partir de los ficheros .vtt/.srt
+    sub_files = sorted(list(data_dir.joinpath(video_id).glob("*.vtt"))
+                       + list(data_dir.joinpath(video_id).glob("*.srt")))
+    if not sub_files:
+        return None
+    segments: List[Dict[str, Any]] = []
+    for sub in sub_files:
+        try:
+            lines = sub.read_text(encoding="utf-8").splitlines()
+        except OSError:
+            continue
+        text = "\n".join(
+            l.strip() for l in lines
+            if l.strip() and not l.startswith("WEBVTT") and "-->" not in l
+        )
+        if text.strip():
+            segments.append({"text": text.strip(), "source": sub.name})
+    transcript = {
+        "video_id": video_id,
+        "segments": segments,
+        "full_text": " ".join(s["text"] for s in segments),
+    }
+    transcript_path.parent.mkdir(parents=True, exist_ok=True)
+    transcript_path.write_text(json.dumps(transcript, ensure_ascii=False,
+                                          indent=2), encoding="utf-8")
+    return transcript_path
+
+
+# ---------------------------------------------------------------------------
+# Visión: Qwen local (Ollama) - sin dependencias de Gemini
+# ---------------------------------------------------------------------------
+
+def ollama_get_available_models(ollama_url: str) -> List[str]:
+    """Devuelve la lista de nombres de modelos disponibles en Ollama."""
+    try:
+        with urllib.request.urlopen(ollama_url + "/api/tags", timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        return [m.get("name", "") for m in data.get("models", [])]
+    except Exception as exc:
+        log(f"No se pudo consultar Ollama (/api/tags): {exc}", verbose=False)
+        return []
+
+
+def choose_vision_model(ollama_url: str,
+                        preferred: Optional[List[str]] = None) -> Optional[str]:
+    """
+    Elige un modelo visual Qwen local entre los preferidos. Si ninguno está
+    cargado se devuelve el primero disponible de la lista preferida.
+    """
+    preferred = preferred or list(VISION_MODELS)
+    available = ollama_get_available_models(ollama_url)
+    loaded = set(available)
+    for name in preferred:
+        if name in loaded:
+            return name
+    # Fallback: cualquier modelo qwen
+    for name in available:
+        if "qwen" in name.lower():
+            return name
+    return None
+
+
+def call_ollama_chat(model: str, prompt: str,
+                     image_b64: str, ollama_url: str,
+                     timeout: int = DEFAULT_VISION_TIMEOUT) -> str:
+    """Petición chat a Ollama y se devuelve el contenido de la respuesta."""
+    payload = {
+        "model": model,
+        "messages": [{"role": "user",
+                      "content": prompt,
+                      "images": [image_b64]}],
+        "stream": False,
+        "options": {"temperature": 0.1},
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        ollama_url + "/api/chat",
+        data=data,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, data=data, timeout=timeout) as resp:
+        result = json.loads(resp.read().decode("utf-8"))
+    return result.get("message", {}).get("content", "")
+
+
+def analyze_frame_vision(image_path: Path, model: str,
+                         prompt: str, ollama_url: str,
+                         timeout: int = DEFAULT_VISION_TIMEOUT) -> str:
+    """Lee un frame y lo envía al modelo visual de Ollama."""
+    try:
+        with open(image_path, "rb") as fh:
+            import base64
+            b64 = base64.b64encode(fh.read()).decode("ascii")
+    except OSError as exc:
+        return f"ERROR: no se pudo leer {image_path}: {exc}"
+    return call_ollama_chat(model, prompt, b64, ollama_url, timeout)
+
+
+def validate_video(state: Dict[str, Any], video_id: str,
+                   artifacts: Dict[str, Optional[Path]]) -> bool:
+    """
+    Valida que el video tiene los artefactos necesarios para
+    considerarlo completado. Devuelve True si es válido.
+    El estado se actualiza a 'completed' cuando todos los pasos son
+    correctos.
+    """
+    entry = state["videos"].get(video_id)
+    if entry is None:
+        return False
+    # 1. video descargado
+    if not artifacts.get("video_path") or not artifacts["video_path"].exists():
+        entry["last_error"] = f"fichero de video inexistente: {artifacts.get('video_path')}"
+        return False
+    # 2. frames extraídos
+    frames_dir = artifacts.get("frames_dir")
+    if frames_dir is None:
+        entry["last_error"] = "no hay frames extraídos"
+        return False
+    if not frames_dir.exists() or not list(frames_dir.glob("*.jpg")):
+        entry["last_error"] = "no hay frames extraídos"
+        return False
+    # 3. transcripción
+    if artifacts.get("transcript_path"):
+        if not artifacts["transcript_path"].exists():
+            entry["last_error"] = "transcripción marcada pero fichero inexistente"
+            return False
+    # 4. análisis visual
+    analysis_file = artifacts.get("analysis_file")
+    if analysis_file is not None:
+        if not analysis_file.exists():
+            entry["last_error"] = "fichero de análisis visual inexistente"
+            return False
+        try:
+            analysis = json.loads(analysis_file.read_text(encoding="utf-8"))
+            frames_processed = analysis.get("frames_processed")
+            if not frames_processed:
+                entry["last_error"] = "análisis visual sin marcar frames"
+                return False
+        except (OSError, ValueError) as exc:
+            entry["last_error"] = f"análisis inválido: {exc}"
+            return False
+    # Todo OK
+    entry["status"] = STATUS_COMPLETED
+    entry["last_error"] = None
+    entry["retry_count"] = 0
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Análisis visual: acumulación en el fichero de análisis
+# ---------------------------------------------------------------------------
+
+def _save_analysis(analysis_file: Path, video_id: str, meta: Dict[str, str],
+                   frame: Path, result: str, args: argparse.Namespace) -> None:
+    """Añade o reescribe el análisis del último frame en el fichero JSON."""
+    analysis_file.parent.mkdir(parents=True, exist_ok=True)
+    if analysis_file.exists():
+        try:
+            data = json.loads(analysis_file.read_text(encoding="utf-8"))
+            if not isinstance(data, dict):
+                data = {}
+        except (OSError, ValueError):
+            data = {}
+    else:
+        data = {
+            "video_id": video_id,
+            "title": meta.get("title", ""),
+            "published": meta.get("published", ""),
+            "frames_processed": 0,
+            "frame_results": [],
+            "transcript_available": None,
+        }
+    # Evita duplicados por frame
+    found = False
+    for old in data.get("frame_results", []):
+        if old.get("frame") == frame.name:
+            old["vision"] = result
+            old["analyzed_at"] = now_iso()
+            found = True
+            break
+    if not found:
+        data.setdefault("frame_results", []).append({
+            "frame": frame.name,
+            "frame_idx": len(data.get("frame_results", [])),
+            "vision": result,
+            "analyzed_at": now_iso(),
+        })
+    data["frames_processed"] = len(data.get("frame_results", []))
+    analysis_file.write_text(json.dumps(data, ensure_ascii=False, indent=2),
+                             encoding="utf-8")
+    # fsync del fichero
+    try:
+        with open(analysis_file, "ab") as fh:
+            fh.flush()
+            os.fsync(fh.fileno())
+    except OSError:
+        pass
+
+
+# ---------------------------------------------------------------------------
+# Procesado de un video (con checkpoint por paso)
+# ---------------------------------------------------------------------------
+
+def process_video(state: Dict[str, Any], video_id: str, meta: Dict[str, str],
+                  args: argparse.Namespace) -> bool:
+    """
+    Ejecuta el pipeline del video con checkpoint de pasos.
+    Devuelve True si el video terminó cíclamente (completed/u error),
+    False si se interrumpió (el estado ya está actualizado y se reanuda).
+    """
+    entry = state["videos"].get(video_id)
+    if entry is None:
+        log(f"VIDEO DESCONOCIDO: {video_id}", verbose=False)
+        return False
+
+    # Ya terminado (idempotencia)
+    if entry.get("status") == STATUS_COMPLETED:
+        log(f"  [skip] {video_id}: ya completado", verbose=False)
+        return True
+    if (entry.get("status") == STATUS_ERROR
+            and entry.get("retry_count", 0) >= args.max_retries):
+        log(f"  [skip] {video_id}: reintentos agotados", verbose=False)
+        return True
+
+    print()
+    log("─" * 60, verbose=False)
+    log(f"PROCESANDO: {meta.get('title', video_id)} ({video_id})", verbose=False)
+    log(f"  publicado: {meta.get('published', '')}", verbose=False)
+    log(f"  estado: {entry.get('status')}", verbose=False)
+    log("─" * 60, verbose=False)
+
+    # Marcar como en proceso
+    entry["status"] = STATUS_PROCESSING
+    entry["retry_count"] = entry.get("retry_count", 0)
+    save_state(state, args.progress_file, args.log_file)
+
+    data_dir = args.data_dir / video_id
+    frames_dir = args.frames_dir / video_id
+    results_dir = args.results_dir / "historical"
+    artifacts = {
+        "video_path": data_dir / f"{video_id}.mp4",
+        "frames_dir": frames_dir,
+        "transcript_path": data_dir / f"{video_id}_transcript.json",
+        "analysis_file": results_dir / f"{video_id}_analysis.json",
+    }
+
+    try:
+        # ---- Paso 1: descarga ----
+        if not entry["progress"][STEP_DOWNLOAD]:
+            vp = download_video(video_id, args.data_dir, args.max_retries)
+            if vp is None:
+                entry["last_error"] = "no se pudo descargar el video"
+                return False
+            entry["artifacts"]["video_path"] = vp
+            entry["progress"][STEP_DOWNLOAD] = True
+            save_state(state, args.progress_file, args.log_file)
+
+        # ---- Paso 2: frames ----
+        if not entry["progress"][STEP_FRAMES]:
+            if not extract_frames(video_id, entry["artifacts"]["video_path"],
+                                  frames_dir, args.max_frames, args.fps):
+                entry["last_error"] = "no se pudieron extraer frames"
+                return False
+            entry["progress"][STEP_FRAMES] = True
+            entry["artifacts"]["frames_dir"] = frames_dir
+            save_state(state, args.progress_file, args.log_file)
+
+        # ---- Paso 3: transcripción ----
+        if not entry["progress"][STEP_TRANSCRIPT]:
+            tp = extract_transcript(video_id, args.data_dir)
+            if tp is None:
+                entry["last_error"] = "no se pudo extraer la transcripción"
+                return False
+            entry["artifacts"]["transcript_path"] = tp
+            entry["progress"][STEP_TRANSCRIPT] = True
+            save_state(state, args.progress_file, args.log_file)
+
+        # ---- Paso 4: visión (Qwen local) ----
+        if not entry["progress"][STEP_VISION] and not args.no_vision:
+            model = choose_vision_model(args.ollama_url, args.vision_model)
+            if model is None:
+                entry["last_error"] = (
+                    "modelo visual Qwen no disponible en Ollama; "
+                    "revisar si qwen3.5:9b-mlx / qwen2.5vl:3b están cargados"
+                )
+                log(f"  [vision] ERROR: {entry['last_error']}", verbose=False)
+                return False
+            # type: modelo garantizado por la comprobación anterior
+            log(f"  [vision] modelo local: {model}", verbose=False)
+            frames = sorted(frames_dir.glob("frame_*.jpg"))
+            for frame in frames:
+                if args.no_vision:
+                    break
+                prompt = args.vision_prompt or VISION_PROMPT_TEMPLATE
+                result = analyze_frame_vision(frame, model, prompt,
+                                              args.ollama_url,
+                                              args.vision_timeout)
+                entry["progress"][STEP_VISION] = True
+                log(f"    frame {frame.name}: análisis realizado",
+                    verbose=False)
+                _save_analysis(artifacts["analysis_file"], video_id, meta,
+                               frame, result, args)
+                if args.stop_after_frames and frame.name == \
+                        sorted(frames_dir.glob("frame_*.jpg"))[-1]:
+                    entry["last_error"] = (
+                        f"interrumpido en prueba tras {args.stop_after_frames} frames"
+                    )
+                    return False
+            save_state(state, args.progress_file, args.log_file)
+        elif args.no_vision:
+            log("  [vision] omitido (--no-vision)", verbose=False)
+
+        # ---- Paso 5: validación ----
+        if not entry["progress"][STEP_VALIDATION]:
+            if not validate_video(state, video_id, entry["artifacts"]):
+                entry["last_error"] = entry.get("last_error") or "validación fallida"
+                return False
+            entry["progress"][STEP_VALIDATION] = True
+            save_state(state, args.progress_file, args.log_file)
+
+        # Pipeline completo
+        if entry.get("status") == STATUS_COMPLETED:
+            log(f"  [ok] {video_id}: pipeline completado", verbose=False)
+            return True
+
+    except KeyboardInterrupt:
+        log(f"\n  [interrumpido] {video_id} con el pipeline parcialmente "
+            f"completado", verbose=False)
+        return False
+    except Exception as exc:                      # pragma: no cover
+        entry["last_error"] = f"error inesperado: {exc}"
+        log(f"  [error] {video_id}: {exc}", verbose=False)
+        return False
+
+    # Si llegamos aquí, algo imprevisto detuvo el paso; estado ya guardado
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Ciclo principal
+# ---------------------------------------------------------------------------
+
+def run_cycle(args: argparse.Namespace, state: Dict[str, Any],
+              process: bool = True) -> None:
+    """
+    Ejecuta un ciclo completo:
+      1. Consulta el RSS
+      2. Añade los videos nuevos al estado
+      3. Ordena por prioridad
+      4. Procesa hasta --max-videos-per-run  (si process=True)
+      5. Actualiza last_check
+    """
+    log("=" * 60, verbose=False)
+    log("CICLO RSS + PRIORIDADES + APRENDIZAJE HISTÓRICO", verbose=False)
+    log("=" * 60, verbose=False)
+
+    rss_videos = fetch_rss_videos(args.rss_url, timeout=args.rss_timeout)
+    log(f"RSS: {len(rss_videos)} videos publicados en el canal", verbose=False)
+
+    # 1) Añadir videos nuevos
+    videos = state.setdefault("videos", {})
+    for meta in rss_videos:
+        if meta["id"] not in videos:
+            videos[meta["id"]] = _entry_template(meta["title"], meta["published"])
+            log(f"  [detected] nuevo video: {meta['id']} ({meta.get('title', '')[:60]})",
+                verbose=False)
+
+    # 2) Construir cola ordenada por prioridad
+    queue = build_queue(state, rss_videos)
+    log(f"Cola de trabajo: {len(queue)} videos a procesar", verbose=False)
+    for vid in queue:
+        log(f"  prioridad: {vid}", verbose=False)
+
+    # 3) Procesar hasta el límite
+    if process:
+        processed = 0
+        for vid in queue:
+            if processed >= args.max_videos_per_run:
+                break
+            meta = next((m for m in rss_videos if m["id"] == vid), None)
+            if meta is None:
+                # video histórico sin metadatos RSS actual (se usa la entrada del estado)
+                meta = {"id": vid,
+                        "title": videos.get(vid, {}).get("title", ""),
+                        "published": videos.get(vid, {}).get("published", "")}
+            process_video(state, vid, meta, args)
+            processed += 1
+
+    # 4) Guardar estado y fecha de la revisión
+    state["last_check"] = now_iso()
+    save_state(state, args.progress_file, args.log_file)
+    log(f"Ciclo terminado: {'procesados' if process else 'en cola'} "
+        f"{len(queue)} video(s).", verbose=False)
+
+
+def _add_args_common(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--base-dir", type=Path, default=None,
+                        help="Directorio base del proyecto "
+                             "(default: padre de scripts/)")
+    parser.add_argument("--rss-url", type=str, default=None,
+                        help="URL del RSS del canal")
+    parser.add_argument("--rss-timeout", type=int, default=20,
+                        help="Tiempo de espera de la petición RSS en segundos")
+    parser.add_argument("--channel-id", type=str, default=None,
+                        help="channel_id del canal CreceTrader")
+    parser.add_argument("--interval", type=int, default=None,
+                        help="Intervalo de ejecución en segundos "
+                             "(default 14400 = 4h)")
+    parser.add_argument("--max-videos-per-run", type=int, default=None,
+                        help="Máximo de videos por ciclo (default 3)")
+    parser.add_argument("--max-frames", type=int, default=None,
+                        help="Máximo de frames por video (default 20)")
+    parser.add_argument("--fps", type=str, default=None,
+                        help="Filtro ffmpeg fps (default 1/30)")
+    parser.add_argument("--vision-timeout", type=int, default=None,
+                        help="Tiempo de espera de Ollama en segundos "
+                             "(default 180)")
+    parser.add_argument("--max-retries", type=int, default=None,
+                        help="Máximo de reintentos por video (default 3)")
+    parser.add_argument("--no-vision", action="store_true",
+                        help="Omite el paso de visión (uso para pruebas de prioridad)")
+    parser.add_argument("--vision-model", type=str, default=None,
+                        help="Fuerza el modelo visual de Ollama")
+    parser.add_argument("--vision-prompt", type=str, default=None,
+                        help="Prompt de visión personalizado")
+    parser.add_argument("--stop-after-frames", type=int, default=None,
+                        help="Para el pipeline tras N frames (solo pruebas)")
+    parser.add_argument("--progress-file", type=Path, default=None,
+                        help="Fichero de estado (default <base>/experimental/results/historical_progress.json)")
+    parser.add_argument("--data-dir", type=Path, default=None,
+                        help="Directorio de datos del video "
+                             "(default <base>/data_hist)")
+    parser.add_argument("--frames-dir", type=Path, default=None,
+                        help="Directorio de frames (default <base>/frames_hist)")
+    parser.add_argument("--results-dir", type=Path, default=None,
+                        help="Directorio de resultados (default <base>/experimental/results)")
+    parser.add_argument("--log-file", type=Path, default=None,
+                        help="Fichero de log")
+    parser.add_argument("--check-only", action="store_true",
+                        help="Solo consulta RSS, actualiza estado, muestra la cola y termina")
+    parser.add_argument("--once", action="store_true",
+                        help="Ejecuta un ciclo y termina (equivalente a --check-only)")
+    parser.add_argument("--verbose", action="store_true",
+                        help="Salida más detallada")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="RSS + prioridades + aprendizaje histórico para YouTubeTradingAgent",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    _add_args_common(parser)
+    parser.add_argument(
+        "--lock-file",
+        default=None,
+        help="Fichero de bloqueo para evitar ejecuciones concurrentes; el script abre/verifica y lo mantiene hasta completar o interrumpirse",
+    )
+    return parser
+
+
+def resolve_paths(args: argparse.Namespace) -> None:
+    """Completa las rutas por defecto a partir de --base-dir."""
+    base = args.base_dir or Path(__file__).resolve().parent.parent
+    args.base_dir = base
+    args.rss_url = args.rss_url or os.getenv("RSS_URL",
+                                             DEFAULT_RSS_URL)
+    args.rss_timeout = args.rss_timeout or int(
+        os.getenv("RSS_TIMEOUT", "20"))
+    args.channel_id = args.channel_id or os.getenv("RSS_CHANNEL_ID",
+                                                   DEFAULT_CHANNEL_ID)
+    args.interval = args.interval or int(os.getenv("RSS_INTERVAL_SECONDS",
+                                                   DEFAULT_INTERVAL_SECONDS))
+    args.max_videos_per_run = args.max_videos_per_run or int(
+        os.getenv("RSS_MAX_VIDEOS_PER_RUN", str(DEFAULT_MAX_VIDEOS_PER_RUN)))
+    args.max_frames = args.max_frames or int(
+        os.getenv("RSS_MAX_FRAMES_PER_VIDEO",
+                  str(DEFAULT_MAX_FRAMES_PER_VIDEO)))
+    args.fps = args.fps or os.getenv("RSS_FFMPEG_FPS", DEFAULT_FPS)
+    args.vision_timeout = args.vision_timeout or int(
+        os.getenv("RSS_VISION_TIMEOUT", str(DEFAULT_VISION_TIMEOUT)))
+    args.max_retries = args.max_retries or int(
+        os.getenv("RSS_MAX_RETRIES", str(DEFAULT_MAX_RETRIES)))
+    args.ollama_url = os.getenv("OLLAMA_URL", DEFAULT_OLLAMA_URL)
+
+    progress = args.progress_file or default_progress_file(base)
+    data = args.data_dir or (base / "data_hist")
+    frames = args.frames_dir or (base / "frames_hist")
+    results = args.results_dir or (base / "experimental" / "results")
+    log_file = args.log_file or default_log_file(progress)
+
+    args.progress_file = progress
+    args.data_dir = data
+    args.frames_dir = frames
+    args.results_dir = results
+    args.log_file = log_file
+
+
+def _stop(signum, frame):
+    """Handler para SIGINT/SIGTERM: termina el proceso de forma controlada.
+    El estado ya está guardado por checkpoint."""
+    log(f"\n[señal {signum}] proceso terminado en modo controlado", verbose=False)
+    sys.exit(0)
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    global _GLOBAL_LOG_FILE
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    resolve_paths(args)
+
+    # Señales de terminación controlada
+    signal.signal(signal.SIGINT, _stop)
+    signal.signal(signal.SIGTERM, _stop)
+
+    # Bloqueo contra ejecuciones concurrentes
+    lock_fd = None
+    if args.lock_file:
+        lock_path = Path(args.lock_file)
+        lock_path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            lock_fd = os.open(args.lock_file, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(lock_fd, str(os.getpid()).encode())
+            log(f"[lock] Bloqueo adquirido: {args.lock_file} (PID {os.getpid()})", verbose=False)
+        except FileExistsError:
+            # Existe otro proceso activo -> omitir este ciclo
+            try:
+                existing_pid = int(Path(args.lock_file).read_text().strip())
+            except (ValueError, OSError):
+                existing_pid = "desconocido"
+            log(f"[lock] OMITIDO: otro proceso ya tiene el bloqueo (PID {existing_pid}), el ciclo se pospone", verbose=False)
+            sys.exit(0)
+
+    state = load_state(args.progress_file)
+    _GLOBAL_LOG_FILE = args.log_file
+    print(f"DEBUG main: args.log_file={args.log_file!r}, _GLOBAL_LOG_FILE={_GLOBAL_LOG_FILE!r}", flush=True)
+    try:
+        log(f"Iniciando rss_priority_processor v1.0", verbose=args.verbose)
+        log(f"Canal: {args.channel_id}", verbose=args.verbose)
+        log(f"RSS: {args.rss_url}", verbose=args.verbose)
+        log(f"Intervalo: {args.interval}s ({args.interval / 3600:.1f} h)",
+            verbose=args.verbose)
+        log(f"Estado: {args.progress_file}", verbose=args.verbose)
+        log(f"Modelos visuales locales preferidos: {VISION_MODELS}",
+            verbose=args.verbose)
+        log(f"Ollama: {args.ollama_url}", verbose=args.verbose)
+
+        if args.check_only:
+            run_cycle(args, state, process=False)
+            return 0
+        if args.once:
+            run_cycle(args, state)
+            return 0
+        while True:
+            run_cycle(args, state)
+            if args.interval <= 0:
+                break
+            log(f"Esperando {args.interval}s ({args.interval / 3600:.1f} h) "
+                f"hasta el siguiente ciclo", verbose=False)
+            time.sleep(args.interval)
+    except KeyboardInterrupt:
+        log("\nProceso interrumpido por el usuario", verbose=False)
+        return 130
+    finally:
+        if lock_fd is not None:
+            try:
+                os.close(lock_fd)
+                os.unlink(args.lock_file)
+                log(f"[lock] Bloqueo liberado: {args.lock_file}", verbose=False)
+            except OSError:
+                pass
+        _GLOBAL_LOG_FILE = None
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,493 @@
+{
+  "video_id": "NVZfPTaeuLc",
+  "titulo": "Update: Bitcoin is rising, but with a brake on prices from institutional sellers.",
+  "fecha_titulo": "2026-10-22",
+  "duracion_s": "604",
+  "n_cues": 553,
+  "instrumentos_mencionados": {
+    "BTC": 8,
+    "ETH": 2
+  },
+  "instrumentos_ts": {
+    "BTC": [
+      "00:00",
+      "00:00",
+      "00:00",
+      "00:00",
+      "00:01",
+      "00:01"
+    ],
+    "ETH": [
+      "00:09",
+      "00:09"
+    ]
+  },
+  "temporalidades": {
+    "Weekly": 4,
+    "Daily": 0,
+    "4H": 6,
+    "Intradia": 0
+  },
+  "niveles_explicitos": [
+    {
+      "valor": "81.446",
+      "ts": "00:00",
+      "contexto": "Bitcoin ha rebotado en los 81.446"
+    },
+    {
+      "valor": "81.446",
+      "ts": "00:00",
+      "contexto": "Bitcoin ha rebotado en los 81.446"
+    },
+    {
+      "valor": "82.833",
+      "ts": "00:00",
+      "contexto": "82.833."
+    },
+    {
+      "valor": "82.833",
+      "ts": "00:00",
+      "contexto": "82.833."
+    },
+    {
+      "valor": "82.366",
+      "ts": "00:00",
+      "contexto": "tiene que romper con fuerza los 82.366."
+    },
+    {
+      "valor": "82.366",
+      "ts": "00:00",
+      "contexto": "tiene que romper con fuerza los 82.366."
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:01",
+      "contexto": "87.496."
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:01",
+      "contexto": "87.496."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:01",
+      "contexto": "cerrar por encima de los 83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:01",
+      "contexto": "cerrar por encima de los 83.366"
+    },
+    {
+      "valor": "84.000",
+      "ts": "00:02",
+      "contexto": "primero de ventas? Los 84.000 445,"
+    },
+    {
+      "valor": "84.000",
+      "ts": "00:02",
+      "contexto": "primero de ventas? Los 84.000 445,"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:02",
+      "contexto": "83.366"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:02",
+      "contexto": "83.366"
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:03",
+      "contexto": "87.496."
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:03",
+      "contexto": "87.496."
+    },
+    {
+      "valor": "84.373",
+      "ts": "00:04",
+      "contexto": "84.373,"
+    },
+    {
+      "valor": "84.373",
+      "ts": "00:04",
+      "contexto": "84.373,"
+    },
+    {
+      "valor": "83.593",
+      "ts": "00:04",
+      "contexto": "el primero 83.593"
+    },
+    {
+      "valor": "83.593",
+      "ts": "00:04",
+      "contexto": "el primero 83.593"
+    },
+    {
+      "valor": "130.000",
+      "ts": "00:05",
+      "contexto": "se va a ir a 130.000?"
+    },
+    {
+      "valor": "130.000",
+      "ts": "00:05",
+      "contexto": "se va a ir a 130.000?"
+    },
+    {
+      "valor": "87.000",
+      "ts": "00:05",
+      "contexto": "Ya no hablo de 80, de 87.000, ya no te"
+    },
+    {
+      "valor": "87.000",
+      "ts": "00:05",
+      "contexto": "Ya no hablo de 80, de 87.000, ya no te"
+    },
+    {
+      "valor": "101.000",
+      "ts": "00:05",
+      "contexto": "hablo de 101.000, ni siquiera de"
+    },
+    {
+      "valor": "101.000",
+      "ts": "00:05",
+      "contexto": "hablo de 101.000, ni siquiera de"
+    },
+    {
+      "valor": "109.000",
+      "ts": "00:05",
+      "contexto": "109.000. Bueno, te puedo hablar de todos"
+    },
+    {
+      "valor": "109.000",
+      "ts": "00:05",
+      "contexto": "109.000. Bueno, te puedo hablar de todos"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:06",
+      "contexto": "beneficio 83.366,"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:06",
+      "contexto": "beneficio 83.366,"
+    },
+    {
+      "valor": "83.367",
+      "ts": "00:06",
+      "contexto": "los 83.367,"
+    },
+    {
+      "valor": "83.367",
+      "ts": "00:06",
+      "contexto": "los 83.367,"
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:07",
+      "contexto": "87.496"
+    },
+    {
+      "valor": "87.496",
+      "ts": "00:07",
+      "contexto": "87.496"
+    },
+    {
+      "valor": "109.765",
+      "ts": "00:07",
+      "contexto": "109.765"
+    },
+    {
+      "valor": "109.765",
+      "ts": "00:07",
+      "contexto": "109.765"
+    },
+    {
+      "valor": "82.946",
+      "ts": "00:08",
+      "contexto": "alcista si pasaba los 82.946."
+    },
+    {
+      "valor": "82.946",
+      "ts": "00:08",
+      "contexto": "alcista si pasaba los 82.946."
+    },
+    {
+      "valor": "86.000",
+      "ts": "00:08",
+      "contexto": "86.000, 84.605. ¿Qué ha pasado en cuanto"
+    },
+    {
+      "valor": "84.605",
+      "ts": "00:08",
+      "contexto": "86.000, 84.605. ¿Qué ha pasado en cuanto"
+    },
+    {
+      "valor": "86.000",
+      "ts": "00:08",
+      "contexto": "86.000, 84.605. ¿Qué ha pasado en cuanto"
+    },
+    {
+      "valor": "84.605",
+      "ts": "00:08",
+      "contexto": "86.000, 84.605. ¿Qué ha pasado en cuanto"
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "83.366."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "83.366."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "83.366."
+    },
+    {
+      "valor": "83.366",
+      "ts": "00:09",
+      "contexto": "83.366."
+    }
+  ],
+  "n_niveles": 46,
+  "conceptos": {
+    "liquidez": {
+      "menciones": 4,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 4,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "tendencia": {
+      "menciones": 16,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "resistencia": {
+      "menciones": 4,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    },
+    "objetivo": {
+      "menciones": 20,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "entrada": {
+      "menciones": 2,
+      "primeros": [
+        "00:08",
+        "00:08"
+      ]
+    },
+    "reversal": {
+      "menciones": 2,
+      "primeros": [
+        "00:01",
+        "00:01"
+      ]
+    },
+    "techo_techo": {
+      "menciones": 4,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:00"
+      ]
+    }
+  },
+  "escenarios": {
+    "alcista": [
+      {
+        "ts": "00:00",
+        "texto": "también un rebote, ha encontrado"
+      },
+      {
+        "ts": "00:00",
+        "texto": "también un rebote, ha encontrado"
+      },
+      {
+        "ts": "00:00",
+        "texto": "alcista. De hecho,"
+      },
+      {
+        "ts": "00:00",
+        "texto": "alcista. De hecho,"
+      },
+      {
+        "ts": "00:03",
+        "texto": "alcista"
+      },
+      {
+        "ts": "00:03",
+        "texto": "alcista"
+      },
+      {
+        "ts": "00:07",
+        "texto": "subir el precio mucho, corregir poco"
+      },
+      {
+        "ts": "00:07",
+        "texto": "subir el precio mucho, corregir poco"
+      }
+    ],
+    "bajista": [
+      {
+        "ts": "00:01",
+        "texto": "podemos hablar de corrección. Todo esto"
+      },
+      {
+        "ts": "00:01",
+        "texto": "podemos hablar de corrección. Todo esto"
+      },
+      {
+        "ts": "00:03",
+        "texto": "objetivos bajistas, no están calculados,"
+      },
+      {
+        "ts": "00:03",
+        "texto": "objetivos bajistas, no están calculados,"
+      },
+      {
+        "ts": "00:03",
+        "texto": "caer?"
+      },
+      {
+        "ts": "00:03",
+        "texto": "caer?"
+      },
+      {
+        "ts": "00:03",
+        "texto": "porque son objetivos bajistas y ya hemos"
+      },
+      {
+        "ts": "00:03",
+        "texto": "porque son objetivos bajistas y ya hemos"
+      }
+    ]
+  },
+  "condiciones": {
+    "activacion": [
+      {
+        "ts": "00:00",
+        "texto": "Para que esto sea creíble. También la"
+      },
+      {
+        "ts": "00:00",
+        "texto": "Para que esto sea creíble. También la"
+      },
+      {
+        "ts": "00:01",
+        "texto": "segundo, si llegara. Estos son los"
+      },
+      {
+        "ts": "00:01",
+        "texto": "segundo, si llegara. Estos son los"
+      },
+      {
+        "ts": "00:01",
+        "texto": "nos preguntamos si es un principio de"
+      },
+      {
+        "ts": "00:01",
+        "texto": "nos preguntamos si es un principio de"
+      },
+      {
+        "ts": "00:01",
+        "texto": "cuidado con eso y además porque si"
+      },
+      {
+        "ts": "00:01",
+        "texto": "cuidado con eso y además porque si"
+      }
+    ],
+    "entrada": [
+      {
+        "ts": "00:08",
+        "texto": "comprar."
+      },
+      {
+        "ts": "00:08",
+        "texto": "comprar."
+      }
+    ],
+    "invalidacion": [
+      {
+        "ts": "00:01",
+        "texto": "cerrar por encima de los 83.366"
+      },
+      {
+        "ts": "00:01",
+        "texto": "cerrar por encima de los 83.366"
+      },
+      {
+        "ts": "00:01",
+        "texto": "Tiene que consolidar por encima de este"
+      },
+      {
+        "ts": "00:01",
+        "texto": "Tiene que consolidar por encima de este"
+      },
+      {
+        "ts": "00:02",
+        "texto": "Tiene que consolidar por encima de los"
+      },
+      {
+        "ts": "00:02",
+        "texto": "Tiene que consolidar por encima de los"
+      },
+      {
+        "ts": "00:03",
+        "texto": "consolidado también por encima de los"
+      },
+      {
+        "ts": "00:03",
+        "texto": "consolidado también por encima de los"
+      }
+    ]
+  },
+  "limitaciones": [
+    "Analisis TEXTUAL unicamente: sin verificacion visual de graficos.",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "Los niveles son historicos; no tratar como vigentes sin confirmacion."
+  ]
+}
