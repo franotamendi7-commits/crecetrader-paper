@@ -1,0 +1,169 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "81446",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:28.800",
+          "contexto": "justo precisamente en uno de los cálculos ya para la corrección 81,446"
+        },
+        {
+          "minuto": "00:07:32.909",
+          "contexto": "cálculos ya para la corrección 81,446"
+        },
+        {
+          "minuto": "00:07:32.919",
+          "contexto": "cálculos ya para la corrección 81,446 que está manteniendo a la cotización"
+        }
+      ]
+    },
+    {
+      "valor": "82833",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:55.560",
+          "contexto": "estos días, durante toda la semana, no ha podido con los 82,833,"
+        },
+        {
+          "minuto": "00:05:58.790",
+          "contexto": "ha podido con los 82,833,"
+        },
+        {
+          "minuto": "00:05:58.800",
+          "contexto": "ha podido con los 82,833, con este precio. Ha estado toda la"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:57.200",
+          "contexto": "a buscar ofertando más barato liquidez 75,518,"
+        },
+        {
+          "minuto": "00:07:59.270",
+          "contexto": "75,518,"
+        },
+        {
+          "minuto": "00:07:59.280",
+          "contexto": "75,518, 72,555,"
+        }
+      ]
+    },
+    {
+      "valor": "69591",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:00.960",
+          "contexto": "72,555, 69,591."
+        },
+        {
+          "minuto": "00:08:03.870",
+          "contexto": "69,591."
+        },
+        {
+          "minuto": "00:08:03.880",
+          "contexto": "69,591. Si eso ocurriera, entonces empezaríamos"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 6,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:46.000",
+          "contexto": "Bien, aquí tenemos 78,746, 71,509, 69,000,"
+        },
+        {
+          "minuto": "00:08:49.190",
+          "contexto": "71,509, 69,000,"
+        },
+        {
+          "minuto": "00:08:49.200",
+          "contexto": "71,509, 69,000, que si lo incorporamos a ese otro"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 6,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:46.000",
+          "contexto": "Bien, aquí tenemos 78,746, 71,509, 69,000,"
+        },
+        {
+          "minuto": "00:08:49.190",
+          "contexto": "71,509, 69,000,"
+        },
+        {
+          "minuto": "00:08:49.200",
+          "contexto": "71,509, 69,000, que si lo incorporamos a ese otro"
+        }
+      ]
+    },
+    {
+      "valor": "72555",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:59.280",
+          "contexto": "75,518, 72,555,"
+        },
+        {
+          "minuto": "00:08:00.950",
+          "contexto": "72,555,"
+        },
+        {
+          "minuto": "00:08:00.960",
+          "contexto": "72,555, 69,591."
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:43.360",
+          "contexto": "mañana. Bien, aquí tenemos 78,746,"
+        },
+        {
+          "minuto": "00:08:45.990",
+          "contexto": "Bien, aquí tenemos 78,746,"
+        },
+        {
+          "minuto": "00:08:46.000",
+          "contexto": "Bien, aquí tenemos 78,746, 71,509, 69,000,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 2
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.609991+00:00"
+}

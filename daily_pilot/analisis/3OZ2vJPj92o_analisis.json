@@ -1,0 +1,149 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "78746",
+      "menciones": 9,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:50.560",
+          "contexto": "Y hoy estamos viendo este movimiento. Bien, el objetivo de los 78,746"
+        },
+        {
+          "minuto": "00:00:53.910",
+          "contexto": "Bien, el objetivo de los 78,746"
+        },
+        {
+          "minuto": "00:00:53.920",
+          "contexto": "Bien, el objetivo de los 78,746 sigue siendo, esto no ha cambiado a"
+        }
+      ]
+    },
+    {
+      "valor": "80595",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:33.520",
+          "contexto": "y las 2 de la madrugada del 23, este mínimo, que son los 80,595. Si"
+        },
+        {
+          "minuto": "00:02:36.350",
+          "contexto": "mínimo, que son los 80,595. Si"
+        },
+        {
+          "minuto": "00:02:36.360",
+          "contexto": "mínimo, que son los 80,595. Si recuerdas,"
+        }
+      ]
+    },
+    {
+      "valor": "84455",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:09.720",
+          "contexto": "donde la presión bajista, a partir de 84,455"
+        },
+        {
+          "minuto": "00:02:11.870",
+          "contexto": "84,455"
+        },
+        {
+          "minuto": "00:02:11.880",
+          "contexto": "84,455 e inferiores,"
+        }
+      ]
+    },
+    {
+      "valor": "81690",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:16.280",
+          "contexto": "podría aumentar su presión. Así lo hizo en los 81,690, como podemos"
+        },
+        {
+          "minuto": "00:02:19.070",
+          "contexto": "Así lo hizo en los 81,690, como podemos"
+        },
+        {
+          "minuto": "00:02:19.080",
+          "contexto": "Así lo hizo en los 81,690, como podemos ver,"
+        }
+      ]
+    },
+    {
+      "valor": "78580",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:27.800",
+          "contexto": "máximos y mínimos crecientes, el objetivo sigue siendo los 78,580"
+        },
+        {
+          "minuto": "00:04:30.909",
+          "contexto": "objetivo sigue siendo los 78,580"
+        },
+        {
+          "minuto": "00:04:30.919",
+          "contexto": "objetivo sigue siendo los 78,580 y los 78,746."
+        }
+      ]
+    },
+    {
+      "valor": "78740",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:47.840",
+          "contexto": "estado trabajando por aquí esta barrera, de los 78,740."
+        },
+        {
+          "minuto": "00:04:50.710",
+          "contexto": "de los 78,740."
+        },
+        {
+          "minuto": "00:04:50.720",
+          "contexto": "de los 78,740. ¿Ha cambiado la situación de máximos?"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:25.960",
+          "contexto": "si a partir de ahora se genera ese movimiento y llega y rompe los 83,366,"
+        },
+        {
+          "minuto": "00:05:29.750",
+          "contexto": "movimiento y llega y rompe los 83,366,"
+        },
+        {
+          "minuto": "00:05:29.760",
+          "contexto": "movimiento y llega y rompe los 83,366, que es el importante, ¿qué plan tengo?"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.243774+00:00"
+}

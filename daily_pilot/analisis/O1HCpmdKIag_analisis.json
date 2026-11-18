@@ -393,5 +393,190 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:14.360",
+          "contexto": "veamos la caída, ¿vale? Y un poquito más arriba están los 83,366,"
+        },
+        {
+          "minuto": "00:11:16.590",
+          "contexto": "arriba están los 83,366,"
+        },
+        {
+          "minuto": "00:11:16.600",
+          "contexto": "arriba están los 83,366, pero estos objetivos están conseguidos,"
+        }
+      ]
+    },
+    {
+      "valor": "77000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:47.120",
+          "contexto": "¿Te interesa negociar entre 77,000"
+        },
+        {
+          "minuto": "00:08:50.150",
+          "contexto": "negociar entre 77,000"
+        },
+        {
+          "minuto": "00:08:50.160",
+          "contexto": "negociar entre 77,000 y 83,000, 6,000, 7,000 dólares?"
+        }
+      ]
+    },
+    {
+      "valor": "83000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:50.160",
+          "contexto": "negociar entre 77,000 y 83,000, 6,000, 7,000 dólares?"
+        },
+        {
+          "minuto": "00:08:54.150",
+          "contexto": "y 83,000, 6,000, 7,000 dólares?"
+        },
+        {
+          "minuto": "00:08:54.160",
+          "contexto": "y 83,000, 6,000, 7,000 dólares? ¿Vale? Esa es la la pregunta, porque"
+        }
+      ]
+    },
+    {
+      "valor": "6000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:50.160",
+          "contexto": "negociar entre 77,000 y 83,000, 6,000, 7,000 dólares?"
+        },
+        {
+          "minuto": "00:08:54.150",
+          "contexto": "y 83,000, 6,000, 7,000 dólares?"
+        },
+        {
+          "minuto": "00:08:54.160",
+          "contexto": "y 83,000, 6,000, 7,000 dólares? ¿Vale? Esa es la la pregunta, porque"
+        }
+      ]
+    },
+    {
+      "valor": "7000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:50.160",
+          "contexto": "negociar entre 77,000 y 83,000, 6,000, 7,000 dólares?"
+        },
+        {
+          "minuto": "00:08:54.150",
+          "contexto": "y 83,000, 6,000, 7,000 dólares?"
+        },
+        {
+          "minuto": "00:08:54.160",
+          "contexto": "y 83,000, 6,000, 7,000 dólares? ¿Vale? Esa es la la pregunta, porque"
+        }
+      ]
+    },
+    {
+      "valor": "71000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:55.960",
+          "contexto": "de buen cubero. Mira la zona en la que cae, 71,000, 70,000, 69,000, donde"
+        },
+        {
+          "minuto": "00:09:58.590",
+          "contexto": "cae, 71,000, 70,000, 69,000, donde"
+        },
+        {
+          "minuto": "00:09:58.600",
+          "contexto": "cae, 71,000, 70,000, 69,000, donde tenemos esos precios."
+        }
+      ]
+    },
+    {
+      "valor": "70000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:55.960",
+          "contexto": "de buen cubero. Mira la zona en la que cae, 71,000, 70,000, 69,000, donde"
+        },
+        {
+          "minuto": "00:09:58.590",
+          "contexto": "cae, 71,000, 70,000, 69,000, donde"
+        },
+        {
+          "minuto": "00:09:58.600",
+          "contexto": "cae, 71,000, 70,000, 69,000, donde tenemos esos precios."
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:55.960",
+          "contexto": "de buen cubero. Mira la zona en la que cae, 71,000, 70,000, 69,000, donde"
+        },
+        {
+          "minuto": "00:09:58.590",
+          "contexto": "cae, 71,000, 70,000, 69,000, donde"
+        },
+        {
+          "minuto": "00:09:58.600",
+          "contexto": "cae, 71,000, 70,000, 69,000, donde tenemos esos precios."
+        }
+      ]
+    },
+    {
+      "valor": "66074",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:14.920",
+          "contexto": "Hubo esa pausa, sabemos por qué, estaba en esos 66,074 que teníamos calculado y"
+        },
+        {
+          "minuto": "00:13:17.790",
+          "contexto": "en esos 66,074 que teníamos calculado y"
+        },
+        {
+          "minuto": "00:13:17.800",
+          "contexto": "en esos 66,074 que teníamos calculado y va así, pero en realidad, si nosotros"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.779752+00:00"
 }

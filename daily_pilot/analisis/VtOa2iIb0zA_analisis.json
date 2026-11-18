@@ -345,5 +345,316 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "78746",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:40.400",
+          "contexto": "varios objetivos para tomar beneficios, 78,746,"
+        },
+        {
+          "minuto": "00:06:42.909",
+          "contexto": "78,746,"
+        },
+        {
+          "minuto": "00:06:42.919",
+          "contexto": "78,746, también"
+        }
+      ]
+    },
+    {
+      "valor": "78225",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:17.599",
+          "contexto": "78,748, 78,225."
+        },
+        {
+          "minuto": "00:07:19.230",
+          "contexto": "78,225."
+        },
+        {
+          "minuto": "00:07:19.240",
+          "contexto": "78,225. Estamos viendo que ahora mismo perfora"
+        }
+      ]
+    },
+    {
+      "valor": "79458",
+      "menciones": 9,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:21.280",
+          "contexto": "posteriormente volvimos a ver cuando recuperó estos 79,458."
+        },
+        {
+          "minuto": "00:05:23.990",
+          "contexto": "recuperó estos 79,458."
+        },
+        {
+          "minuto": "00:05:24.000",
+          "contexto": "recuperó estos 79,458. Bueno, volvió por encima, dejó aquí una"
+        }
+      ]
+    },
+    {
+      "valor": "109765",
+      "menciones": 6,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:55.280",
+          "contexto": "la serie semanal se acompañaba muy bien y habíamos llegado a los 109,765,"
+        },
+        {
+          "minuto": "00:01:58.670",
+          "contexto": "y habíamos llegado a los 109,765,"
+        },
+        {
+          "minuto": "00:01:58.680",
+          "contexto": "y habíamos llegado a los 109,765, objetivo de largo plazo y también a los"
+        }
+      ]
+    },
+    {
+      "valor": "80000",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:28.319",
+          "contexto": "fase número cuatro. Bueno, ¿te acuerdas? Y aquí tenemos un objetivo en los 80,000"
+        },
+        {
+          "minuto": "00:06:30.309",
+          "contexto": "Y aquí tenemos un objetivo en los 80,000"
+        },
+        {
+          "minuto": "00:06:30.319",
+          "contexto": "Y aquí tenemos un objetivo en los 80,000 también. Ese cuarto objetivo. Bueno,"
+        }
+      ]
+    },
+    {
+      "valor": "65000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:44.120",
+          "contexto": "compras, recuerda que eran todos estos precios de por aquí, 65,000, 63,000,"
+        },
+        {
+          "minuto": "00:00:46.869",
+          "contexto": "precios de por aquí, 65,000, 63,000,"
+        },
+        {
+          "minuto": "00:00:46.879",
+          "contexto": "precios de por aquí, 65,000, 63,000, 62,000. A medida de que iba subiendo se"
+        }
+      ]
+    },
+    {
+      "valor": "63000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:44.120",
+          "contexto": "compras, recuerda que eran todos estos precios de por aquí, 65,000, 63,000,"
+        },
+        {
+          "minuto": "00:00:46.869",
+          "contexto": "precios de por aquí, 65,000, 63,000,"
+        },
+        {
+          "minuto": "00:00:46.879",
+          "contexto": "precios de por aquí, 65,000, 63,000, 62,000. A medida de que iba subiendo se"
+        }
+      ]
+    },
+    {
+      "valor": "62000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:46.879",
+          "contexto": "precios de por aquí, 65,000, 63,000, 62,000. A medida de que iba subiendo se"
+        },
+        {
+          "minuto": "00:00:49.790",
+          "contexto": "62,000. A medida de que iba subiendo se"
+        },
+        {
+          "minuto": "00:00:49.800",
+          "contexto": "62,000. A medida de que iba subiendo se va volviendo el semáforo, ¿verdad? Pues"
+        }
+      ]
+    },
+    {
+      "valor": "124000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:00.439",
+          "contexto": "objetivo de largo plazo y también a los 124,000 y pico, objetivo de mediano"
+        },
+        {
+          "minuto": "00:02:03.350",
+          "contexto": "124,000 y pico, objetivo de mediano"
+        },
+        {
+          "minuto": "00:02:03.360",
+          "contexto": "124,000 y pico, objetivo de mediano plazo del pasado año. ¿Vale? Con todo"
+        }
+      ]
+    },
+    {
+      "valor": "57670",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:24.239",
+          "contexto": "acción del precio. En cuanto tocó exactamente los 57,670, te refresco un"
+        },
+        {
+          "minuto": "00:02:26.990",
+          "contexto": "exactamente los 57,670, te refresco un"
+        },
+        {
+          "minuto": "00:02:27.000",
+          "contexto": "exactamente los 57,670, te refresco un momentito porque quiero que vayas que"
+        }
+      ]
+    },
+    {
+      "valor": "77924",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:06:01.440",
+          "contexto": "gráfico diario. Estás viendo que Bitcoin cotiza cerca de los $77,924"
+        },
+        {
+          "minuto": "00:06:05.390",
+          "contexto": "cotiza cerca de los $77,924"
+        },
+        {
+          "minuto": "00:06:05.400",
+          "contexto": "cotiza cerca de los $77,924 después de marcar un mínimo en los"
+        }
+      ]
+    },
+    {
+      "valor": "77894",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:07.840",
+          "contexto": "después de marcar un mínimo en los 77,894."
+        },
+        {
+          "minuto": "00:06:10.110",
+          "contexto": "77,894."
+        },
+        {
+          "minuto": "00:06:10.120",
+          "contexto": "77,894. vuelve a situarse, por tanto, por debajo"
+        }
+      ]
+    },
+    {
+      "valor": "78748",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:15.720",
+          "contexto": "tienes en mente, aquí los tienes. 78,748,"
+        },
+        {
+          "minuto": "00:07:17.589",
+          "contexto": "78,748,"
+        },
+        {
+          "minuto": "00:07:17.599",
+          "contexto": "78,748, 78,225."
+        }
+      ]
+    },
+    {
+      "valor": "29369",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:29.000",
+          "contexto": "periodo de 4 horas, cómo ha estado golpeando los 29,369"
+        },
+        {
+          "minuto": "00:13:31.710",
+          "contexto": "golpeando los 29,369"
+        },
+        {
+          "minuto": "00:13:31.720",
+          "contexto": "golpeando los 29,369 y lo detienen y ahora miras por arriba"
+        }
+      ]
+    },
+    {
+      "valor": "29474",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:34.320",
+          "contexto": "y lo detienen y ahora miras por arriba los 29,474"
+        },
+        {
+          "minuto": "00:13:36.470",
+          "contexto": "los 29,474"
+        },
+        {
+          "minuto": "00:13:36.480",
+          "contexto": "los 29,474 y también exactamente igual. Mira dónde"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 2,
+    "Weekly": 1,
+    "Daily": 1
+  },
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.936360+00:00"
 }

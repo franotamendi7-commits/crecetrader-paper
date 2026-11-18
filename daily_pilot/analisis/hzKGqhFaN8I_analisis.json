@@ -253,5 +253,152 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "64193",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:56.240",
+          "contexto": "después del primer análisis, cómo ha reaccionado en los 64,193"
+        },
+        {
+          "minuto": "00:00:59.390",
+          "contexto": "reaccionado en los 64,193"
+        },
+        {
+          "minuto": "00:00:59.400",
+          "contexto": "reaccionado en los 64,193 como de que se conoció el dato, el"
+        }
+      ]
+    },
+    {
+      "valor": "63297",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:32.599",
+          "contexto": "intradiario que conocíamos en la jornada de hoy, los 63,297"
+        },
+        {
+          "minuto": "00:00:35.630",
+          "contexto": "de hoy, los 63,297"
+        },
+        {
+          "minuto": "00:00:35.640",
+          "contexto": "de hoy, los 63,297 que te comentaba esta mañana, que junto"
+        }
+      ]
+    },
+    {
+      "valor": "63816",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:13.560",
+          "contexto": "ventas, 64,193, 63,816,"
+        },
+        {
+          "minuto": "00:01:15.550",
+          "contexto": "63,816,"
+        },
+        {
+          "minuto": "00:01:15.560",
+          "contexto": "63,816, 63,438,"
+        }
+      ]
+    },
+    {
+      "valor": "63438",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:15.560",
+          "contexto": "63,816, 63,438,"
+        },
+        {
+          "minuto": "00:01:18.310",
+          "contexto": "63,438,"
+        },
+        {
+          "minuto": "00:01:18.320",
+          "contexto": "63,438, está ahora mismo le cierra el paso"
+        }
+      ]
+    },
+    {
+      "valor": "62266",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:24.760",
+          "contexto": "y eso puede derivar a que el precio caiga hacia los 62,266"
+        },
+        {
+          "minuto": "00:01:27.310",
+          "contexto": "caiga hacia los 62,266"
+        },
+        {
+          "minuto": "00:01:27.320",
+          "contexto": "caiga hacia los 62,266 y sobre todo hacia el objetivo de la"
+        }
+      ]
+    },
+    {
+      "valor": "61247",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:29.880",
+          "contexto": "y sobre todo hacia el objetivo de la semana, 61,247 porque como ves aquí hay"
+        },
+        {
+          "minuto": "00:01:33.630",
+          "contexto": "semana, 61,247 porque como ves aquí hay"
+        },
+        {
+          "minuto": "00:01:33.640",
+          "contexto": "semana, 61,247 porque como ves aquí hay un objetivo de esta caída, es decir"
+        }
+      ]
+    },
+    {
+      "valor": "61000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:26.920",
+          "contexto": "tienen un stop por la zona de los 61,000, esta sería la forma en que les"
+        },
+        {
+          "minuto": "00:09:29.350",
+          "contexto": "61,000, esta sería la forma en que les"
+        },
+        {
+          "minuto": "00:09:29.360",
+          "contexto": "61,000, esta sería la forma en que les iba a ayudar y que continúe entonces"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.488870+00:00"
 }

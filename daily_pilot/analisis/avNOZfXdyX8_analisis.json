@@ -1,0 +1,110 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:16.160",
+          "contexto": "perdón, en 82,833 y no había llegado a los 83,366."
+        },
+        {
+          "minuto": "00:01:19.870",
+          "contexto": "y no había llegado a los 83,366."
+        },
+        {
+          "minuto": "00:01:19.880",
+          "contexto": "y no había llegado a los 83,366. Mira hoy."
+        }
+      ]
+    },
+    {
+      "valor": "82333",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:02.240",
+          "contexto": "que había ocurrido ayer, el máximo de ayer se frenó aquí en 82,333."
+        },
+        {
+          "minuto": "00:01:07.040",
+          "contexto": "Vamos a verlo. Aquí se frenó en 82,333"
+        },
+        {
+          "minuto": "00:01:10.670",
+          "contexto": "Vamos a verlo. Aquí se frenó en 82,333"
+        }
+      ]
+    },
+    {
+      "valor": "81690",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:23.320",
+          "contexto": "pues, mira, ha entrado cierta liquidez. Y teníamos como precio en 4 horas 81,690"
+        },
+        {
+          "minuto": "00:00:27.990",
+          "contexto": "Y teníamos como precio en 4 horas 81,690"
+        },
+        {
+          "minuto": "00:00:28.000",
+          "contexto": "Y teníamos como precio en 4 horas 81,690 y en donde vamos haciendo el seguimiento"
+        }
+      ]
+    },
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:30.520",
+          "contexto": "y en donde vamos haciendo el seguimiento 81,446"
+        },
+        {
+          "minuto": "00:00:32.310",
+          "contexto": "81,446"
+        },
+        {
+          "minuto": "00:00:32.320",
+          "contexto": "81,446 en la serie diaria."
+        }
+      ]
+    },
+    {
+      "valor": "82833",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:13.120",
+          "contexto": "y como te dije, no había llegado, perdón, en 82,833"
+        },
+        {
+          "minuto": "00:01:16.150",
+          "contexto": "perdón, en 82,833"
+        },
+        {
+          "minuto": "00:01:16.160",
+          "contexto": "perdón, en 82,833 y no había llegado a los 83,366."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 1,
+    "Daily": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.155687+00:00"
+}

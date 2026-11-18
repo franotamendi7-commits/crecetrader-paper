@@ -452,5 +452,187 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "66074",
+      "menciones": 9,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:59.040",
+          "contexto": "miraremos qué es lo que está pasando en 4 horas, pero el escenario de los 66,074"
+        },
+        {
+          "minuto": "00:12:03.030",
+          "contexto": "4 horas, pero el escenario de los 66,074"
+        },
+        {
+          "minuto": "00:12:03.040",
+          "contexto": "4 horas, pero el escenario de los 66,074 vamos a prolongar un poquito la"
+        }
+      ]
+    },
+    {
+      "valor": "64290",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:56.560",
+          "contexto": "abra Nueva York, pero lo tienen también en un precio de compra, 64,290,"
+        },
+        {
+          "minuto": "00:13:59.830",
+          "contexto": "en un precio de compra, 64,290,"
+        },
+        {
+          "minuto": "00:13:59.840",
+          "contexto": "en un precio de compra, 64,290, es decir, si vemos"
+        }
+      ]
+    },
+    {
+      "valor": "64193",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:05.720",
+          "contexto": "negociando fases mayores, 64,193,"
+        },
+        {
+          "minuto": "00:14:08.990",
+          "contexto": "fases mayores, 64,193,"
+        },
+        {
+          "minuto": "00:14:09.000",
+          "contexto": "fases mayores, 64,193, ahí tienen al precio detenido, un precio"
+        }
+      ]
+    },
+    {
+      "valor": "64686",
+      "menciones": 6,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:59.320",
+          "contexto": "los niveles intradiarios, simplemente decirte 64,686"
+        },
+        {
+          "minuto": "00:16:02.510",
+          "contexto": "decirte 64,686"
+        },
+        {
+          "minuto": "00:16:02.520",
+          "contexto": "decirte 64,686 y tenemos hasta los 65,980"
+        }
+      ]
+    },
+    {
+      "valor": "65980",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:16:02.520",
+          "contexto": "decirte 64,686 y tenemos hasta los 65,980"
+        },
+        {
+          "minuto": "00:16:04.950",
+          "contexto": "y tenemos hasta los 65,980"
+        },
+        {
+          "minuto": "00:16:04.960",
+          "contexto": "y tenemos hasta los 65,980 que lo llevaría hacia ese primer"
+        }
+      ]
+    },
+    {
+      "valor": "64500",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:05:03.040",
+          "contexto": "a preparar este vídeo, hice la captura del precio sobre 64,500"
+        },
+        {
+          "minuto": "00:05:05.750",
+          "contexto": "del precio sobre 64,500"
+        },
+        {
+          "minuto": "00:05:05.760",
+          "contexto": "del precio sobre 64,500 dólares Bitcoin."
+        }
+      ]
+    },
+    {
+      "valor": "57670",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:10.160",
+          "contexto": "segundo precio objetivo bajista calculado, los 57,670"
+        },
+        {
+          "minuto": "00:07:12.510",
+          "contexto": "calculado, los 57,670"
+        },
+        {
+          "minuto": "00:07:12.520",
+          "contexto": "calculado, los 57,670 dólares,"
+        }
+      ]
+    },
+    {
+      "valor": "62832",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:48.400",
+          "contexto": "bajistas para la semana. El eje central está en los 62,832,"
+        },
+        {
+          "minuto": "00:11:50.670",
+          "contexto": "está en los 62,832,"
+        },
+        {
+          "minuto": "00:11:50.680",
+          "contexto": "está en los 62,832, así comenzamos la semana."
+        }
+      ]
+    },
+    {
+      "valor": "63392",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:16:14.640",
+          "contexto": "en caso de caídas, volvería a la zona de precios de compra hasta los 63,392,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 1,
+    "Daily": 1
+  },
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.335707+00:00"
 }

@@ -482,5 +482,272 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "64000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:44.600",
+          "contexto": "que el consenso del mercado era entre 60 y 64,000 nuevos empleos, finalmente"
+        },
+        {
+          "minuto": "00:00:47.310",
+          "contexto": "y 64,000 nuevos empleos, finalmente"
+        },
+        {
+          "minuto": "00:00:47.320",
+          "contexto": "y 64,000 nuevos empleos, finalmente salieron 165,000 nuevos empleos, cuando"
+        }
+      ]
+    },
+    {
+      "valor": "165000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:47.320",
+          "contexto": "y 64,000 nuevos empleos, finalmente salieron 165,000 nuevos empleos, cuando"
+        },
+        {
+          "minuto": "00:00:50.630",
+          "contexto": "salieron 165,000 nuevos empleos, cuando"
+        },
+        {
+          "minuto": "00:00:50.640",
+          "contexto": "salieron 165,000 nuevos empleos, cuando la Fed lo que está intentando es"
+        }
+      ]
+    },
+    {
+      "valor": "77400",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:01:19.120",
+          "contexto": "precio de Bitcoin, estaba aquí en la zona de los 77,400 cuando hicimos el"
+        },
+        {
+          "minuto": "00:01:21.830",
+          "contexto": "zona de los 77,400 cuando hicimos el"
+        },
+        {
+          "minuto": "00:01:21.840",
+          "contexto": "zona de los 77,400 cuando hicimos el este mismo vídeo, pero el sábado pasado,"
+        }
+      ]
+    },
+    {
+      "valor": "75700",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:26.000",
+          "contexto": "y este viernes y hoy sábado también está en los 75,700,"
+        },
+        {
+          "minuto": "00:01:27.950",
+          "contexto": "en los 75,700,"
+        },
+        {
+          "minuto": "00:01:27.960",
+          "contexto": "en los 75,700, 600 dólares. Y fíjate que estuvo en"
+        }
+      ]
+    },
+    {
+      "valor": "76700",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:30.520",
+          "contexto": "600 dólares. Y fíjate que estuvo en 76,700"
+        },
+        {
+          "minuto": "00:01:32.270",
+          "contexto": "76,700"
+        },
+        {
+          "minuto": "00:01:32.280",
+          "contexto": "76,700 y la progresión que tuvo el precio de"
+        }
+      ]
+    },
+    {
+      "valor": "4000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:34.080",
+          "contexto": "y la progresión que tuvo el precio de unos 4,000 dólares. Vemos esa fuerte"
+        },
+        {
+          "minuto": "00:01:36.150",
+          "contexto": "unos 4,000 dólares. Vemos esa fuerte"
+        },
+        {
+          "minuto": "00:01:36.160",
+          "contexto": "unos 4,000 dólares. Vemos esa fuerte subida. Bueno, pues fue precisamente el"
+        }
+      ]
+    },
+    {
+      "valor": "12095",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:44.374",
+          "contexto": "lo tengo por aquí en los flujos, exactamente, 1.209,5"
+        },
+        {
+          "minuto": "00:04:46.764",
+          "contexto": "exactamente, 1.209,5"
+        },
+        {
+          "minuto": "00:04:46.774",
+          "contexto": "exactamente, 1.209,5 millones solamente de Ibit, y en total"
+        }
+      ]
+    },
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:03.661",
+          "contexto": "FOMO.\" No, no, yo ya tengo claro que no es igual que no me interesaba en 81,446"
+        },
+        {
+          "minuto": "00:15:06.971",
+          "contexto": "es igual que no me interesaba en 81,446"
+        },
+        {
+          "minuto": "00:15:06.981",
+          "contexto": "es igual que no me interesaba en 81,446 cuando hablábamos de ese precio, ni en"
+        }
+      ]
+    },
+    {
+      "valor": "82000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:09.301",
+          "contexto": "cuando hablábamos de ese precio, ni en 82,000, ni en 83,000. Tenía claro que no"
+        },
+        {
+          "minuto": "00:15:12.011",
+          "contexto": "82,000, ni en 83,000. Tenía claro que no"
+        },
+        {
+          "minuto": "00:15:12.021",
+          "contexto": "82,000, ni en 83,000. Tenía claro que no eran los precios donde quería comprar,"
+        }
+      ]
+    },
+    {
+      "valor": "83000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:09.301",
+          "contexto": "cuando hablábamos de ese precio, ni en 82,000, ni en 83,000. Tenía claro que no"
+        },
+        {
+          "minuto": "00:15:12.011",
+          "contexto": "82,000, ni en 83,000. Tenía claro que no"
+        },
+        {
+          "minuto": "00:15:12.021",
+          "contexto": "82,000, ni en 83,000. Tenía claro que no eran los precios donde quería comprar,"
+        }
+      ]
+    },
+    {
+      "valor": "2077",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:56.021",
+          "contexto": "precios de compra, esos tres precios de compra y aquí aparecen 2,077 y 1,890."
+        },
+        {
+          "minuto": "00:15:59.291",
+          "contexto": "compra y aquí aparecen 2,077 y 1,890."
+        },
+        {
+          "minuto": "00:15:59.301",
+          "contexto": "compra y aquí aparecen 2,077 y 1,890. Máximos y mínimos decrecientes, no"
+        }
+      ]
+    },
+    {
+      "valor": "1890",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:56.021",
+          "contexto": "precios de compra, esos tres precios de compra y aquí aparecen 2,077 y 1,890."
+        },
+        {
+          "minuto": "00:15:59.291",
+          "contexto": "compra y aquí aparecen 2,077 y 1,890."
+        },
+        {
+          "minuto": "00:15:59.301",
+          "contexto": "compra y aquí aparecen 2,077 y 1,890. Máximos y mínimos decrecientes, no"
+        }
+      ]
+    },
+    {
+      "valor": "1906",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:16:12.821",
+          "contexto": "pues verá efectivamente cómo funciona los tres en 1,906. Ha llegado y han"
+        },
+        {
+          "minuto": "00:16:15.051",
+          "contexto": "los tres en 1,906. Ha llegado y han"
+        },
+        {
+          "minuto": "00:16:15.061",
+          "contexto": "los tres en 1,906. Ha llegado y han aparecido esas compras que las tenían"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:06.720701+00:00"
 }

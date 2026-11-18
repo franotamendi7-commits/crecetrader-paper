@@ -306,5 +306,132 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "79023",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:03.760",
+          "contexto": "precio, eje central de operaciones para la jornada, 79,023 79,023"
+        },
+        {
+          "minuto": "00:11:03.760",
+          "contexto": "precio, eje central de operaciones para la jornada, 79,023 79,023"
+        },
+        {
+          "minuto": "00:11:06.910",
+          "contexto": "la jornada, 79,023 79,023"
+        }
+      ]
+    },
+    {
+      "valor": "80537",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:16.840",
+          "contexto": "este otro sí que está, los 80,537,"
+        },
+        {
+          "minuto": "00:10:19.750",
+          "contexto": "sí que está, los 80,537,"
+        },
+        {
+          "minuto": "00:10:19.760",
+          "contexto": "sí que está, los 80,537, ¿vale? Estos 80,537"
+        }
+      ]
+    },
+    {
+      "valor": "57670",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:49.360",
+          "contexto": "exactamente, desde que tocó el precio calculado de de 55, 57,670"
+        },
+        {
+          "minuto": "00:03:53.390",
+          "contexto": "calculado de de 55, 57,670"
+        },
+        {
+          "minuto": "00:03:53.400",
+          "contexto": "calculado de de 55, 57,670 dólares, y a partir de ahí van una fase"
+        }
+      ]
+    },
+    {
+      "valor": "80603",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:08.480",
+          "contexto": "y ya estás viendo que hasta el último, que son los 80,603,"
+        },
+        {
+          "minuto": "00:11:11.390",
+          "contexto": "que hasta el último, que son los 80,603,"
+        },
+        {
+          "minuto": "00:11:11.400",
+          "contexto": "que hasta el último, que son los 80,603, lo que ha estado pasando. Te lo voy a"
+        }
+      ]
+    },
+    {
+      "valor": "78721",
+      "menciones": 3,
+      "tf": "Intradia",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:23.040",
+          "contexto": "horas, cayó al primer nivel intradia bajista, 78,721,"
+        },
+        {
+          "minuto": "00:11:25.150",
+          "contexto": "bajista, 78,721,"
+        },
+        {
+          "minuto": "00:11:25.160",
+          "contexto": "bajista, 78,721, recuperó los 79,023"
+        }
+      ]
+    },
+    {
+      "valor": "79325",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:30.480",
+          "contexto": "y ya fue negociando con mucha decisión y liquidez 79,325"
+        },
+        {
+          "minuto": "00:11:32.590",
+          "contexto": "liquidez 79,325"
+        },
+        {
+          "minuto": "00:11:32.600",
+          "contexto": "liquidez 79,325 y llegó al siguiente 79.813."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Intradia": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.214119+00:00"
 }

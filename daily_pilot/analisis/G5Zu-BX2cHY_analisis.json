@@ -460,5 +460,172 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "61000",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:28.720",
+          "contexto": "\"Por favor, que no caiga por debajo de 61,000 porque me borran la operación.\" Y"
+        },
+        {
+          "minuto": "00:01:31.390",
+          "contexto": "61,000 porque me borran la operación.\" Y"
+        },
+        {
+          "minuto": "00:01:31.400",
+          "contexto": "61,000 porque me borran la operación.\" Y otros que han ido diciendo más o menos"
+        }
+      ]
+    },
+    {
+      "valor": "65555",
+      "menciones": 3,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:39.760",
+          "contexto": "Y fíjate aquí en la serie semanal cómo los 65,555,"
+        },
+        {
+          "minuto": "00:00:41.990",
+          "contexto": "los 65,555,"
+        },
+        {
+          "minuto": "00:00:42.000",
+          "contexto": "los 65,555, este último máximo que hizo que la"
+        }
+      ]
+    },
+    {
+      "valor": "63575",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:46.080",
+          "contexto": "encontrar por en medio de los 61,000. Ahora está en 63,575."
+        },
+        {
+          "minuto": "00:01:48.910",
+          "contexto": "Ahora está en 63,575."
+        },
+        {
+          "minuto": "00:01:48.920",
+          "contexto": "Ahora está en 63,575. Sé que estamos en vacaciones. O sea"
+        }
+      ]
+    },
+    {
+      "valor": "63438",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:41.640",
+          "contexto": "ver lo último lo que se nos quedó ayer 63,438"
+        },
+        {
+          "minuto": "00:02:44.030",
+          "contexto": "63,438"
+        },
+        {
+          "minuto": "00:02:44.040",
+          "contexto": "63,438 y aquí también"
+        }
+      ]
+    },
+    {
+      "valor": "63816",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:58.680",
+          "contexto": "vemos cómo está reaccionando perfectamente aquí en los 63,816."
+        },
+        {
+          "minuto": "00:03:02.310",
+          "contexto": "perfectamente aquí en los 63,816."
+        },
+        {
+          "minuto": "00:03:02.320",
+          "contexto": "perfectamente aquí en los 63,816. Vale, y por otro lado, aquí está"
+        }
+      ]
+    },
+    {
+      "valor": "65124",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:18.040",
+          "contexto": "pero que en el momento en que llegó a los 65,124,"
+        },
+        {
+          "minuto": "00:03:19.670",
+          "contexto": "los 65,124,"
+        },
+        {
+          "minuto": "00:03:19.680",
+          "contexto": "los 65,124, donde tenían que haber aparecido esas"
+        }
+      ]
+    },
+    {
+      "valor": "61247",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:43.880",
+          "contexto": "que hacia dónde apunta, hacia los 61,247, hacia donde tiene objetivo, y"
+        },
+        {
+          "minuto": "00:06:46.430",
+          "contexto": "61,247, hacia donde tiene objetivo, y"
+        },
+        {
+          "minuto": "00:06:46.440",
+          "contexto": "61,247, hacia donde tiene objetivo, y entonces dices, \"Bueno, pues o me pongo"
+        }
+      ]
+    },
+    {
+      "valor": "413520",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:16:39.280",
+          "contexto": "pasada con ese eje central en los cuadri en los 4.135,20,"
+        },
+        {
+          "minuto": "00:16:41.390",
+          "contexto": "en los 4.135,20,"
+        },
+        {
+          "minuto": "00:16:41.400",
+          "contexto": "en los 4.135,20, estuvo toda la semana pasada alcista y"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.643451+00:00"
 }

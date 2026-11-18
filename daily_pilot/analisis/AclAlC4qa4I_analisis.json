@@ -277,5 +277,130 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "87496",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:27.720",
+          "contexto": "máximos que no consiguen llegar, pues a este precio, los 87,496,"
+        },
+        {
+          "minuto": "00:00:30.350",
+          "contexto": "este precio, los 87,496,"
+        },
+        {
+          "minuto": "00:00:30.360",
+          "contexto": "este precio, los 87,496, esa línea amarilla con la que yo"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:52.160",
+          "contexto": "bueno, lo han traído, está intentando consolidar por encima de los 83,366."
+        },
+        {
+          "minuto": "00:01:55.670",
+          "contexto": "consolidar por encima de los 83,366."
+        },
+        {
+          "minuto": "00:01:55.680",
+          "contexto": "consolidar por encima de los 83,366. Pero claro,"
+        }
+      ]
+    },
+    {
+      "valor": "77000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:20.480",
+          "contexto": "Teníamos puesto por aquí y zona de compras desde los 77,000"
+        },
+        {
+          "minuto": "00:04:23.390",
+          "contexto": "compras desde los 77,000"
+        },
+        {
+          "minuto": "00:04:23.400",
+          "contexto": "compras desde los 77,000 860, 78,597,"
+        }
+      ]
+    },
+    {
+      "valor": "78597",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:23.400",
+          "contexto": "compras desde los 77,000 860, 78,597,"
+        },
+        {
+          "minuto": "00:04:25.990",
+          "contexto": "860, 78,597,"
+        },
+        {
+          "minuto": "00:04:26.000",
+          "contexto": "860, 78,597, 79,334."
+        }
+      ]
+    },
+    {
+      "valor": "79334",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:26.000",
+          "contexto": "860, 78,597, 79,334."
+        },
+        {
+          "minuto": "00:04:28.470",
+          "contexto": "79,334."
+        },
+        {
+          "minuto": "00:04:28.480",
+          "contexto": "79,334. Bueno, volvemos a dejar el precio a la"
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:40.400",
+          "contexto": "había llegado a objetivos. Como te decía, y 85,964"
+        },
+        {
+          "minuto": "00:04:43.030",
+          "contexto": "Como te decía, y 85,964"
+        },
+        {
+          "minuto": "00:04:43.040",
+          "contexto": "Como te decía, y 85,964 lo había detenido"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.404151+00:00"
 }

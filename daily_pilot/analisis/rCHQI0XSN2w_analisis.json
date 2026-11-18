@@ -307,5 +307,150 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "63438",
+      "menciones": 7,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:42.240",
+          "contexto": "trabajando y poderlo hacer rápido en el canal, aparecen los 63,438."
+        },
+        {
+          "minuto": "00:06:45.950",
+          "contexto": "canal, aparecen los 63,438."
+        },
+        {
+          "minuto": "00:06:45.960",
+          "contexto": "canal, aparecen los 63,438. Aquí se ha venido la presión y fíjate"
+        }
+      ]
+    },
+    {
+      "valor": "61247",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:13.320",
+          "contexto": "lo que podría ocurrir en el caso de llegar a los 61,247"
+        },
+        {
+          "minuto": "00:05:02.280",
+          "contexto": "entonces, 61,247"
+        },
+        {
+          "minuto": "00:05:04.310",
+          "contexto": "61,247"
+        }
+      ]
+    },
+    {
+      "valor": "63444",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:06.440",
+          "contexto": "nos ofrece esa oportunidad. Ahora mismo está aquí, frenado, 63,444."
+        },
+        {
+          "minuto": "00:05:10.430",
+          "contexto": "está aquí, frenado, 63,444."
+        },
+        {
+          "minuto": "00:05:10.440",
+          "contexto": "está aquí, frenado, 63,444. ¿Vale? Mañana miércoles, recuerda que"
+        }
+      ]
+    },
+    {
+      "valor": "64857",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:07.800",
+          "contexto": "no estamos viendo precios, únicamente cómo ha empezado la semana, 64,857."
+        },
+        {
+          "minuto": "00:06:11.550",
+          "contexto": "cómo ha empezado la semana, 64,857."
+        },
+        {
+          "minuto": "00:06:11.560",
+          "contexto": "cómo ha empezado la semana, 64,857. Eso significa que si yo calculo"
+        }
+      ]
+    },
+    {
+      "valor": "62266",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:10.520",
+          "contexto": "De ahí en adelante, si lo pierde hasta los 62,266,"
+        },
+        {
+          "minuto": "00:07:12.750",
+          "contexto": "los 62,266,"
+        },
+        {
+          "minuto": "00:07:12.760",
+          "contexto": "los 62,266, aunque le tenga puesta esta referencia,"
+        }
+      ]
+    },
+    {
+      "valor": "64155",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:01.080",
+          "contexto": "precio, ¿vale? 64,155."
+        },
+        {
+          "minuto": "00:10:03.270",
+          "contexto": "¿vale? 64,155."
+        },
+        {
+          "minuto": "00:10:03.280",
+          "contexto": "¿vale? 64,155. Acabo de quitar un momentito los niveles"
+        }
+      ]
+    },
+    {
+      "valor": "63000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:12.240",
+          "contexto": "Vamos a esperar a ver cómo cierra la jornada, cómo reaccionan los 63,000"
+        },
+        {
+          "minuto": "00:11:14.790",
+          "contexto": "jornada, cómo reaccionan los 63,000"
+        },
+        {
+          "minuto": "00:11:14.800",
+          "contexto": "jornada, cómo reaccionan los 63,000 estos 438"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.824716+00:00"
 }

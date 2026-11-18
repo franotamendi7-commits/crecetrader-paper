@@ -1,0 +1,143 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:31.680",
+          "contexto": "Se dirige aquí en la serie diaria tenemos un precio, como son los 81,446,"
+        },
+        {
+          "minuto": "00:09:35.590",
+          "contexto": "tenemos un precio, como son los 81,446,"
+        },
+        {
+          "minuto": "00:09:35.600",
+          "contexto": "tenemos un precio, como son los 81,446, que es un precio comprado."
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:11:49.160",
+          "contexto": "Sabiendo que estos son precios de compra y que cada vez que cruza los 83,366,"
+        },
+        {
+          "minuto": "00:11:52.310",
+          "contexto": "y que cada vez que cruza los 83,366,"
+        },
+        {
+          "minuto": "00:11:52.320",
+          "contexto": "y que cada vez que cruza los 83,366, el precio de Bitcoin cae. [carraspeo]"
+        }
+      ]
+    },
+    {
+      "valor": "80595",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:21.920",
+          "contexto": "involucrados han generado algún tipo de situación. Aquí eran los 80,595,"
+        },
+        {
+          "minuto": "00:12:24.790",
+          "contexto": "situación. Aquí eran los 80,595,"
+        },
+        {
+          "minuto": "00:12:24.800",
+          "contexto": "situación. Aquí eran los 80,595, ahí lo dejamos en la jornada de ayer y"
+        }
+      ]
+    },
+    {
+      "valor": "84455",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:58.360",
+          "contexto": "¿Y dónde acabarían los precios vendedores? En 84,455."
+        },
+        {
+          "minuto": "00:13:01.750",
+          "contexto": "vendedores? En 84,455."
+        },
+        {
+          "minuto": "00:13:01.760",
+          "contexto": "vendedores? En 84,455. Recuerden que"
+        }
+      ]
+    },
+    {
+      "valor": "79195",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:21:21.320",
+          "contexto": "bueno, para que veamos la situación. En caso de caída, 79,195,"
+        },
+        {
+          "minuto": "00:21:24.710",
+          "contexto": "En caso de caída, 79,195,"
+        },
+        {
+          "minuto": "00:21:24.720",
+          "contexto": "En caso de caída, 79,195, pues eso acercaría al precio a la zona"
+        }
+      ]
+    },
+    {
+      "valor": "78000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:21:28.080",
+          "contexto": "pues eso acercaría al precio a la zona de los 78,000"
+        },
+        {
+          "minuto": "00:21:30.990",
+          "contexto": "de los 78,000"
+        },
+        {
+          "minuto": "00:21:31.000",
+          "contexto": "de los 78,000 740."
+        }
+      ]
+    },
+    {
+      "valor": "82427",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:21:13.000",
+          "contexto": "Se encontraría esa barrera pues por aquí cercana a 82,427."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1
+  },
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:06.624890+00:00"
+}

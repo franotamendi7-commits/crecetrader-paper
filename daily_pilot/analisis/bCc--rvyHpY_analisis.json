@@ -497,5 +497,150 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "71509",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:32.894",
+          "contexto": "en que, por ejemplo, quien decía que compraba en 71,509"
+        },
+        {
+          "minuto": "00:04:35.184",
+          "contexto": "compraba en 71,509"
+        },
+        {
+          "minuto": "00:04:35.194",
+          "contexto": "compraba en 71,509 o en 71,500"
+        }
+      ]
+    },
+    {
+      "valor": "71500",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:35.194",
+          "contexto": "compraba en 71,509 o en 71,500"
+        },
+        {
+          "minuto": "00:04:36.984",
+          "contexto": "o en 71,500"
+        },
+        {
+          "minuto": "00:04:36.994",
+          "contexto": "o en 71,500 el precio está ahora mismo cotizando por"
+        }
+      ]
+    },
+    {
+      "valor": "109765",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:10.494",
+          "contexto": "revirtiera porque había llegado a objetivos como ahora, pero en 109,765"
+        },
+        {
+          "minuto": "00:05:14.184",
+          "contexto": "objetivos como ahora, pero en 109,765"
+        },
+        {
+          "minuto": "00:05:14.194",
+          "contexto": "objetivos como ahora, pero en 109,765 y en 124,000 y pico que teníamos el año"
+        }
+      ]
+    },
+    {
+      "valor": "124000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:14.194",
+          "contexto": "objetivos como ahora, pero en 109,765 y en 124,000 y pico que teníamos el año"
+        },
+        {
+          "minuto": "00:05:16.784",
+          "contexto": "y en 124,000 y pico que teníamos el año"
+        },
+        {
+          "minuto": "00:05:16.794",
+          "contexto": "y en 124,000 y pico que teníamos el año pasado"
+        }
+      ]
+    },
+    {
+      "valor": "69997",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:11.498",
+          "contexto": "a los 69.000, 72.554, 69.590 y los 69,997"
+        },
+        {
+          "minuto": "00:10:13.488",
+          "contexto": "y los 69,997"
+        },
+        {
+          "minuto": "00:10:13.498",
+          "contexto": "y los 69,997 objetivo de mediano plazo. Ya son todos"
+        }
+      ]
+    },
+    {
+      "valor": "3906",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:18:02.602",
+          "contexto": "que ha llegado en la jornada del jueves llegó a los 3,906 y que de momento no"
+        },
+        {
+          "minuto": "00:18:05.592",
+          "contexto": "llegó a los 3,906 y que de momento no"
+        },
+        {
+          "minuto": "00:18:05.602",
+          "contexto": "llegó a los 3,906 y que de momento no han aparecido compras ahí. Aquí tenemos"
+        }
+      ]
+    },
+    {
+      "valor": "3623",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:18:13.302",
+          "contexto": "o tener preparado ese plan y la proyección de los 3,623. En todo momento"
+        },
+        {
+          "minuto": "00:18:16.692",
+          "contexto": "proyección de los 3,623. En todo momento"
+        },
+        {
+          "minuto": "00:18:16.702",
+          "contexto": "proyección de los 3,623. En todo momento en cuando ha estado en esta caída yo"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.180829+00:00"
 }

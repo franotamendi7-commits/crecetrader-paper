@@ -484,5 +484,94 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:40.494",
+          "contexto": "corto plazo muy cercano. En este caso tenemos los 83,366"
+        },
+        {
+          "minuto": "00:04:42.584",
+          "contexto": "tenemos los 83,366"
+        },
+        {
+          "minuto": "00:04:42.594",
+          "contexto": "tenemos los 83,366 por la parte de arriba, también los"
+        }
+      ]
+    },
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:44.594",
+          "contexto": "por la parte de arriba, también los 81,446."
+        },
+        {
+          "minuto": "00:04:47.084",
+          "contexto": "81,446."
+        },
+        {
+          "minuto": "00:04:47.094",
+          "contexto": "81,446. Bueno, pues ya sabemos toda esa parte"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:51.894",
+          "contexto": "que hay y que además los mejores precios de compras no lo llegó a tocar, 75,518,"
+        },
+        {
+          "minuto": "00:04:55.384",
+          "contexto": "de compras no lo llegó a tocar, 75,518,"
+        },
+        {
+          "minuto": "00:04:55.394",
+          "contexto": "de compras no lo llegó a tocar, 75,518, pero son los mejores precios de compras"
+        }
+      ]
+    },
+    {
+      "valor": "2373",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "ETH",
+      "ejemplos": [
+        {
+          "minuto": "00:07:46.895",
+          "contexto": "rápidamente Ethereum que ha roto con fuerza los 2,373. Vamos a ver si"
+        },
+        {
+          "minuto": "00:07:49.085",
+          "contexto": "fuerza los 2,373. Vamos a ver si"
+        },
+        {
+          "minuto": "00:07:49.095",
+          "contexto": "fuerza los 2,373. Vamos a ver si consolida por encima de este precio,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1
+  },
+  "inst_counter": {
+    "ETH": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:06.546938+00:00"
 }

@@ -460,5 +460,130 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "78241",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:17.534",
+          "contexto": "con un eje central para la semana. Lo vamos a colocar en los 78,241."
+        },
+        {
+          "minuto": "00:05:21.284",
+          "contexto": "vamos a colocar en los 78,241."
+        },
+        {
+          "minuto": "00:05:21.294",
+          "contexto": "vamos a colocar en los 78,241. Voy a, voy a tirar por aquí la línea y"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:38.494",
+          "contexto": "hoy, en una pequeña subida que ha tenido el precio, vemos cómo los 78,746"
+        },
+        {
+          "minuto": "00:04:41.564",
+          "contexto": "el precio, vemos cómo los 78,746"
+        },
+        {
+          "minuto": "00:04:41.574",
+          "contexto": "el precio, vemos cómo los 78,746 le cierra el paso."
+        }
+      ]
+    },
+    {
+      "valor": "56750",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:08.094",
+          "contexto": "caídas superiores, pues por lo que sea, los 56,750 que no fue tocado, pero en"
+        },
+        {
+          "minuto": "00:04:11.284",
+          "contexto": "los 56,750 que no fue tocado, pero en"
+        },
+        {
+          "minuto": "00:04:11.294",
+          "contexto": "los 56,750 que no fue tocado, pero en principio, centrémonos en estos."
+        }
+      ]
+    },
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:31.294",
+          "contexto": "aparecieron vendedores en este precio, en los 81,446 que teníamos calculado."
+        },
+        {
+          "minuto": "00:04:34.684",
+          "contexto": "en los 81,446 que teníamos calculado."
+        },
+        {
+          "minuto": "00:04:34.694",
+          "contexto": "en los 81,446 que teníamos calculado. Desde ahí,"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:02.214",
+          "contexto": "78,241, 75,518,"
+        },
+        {
+          "minuto": "00:06:05.004",
+          "contexto": "75,518,"
+        },
+        {
+          "minuto": "00:06:05.014",
+          "contexto": "75,518, 72,555,"
+        }
+      ]
+    },
+    {
+      "valor": "72555",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:05.014",
+          "contexto": "75,518, 72,555,"
+        },
+        {
+          "minuto": "00:06:07.045",
+          "contexto": "72,555,"
+        },
+        {
+          "minuto": "00:06:07.055",
+          "contexto": "72,555, ya más alejado o 54 y medio como"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.571487+00:00"
 }

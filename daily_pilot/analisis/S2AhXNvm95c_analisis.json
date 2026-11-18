@@ -345,5 +345,72 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:01:21.720",
+          "contexto": "donde podía aumentar esa presión bajista y lo han mantenido frenado en los 83,366"
+        },
+        {
+          "minuto": "00:01:44.360",
+          "contexto": "acumulación de Bitcoin sabemos que cuando llega a los 83,366,"
+        },
+        {
+          "minuto": "00:01:47.470",
+          "contexto": "sabemos que cuando llega a los 83,366,"
+        }
+      ]
+    },
+    {
+      "valor": "87219",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:00:58.960",
+          "contexto": "ni es una opinión, es un hecho de que después de este máximo en 87,219"
+        },
+        {
+          "minuto": "00:01:01.830",
+          "contexto": "después de este máximo en 87,219"
+        },
+        {
+          "minuto": "00:01:01.840",
+          "contexto": "después de este máximo en 87,219 en Bitcoin dólar"
+        }
+      ]
+    },
+    {
+      "valor": "80308",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:12.280",
+          "contexto": "todo lo previo, que era una fase plana y llegó a los 80,308"
+        },
+        {
+          "minuto": "00:01:14.270",
+          "contexto": "llegó a los 80,308"
+        },
+        {
+          "minuto": "00:01:14.280",
+          "contexto": "llegó a los 80,308 y desde ahí ha subido hacia una zona"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {
+    "BTC": 2
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.790268+00:00"
 }

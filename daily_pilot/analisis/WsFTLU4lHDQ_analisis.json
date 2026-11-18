@@ -364,5 +364,312 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "76229",
+      "menciones": 18,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:28.519",
+          "contexto": "buscara liquidez hacia la zona de los 71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00:32.670",
+          "contexto": "71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00:32.680",
+          "contexto": "71,509. perdiendo los 76,229. Y fíjate, hubo un primer cierre"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 15,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:28.519",
+          "contexto": "buscara liquidez hacia la zona de los 71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00:32.670",
+          "contexto": "71,509. perdiendo los 76,229."
+        },
+        {
+          "minuto": "00:00:32.680",
+          "contexto": "71,509. perdiendo los 76,229. Y fíjate, hubo un primer cierre"
+        }
+      ]
+    },
+    {
+      "valor": "5800",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:00:07.640",
+          "contexto": "mercado tensionado y Bitcoin ha perdido su base. $5,800."
+        },
+        {
+          "minuto": "00:00:10.589",
+          "contexto": "su base. $5,800."
+        },
+        {
+          "minuto": "00:00:10.599",
+          "contexto": "su base. $5,800. Y aunque aquí te estoy diciendo que la"
+        }
+      ]
+    },
+    {
+      "valor": "74716",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:03.560",
+          "contexto": "esta fase se podía extender hasta el primer objetivo, 74,716."
+        },
+        {
+          "minuto": "00:08:06.790",
+          "contexto": "primer objetivo, 74,716."
+        },
+        {
+          "minuto": "00:08:06.800",
+          "contexto": "primer objetivo, 74,716. Ayer prácticamente llegó hasta ahí, le"
+        }
+      ]
+    },
+    {
+      "valor": "72000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:02.760",
+          "contexto": "nos está formando es una fase dos y podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01:06.270",
+          "contexto": "podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01:06.280",
+          "contexto": "podría ir a buscar estos 72,000 $70,000 porque es la zona de compras para donde"
+        }
+      ]
+    },
+    {
+      "valor": "70000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:02.760",
+          "contexto": "nos está formando es una fase dos y podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01:06.270",
+          "contexto": "podría ir a buscar estos 72,000 $70,000"
+        },
+        {
+          "minuto": "00:01:06.280",
+          "contexto": "podría ir a buscar estos 72,000 $70,000 porque es la zona de compras para donde"
+        }
+      ]
+    },
+    {
+      "valor": "80799",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:40.080",
+          "contexto": "esto había llegado en el otro mapa a objetivos, al número cuatro, los 80,799."
+        },
+        {
+          "minuto": "00:03:43.949",
+          "contexto": "objetivos, al número cuatro, los 80,799."
+        },
+        {
+          "minuto": "00:03:43.959",
+          "contexto": "objetivos, al número cuatro, los 80,799. Vale, pues lo vemos limpio. Ahora nos"
+        }
+      ]
+    },
+    {
+      "valor": "5000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:02.960",
+          "contexto": "respecto, ¿vale? Está en la zona de los $5,000."
+        },
+        {
+          "minuto": "00:06:04.590",
+          "contexto": "$5,000."
+        },
+        {
+          "minuto": "00:06:04.600",
+          "contexto": "$5,000. Vale, bien. Hoy de momento va en rojo."
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:32.759",
+          "contexto": "cuenta ya que va en una fase 4 que ha llegado a objetivos como 78,746,"
+        },
+        {
+          "minuto": "00:07:35.510",
+          "contexto": "llegado a objetivos como 78,746,"
+        },
+        {
+          "minuto": "00:07:35.520",
+          "contexto": "llegado a objetivos como 78,746, primer objetivo alcista de la semana,"
+        }
+      ]
+    },
+    {
+      "valor": "699997",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:44.720",
+          "contexto": "incluso hasta los 71,509, el tercero incluso hasta los 699,997."
+        },
+        {
+          "minuto": "00:08:48.509",
+          "contexto": "incluso hasta los 699,997."
+        },
+        {
+          "minuto": "00:08:48.519",
+          "contexto": "incluso hasta los 699,997. Bueno, pues habrá que planificar"
+        }
+      ]
+    },
+    {
+      "valor": "71500",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:03.480",
+          "contexto": "72, 70 y 67. Al venirnos a 4 horas nos está llevando hacia esa zona 72, 71,500"
+        },
+        {
+          "minuto": "00:09:07.670",
+          "contexto": "está llevando hacia esa zona 72, 71,500"
+        },
+        {
+          "minuto": "00:09:07.680",
+          "contexto": "está llevando hacia esa zona 72, 71,500 70,997"
+        }
+      ]
+    },
+    {
+      "valor": "70997",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:07.680",
+          "contexto": "está llevando hacia esa zona 72, 71,500 70,997"
+        },
+        {
+          "minuto": "00:09:10.150",
+          "contexto": "70,997"
+        },
+        {
+          "minuto": "00:09:10.160",
+          "contexto": "70,997 y 69,000. Es decir, esto es lo que está"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:10.160",
+          "contexto": "70,997 y 69,000. Es decir, esto es lo que está"
+        },
+        {
+          "minuto": "00:09:13.670",
+          "contexto": "y 69,000. Es decir, esto es lo que está"
+        },
+        {
+          "minuto": "00:09:13.680",
+          "contexto": "y 69,000. Es decir, esto es lo que está confirmado, ¿vale? Si a mí me lo"
+        }
+      ]
+    },
+    {
+      "valor": "2935",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "ETH",
+      "ejemplos": [
+        {
+          "minuto": "00:12:13.839",
+          "contexto": "es la primera referencia condicional. Ethereum, ahora lo veremos, $2,935"
+        },
+        {
+          "minuto": "00:12:17.350",
+          "contexto": "Ethereum, ahora lo veremos, $2,935"
+        },
+        {
+          "minuto": "00:12:17.360",
+          "contexto": "Ethereum, ahora lo veremos, $2,935 cuando yo comencé esto y está ahí"
+        }
+      ]
+    },
+    {
+      "valor": "77371",
+      "menciones": 2,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:54.159",
+          "contexto": "situándose por debajo de qué nivel, de estos 77,371."
+        },
+        {
+          "minuto": "00:04:26.479",
+          "contexto": "ahora mismo va más de un 20%. Vale, bien. Se ha metido por debajo de 77,371,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1,
+    "4H": 1
+  },
+  "inst_counter": {
+    "BTC": 1,
+    "ETH": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.957886+00:00"
 }

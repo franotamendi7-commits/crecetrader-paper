@@ -400,5 +400,348 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 19,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:07.880",
+          "contexto": "está interponiendo entre los 83,366,"
+        },
+        {
+          "minuto": "00:08:33.519",
+          "contexto": "corrección, pero aquí los importantes siguen siendo 83,366,"
+        },
+        {
+          "minuto": "00:08:36.149",
+          "contexto": "siguen siendo 83,366,"
+        }
+      ]
+    },
+    {
+      "valor": "80537",
+      "menciones": 15,
+      "tf": "Intradia",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:00.840",
+          "contexto": "objetivos. ¿Vale? Entonces, fíjate en este precio, en los 80,537."
+        },
+        {
+          "minuto": "00:03:03.869",
+          "contexto": "este precio, en los 80,537."
+        },
+        {
+          "minuto": "00:03:03.879",
+          "contexto": "este precio, en los 80,537. Te lo voy a te lo voy a marcar aquí"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:02.680",
+          "contexto": "teníamos el precio intentando romper y consolidar por encima de los 78,746."
+        },
+        {
+          "minuto": "00:02:05.630",
+          "contexto": "consolidar por encima de los 78,746."
+        },
+        {
+          "minuto": "00:02:05.640",
+          "contexto": "consolidar por encima de los 78,746. Este es un objetivo de mediano plazo que"
+        }
+      ]
+    },
+    {
+      "valor": "29143",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:30:13.360",
+          "contexto": "un nivel calculado en esta corrección que es un nivel de ventas 29,143. Mira"
+        },
+        {
+          "minuto": "00:30:16.909",
+          "contexto": "que es un nivel de ventas 29,143. Mira"
+        },
+        {
+          "minuto": "00:30:16.919",
+          "contexto": "que es un nivel de ventas 29,143. Mira cómo lo trajeron. Mira qué interesante."
+        }
+      ]
+    },
+    {
+      "valor": "107000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:34.880",
+          "contexto": "2025 el precio cayó y vimos cómo se iba negociando con niveles como 107,000,"
+        },
+        {
+          "minuto": "00:04:37.350",
+          "contexto": "negociando con niveles como 107,000,"
+        },
+        {
+          "minuto": "00:04:37.360",
+          "contexto": "negociando con niveles como 107,000, 103,000"
+        }
+      ]
+    },
+    {
+      "valor": "103000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:37.360",
+          "contexto": "negociando con niveles como 107,000, 103,000"
+        },
+        {
+          "minuto": "00:04:38.950",
+          "contexto": "103,000"
+        },
+        {
+          "minuto": "00:04:38.960",
+          "contexto": "103,000 dándole entrada a partir de los 98,831 a"
+        }
+      ]
+    },
+    {
+      "valor": "98831",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:38.960",
+          "contexto": "103,000 dándole entrada a partir de los 98,831 a"
+        },
+        {
+          "minuto": "00:04:43.029",
+          "contexto": "dándole entrada a partir de los 98,831 a"
+        },
+        {
+          "minuto": "00:04:43.039",
+          "contexto": "dándole entrada a partir de los 98,831 a mayor presión bajista también aquí."
+        }
+      ]
+    },
+    {
+      "valor": "76107",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:29.120",
+          "contexto": "desde los nuevos precios calculados, el tercer objetivo, los 76,107,"
+        },
+        {
+          "minuto": "00:05:32.550",
+          "contexto": "tercer objetivo, los 76,107,"
+        },
+        {
+          "minuto": "00:05:32.560",
+          "contexto": "tercer objetivo, los 76,107, hasta que llegó ahí en 4 horas. Mira lo"
+        }
+      ]
+    },
+    {
+      "valor": "80000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:12:42.519",
+          "contexto": "Y por último dice, \"Bitcoin recupera los $80,000 tras rebotar desde mínimo de los"
+        },
+        {
+          "minuto": "00:12:45.590",
+          "contexto": "$80,000 tras rebotar desde mínimo de los"
+        },
+        {
+          "minuto": "00:12:45.600",
+          "contexto": "$80,000 tras rebotar desde mínimo de los 77,000.\" Bien, bueno, esto ya lo tenemos"
+        }
+      ]
+    },
+    {
+      "valor": "77000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:45.600",
+          "contexto": "$80,000 tras rebotar desde mínimo de los 77,000.\" Bien, bueno, esto ya lo tenemos"
+        },
+        {
+          "minuto": "00:12:48.949",
+          "contexto": "77,000.\" Bien, bueno, esto ya lo tenemos"
+        },
+        {
+          "minuto": "00:12:48.959",
+          "contexto": "77,000.\" Bien, bueno, esto ya lo tenemos claro. Fíjate que todo este movimiento"
+        }
+      ]
+    },
+    {
+      "valor": "68361",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:28.639",
+          "contexto": "objetivos. El último lo calculé en 68,361."
+        },
+        {
+          "minuto": "00:15:30.269",
+          "contexto": "68,361."
+        },
+        {
+          "minuto": "00:15:30.279",
+          "contexto": "68,361. Esto se ha extendido bastante más, ¿no?"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:16:05.120",
+          "contexto": "corrija. Y sabemos que por debajo está 71,509."
+        },
+        {
+          "minuto": "00:16:07.189",
+          "contexto": "71,509."
+        },
+        {
+          "minuto": "00:16:07.199",
+          "contexto": "71,509. Vale, esos serían los escenarios, pero"
+        }
+      ]
+    },
+    {
+      "valor": "78985",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:17:15.280",
+          "contexto": "porque ya ves que se han completado todos. Desde el eje central hoy, 78,985,"
+        },
+        {
+          "minuto": "00:17:19.470",
+          "contexto": "todos. Desde el eje central hoy, 78,985,"
+        },
+        {
+          "minuto": "00:17:19.480",
+          "contexto": "todos. Desde el eje central hoy, 78,985, ha llegado a 80,565"
+        }
+      ]
+    },
+    {
+      "valor": "80565",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:17:19.480",
+          "contexto": "todos. Desde el eje central hoy, 78,985, ha llegado a 80,565"
+        },
+        {
+          "minuto": "00:17:22.029",
+          "contexto": "ha llegado a 80,565"
+        },
+        {
+          "minuto": "00:17:22.039",
+          "contexto": "ha llegado a 80,565 y en cuanto ha cerrado en dos ocasiones"
+        }
+      ]
+    },
+    {
+      "valor": "77405",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:18:33.280",
+          "contexto": "tampoco y por la parte de abajo hasta 77,405."
+        },
+        {
+          "minuto": "00:18:35.630",
+          "contexto": "77,405."
+        },
+        {
+          "minuto": "00:18:35.640",
+          "contexto": "77,405. Pasamos ahora"
+        }
+      ]
+    },
+    {
+      "valor": "28400",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:31:07.799",
+          "contexto": "importante que se podría encontrar antes de llegar a los 28,400 y que"
+        },
+        {
+          "minuto": "00:31:09.870",
+          "contexto": "antes de llegar a los 28,400 y que"
+        },
+        {
+          "minuto": "00:31:09.880",
+          "contexto": "antes de llegar a los 28,400 y que podría cambiar ese ese comportamiento."
+        }
+      ]
+    },
+    {
+      "valor": "87496",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:36.159",
+          "contexto": "siguen siendo 83,366, 87,496."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1,
+    "Intradia": 1,
+    "4H": 1
+  },
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.109517+00:00"
 }

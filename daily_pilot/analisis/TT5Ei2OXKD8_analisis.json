@@ -437,5 +437,110 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "87496",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:33.560",
+          "contexto": "Como podemos ver allí en el gráfico, los 87,496,"
+        },
+        {
+          "minuto": "00:00:35.310",
+          "contexto": "87,496,"
+        },
+        {
+          "minuto": "00:00:35.320",
+          "contexto": "87,496, precio de apertura de este año, tercer"
+        }
+      ]
+    },
+    {
+      "valor": "81152",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:05.400",
+          "contexto": "fíjate el eje central para la semana, el eje de operaciones, 81,152."
+        },
+        {
+          "minuto": "00:01:08.390",
+          "contexto": "eje de operaciones, 81,152."
+        },
+        {
+          "minuto": "00:01:08.400",
+          "contexto": "eje de operaciones, 81,152. Aquí estuvo detenido además durante el"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:14.000",
+          "contexto": "lunes arrancó desde ahí, hizo el breakout, la zona de los 83,366,"
+        },
+        {
+          "minuto": "00:01:17.790",
+          "contexto": "hizo el breakout, la zona de los 83,366,"
+        },
+        {
+          "minuto": "00:01:17.800",
+          "contexto": "hizo el breakout, la zona de los 83,366, te lo voy a enseñar entonces en el otro"
+        }
+      ]
+    },
+    {
+      "valor": "82281",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:35.760",
+          "contexto": "tres activa, está validada, ha roto los 82,281,"
+        },
+        {
+          "minuto": "00:01:39.190",
+          "contexto": "ha roto los 82,281,"
+        },
+        {
+          "minuto": "00:01:39.200",
+          "contexto": "ha roto los 82,281, estará el precio de de breakout que"
+        }
+      ]
+    },
+    {
+      "valor": "88418",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:46.240",
+          "contexto": "y esto tiene objetivos. El primero, calculado 88,418."
+        },
+        {
+          "minuto": "00:01:48.910",
+          "contexto": "calculado 88,418."
+        },
+        {
+          "minuto": "00:01:48.920",
+          "contexto": "calculado 88,418. Esto es lo que están negociando en el"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.824377+00:00"
 }

@@ -287,5 +287,210 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "80308",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:36.600",
+          "contexto": "Por debajo, ¿ves? Las referencias son los 80,308,"
+        },
+        {
+          "minuto": "00:00:38.350",
+          "contexto": "los 80,308,"
+        },
+        {
+          "minuto": "00:00:38.360",
+          "contexto": "los 80,308, ahí suelen hacer el qué."
+        }
+      ]
+    },
+    {
+      "valor": "2000",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:24.919",
+          "contexto": "Eh, 2,000 euros. Vamos a poner los números"
+        },
+        {
+          "minuto": "00:05:27.070",
+          "contexto": "2,000 euros. Vamos a poner los números"
+        },
+        {
+          "minuto": "00:05:27.080",
+          "contexto": "2,000 euros. Vamos a poner los números redondos. Y te dice,"
+        }
+      ]
+    },
+    {
+      "valor": "1500",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:41.280",
+          "contexto": "lo han bajado a 2,000.\" \"Que lo han bajado a 1,500.\" Dice, \"Ah, espérate. Lo"
+        },
+        {
+          "minuto": "00:05:44.590",
+          "contexto": "bajado a 1,500.\" Dice, \"Ah, espérate. Lo"
+        },
+        {
+          "minuto": "00:05:44.600",
+          "contexto": "bajado a 1,500.\" Dice, \"Ah, espérate. Lo están ofertando a 1,500 cuando estaba en"
+        }
+      ]
+    },
+    {
+      "valor": "80366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:40.920",
+          "contexto": "Y sigue estando por debajo de los 80,366,"
+        },
+        {
+          "minuto": "00:01:42.990",
+          "contexto": "80,366,"
+        },
+        {
+          "minuto": "00:01:43.000",
+          "contexto": "80,366, entonces,"
+        }
+      ]
+    },
+    {
+      "valor": "82281",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:13.480",
+          "contexto": "este es el punto clave para la reversión, 82,281,"
+        },
+        {
+          "minuto": "00:04:15.550",
+          "contexto": "reversión, 82,281,"
+        },
+        {
+          "minuto": "00:04:15.560",
+          "contexto": "reversión, 82,281, que puede proporcionar"
+        }
+      ]
+    },
+    {
+      "valor": "88418",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:19.640",
+          "contexto": "si entra liquidez, que vaya a buscar objetivos como son los 88,418,"
+        },
+        {
+          "minuto": "00:04:22.310",
+          "contexto": "objetivos como son los 88,418,"
+        },
+        {
+          "minuto": "00:04:22.320",
+          "contexto": "objetivos como son los 88,418, los 96, 94,564."
+        }
+      ]
+    },
+    {
+      "valor": "94564",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:22.320",
+          "contexto": "objetivos como son los 88,418, los 96, 94,564."
+        },
+        {
+          "minuto": "00:04:25.990",
+          "contexto": "los 96, 94,564."
+        },
+        {
+          "minuto": "00:04:26.000",
+          "contexto": "los 96, 94,564. ¿Vale?"
+        }
+      ]
+    },
+    {
+      "valor": "3200",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:31.000",
+          "contexto": "\"Oye, han puesto el el iPhone, el Pro 18, ahora mismo está en 3,200.\" Y te"
+        },
+        {
+          "minuto": "00:05:33.030",
+          "contexto": "18, ahora mismo está en 3,200.\" Y te"
+        },
+        {
+          "minuto": "00:05:33.040",
+          "contexto": "18, ahora mismo está en 3,200.\" Y te dice, \"Uy, qué caro.\""
+        }
+      ]
+    },
+    {
+      "valor": "2500",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:37.960",
+          "contexto": "esperar a que lo bajen.\" Y empiezan a \"Oye, que lo han bajado 2,500.\" \"No, que"
+        },
+        {
+          "minuto": "00:05:39.830",
+          "contexto": "\"Oye, que lo han bajado 2,500.\" \"No, que"
+        },
+        {
+          "minuto": "00:05:39.840",
+          "contexto": "\"Oye, que lo han bajado 2,500.\" \"No, que lo han bajado a 2,000.\" \"Que lo han"
+        }
+      ]
+    },
+    {
+      "valor": "3000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:46.480",
+          "contexto": "están ofertando a 1,500 cuando estaba en 3,000. hombre, una oferta del 50% eso me"
+        },
+        {
+          "minuto": "00:05:49.190",
+          "contexto": "3,000. hombre, una oferta del 50% eso me"
+        },
+        {
+          "minuto": "00:05:49.200",
+          "contexto": "3,000. hombre, una oferta del 50% eso me interesa, me lo compro."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.758900+00:00"
 }

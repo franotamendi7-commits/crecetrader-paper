@@ -1,0 +1,170 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:02.160",
+          "contexto": "Esta situación que tenemos, llegando a los 81,446,"
+        },
+        {
+          "minuto": "00:01:03.910",
+          "contexto": "los 81,446,"
+        },
+        {
+          "minuto": "00:01:03.920",
+          "contexto": "los 81,446, no es otra cosa que un momento"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:13.680",
+          "contexto": "Por ejemplo, esta semana que cerró por debajo de los 69,000 y de los 71,509"
+        },
+        {
+          "minuto": "00:04:16.710",
+          "contexto": "debajo de los 69,000 y de los 71,509"
+        },
+        {
+          "minuto": "00:04:16.720",
+          "contexto": "debajo de los 69,000 y de los 71,509 hubo recuperación, pero claro,"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:13.680",
+          "contexto": "Por ejemplo, esta semana que cerró por debajo de los 69,000 y de los 71,509"
+        },
+        {
+          "minuto": "00:04:16.710",
+          "contexto": "debajo de los 69,000 y de los 71,509"
+        },
+        {
+          "minuto": "00:04:16.720",
+          "contexto": "debajo de los 69,000 y de los 71,509 hubo recuperación, pero claro,"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:50.840",
+          "contexto": "un vistazo ahora en 4 horas. Luego tiene esa barrera de los 83,366"
+        },
+        {
+          "minuto": "00:04:53.750",
+          "contexto": "Luego tiene esa barrera de los 83,366"
+        },
+        {
+          "minuto": "00:04:53.760",
+          "contexto": "Luego tiene esa barrera de los 83,366 y de los 82,000 que hemos visto aquí en"
+        }
+      ]
+    },
+    {
+      "valor": "82000",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:53.760",
+          "contexto": "Luego tiene esa barrera de los 83,366 y de los 82,000 que hemos visto aquí en"
+        },
+        {
+          "minuto": "00:04:56.430",
+          "contexto": "y de los 82,000 que hemos visto aquí en"
+        },
+        {
+          "minuto": "00:04:56.440",
+          "contexto": "y de los 82,000 que hemos visto aquí en la serie diaria."
+        }
+      ]
+    },
+    {
+      "valor": "82800",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:58.560",
+          "contexto": "la serie diaria. 82,800"
+        },
+        {
+          "minuto": "00:05:00.950",
+          "contexto": "82,800"
+        },
+        {
+          "minuto": "00:05:00.960",
+          "contexto": "82,800 33."
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:22.080",
+          "contexto": "80, o sea, 82 ya está, 80, 78, porque ya sabéis que tenemos los 78,746"
+        },
+        {
+          "minuto": "00:05:24.870",
+          "contexto": "sabéis que tenemos los 78,746"
+        },
+        {
+          "minuto": "00:05:24.880",
+          "contexto": "sabéis que tenemos los 78,746 que es de mediano plazo, ¿vale? Pero"
+        }
+      ]
+    },
+    {
+      "valor": "80308",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:39.480",
+          "contexto": "Las fases por las que ha ido pasando el mercado y una vez llegó a los 80,308 y"
+        },
+        {
+          "minuto": "00:05:42.470",
+          "contexto": "mercado y una vez llegó a los 80,308 y"
+        },
+        {
+          "minuto": "00:05:42.480",
+          "contexto": "mercado y una vez llegó a los 80,308 y en dos ocasiones hicieron la cacería de"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 1,
+    "Daily": 2
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.751483+00:00"
+}

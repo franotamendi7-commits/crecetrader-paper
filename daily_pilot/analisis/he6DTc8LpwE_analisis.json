@@ -223,5 +223,134 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "84122",
+      "menciones": 6,
+      "tf": "4H",
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:07:00.240",
+          "contexto": "84,122,"
+        },
+        {
+          "minuto": "00:07:01.830",
+          "contexto": "84,122,"
+        },
+        {
+          "minuto": "00:07:01.840",
+          "contexto": "84,122, el otro todavía no se ha llegado a"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:03.440",
+          "contexto": "el otro todavía no se ha llegado a tocar. Y además estaban los 83,366,"
+        },
+        {
+          "minuto": "00:07:06.710",
+          "contexto": "tocar. Y además estaban los 83,366,"
+        },
+        {
+          "minuto": "00:07:06.720",
+          "contexto": "tocar. Y además estaban los 83,366, es decir, aquí tenía un tercer objetivo."
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 4,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:56.400",
+          "contexto": "gráfico de 4 horas aquí, esos dos objetivos, 85,964,"
+        },
+        {
+          "minuto": "00:14:43.280",
+          "contexto": "podría entonces dar un salto hacia los 85,964,"
+        },
+        {
+          "minuto": "00:14:45.910",
+          "contexto": "dar un salto hacia los 85,964,"
+        }
+      ]
+    },
+    {
+      "valor": "84455",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:37.000",
+          "contexto": "acepta llegar a los 84,122, 84,455,"
+        },
+        {
+          "minuto": "00:14:38.870",
+          "contexto": "84,455,"
+        },
+        {
+          "minuto": "00:14:38.880",
+          "contexto": "84,455, que es el freno que perdería la fuerza y"
+        }
+      ]
+    },
+    {
+      "valor": "83000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:58.000",
+          "contexto": "el de, el deterioro pasa por el entorno de los 83,000, ¿vale?"
+        },
+        {
+          "minuto": "00:15:00.550",
+          "contexto": "de los 83,000, ¿vale?"
+        },
+        {
+          "minuto": "00:15:00.560",
+          "contexto": "de los 83,000, ¿vale? Y ya sabemos la franja que hay por"
+        }
+      ]
+    },
+    {
+      "valor": "82000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:02.200",
+          "contexto": "Y ya sabemos la franja que hay por debajo en 82,000"
+        },
+        {
+          "minuto": "00:15:04.829",
+          "contexto": "debajo en 82,000"
+        },
+        {
+          "minuto": "00:15:04.839",
+          "contexto": "debajo en 82,000 281, por ejemplo, por debajo de 83,366,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 2
+  },
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:06.474737+00:00"
 }

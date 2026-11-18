@@ -1,0 +1,89 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "81619",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:13.335",
+          "contexto": "bueno, depende de la volatilidad, llegó hasta los 81,619, ahí le cerraron el"
+        },
+        {
+          "minuto": "00:07:16.005",
+          "contexto": "hasta los 81,619, ahí le cerraron el"
+        },
+        {
+          "minuto": "00:07:16.015",
+          "contexto": "hasta los 81,619, ahí le cerraron el paso y ahora lo tienen en el eje central"
+        }
+      ]
+    },
+    {
+      "valor": "81000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:17.895",
+          "contexto": "paso y ahora lo tienen en el eje central de operaciones, exactamente 81,000,"
+        },
+        {
+          "minuto": "00:07:20.525",
+          "contexto": "de operaciones, exactamente 81,000,"
+        },
+        {
+          "minuto": "00:07:20.535",
+          "contexto": "de operaciones, exactamente 81,000, perdón, 80,000 811 y en este momento"
+        }
+      ]
+    },
+    {
+      "valor": "80000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:20.535",
+          "contexto": "de operaciones, exactamente 81,000, perdón, 80,000 811 y en este momento"
+        },
+        {
+          "minuto": "00:07:23.845",
+          "contexto": "perdón, 80,000 811 y en este momento"
+        },
+        {
+          "minuto": "00:07:23.855",
+          "contexto": "perdón, 80,000 811 y en este momento vemos que está un pelín más abajo, pero"
+        }
+      ]
+    },
+    {
+      "valor": "2373",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "ETH",
+      "ejemplos": [
+        {
+          "minuto": "00:07:52.015",
+          "contexto": "En Ethereum las cosas no han cambiado, también los 2,373, esta mañana estaba"
+        },
+        {
+          "minuto": "00:07:54.645",
+          "contexto": "también los 2,373, esta mañana estaba"
+        },
+        {
+          "minuto": "00:07:54.655",
+          "contexto": "también los 2,373, esta mañana estaba subiendo, te decía,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {
+    "ETH": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:07.080801+00:00"
+}

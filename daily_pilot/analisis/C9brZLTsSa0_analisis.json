@@ -363,5 +363,275 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "71509",
+      "menciones": 12,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:54.080",
+          "contexto": "cercano son los 71,509,"
+        },
+        {
+          "minuto": "00:00:56.630",
+          "contexto": "son los 71,509,"
+        },
+        {
+          "minuto": "00:00:56.640",
+          "contexto": "son los 71,509, ¿verdad? En la serie semanal. Este es el"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:44.160",
+          "contexto": "Sabemos cómo la semana pasada tuvo el freno, no llegó a los 83,366."
+        },
+        {
+          "minuto": "00:00:47.590",
+          "contexto": "freno, no llegó a los 83,366."
+        },
+        {
+          "minuto": "00:00:47.600",
+          "contexto": "freno, no llegó a los 83,366. Quedan 4 días, 15 horas"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 6,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:32.600",
+          "contexto": "haciendo mínimos alrededor de los 78,746."
+        },
+        {
+          "minuto": "00:07:34.990",
+          "contexto": "78,746."
+        },
+        {
+          "minuto": "00:07:35.000",
+          "contexto": "78,746. Vale, este es el contexto."
+        }
+      ]
+    },
+    {
+      "valor": "75849",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:57.080",
+          "contexto": "por la parte de arriba 78,945 y por abajo 75,849."
+        },
+        {
+          "minuto": "00:07:59.510",
+          "contexto": "y por abajo 75,849."
+        },
+        {
+          "minuto": "00:07:59.520",
+          "contexto": "y por abajo 75,849. Acaba de llegar en este momento a"
+        }
+      ]
+    },
+    {
+      "valor": "77659",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:58.920",
+          "contexto": "Está perdiendo el eje central de la semana, los 70, 77,659."
+        },
+        {
+          "minuto": "00:06:01.950",
+          "contexto": "semana, los 70, 77,659."
+        },
+        {
+          "minuto": "00:06:01.960",
+          "contexto": "semana, los 70, 77,659. Como te digo, vigila vigila este mínimo"
+        }
+      ]
+    },
+    {
+      "valor": "5000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:06:30.360",
+          "contexto": "decir, bajar 5 abaratar el precio de Bitcoin 5 5,000"
+        },
+        {
+          "minuto": "00:06:33.350",
+          "contexto": "abaratar el precio de Bitcoin 5 5,000"
+        },
+        {
+          "minuto": "00:06:33.360",
+          "contexto": "abaratar el precio de Bitcoin 5 5,000 dólares al menos puede proporcionar un"
+        }
+      ]
+    },
+    {
+      "valor": "77397",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:50.720",
+          "contexto": "operaciones en los 77,397,"
+        },
+        {
+          "minuto": "00:07:53.550",
+          "contexto": "77,397,"
+        },
+        {
+          "minuto": "00:07:53.560",
+          "contexto": "77,397, por la parte de arriba 78,945"
+        }
+      ]
+    },
+    {
+      "valor": "78945",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:53.560",
+          "contexto": "77,397, por la parte de arriba 78,945"
+        },
+        {
+          "minuto": "00:07:57.070",
+          "contexto": "por la parte de arriba 78,945"
+        },
+        {
+          "minuto": "00:07:57.080",
+          "contexto": "por la parte de arriba 78,945 y por abajo 75,849."
+        }
+      ]
+    },
+    {
+      "valor": "76800",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:00.920",
+          "contexto": "Acaba de llegar en este momento a 76,800,"
+        },
+        {
+          "minuto": "00:08:02.630",
+          "contexto": "76,800,"
+        },
+        {
+          "minuto": "00:08:02.640",
+          "contexto": "76,800, perdón, 623, por arriba 77,102"
+        }
+      ]
+    },
+    {
+      "valor": "77102",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:02.640",
+          "contexto": "76,800, perdón, 623, por arriba 77,102"
+        },
+        {
+          "minuto": "00:08:06.590",
+          "contexto": "perdón, 623, por arriba 77,102"
+        },
+        {
+          "minuto": "00:08:06.600",
+          "contexto": "perdón, 623, por arriba 77,102 y tenemos un intermedio 76,236,"
+        }
+      ]
+    },
+    {
+      "valor": "76236",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:06.600",
+          "contexto": "perdón, 623, por arriba 77,102 y tenemos un intermedio 76,236,"
+        },
+        {
+          "minuto": "00:08:09.790",
+          "contexto": "y tenemos un intermedio 76,236,"
+        },
+        {
+          "minuto": "00:08:09.800",
+          "contexto": "y tenemos un intermedio 76,236, vale. Este es el mapa de operaciones, te"
+        }
+      ]
+    },
+    {
+      "valor": "77000",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:22.080",
+          "contexto": "con el primer nivel intradiario, el 77,000"
+        },
+        {
+          "minuto": "00:08:23.710",
+          "contexto": "77,000"
+        },
+        {
+          "minuto": "00:08:23.720",
+          "contexto": "77,000 693 lo han cerrado al paso y lo han"
+        }
+      ]
+    },
+    {
+      "valor": "76623",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:27.600",
+          "contexto": "llevado exactamente, ha tocado ahora en los últimos 15 minutos los 76,623."
+        },
+        {
+          "minuto": "00:08:31.030",
+          "contexto": "los últimos 15 minutos los 76,623."
+        },
+        {
+          "minuto": "00:08:31.040",
+          "contexto": "los últimos 15 minutos los 76,623. Vale, pues en este recorrido nos queda"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1,
+    "Daily": 2
+  },
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.454653+00:00"
 }

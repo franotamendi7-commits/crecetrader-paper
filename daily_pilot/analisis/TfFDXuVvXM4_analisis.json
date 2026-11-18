@@ -328,5 +328,70 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:01.760",
+          "contexto": "Mira. 83,366."
+        },
+        {
+          "minuto": "00:01:03.910",
+          "contexto": "83,366."
+        },
+        {
+          "minuto": "00:01:03.920",
+          "contexto": "83,366. Mira dónde está el precio ahora mismo,"
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:31.200",
+          "contexto": "corto plazo calculados previamente. 85,964"
+        },
+        {
+          "minuto": "00:01:33.070",
+          "contexto": "85,964"
+        },
+        {
+          "minuto": "00:01:33.080",
+          "contexto": "85,964 que le cerró el paso."
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:34.600",
+          "contexto": "que le cerró el paso. 84,122."
+        },
+        {
+          "minuto": "00:01:36.710",
+          "contexto": "84,122."
+        },
+        {
+          "minuto": "00:01:36.720",
+          "contexto": "84,122. Y mira cómo el precio ha estado detenido"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.838709+00:00"
 }

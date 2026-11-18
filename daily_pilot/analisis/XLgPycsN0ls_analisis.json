@@ -458,5 +458,132 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:53.320",
+          "contexto": "y también el importante que son los 83,366,"
+        },
+        {
+          "minuto": "00:00:55.950",
+          "contexto": "83,366,"
+        },
+        {
+          "minuto": "00:00:55.960",
+          "contexto": "83,366, la probabilidad de que empezara a"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:00:16.600",
+          "contexto": "Y estamos viendo que Bitcoin ha perdido los 78,746"
+        },
+        {
+          "minuto": "00:00:18.510",
+          "contexto": "los 78,746"
+        },
+        {
+          "minuto": "00:00:18.520",
+          "contexto": "los 78,746 desde la actualización de la jornada de"
+        }
+      ]
+    },
+    {
+      "valor": "81446",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:23.480",
+          "contexto": "donde veíamos el cierre del precio a 81,446,"
+        },
+        {
+          "minuto": "00:00:25.390",
+          "contexto": "81,446,"
+        },
+        {
+          "minuto": "00:00:25.400",
+          "contexto": "81,446, que si no entraban aquí suficiente"
+        }
+      ]
+    },
+    {
+      "valor": "87496",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:48.520",
+          "contexto": "cuando se acercó al precio de apertura de este año, los 87,496, la probabilidad"
+        },
+        {
+          "minuto": "00:00:51.510",
+          "contexto": "de este año, los 87,496, la probabilidad"
+        },
+        {
+          "minuto": "00:00:51.520",
+          "contexto": "de este año, los 87,496, la probabilidad y también el importante que son los"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:54.080",
+          "contexto": "dejó ayer ya lo acercó prácticamente a los 75,518, que es el precio que yo"
+        },
+        {
+          "minuto": "00:01:56.590",
+          "contexto": "los 75,518, que es el precio que yo"
+        },
+        {
+          "minuto": "00:01:56.600",
+          "contexto": "los 75,518, que es el precio que yo tenía como"
+        }
+      ]
+    },
+    {
+      "valor": "75509",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:37.779",
+          "contexto": "escenario. Y aquí tiene los 75,509, pero la"
+        },
+        {
+          "minuto": "00:12:40.209",
+          "contexto": "Y aquí tiene los 75,509, pero la"
+        },
+        {
+          "minuto": "00:12:40.219",
+          "contexto": "Y aquí tiene los 75,509, pero la tendencia de fondo sigue siendo alcista."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.978503+00:00"
 }

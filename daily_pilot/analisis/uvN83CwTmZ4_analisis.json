@@ -387,5 +387,224 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 12,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:14.360",
+          "contexto": "El primer objetivo semanal alcista está tiro de piedra, los 83,366"
+        },
+        {
+          "minuto": "00:00:17.510",
+          "contexto": "tiro de piedra, los 83,366"
+        },
+        {
+          "minuto": "00:00:17.520",
+          "contexto": "tiro de piedra, los 83,366 que llevamos persiguiendo desde hace ya"
+        }
+      ]
+    },
+    {
+      "valor": "2670",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:23.720",
+          "contexto": "a partir de los 2,566, 2,619 y voilà, aquí tenemos los 2,670."
+        },
+        {
+          "minuto": "00:14:29.800",
+          "contexto": "Y el segundo objetivo es el de mediano plazo de 2,670 y el segundo objetivo"
+        },
+        {
+          "minuto": "00:14:32.150",
+          "contexto": "plazo de 2,670 y el segundo objetivo"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:27.240",
+          "contexto": "después de que consiguiera esa ruptura de los 78,746"
+        },
+        {
+          "minuto": "00:01:30.390",
+          "contexto": "esa ruptura de los 78,746"
+        },
+        {
+          "minuto": "00:01:30.400",
+          "contexto": "esa ruptura de los 78,746 desde el eje de operaciones, se ve muy"
+        }
+      ]
+    },
+    {
+      "valor": "84068",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:33.960",
+          "contexto": "84,068."
+        },
+        {
+          "minuto": "00:10:35.710",
+          "contexto": "84,068."
+        },
+        {
+          "minuto": "00:10:35.720",
+          "contexto": "84,068. Y eso bordean los 83,366."
+        }
+      ]
+    },
+    {
+      "valor": "81455",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:35.520",
+          "contexto": "efectivamente cómo ha funcionado estos 81,455."
+        },
+        {
+          "minuto": "00:12:37.870",
+          "contexto": "81,455."
+        },
+        {
+          "minuto": "00:12:37.880",
+          "contexto": "81,455. Cómo gira todo"
+        }
+      ]
+    },
+    {
+      "valor": "2546",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:42.880",
+          "contexto": "vigilar este mínimo que había dejado aquí el 21 de agosto, 2,546?"
+        },
+        {
+          "minuto": "00:13:45.870",
+          "contexto": "aquí el 21 de agosto, 2,546?"
+        },
+        {
+          "minuto": "00:13:45.880",
+          "contexto": "aquí el 21 de agosto, 2,546? Mira, exactamente hoy dónde ha frenado"
+        }
+      ]
+    },
+    {
+      "valor": "2478",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:53.000",
+          "contexto": "romper esa barrera, pero al menos ha vuelto a romper los 2,478"
+        },
+        {
+          "minuto": "00:13:57.070",
+          "contexto": "vuelto a romper los 2,478"
+        },
+        {
+          "minuto": "00:13:57.080",
+          "contexto": "vuelto a romper los 2,478 desde el eje central de la semana. En 4"
+        }
+      ]
+    },
+    {
+      "valor": "2566",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:19.920",
+          "contexto": "con objetivos a partir de los 2,566, 2,619 y voilà,"
+        },
+        {
+          "minuto": "00:14:23.710",
+          "contexto": "a partir de los 2,566, 2,619 y voilà,"
+        },
+        {
+          "minuto": "00:14:23.720",
+          "contexto": "a partir de los 2,566, 2,619 y voilà, aquí tenemos los 2,670."
+        }
+      ]
+    },
+    {
+      "valor": "2619",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:19.920",
+          "contexto": "con objetivos a partir de los 2,566, 2,619 y voilà,"
+        },
+        {
+          "minuto": "00:14:23.710",
+          "contexto": "a partir de los 2,566, 2,619 y voilà,"
+        },
+        {
+          "minuto": "00:14:23.720",
+          "contexto": "a partir de los 2,566, 2,619 y voilà, aquí tenemos los 2,670."
+        }
+      ]
+    },
+    {
+      "valor": "2671",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:32.160",
+          "contexto": "plazo de 2,670 y el segundo objetivo calculado 2,671, es decir, $1 arriba."
+        },
+        {
+          "minuto": "00:14:36.590",
+          "contexto": "calculado 2,671, es decir, $1 arriba."
+        },
+        {
+          "minuto": "00:14:36.600",
+          "contexto": "calculado 2,671, es decir, $1 arriba. ¿Vale? Entonces ya estamos viendo la"
+        }
+      ]
+    },
+    {
+      "valor": "82762",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:28.920",
+          "contexto": "Y esta fase tiene calculado dos precios. Por un lado, 82,762"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:07.008726+00:00"
 }

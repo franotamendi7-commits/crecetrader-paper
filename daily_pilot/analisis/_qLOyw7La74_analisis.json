@@ -421,5 +421,273 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "61247",
+      "menciones": 6,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:52.520",
+          "contexto": "apuntando hacia el objetivo semanal de los 61,247."
+        },
+        {
+          "minuto": "00:08:54.870",
+          "contexto": "los 61,247."
+        },
+        {
+          "minuto": "00:08:54.880",
+          "contexto": "los 61,247. Claro, cuando venimos y miramos"
+        }
+      ]
+    },
+    {
+      "valor": "63406",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:03.960",
+          "contexto": "el eje central para las operaciones está en 63,406."
+        },
+        {
+          "minuto": "00:11:06.390",
+          "contexto": "en 63,406."
+        },
+        {
+          "minuto": "00:11:06.400",
+          "contexto": "en 63,406. Si quieres, podemos hacer una cosa. Voy"
+        }
+      ]
+    },
+    {
+      "valor": "63649",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:23.160",
+          "contexto": "hoy 63,406. Primer objetivo alcista, 63,649."
+        },
+        {
+          "minuto": "00:11:26.510",
+          "contexto": "Primer objetivo alcista, 63,649."
+        },
+        {
+          "minuto": "00:11:26.520",
+          "contexto": "Primer objetivo alcista, 63,649. Segundo, 64,040."
+        }
+      ]
+    },
+    {
+      "valor": "64040",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:26.520",
+          "contexto": "Primer objetivo alcista, 63,649. Segundo, 64,040."
+        },
+        {
+          "minuto": "00:11:29.030",
+          "contexto": "Segundo, 64,040."
+        },
+        {
+          "minuto": "00:11:29.040",
+          "contexto": "Segundo, 64,040. 64,357."
+        }
+      ]
+    },
+    {
+      "valor": "64357",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:29.040",
+          "contexto": "Segundo, 64,040. 64,357."
+        },
+        {
+          "minuto": "00:11:31.030",
+          "contexto": "64,357."
+        },
+        {
+          "minuto": "00:11:31.040",
+          "contexto": "64,357. Este es el máximo que se generó en la"
+        }
+      ]
+    },
+    {
+      "valor": "64674",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:36.760",
+          "contexto": "hay una doble barrera. Por último, 64,674."
+        },
+        {
+          "minuto": "00:11:39.110",
+          "contexto": "64,674."
+        },
+        {
+          "minuto": "00:11:39.120",
+          "contexto": "64,674. La semana comenzó en 64,857,"
+        }
+      ]
+    },
+    {
+      "valor": "64857",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:39.120",
+          "contexto": "64,674. La semana comenzó en 64,857,"
+        },
+        {
+          "minuto": "00:11:41.830",
+          "contexto": "La semana comenzó en 64,857,"
+        },
+        {
+          "minuto": "00:11:41.840",
+          "contexto": "La semana comenzó en 64,857, que es esta línea púrpura, ¿verdad?"
+        }
+      ]
+    },
+    {
+      "valor": "63164",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:53.200",
+          "contexto": "por debajo de este mínimo de ayer, 63,164,"
+        },
+        {
+          "minuto": "00:11:55.670",
+          "contexto": "63,164,"
+        },
+        {
+          "minuto": "00:11:55.680",
+          "contexto": "63,164, 62,200 772,"
+        }
+      ]
+    },
+    {
+      "valor": "62200",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:55.680",
+          "contexto": "63,164, 62,200 772,"
+        },
+        {
+          "minuto": "00:11:59.150",
+          "contexto": "62,200 772,"
+        },
+        {
+          "minuto": "00:11:59.160",
+          "contexto": "62,200 772, 64,000, perdón, 62,455"
+        }
+      ]
+    },
+    {
+      "valor": "64000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:59.160",
+          "contexto": "62,200 772, 64,000, perdón, 62,455"
+        },
+        {
+          "minuto": "00:12:03.350",
+          "contexto": "64,000, perdón, 62,455"
+        },
+        {
+          "minuto": "00:12:03.360",
+          "contexto": "64,000, perdón, 62,455 y 62,138,"
+        }
+      ]
+    },
+    {
+      "valor": "62455",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:59.160",
+          "contexto": "62,200 772, 64,000, perdón, 62,455"
+        },
+        {
+          "minuto": "00:12:03.350",
+          "contexto": "64,000, perdón, 62,455"
+        },
+        {
+          "minuto": "00:12:03.360",
+          "contexto": "64,000, perdón, 62,455 y 62,138,"
+        }
+      ]
+    },
+    {
+      "valor": "62138",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:03.360",
+          "contexto": "64,000, perdón, 62,455 y 62,138,"
+        },
+        {
+          "minuto": "00:12:05.470",
+          "contexto": "y 62,138,"
+        },
+        {
+          "minuto": "00:12:05.480",
+          "contexto": "y 62,138, ¿vale? Ese sería el último."
+        }
+      ]
+    },
+    {
+      "valor": "62216",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:01.640",
+          "contexto": "62,216, este mínimo. O sea, que ya"
+        },
+        {
+          "minuto": "00:13:04.310",
+          "contexto": "62,216, este mínimo. O sea, que ya"
+        },
+        {
+          "minuto": "00:13:04.320",
+          "contexto": "62,216, este mínimo. O sea, que ya sabemos hacia dónde se puede mover tanto"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1,
+    "4H": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.087276+00:00"
 }

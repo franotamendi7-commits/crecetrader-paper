@@ -295,5 +295,110 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "76852",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:31.360",
+          "contexto": "tercera o cuarta vez a los 76,852,"
+        },
+        {
+          "minuto": "00:00:33.310",
+          "contexto": "a los 76,852,"
+        },
+        {
+          "minuto": "00:00:33.320",
+          "contexto": "a los 76,852, que no es otra cosa que el segundo"
+        }
+      ]
+    },
+    {
+      "valor": "73396",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:39.360",
+          "contexto": "toda esta caída, de toda esta fase. El siguiente está en los 73,396."
+        },
+        {
+          "minuto": "00:00:42.750",
+          "contexto": "El siguiente está en los 73,396."
+        },
+        {
+          "minuto": "00:00:42.760",
+          "contexto": "El siguiente está en los 73,396. Es decir, aquí lo que está viendo ahora"
+        }
+      ]
+    },
+    {
+      "valor": "78580",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:52.440",
+          "contexto": "No obstante, por encima sigue teniendo los 78,580,"
+        },
+        {
+          "minuto": "00:00:55.150",
+          "contexto": "por encima sigue teniendo los 78,580,"
+        },
+        {
+          "minuto": "00:00:55.160",
+          "contexto": "por encima sigue teniendo los 78,580, los 46, que es"
+        }
+      ]
+    },
+    {
+      "valor": "78241",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:29.920",
+          "contexto": "debajo de el eje central de operaciones calculado para esta semana, 78,241 y 46."
+        },
+        {
+          "minuto": "00:01:34.190",
+          "contexto": "calculado para esta semana, 78,241 y 46."
+        },
+        {
+          "minuto": "00:01:34.200",
+          "contexto": "calculado para esta semana, 78,241 y 46. Lo que te tienes que preguntar es,"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:00.412",
+          "contexto": "contexto, el contexto es toma de beneficio en los 83,366,"
+        },
+        {
+          "minuto": "00:04:02.762",
+          "contexto": "beneficio en los 83,366,"
+        },
+        {
+          "minuto": "00:04:02.772",
+          "contexto": "beneficio en los 83,366, va a mitad de recorrido de los 71.509."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.740173+00:00"
 }

@@ -453,5 +453,253 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:41.160",
+          "contexto": "Por lo tanto, vigilamos 83,072 tendrá la clave junto con los 83,366"
+        },
+        {
+          "minuto": "00:04:43.510",
+          "contexto": "clave junto con los 83,366"
+        },
+        {
+          "minuto": "00:04:43.520",
+          "contexto": "clave junto con los 83,366 en caso de que los pierda podríamos ver"
+        }
+      ]
+    },
+    {
+      "valor": "83072",
+      "menciones": 9,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:38.560",
+          "contexto": "sentimiento índice codicia. Por lo tanto, vigilamos 83,072 tendrá la"
+        },
+        {
+          "minuto": "00:04:41.150",
+          "contexto": "Por lo tanto, vigilamos 83,072 tendrá la"
+        },
+        {
+          "minuto": "00:04:41.160",
+          "contexto": "Por lo tanto, vigilamos 83,072 tendrá la clave junto con los 83,366"
+        }
+      ]
+    },
+    {
+      "valor": "81690",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:46.040",
+          "contexto": "en caso de que los pierda podríamos ver que aumente la presión bajista, 81,690,"
+        },
+        {
+          "minuto": "00:04:50.190",
+          "contexto": "que aumente la presión bajista, 81,690,"
+        },
+        {
+          "minuto": "00:04:50.200",
+          "contexto": "que aumente la presión bajista, 81,690, 80,380,"
+        }
+      ]
+    },
+    {
+      "valor": "83078",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:07.160",
+          "contexto": "que era el objetivo de esta caída, exactamente está ahí, 83,078, acaba de"
+        },
+        {
+          "minuto": "00:06:09.750",
+          "contexto": "exactamente está ahí, 83,078, acaba de"
+        },
+        {
+          "minuto": "00:06:09.760",
+          "contexto": "exactamente está ahí, 83,078, acaba de llegar y frenar."
+        }
+      ]
+    },
+    {
+      "valor": "80380",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:50.200",
+          "contexto": "que aumente la presión bajista, 81,690, 80,380,"
+        },
+        {
+          "minuto": "00:04:52.990",
+          "contexto": "80,380,"
+        },
+        {
+          "minuto": "00:04:53.000",
+          "contexto": "80,380, 78,746"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:53.000",
+          "contexto": "80,380, 78,746"
+        },
+        {
+          "minuto": "00:04:54.830",
+          "contexto": "78,746"
+        },
+        {
+          "minuto": "00:04:54.840",
+          "contexto": "78,746 podría ser el movimiento en caso de que"
+        }
+      ]
+    },
+    {
+      "valor": "83381",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:31.160",
+          "contexto": "después de haber llegado al último intradiario, los 83,381,"
+        },
+        {
+          "minuto": "00:05:34.670",
+          "contexto": "intradiario, los 83,381,"
+        },
+        {
+          "minuto": "00:05:34.680",
+          "contexto": "intradiario, los 83,381, coincidente con el objetivo de largo"
+        }
+      ]
+    },
+    {
+      "valor": "82972",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:42.560",
+          "contexto": "estamos, y ya ves cómo 82,972"
+        },
+        {
+          "minuto": "00:05:45.670",
+          "contexto": "y ya ves cómo 82,972"
+        },
+        {
+          "minuto": "00:05:45.680",
+          "contexto": "y ya ves cómo 82,972 que está por debajo está ya muy próximo,"
+        }
+      ]
+    },
+    {
+      "valor": "82000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:51.320",
+          "contexto": "que puede coincidir con esos 82,000, 83,072"
+        },
+        {
+          "minuto": "00:05:54.830",
+          "contexto": "82,000, 83,072"
+        },
+        {
+          "minuto": "00:05:54.840",
+          "contexto": "82,000, 83,072 que tenemos aquí vigilando en"
+        }
+      ]
+    },
+    {
+      "valor": "78000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:46.120",
+          "contexto": "zona de los 78,000 e incluso los 71,509,"
+        },
+        {
+          "minuto": "00:06:49.430",
+          "contexto": "78,000 e incluso los 71,509,"
+        },
+        {
+          "minuto": "00:06:49.440",
+          "contexto": "78,000 e incluso los 71,509, en caso de que"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:46.120",
+          "contexto": "zona de los 78,000 e incluso los 71,509,"
+        },
+        {
+          "minuto": "00:06:49.430",
+          "contexto": "78,000 e incluso los 71,509,"
+        },
+        {
+          "minuto": "00:06:49.440",
+          "contexto": "78,000 e incluso los 71,509, en caso de que"
+        }
+      ]
+    },
+    {
+      "valor": "78500",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:39.640",
+          "contexto": "tiene que que consolidar. Ahora, si los pierde y va a 78,500"
+        },
+        {
+          "minuto": "00:07:42.390",
+          "contexto": "pierde y va a 78,500"
+        },
+        {
+          "minuto": "00:07:42.400",
+          "contexto": "pierde y va a 78,500 el el objetivo de mediano plazo o"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 1,
+    "Daily": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.015679+00:00"
 }

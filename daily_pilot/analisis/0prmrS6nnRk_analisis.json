@@ -476,5 +476,92 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "75518",
+      "menciones": 6,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:47.174",
+          "contexto": "reversión, si el precio sigue, si pierde los 75,518,"
+        },
+        {
+          "minuto": "00:04:49.124",
+          "contexto": "los 75,518,"
+        },
+        {
+          "minuto": "00:04:49.134",
+          "contexto": "los 75,518, bueno, pues llegar a esta zona de"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:01.574",
+          "contexto": "20 tantos por ciento, en caso de que llegue hasta los 69,000 y eso es un"
+        },
+        {
+          "minuto": "00:05:03.404",
+          "contexto": "llegue hasta los 69,000 y eso es un"
+        },
+        {
+          "minuto": "00:05:03.414",
+          "contexto": "llegue hasta los 69,000 y eso es un precio atractivo para muchos. Ahora,"
+        }
+      ]
+    },
+    {
+      "valor": "76853",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:17.214",
+          "contexto": "hablado de él, que son, si ampliamos la imagen, los 76,853"
+        },
+        {
+          "minuto": "00:05:19.564",
+          "contexto": "imagen, los 76,853"
+        },
+        {
+          "minuto": "00:05:19.574",
+          "contexto": "imagen, los 76,853 y por debajo el tercer objetivo que yo"
+        }
+      ]
+    },
+    {
+      "valor": "73397",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:21.294",
+          "contexto": "y por debajo el tercer objetivo que yo calculo, 73,397."
+        },
+        {
+          "minuto": "00:05:23.724",
+          "contexto": "calculo, 73,397."
+        },
+        {
+          "minuto": "00:05:23.734",
+          "contexto": "calculo, 73,397. Ya lo mete de en plenos objetivos de"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.075286+00:00"
 }

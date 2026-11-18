@@ -452,5 +452,295 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "2478",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": "ETH",
+      "ejemplos": [
+        {
+          "minuto": "00:18:20.800",
+          "contexto": "nuevo, que ya ves cómo va. Ethereum, 2,478 y medio, barrera vendedora, se"
+        },
+        {
+          "minuto": "00:18:23.670",
+          "contexto": "2,478 y medio, barrera vendedora, se"
+        },
+        {
+          "minuto": "00:18:23.680",
+          "contexto": "2,478 y medio, barrera vendedora, se tiene que convertir en compradora"
+        }
+      ]
+    },
+    {
+      "valor": "2077",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:18:42.160",
+          "contexto": "cambiado y tenemos precios que lo pueden llevar a los 2,077. Pues hombre, yo"
+        },
+        {
+          "minuto": "00:18:44.430",
+          "contexto": "llevar a los 2,077. Pues hombre, yo"
+        },
+        {
+          "minuto": "00:18:44.440",
+          "contexto": "llevar a los 2,077. Pues hombre, yo viendo esto, diría,"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:00:21.320",
+          "contexto": "tener la cotización de Bitcoin en los 78,746,"
+        },
+        {
+          "minuto": "00:00:24.830",
+          "contexto": "la cotización de Bitcoin en los 78,746,"
+        },
+        {
+          "minuto": "00:00:24.840",
+          "contexto": "la cotización de Bitcoin en los 78,746, porque es un objetivo de mediano plazo,"
+        }
+      ]
+    },
+    {
+      "valor": "78723",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:43.760",
+          "contexto": "porque septiembre empieza con tensión, 78,723"
+        },
+        {
+          "minuto": "00:01:45.910",
+          "contexto": "78,723"
+        },
+        {
+          "minuto": "00:01:45.920",
+          "contexto": "78,723 era el precio por donde se estaba"
+        }
+      ]
+    },
+    {
+      "valor": "80000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:11:42.320",
+          "contexto": "Y ese es el primer motivo del rechazo en los 80,000 dólares y que Bitcoin no"
+        },
+        {
+          "minuto": "00:11:43.990",
+          "contexto": "los 80,000 dólares y que Bitcoin no"
+        },
+        {
+          "minuto": "00:11:44.000",
+          "contexto": "los 80,000 dólares y que Bitcoin no pueda subir."
+        }
+      ]
+    },
+    {
+      "valor": "57670",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:17.040",
+          "contexto": "Las todas las de subida y ahora las de bajada. Los 57,670"
+        },
+        {
+          "minuto": "00:12:19.670",
+          "contexto": "bajada. Los 57,670"
+        },
+        {
+          "minuto": "00:12:19.680",
+          "contexto": "bajada. Los 57,670 fueron la causa del detenimiento de"
+        }
+      ]
+    },
+    {
+      "valor": "76107",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:30.640",
+          "contexto": "que lejos de haberse parado en el tercer objetivo, los 76,107,"
+        },
+        {
+          "minuto": "00:12:33.030",
+          "contexto": "objetivo, los 76,107,"
+        },
+        {
+          "minuto": "00:12:33.040",
+          "contexto": "objetivo, los 76,107, lo que ha hecho es llegar hasta los"
+        }
+      ]
+    },
+    {
+      "valor": "80700",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:34.320",
+          "contexto": "lo que ha hecho es llegar hasta los 80,700"
+        },
+        {
+          "minuto": "00:12:36.030",
+          "contexto": "80,700"
+        },
+        {
+          "minuto": "00:12:36.040",
+          "contexto": "80,700 dólares."
+        }
+      ]
+    },
+    {
+      "valor": "80709",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:40.920",
+          "contexto": "¿verdad? 80,709"
+        },
+        {
+          "minuto": "00:12:42.590",
+          "contexto": "80,709"
+        },
+        {
+          "minuto": "00:12:42.600",
+          "contexto": "80,709 dólares y eso es lo que ha hecho que el"
+        }
+      ]
+    },
+    {
+      "valor": "2770",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:18:56.080",
+          "contexto": "pues mi plan estaría a partir de los 2,770."
+        },
+        {
+          "minuto": "00:18:57.750",
+          "contexto": "2,770."
+        },
+        {
+          "minuto": "00:18:57.760",
+          "contexto": "2,770. Entonces,"
+        }
+      ]
+    },
+    {
+      "valor": "2466",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:19:06.480",
+          "contexto": "jornada de hoy. Aquí lo tenemos desde que comenzó la jornada, 2,466"
+        },
+        {
+          "minuto": "00:19:10.190",
+          "contexto": "que comenzó la jornada, 2,466"
+        },
+        {
+          "minuto": "00:19:10.200",
+          "contexto": "que comenzó la jornada, 2,466 dólares, eje central."
+        }
+      ]
+    },
+    {
+      "valor": "4486",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:21:34.720",
+          "contexto": "5 minutos con niveles intradiarios porque aunque 4,486"
+        },
+        {
+          "minuto": "00:21:37.670",
+          "contexto": "porque aunque 4,486"
+        },
+        {
+          "minuto": "00:21:37.680",
+          "contexto": "porque aunque 4,486 es el"
+        }
+      ]
+    },
+    {
+      "valor": "29540",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:25:03.800",
+          "contexto": "pero se nos había cambiado por aquí. Vamos a ponerlo 29,540."
+        },
+        {
+          "minuto": "00:25:06.030",
+          "contexto": "Vamos a ponerlo 29,540."
+        },
+        {
+          "minuto": "00:25:06.040",
+          "contexto": "Vamos a ponerlo 29,540. La semana pasada vimos que en cuanto"
+        }
+      ]
+    },
+    {
+      "valor": "29143",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:25:53.520",
+          "contexto": "tocó era este precio 29,143. Para mí estos"
+        },
+        {
+          "minuto": "00:25:55.990",
+          "contexto": "era este precio 29,143. Para mí estos"
+        },
+        {
+          "minuto": "00:25:56.000",
+          "contexto": "era este precio 29,143. Para mí estos siguen estando vigentes, para mí no se"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1
+  },
+  "inst_counter": {
+    "ETH": 1,
+    "BTC": 2
+  },
+  "reanalizado_tf": "2026-11-18T22:44:06.810577+00:00"
 }

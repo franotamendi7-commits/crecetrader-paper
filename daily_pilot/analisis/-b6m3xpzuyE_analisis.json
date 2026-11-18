@@ -452,5 +452,336 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "12000",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:25:48.120",
+          "contexto": "en estos meses, porque lo hice en base a un presupuesto de 12,000 dólares para"
+        },
+        {
+          "minuto": "00:25:50.310",
+          "contexto": "un presupuesto de 12,000 dólares para"
+        },
+        {
+          "minuto": "00:25:50.320",
+          "contexto": "un presupuesto de 12,000 dólares para hacerlo. Aquí quiero aclarar esto, no"
+        }
+      ]
+    },
+    {
+      "valor": "102000",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:28:43.040",
+          "contexto": "ya 102,000"
+        },
+        {
+          "minuto": "00:28:44.750",
+          "contexto": "102,000"
+        },
+        {
+          "minuto": "00:28:44.760",
+          "contexto": "102,000 102,000 dólares no realizados, 2307, una"
+        }
+      ]
+    },
+    {
+      "valor": "77959",
+      "menciones": 3,
+      "tf": "Intradia",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:17.760",
+          "contexto": "Siguiente objetivo intradía 77,959"
+        },
+        {
+          "minuto": "00:14:21.430",
+          "contexto": "Siguiente objetivo intradía 77,959"
+        },
+        {
+          "minuto": "00:14:21.440",
+          "contexto": "Siguiente objetivo intradía 77,959 que en las primeras los primeros"
+        }
+      ]
+    },
+    {
+      "valor": "78436",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:30.880",
+          "contexto": "la vela de las 10 los 78,436"
+        },
+        {
+          "minuto": "00:14:33.950",
+          "contexto": "los 78,436"
+        },
+        {
+          "minuto": "00:14:33.960",
+          "contexto": "los 78,436 y por último en cuanto ha tocado ha"
+        }
+      ]
+    },
+    {
+      "valor": "78824",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:37.920",
+          "contexto": "reaccionado. Por arriba le quedan dos más, 78,824,"
+        },
+        {
+          "minuto": "00:14:40.350",
+          "contexto": "más, 78,824,"
+        },
+        {
+          "minuto": "00:14:40.360",
+          "contexto": "más, 78,824, 79,212."
+        }
+      ]
+    },
+    {
+      "valor": "79212",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:40.360",
+          "contexto": "más, 78,824, 79,212."
+        },
+        {
+          "minuto": "00:14:42.790",
+          "contexto": "79,212."
+        },
+        {
+          "minuto": "00:14:42.800",
+          "contexto": "79,212. Con la volatilidad"
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:58.200",
+          "contexto": "más otro precio 78,746"
+        },
+        {
+          "minuto": "00:14:59.710",
+          "contexto": "78,746"
+        },
+        {
+          "minuto": "00:14:59.720",
+          "contexto": "78,746 donde ha ido apareciendo en diversas"
+        }
+      ]
+    },
+    {
+      "valor": "77362",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:07.920",
+          "contexto": "de estar empezando a corregir. Por la parte de abajo 77,362,"
+        },
+        {
+          "minuto": "00:15:11.150",
+          "contexto": "Por la parte de abajo 77,362,"
+        },
+        {
+          "minuto": "00:15:11.160",
+          "contexto": "Por la parte de abajo 77,362, 76,883,"
+        }
+      ]
+    },
+    {
+      "valor": "76883",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:11.160",
+          "contexto": "Por la parte de abajo 77,362, 76,883,"
+        },
+        {
+          "minuto": "00:15:13.510",
+          "contexto": "76,883,"
+        },
+        {
+          "minuto": "00:15:13.520",
+          "contexto": "76,883, 76,494"
+        }
+      ]
+    },
+    {
+      "valor": "76106",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:16.720",
+          "contexto": "y por último 76,106."
+        },
+        {
+          "minuto": "00:15:19.990",
+          "contexto": "y por último 76,106."
+        },
+        {
+          "minuto": "00:15:20.000",
+          "contexto": "y por último 76,106. Vale, pues ya tienes el mapa para que"
+        }
+      ]
+    },
+    {
+      "valor": "100000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:26:11.040",
+          "contexto": "Porque no todo el mundo empieza con una cuenta de 100,000 o 200,000 euros o"
+        },
+        {
+          "minuto": "00:26:13.110",
+          "contexto": "cuenta de 100,000 o 200,000 euros o"
+        },
+        {
+          "minuto": "00:26:13.120",
+          "contexto": "cuenta de 100,000 o 200,000 euros o dólares, ¿no?"
+        }
+      ]
+    },
+    {
+      "valor": "200000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:26:11.040",
+          "contexto": "Porque no todo el mundo empieza con una cuenta de 100,000 o 200,000 euros o"
+        },
+        {
+          "minuto": "00:26:13.110",
+          "contexto": "cuenta de 100,000 o 200,000 euros o"
+        },
+        {
+          "minuto": "00:26:13.120",
+          "contexto": "cuenta de 100,000 o 200,000 euros o dólares, ¿no?"
+        }
+      ]
+    },
+    {
+      "valor": "5000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:26:14.320",
+          "contexto": "dólares, ¿no? O muchas veces con 1,000, con 5,000,"
+        },
+        {
+          "minuto": "00:26:16.350",
+          "contexto": "O muchas veces con 1,000, con 5,000,"
+        },
+        {
+          "minuto": "00:26:16.360",
+          "contexto": "O muchas veces con 1,000, con 5,000, entonces escogí un un precio promedio,"
+        }
+      ]
+    },
+    {
+      "valor": "10000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:26:25.760",
+          "contexto": "Que sean fáciles de De hecho, al principio eran 10,000 y tuve que"
+        },
+        {
+          "minuto": "00:26:27.310",
+          "contexto": "principio eran 10,000 y tuve que"
+        },
+        {
+          "minuto": "00:26:27.320",
+          "contexto": "principio eran 10,000 y tuve que aumentar ahí un 2,000 para hacer ciertas"
+        }
+      ]
+    },
+    {
+      "valor": "2000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:26:27.320",
+          "contexto": "principio eran 10,000 y tuve que aumentar ahí un 2,000 para hacer ciertas"
+        },
+        {
+          "minuto": "00:26:29.670",
+          "contexto": "aumentar ahí un 2,000 para hacer ciertas"
+        },
+        {
+          "minuto": "00:26:29.680",
+          "contexto": "aumentar ahí un 2,000 para hacer ciertas cositas, ¿vale? Entonces,"
+        }
+      ]
+    },
+    {
+      "valor": "77659",
+      "menciones": 1,
+      "tf": "Intradia",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:14:13.520",
+          "contexto": "agosto, último día. Con el comienzo los 77,659."
+        }
+      ]
+    },
+    {
+      "valor": "76494",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:15:13.520",
+          "contexto": "76,883, 76,494"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Intradia": 2
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.000004+00:00"
 }

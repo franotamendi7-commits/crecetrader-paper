@@ -476,5 +476,232 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "69000",
+      "menciones": 12,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:46.695",
+          "contexto": "junto con 69,997 y 69,000 tenemos tres precios que"
+        },
+        {
+          "minuto": "00:07:48.885",
+          "contexto": "y 69,000 tenemos tres precios que"
+        },
+        {
+          "minuto": "00:07:48.895",
+          "contexto": "y 69,000 tenemos tres precios que coinciden en los 69,000. Un poquito más"
+        }
+      ]
+    },
+    {
+      "valor": "69997",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:34.995",
+          "contexto": "Entonces, empezaremos a ver. Nos queda un mes escaso. 69,997"
+        },
+        {
+          "minuto": "00:06:38.085",
+          "contexto": "un mes escaso. 69,997"
+        },
+        {
+          "minuto": "00:06:38.095",
+          "contexto": "un mes escaso. 69,997 también es un argumento para los de"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:51.195",
+          "contexto": "coinciden en los 69,000. Un poquito más arriba, largo plazo, 71,509. Un poquito"
+        },
+        {
+          "minuto": "00:07:53.985",
+          "contexto": "arriba, largo plazo, 71,509. Un poquito"
+        },
+        {
+          "minuto": "00:07:53.995",
+          "contexto": "arriba, largo plazo, 71,509. Un poquito por arriba ya tenemos el segundo precio"
+        }
+      ]
+    },
+    {
+      "valor": "65520",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:02.798",
+          "contexto": "lunes u hoy que pueda llegar a los 65,520"
+        },
+        {
+          "minuto": "00:11:04.688",
+          "contexto": "65,520"
+        },
+        {
+          "minuto": "00:11:04.698",
+          "contexto": "65,520 o no, porque este precio es"
+        }
+      ]
+    },
+    {
+      "valor": "125000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:02.995",
+          "contexto": "¿Desde dónde? Desde ese máximo que hablábamos en octubre de los 125,000"
+        },
+        {
+          "minuto": "00:07:06.585",
+          "contexto": "hablábamos en octubre de los 125,000"
+        },
+        {
+          "minuto": "00:07:06.595",
+          "contexto": "hablábamos en octubre de los 125,000 eh dólares. Ahí había un objetivo a"
+        }
+      ]
+    },
+    {
+      "valor": "69590",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:42.295",
+          "contexto": "calculamos con ellos y ahí están esos precios de compra, 69,590"
+        },
+        {
+          "minuto": "00:07:44.585",
+          "contexto": "precios de compra, 69,590"
+        },
+        {
+          "minuto": "00:07:44.595",
+          "contexto": "precios de compra, 69,590 junto con 69,997"
+        }
+      ]
+    },
+    {
+      "valor": "71500",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:14.198",
+          "contexto": "como he leído en algún comentario, yo ya compré en 71,500. Bueno, pues"
+        },
+        {
+          "minuto": "00:11:17.388",
+          "contexto": "compré en 71,500. Bueno, pues"
+        },
+        {
+          "minuto": "00:11:17.398",
+          "contexto": "compré en 71,500. Bueno, pues está en 68,000, 69,000, ¿verdad?"
+        }
+      ]
+    },
+    {
+      "valor": "68000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:17.398",
+          "contexto": "compré en 71,500. Bueno, pues está en 68,000, 69,000, ¿verdad?"
+        },
+        {
+          "minuto": "00:11:20.588",
+          "contexto": "está en 68,000, 69,000, ¿verdad?"
+        },
+        {
+          "minuto": "00:11:20.598",
+          "contexto": "está en 68,000, 69,000, ¿verdad? ¿Qué ocurre?"
+        }
+      ]
+    },
+    {
+      "valor": "2000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:37.299",
+          "contexto": "ya era un momento de compra y comprar y caer el precio $2,000 abajo,"
+        },
+        {
+          "minuto": "00:12:39.989",
+          "contexto": "y caer el precio $2,000 abajo,"
+        },
+        {
+          "minuto": "00:12:39.999",
+          "contexto": "y caer el precio $2,000 abajo, eso es una suposición, pero todavía no"
+        }
+      ]
+    },
+    {
+      "valor": "65000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:49.499",
+          "contexto": "la reversión. Porque, como te digo, en futuros 65,000, volvemos a ver el"
+        },
+        {
+          "minuto": "00:12:52.089",
+          "contexto": "futuros 65,000, volvemos a ver el"
+        },
+        {
+          "minuto": "00:12:52.099",
+          "contexto": "futuros 65,000, volvemos a ver el gráfico de los futuros un momentito,"
+        }
+      ]
+    },
+    {
+      "valor": "65555",
+      "menciones": 3,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:33.299",
+          "contexto": "reversión semanal confirmada. Cuando pasó de los 65,555"
+        },
+        {
+          "minuto": "00:13:36.689",
+          "contexto": "Cuando pasó de los 65,555"
+        },
+        {
+          "minuto": "00:13:36.699",
+          "contexto": "Cuando pasó de los 65,555 y ya estaba viendo cómo se preparaba,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.918676+00:00"
 }

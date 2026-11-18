@@ -509,5 +509,150 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "78746",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:05.895",
+          "contexto": "dólares. Por otro lado, encima, poquito más arriba, tenemos los 78,746."
+        },
+        {
+          "minuto": "00:06:08.525",
+          "contexto": "más arriba, tenemos los 78,746."
+        },
+        {
+          "minuto": "00:06:08.535",
+          "contexto": "más arriba, tenemos los 78,746. Si ese precio no lo conocemos, bueno,"
+        }
+      ]
+    },
+    {
+      "valor": "78241",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:09.892",
+          "contexto": "esa imagen, vemos que está justo ahí frenado en qué, en los 78,241,"
+        },
+        {
+          "minuto": "00:02:13.122",
+          "contexto": "frenado en qué, en los 78,241,"
+        },
+        {
+          "minuto": "00:02:13.132",
+          "contexto": "frenado en qué, en los 78,241, que es el eje central para las"
+        }
+      ]
+    },
+    {
+      "valor": "76000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:20.972",
+          "contexto": "acumuladas esta semana y ha regresado de la zona de los 76,000, 75,000 dólares y"
+        },
+        {
+          "minuto": "00:02:23.802",
+          "contexto": "la zona de los 76,000, 75,000 dólares y"
+        },
+        {
+          "minuto": "00:02:23.812",
+          "contexto": "la zona de los 76,000, 75,000 dólares y en este momento está cotizando 3,000"
+        }
+      ]
+    },
+    {
+      "valor": "75000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:20.972",
+          "contexto": "acumuladas esta semana y ha regresado de la zona de los 76,000, 75,000 dólares y"
+        },
+        {
+          "minuto": "00:02:23.802",
+          "contexto": "la zona de los 76,000, 75,000 dólares y"
+        },
+        {
+          "minuto": "00:02:23.812",
+          "contexto": "la zona de los 76,000, 75,000 dólares y en este momento está cotizando 3,000"
+        }
+      ]
+    },
+    {
+      "valor": "3000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:23.812",
+          "contexto": "la zona de los 76,000, 75,000 dólares y en este momento está cotizando 3,000"
+        },
+        {
+          "minuto": "00:02:25.442",
+          "contexto": "en este momento está cotizando 3,000"
+        },
+        {
+          "minuto": "00:02:25.452",
+          "contexto": "en este momento está cotizando 3,000 dólares arriba. Primera situación, ¿ha"
+        }
+      ]
+    },
+    {
+      "valor": "75518",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:43.095",
+          "contexto": "fuera superado? Ya saben que el mío viene en esta zona, 75,518"
+        },
+        {
+          "minuto": "00:06:45.965",
+          "contexto": "viene en esta zona, 75,518"
+        },
+        {
+          "minuto": "00:06:45.975",
+          "contexto": "viene en esta zona, 75,518 era una de ellas, perfecto, pero"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:22.615",
+          "contexto": "a realizarlo desde desde aquí, porque sería la manera de romper estos 83,366"
+        },
+        {
+          "minuto": "00:07:25.685",
+          "contexto": "sería la manera de romper estos 83,366"
+        },
+        {
+          "minuto": "00:07:25.695",
+          "contexto": "sería la manera de romper estos 83,366 que estoy señalando ahí con la flecha,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.923312+00:00"
 }

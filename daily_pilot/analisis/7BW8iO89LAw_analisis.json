@@ -138,5 +138,84 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "82281",
+      "menciones": 15,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:38.760",
+          "contexto": "totalmente detenido. ¿En qué precio? 82,281."
+        },
+        {
+          "minuto": "00:00:41.630",
+          "contexto": "82,281."
+        },
+        {
+          "minuto": "00:00:41.640",
+          "contexto": "82,281. Vale, ya sabes que la zona de compras"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 14,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:30.640",
+          "contexto": "siendo para el día de hoy este precio junto con los 83,366."
+        },
+        {
+          "minuto": "00:01:32.870",
+          "contexto": "junto con los 83,366."
+        },
+        {
+          "minuto": "00:01:32.880",
+          "contexto": "junto con los 83,366. Son dos precios que los tienes ahí"
+        }
+      ]
+    },
+    {
+      "valor": "82563",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:32.080",
+          "contexto": "totalmente detenido en los 82,281. Lo ves ahora mismo, 82,563."
+        },
+        {
+          "minuto": "00:04:35.510",
+          "contexto": "Lo ves ahora mismo, 82,563."
+        },
+        {
+          "minuto": "00:04:35.520",
+          "contexto": "Lo ves ahora mismo, 82,563. Es decir, si fuese a entrar líquidez, lo"
+        }
+      ]
+    },
+    {
+      "valor": "82286",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:28.959",
+          "contexto": "calculado de hace tiempo, y también los 82,286,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.361784+00:00"
 }

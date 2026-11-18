@@ -271,5 +271,70 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "87496",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:40.480",
+          "contexto": "Bueno, lo pueden impulsar y que alcance los 87,496"
+        },
+        {
+          "minuto": "00:04:43.510",
+          "contexto": "los 87,496"
+        },
+        {
+          "minuto": "00:04:43.520",
+          "contexto": "los 87,496 o que el precio se pueda caer."
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:43.240",
+          "contexto": "toma de beneficios, 84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06:47.710",
+          "contexto": "84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06:47.720",
+          "contexto": "84,122, 85,964, llegó hace un rato."
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:43.240",
+          "contexto": "toma de beneficios, 84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06:47.710",
+          "contexto": "84,122, 85,964,"
+        },
+        {
+          "minuto": "00:06:47.720",
+          "contexto": "84,122, 85,964, llegó hace un rato."
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.772099+00:00"
 }

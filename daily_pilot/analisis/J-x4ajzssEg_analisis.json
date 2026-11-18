@@ -438,5 +438,264 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 9,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:59.760",
+          "contexto": "tendrían que activarse órdenes preparadas aquí en los 83,366"
+        },
+        {
+          "minuto": "00:04:02.390",
+          "contexto": "preparadas aquí en los 83,366"
+        },
+        {
+          "minuto": "00:04:02.400",
+          "contexto": "preparadas aquí en los 83,366 y romper esta barrera de precio"
+        }
+      ]
+    },
+    {
+      "valor": "83094",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:35.720",
+          "contexto": "desde estos 83,366 eje central para las operaciones, 83,094"
+        },
+        {
+          "minuto": "00:04:38.750",
+          "contexto": "eje central para las operaciones, 83,094"
+        },
+        {
+          "minuto": "00:04:38.760",
+          "contexto": "eje central para las operaciones, 83,094 eje central para la jornada,"
+        }
+      ]
+    },
+    {
+      "valor": "83925",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:06.440",
+          "contexto": "segundo, casi llegan a los 83,925,"
+        },
+        {
+          "minuto": "00:05:09.190",
+          "contexto": "casi llegan a los 83,925,"
+        },
+        {
+          "minuto": "00:05:09.200",
+          "contexto": "casi llegan a los 83,925, no lo consiguieron y ahora, bueno, ya"
+        }
+      ]
+    },
+    {
+      "valor": "84456",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:05.480",
+          "contexto": "vendedores, superar los 84,456"
+        },
+        {
+          "minuto": "00:04:08.190",
+          "contexto": "superar los 84,456"
+        },
+        {
+          "minuto": "00:04:08.200",
+          "contexto": "superar los 84,456 y entonces, cuando yo haga el segundo"
+        }
+      ]
+    },
+    {
+      "valor": "83607",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:43.000",
+          "contexto": "de ahí lo han llevado incluso hasta los 83,607"
+        },
+        {
+          "minuto": "00:04:44.510",
+          "contexto": "83,607"
+        },
+        {
+          "minuto": "00:04:44.520",
+          "contexto": "83,607 primer, segundo,"
+        }
+      ]
+    },
+    {
+      "valor": "83411",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:46.640",
+          "contexto": "primer, segundo, primero son los 83,411."
+        },
+        {
+          "minuto": "00:04:49.990",
+          "contexto": "primero son los 83,411."
+        },
+        {
+          "minuto": "00:04:50.000",
+          "contexto": "primero son los 83,411. Segundo objetivo intradiario"
+        }
+      ]
+    },
+    {
+      "valor": "83386",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:14.680",
+          "contexto": "enredado en los 83,386."
+        },
+        {
+          "minuto": "00:05:17.310",
+          "contexto": "en los 83,386."
+        },
+        {
+          "minuto": "00:05:17.320",
+          "contexto": "en los 83,386. Si entra liquidez, o 83,925,"
+        }
+      ]
+    },
+    {
+      "valor": "84340",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:21.120",
+          "contexto": "Si entra liquidez, o 83,925, o 84,340,"
+        },
+        {
+          "minuto": "00:05:23.190",
+          "contexto": "o 84,340,"
+        },
+        {
+          "minuto": "00:05:23.200",
+          "contexto": "o 84,340, o 84,755"
+        }
+      ]
+    },
+    {
+      "valor": "84755",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:23.200",
+          "contexto": "o 84,340, o 84,755"
+        },
+        {
+          "minuto": "00:05:25.110",
+          "contexto": "o 84,755"
+        },
+        {
+          "minuto": "00:05:25.120",
+          "contexto": "o 84,755 son los cálculos"
+        }
+      ]
+    },
+    {
+      "valor": "82580",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:41.760",
+          "contexto": "82,580,"
+        },
+        {
+          "minuto": "00:05:43.390",
+          "contexto": "82,580,"
+        },
+        {
+          "minuto": "00:05:43.400",
+          "contexto": "82,580, o 82,263,"
+        }
+      ]
+    },
+    {
+      "valor": "82263",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:43.400",
+          "contexto": "82,580, o 82,263,"
+        },
+        {
+          "minuto": "00:05:45.710",
+          "contexto": "o 82,263,"
+        },
+        {
+          "minuto": "00:05:45.720",
+          "contexto": "o 82,263, 81,847"
+        }
+      ]
+    },
+    {
+      "valor": "81847",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:45.720",
+          "contexto": "o 82,263, 81,847"
+        },
+        {
+          "minuto": "00:05:47.510",
+          "contexto": "81,847"
+        },
+        {
+          "minuto": "00:05:47.520",
+          "contexto": "81,847 y 81.432"
+        }
+      ]
+    },
+    {
+      "valor": "82776",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:37.720",
+          "contexto": "operaciones, predisposición correctiva bajista, 82,776,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Daily": 1
+  },
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:05.655955+00:00"
 }

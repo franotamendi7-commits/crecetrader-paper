@@ -1,0 +1,47 @@
+{
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:38.720",
+          "contexto": "Y efectivamente la reacción en los 83,366,"
+        },
+        {
+          "minuto": "00:00:40.990",
+          "contexto": "83,366,"
+        },
+        {
+          "minuto": "00:00:41.000",
+          "contexto": "83,366, 82,333"
+        }
+      ]
+    },
+    {
+      "valor": "82333",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:41.000",
+          "contexto": "83,366, 82,333"
+        },
+        {
+          "minuto": "00:00:42.950",
+          "contexto": "82,333"
+        },
+        {
+          "minuto": "00:00:42.960",
+          "contexto": "82,333 que vamos siguiendo"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.602914+00:00"
+}

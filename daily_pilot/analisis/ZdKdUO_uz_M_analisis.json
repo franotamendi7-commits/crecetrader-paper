@@ -469,5 +469,70 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "88000",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:55.400",
+          "contexto": "los 87,496, 88,000, la cuestión es es"
+        },
+        {
+          "minuto": "00:06:59.590",
+          "contexto": "88,000, la cuestión es es"
+        },
+        {
+          "minuto": "00:06:59.600",
+          "contexto": "88,000, la cuestión es es este precio, o sea, estando tan arriba"
+        }
+      ]
+    },
+    {
+      "valor": "87496",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:53.480",
+          "contexto": "romper esta zona y que incluso llega a los 87,496,"
+        },
+        {
+          "minuto": "00:06:55.390",
+          "contexto": "los 87,496,"
+        },
+        {
+          "minuto": "00:06:55.400",
+          "contexto": "los 87,496, 88,000, la cuestión es es"
+        }
+      ]
+    },
+    {
+      "valor": "87000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:08:02.840",
+          "contexto": "ahora, que vaya hacia la apertura anual, 87,000, 88,000."
+        },
+        {
+          "minuto": "00:08:05.270",
+          "contexto": "87,000, 88,000."
+        },
+        {
+          "minuto": "00:08:05.280",
+          "contexto": "87,000, 88,000. Y después vendan desde un precio todavía"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {},
+  "inst_counter": {},
+  "reanalizado_tf": "2026-11-18T22:44:06.047806+00:00"
 }

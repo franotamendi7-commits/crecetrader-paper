@@ -467,5 +467,395 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "83366",
+      "menciones": 33,
+      "tf": "Weekly",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:53.480",
+          "contexto": "Este ha sido el cierre semanal. Lo ha hecho por encima de los 83,366."
+        },
+        {
+          "minuto": "00:00:58.910",
+          "contexto": "hecho por encima de los 83,366."
+        },
+        {
+          "minuto": "00:00:58.920",
+          "contexto": "hecho por encima de los 83,366. Mira la forma, mira el rango de precios"
+        }
+      ]
+    },
+    {
+      "valor": "82281",
+      "menciones": 15,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:51.720",
+          "contexto": "Habrá que vigilar este breakout de los 82,281,"
+        },
+        {
+          "minuto": "00:02:53.949",
+          "contexto": "82,281,"
+        },
+        {
+          "minuto": "00:02:53.959",
+          "contexto": "82,281, es decir, en la serie diaria, donde"
+        }
+      ]
+    },
+    {
+      "valor": "71509",
+      "menciones": 12,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:34.440",
+          "contexto": "la baja para la búsqueda de liquidez a un precio mejor. 71,509. Su forma es de"
+        },
+        {
+          "minuto": "00:00:37.389",
+          "contexto": "un precio mejor. 71,509. Su forma es de"
+        },
+        {
+          "minuto": "00:00:37.399",
+          "contexto": "un precio mejor. 71,509. Su forma es de reversión, pero la próxima semana tendrá"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 6,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:01:15.640",
+          "contexto": "veremos el por qué puede llegar a precios sobre los 71,509 y 69,000."
+        },
+        {
+          "minuto": "00:01:19.070",
+          "contexto": "precios sobre los 71,509 y 69,000."
+        },
+        {
+          "minuto": "00:01:19.080",
+          "contexto": "precios sobre los 71,509 y 69,000. Cuidado que digo por los que podría"
+        }
+      ]
+    },
+    {
+      "valor": "84455",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:52.519",
+          "contexto": "81,152. Ahora se nos va a los 84,455."
+        },
+        {
+          "minuto": "00:10:56.710",
+          "contexto": "Ahora se nos va a los 84,455."
+        },
+        {
+          "minuto": "00:10:56.720",
+          "contexto": "Ahora se nos va a los 84,455. Aquí comienza nuestro eje central para"
+        }
+      ]
+    },
+    {
+      "valor": "84122",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:53.519",
+          "contexto": "esta zona de riesgo por realización de beneficios 84,122, 83,366"
+        },
+        {
+          "minuto": "00:11:57.269",
+          "contexto": "beneficios 84,122, 83,366"
+        },
+        {
+          "minuto": "00:11:57.279",
+          "contexto": "beneficios 84,122, 83,366 85,964"
+        }
+      ]
+    },
+    {
+      "valor": "82766",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:02.440",
+          "contexto": "veas. Bueno, el último cálculo está en los 82,766."
+        },
+        {
+          "minuto": "00:13:04.430",
+          "contexto": "los 82,766."
+        },
+        {
+          "minuto": "00:13:04.440",
+          "contexto": "los 82,766. En el momento en que el precio lo toca,"
+        }
+      ]
+    },
+    {
+      "valor": "81152",
+      "menciones": 4,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:10:50.600",
+          "contexto": "El eje de la semana pasada estaba en 81,152."
+        },
+        {
+          "minuto": "00:10:52.509",
+          "contexto": "81,152."
+        },
+        {
+          "minuto": "00:10:52.519",
+          "contexto": "81,152. Ahora se nos va a los 84,455."
+        }
+      ]
+    },
+    {
+      "valor": "82601",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:02:43.280",
+          "contexto": "gráficos de contexto que marcan precios. Anota los 82,601."
+        },
+        {
+          "minuto": "00:02:46.270",
+          "contexto": "Anota los 82,601."
+        },
+        {
+          "minuto": "00:02:46.280",
+          "contexto": "Anota los 82,601. y 83,366."
+        }
+      ]
+    },
+    {
+      "valor": "72000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:55.000",
+          "contexto": "construcción, pues puede venir a buscar liquidez a precios como 72,000, 70,000 o"
+        },
+        {
+          "minuto": "00:03:58.830",
+          "contexto": "liquidez a precios como 72,000, 70,000 o"
+        },
+        {
+          "minuto": "00:03:58.840",
+          "contexto": "liquidez a precios como 72,000, 70,000 o 67,000. ¿Y por qué todavía está en"
+        }
+      ]
+    },
+    {
+      "valor": "70000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:55.000",
+          "contexto": "construcción, pues puede venir a buscar liquidez a precios como 72,000, 70,000 o"
+        },
+        {
+          "minuto": "00:03:58.830",
+          "contexto": "liquidez a precios como 72,000, 70,000 o"
+        },
+        {
+          "minuto": "00:03:58.840",
+          "contexto": "liquidez a precios como 72,000, 70,000 o 67,000. ¿Y por qué todavía está en"
+        }
+      ]
+    },
+    {
+      "valor": "67000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:58.840",
+          "contexto": "liquidez a precios como 72,000, 70,000 o 67,000. ¿Y por qué todavía está en"
+        },
+        {
+          "minuto": "00:04:02.630",
+          "contexto": "67,000. ¿Y por qué todavía está en"
+        },
+        {
+          "minuto": "00:04:02.640",
+          "contexto": "67,000. ¿Y por qué todavía está en construcción? Pues muy fácil."
+        }
+      ]
+    },
+    {
+      "valor": "78746",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:06.639",
+          "contexto": "precios inferiores. En la serie diaria aparecen los 78,746."
+        },
+        {
+          "minuto": "00:11:09.629",
+          "contexto": "aparecen los 78,746."
+        },
+        {
+          "minuto": "00:11:09.639",
+          "contexto": "aparecen los 78,746. Posteriormente tenemos los 71,509 que"
+        }
+      ]
+    },
+    {
+      "valor": "87496",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:31.519",
+          "contexto": "de toda esta subida que sigue pendiente son los 87,496."
+        },
+        {
+          "minuto": "00:11:35.230",
+          "contexto": "son los 87,496."
+        },
+        {
+          "minuto": "00:11:35.240",
+          "contexto": "son los 87,496. Entonces, ya tienes las referencias de"
+        }
+      ]
+    },
+    {
+      "valor": "85964",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:57.279",
+          "contexto": "beneficios 84,122, 83,366 85,964"
+        },
+        {
+          "minuto": "00:11:59.470",
+          "contexto": "85,964"
+        },
+        {
+          "minuto": "00:11:59.480",
+          "contexto": "85,964 todos precios calculados antes de que"
+        }
+      ]
+    },
+    {
+      "valor": "79466",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:10.560",
+          "contexto": "de abajo, 82,281, 79,466"
+        },
+        {
+          "minuto": "00:12:13.030",
+          "contexto": "79,466"
+        },
+        {
+          "minuto": "00:12:13.040",
+          "contexto": "79,466 y nos traen a los 79,000 746."
+        }
+      ]
+    },
+    {
+      "valor": "79000",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:13.040",
+          "contexto": "79,466 y nos traen a los 79,000 746."
+        },
+        {
+          "minuto": "00:12:17.150",
+          "contexto": "y nos traen a los 79,000 746."
+        },
+        {
+          "minuto": "00:12:17.160",
+          "contexto": "y nos traen a los 79,000 746. ¿Qué fase va el mercado en la serie de 4"
+        }
+      ]
+    },
+    {
+      "valor": "3955",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": "XAUUSD",
+      "ejemplos": [
+        {
+          "minuto": "00:19:13.679",
+          "contexto": "hoy los 4261 y eso puede aumentar más la presión bajista para el oro. 3,955,"
+        },
+        {
+          "minuto": "00:19:16.950",
+          "contexto": "presión bajista para el oro. 3,955,"
+        },
+        {
+          "minuto": "00:19:16.960",
+          "contexto": "presión bajista para el oro. 3,955, 3756,"
+        }
+      ]
+    },
+    {
+      "valor": "3623",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:19:18.960",
+          "contexto": "3756, 3,623."
+        },
+        {
+          "minuto": "00:19:21.789",
+          "contexto": "3,623."
+        },
+        {
+          "minuto": "00:19:21.799",
+          "contexto": "3,623. Como llevamos mal de tiempo, el SP500 y"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "Weekly": 1,
+    "Daily": 4
+  },
+  "inst_counter": {
+    "XAUUSD": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:05.301728+00:00"
 }

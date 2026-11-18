@@ -471,5 +471,492 @@
     "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
     "Los numeros provienen de la transcripcion; no contrastados con feed.",
     "No se infirieron niveles: solo se transcribio lo dicho."
-  ]
+  ],
+  "niveles_con_tf": [
+    {
+      "valor": "64193",
+      "menciones": 9,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:51.160",
+          "contexto": "dónde se ha situado aquí el precio, 64,193. Pero ya sabes que estos son"
+        },
+        {
+          "minuto": "00:04:54.110",
+          "contexto": "64,193. Pero ya sabes que estos son"
+        },
+        {
+          "minuto": "00:04:54.120",
+          "contexto": "64,193. Pero ya sabes que estos son niveles barreras, niveles de venta, pero"
+        }
+      ]
+    },
+    {
+      "valor": "4400",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": "XAUUSD",
+      "ejemplos": [
+        {
+          "minuto": "00:00:25.480",
+          "contexto": "otro lado, el oro también se puede aprovechar porque supera los $4,400,"
+        },
+        {
+          "minuto": "00:00:28.429",
+          "contexto": "aprovechar porque supera los $4,400,"
+        },
+        {
+          "minuto": "00:00:28.439",
+          "contexto": "aprovechar porque supera los $4,400, que ya sabes que es el eje central de la"
+        }
+      ]
+    },
+    {
+      "valor": "62832",
+      "menciones": 6,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:17.760",
+          "contexto": "cursor, habíamos empezado la semana los 62,832"
+        },
+        {
+          "minuto": "00:03:20.630",
+          "contexto": "62,832"
+        },
+        {
+          "minuto": "00:03:20.640",
+          "contexto": "62,832 y mira como gran parte de la caída de la"
+        }
+      ]
+    },
+    {
+      "valor": "64488",
+      "menciones": 4,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:46.720",
+          "contexto": "jornada. Comenzando por el eje central en los 64,488."
+        },
+        {
+          "minuto": "00:07:09.240",
+          "contexto": "Si aparece liquidez y se recupera el eje central para el día, 64,488,"
+        },
+        {
+          "minuto": "00:07:12.150",
+          "contexto": "central para el día, 64,488,"
+        }
+      ]
+    },
+    {
+      "valor": "4439",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:00:29.920",
+          "contexto": "que ya sabes que es el eje central de la semana, 4,439"
+        },
+        {
+          "minuto": "00:00:31.990",
+          "contexto": "semana, 4,439"
+        },
+        {
+          "minuto": "00:00:32.000",
+          "contexto": "semana, 4,439 en concreto y la plata sube a $65."
+        }
+      ]
+    },
+    {
+      "valor": "65555",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:03:36.480",
+          "contexto": "ha borrado. ¿Qué objetivo tenemos? 65,555"
+        },
+        {
+          "minuto": "00:03:38.470",
+          "contexto": "65,555"
+        },
+        {
+          "minuto": "00:03:38.480",
+          "contexto": "65,555 es el objetivo de esto que poco a poco"
+        }
+      ]
+    },
+    {
+      "valor": "66074",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:04:18.680",
+          "contexto": "pequeña corrección. Ya sabes que el objetivo son los 66,074 en la semana,"
+        },
+        {
+          "minuto": "00:04:21.629",
+          "contexto": "objetivo son los 66,074 en la semana,"
+        },
+        {
+          "minuto": "00:04:21.639",
+          "contexto": "objetivo son los 66,074 en la semana, objetivo alcista, en caso de que se"
+        }
+      ]
+    },
+    {
+      "valor": "64136",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:05:39.759",
+          "contexto": "proyección está en puntos de compra y 64,136"
+        },
+        {
+          "minuto": "00:05:41.350",
+          "contexto": "64,136"
+        },
+        {
+          "minuto": "00:05:41.360",
+          "contexto": "64,136 es donde lo mantienen, donde puede"
+        }
+      ]
+    },
+    {
+      "valor": "64290",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:18.199",
+          "contexto": "aproximado, ahí los tenemos. Y también está en precios de compra, 64,290"
+        },
+        {
+          "minuto": "00:06:21.510",
+          "contexto": "está en precios de compra, 64,290"
+        },
+        {
+          "minuto": "00:06:21.520",
+          "contexto": "está en precios de compra, 64,290 está entre 63,943"
+        }
+      ]
+    },
+    {
+      "valor": "63943",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:21.520",
+          "contexto": "está en precios de compra, 64,290 está entre 63,943"
+        },
+        {
+          "minuto": "00:06:24.670",
+          "contexto": "está entre 63,943"
+        },
+        {
+          "minuto": "00:06:24.680",
+          "contexto": "está entre 63,943 63,595."
+        }
+      ]
+    },
+    {
+      "valor": "63595",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:24.680",
+          "contexto": "está entre 63,943 63,595."
+        },
+        {
+          "minuto": "00:06:27.070",
+          "contexto": "63,595."
+        },
+        {
+          "minuto": "00:06:27.080",
+          "contexto": "63,595. Y en caso de que entre en liquidez y"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": "BTC",
+      "ejemplos": [
+        {
+          "minuto": "00:06:39.840",
+          "contexto": "objetivos para poder alcanzar hasta los $69,000. niveles intradiarios en"
+        },
+        {
+          "minuto": "00:06:42.469",
+          "contexto": "$69,000. niveles intradiarios en"
+        },
+        {
+          "minuto": "00:06:42.479",
+          "contexto": "$69,000. niveles intradiarios en cualquier caso en Bitcoin para la"
+        }
+      ]
+    },
+    {
+      "valor": "63521",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:01.720",
+          "contexto": "63,521"
+        },
+        {
+          "minuto": "00:07:03.790",
+          "contexto": "63,521"
+        },
+        {
+          "minuto": "00:07:03.800",
+          "contexto": "63,521 63,198."
+        }
+      ]
+    },
+    {
+      "valor": "63198",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:03.800",
+          "contexto": "63,521 63,198."
+        },
+        {
+          "minuto": "00:07:06.550",
+          "contexto": "63,198."
+        },
+        {
+          "minuto": "00:07:06.560",
+          "contexto": "63,198. Si aparece liquidez y se recupera el eje"
+        }
+      ]
+    },
+    {
+      "valor": "64734",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:12.160",
+          "contexto": "central para el día, 64,488, primer intradiario 64,734,"
+        },
+        {
+          "minuto": "00:07:15.430",
+          "contexto": "primer intradiario 64,734,"
+        },
+        {
+          "minuto": "00:07:15.440",
+          "contexto": "primer intradiario 64,734, segundo, 65,133"
+        }
+      ]
+    },
+    {
+      "valor": "65133",
+      "menciones": 3,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:15.440",
+          "contexto": "primer intradiario 64,734, segundo, 65,133"
+        },
+        {
+          "minuto": "00:07:18.430",
+          "contexto": "segundo, 65,133"
+        },
+        {
+          "minuto": "00:07:18.440",
+          "contexto": "segundo, 65,133 tercero, 65,455"
+        }
+      ]
+    },
+    {
+      "valor": "4628",
+      "menciones": 3,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:09:40.399",
+          "contexto": "tenemos este este precio objetivo calculado en 4 horas. 4,628. Venimos a 4"
+        },
+        {
+          "minuto": "00:09:43.710",
+          "contexto": "calculado en 4 horas. 4,628. Venimos a 4"
+        },
+        {
+          "minuto": "00:09:43.720",
+          "contexto": "calculado en 4 horas. 4,628. Venimos a 4 horas y entonces línea blanca es central"
+        }
+      ]
+    },
+    {
+      "valor": "7940",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:11:11.240",
+          "contexto": "objetivo principal de la semana en 7,940, el eje central lleva dos"
+        },
+        {
+          "minuto": "00:11:14.030",
+          "contexto": "7,940, el eje central lleva dos"
+        },
+        {
+          "minuto": "00:11:14.040",
+          "contexto": "7,940, el eje central lleva dos jornadas, tanto ayer como hoy, que está"
+        }
+      ]
+    },
+    {
+      "valor": "30170",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:12:42.120",
+          "contexto": "cayendo con fuerza desde el eje central 30,170, que estaba muy cerca del"
+        },
+        {
+          "minuto": "00:12:44.629",
+          "contexto": "30,170, que estaba muy cerca del"
+        },
+        {
+          "minuto": "00:12:44.639",
+          "contexto": "30,170, que estaba muy cerca del objetivo alcista. Vamos a ver hasta"
+        }
+      ]
+    },
+    {
+      "valor": "29918",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:17.360",
+          "contexto": "un poco para que se vea así la imagen. Con el eje central en los 29,918"
+        },
+        {
+          "minuto": "00:13:20.670",
+          "contexto": "Con el eje central en los 29,918"
+        },
+        {
+          "minuto": "00:13:20.680",
+          "contexto": "Con el eje central en los 29,918 hasta los 30,516"
+        }
+      ]
+    },
+    {
+      "valor": "30516",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:20.680",
+          "contexto": "Con el eje central en los 29,918 hasta los 30,516"
+        },
+        {
+          "minuto": "00:13:22.750",
+          "contexto": "hasta los 30,516"
+        },
+        {
+          "minuto": "00:13:22.760",
+          "contexto": "hasta los 30,516 para ese esa zona de mediano plazo, que"
+        }
+      ]
+    },
+    {
+      "valor": "29319",
+      "menciones": 3,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:13:30.079",
+          "contexto": "buscar liquidez hasta los 29,30, porque aquí hay uno, en 29,319."
+        },
+        {
+          "minuto": "00:13:33.790",
+          "contexto": "porque aquí hay uno, en 29,319."
+        },
+        {
+          "minuto": "00:13:33.800",
+          "contexto": "porque aquí hay uno, en 29,319. Bueno, vamos cogiendo ritmo, ¿verdad?"
+        }
+      ]
+    },
+    {
+      "valor": "24843",
+      "menciones": 1,
+      "tf": "Daily",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:06:55.120",
+          "contexto": "primer nivel intradiario donde mantienen ahora mismo el precio 64,24,843"
+        }
+      ]
+    },
+    {
+      "valor": "65455",
+      "menciones": 1,
+      "tf": null,
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:18.440",
+          "contexto": "segundo, 65,133 tercero, 65,455"
+        }
+      ]
+    },
+    {
+      "valor": "65778",
+      "menciones": 1,
+      "tf": "4H",
+      "instrumento": null,
+      "ejemplos": [
+        {
+          "minuto": "00:07:22.440",
+          "contexto": "cuarto y último 65,778,"
+        }
+      ]
+    }
+  ],
+  "tf_counter": {
+    "4H": 3,
+    "Daily": 6
+  },
+  "inst_counter": {
+    "XAUUSD": 1,
+    "BTC": 1
+  },
+  "reanalizado_tf": "2026-11-18T22:44:07.040033+00:00"
 }

@@ -48,39 +48,29 @@ def tickets(info, estado):
             f'<span class="t-v sinfeed">sin feed aun</span></div>')
 
 
-def chart(info):
-    niv = sorted([n['precio'] for n in (info.get('niveles_top') or [])][:8])
-    ref = info.get('precio_referencia') or 0
-    if not niv:
-        return '<div class="muted">sin niveles</div>'
-    vals = niv + ([ref] if ref else [])
-    lo, hi = min(vals), max(vals)
-    if hi <= lo:
-        hi = lo + 1
-    W, H, PAD = 900, 260, 26
-
-    def y(v):
-        return H - PAD - (v - lo) / (hi - lo) * (H - 2 * PAD)
-    velas = ''  # sin velas simuladas: ser honestos, no inventar
-    lineas = ''
-    for i, v in enumerate(niv):
-        yy = y(v)
-        etq = ' · entrada' if i == 0 else ''
-        lineas += (f'<line x1="0" y1="{yy:.1f}" x2="{W}" y2="{yy:.1f}" stroke="#30363d"/>'
-                   f'<text x="{W-6}" y="{yy-4:.1f}" fill="#8b949e" font-size="11" '
-                   f'text-anchor="end">{fmt(v)}{etq}</text>')
-    if ref:
-        yy = y(ref)
-        lineas += (f'<line x1="0" y1="{yy:.1f}" x2="{W}" y2="{yy:.1f}" stroke="#e6edf3" '
-                   f'stroke-width="2.5" stroke-dasharray="7 3"/>'
-                   f'<text x="6" y="{yy+14:.1f}" fill="#e6edf3" font-size="12" '
-                   f'font-weight="600">PRECIO VIDEO {fmt(ref)}</text>')
-    tf = ', '.join((info.get('temporalidades') or ['no detectado'])[:3]) or 'no detectado'
-    return (f'<div class="chart"><div class="chart-head"><b>NIVELES DEL VIDEO · TF: {esc(tf)}</b>'
-            f'<span class="muted">no es un chart real · sin feed</span></div>'
-            f'<svg viewBox="0 0 {W} {H}" preserveAspectRatio="none" '
-            f'style="width:100%;height:260px">{velas}{lineas}</svg></div>')
-
+def zonas_panel(info):
+    """Zonas calculadas (C05) POR PLAZO, con el rango usado explicito."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import zonas_reales as ZR
+        r = ZR.calcular('BTC')
+        filas = ('<div class="muted">Zonas por plazo: NO DISPONIBLE. Solo el 15,3% de los '
+                 'niveles del corpus dice el timeframe (ver LIMITES_CORPUS.md).</div>')
+        for plazo in ():
+            z = (r['plazos'] or {}).get(plazo) or {}
+            if 'error' in z:
+                filas += f'<div class="fila"><span>{plazo}</span><b class="rojo">sin datos</b></div>'
+                continue
+            compra = ' · '.join(f'{k} {v:,.0f}'.replace(',', '.') for k, v in z['zonas_compra'].items())
+            ext = ' · '.join(f'{k} {v:,.0f}'.replace(',', '.') for k, v in z['extensiones'].items())
+            filas += (f'<div class="zona-bloque"><div class="zona-t"><b>{plazo.upper()}</b> · {z["tf"]} · '
+                      f'rango dicho {z["minimo"]:,.0f}–{z["maximo"]:,.0f} ({z["n_videos"]} videos)</div>'
+                      f'<div class="zona-l">compra: {compra}</div>'
+                      f'<div class="zona-l">extensiones: {ext}</div></div>')
+        return (f'<div class="zona-nota">Calculadas (C05) sobre el rango que el canal mencionó. '
+                f'Sin feed: el rango es lo DICHO, no el mercado real.</div>{filas}')
+    except Exception as e:
+        return f'<div class="muted">zonas no disponibles: {e}</div>'
 
 def plan(info):
     e = (info.get('escenarios') or [{}])[0].get('escenario') or {}
@@ -204,6 +194,10 @@ h1{font-size:18px;margin:0}
 .barra-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:3px}
 .barra{height:7px;background:#21262d;border-radius:4px;overflow:hidden}
 .barra i{display:block;height:100%;background:var(--acc);border-radius:4px}
+.zona-bloque{border-bottom:1px solid #ffffff10;padding:8px 0}
+.zona-t{font-size:13px;margin-bottom:3px}
+.zona-l{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.zona-nota{font-size:11px;color:var(--ambar);margin-bottom:8px}
 .verdict{font-weight:600;padding:6px 10px;border-radius:6px;background:#0c2b16;color:var(--ok);display:inline-block}
 .chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
 '''
@@ -230,9 +224,8 @@ def main() -> int:
 
 <div class="grid-main">
   <div class="card">
-    <div class="chart-head"><b>ESCENARIO · {vid}</b><span class="muted">video {pub} · actualizado {ts}</span></div>
-    {chart(info)}
-    <div class="nota">NIVELES DICHOS EN EL VIDEO · el precio es el del video, no un feed.</div>
+    <div class="chart-head"><b>ZONAS CALCULADAS · {vid}</b><span class="muted">video {pub} · {ts}</span></div>
+    {zonas_panel(info)}
   </div>
   <div style="display:grid;gap:12px;align-content:start">
     {plan(info)}
