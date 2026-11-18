@@ -14,7 +14,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 PILOT = BASE / 'daily_pilot'
 PAPER_ONLY = True
 

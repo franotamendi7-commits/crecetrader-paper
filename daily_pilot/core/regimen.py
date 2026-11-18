@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regimen — C07 (aprobado por Francisco, 2026-11-18).
+"""Regimen — C07 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Los 3 regimenes:
   1. **TENDENCIA_ALCISTA**  -> maximos crecientes y minimos crecientes

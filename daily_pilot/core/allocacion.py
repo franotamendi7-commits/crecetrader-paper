@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Asignacion de capital — C02 (aprobado por Francisco, 2026-11-18).
+"""Asignacion de capital — C02 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Modelo:
   - Zona de OFERTA (descuento): se compra el 30% del tramo de capital.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Escenarios por confianza — C10 (aprobado por Francisco, 2026-11-18).
+"""Escenarios por confianza — C10 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Modelo de Francisco:
   - Los escenarios se ordenan por **CONFIANZA EN PORCENTAJE**.

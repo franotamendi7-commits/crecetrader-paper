@@ -209,7 +209,7 @@ if __name__ == '__main__':
     tol = float(sys.argv[1]) if len(sys.argv) > 1 else 0.005
     claims = cargar()
     res = analizar(claims, tol)
-    out = Path('/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/relaciones/relaciones.json')
+    out = Path(__file__).resolve().parent / 'relaciones.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(res, ensure_ascii=False, indent=2))
     print(f'claims={res["n_claims"]} repetidos={len(res["niveles_repetidos"])} '

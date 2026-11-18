@@ -15,7 +15,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(BASE))
 from scripts.rss_priority_processor import extract_transcript   # noqa: E402
 

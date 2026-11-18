@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent')
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 PILOT = BASE / 'daily_pilot'
 REG = PILOT / 'registro' / 'registro.json'
 RSS = 'https://www.youtube.com/feeds/videos.xml?channel_id=UC4DOPLw9NRRBFW4wYjcWxiA'

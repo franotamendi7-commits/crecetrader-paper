@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/metrics')
 import metrics as M
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 RM_DIR = BASE / 'daily_pilot' / 'risk_manager'
 
 if __name__ == '__main__':

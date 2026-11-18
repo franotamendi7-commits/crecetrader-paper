@@ -15,7 +15,7 @@ from pathlib import Path
 sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent')
 sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scripts')
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 PILOT = BASE / 'daily_pilot'
 ESTADO = PILOT / 'estado' / 'estado_hoy.json'
 ANALISIS = PILOT / 'analisis'
@@ -49,7 +49,7 @@ def evidencia(vid: str) -> dict | None:
 def _cargar_piloto():
     """Carga daily_pilot/scripts/daily_pilot.py por ruta (evita el namespace package)."""
     import importlib.util
-    p = Path('/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scripts/daily_pilot.py')
+    p = Path(__file__).resolve().parent / 'daily_pilot.py'
     spec = importlib.util.spec_from_file_location('piloto_diario', p)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)

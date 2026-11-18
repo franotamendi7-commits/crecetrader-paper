@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Confluencia — C03 (aprobado por Francisco, 2026-11-18).
+"""Confluencia — C03 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Modelo:
   1. La **fase 3** del canal es la **fase de correccion**.

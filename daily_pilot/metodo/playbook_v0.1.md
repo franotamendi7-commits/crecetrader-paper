@@ -7,7 +7,8 @@ Fecha: 2026-11-18 · Fuente: `store.db` (6.831 claims) + `analisis/*.json`
 Las 12 reglas fueron **dictadas y aceptadas por Francisco en conversación** (2026-11-18, sesión
 con Hermes). **Todavía no hay firma formal registrada** en el repo.
 
-- `aprobado_en_conversacion` — regla dictada y aceptada por Francisco, **pendiente de firma formal**.
+- `aprobado_en_conversacion` — regla dictada y aceptada por Francisco, **pendiente de firma formal**
+  (estado **nuevo**, a acordar: no estaba en el enum original).
 - `aprobado_por_francisco` — regla **firmada** (fecha + canal registrados abajo).
 - `propuesto` / `a_validar` / `rechazado` — sin aprobación.
 
@@ -124,6 +125,10 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 
 - **Implementación**: `core/zonas.py` — `zonas(minimo, maximo, plazo)`.
   `RETROCESOS = (0.50, 0.618, 0.786)` · `EXTENSIONES = (0.50, 1.00, 1.50, 2.00)` · `TF_POR_PLAZO`.
+- **Criterio de conteo**: los números son **claims cuyo texto matchea el regex** indicado
+  (case-insensitive, sin anclar). «recuperación» 41 es la **palabra exacta**; el stem `recuper` da 76.
+  Valores verificados: `revers` 105 · `reversi[oó]n` 102 · `correcci[oó]n` 35 · `proyecci[oó]n` 108 ·
+  `romp` 58 · `rompe` 46 · `máximos` 53 · `mínimos` 39.
 - **Corpus verificado**: «**máximos y mínimos decrecientes**» **sí** aparece (muchos claims, ej.
   `LzPTdClLo_w` 00:02:15 «no voy a comprar»; `bCc--rvyHpY` 00:04:42 «sin señal de reversión»).
   «**extensión**» **sí** (`i0qXzL0eSYs` 00:15:11 «una extensión que iría confirmando la reversión»).
@@ -215,8 +220,8 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **Regla de Francisco**: el riesgo por operación **depende de la confiabilidad del escenario** — la confiabilidad define el porcentaje.
 - **Tope duro: 5%** de la cuenta. Nunca más, por muy confiable que sea el escenario.
 - Ejemplo del corpus: `mv2VdVtXvDw` 00:11:20.839 — «cómo gestionar el riesgo por si el precio no termina de subir».
-- Fórmula implementada: `riesgo_pct_efectivo = min(confianza, 0.05)`.
-- Pendiente: la función exacta confianza→% (Francisco la definirá si quiere más granularidad).
+- Fórmula implementada (H-07): `riesgo = confianza x tope` · tope **5%** (long) / **2%** (corrección) · repartido entre entradas.
+- `core/escenarios.py`, `risk_manager/risk_manager.py` y `core/manager.py` usan la MISMA fórmula (test cruzado `tests/test_c11_cruzado.py`).
 
 ### C12 · Order block / FVG / BOS-CHoCH — **adoptado por Francisco con redefinición** (2026-11-18)
 - **Decisión de Francisco**:

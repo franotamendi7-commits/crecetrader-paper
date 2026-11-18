@@ -2,7 +2,7 @@
 """Niveles intradia (C04, Francisco, 2026-11-18).
 
 Modelo de Francisco (NO del corpus — el canal nunca dice "fibonacci"):
-  - CreceTrader marca unos **7 niveles** donde el precio puede negociar durante el dia.
+  - CreceTrader marca unos **9 niveles** donde el precio puede negociar durante el dia.
   - Se ancla al **punto cero** = el precio a la hora de inicio de la sesion
     (en el caso de Francisco: las **21:00**).
   - Tira un abanico de Fibonacci **distinto al clasico**: de **0 a +/-1**, con

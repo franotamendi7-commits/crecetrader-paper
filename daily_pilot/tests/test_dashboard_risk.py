@@ -6,7 +6,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 GEN = BASE / 'daily_pilot' / 'scripts' / 'generar_dashboard.py'
 HTML = BASE / 'daily_pilot' / 'dashboard' / 'index.html'
 PY = sys.executable   # reproducible fuera de la maquina de Hermes

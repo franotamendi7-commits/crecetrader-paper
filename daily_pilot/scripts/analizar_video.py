@@ -16,7 +16,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 PILOT = BASE / 'daily_pilot'
 OUT = PILOT / 'analisis'
 TS = re.compile(r'^(\d+):(\d{2}):(\d{2})\.(\d{3})$')

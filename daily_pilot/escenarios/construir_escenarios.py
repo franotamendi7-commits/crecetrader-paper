@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/relaciones')
 import relaciones as R
 
-OUT = Path('/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/escenarios')
+OUT = Path(__file__).resolve().parent
 
 
 def fecha_de(c: dict) -> str:

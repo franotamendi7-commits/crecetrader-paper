@@ -5,7 +5,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(BASE / 'daily_pilot' / 'metrics'))
 import metrics as M
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Objetivos y toma de ganancias — C09 (aprobado por Francisco, 2026-11-18).
+"""Objetivos y toma de ganancias — C09 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Modelo de Francisco:
   - Los objetivos son **siempre los que se calcularon en C05**: las **extensiones**

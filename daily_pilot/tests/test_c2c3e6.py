@@ -5,7 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 PY = sys.executable   # reproducible fuera de la maquina de Hermes
 OK = FALLO = 0
 

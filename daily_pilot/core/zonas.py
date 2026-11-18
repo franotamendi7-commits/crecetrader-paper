@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Zonas calculadas — C05 (aprobado por Francisco, 2026-11-18).
+"""Zonas calculadas — C05 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Modelo de Francisco:
   - Una **zona es un NIVEL CALCULADO**, no un soporte/resistencia, ni order block, ni FVG.

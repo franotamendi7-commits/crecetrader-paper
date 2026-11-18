@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Invalidacion — C08 (aprobado por Francisco, 2026-11-18).
+"""Invalidacion — C08 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Definicion de Francisco:
   > "La invalidacion es cuando **esperamos que un cambio de tendencia suceda y no sucede**.

@@ -15,7 +15,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-DIR = Path('/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/seguimiento')
+DIR = Path(__file__).resolve().parent
 REG = DIR / 'estados.jsonl'
 
 ESTADOS = ('EN_OBSERVACION', 'ESPERANDO_ACTIVACION', 'ACTIVADO', 'EN_SEGUIMIENTO',

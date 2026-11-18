@@ -19,7 +19,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 PILOT = BASE / 'daily_pilot'
 PY = sys.executable
 
@@ -28,6 +28,8 @@ INTOCABLES = [
     PILOT / 'knowledge' / 'store.db',
     PILOT / 'registro' / 'registro.json',
     PILOT / 'datos' / 'dashboard_data.json',
+    PILOT / 'estado' / 'estado_hoy.json',
+    PILOT / 'dashboard' / 'index.html',
 ]
 # Artefactos derivados que los tests de integracion pueden reescribir
 DERIVADOS = [
@@ -50,6 +52,8 @@ HERMETICOS = [
     'daily_pilot/tests/test_invalidacion.py',
     'daily_pilot/tests/test_objetivos.py',
     'daily_pilot/tests/test_escenarios.py',
+    'daily_pilot/tests/test_c11_cruzado.py',
+    'daily_pilot/test_signal_classifier.py',
     'daily_pilot/risk_manager/test_risk_manager.py',
 ]
 # Integracion: reescriben artefactos derivados y/o tocan store.db.

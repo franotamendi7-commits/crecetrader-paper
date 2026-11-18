@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Liquidez institucional — C06 (aprobado por Francisco, 2026-11-18).
+"""Liquidez institucional — C06 (aprobado_en_conversacion, 2026-11-18 (pendiente firma)).
 
 Modelo de Francisco:
   - **La liquidez es el lugar donde tienen las ordenes los institucionales.**

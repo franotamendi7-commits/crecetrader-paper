@@ -9,7 +9,7 @@ import re
 import shutil
 from pathlib import Path
 
-BASE = Path('/Users/franciscootamendi/YouTubeTradingAgent')
+BASE = Path(__file__).resolve().parents[2]
 OUT = BASE / 'daily_pilot' / 'vision_mission'
 CAP = OUT / 'capturas'
 CAP.mkdir(parents=True, exist_ok=True)

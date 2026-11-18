@@ -13,9 +13,7 @@ Auditor **read-only** de `daily_pilot`.
 - **No** modifiques código, ni commits, ni `store.db`, `dashboard_data.json`, `estado_hoy.json`,
   `registro.json`, ni `dashboard/index.html`.
 - **`sellado_integridad.py` ESCRIBE** (`.control.json` + manifiesto). **No lo corras en vivo.**
-- **`run_all.py --integracion` ESCRIBE** (dashboard + E1 si cambia una temporalidad). Correl
-
-o en copia.
+- **`run_all.py --integracion` ESCRIBE** (dashboard + E1). **Correlo en copia.**
 - Entregá: **archivo:línea · evidencia · reproducción · severidad**.
 
 ## Repositorio
@@ -46,7 +44,9 @@ for v, s in pares:
     idx = next((i for i, (st, _) in enumerate(filas) if st.startswith(s)), None)
     if idx is None:
         print('FALTA   ', v, s); mal += 1; continue
+    ventana = ' '.join(x for _, x in filas[max(0, idx-1): idx+4])
     print('OK      ', v, s, '|', filas[idx][1][:60])
+    print('        ventana:', ventana[:110])
 print('faltantes:', mal, 'de', len(pares))
 EOF
 ```

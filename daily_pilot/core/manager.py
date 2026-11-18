@@ -186,8 +186,9 @@ class Manager:
                     'exposicion_maxima': round(self.capital * self.max_exposicion_pct, 2)}
         riesgo = abs(entrada - stop)
         size = perdida = None
-        # C11: tope duro del 5% de la cuenta (aprobado por Francisco).
-        riesgo_pct = min(self.riesgo_pct, TOPE_RIESGO_PCT)
+        # C11 (H-07): riesgo = confianza x tope, con tope duro del 5%.
+        conf = float(getattr(self, 'confianza', 1.0) or 0.0)
+        riesgo_pct = round(min(max(conf, 0.0), 1.0) * TOPE_RIESGO_PCT, 4)
         if riesgo > 0:
             perdida = round(self.capital * riesgo_pct, 2)
             size = round(perdida / riesgo, 6)
