@@ -1,7 +1,18 @@
-# PLAYBOOK CreceTrader — v0.1 (BORRADOR)
+# PLAYBOOK CreceTrader — v0.1
 
 Fecha: 2026-11-18 · Fuente: `store.db` (6.831 claims) + `analisis/*.json`
-Estado global: **borrador**. Ninguna regla aprobada. **Francisco valida.**
+
+## Estado de la aprobación (H-01)
+
+Las 12 reglas fueron **dictadas y aceptadas por Francisco en conversación** (2026-11-18, sesión
+con Hermes). **Todavía no hay firma formal registrada** en el repo.
+
+- `aprobado_en_conversacion` — regla dictada y aceptada por Francisco, **pendiente de firma formal**.
+- `aprobado_por_francisco` — regla **firmada** (fecha + canal registrados abajo).
+- `propuesto` / `a_validar` / `rechazado` — sin aprobación.
+
+> **Pendiente**: Francisco debe firmar C01–C12 una por una (`de acuerdo` / `no` / `matiz: …`).
+> Hasta entonces, **ninguna regla es ground truth formal**.
 
 ## Cómo validar
 Marcá cada regla con: **de acuerdo** / **no** / **matiz: …**
@@ -11,22 +22,22 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 
 | id | nombre | TF | estado | tu marca |
 |---|---|---|---|---|
-| C01 | Tendencia / marcos (semanal manda) | W→D→4H | **aprobado_por_francisco** (long 5% en 2-3 entradas, corrección 1-2%) | ✅ |
-| C02 | Ejecución: descuento vs confirmación | D | **aprobado_por_francisco** (30% oferta / 70% confirmación en 2 tramos; solo 5 pares en oferta) | ✅ |
-| C03 | Estructura 4H / cambio de fase | 4H | **aprobado_por_francisco** (fase 3 = corrección; 4H+diario = long) | ✅ |
-| C04 | Niveles intradía (abanico) | 1H | **aprobado_por_francisco** (scalping, no confirmación; 9 niveles ±0.25) | ✅ |
-| C05 | Zonas calculadas (Fibonacci) | W/D/4H | **aprobado_por_francisco** (retrocesos 50/61/78 · extensiones 50/100/150/200 · no es S/R ni OB/FVG) | ✅ |
-| C06 | Liquidez institucional | 4H/intradía | **aprobado_por_francisco** (fibo + 1 de enero + pools; sesión NY) | ✅ |
-| C07 | Régimen (tendencia/rango/reversión) | W/D/4H | **aprobado_por_francisco** (3 regímenes; corrección dentro de tendencia; «supera y consolida») | ✅ |
-| C08 | Invalidación (no-ocurrencia del cambio) | TF entrada | **aprobado_por_francisco** (cierra posición, espera escenario nuevo) | ✅ |
-| C09 | Objetivos / toma parcial | W/D/4H | **aprobado_por_francisco** (4 extensiones C05 · 25% c/u · stop a break even) | ✅ |
-| C10 | Escenarios por confianza | todas | **aprobado_por_francisco** (confianza %; CAUTELA en corrección; stop+BV) | ✅ |
-| C11 | Gestión de riesgo | entrada | **aprobado_por_francisco** (riesgo = confianza, tope 5%) | ✅ |
-| C12 | Order block / FVG / BOS-CHoCH | 4H/1H | **adoptado por Francisco**: OB = zona de liquidez, **por timeframe** | ✅ |
+| C01 | Tendencia / marcos (semanal manda) | W→D→4H | **aprobado_en_conversacion** (long 5% en 2-3 entradas, corrección 1-2%) | ✅ |
+| C02 | Ejecución: descuento vs confirmación | D | **aprobado_en_conversacion** (30% oferta / 70% confirmación en 2 tramos; solo 5 pares en oferta) | ✅ |
+| C03 | Estructura 4H / cambio de fase | 4H | **aprobado_en_conversacion** (fase 3 = corrección; 4H+diario = long) | ✅ |
+| C04 | Niveles intradía (abanico) | 1H | **aprobado_en_conversacion** (scalping, no confirmación; 9 niveles ±0.25) | ✅ |
+| C05 | Zonas calculadas (Fibonacci) | W/D/4H | **aprobado_en_conversacion** (retrocesos 50/61/78 · extensiones 50/100/150/200 · no es S/R ni OB/FVG) | ✅ |
+| C06 | Liquidez institucional | 4H/intradía | **aprobado_en_conversacion** (fibo + 1 de enero + pools; sesión NY) | ✅ |
+| C07 | Régimen (tendencia/rango/reversión) | W/D/4H | **aprobado_en_conversacion** (3 regímenes; corrección dentro de tendencia; «supera y consolida») | ✅ |
+| C08 | Invalidación (no-ocurrencia del cambio) | TF entrada | **aprobado_en_conversacion** (cierra posición, espera escenario nuevo) | ✅ |
+| C09 | Objetivos / toma parcial | W/D/4H | **aprobado_en_conversacion** (4 extensiones C05 · 25% c/u · stop a break even) | ✅ |
+| C10 | Escenarios por confianza | todas | **aprobado_en_conversacion** (confianza %; CAUTELA en corrección; stop+BV) | ✅ |
+| C11 | Gestión de riesgo | entrada | **aprobado_en_conversacion** (riesgo = confianza, tope 5%) | ✅ |
+| C12 | Order block / FVG / BOS-CHoCH | 4H/1H | **aprobado_en_conversacion**: OB = zona de liquidez, **por timeframe** | ✅ |
 
 ## Detalle
 
-### C01 · Tendencia / marcos temporales — **aprobado_por_francisco** (2026-11-18)
+### C01 · Tendencia / marcos temporales — **aprobado_en_conversacion** (2026-11-18)
 > «Lo que le decís "sesgo" es **tendencia** en realidad. La tendencia la determina en mayor medida el **semanal**.
 > Un cambio de tendencia en semanal **no es lo mismo** que una micro tendencia dentro del diario.»
 
@@ -41,7 +52,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **Implementación**: `Signal.tipo_operacion ∈ {long, correccion}` + `Config(riesgo_correccion_pct=0.015, riesgo_long_pct=0.05, entradas_long=2..3)`.
 - **Aplicación**: `core/manager.py`, `risk_manager/risk_manager.py`.
 
-### C02 · Ejecución: descuento vs confirmación — **aprobado_por_francisco** (2026-11-18)
+### C02 · Ejecución: descuento vs confirmación — **aprobado_en_conversacion** (2026-11-18)
 > «En **precio de descuento** sí se compra, aunque no sepamos cuándo confirma la tendencia. Eso es una
 > **zona enorme de liquidez**. Se compra el **descuento** y se opera el **cambio de tendencia**.»
 
@@ -59,12 +70,12 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 
 **Asignación máxima por activo** (después, con Risk Manager):
 - **BTC**: hasta **30–45%** de la cartera.
-- **SPX**: hasta **10%**, **en tendencia** (no en oferta).
+- **SPX**: hasta **10%** — **también se compra en oferta** (corrección de Francisco).
 - **ADA / criptos cualquiera**: no aplican las normas de BTC.
 
 **Implementación**: `core/allocacion.py` (`ALLOCATION_MAX`, `OFERTA_UNIVERSE`, `GASTO_OFERTA_PCT=0.30`).
 
-### C03 · Estructura 4H / cambio de fase — **aprobado_por_francisco** (2026-11-18)
+### C03 · Estructura 4H / cambio de fase — **aprobado_en_conversacion** (2026-11-18)
 > «La **fase número tres** ahora es la **fase de corrección**. Para que sea alcista tenemos que, por ejemplo
 > en **4H**, ver que el precio **recupera** y empieza a tener máximos crecientes. Una vez que tenemos
 > **cambio de fase en 4H con niveles calculados alcanzados**, empezamos a tomar **decisiones de entrada**.
@@ -84,7 +95,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
   → CAMBIO_NO_CONFIRMADO (1 vela verde) → CONFIRMADO (2 máximos crecientes)`.
   Lo que antes escribí como «máximo decrecientes» era **mínimos decrecientes**.
 
-### C04 · Niveles intradía (abanico) — **aprobado_por_francisco** (2026-11-18)
+### C04 · Niveles intradía (abanico) — **aprobado_en_conversacion** (2026-11-18)
 > «Cuando CreceTrader habla de **intradía** es porque marca unos **9 niveles** de precios donde comienza
 > el precio en el día. En mi caso **hora 9 de la noche**: ahí marca el **punto cero**. Tira
 > **Fibonacci pero distinto** al que conocemos: lo lleva de **0 a -1 y a 1**, escala de **0.25** cada uno
@@ -95,14 +106,14 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 
 - **Implementación**: `core/intradia.py` — `abanico(precio_base, paso=0.25, n=4)` → **9 niveles**.
 - **Dato NUEVO del experto** (no del corpus): «fibonacci» **0 claims**, «punto cero» **0**, «0.25» **0**,
-  «21:00» **0**. El corpus solo tiene **«promedios intradiarios»** (17 claims).
+  «21:00» **0**. El corpus solo tiene **«promedios intradiarios»** (3 claims exactos; «promedio»: 17).
 - **Equivalencia registrada**: corpus «promedios intradiarios» ↔ experto «niveles intradía / abanico».
 - **Resuelto por Francisco**: son **9 niveles** (hasta ±1.00), no 7.
 - **Punto cero (resuelto)**: es el **precio de cierre diario a las 00:00 UTC** — en Argentina son las
   **21 hs**. *«Si BTC a las 21 hs está en 67.000, para todo el día siguiente ese es el precio 0,
   y cada día se mide así.»* → `HORA_ANCLA = 21` · `HORA_ANCLA_UTC = 0`.
 
-### C05 · Zonas calculadas (Fibonacci) — **aprobado_por_francisco** (2026-11-18)
+### C05 · Zonas calculadas (Fibonacci) — **aprobado_en_conversacion** (2026-11-18)
 > «Una zona es un **nivel calculado**. CreceTrader utiliza **fibo normal** para detectar zonas, pero las
 > diferencia en **largo, media y corto plazo**: si es a largo plazo se hace en **semanal**, media en
 > **diario** y corto en **4H**. **De un mínimo a un máximo** se tira fibo. Las **zonas de compra** están
@@ -121,7 +132,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **Dirección (resuelto por Francisco)**: en tendencia **bajista** se calcula **a la inversa** —
   mismo rango, niveles **hacia abajo** (`zonas(..., direccion='bajista')`).
 
-### C06 · Liquidez institucional — **aprobado_por_francisco** (2026-11-18)
+### C06 · Liquidez institucional — **aprobado_en_conversacion** (2026-11-18)
 > «La liquidez es **el lugar donde tienen las órdenes los institucionales**. Generalmente ese cálculo se
 > hace con la **combinación de un par de cosas**: lo de **fibo** que recién te expliqué, con los
 > **precios de comienzo de año** y con los **pools de volumen**, como **order block**. Es complejo,
@@ -139,7 +150,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **ACLARACIÓN**: el *order block* acá es **ingrediente del cálculo de liquidez**, **no** una zona de
   trading (C05 lo excluye explícitamente). No se mezclan.
 
-### C07 · Régimen: tendencia / rango / reversión — **aprobado_por_francisco** (2026-11-18)
+### C07 · Régimen: tendencia / rango / reversión — **aprobado_en_conversacion** (2026-11-18)
 > **Régimen = tendencia / rango / reversión.**
 > - **Tendencia**: máximos y mínimos crecientes (alcista) o decrecientes (bajista).
 > - **Rango**: lateralidad («metido en un rango»).
@@ -156,7 +167,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **Vocabulario del experto** (0 claims): «cambio de tendencia», «lateralidad».
 - **Aprobado sin matiz**: «las 3 preguntas se responden solas y están bien».
 
-### C08 · Invalidación — **aprobado_por_francisco** (2026-11-18)
+### C08 · Invalidación — **aprobado_en_conversacion** (2026-11-18)
 > «La invalidación es cuando **esperamos que un cambio de tendencia suceda y no sucede**.
 > **Se cierra la posición** hasta tener en claro un nuevo escenario.»
 
@@ -168,7 +179,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **Stop**: el corpus lo liga a la **liquidez** — `_Lxz34x7eGg` 00:02:31 «vinieron a hacer una
   **cacería de stops**». No se define stop separado de la liquidez.
 
-### C09 · Objetivos y toma de ganancias — **aprobado_por_francisco** (2026-11-18)
+### C09 · Objetivos y toma de ganancias — **aprobado_en_conversacion** (2026-11-18)
 > «Son **siempre los objetivos que dijimos antes** y los del punto 3: las **extensiones** de C05
 > (**50%, 100%, 150%, 200%**). La **toma de ganancia es parcial**. Las ganancias se **reparten en
 > 25% cada una**. **Cuando se toma ganancia, se sube el stop loss a break even**.»
@@ -180,7 +191,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
   `XLgPycsN0ls` 00:15:33 «**Primer objetivo**, 2245. **Le falta llegar al segundo** si continúa».
 - **Conexiones**: objetivos = **extensiones de C05** · stop a break even se apoya en **C08** (invalidación).
 
-### C10 · Escenarios por confianza — **aprobado_por_francisco** (2026-11-18)
+### C10 · Escenarios por confianza — **aprobado_en_conversacion** (2026-11-18)
 > «Los escenarios deberían ser por la **confianza en porcentaje**. Si tenemos una **zona de compra en
 > semanal, diario y 4H** con fibos y precios calculados, **el escenario es validado, compramos**.
 > Si en **4H** hay un escenario validado pero **se contradice en semanal y diario**, la **fiabilidad
@@ -200,7 +211,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
   `bCc--rvyHpY` 00:00:12 «el escenario que seguía estando **validado**».
 - **Vocabulario del experto** (0 claims): «condicional», «activación».
 
-### C11 · Gestión de riesgo — **aprobado_por_francisco** (2026-11-18)
+### C11 · Gestión de riesgo — **aprobado_en_conversacion** (2026-11-18)
 - **Regla de Francisco**: el riesgo por operación **depende de la confiabilidad del escenario** — la confiabilidad define el porcentaje.
 - **Tope duro: 5%** de la cuenta. Nunca más, por muy confiable que sea el escenario.
 - Ejemplo del corpus: `mv2VdVtXvDw` 00:11:20.839 — «cómo gestionar el riesgo por si el precio no termina de subir».
@@ -216,7 +227,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
   timeframe es una zona distinta. El corpus ya trae `claims.temporalidad` (E6).
 - **Categoría SMC literal** (order block / FVG / BOS / CHoCH): **0 claims** → `NO_DETERMINABLE`.
   No se impone terminología que el canal no usa.
-- Equivalentes en su lenguaje: ruptura (**58** claims, ≈BOS), zona (**216**), liquidez (**106**),
+- Equivalentes en su lenguaje: ruptura (**10** claims) · «rompe» (**58**), zona (**216**), liquidez (**106**),
   reversión (**105**), máximos/mínimos (**153**).
 
 ## Verificación de este borrador

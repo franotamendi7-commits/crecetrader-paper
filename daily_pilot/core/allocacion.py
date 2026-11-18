@@ -64,15 +64,22 @@ def distribuir(capital: float, tipo: str = 'mixto') -> list:
 
 
 def plan(instrumento: str, capital: float, en_oferta: bool = True) -> dict:
-    """Plan de asignacion para un instrumento y un capital dado."""
+    """Plan de asignacion para un instrumento y un capital dado.
+
+    Los tramos se reparten sobre el **capital operable**, que nunca supera el
+    tope por activo (H-06: antes el 100% del capital se asignaba a un activo con tope 45%).
+    """
     permitido = oferta_permitida(instrumento)
     tipo = 'mixto' if (en_oferta and permitido) else 'confirmacion'
-    # En mixto/confirmacion el tope es el de tendencia (45% BTC); en oferta pura, 30%.
     maximo = allocacion_maxima(instrumento, en_tendencia=(tipo != 'oferta'))
-    tramos = distribuir(min(capital, capital), tipo)
+    max_monto = round(capital * maximo, 2)
+    capital_operable = min(capital, max_monto) if max_monto > 0 else 0.0
+    tramos = distribuir(capital_operable, tipo)
     return {
         'instrumento': instrumento, 'tipo': tipo, 'oferta_permitida': permitido,
-        'allocacion_maxima': maximo, 'allocacion_maxima_monto': round(capital * maximo, 2),
+        'allocacion_maxima': maximo, 'allocacion_maxima_monto': max_monto,
+        'capital_operable': round(capital_operable, 2),
+        'suma_tramos': round(sum(t['monto'] for t in tramos), 2),
         'tramos': tramos, 'paper_only': PAPER_ONLY,
     }
 

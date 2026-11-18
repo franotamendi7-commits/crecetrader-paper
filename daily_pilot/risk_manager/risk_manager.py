@@ -138,16 +138,22 @@ class RiskManager:
             out['risk_per_unit'] = 0.0
             return out
         conf = s.confidence if isinstance(s.confidence, (int, float)) else 0.0
-        # C01/C11: el riesgo depende del TIPO DE OPERACION y de la confianza.
+        # C01/C11: el riesgo lo define la CONFIANZA, con tope 5% (H-07).
+        # Una sola formula compartida con core/escenarios.py.
         if s.tipo_operacion == 'correccion':
-            tope = self.cfg.riesgo_correccion_pct          # 1-2%
+            tope_total = self.cfg.riesgo_correccion_pct      # 1-2%
+            entradas = 1
         else:
-            tope = min(self.cfg.riesgo_long_pct / max(self.cfg.entradas_long, 1), TOPE_RIESGO_PCT)
-        riesgo_pct = round(min(max(conf, 0.0), tope), 4)
+            tope_total = TOPE_RIESGO_PCT                     # 5%
+            entradas = max(self.cfg.entradas_long, 1)
+        riesgo_total = min(max(conf, 0.0), 1.0) * tope_total   # confianza x tope (H-07)
+        riesgo_pct = round(riesgo_total / entradas, 4)         # se reparte entre entradas
         risk_money = self.cfg.account_balance * riesgo_pct
         size = risk_money / risk
         out['riesgo_pct_efectivo'] = riesgo_pct
-        out['riesgo_pct_tope'] = tope
+        out['riesgo_pct_total'] = round(riesgo_total, 4)
+        out['riesgo_pct_tope'] = tope_total
+        out['entradas'] = entradas
         out['tipo_operacion'] = s.tipo_operacion
         if s.tipo_operacion == 'long':
             out['riesgo_total_long'] = self.cfg.riesgo_long_pct

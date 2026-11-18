@@ -32,24 +32,34 @@ CONFIANZA_POR_MARCOS = {3: 1.00, 2: 0.75, 1: 0.50}
 RIESGO_MAX = 0.05          # C11: tope 5%
 
 
+def riesgo_total(confianza: float) -> float:
+    """C11 (H-07): **riesgo = confianza x 5%**, con tope 5%.
+    Unica formula compartida con risk_manager.py."""
+    return round(min(max(float(confianza), 0.0), 1.0) * RIESGO_MAX, 4)
+
+
 def evaluar(marcos_confluentes: int,
             correccion_dentro_de_tendencia: bool = False,
             contradicho: bool = False) -> dict:
     """Devuelve escenario, confianza y riesgo sugerido."""
     conf = CONFIANZA_POR_MARCOS.get(marcos_confluentes, 0.0)
+    if contradicho:
+        conf *= 0.5            # 4H validado pero contradicho en W/D: confianza a la mitad
+    if correccion_dentro_de_tendencia:
+        conf *= 0.75           # correccion dentro de tendencia: mas cautela
+    riesgo = riesgo_total(conf)
     if conf == 0.0:
-        esc, riesgo, extra = RECHAZADO, 0.0, {}
+        esc, extra = RECHAZADO, {}
     elif correccion_dentro_de_tendencia:
-        esc, riesgo, extra = CAUTELA, round(RIESGO_MAX * conf, 4), {'nota': 'correccion dentro de tendencia: menos riesgo'}
+        esc, extra = CAUTELA, {'nota': 'correccion dentro de tendencia: menos riesgo'}
     elif contradicho:
-        esc = MENOR_FIABILIDAD
-        riesgo = round(RIESGO_MAX * conf * 0.5, 4)
-        extra = {'tradear_intradia': True, 'nota': 'baja el riesgo pero se puede tradear intradia'}
+        esc, extra = MENOR_FIABILIDAD, {'tradear_intradia': True, 'nota': 'baja el riesgo pero se puede tradear intradia'}
     else:
-        esc, riesgo, extra = VALIDADO, round(RIESGO_MAX * conf, 4), {}
+        esc, extra = VALIDADO, {}
     return {
         'escenario': esc,
-        'confianza': conf,
+        'confianza': round(conf, 4),
+        'confianza_base': CONFIANZA_POR_MARCOS.get(marcos_confluentes, 0.0),
         'riesgo_sugerido': riesgo,
         'marcos_confluentes': marcos_confluentes,
         'stop': 'si no llega: stop y luego break even',

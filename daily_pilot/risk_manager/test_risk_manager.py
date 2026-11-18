@@ -134,14 +134,14 @@ caso('por_nivel', set(r['por_nivel']) == {'nivel_informativo', 'escenario', 'can
 r = rm.evaluar([senal()])
 caso('candidata_nivel', r['senales'][0]['nivel'] == 'candidata', r['senales'][0]['nivel'])
 
-# 20. C11/C01: tope por tipo de operacion (long 2 entradas -> 2.5% por entrada)
+# 20. C11/C01 (H-07): riesgo = confianza x tope, repartido entre entradas
 r = rm.evaluar([senal(confidence=0.99, tipo_operacion='long')])
 c99 = r['senales'][0]['risk']['riesgo_pct_efectivo']
-caso('tope_long_por_entrada', c99 == 0.025, f'confianza 0.99 long -> por entrada {c99}')
+caso('tope_long_por_entrada', abs(c99 - 0.02475) < 1e-4, f'confianza 0.99 long -> por entrada {c99}')
 
 r = rm.evaluar([senal(confidence=0.02)])
 c02 = r['senales'][0]['risk']['riesgo_pct_efectivo']
-caso('riesgo_por_confianza', c02 == 0.02, f'confianza 0.02 -> riesgo {c02}')
+caso('riesgo_por_confianza', abs(c02 - 0.0005) < 1e-4, f'confianza 0.02 -> riesgo {c02}')
 
 # 21. el tope no se supera ni con confianza maxima
 r = rm.evaluar([senal(confidence=5.0)])
@@ -151,18 +151,18 @@ caso('tope_duro', r['senales'][0]['risk']['riesgo_pct_efectivo'] <= 0.05,
 # 22. C01: long se distribue en 2-3 entradas (2.5% por entrada con 2)
 r = rm.evaluar([senal(tipo_operacion='long')])
 rl = r['senales'][0]['risk']
-caso('long_2_entradas', rl['riesgo_pct_efectivo'] == 0.025 and rl.get('riesgo_total_long') == 0.05,
+caso('long_2_entradas', rl['riesgo_pct_efectivo'] == 0.02 and rl.get('riesgo_total_long') == 0.05,
      f"por entrada {rl['riesgo_pct_efectivo']} | total long {rl.get('riesgo_total_long')}")
 
 # 23. C01: correccion 1-2%
 r = rm.evaluar([senal(confidence=0.5, tipo_operacion='correccion')])
 rc = r['senales'][0]['risk']
-caso('correccion_2pct', rc['riesgo_pct_efectivo'] == 0.02, f"correccion {rc['riesgo_pct_efectivo']}")
+caso('correccion_2pct', rc['riesgo_pct_efectivo'] == 0.01, f"correccion {rc['riesgo_pct_efectivo']}")
 
 # 24. C01: 3 entradas -> 1.667% por entrada
 rm3 = RiskManager(Config(entradas_long=3))
 r = rm3.evaluar([senal(tipo_operacion='long')])
-caso('long_3_entradas', abs(r['senales'][0]['risk']['riesgo_pct_efectivo'] - 0.016667) < 1e-4,
+caso('long_3_entradas', abs(r['senales'][0]['risk']['riesgo_pct_efectivo'] - 0.013333) < 1e-4,
      r['senales'][0]['risk']['riesgo_pct_efectivo'])
 
 print(f'\n{OK}/{OK + FALLO} pruebas OK')

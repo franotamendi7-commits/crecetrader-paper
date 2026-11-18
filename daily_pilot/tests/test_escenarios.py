@@ -40,7 +40,7 @@ caso('riesgo_bajado', c['riesgo_sugerido'] == 0.0125, str(c['riesgo_sugerido']))
 # 4. correccion dentro de tendencia alcista -> CAUTELA
 d = E.evaluar(2, correccion_dentro_de_tendencia=True)
 caso('cautela', d['escenario'] == 'CAUTELA', d['escenario'])
-caso('cautela_menos_riesgo', d['riesgo_sugerido'] == 0.0375, str(d['riesgo_sugerido']))
+caso('cautela_menos_riesgo', d['riesgo_sugerido'] == 0.0281, str(d['riesgo_sugerido']))
 
 # 5. sin marcos -> rechazado
 e = E.evaluar(0)

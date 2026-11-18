@@ -69,7 +69,7 @@ def main() -> int:
                     help='corre ademas los tests que escriben artefactos/tocan store.db')
     args = ap.parse_args()
 
-    pre = {p: sha(p) for p in INTOCABLES}
+    pre = {p: sha(p) for p in INTOCABLES + DERIVADOS}
     print(f'python: {PY}')
     print(f'modo: {"READONLY" if not args.integracion else "READONLY + INTEGRACION (escribe derivados)"}')
     print('=== TESTS READ-ONLY ===')
@@ -109,7 +109,11 @@ def main() -> int:
             print(f'  ROTO  | {p.name:22s} {str(a)[:12]} -> {str(b)[:12]}')
     for p in DERIVADOS:
         if p.exists():
-            print(f'  info  | {p.name:22s} no tocado (hash igual al pre)')
+            a, b = pre[p], sha(p)
+            if a == b:
+                print(f'  info  | {p.name:22s} sin cambios')
+            else:
+                print(f'  info  | {p.name:22s} reescrito {str(a)[:8]} -> {str(b)[:8]} (derivado, esperado)')
 
     print(f'\nRESULTADO: {ok} OK · {fail} FALLO' + (' · FUENTES INTACTAS' if not roto else ' · FUENTES MODIFICADAS'))
     return 1 if (fail or roto) else 0

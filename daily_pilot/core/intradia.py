@@ -24,13 +24,27 @@ N_DEFAULT = 4            # n=4 -> 9 niveles (-1.00..+1.00); n=3 -> 7 (hasta +/-0
 
 
 def abanico(precio_base: float, paso: float = PASO, n: int = N_DEFAULT,
-            hora_ancla: int = HORA_ANCLA) -> dict:
-    """Devuelve los niveles intradia alrededor del precio base."""
-    niveles = [round(precio_base + paso * i, 4) for i in range(-n, n + 1)]
-    return {'precio_base': round(precio_base, 4), 'hora_ancla': hora_ancla, 'paso': paso,
-            'niveles': niveles, 'n_niveles': len(niveles),
-            'tipo': 'scalping', 'confirmacion_4h_o_diario': False,
-            'se_resetea': 'cada dia al precio de la hora ancla', 'paper_only': PAPER_ONLY}
+            hora_ancla: int = HORA_ANCLA, rango: float | None = None) -> dict:
+    """Niveles intradia alrededor del **precio de cierre del dia** (punto cero).
+
+    `rango` es la amplitud del abanico: con `rango=None` el abanico es en **unidades**
+    (0, +/-0.25 ... +/-1.00) alrededor del cierre; con `rango` expresado en el mismo
+    tipo de precio, el abanico es +/- `rango` (p.ej. rango=1% -> +/-1% de abanico).
+
+    **PREGUNTA ABIERTA (H-08)**: la **unidad** de "0.25 / 1.00" no esta definida por
+    Francisco. No se inventa: hasta que la defina, el abanico se expresa en unidades.
+    """
+    base = {'precio_base': round(precio_base, 4), 'hora_ancla': hora_ancla, 'paso': paso,
+            'rango': rango, 'unidad': 'unidades (definir: %, $, ATR...)', 'paper_only': PAPER_ONLY}
+    if rango is None:
+        base['niveles'] = [round(precio_base + paso * i, 4) for i in range(-n, n + 1)]
+    else:
+        base['niveles'] = [round(precio_base * (1 + paso * i * rango), 4) for i in range(-n, n + 1)]
+    base['n_niveles'] = len(base['niveles'])
+    base['tipo'] = 'scalping'
+    base['confirmacion_4h_o_diario'] = False
+    base['se_resetea'] = 'cada dia al precio de la hora ancla'
+    return base
 
 
 def resetear(nuevo_precio: float, **kw) -> dict:

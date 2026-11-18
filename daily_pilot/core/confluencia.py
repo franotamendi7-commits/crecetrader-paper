@@ -60,8 +60,10 @@ def evaluar(cambio_fase_4h: bool = False,
     if zona_de_compra:
         comp.append('zona de compra')
 
-    if cambio_fase_4h and niveles_calculados_alcanzados and confirmacion_diaria:
-        senal, motivo = 'LONG', '4H cambia de fase + niveles calculados + diario confirma'
+    if cambio_fase_4h and niveles_calculados_alcanzados and confirmacion_diaria and zona_de_compra:
+        senal, motivo = 'LONG', '4H cambio de fase + niveles calculados + diario confirma + zona de compra'
+    elif cambio_fase_4h and niveles_calculados_alcanzados and confirmacion_diaria:
+        senal, motivo = 'DECISION_ENTRADA', 'falta la zona de compra (C10: se juntan precios calculados y zonas)'
     elif cambio_fase_4h and niveles_calculados_alcanzados:
         senal, motivo = 'DECISION_ENTRADA', '4H cambia de fase + niveles calculados (falta confirmacion diaria)'
     else:

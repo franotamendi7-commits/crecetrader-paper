@@ -23,11 +23,15 @@ def caso(nombre, cond, detalle=''):
 # 1. los 4 componentes -> LONG
 r = C.evaluar(True, True, True, True)
 caso('long_completo', r['senal'] == 'LONG', r['motivo'])
-caso('componentes_trazables', len(r['componentes']) == 4, r['componentes'])
+caso('componentes_trazables', len(r['componentes']) == 4, str(r['componentes']))
+
+# 1b. H-10: sin zona de compra NO hay LONG (C10: se juntan precios calculados y zonas)
+r_nz = C.evaluar(True, True, True, False)
+caso('sin_zona_no_es_long', r_nz['senal'] != 'LONG', r_nz['motivo'])
 
 # 2. 4H + niveles calculados, sin confirmacion diaria -> decision de entrada
 r = C.evaluar(True, True, False, False)
-caso('decision_entrada', r['senal'] == 'DECISION_ENTRADA', r['motivo'])
+caso('decision_entrada', r['senal'] == 'DECISION_ENTRADA', r['motivo'])  # sin zona: decision, no long
 
 # 3. sin cambio de fase -> sin senal
 r = C.evaluar(False, True, True, True)

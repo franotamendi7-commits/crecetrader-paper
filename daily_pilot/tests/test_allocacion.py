@@ -39,10 +39,17 @@ caso('spx_max_10', A.allocacion_maxima('SPX', True) == 0.10)
 caso('spx_oferta_10', A.allocacion_maxima('SPX', False) == 0.10)   # correccion de Francisco
 caso('desconocido_0', A.allocacion_maxima('XYZ') == 0.0)
 
-# 4. plan BTC: mixto (30/35/35)
+# 4. plan BTC: mixto (30/35/35) y los tramos NUNCA superan el tope del activo
 p = A.plan('BTCUSD', 1000.0, en_oferta=True)
 caso('btc_mixto', p['tipo'] == 'mixto' and len(p['tramos']) == 3, p['tipo'])
-caso('btc_max_monto', p['allocacion_maxima_monto'] == 450.0, p['allocacion_maxima_monto'])
+caso('btc_max_monto', p['allocacion_maxima_monto'] == 450.0, str(p['allocacion_maxima_monto']))
+caso('btc_suma_no_excede', p['suma_tramos'] <= p['allocacion_maxima_monto'], f"{p['suma_tramos']} <= {p['allocacion_maxima_monto']}")
+caso('btc_capital_operable', p['capital_operable'] == 450.0, str(p['capital_operable']))
+
+# 4b. H-06: antes el 100% del capital se asignaba a un activo con tope 45%
+for inst, tope in (('BTCUSD', 450.0), ('ETHUSD', 200.0), ('SPX', 100.0)):
+    q = A.plan(inst, 1000.0, en_oferta=True)
+    caso(f'{inst}_no_excede', q['suma_tramos'] <= q['allocacion_maxima_monto'], f"{q['suma_tramos']} <= {q['allocacion_maxima_monto']}")
 
 # 5. plan SPX: mixto tambien (correccion de Francisco)
 p = A.plan('SPX', 1000.0, en_oferta=True)
