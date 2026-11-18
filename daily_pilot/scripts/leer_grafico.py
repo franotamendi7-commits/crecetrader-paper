@@ -25,17 +25,18 @@ OLLAMA = 'http://localhost:11434/api/chat'
 MODELO = 'qwen3-vl:8b-instruct'
 PAPER_ONLY = True
 
-PROMPT = """Sos analista de price action. Mirá SOLO este fotograma y respondé con un ÚNICO objeto JSON valido, sin texto fuera:
-{
-  "instrumento": "BTCUSD | ETHUSD | SPX | QQQ | XAUUSD | NO_VISIBLE",
-  "tf_aparente": "4H | diario | semanal | 1H | NO_VISIBLE",
-  "estructura": "maximos_crecientes | minimos_decrecientes | rango | ruptura | NO_VISIBLE",
-  "niveles_visibles": [{"precio": 0.0, "tipo": "soporte|resistencia|calculado|NO_VISIBLE"}],
-  "vela_actual": "verde | roja | indecision | NO_VISIBLE",
-  "observacion": "una frase corta"
-}
-Reglas: si un eje usa punto como separador de miles, el precio es el numero entero (75.471 = 75471).
-Si algo no se ve, poné NO_VISIBLE. No inventes."""
+PROMPT_DETECT = """Este fotograma es de un video de analisis tecnico de CreceTrader.
+¿Hay un grafico de precios? Responde SOLO JSON:
+{"es_grafico": true|false, "instrumento": "BTCUSD|ETHUSD|SPX|QQQ|XAUUSD|NO_VISIBLE", "tf": "4H|diario|semanal|1H|NO_VISIBLE"}
+No inventes."""
+
+PROMPT_DETALLE = """Este fotograma es de un video de analisis tecnico. Ya se que el grafico es {instrumento} en {tf}.
+Miralo y respondé SOLO JSON:
+{{"estructura": "maximos_crecientes | minimos_decrecientes | rango | ruptura | NO_VISIBLE",
+"niveles_visibles": [{{"precio": 0.0, "tipo": "soporte|resistencia|calculado|NO_VISIBLE"}}],
+"vela_actual": "verde | roja | indecision | NO_VISIBLE",
+"observacion": "una frase corta"}}
+Reglas: si el eje usa punto como separador de miles, el precio es entero (75.471 = 75471). Si algo no se ve, NO_VISIBLE. No inventes."""
 
 LIMPIO = re.compile(r'^```(json)?|```$')
 
@@ -53,20 +54,29 @@ def parsear(txt: str) -> dict | None:
                 return None
     return None
 
-def leer_frame(ruta: Path) -> dict:
-    b64 = base64.b64encode(ruta.read_bytes()).decode()
+def _chat(prompt: str, b64: str) -> dict | None:
     payload = {'model': MODELO,
-               'messages': [{'role': 'user', 'content': PROMPT, 'images': [b64]}],
+               'messages': [{'role': 'user', 'content': prompt, 'images': [b64]}],
                'stream': False,
                'options': {'temperature': 0.1, 'num_predict': 512}}
     req = urllib.request.Request(OLLAMA, data=json.dumps(payload).encode(),
                                  headers={'Content-Type': 'application/json'})
-    t0 = time.time()
     r = json.load(urllib.request.urlopen(req, timeout=900))
-    txt = r['message']['content']
-    obj = parsear(txt)
+    return parsear(r['message']['content'])
+
+def leer_frame(ruta: Path) -> dict:
+    b64 = base64.b64encode(ruta.read_bytes()).decode()
+    t0 = time.time()
+    det = _chat(PROMPT_DETECT, b64) or {}
+    data = {}
+    if det.get('es_grafico') and det.get('instrumento') not in (None, 'NO_VISIBLE'):
+        data = _chat(PROMPT_DETALLE.format(instrumento=det.get('instrumento'),
+                                           tf=det.get('tf') or 'NO_VISIBLE'), b64) or {}
+    data.setdefault('instrumento', det.get('instrumento', 'NO_VISIBLE'))
+    data.setdefault('tf_aparente', det.get('tf', 'NO_VISIBLE'))
+    data['es_grafico'] = bool(det.get('es_grafico'))
     return {'frame': ruta.name, 'segundos': round(time.time() - t0, 1),
-            'json_valido': obj is not None, 'data': obj if obj else {'crudo': txt[:300]}}
+            'json_valido': bool(det), 'data': data}
 
 def main() -> int:
     ap = argparse.ArgumentParser()

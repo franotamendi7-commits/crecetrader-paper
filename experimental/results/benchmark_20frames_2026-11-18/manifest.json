@@ -1,0 +1,246 @@
+{
+  "created": "2026-11-18",
+  "goal": "Benchmark de lectura de graficos: Qwen3-VL-8B local vs Gemini 2.5 Flash",
+  "frames": [
+    {
+      "id": "btc_1d_0prmr_0008",
+      "path": "frames_hist/0prmrS6nnRk/frame_0008.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 75471,
+        "levels": [82833, 78746, 78241, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1d_fib_0prmr_0012",
+      "path": "frames_hist/0prmrS6nnRk/frame_0012.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 78674,
+        "levels": [87496, 82833, 78746, 78241, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "eth_1d_0prmr_0019",
+      "path": "frames_hist/0prmrS6nnRk/frame_0019.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "ETHUSD",
+        "timeframe": "1D",
+        "current_price": 2266.2,
+        "levels": [2664.1, 2091],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "usteck_1d_0prmr_0024",
+      "path": "frames_hist/0prmrS6nnRk/frame_0024.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "USTECH",
+        "timeframe": "1D",
+        "current_price": 28083,
+        "levels": [30574, 28026, 25479, 22931],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "gold_4h_xlg_0022",
+      "path": "frames_hist/XLgPycsN0ls/frame_0022.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "GC1!",
+        "timeframe": "4H",
+        "current_price": 4072.0,
+        "levels": [4628, 4516, 4430, 4350, 4281, 4116, 3906],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1w_xlg_0027",
+      "path": "frames_hist/XLgPycsN0ls/frame_0027.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1W",
+        "current_price": 90044,
+        "levels": [103410, 92147, 88457, 80465, 72852, 62000],
+        "structure": "lateral"
+      }
+    },
+    {
+      "id": "vix_1d_xlg_0033",
+      "path": "frames_hist/XLgPycsN0ls/frame_0033.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "VX1!",
+        "timeframe": "1D",
+        "current_price": 18.10,
+        "levels": [31.29, 20.185, 17.0],
+        "structure": "lateral"
+      }
+    },
+    {
+      "id": "es_1d_xlg_0034",
+      "path": "frames_hist/XLgPycsN0ls/frame_0034.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "ES1!",
+        "timeframe": "1D",
+        "current_price": 7703.0,
+        "levels": [7840, 7592],
+        "structure": "lateral"
+      }
+    },
+    {
+      "id": "btc_multi_xlg_0039",
+      "path": "frames_hist/XLgPycsN0ls/frame_0039.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "multi",
+        "current_price": 78674,
+        "levels": [85000, 82833, 78746, 78241, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1d_o6n6_0017",
+      "path": "frames_hist/o6n6UDNVtCk/frame_0017.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 78674,
+        "levels": [87974, 82833, 81446, 78746, 78241, 73954, 69997, 67235],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1w_o6n6_0023",
+      "path": "frames_hist/o6n6UDNVtCk/frame_0023.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1W",
+        "current_price": 78714,
+        "levels": [85000, 80244, 76670, 65555, 60000],
+        "structure": "lateral"
+      }
+    },
+    {
+      "id": "btc_1d_sub_0009",
+      "path": "frames_hist/subONxt5iag/frame_0009.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 78674,
+        "levels": [87974, 87496, 82833, 81446, 78746, 78241, 73954, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1w_sub_0013",
+      "path": "frames_hist/subONxt5iag/frame_0013.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1W",
+        "current_price": 78714,
+        "levels": [85000, 80244, 76670, 65555, 60000],
+        "structure": "lateral"
+      }
+    },
+    {
+      "id": "btc_1d_sub_0018",
+      "path": "frames_hist/subONxt5iag/frame_0018.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 73238,
+        "levels": [88775, 81830, 79989, 76835, 73238, 69840, 65520, 53994],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "es_1d_sub_0024",
+      "path": "frames_hist/subONxt5iag/frame_0024.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "ES1!",
+        "timeframe": "1D",
+        "current_price": 7522.25,
+        "levels": [8192, 7840, 7592, 6982, 6458, 6172],
+        "structure": "lateral"
+      }
+    },
+    {
+      "id": "btc_1d_rtt_0003",
+      "path": "frames_hist/rTtXDLq2kOQ/frame_0003.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 74789,
+        "levels": [87974, 87496, 82833, 81446, 78746, 73954, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1d_rtt_0007",
+      "path": "frames_hist/rTtXDLq2kOQ/frame_0007.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1D",
+        "current_price": 74789,
+        "levels": [88775, 81830, 79989, 76835, 73238, 69840, 65520],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_1h_rtt_0013",
+      "path": "frames_hist/rTtXDLq2kOQ/frame_0013.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "1H",
+        "current_price": 74071,
+        "levels": [80308, 78746, 78241, 73238, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "btc_multi_rtt_0019",
+      "path": "frames_hist/rTtXDLq2kOQ/frame_0019.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "BTCUSD",
+        "timeframe": "multi",
+        "current_price": 74761,
+        "levels": [85000, 82833, 78746, 74761, 73238, 69997],
+        "structure": "bajista"
+      }
+    },
+    {
+      "id": "es_1d_rtt_0025",
+      "path": "frames_hist/rTtXDLq2kOQ/frame_0025.jpg",
+      "expected": {
+        "has_chart": true,
+        "instrument": "ES1!",
+        "timeframe": "1D",
+        "current_price": 7522.25,
+        "levels": [7840, 7138, 6844, 5949],
+        "structure": "bajista"
+      }
+    }
+  ]
+}

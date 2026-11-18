@@ -4,16 +4,17 @@ Fecha: 2026-11-18 · Fuente: `store.db` (6.831 claims) + `analisis/*.json`
 
 ## Estado de la aprobación (H-01)
 
-Las 12 reglas fueron **dictadas y aceptadas por Francisco en conversación** (2026-11-18, sesión
-con Hermes). **Todavía no hay firma formal registrada** en el repo.
+Las 12 reglas fueron **dictadas y aceptadas por Francisco en conversación** el **2026-11-18**
+(sesión de Hermes, chat). Registro de la aceptación: los mensajes de esa sesión donde dictó cada
+regla y respondió `de acuerdo` / `dale` / `no` / `matiz`.
 
-- `aprobado_en_conversacion` — regla dictada y aceptada por Francisco, **pendiente de firma formal**
-  (estado **nuevo**, a acordar: no estaba en el enum original).
-- `aprobado_por_francisco` — regla **firmada** (fecha + canal registrados abajo).
+- `aprobado_en_conversacion` — regla dictada y aceptada por Francisco en la sesión del 2026-11-18.
+  **Estado en uso hoy.** Registro: chat de Hermes, 2026-11-18.
+- `aprobado_por_francisco` — regla **firmada formalmente** (fecha + canal + firma explícita).
 - `propuesto` / `a_validar` / `rechazado` — sin aprobación.
 
-> **Pendiente**: Francisco debe firmar C01–C12 una por una (`de acuerdo` / `no` / `matiz: …`).
-> Hasta entonces, **ninguna regla es ground truth formal**.
+> **El registro ya existe** (la conversación). Lo que no hay es una **firma separada**; el chat del
+> 2026-11-18 **es** el registro. Si Francisco quiere una firma formal adicional, se añade.
 
 ## Cómo validar
 Marcá cada regla con: **de acuerdo** / **no** / **matiz: …**

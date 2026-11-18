@@ -1,0 +1,444 @@
+{
+  "modelo": "qwen3-vl:8b-instruct",
+  "paper_only": true,
+  "n_frames": 19,
+  "json_validos": 19,
+  "tasa_json": 1.0,
+  "niveles_consolidados": {
+    "83366": 2,
+    "69000": 2,
+    "81690": 2,
+    "80308": 2,
+    "78746": 2,
+    "71509": 2,
+    "69940": 2,
+    "85079": 1,
+    "79989": 1,
+    "75835": 1,
+    "72838": 1,
+    "69840": 1,
+    "65520": 1,
+    "71508": 1,
+    "68840": 1,
+    "68537": 1,
+    "65555": 1,
+    "68750": 1,
+    "67158": 1,
+    "64400": 1,
+    "79580": 1,
+    "76852": 1,
+    "73390": 1,
+    "69997": 1,
+    "84455": 1,
+    "83764": 1,
+    "76952": 1,
+    "73396": 1,
+    "69900": 1,
+    "3042.0": 1,
+    "2478.5": 1,
+    "1890.0": 1,
+    "1529.0": 1,
+    "7940": 1,
+    "7139": 1,
+    "6544": 1,
+    "5949": 1
+  },
+  "frames": [
+    {
+      "frame": "scene_000_0.0s.jpg",
+      "segundos": 2.0,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_001_8.3s.jpg",
+      "segundos": 15.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "ruptura",
+        "niveles_visibles": [
+          {
+            "precio": 85079,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 79989,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 75835,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 72838,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69840,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 65520,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio rompe la resistencia de 85079 y se mantiene por encima.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_002_10.1s.jpg",
+      "segundos": 1.5,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_003_196.8s.jpg",
+      "segundos": 2.0,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_004_303.7s.jpg",
+      "segundos": 18.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 83366,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 71508,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 68840,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 68537,
+            "tipo": "soporte"
+          },
+          {
+            "precio": 65555,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 68750,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 67158,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 64400,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "Reversión semanal confirmada en zona de soporte.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "semanal",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_005_350.8s.jpg",
+      "segundos": 20.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 81690,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80308,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 79580,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 78746,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 76852,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 73390,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 71509,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69940,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69997,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69000,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango descendente con múltiples niveles de resistencia.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_006_439.2s.jpg",
+      "segundos": 23.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [
+          {
+            "precio": 84455,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 83764,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 83366,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 81690,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80308,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 78746,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 76952,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 73396,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 71509,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69940,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 69900,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "El precio se encuentra en una zona de soporte y resistencia con niveles múltiples.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_007_449.9s.jpg",
+      "segundos": 2.3,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_008_451.7s.jpg",
+      "segundos": 2.3,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_009_463.4s.jpg",
+      "segundos": 2.4,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_010_466.5s.jpg",
+      "segundos": 2.5,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_011_529.6s.jpg",
+      "segundos": 2.5,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_012_584.5s.jpg",
+      "segundos": 16.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 3042.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 2478.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1890.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1529.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango con niveles de resistencia visibles.",
+        "instrumento": "ETHUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_013_596.2s.jpg",
+      "segundos": 2.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_014_634.9s.jpg",
+      "segundos": 3.0,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_015_636.7s.jpg",
+      "segundos": 3.1,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_016_678.4s.jpg",
+      "segundos": 20.3,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 7940,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 7139,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 6544,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 5949,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio rompió la resistencia de 7940 y está en caída.",
+        "instrumento": "SPX",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "scene_017_783.5s.jpg",
+      "segundos": 3.3,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "scene_018_836.2s.jpg",
+      "segundos": 3.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    }
+  ]
+}
