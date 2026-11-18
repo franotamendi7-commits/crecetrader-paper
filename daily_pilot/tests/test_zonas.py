@@ -49,6 +49,13 @@ caso('sigue_tendencia', Z.cambio_tendencia(True, False) is False)
 caso('cambio_tendencia', Z.cambio_tendencia(False, True) is True)
 caso('sin_cambio', Z.cambio_tendencia(False, False) is False)
 
+# 5b. en bajista se calcula al reves (de maximo a minimo)
+zb = Z.zonas(56760.0, 75518.0, 'corto', direccion='bajista')
+caso('bajista_direccion', zb['direccion'] == 'bajista' and zb['minimo'] == 56760.0, f"{zb['direccion']} {zb['minimo']}")
+caso('bajista_extensiones_abajo', all(v < 56760.0 for v in zb['extensiones'].values()), str(zb['extensiones']))
+caso('bajista_ext_100', zb['extensiones']['100%'] == 38002.0, str(zb['extensiones']))
+caso('alcista_extensiones_arriba', all(v > 75518.0 for v in z['extensiones'].values()))
+
 # 6. validacion
 try:
     Z.zonas(70000.0, 56000.0)

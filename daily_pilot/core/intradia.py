@@ -17,7 +17,8 @@ from __future__ import annotations
 
 PAPER_ONLY = True
 
-HORA_ANCLA = 21          # 21:00 (en el caso de Francisco)
+HORA_ANCLA = 21          # 21:00 Argentina = 00:00 UTC = cierre diario ( Francisco )
+HORA_ANCLA_UTC = 0       # el punto cero es el cierre del dia (00 UTC)
 PASO = 0.25
 N_DEFAULT = 4            # n=4 -> 9 niveles (-1.00..+1.00); n=3 -> 7 (hasta +/-0.75)
 

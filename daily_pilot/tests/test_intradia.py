@@ -38,7 +38,7 @@ c = I.resetear(65000.0)
 caso('reset_diario', c['precio_base'] == 65000.0 and c['niveles'][4] == 65000.0, str(c['precio_base']))
 
 # 4. hora ancla 21
-caso('hora_ancla_21', a['hora_ancla'] == 21, a['hora_ancla'])
+caso('hora_ancla_21', a['hora_ancla'] == 21 and I.HORA_ANCLA_UTC == 0, f"{a['hora_ancla']} / {I.HORA_ANCLA_UTC}UTC")
 
 # 5. es scalping, NO confirmacion de 4h/daily
 caso('es_scalping', a['tipo'] == 'scalping' and a['confirmacion_4h_o_diario'] is False)

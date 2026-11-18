@@ -35,18 +35,30 @@ def tf_para(plazo: str) -> str:
     return TF_POR_PLAZO.get(plazo, '4H')
 
 
-def zonas(minimo: float, maximo: float, plazo: str = 'corto') -> dict:
-    """Zonas de compra (retrocesos) y extensiones (ruptura del maximo)."""
+def zonas(minimo: float, maximo: float, plazo: str = 'corto',
+          direccion: str = 'alcista') -> dict:
+    """Zonas de compra (retrocesos) y extensiones (ruptura del maximo).
+
+    En tendencia **bajista** se calcula **al reves**: de maximo a minimo
+    (Francisco: "respuesta es si! a la inversa").
+    """
     rango = maximo - minimo
     if rango <= 0:
         raise ValueError('maximo debe ser mayor que minimo')
     tf = tf_para(plazo)
+    if direccion == 'alcista':
+        zonas_compra = {f'{int(r*100)}%': round(maximo - rango * r, 2) for r in RETROCESOS}
+        extensiones = {f'{int(e*100)}%': round(maximo + rango * e, 2) for e in EXTENSIONES}
+    else:  # bajista: mismo rango, niveles hacia abajo
+        zonas_compra = {f'{int(r*100)}%': round(minimo + rango * r, 2) for r in RETROCESOS}
+        extensiones = {f'{int(e*100)}%': round(minimo - rango * e, 2) for e in EXTENSIONES}
     return {
         'marco': tf,
+        'direccion': direccion,
         'minimo': minimo,
         'maximo': maximo,
-        'zonas_compra': {f'{int(r*100)}%': round(maximo - rango * r, 2) for r in RETROCESOS},
-        'extensiones': {f'{int(e*100)}%': round(maximo + rango * e, 2) for e in EXTENSIONES},
+        'zonas_compra': zonas_compra,
+        'extensiones': extensiones,
         'tipo': 'nivel_calculado',
         'no_es': ['soporte', 'resistencia', 'order_block', 'FVG'],
         'paper_only': PAPER_ONLY,

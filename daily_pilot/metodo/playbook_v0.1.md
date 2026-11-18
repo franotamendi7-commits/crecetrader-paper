@@ -98,6 +98,9 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
   «21:00» **0**. El corpus solo tiene **«promedios intradiarios»** (17 claims).
 - **Equivalencia registrada**: corpus «promedios intradiarios» ↔ experto «niveles intradía / abanico».
 - **Resuelto por Francisco**: son **9 niveles** (hasta ±1.00), no 7.
+- **Punto cero (resuelto)**: es el **precio de cierre diario a las 00:00 UTC** — en Argentina son las
+  **21 hs**. *«Si BTC a las 21 hs está en 67.000, para todo el día siguiente ese es el precio 0,
+  y cada día se mide así.»* → `HORA_ANCLA = 21` · `HORA_ANCLA_UTC = 0`.
 
 ### C05 · Zonas calculadas (Fibonacci) — **aprobado_por_francisco** (2026-11-18)
 > «Una zona es un **nivel calculado**. CreceTrader utiliza **fibo normal** para detectar zonas, pero las
@@ -115,6 +118,8 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
   «**extensión**» **sí** (`i0qXzL0eSYs` 00:15:11 «una extensión que iría confirmando la reversión»).
   «**si nos ofertan un 50%**» (`LFHkc5dUoLw` 00:02:19).
 - **Vocabulario del experto** (0 claims): «retroceso», «0.618», «0.786», «fibonacci».
+- **Dirección (resuelto por Francisco)**: en tendencia **bajista** se calcula **a la inversa** —
+  mismo rango, niveles **hacia abajo** (`zonas(..., direccion='bajista')`).
 
 ### C06 · Liquidez institucional — **aprobado_por_francisco** (2026-11-18)
 > «La liquidez es **el lugar donde tienen las órdenes los institucionales**. Generalmente ese cálculo se
