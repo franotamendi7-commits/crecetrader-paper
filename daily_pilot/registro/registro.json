@@ -402,6 +402,106 @@
       "transcript": "data_hist/jeOFS1TZYQA/jeOFS1TZYQA_transcript.json",
       "estado": "importado_db",
       "fuente": "store.db (reconciliacion Fase 0)"
+    },
+    "pCwjNPf36PY": {
+      "video_id": "pCwjNPf36PY",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=pCwjNPf36PY",
+      "detectado": "2026-11-18T22:00:40.312672+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/pCwjNPf36PY/pCwjNPf36PY_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "c9KMl8CWFWI": {
+      "video_id": "c9KMl8CWFWI",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=c9KMl8CWFWI",
+      "detectado": "2026-11-18T22:00:43.552669+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/c9KMl8CWFWI/c9KMl8CWFWI_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "S2AhXNvm95c": {
+      "video_id": "S2AhXNvm95c",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=S2AhXNvm95c",
+      "detectado": "2026-11-18T22:00:46.255452+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/S2AhXNvm95c/S2AhXNvm95c_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "J-x4ajzssEg": {
+      "video_id": "J-x4ajzssEg",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=J-x4ajzssEg",
+      "detectado": "2026-11-18T22:02:41.200619+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/J-x4ajzssEg/J-x4ajzssEg_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "096wAcVObwM": {
+      "video_id": "096wAcVObwM",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=096wAcVObwM",
+      "detectado": "2026-11-18T22:02:44.212177+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/096wAcVObwM/096wAcVObwM_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "K5k1Izu8HpI": {
+      "video_id": "K5k1Izu8HpI",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=K5k1Izu8HpI",
+      "detectado": "2026-11-18T22:02:47.172299+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/K5k1Izu8HpI/K5k1Izu8HpI_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "KGdLkKB9F3I": {
+      "video_id": "KGdLkKB9F3I",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=KGdLkKB9F3I",
+      "detectado": "2026-11-18T22:02:49.900596+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/KGdLkKB9F3I/KGdLkKB9F3I_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "f_fNGA5bg54": {
+      "video_id": "f_fNGA5bg54",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=f_fNGA5bg54",
+      "detectado": "2026-11-18T22:02:52.664569+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/f_fNGA5bg54/f_fNGA5bg54_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "7BW8iO89LAw": {
+      "video_id": "7BW8iO89LAw",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=7BW8iO89LAw",
+      "detectado": "2026-11-18T22:02:55.539194+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/7BW8iO89LAw/7BW8iO89LAw_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "UaYwhePm5o4": {
+      "video_id": "UaYwhePm5o4",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=UaYwhePm5o4",
+      "detectado": "2026-11-18T22:02:58.445046+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/UaYwhePm5o4/UaYwhePm5o4_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
     }
   }
 }

@@ -57,5 +57,6 @@
   "propuesta": {
     "resumen": "El motor aplica C01-C12 sobre la transcripcion. Sin validar contra el grafico.",
     "estado": "PAPER_ONLY"
-  }
+  },
+  "precio_referencia": 64620
 }

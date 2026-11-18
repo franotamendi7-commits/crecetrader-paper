@@ -1,0 +1,142 @@
+{
+  "video_id": "7BW8iO89LAw",
+  "analizado_at": "2026-11-18T22:02:58Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 755,
+  "sha256_transcript": "bd5add4a6b518426329962efc1581d9702bdef6b237a1c9fbbc88cca4c41b828",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/7BW8iO89LAw/7BW8iO89LAw_transcript.json",
+  "instrumentos": {
+    "BTC": 21,
+    "ETH": 3
+  },
+  "temporalidades": {
+    "Daily": 10,
+    "4H": 22,
+    "Weekly": 3
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 3,
+      "primeros": [
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    },
+    "holders": {
+      "menciones": 15,
+      "primeros": [
+        "00:05",
+        "00:05",
+        "00:05",
+        "00:08",
+        "00:08",
+        "00:08"
+      ]
+    },
+    "tendencia": {
+      "menciones": 5,
+      "primeros": [
+        "00:06",
+        "00:06",
+        "00:06",
+        "00:06",
+        "00:06"
+      ]
+    },
+    "entrada": {
+      "menciones": 30,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "reversal": {
+      "menciones": 9,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:04",
+        "00:04",
+        "00:04"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "82281",
+      "menciones": 15,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "totalmente detenido. ¿En qué precio? 82,281."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "82,281."
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "82,281. Vale, ya sabes que la zona de compras"
+        }
+      ]
+    },
+    {
+      "valor": "83366",
+      "menciones": 14,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "siendo para el día de hoy este precio junto con los 83,366."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "junto con los 83,366."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "junto con los 83,366. Son dos precios que los tienes ahí"
+        }
+      ]
+    },
+    {
+      "valor": "82563",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:04",
+          "contexto": "totalmente detenido en los 82,281. Lo ves ahora mismo, 82,563."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "Lo ves ahora mismo, 82,563."
+        },
+        {
+          "minuto": "00:04",
+          "contexto": "Lo ves ahora mismo, 82,563. Es decir, si fuese a entrar líquidez, lo"
+        }
+      ]
+    },
+    {
+      "valor": "82286",
+      "menciones": 1,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "calculado de hace tiempo, y también los 82,286,"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

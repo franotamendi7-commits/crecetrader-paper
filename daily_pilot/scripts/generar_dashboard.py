@@ -36,6 +36,33 @@ def esc(s):
     return html.escape(str(s or ''))
 
 
+def grafiquito(niveles, precio_ref):
+    """Mini SVG: niveles como lineas + precio de referencia."""
+    if not niveles:
+        return ''
+    vals = [n['precio'] for n in niveles] + ([precio_ref] if precio_ref else [])
+    lo, hi = min(vals), max(vals)
+    if hi <= lo:
+        hi = lo + 1
+    W, H, PAD = 960, 150, 8
+    def y(v):
+        return H - PAD - (v - lo) / (hi - lo) * (H - 2 * PAD)
+    lineas = ''
+    for n in niveles:
+        yy = y(n['precio'])
+        lineas += (f'<line x1="0" y1="{yy:.1f}" x2="{W}" y2="{yy:.1f}" stroke="#30363d" stroke-width="1"/>'
+                   f'<text x="{W-4}" y="{yy-3:.1f}" fill="#8b949e" font-size="10" text-anchor="end">'
+                   f'{int(n["precio"]):,}'.replace(',', '.') + '</text>')
+    if precio_ref:
+        yy = y(precio_ref)
+        lineas += (f'<line x1="0" y1="{yy:.1f}" x2="{W}" y2="{yy:.1f}" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4 3"/>'
+                   f'<text x="4" y="{yy-4:.1f}" fill="#f85149" font-size="10">ref</text>')
+    rango = f'{int(lo):,}'.replace(',', '.') + ' – ' + f'{int(hi):,}'.replace(',', '.')
+    return (f'<div class="graf"><div class="muted">rango {rango}</div>'
+            f'<svg viewBox="0 0 {W} {H}" preserveAspectRatio="none" style="width:100%;height:150px">'
+            f'{lineas}</svg></div>')
+
+
 def tarjeta_hoy(info, estado):
     titulo = esc(info.get('titulo') or (estado.get('video') or {}).get('titulo') or 'sin datos')
     vid = esc(info.get('video_id') or (estado.get('video') or {}).get('video_id') or '-')
@@ -43,7 +70,17 @@ def tarjeta_hoy(info, estado):
     niv = info.get('niveles_top') or []
     def fmt(x):
         return f'{int(x):,}'.replace(',', '.')
-    niveles = ''.join(f'<span class="pill">{fmt(n["precio"])}</span>' for n in niv[:6]) or '<span class="muted">sin niveles</span>'
+    # orden: de mayor a menor precio; porcentual: distancia al precio de referencia
+    precio_ref = (info.get('precio_referencia') or 0)
+    filas = sorted(niv, key=lambda n: -n['precio'])
+    niveles = ''
+    for n in filas[:6]:
+        p = n['precio']
+        pct = (f'{(p - precio_ref) / precio_ref * 100:+.1f}%' if precio_ref else '')
+        niveles += (f'<div class="nivel"><span class="pill">{fmt(p)}</span>'
+                    f'<span class="pct">{pct}</span></div>')
+    if not niveles:
+        niveles = '<span class="muted">sin niveles</span>'
     situ = esc((estado.get('situacion') or {}).get('frase') or '')
     return f'''
   <section class="card hero">
@@ -51,11 +88,12 @@ def tarjeta_hoy(info, estado):
       <div>
         <div class="kicker">HOY · {pub}</div>
         <h1>{titulo}</h1>
-        <div class="muted">fuente: RSS CreceTrader</div>
+        <div class="muted">precio de referencia del video: {fmt(precio_ref) if precio_ref else 'NO_DISPONIBLE'}</div>
       </div>
       <div class="badge">PAPER ONLY<br><span>no ejecuta</span></div>
     </div>
-    <div class="niveles"><span class="k niv-label">NIVELES DICHO</span>{niveles}</div>
+    <div class="niveles-col">{niveles}</div>
+    {grafiquito(filas[:8], precio_ref)}
     <div class="situ">{situ}</div>
   </section>'''
 
@@ -121,7 +159,10 @@ h1{margin:4px 0 2px;font-size:21px;line-height:1.25}
 .badge{background:#1f6feb22;border:1px solid #1f6feb;color:#58a6ff;border-radius:8px;padding:8px 12px;
        text-align:center;font-size:11px;letter-spacing:.06em;white-space:nowrap}
 .badge span{color:var(--muted)}
-.niveles{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 8px}
+.niveles-col{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 8px;align-items:center}
+.nivel{display:flex;align-items:baseline;gap:6px}
+.pct{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.graf{margin:10px 0 4px}
 .pill{background:#21262d;border:1px solid var(--bd);border-radius:20px;padding:3px 10px;
       font-variant-numeric:tabular-nums;font-size:13px}
 .situ{font-size:14px;margin-top:6px}

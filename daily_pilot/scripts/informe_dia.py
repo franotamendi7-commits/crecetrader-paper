@@ -55,6 +55,14 @@ def main() -> int:
             'estado': 'PAPER_ONLY',
         },
     }
+    # precio de referencia (del mercado que ya conocio el video)
+    dd = json.loads((PILOT / 'datos' / 'dashboard_data.json').read_text()) if (PILOT / 'datos' / 'dashboard_data.json').exists() else {}
+    ref = None
+    for m in (dd.get('mercado') or {}).values():
+        v = (m.get('precio_referencia') or {}).get('valor')
+        if v:
+            ref = v; break
+    out['precio_referencia'] = ref
     p = PILOT / 'datos' / 'informe_hoy.json'
     p.write_text(json.dumps(out, ensure_ascii=False, indent=2))
     print(f'{vid} · {len(niv)} niveles · {p}')

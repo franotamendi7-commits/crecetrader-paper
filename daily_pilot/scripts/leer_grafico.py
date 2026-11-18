@@ -36,9 +36,31 @@ Miralo y respondé SOLO JSON:
 "niveles_visibles": [{{"precio": 0.0, "tipo": "soporte|resistencia|calculado|NO_VISIBLE"}}],
 "vela_actual": "verde | roja | indecision | NO_VISIBLE",
 "observacion": "una frase corta"}}
+Si el grafico muestra una ESCALA DE NIVELES INTRADIA (lineas horizontales con valores arriba y abajo, tipo abanico de Fibonacci 0 a 1), anotá TODOS los valores en niveles_visibles con tipo "calculado".
 Reglas: si el eje usa punto como separador de miles, el precio es entero (75.471 = 75471). Si algo no se ve, NO_VISIBLE. No inventes."""
 
 LIMPIO = re.compile(r'^```(json)?|```$')
+
+def _phash(p: Path, s: int = 16) -> str:
+    """Hash perceptual para deduplicar frames casi iguales."""
+    try:
+        from PIL import Image
+        im = Image.open(p).convert('L').resize((s, s))
+        px = list(im.getdata())
+        avg = sum(px) / len(px)
+        return ''.join('1' if v > avg else '0' for v in px)
+    except Exception:
+        return ''
+
+def dedup(frames: list, umbral: int = 8) -> list:
+    """Descarta frames casi idénticos al anterior (ahorra llamadas y cuota)."""
+    out, prev = [], None
+    for f in frames:
+        h = _phash(f)
+        if prev and h and sum(a != b for a, b in zip(h, prev)) <= umbral:
+            continue
+        out.append(f); prev = h
+    return out
 
 def parsear(txt: str) -> dict | None:
     s = txt.strip()
@@ -83,9 +105,15 @@ def main() -> int:
     ap.add_argument('--frames-dir', required=True)
     ap.add_argument('--out', required=True)
     ap.add_argument('--limite', type=int, default=0)
+    ap.add_argument('--sin-dedup', action='store_true')
     a = ap.parse_args()
 
-    frames = sorted(Path(a.frames_dir).glob('*.jpg'))[:a.limite or None]
+    frames = sorted(Path(a.frames_dir).glob('*.jpg'))
+    if not a.sin_dedup:
+        crudos = len(frames)
+        frames = dedup(frames)
+        print(f'dedup: {crudos} -> {len(frames)} frames', flush=True)
+    frames = frames[:a.limite or None]
     print(f'frames: {len(frames)} · modelo: {MODELO}', flush=True)
     res = []
     for i, f in enumerate(frames, 1):

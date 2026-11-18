@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0.0",
   "migration_version": "1.0.0",
-  "run_at": "2026-11-18T11:32:27Z",
+  "run_at": "2026-11-18T22:02:59Z",
   "store_path": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db",
-  "store_sha256_pre": "e23b2241fccc04042ec641d70d36a7f1fca45a041cc98b9f78fef0651434b9aa",
+  "store_sha256_pre": "b9cd8caab76211ff58c54b557dfd3c3c25a8bb3fc2496d3f1650455e0848d1c6",
   "fuentes": {
-    "transcripciones": 42,
-    "vtt": 44,
+    "transcripciones": 52,
+    "vtt": 54,
     "analisis": 17,
     "progress": "/Users/franciscootamendi/YouTubeTradingAgent/experimental/results/historical_progress.json",
     "registro": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/registro/registro.json",
     "escenarios": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/datos/escenarios_s_GjovZxQqY.json"
   },
   "importacion": {
-    "videos": 42,
-    "cues": 34061,
+    "videos": 52,
+    "cues": 41389,
     "escenarios_manuales": 8,
-    "inserted": 16599,
+    "inserted": 5580,
     "updated": 0,
-    "unchanged": 17462,
+    "unchanged": 35809,
     "missing": 0,
     "rechazados": 0
   },
@@ -26,28 +26,24 @@
     "integrity_check": "ok",
     "foreign_key_check": 0,
     "timestamps_nulos": 0,
-    "metadata_conflicts": 116,
+    "metadata_conflicts": 127,
     "cue_history": 0
   },
   "hashes_store": {
-    "pre": "e23b2241fccc04042ec641d70d36a7f1fca45a041cc98b9f78fef0651434b9aa",
-    "post": "6826b7e148fe13da9ecf58841d6a0f30627b2bc191541252d7411cdcedc76976",
+    "pre": "b9cd8caab76211ff58c54b557dfd3c3c25a8bb3fc2496d3f1650455e0848d1c6",
+    "post": "9a7e485dab4788b6b0c7d2117cf11669b9b97d627672160dff380467b2fb6bc1",
     "nota": "post = sha256(store.db) medido antes de tocar .control/Manifiesto"
   },
   "pruebas": {
     "conteo_cues_17462": false,
     "conteo_videos_20": false,
     "integridad_ok": true,
-    "fk_limpias": true,
-    "conteo_videos_42": true
+    "fk_limpias": true
   },
   "backup": {
-    "backup": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db.bak-20261118T113227Z-22757",
+    "backup": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db.bak-20261118T220258Z-83555",
     "integrity": "ok",
-    "cues": 17462
+    "cues": 35809
   },
-  "hash_post_store": "6826b7e148fe13da9ecf58841d6a0f30627b2bc191541252d7411cdcedc76976",
-  "videos_post": 42,
-  "cues_post": 34061,
-  "claims_post": 6831
+  "hash_post_store": "9a7e485dab4788b6b0c7d2117cf11669b9b97d627672160dff380467b2fb6bc1"
 }
