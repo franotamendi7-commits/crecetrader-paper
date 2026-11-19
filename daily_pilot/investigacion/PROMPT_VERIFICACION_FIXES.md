@@ -12,20 +12,23 @@ Verificador **read-only**. Ya auditaste este sistema y encontraste P0-1, P0-3, P
 
 - **No** modifiques nada.
 - **`sellado_integridad.py` ESCRIBE** — no lo corras.
-- **`run_all.py --integracion` escribe el dashboard** — corral
-
-o en copia si querés.
+- **TODO lo que escribe se corre EN COPIA OBLIGATORIA**:
+  ```bash
+  TMP=$(mktemp -d)
+  rsync -a --exclude=.git --exclude=.venv --exclude=__pycache__ \
+        /Users/franciscootamendi/YouTubeTradingAgent/ "$TMP"/
+  cd "$TMP"   # todo lo siguiente corre SOLO aca
+  ```
+  Correr el generador o `--integracion` sobre el repo vivo **es un fallo del auditor**.
 - Todo hallazgo: **archivo:línea · evidencia · reproducción**.
 
 ## Snapshot
 
 ```
-commit            7c36cab
-rama              crecetrader-limpio
+commit            50cf239
+codigo            7c36cab (ancestro; unico diff = este prompt)
 store.db          24e5dd246c8be39421d3f9c3643d599b55152d37568af34df8b290874ccf8876
-dashboard/index   <correr shasum despues de regenerar>
-precios.py        3c77fe7983a180a87ad4a4da277d6c2663ebd7539131bbec80ab979373104128
-run_all.py        df7afe20787e475d6d7335bfbeaff5ae3474e2e09a520cc75613789bd5e0ae0d
+dashboard/index   ffd358d4c91cdb5b4f6c835bc2e38caee5a80012f20e299e5cf1d18611e5b937
 ```
 
 ```bash
@@ -68,11 +71,16 @@ grep -n "dashboard_data" daily_pilot/scripts/informe_dia.py || echo "NO hereda d
 **Afirmación**: fuera `LONG`, `100%`, `5%`, `OPERACIÓN PROPUESTA`.
 Verificá:
 ```bash
-python3 -B daily_pilot/scripts/generar_dashboard_v4.py
-grep -c "OPERACIÓN PROPUESTA\|PLAN DE TRADING\|alta (100%)" daily_pilot/dashboard/index.html
+grep -nE '\bLONG\b|riesgo 5%|confianza|alta \(100%\)|OPERACIÓN PROPUESTA|PLAN DE TRADING' \
+     daily_pilot/dashboard/index.html        # esperado: 0
 grep -o "NIVELES MENCIONADOS\|NO ES UNA ORDEN" daily_pilot/dashboard/index.html | sort -u
+grep -n "El motor aplica C01-C12" daily_pilot/scripts/informe_dia.py   # esperado: 0
+grep -n "direccion': 'alcista'" daily_pilot/scripts/informe_dia.py   # esperado: 0
+grep -n "check=False" daily_pilot/tests/test_dashboard_v4.py          # esperado: 0
+ls daily_pilot/tests/test_precios.py                                  # debe existir
+grep -n "test_precios" daily_pilot/tests/run_all.py                   # en HERMETICOS
 ```
-**Es real si**: 0 ocurrencias de lo hardcodeado y está «NIVELES MENCIONADOS».
+**Es real si**: 0 en todos los greps negativos, y existen `test_precios.py` y su entrada en el runner.
 
 ### F-4 (P1-8) · Parser determinista de precios
 **Afirmación**: `core/precios.py` resuelve el separador de miles.

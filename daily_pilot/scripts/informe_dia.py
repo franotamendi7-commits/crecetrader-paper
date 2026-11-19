@@ -46,7 +46,7 @@ def main() -> int:
         'papel_only': True,
         'niveles_top': [{'precio': int(p), 'menciones': n} for p, n in niv],
         'propuesta': {
-            'resumen': 'El motor aplica C01-C12 sobre la transcripcion. Sin validar contra el grafico.',
+            'resumen': 'LO QUE DICE EL CANAL (transcripcion). El metodo C01-C12 lo aplica el trader; este panel no ejecuta el motor.',
             'estado': 'PAPER_ONLY',
         },
     }
@@ -79,7 +79,7 @@ def main() -> int:
         _niv = (a.get('niveles_explicitos_top') or [])[:3]
         out['escenarios'] = [
             {'escenario': {'id': f'ESC-{vid}-{i}', 'instrumento': inst[0] if inst else '?',
-                           'direccion': 'alcista', 'nivel': {'valor': int(float(x['valor']))},
+                           'direccion': None, 'nivel': {'valor': int(float(x['valor']))},  # no se infiere direccion
                            'justificacion': ((x.get('ejemplos') or [{}])[0].get('contexto') or '')[:120],
                            'timestamp_explicacion': ''}}
             for i, x in enumerate(_niv)

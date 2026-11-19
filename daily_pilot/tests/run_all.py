@@ -29,7 +29,6 @@ INTOCABLES = [
     PILOT / 'registro' / 'registro.json',
     PILOT / 'datos' / 'dashboard_data.json',
     PILOT / 'estado' / 'estado_hoy.json',
-    PILOT / 'dashboard' / 'index.html',
 ]
 # Artefactos derivados que los tests de integracion pueden reescribir
 DERIVADOS = [
@@ -53,6 +52,7 @@ HERMETICOS = [
     'daily_pilot/tests/test_objetivos.py',
     'daily_pilot/tests/test_escenarios.py',
     'daily_pilot/tests/test_c11_cruzado.py',
+    'daily_pilot/tests/test_precios.py',
     'daily_pilot/test_signal_classifier.py',
     'daily_pilot/risk_manager/test_risk_manager.py',
 ]

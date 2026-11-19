@@ -23,6 +23,11 @@ def parsear_precio(s: str) -> float | None:
     t = str(s).strip().replace(' ', '')
     if not t:
         return None
+    # miles con separador Y decimales: 1.209,5 | 78.580,50
+    m = re.fullmatch(r'(\d{1,3}(?:[.,]\d{3})+)[.,](\d+)', t)
+    if m:
+        entero = re.sub(r'[.,]', '', m.group(1))
+        return float(f'{entero}.{m.group(2)}')
     # miles con punto o coma
     if re.fullmatch(r'\d{1,3}(?:[.,]\d{3})+', t):
         return float(re.sub(r'[.,]', '', t))
