@@ -12,7 +12,6 @@ from __future__ import annotations
 import html
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[2]
@@ -208,7 +207,7 @@ def main() -> int:
     titulo = esc(info.get('titulo') or (estado.get('video') or {}).get('titulo') or 'sin datos')
     vid = esc(info.get('video_id') or '—')
     pub = esc((info.get('publicado') or '')[:10])
-    ts = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%MZ')
+    ts = str(info.get('publicado') or '')[:16].replace('T', ' ') or 'sin fecha'  # determinista
 
     doc = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

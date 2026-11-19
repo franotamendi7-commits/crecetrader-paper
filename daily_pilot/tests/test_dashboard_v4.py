@@ -33,8 +33,13 @@ def caso(nombre, cond, detalle=''):
         print(f'FALLO | {nombre} | {detalle}')
 
 
-# regenerar
+# idempotencia: regenerar NO debe cambiar el hash
+import hashlib
+def _sha(): return hashlib.sha256(HTML.read_bytes()).hexdigest()
+pre = _sha()
 subprocess.run([sys.executable, str(GEN)], capture_output=True, text=True, check=False)
+post = _sha()
+caso('idempotente', pre == post, f'{pre[:8]} == {post[:8]}')
 h = HTML.read_text()
 
 caso('existe', HTML.exists(), str(len(h)))
