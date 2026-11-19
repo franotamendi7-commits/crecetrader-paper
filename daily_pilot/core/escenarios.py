@@ -27,27 +27,37 @@ MENOR_FIABILIDAD = 'MENOR_FIABILIDAD'
 CAUTELA = 'CAUTELA'
 RECHAZADO = 'RECHAZADO'
 
-# Confianza segun en cuantos marcos confluye la zona (C10).
-CONFIANZA_POR_MARCOS = {3: 1.00, 2: 0.75, 1: 0.50}
-RIESGO_MAX = 0.05          # C11: tope 5%
+# C10/C11 — DOS COSAS DISTINTAS (corregido con Francisco, 2026-11-19):
+# 1) NIVELES DE ENTRADA: fibo del impulso (punto cero -> fin de tendencia).
+#    De CreceTrader: 50% / 61.8% ('Evento 1') / 100% ('Evento 2') / 125% / 150%.
+NIVELES_IMPULSO = (0.50, 0.618, 1.00, 1.25, 1.50)
+# 2) RIESGO: decision de capital de Francisco (NO del canal).
+#    'En tendencia pongo hasta un 5% de la cuenta.'
+RIESGO_MAX_TENDENCIA = 0.05
+RIESGO_MAX_CORRECCION = 0.02
+# La confianza ya NO se deriva de marcos; la asigna el trader. Default conservador.
+CONF_DEFECTO = 0.50
 
 
-def riesgo_total(confianza: float) -> float:
-    """C11 (H-07): **riesgo = confianza x 5%**, con tope 5%.
-    Unica formula compartida con risk_manager.py."""
-    return round(min(max(float(confianza), 0.0), 1.0) * RIESGO_MAX, 4)
+def riesgo_total(confianza: float, correccion: bool = False) -> float:
+    """C11: **riesgo = confianza x tope**. Tope 5% tendencia / 2% correccion.
+    El tope es de Francisco (su capital); la confianza la asigna el trader."""
+    tope = RIESGO_MAX_CORRECCION if correccion else RIESGO_MAX_TENDENCIA
+    return round(min(max(float(confianza), 0.0), 1.0) * tope, 4)
 
 
 def evaluar(marcos_confluentes: int,
             correccion_dentro_de_tendencia: bool = False,
             contradicho: bool = False) -> dict:
     """Devuelve escenario, confianza y riesgo sugerido."""
-    conf = CONFIANZA_POR_MARCOS.get(marcos_confluentes, 0.0)
-    if contradicho:
-        conf *= 0.5            # 4H validado pero contradicho en W/D: confianza a la mitad
-    if correccion_dentro_de_tendencia:
-        conf *= 0.75           # correccion dentro de tendencia: mas cautela
-    riesgo = riesgo_total(conf)
+    if marcos_confluentes <= 0:
+        return {'escenario': RECHAZADO, 'confianza': 0.0, 'confianza_base': 0.0,
+                'riesgo_sugerido': 0.0, 'marcos_confluentes': marcos_confluentes,
+                'stop': 'nada', 'profit': 'nada', 'paper_only': PAPER_ONLY,
+                'motivo': 'sin marcos confluentes'}
+    conf = CONF_DEFECTO  # no se infiere de marcos; la asigna el trader
+    es_corr = bool(correccion_dentro_de_tendencia)
+    riesgo = riesgo_total(conf, correccion=es_corr)
     if conf == 0.0:
         esc, extra = RECHAZADO, {}
     elif correccion_dentro_de_tendencia:
@@ -59,7 +69,7 @@ def evaluar(marcos_confluentes: int,
     return {
         'escenario': esc,
         'confianza': round(conf, 4),
-        'confianza_base': CONFIANZA_POR_MARCOS.get(marcos_confluentes, 0.0),
+        'confianza_base': conf,
         'riesgo_sugerido': riesgo,
         'marcos_confluentes': marcos_confluentes,
         'stop': 'si no llega: stop y luego break even',

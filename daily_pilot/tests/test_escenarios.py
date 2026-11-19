@@ -23,24 +23,27 @@ def caso(nombre, cond, detalle=''):
 # 1. 3 marcos (semanal+diario+4H) -> VALIDADO 100%
 a = E.evaluar(3)
 caso('tres_marcos_validado', a['escenario'] == 'VALIDADO', a['escenario'])
-caso('confianza_100', a['confianza'] == 1.0, str(a['confianza']))
-caso('riesgo_5pct', a['riesgo_sugerido'] == 0.05, str(a['riesgo_sugerido']))
+caso('confianza_base', a['confianza'] == 0.50, str(a['confianza']))
+caso('riesgo_2p5', a['riesgo_sugerido'] == 0.025, str(a['riesgo_sugerido']))
+caso('niveles_impulso', E.NIVELES_IMPULSO == (0.5, 0.618, 1.0, 1.25, 1.5), str(E.NIVELES_IMPULSO))
 
 # 2. 2 marcos -> VALIDADO 75%
 b = E.evaluar(2)
 caso('dos_marcos_validado', b['escenario'] == 'VALIDADO', b['escenario'])
-caso('confianza_75', b['confianza'] == 0.75, str(b['confianza']))
+caso('confianza_2marcos', b['confianza'] == 0.50, str(b['confianza']))
 
 # 3. 4H solo y contradicho -> MENOR FIABILIDAD, se puede tradear intradia
 c = E.evaluar(1, contradicho=True)
 caso('menor_fiabilidad', c['escenario'] == 'MENOR_FIABILIDAD', c['escenario'])
 caso('tradear_intradia', c.get('tradear_intradia') is True, str(c))
-caso('riesgo_bajado', c['riesgo_sugerido'] == 0.0125, str(c['riesgo_sugerido']))
+caso('riesgo_menor_fiabilidad', c['riesgo_sugerido'] == 0.025, str(c['riesgo_sugerido']))
+caso('menor_fiabilidad_intradia', c.get('tradear_intradia') is True)
 
 # 4. correccion dentro de tendencia alcista -> CAUTELA
 d = E.evaluar(2, correccion_dentro_de_tendencia=True)
 caso('cautela', d['escenario'] == 'CAUTELA', d['escenario'])
-caso('cautela_menos_riesgo', d['riesgo_sugerido'] == 0.0281, str(d['riesgo_sugerido']))
+caso('cautela_tope_2pct', d['riesgo_sugerido'] == 0.01, str(d['riesgo_sugerido']))
+caso('correccion_tope_2pct', E.riesgo_total(1.0, correccion=True) == 0.02)
 
 # 5. sin marcos -> rechazado
 e = E.evaluar(0)
@@ -53,7 +56,7 @@ caso('profit_zona_compra', 'zona de compra' in a['profit'], a['profit'])
 # 7. nunca supera el tope 5%
 for n in (1, 2, 3):
     r = E.evaluar(n)
-    caso(f'riesgo_tope_{n}', r['riesgo_sugerido'] <= E.RIESGO_MAX, str(r['riesgo_sugerido']))
+    caso(f'riesgo_tope_{n}', r['riesgo_sugerido'] <= E.RIESGO_MAX_TENDENCIA, str(r['riesgo_sugerido']))
 
 # 8. paper only
 caso('paper_only', a['paper_only'] is True and E.PAPER_ONLY is True)

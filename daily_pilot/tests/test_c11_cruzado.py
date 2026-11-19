@@ -33,13 +33,13 @@ for conf in (0.02, 0.25, 0.40, 0.50, 0.75, 0.99, 1.00, 1.50):
 
 # 2. escenarios
 a = E.evaluar(3)
-caso('esc_validado_5pct', a['riesgo_sugerido'] == 0.05, str(a['riesgo_sugerido']))
+caso('esc_validado_2p5', a['riesgo_sugerido'] == 0.025, str(a['riesgo_sugerido']))
 b = E.evaluar(2)
-caso('esc_dos_375', b['riesgo_sugerido'] == 0.0375, str(b['riesgo_sugerido']))
+caso('esc_dos_2p5', b['riesgo_sugerido'] == 0.025, str(b['riesgo_sugerido']))
 c = E.evaluar(1, contradicho=True)
-caso('esc_contradecido_125', c['riesgo_sugerido'] == 0.0125, str(c['riesgo_sugerido']))
+caso('esc_contradecido_2p5', c['riesgo_sugerido'] == 0.025, str(c['riesgo_sugerido']))
 d = E.evaluar(2, correccion_dentro_de_tendencia=True)
-caso('esc_cautela_281', d['riesgo_sugerido'] == 0.0281, str(d['riesgo_sugerido']))
+caso('esc_cautela_1p', d['riesgo_sugerido'] == 0.01, str(d['riesgo_sugerido']))
 
 # 3. risk_manager: MISMO valor total que escenarios para la misma confianza
 def _senal(**kw):
@@ -63,7 +63,7 @@ caso('rm_2entradas_total', abs(r2['riesgo_pct_total'] - 0.05) < 1e-4, str(r2['ri
 
 # 5. nunca supera el 5%
 for n in (1, 2, 3):
-    caso(f'esc_tope_{n}', E.evaluar(n)['riesgo_sugerido'] <= E.RIESGO_MAX)
+    caso(f'esc_tope_{n}', E.evaluar(n)['riesgo_sugerido'] <= E.RIESGO_MAX_TENDENCIA)
 caso('rm_tope', rm.evaluar([_senal(confidence=9.0)])['senales'][0]['risk']['riesgo_pct_total'] <= 0.05)
 
 # 5b. P1-2: Manager toma la confianza del escenario
