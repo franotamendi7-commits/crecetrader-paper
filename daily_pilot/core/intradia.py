@@ -24,27 +24,25 @@ N_DEFAULT = 4            # n=4 -> 9 niveles (-1.00..+1.00); n=3 -> 7 (hasta +/-0
 
 
 def abanico(precio_base: float, paso: float = PASO, n: int = N_DEFAULT,
-            hora_ancla: int = HORA_ANCLA, rango: float | None = None) -> dict:
+            hora_ancla: int = HORA_ANCLA, unidad: str = 'pct') -> dict:
     """Niveles intradia alrededor del **precio de cierre del dia** (punto cero).
 
-    `rango` es la amplitud del abanico: con `rango=None` el abanico es en **unidades**
-    (0, +/-0.25 ... +/-1.00) alrededor del cierre; con `rango` expresado en el mismo
-    tipo de precio, el abanico es +/- `rango` (p.ej. rango=1% -> +/-1% de abanico).
+    **C04 (resuelto por Francisco, 2026-11-19)**: el indicador de CreceTrader
+    simula a Fibonacci y **se maneja en PORCENTAJES, no en dolares**.
+    `paso = 0.25` significa **0,25%** del precio base; `nivel +1.00` = **+1%**.
 
-    **PREGUNTA ABIERTA (H-08)**: la **unidad** de "0.25 / 1.00" no esta definida por
-    Francisco. No se inventa: hasta que la defina, el abanico se expresa en unidades.
+    Ejemplo con punto cero 64.000:
+        -0,25% -> 63.840 · -0,50% -> 63.680 · ... · +1,00% -> 64.640
     """
-    base = {'precio_base': round(precio_base, 4), 'hora_ancla': hora_ancla, 'paso': paso,
-            'rango': rango, 'unidad': 'unidades (definir: %, $, ATR...)', 'paper_only': PAPER_ONLY}
-    if rango is None:
-        base['niveles'] = [round(precio_base + paso * i, 4) for i in range(-n, n + 1)]
-    else:
-        base['niveles'] = [round(precio_base * (1 + paso * i * rango), 4) for i in range(-n, n + 1)]
-    base['n_niveles'] = len(base['niveles'])
-    base['tipo'] = 'scalping'
-    base['confirmacion_4h_o_diario'] = False
-    base['se_resetea'] = 'cada dia al precio de la hora ancla'
-    return base
+    if unidad == 'pct':
+        niveles = [round(precio_base * (1 + paso * i / 100), 4) for i in range(-n, n + 1)]
+    else:  # 'abs' (legado, dolares)
+        niveles = [round(precio_base + paso * i, 4) for i in range(-n, n + 1)]
+    return {'precio_base': round(precio_base, 4), 'hora_ancla': hora_ancla, 'paso': paso,
+            'unidad': 'porcentaje del precio (0.25 = 0,25%)', 'niveles': niveles,
+            'n_niveles': len(niveles), 'tipo': 'scalping',
+            'confirmacion_4h_o_diario': False,
+            'se_resetea': 'cada dia al precio de la hora ancla', 'paper_only': PAPER_ONLY}
 
 
 def resetear(nuevo_precio: float, **kw) -> dict:

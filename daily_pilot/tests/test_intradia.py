@@ -24,9 +24,9 @@ def caso(nombre, cond, detalle=''):
 a = I.abanico(64000.0)
 caso('nueve_niveles', len(a['niveles']) == 9, len(a['niveles']))
 caso('punto_cero_en_medio', a['niveles'][4] == 64000.0, str(a['niveles']))
-caso('escala_025', a['niveles'][2] == 63999.5 and a['niveles'][6] == 64000.5, str(a['niveles']))
-caso('incluye_100', 63999.0 in a['niveles'] and 64001.0 in a['niveles'], str(a['niveles']))
-caso('incluye_075', 63999.25 in a['niveles'] and 64000.75 in a['niveles'], str(a['niveles']))
+caso('es_050pct', abs(a['niveles'][6] - 64320.0) < 0.01, str(a['niveles']))
+caso('incluye_100pct', abs(a['niveles'][8] - 64640.0) < 0.01, str(a['niveles']))
+caso('incluye_menos100pct', abs(a['niveles'][0] - 63360.0) < 0.01, str(a['niveles']))
 
 # 2. con n=3 -> 7 niveles (hasta +/-0.75)
 b = I.abanico(64000.0, n=3)
