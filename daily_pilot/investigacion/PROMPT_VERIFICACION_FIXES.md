@@ -25,10 +25,10 @@ Verificador **read-only**. Ya auditaste este sistema y encontraste P0-1, P0-3, P
 ## Snapshot
 
 ```
-commit            50cf239
-codigo            7c36cab (ancestro; unico diff = este prompt)
+commit            ab7b9d8
 store.db          24e5dd246c8be39421d3f9c3643d599b55152d37568af34df8b290874ccf8876
-dashboard/index   ffd358d4c91cdb5b4f6c835bc2e38caee5a80012f20e299e5cf1d18611e5b937
+dashboard/index   <shasum del artefacto real>
+informe_hoy.json  <shasum del artefacto real, ya regenerado>
 ```
 
 ```bash
@@ -81,6 +81,22 @@ ls daily_pilot/tests/test_precios.py                                  # debe exi
 grep -n "test_precios" daily_pilot/tests/run_all.py                   # en HERMETICOS
 ```
 **Es real si**: 0 en todos los greps negativos, y existen `test_precios.py` y su entrada en el runner.
+
+### F-5 · El ARTEFACTO real (no solo el código)
+El código puede estar corregido y el JSON viejo. Verificá el **artefacto**:
+```bash
+python3 - <<'EOF'
+import json
+d=json.load(open('daily_pilot/datos/informe_hoy.json'))
+r=d.get('propuesta',{}).get('resumen','')
+dirs=[e.get('escenario',{}).get('direccion') for e in (d.get('escenarios') or [])]
+print('resumen ok:', 'C01-C12' not in r or 'el trader' in r)
+print('direcciones:', dirs, '-> ok si todas None')
+print('precio:', d.get('precio_referencia'), '|', d.get('precio_procedencia'))
+EOF
+```
+**Es real si**: el resumen no afirma que el motor corre, las direcciones son `None`
+y el precio tiene procedencia del último video.
 
 ### F-4 (P1-8) · Parser determinista de precios
 **Afirmación**: `core/precios.py` resuelve el separador de miles.

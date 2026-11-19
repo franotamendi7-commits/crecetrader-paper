@@ -55,7 +55,7 @@
     }
   ],
   "propuesta": {
-    "resumen": "El motor aplica C01-C12 sobre la transcripcion. Sin validar contra el grafico.",
+    "resumen": "LO QUE DICE EL CANAL (transcripcion). El metodo C01-C12 lo aplica el trader; este panel no ejecuta el motor.",
     "estado": "PAPER_ONLY"
   },
   "precio_referencia": 65520.0,
@@ -92,7 +92,7 @@
       "escenario": {
         "id": "ESC-cH2KY5vnsVQ-0",
         "instrumento": "BTC",
-        "direccion": "alcista",
+        "direccion": null,
         "nivel": {
           "valor": 65520
         },
@@ -104,7 +104,7 @@
       "escenario": {
         "id": "ESC-cH2KY5vnsVQ-1",
         "instrumento": "BTC",
-        "direccion": "alcista",
+        "direccion": null,
         "nivel": {
           "valor": 56750
         },
@@ -116,7 +116,7 @@
       "escenario": {
         "id": "ESC-cH2KY5vnsVQ-2",
         "instrumento": "BTC",
-        "direccion": "alcista",
+        "direccion": null,
         "nivel": {
           "valor": 61247
         },
