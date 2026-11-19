@@ -79,14 +79,13 @@ def plan(info):
     ent = niv.get('valor') or 0
     pct = f'{(ent-ref)/ref*100:+.1f}%' if ref and ent else ''
     return f'''<div class="panel">
-      <div class="panel-h">PLAN DE TRADING <span class="tag">LONG</span></div>
-      <div class="fila"><span>entrada</span><b>{fmt(ent) if ent else "—"}</b><span class="pct">{pct}</span></div>
-      <div class="alerta">⚠ STOP SIN DEFINIR — C08 lo cierra, no lo inventa</div>
-      <div class="fila"><span>objetivo</span><b>extensiones C05 (50/100/150/200%)</b></div>
-      <div class="fila"><span>confianza</span><b>alta (100%) · riesgo 5%</b></div>
+      <div class="panel-h">NIVELES MENCIONADOS (no es un plan)</div>
+      <div class="fila"><span>nivel citado</span><b>{fmt(ent) if ent else "—"}</b><span class="pct">{pct}</span></div>
+      <div class="alerta">⚠ NO ES UNA ORDEN — el nivel salio de la transcripcion.
+      La decision la toma el trader.</div>
       <div class="nota">{esc(e.get('justificacion') or '')[:150]}</div>
-      <div class="nota leyenda">C05 = retrocesos/extensiones fibo · C08 = invalidacion (no-ocurrencia
-      del cambio) · C02 = 30% oferta / 70% confirmacion. Paper only, sin feed.</div>
+      <div class="nota leyenda">C05 = retrocesos/extensiones fibo · C08 = invalidacion ·
+      C02 = 30% oferta / 70% confirmacion. Paper only, sin feed.</div>
     </div>'''
 
 
@@ -119,10 +118,10 @@ def risk(info):
 
 def decision(info, estado):
     esc_ = (info.get('escenarios') or [{}])[0].get('escenario') or {}
-    return f'''<div class="panel"><div class="panel-h">DECISIÓN</div>
-      <div class="verdict ok">OPERACIÓN PROPUESTA</div>
-      <div class="nota">motivo: {esc(esc_.get('justificacion') or '')[:110]}</div>
-      <div class="nota">estado: <b>EN OBSERVACIÓN</b> · paper only</div>
+    return f'''<div class="panel"><div class="panel-h">LECTURA DEL DÍA</div>
+      <div class="verdict">LO QUE DICE EL CANAL</div>
+      <div class="nota">{esc(esc_.get('justificacion') or '')[:130]}</div>
+      <div class="nota">El metodo (C01-C12) y la decision son del trader. Paper only.</div>
     </div>'''
 
 

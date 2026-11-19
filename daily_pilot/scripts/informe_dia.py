@@ -15,6 +15,7 @@ BASE = Path(__file__).resolve().parents[2]
 PILOT = BASE / 'daily_pilot'
 sys.path.insert(0, str(PILOT / 'knowledge'))
 sys.path.insert(0, str(PILOT / 'core'))
+sys.path.insert(0, str(PILOT / 'core'))
 import store as S
 
 def cargar_ultimo():
@@ -27,17 +28,11 @@ def niveles_del_video(video_id: str):
     c = S.conectar()
     filas = c.execute("SELECT texto FROM claims WHERE video_id=?", (video_id,)).fetchall()
     c.close()
-    import re
+    from precios import precios_de_texto
     nums = {}
-    for (t,) in filas:
-        for m in re.finditer(r'(?<![\d.])(\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?)(?![\d])', t or ''):
-            s = m.group(1)
-            try:
-                v = float(s.replace('.', '').replace(',', '')) if s.count('.') > 1 or ',' in s else float(s.replace(',', '.'))
-            except ValueError:
-                continue
-            if v > 1000:
-                nums[v] = nums.get(v, 0) + 1
+    for (tt,) in filas:
+        for v in precios_de_texto(tt):
+            nums[v] = nums.get(v, 0) + 1
     return sorted(nums.items(), key=lambda x: -x[1])[:12]
 
 def main() -> int:
@@ -55,14 +50,20 @@ def main() -> int:
             'estado': 'PAPER_ONLY',
         },
     }
-    # precio de referencia (del mercado que ya conocio el video)
-    dd = json.loads((PILOT / 'datos' / 'dashboard_data.json').read_text()) if (PILOT / 'datos' / 'dashboard_data.json').exists() else {}
+    # PRECIO: solo si el ULTIMO video lo dice. Si no -> NO_DISPONIBLE (no heredar del historico).
+    from precios import precios_de_texto
     ref = None
-    for m in (dd.get('mercado') or {}).values():
-        v = (m.get('precio_referencia') or {}).get('valor')
-        if v:
-            ref = v; break
+    tp = BASE / 'data_hist' / vid / f'{vid}_transcript.json'
+    if tp.exists():
+        _d = json.loads(tp.read_text())
+        _cnt = {}
+        for _s in _d.get('segments', []):
+            for _v in precios_de_texto(_s.get('text', '')):
+                _cnt[_v] = _cnt.get(_v, 0) + 1
+        if _cnt:
+            ref = max(_cnt.items(), key=lambda x: x[1])[0]
     out['precio_referencia'] = ref
+    out['precio_procedencia'] = (f'dicho en {vid}' if ref else 'NO_DISPONIBLE: el video no dice el precio; sin feed')
 
     # MERCADO y ESCENARIOS solo del ULTIMO video (nunca del historico)
     an = PILOT / 'analisis' / f'{vid}_analisis.json'

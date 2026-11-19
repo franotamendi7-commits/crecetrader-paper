@@ -58,7 +58,8 @@
     "resumen": "El motor aplica C01-C12 sobre la transcripcion. Sin validar contra el grafico.",
     "estado": "PAPER_ONLY"
   },
-  "precio_referencia": 64620,
+  "precio_referencia": 65520.0,
+  "precio_procedencia": "dicho en cH2KY5vnsVQ",
   "instrumentos": [
     "BTC",
     "NQ",

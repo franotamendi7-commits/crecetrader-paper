@@ -52,13 +52,13 @@ HERMETICOS = [
     'daily_pilot/tests/test_invalidacion.py',
     'daily_pilot/tests/test_objetivos.py',
     'daily_pilot/tests/test_escenarios.py',
-    'daily_pilot/tests/test_dashboard_v4.py',
     'daily_pilot/tests/test_c11_cruzado.py',
     'daily_pilot/test_signal_classifier.py',
     'daily_pilot/risk_manager/test_risk_manager.py',
 ]
 # Integracion: reescriben artefactos derivados y/o tocan store.db.
 INTEGRACION = [
+    'daily_pilot/tests/test_dashboard_v4.py',  # escribe dashboard
     'daily_pilot/tests/test_c2c3e6.py',           # anadir_temporalidad.py hace UPDATE en store.db
 ]
 
