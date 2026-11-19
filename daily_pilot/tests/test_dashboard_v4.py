@@ -40,12 +40,13 @@ h = HTML.read_text()
 caso('existe', HTML.exists(), str(len(h)))
 caso('autocontenido', 'fetch(' not in h and not re.search(r'src="http|href="http', h))
 caso('paper_only_visible', 'PAPER ONLY' in h)
-caso('panel_plan', 'PLAN DE TRADING' in h)
+caso('panel_niveles_mencionados', 'NIVELES MENCIONADOS' in h)
 caso('panel_risk', 'RISK MANAGER' in h)
 caso('panel_niveles', 'NIVELES CLAVE' in h)
-caso('panel_decision', 'DECISIÓN' in h)
+caso('panel_lectura', 'LECTURA DEL DÍA' in h)
 caso('panel_distribucion', 'DISTRIBUCIÓN' in h)
-caso('stop_alerta', 'STOP SIN DEFINIR' in h)
+caso('no_es_orden', 'NO ES UNA ORDEN' in h)
+caso('sin_plan_inventado', 'PLAN DE TRADING' not in h and 'OPERACIÓN PROPUESTA' not in h)
 
 # solo el ultimo video, nunca el historico
 info = json.loads(INFO.read_text()) if INFO.exists() else {}
