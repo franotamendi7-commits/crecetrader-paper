@@ -117,6 +117,14 @@ def importar_videos(conn: sqlite3.Connection, fs: dict) -> tuple[int, dict]:
             conn.execute(
                 'UPDATE videos SET transcript_sha256=?,content_hash=?,updated_at=? WHERE video_id=?',
                 (payload['transcript_sha256'], payload['content_hash'], S.now_iso(), vid))
+        else:
+            # P0: si la metadata real llego despues, rellenar huecos sin tocar el hash
+            ant = conn.execute('SELECT title,published FROM videos WHERE video_id=?', (vid,)).fetchone()
+            nue = (payload.get('title') or '', payload.get('published') or '')
+            if ant and (ant[0] in (None, '') and nue[0]) or (ant and ant[1] in (None, '') and nue[1]):
+                conn.execute('UPDATE videos SET title=COALESCE(NULLIF(title,\'\'),?),'
+                             'published=COALESCE(NULLIF(published,\'\'),?),updated_at=? WHERE video_id=?',
+                             (nue[0], nue[1], S.now_iso(), vid))
     return len(set(prog) | set(reg)), {'metadata_conflicts': conflictos}
 
 

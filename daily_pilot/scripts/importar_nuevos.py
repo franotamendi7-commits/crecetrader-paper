@@ -60,8 +60,25 @@ def uno(vid: str) -> bool:
     if not tp:
         print('  sin transcripcion'); return False
     reg = json.loads(REG.read_text()) if REG.exists() else {'videos': {}}
+    # metadata real: sin fecha, el 'informe de hoy' no puede saber cual es el ultimo
+    meta = {}
+    try:
+        import subprocess as _sp
+        out = _sp.run(['yt-dlp', '--no-download', '--print', '%(title)s	%(upload_date)s	%(timestamp)s',
+                       f'https://www.youtube.com/watch?v={vid}'], capture_output=True, text=True, timeout=90)
+        if out.returncode == 0 and out.stdout.strip():
+            parts = out.stdout.strip().split('\t')
+            meta['title'] = parts[0] if parts else ''
+            ud = parts[1] if len(parts) > 1 else ''
+            ts = parts[2] if len(parts) > 2 else ''
+            if ts:
+                meta['published'] = datetime.fromtimestamp(int(ts), tz=timezone.utc).isoformat()
+            elif ud and len(ud) == 8:
+                meta['published'] = f'{ud[:4]}-{ud[4:6]}-{ud[6:]}T00:00:00+00:00'
+    except Exception as e:
+        print(f'  (metadata sin rellenar: {e})')
     reg.setdefault('videos', {})[vid] = {
-        'video_id': vid, 'title': '', 'published': '',
+        'video_id': vid, 'title': meta.get('title', ''), 'published': meta.get('published', ''),
         'url': f'https://www.youtube.com/watch?v={vid}',
         'detectado': datetime.now(timezone.utc).isoformat(),
         'transcript': str(tp), 'estado': 'transcrito', 'fuente': 'importacion_retroactiva',

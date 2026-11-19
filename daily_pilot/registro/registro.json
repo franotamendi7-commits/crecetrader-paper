@@ -1085,10 +1085,10 @@
     },
     "EX-Rx_pnNpc": {
       "video_id": "EX-Rx_pnNpc",
-      "title": "",
-      "published": "",
+      "title": "Las actas de la FED abren la puerta a subir tipos: qué hago con Bitcoin",
+      "published": "2026-11-19T10:06:07+00:00",
       "url": "https://www.youtube.com/watch?v=EX-Rx_pnNpc",
-      "detectado": "2026-11-19T16:13:47.912257+00:00",
+      "detectado": "2026-11-19T16:18:05.565213+00:00",
       "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/EX-Rx_pnNpc/EX-Rx_pnNpc_transcript.json",
       "estado": "transcrito",
       "fuente": "importacion_retroactiva"

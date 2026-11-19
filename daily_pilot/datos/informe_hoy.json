@@ -1,56 +1,56 @@
 {
-  "video_id": "cH2KY5vnsVQ",
-  "titulo": "Bitcoin frenado antes de las actas de la FED: lo que vigilo hoy",
-  "publicado": "2026-11-18T09:43:08+00:00",
+  "video_id": "EX-Rx_pnNpc",
+  "titulo": "Las actas de la FED abren la puerta a subir tipos: qué hago con Bitcoin",
+  "publicado": "2026-11-19T10:06:07+00:00",
   "fuente": "registro",
   "papel_only": true,
   "niveles_top": [
     {
-      "precio": 65520,
-      "menciones": 15
+      "precio": 69000,
+      "menciones": 18
     },
     {
       "precio": 56750,
-      "menciones": 9
+      "menciones": 12
     },
     {
       "precio": 61247,
+      "menciones": 9
+    },
+    {
+      "precio": 6000,
       "menciones": 6
     },
     {
-      "precio": 69000,
+      "precio": 28400,
       "menciones": 6
     },
     {
-      "precio": 62216,
+      "precio": 3600,
       "menciones": 3
     },
     {
-      "precio": 64877,
+      "precio": 40000,
       "menciones": 3
     },
     {
-      "precio": 64629,
+      "precio": 10000,
       "menciones": 3
     },
     {
-      "precio": 63904,
+      "precio": 65520,
       "menciones": 3
     },
     {
-      "precio": 63580,
+      "precio": 62616,
       "menciones": 3
     },
     {
-      "precio": 65125,
+      "precio": 7000,
       "menciones": 3
     },
     {
-      "precio": 65278,
-      "menciones": 3
-    },
-    {
-      "precio": 65300,
+      "precio": 81000,
       "menciones": 3
     }
   ],
@@ -58,31 +58,31 @@
     "resumen": "LO QUE DICE EL CANAL (transcripcion). El metodo C01-C12 lo aplica el trader; este panel no ejecuta el motor.",
     "estado": "PAPER_ONLY"
   },
-  "precio_referencia": 65520.0,
-  "precio_procedencia": "dicho en cH2KY5vnsVQ",
+  "precio_referencia": 69000.0,
+  "precio_procedencia": "dicho en EX-Rx_pnNpc",
   "instrumentos": [
     "BTC",
-    "NQ",
+    "XAUUSD",
     "ETH",
-    "XAUUSD"
+    "NQ"
   ],
   "temporalidades": [
-    "Daily",
-    "4H",
     "Weekly",
-    "Intradia"
+    "Intradia",
+    "Daily",
+    "4H"
   ],
   "mercado": {
     "VIDEO": {
       "niveles_originales": [
-        65520,
+        69000,
         56750,
         61247,
-        69000,
-        62216,
-        64877,
-        64629,
-        63904
+        6000,
+        28400,
+        3600,
+        40000,
+        10000
       ],
       "nota": "niveles dichos en el video (no discriminados por instrumento)"
     }
@@ -90,40 +90,40 @@
   "escenarios": [
     {
       "escenario": {
-        "id": "ESC-cH2KY5vnsVQ-0",
+        "id": "ESC-EX-Rx_pnNpc-0",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
-          "valor": 65520
+          "valor": 69000
         },
-        "justificacion": "la presión que ejerzan los futuros por debajo de los 65,520",
+        "justificacion": "está ahí. La de la semana pasada lo llevó a los 69,000. Todavía no ha habido",
         "timestamp_explicacion": ""
       }
     },
     {
       "escenario": {
-        "id": "ESC-cH2KY5vnsVQ-1",
+        "id": "ESC-EX-Rx_pnNpc-1",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
           "valor": 56750
         },
-        "justificacion": "pullback hasta esta zona y no descartemos los 56,750.",
+        "justificacion": "voy a ampliar esta vela semanal, el contexto moviéndose en 69,000, 56,750,",
         "timestamp_explicacion": ""
       }
     },
     {
       "escenario": {
-        "id": "ESC-cH2KY5vnsVQ-2",
+        "id": "ESC-EX-Rx_pnNpc-2",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
           "valor": 61247
         },
-        "justificacion": "poco más grande para que lo pueda ver. 61,247",
+        "justificacion": "que en el contado puede llegar a los 61,247, que le queda poquito. Están",
         "timestamp_explicacion": ""
       }
     }
   ],
-  "fuente_unica": "cH2KY5vnsVQ"
+  "fuente_unica": "EX-Rx_pnNpc"
 }

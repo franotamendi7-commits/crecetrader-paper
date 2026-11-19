@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
   "migration_version": "1.0.0",
-  "run_at": "2026-11-19T16:15:19Z",
+  "run_at": "2026-11-19T16:18:54Z",
   "store_path": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db",
-  "store_sha256_pre": "ec160ed3f01dd1992de0832a90ca45cf7a3b0d840bf4b47264dcb7f22a215e43",
+  "store_sha256_pre": "4fc8097f4f3fd01d8ec0a25e632eb699e154df5312db138a6849608950e1be17",
   "fuentes": {
     "transcripciones": 111,
     "vtt": 113,
@@ -16,9 +16,9 @@
     "videos": 111,
     "cues": 128593,
     "escenarios_manuales": 8,
-    "inserted": 1168,
+    "inserted": 0,
     "updated": 0,
-    "unchanged": 127425,
+    "unchanged": 128593,
     "missing": 0,
     "rechazados": 0
   },
@@ -26,12 +26,12 @@
     "integrity_check": "ok",
     "foreign_key_check": 0,
     "timestamps_nulos": 0,
-    "metadata_conflicts": 186,
+    "metadata_conflicts": 188,
     "cue_history": 0
   },
   "hashes_store": {
-    "pre": "ec160ed3f01dd1992de0832a90ca45cf7a3b0d840bf4b47264dcb7f22a215e43",
-    "post": "d4ece2672b5ff6d45b4c8d83a6cc5102d86463c03d84a4da46798993ac0af0c7",
+    "pre": "4fc8097f4f3fd01d8ec0a25e632eb699e154df5312db138a6849608950e1be17",
+    "post": "c0987f4f57e9256ca468e492edc5d79458878fed923edbe68caf7a6209e24a9a",
     "nota": "post = sha256(store.db) medido antes de tocar .control/Manifiesto"
   },
   "pruebas": {
@@ -41,9 +41,9 @@
     "fk_limpias": true
   },
   "backup": {
-    "backup": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db.bak-20261119T161518Z-8404",
+    "backup": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db.bak-20261119T161854Z-8768",
     "integrity": "ok",
-    "cues": 127425
+    "cues": 128593
   },
-  "hash_post_store": "d4ece2672b5ff6d45b4c8d83a6cc5102d86463c03d84a4da46798993ac0af0c7"
+  "hash_post_store": "c0987f4f57e9256ca468e492edc5d79458878fed923edbe68caf7a6209e24a9a"
 }
