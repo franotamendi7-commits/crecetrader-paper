@@ -1082,6 +1082,16 @@
       "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/TgOtsgQXZVA/TgOtsgQXZVA_transcript.json",
       "estado": "transcrito",
       "fuente": "importacion_retroactiva"
+    },
+    "EX-Rx_pnNpc": {
+      "video_id": "EX-Rx_pnNpc",
+      "title": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=EX-Rx_pnNpc",
+      "detectado": "2026-11-19T16:13:47.912257+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/EX-Rx_pnNpc/EX-Rx_pnNpc_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
     }
   }
 }
