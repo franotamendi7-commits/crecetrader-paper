@@ -4,12 +4,14 @@ Fecha: 2026-11-19 · Fuente: `store.db` (**18.562 claims**, 102 videos) + `anali
 
 ## Estado de la aprobación (H-01)
 
-Las 12 reglas fueron **dictadas y aceptadas por Francisco en conversación** el **2026-11-18**
-(sesión de Hermes, chat). Registro de la aceptación: los mensajes de esa sesión donde dictó cada
-regla y respondió `de acuerdo` / `dale` / `no` / `matiz`.
+**FIRMADO por Francisco el 2026-11-19 (12:13 UTC).**
+Declaración: «te digo yo ahora francisco firmo todo! lo aseguro y acredito!»
 
-- `aprobado_en_conversacion` — regla dictada y aceptada por Francisco en la sesión del 2026-11-18.
-  **Estado en uso hoy.** Registro: chat de Hermes, 2026-11-18.
+Artefacto de la firma: `daily_pilot/metodo/FIRMA_C01_C12.md`, con el sha256 de **esta versión**:
+`b4db713f392f9a17f1a60d97346ad5c3f02dda3a28bcfb20caecf2415562568a`.
+
+- `aprobado_por_francisco` — **estado de las 12 reglas (C01–C12).**
+- Si el playbook cambia, la firma **queda anclada a ese hash** y hay que **re-firmar**.
 - `aprobado_por_francisco` — regla **firmada formalmente** (fecha + canal + firma explícita).
 - `propuesto` / `a_validar` / `rechazado` — sin aprobación.
 
