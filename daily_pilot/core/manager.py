@@ -33,6 +33,7 @@ class Manager:
         self.min_rb = min_rb
         self.max_exposicion_pct = max_exposicion_pct
         self.stop_method = stop_method
+        self.confianza = 1.0      # default conservador: se pisa con e['confianza']
 
     # --- dimensiones --------------------------------------------------
     def _calidad(self, e):
@@ -147,7 +148,7 @@ class Manager:
         que_necesita = self._completitud(cls, faltante) if veredicto != 'APTO_PARA_EVALUACION' else []
 
         capital = self._capital(entrada, stop if stop is not None else (propuesta_stop or {}).get('valor'),
-                                objetivos)
+                                objetivos, e.get('confianza'))
         return {
             'escenario_id': e.get('id') or escenario.get('id'),
             'clasificacion': cls,
@@ -178,7 +179,7 @@ class Manager:
         except Exception:
             return None
 
-    def _capital(self, entrada, stop, objetivos):
+    def _capital(self, entrada, stop, objetivos, confianza=None):
         # P1-4 FIX: sin stop no hay riesgo medible; no usar la entrada como riesgo.
         if entrada is None or stop is None:
             return {'disponible': self.capital, 'riesgo_pct': self.riesgo_pct,
@@ -187,8 +188,9 @@ class Manager:
         riesgo = abs(entrada - stop)
         size = perdida = None
         # C11 (H-07): riesgo = confianza x tope, con tope duro del 5%.
-        conf = float(getattr(self, 'confianza', 1.0) or 0.0)
-        riesgo_pct = round(min(max(conf, 0.0), 1.0) * TOPE_RIESGO_PCT, 4)
+        conf = float(confianza if confianza is not None else getattr(self, 'confianza', 1.0))
+        conf = min(max(conf, 0.0), 1.0)
+        riesgo_pct = round(conf * TOPE_RIESGO_PCT, 4)
         if riesgo > 0:
             perdida = round(self.capital * riesgo_pct, 2)
             size = round(perdida / riesgo, 6)
@@ -198,7 +200,7 @@ class Manager:
             if size > tope:
                 size = round(tope, 6)
                 perdida = round(size * riesgo, 2)
-        return {'disponible': self.capital, 'riesgo_pct': self.riesgo_pct,
+        return {'disponible': self.capital, 'riesgo_pct': riesgo_pct,
                 'tamano_propuesto': size, 'perdida_potencial': perdida,
                 'exposicion_maxima': round(self.capital * self.max_exposicion_pct, 2),
                 'exposicion_maxima_tipo': 'notional'}

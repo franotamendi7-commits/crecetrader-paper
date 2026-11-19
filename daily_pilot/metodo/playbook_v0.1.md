@@ -1,6 +1,6 @@
 # PLAYBOOK CreceTrader — v0.1
 
-Fecha: 2026-11-18 · Fuente: `store.db` (6.831 claims) + `analisis/*.json`
+Fecha: 2026-11-19 · Fuente: `store.db` (**18.562 claims**, 102 videos) + `analisis/*.json`
 
 ## Estado de la aprobación (H-01)
 
@@ -126,10 +126,11 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 
 - **Implementación**: `core/zonas.py` — `zonas(minimo, maximo, plazo)`.
   `RETROCESOS = (0.50, 0.618, 0.786)` · `EXTENSIONES = (0.50, 1.00, 1.50, 2.00)` · `TF_POR_PLAZO`.
-- **Criterio de conteo**: los números son **claims cuyo texto matchea el regex** indicado
-  (case-insensitive, sin anclar). «recuperación» 41 es la **palabra exacta**; el stem `recuper` da 76.
-  Valores verificados: `revers` 105 · `reversi[oó]n` 102 · `correcci[oó]n` 35 · `proyecci[oó]n` 108 ·
-  `romp` 58 · `rompe` 46 · `máximos` 53 · `mínimos` 39.
+- **Criterio de conteo**: claims cuyo texto matchea el regex (case-insensitive, sin anclar).
+  **Snapshot: `store.db` 18.562 claims / 102 videos** (2026-11-19).
+  Valores reales: `revers` 134 · `correcci[oó]n` 73 · `proyecci[oó]n` 205 · `romp` 208 ·
+  `ruptura` 33 · `máximos` 92 · `mínimos` 61 · `rango` 42 · `consolida` 131 ·
+  `Nueva York` 163 · `tendencia` 20 · `soporte` 17.
 - **Corpus verificado**: «**máximos y mínimos decrecientes**» **sí** aparece (muchos claims, ej.
   `LzPTdClLo_w` 00:02:15 «no voy a comprar»; `bCc--rvyHpY` 00:04:42 «sin señal de reversión»).
   «**extensión**» **sí** (`i0qXzL0eSYs` 00:15:11 «una extensión que iría confirmando la reversión»).

@@ -66,6 +66,17 @@ for n in (1, 2, 3):
     caso(f'esc_tope_{n}', E.evaluar(n)['riesgo_sugerido'] <= E.RIESGO_MAX)
 caso('rm_tope', rm.evaluar([_senal(confidence=9.0)])['senales'][0]['risk']['riesgo_pct_total'] <= 0.05)
 
+# 5b. P1-2: Manager toma la confianza del escenario
+try:
+    import importlib
+    M = importlib.import_module('manager')
+    mgr = M.Manager()
+    for conf in (1.0, 0.5, 0.25):
+        r = mgr._capital(100.0, 90.0, [{'valor': 110.0}], conf)
+        caso(f'manager_conf_{conf}', abs(r['riesgo_pct'] - conf * 0.05) < 1e-4, str(r['riesgo_pct']))
+except Exception as e:
+    caso('manager_conf', False, str(e))
+
 # 6. paper only
 caso('paper_only', E.PAPER_ONLY is True)
 

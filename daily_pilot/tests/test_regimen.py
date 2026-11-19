@@ -40,9 +40,9 @@ caso('maximos_solos_no_basta', d['regimen'] == 'RANGO', d['motivo'])
 e = R.detectar([10], [5])
 caso('insuficiente', e['regimen'] == 'NO_DETERMINADO', e['motivo'])
 
-# 6. correccion no es regimen aparte (esta en la tendencia)
-f = R.detectar([10, 20, 15], [5, 15, 10])
-caso('correccion_dentro_tendencia', f['regimen'] == 'RANGO', f['motivo'])
+# 6. correccion dentro de la tendencia (P1-3): minimos crecientes, ultimo maximo baja
+f = R.detectar([10, 20, 15], [5, 15, 20])
+caso('correccion_dentro_tendencia', f['regimen'] == 'CORRECCION', f['motivo'])
 
 # 7. cambio de regimen = reversion
 caso('cambio_es_reversion', R.es_cambio('TENDENCIA_ALCISTA', 'TENDENCIA_BAJISTA') is True)

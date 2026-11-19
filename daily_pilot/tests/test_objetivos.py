@@ -43,6 +43,12 @@ caso('stop_be_solo_una_vez', [s['accion_stop'] for s in p['secuencia']].count('b
 caso('secuencia_4', len(p['secuencia']) == 4)
 caso('cada_tramo_25', all(s['tramo_pct'] == 0.25 for s in p['secuencia']))
 
+# 4b. C09 bajista (P1-5)
+pb = O.plan(64000.0, 56760.0, 75518.0, direccion='bajista')
+caso('c09_bajista', all(v < 56760.0 for v in pb['objetivos']), str(pb['objetivos']))
+caso('c09_bajista_ext100', pb['objetivos'][1] == 38002.0, str(pb['objetivos']))
+caso('c09_alcista_sigue', p['objetivos'][1] == 94276.0, str(p['objetivos']))
+
 # 5. proximo objetivo
 caso('proximo_80000', O.proximo(p['objetivos'], 80000.0)['objetivo'] == 84897.0)
 caso('proximo_ya_pasados', O.proximo(p['objetivos'], 200000.0) is None)

@@ -24,6 +24,7 @@ PAPER_ONLY = True
 TENDENCIA_ALCISTA = 'TENDENCIA_ALCISTA'
 TENDENCIA_BAJISTA = 'TENDENCIA_BAJISTA'
 RANGO = 'RANGO'
+CORRECCION = 'CORRECCION'
 REVERSION = 'REVERSION'
 NO_DETERMINADO = 'NO_DETERMINADO'
 
@@ -37,7 +38,11 @@ def _decreciente(xs: list) -> bool:
 
 
 def detectar(maximos: list, minimos: list) -> dict:
-    """Regimen segun maximos y minimos (deber ser series ordenadas en el tiempo)."""
+    """Regimen segun maximos y minimos (series ordenadas en el tiempo).
+
+    CORRECCION (P1-3): si la serie alcista/precio corrige (maximo baja pero el
+    minimo sigue creciendo), es correccion DENTRO de la tendencia, no RANGO.
+    """
     if len(maximos) < 2 or len(minimos) < 2:
         return {'regimen': NO_DETERMINADO, 'motivo': 'faltan maximos/minimos'}
     mc, mnc = _creciente(maximos), _creciente(minimos)
@@ -46,6 +51,10 @@ def detectar(maximos: list, minimos: list) -> dict:
         r, motivo = TENDENCIA_ALCISTA, 'maximos y minimos crecientes'
     elif md and mnd:
         r, motivo = TENDENCIA_BAJISTA, 'maximos y minimos decrecientes'
+    elif mnc and maximos[-1] < maximos[-2]:
+        r, motivo = CORRECCION, 'minimos crecientes pero el ultimo maximo baja: correccion'
+    elif mnd and minimos[-1] > minimos[-2]:
+        r, motivo = CORRECCION, 'maximos decrecientes pero el ultimo minimo sube: correccion'
     else:
         r, motivo = RANGO, 'ni maximos ni minimos confirman tendencia'
     return {'regimen': r, 'motivo': motivo, 'paper_only': PAPER_ONLY}

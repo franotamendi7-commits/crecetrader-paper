@@ -24,12 +24,15 @@ PCT_TRAMO = 0.25
 EXTENSIONES = (0.50, 1.00, 1.50, 2.00)
 
 
-def plan(entrada: float, minimo: float, maximo: float) -> dict:
+def plan(entrada: float, minimo: float, maximo: float, direccion: str = 'alcista') -> dict:
     """Objetivos (extensiones de C05) + toma parcial 25% + stop a break even."""
     rango = maximo - minimo
     if rango <= 0:
         raise ValueError('maximo debe ser mayor que minimo')
-    objetivos = [round(maximo + rango * e, 2) for e in EXTENSIONES]
+    if direccion == 'alcista':
+        objetivos = [round(maximo + rango * e, 2) for e in EXTENSIONES]
+    else:
+        objetivos = [round(minimo - rango * e, 2) for e in EXTENSIONES]
     return {
         'entrada': entrada,
         'minimo': minimo,
