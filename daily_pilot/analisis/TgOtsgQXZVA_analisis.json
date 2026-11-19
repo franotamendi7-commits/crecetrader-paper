@@ -1,0 +1,483 @@
+{
+  "video_id": "TgOtsgQXZVA",
+  "analizado_at": "2026-11-19T12:14:51Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 2556,
+  "sha256_transcript": "efb5c7c250e183554aefb5c9eec0999929c9cfedb8192969ecdfe067c753764e",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/TgOtsgQXZVA/TgOtsgQXZVA_transcript.json",
+  "instrumentos": {
+    "BTC": 30,
+    "NQ": 6
+  },
+  "temporalidades": {
+    "4H": 30,
+    "Daily": 41,
+    "Weekly": 9,
+    "Intradia": 6
+  },
+  "conceptos": {
+    "fibonacci": {
+      "menciones": 5,
+      "primeros": [
+        "00:26",
+        "00:26",
+        "00:26",
+        "00:26",
+        "00:26"
+      ]
+    },
+    "acumulacion": {
+      "menciones": 12,
+      "primeros": [
+        "00:08",
+        "00:08",
+        "00:08",
+        "00:48",
+        "00:48",
+        "00:48"
+      ]
+    },
+    "distribucion": {
+      "menciones": 12,
+      "primeros": [
+        "00:08",
+        "00:08",
+        "00:08",
+        "00:11",
+        "00:11",
+        "00:11"
+      ]
+    },
+    "estructura": {
+      "menciones": 6,
+      "primeros": [
+        "00:13",
+        "00:13",
+        "00:13",
+        "00:33",
+        "00:33",
+        "00:33"
+      ]
+    },
+    "tendencia": {
+      "menciones": 45,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    },
+    "rango": {
+      "menciones": 6,
+      "primeros": [
+        "00:25",
+        "00:25",
+        "00:25",
+        "00:31",
+        "00:31",
+        "00:31"
+      ]
+    },
+    "soporte": {
+      "menciones": 12,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "resistencia": {
+      "menciones": 9,
+      "primeros": [
+        "00:02",
+        "00:02",
+        "00:02",
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "stop": {
+      "menciones": 21,
+      "primeros": [
+        "00:20",
+        "00:20",
+        "00:20",
+        "00:21",
+        "00:21",
+        "00:21"
+      ]
+    },
+    "objetivo": {
+      "menciones": 6,
+      "primeros": [
+        "00:28",
+        "00:28",
+        "00:28",
+        "00:46",
+        "00:46",
+        "00:46"
+      ]
+    },
+    "entrada": {
+      "menciones": 23,
+      "primeros": [
+        "00:00",
+        "00:00",
+        "00:00",
+        "00:17",
+        "00:17",
+        "00:17"
+      ]
+    },
+    "volumen": {
+      "menciones": 3,
+      "primeros": [
+        "00:17",
+        "00:17",
+        "00:17"
+      ]
+    },
+    "reversal": {
+      "menciones": 12,
+      "primeros": [
+        "00:07",
+        "00:07",
+        "00:07",
+        "00:07",
+        "00:07",
+        "00:07"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "28963",
+      "menciones": 16,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "apertura del año 2021 es esta Línea Amarilla que estamos viendo los 28.963"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "Amarilla que estamos viendo los 28.963"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "Amarilla que estamos viendo los 28.963 que creo que os suena este nivel porque"
+        }
+      ]
+    },
+    {
+      "valor": "30500",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:41",
+          "contexto": "hasta el uno y medio por ciento hasta los 30.500 además miraría aquí la"
+        },
+        {
+          "minuto": "00:41",
+          "contexto": "los 30.500 además miraría aquí la"
+        },
+        {
+          "minuto": "00:41",
+          "contexto": "los 30.500 además miraría aquí la situación que hay y es donde empezamos"
+        }
+      ]
+    },
+    {
+      "valor": "16269",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "que el precio pudiese venir nuevamente a testear los 16.269 y los 15.847 así lo"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "testear los 16.269 y los 15.847 así lo"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "testear los 16.269 y los 15.847 así lo coloque con esta flechita como habéis"
+        }
+      ]
+    },
+    {
+      "valor": "15847",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "que el precio pudiese venir nuevamente a testear los 16.269 y los 15.847 así lo"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "testear los 16.269 y los 15.847 así lo"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "testear los 16.269 y los 15.847 así lo coloque con esta flechita como habéis"
+        }
+      ]
+    },
+    {
+      "valor": "49237",
+      "menciones": 6,
+      "ejemplos": [
+        {
+          "minuto": "00:14",
+          "contexto": "largo de mediano plazo en este caso son 49.237 como frena al precio lo tienen"
+        },
+        {
+          "minuto": "00:14",
+          "contexto": "49.237 como frena al precio lo tienen"
+        },
+        {
+          "minuto": "00:14",
+          "contexto": "49.237 como frena al precio lo tienen que romper con fuerza porque si no va a"
+        }
+      ]
+    },
+    {
+      "valor": "16840",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:02",
+          "contexto": "hablando de la zona de los 16.840 donde cerró esta vela del día"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "16.840 donde cerró esta vela del día"
+        },
+        {
+          "minuto": "00:02",
+          "contexto": "16.840 donde cerró esta vela del día bueno y aquí teníamos entonces este"
+        }
+      ]
+    },
+    {
+      "valor": "16544",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:03",
+          "contexto": "en el corto plazo le ayuden aquí tenemos una clave los 16.544 de los futuros de"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "una clave los 16.544 de los futuros de"
+        },
+        {
+          "minuto": "00:03",
+          "contexto": "una clave los 16.544 de los futuros de los futuros no perpetuos sino los que"
+        }
+      ]
+    },
+    {
+      "valor": "59500",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:16",
+          "contexto": "como Vamos haciendo ahora cada día lo tenemos situado en los 59.500 el segundo"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "tenemos situado en los 59.500 el segundo"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "tenemos situado en los 59.500 el segundo y más importante los"
+        }
+      ]
+    },
+    {
+      "valor": "65750",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "y más importante los 65.750 piratas además como este coincide"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "65.750 piratas además como este coincide"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "65.750 piratas además como este coincide con un refugio de mediano plazo aquí"
+        }
+      ]
+    },
+    {
+      "valor": "57926",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:24",
+          "contexto": "llega y hasta dónde Toca siguiente nivel de Refugio mediano plazo en los 57.926"
+        },
+        {
+          "minuto": "00:24",
+          "contexto": "de Refugio mediano plazo en los 57.926"
+        },
+        {
+          "minuto": "00:24",
+          "contexto": "de Refugio mediano plazo en los 57.926 que no es otra cosa que los 58.000 en"
+        }
+      ]
+    },
+    {
+      "valor": "58000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:24",
+          "contexto": "de Refugio mediano plazo en los 57.926 que no es otra cosa que los 58.000 en"
+        },
+        {
+          "minuto": "00:24",
+          "contexto": "que no es otra cosa que los 58.000 en"
+        },
+        {
+          "minuto": "00:24",
+          "contexto": "que no es otra cosa que los 58.000 en números redondos"
+        }
+      ]
+    },
+    {
+      "valor": "63719",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:25",
+          "contexto": "caso 63.719 que suele ocurrir"
+        },
+        {
+          "minuto": "00:25",
+          "contexto": "63.719 que suele ocurrir"
+        },
+        {
+          "minuto": "00:25",
+          "contexto": "63.719 que suele ocurrir que cuando cierra la probabilidad de que"
+        }
+      ]
+    },
+    {
+      "valor": "71924",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:28",
+          "contexto": "y la proyección del precio nos estaba todavía los 71.924"
+        },
+        {
+          "minuto": "00:28",
+          "contexto": "todavía los 71.924"
+        },
+        {
+          "minuto": "00:28",
+          "contexto": "todavía los 71.924 bien y además en la serie semanal no"
+        }
+      ]
+    },
+    {
+      "valor": "28000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:41",
+          "contexto": "28.963 28.000 No no sé que hoy es el Día de la"
+        },
+        {
+          "minuto": "00:41",
+          "contexto": "28.000 No no sé que hoy es el Día de la"
+        },
+        {
+          "minuto": "00:41",
+          "contexto": "28.000 No no sé que hoy es el Día de la Lotería Nacional en España y este no es"
+        }
+      ]
+    },
+    {
+      "valor": "25000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:52",
+          "contexto": "en cuanto llega a esta zona de aquí toman beneficios en los 25.000 que era"
+        },
+        {
+          "minuto": "00:52",
+          "contexto": "toman beneficios en los 25.000 que era"
+        },
+        {
+          "minuto": "00:52",
+          "contexto": "toman beneficios en los 25.000 que era este nivel"
+        }
+      ]
+    },
+    {
+      "valor": "18000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:54",
+          "contexto": "Hace unos días y vimos que se negoció hasta el 2% los 18.000 aprovechamos"
+        },
+        {
+          "minuto": "00:54",
+          "contexto": "hasta el 2% los 18.000 aprovechamos"
+        },
+        {
+          "minuto": "00:54",
+          "contexto": "hasta el 2% los 18.000 aprovechamos llegó el 14 de diciembre aquí teníamos"
+        }
+      ]
+    },
+    {
+      "valor": "18097",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:54",
+          "contexto": "que una Pauta de cinco ondas en la serie de 4 horas la negociamos llegó al 18.097"
+        },
+        {
+          "minuto": "00:54",
+          "contexto": "de 4 horas la negociamos llegó al 18.097"
+        },
+        {
+          "minuto": "00:54",
+          "contexto": "de 4 horas la negociamos llegó al 18.097 se cerraba la posición y el precio cayó"
+        }
+      ]
+    },
+    {
+      "valor": "66615",
+      "menciones": 1,
+      "ejemplos": [
+        {
+          "minuto": "00:25",
+          "contexto": "tocar el uno y medio de hecho llegaron hasta los 66.615"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}
