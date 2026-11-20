@@ -1,6 +1,6 @@
 //@version=5
 // ============================================================================
-//  CreceTrader — Niveles del ciclo (C05)  ·  v2
+//  CreceTrader — Niveles del ciclo (C05)  ·  v3
 //  Reglas validadas contra las capturas reales de Francisco (2026-11-20, BNB)
 //
 //  · Cada TF tiene SU swing:  macro = semanal, micro = diario y 4h
@@ -13,8 +13,9 @@
 //
 //  PAPER ONLY — dibuja, no opera.
 //
-//  v2: cada bloque es independiente; el abanico intradia solo se dibuja en
-//      TF <= 1D; y hay ploteo de diagnostico (maxAlto / tramoMin / rango).
+//  v3: se SACARON el abanico y el nivel anual (usan request.security "D",
+//      que es lo que falla en 4H/1H). Aca solo estan los retrocesos y las
+//      extensiones. Diagnostico por label, no por plot.
 // ============================================================================
 indicator("CreceTrader — Niveles del ciclo [C05]", overlay=true, max_lines_count=500)
 
@@ -30,8 +31,8 @@ mostrarExt   = input.bool(true, "Extensiones", group=g2)
 etiquetas    = input.bool(true, "Etiquetas",   group=g2)
 
 g3 = "3 · Extra"
-mostrarIntradia = input.bool(true, "Abanico intradia (cierre 21:00)", group=g3)
-mostrarAnual    = input.bool(true, "Nivel anual (cierre 1/01)",      group=g3)
+mostrarIntradia = input.bool(false, "Abanico intradia (cierre 21:00)", group=g3)
+mostrarAnual    = input.bool(false, "Nivel anual (cierre 1/01)",      group=g3)
 
 g4 = "4 · Diagnostico"
 mostrarDiag = input.bool(false, "Mostrar maxAlto / tramoMin / rango", group=g4)
@@ -84,10 +85,12 @@ if not na(maxBar) and maxBar <= bar_index
         tramoMin := math.min(tramoMin, low[k])
 float rango = tramoMax - tramoMin
 
-// ---------- diagnostico ----------
-plot(mostrarDiag ? maxAlto : na, "maxAlto", color=color.new(color.gray, 100))
-plot(mostrarDiag ? tramoMin : na, "tramoMin", color=color.new(color.gray, 100))
-plot(mostrarDiag ? rango   : na, "rango",    color=color.new(color.gray, 100))
+// ---------- diagnostico (label, no plot) ----------
+if mostrarDiag and barstate.islast
+    lbl = "maxAlto=" + str.tostring(maxAlto, "#.##") + "\n" +
+          "tramoMin=" + str.tostring(tramoMin, "#.##") + "\n" +
+          "rango=" + str.tostring(rango, "#.##")
+    label.new(bar_index, high, lbl, style=label.style_label_down, color=color.new(color.yellow, 20), textcolor=color.black, size=size.small)
 
 // ---------- niveles ----------
 retrocesos  = array.from(0.382, 0.50, 0.61, 0.786)
