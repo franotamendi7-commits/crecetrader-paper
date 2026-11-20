@@ -224,3 +224,37 @@ def tramo_tendencia(velas: list[dict], n: int = 5, ultimo: bool = True, k: int =
             'desde_fecha': elegido['fecha'], 'hasta_fecha': velas[fin]['ts'],
             'minimo': min(x['low'] for x in trozo), 'maximo': max(x['high'] for x in trozo),
             'cambios': c}
+
+
+def tramo_ciclo(velas: list[dict], n: int = 3, ventana: int = 60) -> dict:
+    """Tramo del ciclo: del maximo mas alto al minimo mas bajo posterior.
+
+    Cada TF tiene SU swing (Francisco: macro = semanal, micro = diario y 4h).
+    Validado contra las capturas BNB 2026-11-20:
+      1w -> 1.375,11 (oct 2025) -> 537,25 (jun 2026)   [captura 537,21 -> 1.371,90]
+      1d ->   809,99 (oct 2026) -> 530,00 (nov 2026)   [captura 536,58 -> 808,24]
+      4h ->   809,99 (oct 2026) -> 530,00 (nov 2026)   [captura 530,54 -> 809,57]
+    """
+    if len(velas) < n * 2 + 1:
+        return {'error': 'faltan velas'}
+    s = swing(velas, n)
+    pts = sorted([(i, 'max', p) for i, p in s['altos']] +
+                 [(i, 'min', p) for i, p in s['bajos']], key=lambda x: x[0])
+    if len(pts) < 2:
+        return {'error': 'sin swings'}
+    rec = pts[-ventana:]
+    alto = max((x for x in rec if x[1] == 'max'), key=lambda x: x[2], default=None)
+    if alto is None:
+        return {'error': 'sin maximo en la ventana'}
+    post = [x for x in pts if x[0] >= alto[0]]
+    bajos = [x for x in post if x[1] == 'min']
+    # el piso de HOY puede no estar confirmado como swing (le faltan velas);
+    # se incluye el minimo de las velas posteriores al maximo
+    rec = [x for x in velas[alto[0]:] if x['low'] <= (bajos[-1][2] if bajos else alto[2])]
+    cand = bajos + [(i, 'min', x['low']) for i, x in enumerate(velas) if i >= alto[0]]
+    bajo = min(cand, key=lambda x: x[2]) if cand else min(post, key=lambda x: x[2])
+    seg = velas[alto[0]:bajo[0] + 1] if bajo[0] >= alto[0] else velas[bajo[0]:alto[0] + 1]
+    return {'direccion': 'bajista' if bajo[0] > alto[0] else 'alcista',
+            'maximo': alto[2], 'maximo_fecha': velas[alto[0]]['ts'],
+            'minimo': bajo[2], 'minimo_fecha': velas[bajo[0]]['ts'],
+            'n_velas': len(seg)}

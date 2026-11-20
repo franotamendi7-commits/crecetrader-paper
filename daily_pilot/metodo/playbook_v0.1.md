@@ -270,3 +270,25 @@ bajista :  nivel = maximo - rango * r
 
 **Criterio del tramo**: el **ultimo swing** (maximo y minimo relevantes) — a verificar con
 Francisco (`investigacion/TRAMO_SWING_PROPUESTA.md`). Con `n=20` acierta en 1W y 1D.
+
+## ANEXO C05-B — el tramo: cada TF tiene SU swing (2026-11-20)
+
+**Macro = semanal · Micro = diario y 4h.** Cada temporalidad tiene su propio
+swing y su propia tendencia.
+
+**El tramo del ciclo** = del **maximo mas alto** de los ultimos swings al
+**minimo mas bajo posterior** (el piso de hoy puede no estar confirmado como
+swing: se incluye igualmente).
+
+Parametros: `n=3` (velas que definen un extremo) · `ventana=60` (swings).
+
+**Validado contra las 3 capturas BNB (2026-11-20):**
+
+| TF | tramo calculado | captura | nivel 0,61 |
+|---|---|---|---|
+| 1W | 530,00 → 1.375,11 | 537,21 → 1.371,90 | 1.045,52 vs 1.046,37 |
+| 1D | 530,00 → 809,99 | 536,58 → 808,24 | 700,79 vs 702,29 |
+| 4H | 530,00 → 809,99 | 530,54 → 809,57 | **700,79 vs 700,75** |
+
+La diferencia de 1D/1W es el **piso**: la captura se tomo el 20/11 16:36
+(536,58) y el precio luego siguio cayendo (530,00).
