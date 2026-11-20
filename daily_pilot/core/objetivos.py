@@ -21,7 +21,7 @@ PAPER_ONLY = True
 TRAMOS = 4
 PCT_TRAMO = 0.25
 # Extensiones de C05 (sobre el rango minimo->maximo).
-EXTENSIONES = (0.50, 1.00, 1.50, 2.00)
+EXTENSIONES = (0.50, 1.00, 1.25, 1.50, 1.75, 2.00, 3.00)
 
 
 def plan(entrada: float, minimo: float, maximo: float, direccion: str = 'alcista') -> dict:
@@ -30,9 +30,9 @@ def plan(entrada: float, minimo: float, maximo: float, direccion: str = 'alcista
     if rango <= 0:
         raise ValueError('maximo debe ser mayor que minimo')
     if direccion == 'alcista':
-        objetivos = [round(maximo + rango * e, 2) for e in EXTENSIONES]
+        objetivos = [round(minimo + rango * e, 2) for e in EXTENSIONES]
     else:
-        objetivos = [round(minimo - rango * e, 2) for e in EXTENSIONES]
+        objetivos = [round(maximo - rango * e, 2) for e in EXTENSIONES]
     return {
         'entrada': entrada,
         'minimo': minimo,

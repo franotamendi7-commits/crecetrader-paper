@@ -25,7 +25,7 @@ from __future__ import annotations
 PAPER_ONLY = True
 
 RETROCESOS = (0.50, 0.618, 0.786)          # 50%, 61%, 78%
-EXTENSIONES = (0.50, 1.00, 1.50, 2.00)     # 50%, 100%, 150%, 200% de ganancia
+EXTENSIONES = (0.50, 1.00, 1.25, 1.50, 1.75, 2.00, 3.00)  # sobre el maximo (Francisco)
 
 # Marco temporal segun el plazo de la tendencia ( Francisco ).
 TF_POR_PLAZO = {'largo': 'semanal', 'media': 'diario', 'corto': '4H'}
@@ -47,11 +47,11 @@ def zonas(minimo: float, maximo: float, plazo: str = 'corto',
         raise ValueError('maximo debe ser mayor que minimo')
     tf = tf_para(plazo)
     if direccion == 'alcista':
-        zonas_compra = {f'{int(r*100)}%': round(maximo - rango * r, 2) for r in RETROCESOS}
-        extensiones = {f'{int(e*100)}%': round(maximo + rango * e, 2) for e in EXTENSIONES}
+        zonas_compra = {f'{r:g}': round(maximo - rango * r, 2) for r in RETROCESOS}
+        extensiones = {f'{e:g}': round(minimo + rango * e, 2) for e in EXTENSIONES}
     else:  # bajista: mismo rango, niveles hacia abajo
-        zonas_compra = {f'{int(r*100)}%': round(minimo + rango * r, 2) for r in RETROCESOS}
-        extensiones = {f'{int(e*100)}%': round(minimo - rango * e, 2) for e in EXTENSIONES}
+        zonas_compra = {f'{r:g}': round(minimo + rango * r, 2) for r in RETROCESOS}
+        extensiones = {f'{e:g}': round(maximo - rango * e, 2) for e in EXTENSIONES}
     return {
         'marco': tf,
         'direccion': direccion,
