@@ -246,20 +246,27 @@ Términos SMC: **0 claims**. El `NO_DETERMINABLE` de C12 es honesto.
 
 ---
 
-## ANEXO C05-A — nomenclatura del indicador de CreceTrader (2026-11-20)
+## ANEXO C05-A — formulacion del fibo (validada 2026-11-20)
 
-**El indicador tira el fibo AL REVES**: `0 = MAXIMO` y `1 = MINIMO`.
-Por eso sus etiquetas aparecen invertidas respecto al fibo estandar:
+**El fibo se tira AL REVES: `0 = MINIMO` y `1 = MAXIMO`.**
+Por eso las extensiones (`1 · 1,25 · 1,5 · 1,75 · 2 · 3`) quedan **ARRIBA del maximo**.
 
-| etiqueta de CreceTrader | equivalente estandar |
-|---|---|
-| `0,61` | **0,382** |
-| `0,5` | 0,5 |
-| `0,382` | **0,618** |
-| `0,25` | 0,786 |
+```
+alcista :  nivel = minimo + rango * r
+bajista :  nivel = maximo - rango * r
+```
 
-**Validado contra las capturas reales del 2026-11-20** (BNBUSDT):
-- **1D**: su `0,5` = 672,41 (motor: 672,41 exacto) · su `0,382` = 640,35 (motor: 640,35 exacto) · su `1,25` = 876,16 (motor: 876,15)
-- **4H**: su `0,5` = 670,05 (motor: 670,06) · su `0,382` = 637,13 (motor: 637,13 exacto)
+**Niveles**: retrocesos `0,382 / 0,5 / 0,61 / 0,786` · extensiones `1 / 1,25 / 1,5 / 1,75 / 2 / 3`
 
-**Las extensiones quedan arriba del maximo**: `1` = maximo, `1,25 / 1,5 / 1,75 / 2 / 3` por encima.
+> **Ojo: es `0,61`, no `0,618`.**
+
+**Validado contra las 3 capturas reales de BNB (2026-11-20)** — 12 niveles exactos:
+
+| TF | tramo | 0,382 | 0,5 | 0,61 |
+|---|---|---|---|---|
+| **1W** | 537,21 → 1.371,90 | 856,06 | 954,55 | **1.046,37** |
+| **1D** | 536,58 → 808,24 | 640,35 | 672,41 | **702,29** |
+| **4H** | 530,54 → 809,57 | 637,13 | 670,05 | **700,75** |
+
+**Criterio del tramo**: el **ultimo swing** (maximo y minimo relevantes) — a verificar con
+Francisco (`investigacion/TRAMO_SWING_PROPUESTA.md`). Con `n=20` acierta en 1W y 1D.
