@@ -2,7 +2,8 @@
 """Informe del dia — el resumen que Francisco quiere ver.
 
 Toma el ultimo video analizado y produce daily_pilot/datos/informe_hoy.json con:
-  que dice el canal, niveles, que propone el motor (C01-C12) y por que.
+  que dice el canal y los niveles que menciona. NO aplica C01-C12:
+  el metodo lo aplica el trader (ver daily_pilot/datos/informe_hoy.json).
 PAPER_ONLY: propone, no ejecuta.
 """
 from __future__ import annotations

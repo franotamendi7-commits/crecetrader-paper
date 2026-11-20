@@ -39,9 +39,15 @@ def fmt(x):
 
 
 def tickets(info, estado):
-    """PASO 1: solo BTC. Los demas pares no entran (sin feed real)."""
+    """PASO 1: solo BTC. Los demas pares no entran (sin feed real).
+
+    El precio es el **dicho en el video**, no un feed de mercado: se indica
+    explicitamente (hallazgo P2-1 de la auditoria 2026-11-20).
+    """
     ref = info.get('precio_referencia') or 0
-    val = f'<span class="t-v">{fmt(ref)}</span>' if ref else '<span class="t-v sinfeed">sin precio</span>'
+    proc = info.get('precio_procedencia') or ''
+    nota = f' <span class="t-nota">({proc})</span>' if proc else ''
+    val = f'<span class="t-v">{fmt(ref)}</span>{nota}' if ref else '<span class="t-v sinfeed">sin precio</span>'
     return (f'<div class="tick activo"><span class="t-k">BTC</span>{val}</div>'
             f'<div class="tick off"><span class="t-k">mas pares</span>'
             f'<span class="t-v sinfeed">sin feed aun</span></div>')
@@ -171,6 +177,7 @@ h1{font-size:18px;margin:0}
 .tick.activo{border-color:var(--acc)}
 .t-k{display:block;color:var(--muted);font-size:11px;letter-spacing:.06em}
 .t-v{display:block;font-size:17px;font-weight:600;margin-top:2px;font-variant-numeric:tabular-nums}
+.t-nota{display:block;font-size:10px;font-weight:400;color:var(--muted);margin-top:1px}
 .grid-main{display:grid;grid-template-columns:1.7fr 1fr;gap:12px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}

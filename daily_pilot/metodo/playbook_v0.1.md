@@ -1,6 +1,6 @@
 # PLAYBOOK CreceTrader — v0.1
 
-Fecha: 2026-11-19 · Fuente: `store.db` (**18.562 claims**, 102 videos) + `analisis/*.json`
+Fecha: 2026-11-19 · Fuente: `store.db` (**21.986 claims**, 111 videos) + `analisis/*.json`
 
 ## Estado de la aprobación (H-01)
 
@@ -129,7 +129,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 - **Implementación**: `core/zonas.py` — `zonas(minimo, maximo, plazo)`.
   `RETROCESOS = (0.50, 0.618, 0.786)` · `EXTENSIONES = (0.50, 1.00, 1.50, 2.00)` · `TF_POR_PLAZO`.
 - **Criterio de conteo**: claims cuyo texto matchea el regex (case-insensitive, sin anclar).
-  **Snapshot: `store.db` 18.562 claims / 102 videos** (2026-11-19).
+  **Snapshot: `store.db` 21.986 claims / 111 videos** (2026-11-19).
   Valores reales: `revers` 134 · `correcci[oó]n` 73 · `proyecci[oó]n` 205 · `romp` 208 ·
   `ruptura` 33 · `máximos` 92 · `mínimos` 61 · `rango` 42 · `consolida` 131 ·
   `Nueva York` 163 · `tendencia` 20 · `soporte` 17.

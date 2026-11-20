@@ -1,4 +1,6 @@
 """Modelo de escenario del YouTube Analyst (contrato v1.0)."""
+
+PAPER_ONLY = True   # no ejecuta; solo describe/clasifica
 from __future__ import annotations
 
 from dataclasses import dataclass, field

@@ -159,8 +159,24 @@ def ms_to_str(ms: int) -> str:
     return f'{h:02d}:{mi:02d}:{s:02d}.{milli:03d}'
 
 
+def _validar_path(path: Path) -> Path:
+    """Guard anti-huye: el store debe vivir DENTRO del arbol del piloto.
+
+    Antes no habia guard y la integracion corriendo desde una copia abria el
+    store VIVO (hallazgo P0-1 de la auditoria 2026-11-20).
+    """
+    p = Path(path).resolve()
+    try:
+        p.relative_to(KNOWLEDGE_DIR.resolve())
+    except ValueError:
+        raise SystemExit(
+            f'GUARD: se intento abrir un store fuera del piloto: {p} '
+            f'(esperado dentro de {KNOWLEDGE_DIR.resolve()})')
+    return p
+
+
 def conectar(path: Path | None = None) -> sqlite3.Connection:
-    path = path or STORE_PATH          # evaluado en tiempo de ejecucion
+    path = _validar_path(path or STORE_PATH)   # evaluado en tiempo de ejecucion
     path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(str(path), isolation_level=None)   # autocommit; TX explicitas
     conn.execute('PRAGMA foreign_keys=ON')

@@ -12,7 +12,9 @@ import sqlite3
 import sys
 from pathlib import Path
 
-sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge')
+# ruta relativa a ESTE archivo (antes era absoluta: hacia que la integracion
+# corriendo desde una copia abriera el store VIVO)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'knowledge'))
 import store as S
 
 PATRONES = [

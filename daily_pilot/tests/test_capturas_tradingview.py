@@ -44,8 +44,8 @@ CAPTURAS = [
 
 for tf, plazo, mn, mx, niveles in CAPTURAS:
     z = zonas(mn, mx, plazo=plazo)
-    caso(f'{tf}_nivel_0_es_minimo', abs(z['minimo'] - niveles.get('0', mn)) < TOL,
-         f"{z['minimo']} vs {niveles.get('0')}")
+    caso(f'{tf}_nivel_0_es_minimo', abs(z['minimo'] - mn) < TOL,
+         f"{z['minimo']} vs {mn}")
     for etiqueta, valor in niveles.items():
         if etiqueta == '0':
             continue

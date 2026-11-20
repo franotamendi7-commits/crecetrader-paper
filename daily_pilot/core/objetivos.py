@@ -33,19 +33,26 @@ def plan(entrada: float, minimo: float, maximo: float, direccion: str = 'alcista
         objetivos = [round(minimo + rango * e, 2) for e in EXTENSIONES]
     else:
         objetivos = [round(maximo - rango * e, 2) for e in EXTENSIONES]
+    # Los 7 objetivos son las extensiones de C05 (anexo C05-A, validado por
+    # Francisco el 2026-11-20). La firma de 2026-11-19 decia "4 tramos 25%"
+    # porque C05 tenia 4 extensiones. Con 7 objetivos, el 100% se reparte
+    # en partes iguales: si fueran 4 daria 25% cada uno.
+    # PENDIENTE: Francisco debe re-firmar (ver FIRMA_C01_C12.md).
+    n = len(objetivos)
+    pct_objetivo = round(1.0 / n, 6) if n else 0.0
     return {
         'entrada': entrada,
         'minimo': minimo,
         'maximo': maximo,
         'objetivos': objetivos,
-        'n_objetivos': len(objetivos),
-        'tramos_pct': [PCT_TRAMO] * TRAMOS,
+        'n_objetivos': n,
+        'tramos_pct': [pct_objetivo] * n,
         'toma': 'parcial',
         'stop': 'break_even tras el primer objetivo',
         'secuencia': [
-            {'objetivo': objetivos[i], 'tramo_pct': PCT_TRAMO,
+            {'objetivo': objetivos[i], 'tramo_pct': pct_objetivo,
              'accion_stop': 'break_even' if i == 0 else 'sin cambio'}
-            for i in range(len(objetivos))
+            for i in range(n)
         ],
         'paper_only': PAPER_ONLY,
     }

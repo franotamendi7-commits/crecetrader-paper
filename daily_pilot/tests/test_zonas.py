@@ -20,7 +20,7 @@ def caso(nombre, cond, detalle=''):
         print(f'FALLO | {nombre} | {detalle}')
 
 
-# 1. retrocesos 50 / 61 / 78  (formulacion: maximo - rango*r)
+# 1. retrocesos 0,382 / 0,5 / 0,61 / 0,786  (formulacion: minimo + rango*r)
 z = Z.zonas(56760.0, 75518.0, 'corto')
 caso('marco_4h', z['marco'] == '4H', z['marco'])
 caso('cuatro_retrocesos', len(z['zonas_compra']) == 4, str(z['zonas_compra']))

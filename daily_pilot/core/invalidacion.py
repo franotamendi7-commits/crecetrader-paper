@@ -30,10 +30,12 @@ def evaluar(cambio_de_tendencia_esperado: bool,
     """C08: se invalidaba si se esperaba un cambio de tendencia y no ocurrio."""
     if not cambio_de_tendencia_esperado:
         return {'estado': SIN_CAMBIO_ESPERADO, 'accion': 'NADA',
-                'motivo': 'no se esperaba cambio de tendencia; no aplica la regla'}
+                'motivo': 'no se esperaba cambio de tendencia; no aplica la regla',
+                'paper_only': PAPER_ONLY}
     if cambio_ocurrido:
         return {'estado': VIGENTE, 'accion': 'MANTENER',
-                'motivo': 'el cambio de tendencia esperado ocurrio: escenario vigente'}
+                'motivo': 'el cambio de tendencia esperado ocurrio: escenario vigente',
+                'paper_only': PAPER_ONLY}
     return {
         'estado': INVALIDADO,
         'accion': 'CERRAR POSICION',

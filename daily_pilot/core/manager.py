@@ -33,7 +33,9 @@ class Manager:
         self.min_rb = min_rb
         self.max_exposicion_pct = max_exposicion_pct
         self.stop_method = stop_method
-        self.confianza = 1.0      # default conservador: se pisa con e['confianza']
+        # Default conservador 0.50 (no 1.0: 1.0 implicaria arriesgar el 5% maximo
+        # sin que el trader lo pida). Se pisa con e['confianza'].
+        self.confianza = 0.50
 
     # --- dimensiones --------------------------------------------------
     def _calidad(self, e):
@@ -188,7 +190,7 @@ class Manager:
         riesgo = abs(entrada - stop)
         size = perdida = None
         # C11 (H-07): riesgo = confianza x tope, con tope duro del 5%.
-        conf = float(confianza if confianza is not None else getattr(self, 'confianza', 1.0))
+        conf = float(confianza if confianza is not None else getattr(self, 'confianza', 0.50))
         conf = min(max(conf, 0.0), 1.0)
         riesgo_pct = round(conf * TOPE_RIESGO_PCT, 4)
         if riesgo > 0:

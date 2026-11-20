@@ -117,9 +117,13 @@ if barstate.islast and not na(tramoMin) and not na(tramoMax) and rango > 0
 
 // ---------- abanico intradia (solo TF <= 1D) ----------
 // El cierre del dia (21:00 UTC-3) solo tiene sentido en intradiario o diario.
+// OJO: en Pine las llamadas se ejecutan SIEMPRE si estan sueltas; por eso la
+// request.security va DENTRO del if (asi no se ejecuta cuando esta apagada).
 intraNiveles = array.from(0.236, 0.382, 0.618, 0.929, 1.238)
 tfOk = timeframe.isintraday or timeframe.period == "D"
-float cierreDia = request.security(syminfo.tickerid, "D", close, lookahead=barmerge.lookahead_off)
+float cierreDia = na
+if mostrarIntradia and tfOk
+    cierreDia := request.security(syminfo.tickerid, "D", close, lookahead=barmerge.lookahead_off)
 
 if mostrarIntradia and tfOk and barstate.islast and not na(cierreDia)
     for _n in intraNiveles
@@ -132,9 +136,11 @@ if mostrarIntradia and tfOk and barstate.islast and not na(cierreDia)
             label.new(bar_index, pAbajo,  "-" + str.tostring(_n, "#.###"), style=label.style_label_left, color=color.new(cIntra, 60), textcolor=color.white, size=size.tiny)
 
 // ---------- nivel anual ----------
-d_close = request.security(syminfo.tickerid, "D", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
-es_1ene = request.security(syminfo.tickerid, "D", month == 1 and dayofmonth == 1)
-float anual = ta.valuewhen(es_1ene, d_close, 0)
+float anual = na
+if mostrarAnual
+    _d = request.security(syminfo.tickerid, "D", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+    _e = request.security(syminfo.tickerid, "D", month == 1 and dayofmonth == 1)
+    anual := ta.valuewhen(_e, _d, 0)
 
 if mostrarAnual and barstate.islast and not na(anual) and anual > 0
     line.new(bar_index, anual, bar_index, anual, color=cAnual, extend=extend.right)

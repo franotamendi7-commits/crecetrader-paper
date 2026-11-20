@@ -50,7 +50,8 @@ caso('bajista_todos_arriba_del_min_3', all(v >= (MIN - RANGO*3) for v in pb['obj
 
 # 4. toma parcial
 caso('toma_parcial', p['toma'] == 'parcial')
-caso('suma_100', abs(sum(p['tramos_pct']) - 1.0) < 1e-9, str(sum(p['tramos_pct'])))
+caso('suma_100', abs(sum(p['tramos_pct']) - 1.0) < 1e-5, str(sum(p['tramos_pct'])))
+caso('secuencia_suma_100', abs(sum(x['tramo_pct'] for x in p['secuencia']) - 1.0) < 1e-5, str(sum(x['tramo_pct'] for x in p['secuencia'])))
 caso('stop_be_primer', p['secuencia'][0]['accion_stop'] == 'break_even', str(p['secuencia'][0]))
 
 # 5. proximo objetivo

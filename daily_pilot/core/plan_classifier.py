@@ -5,6 +5,8 @@ No exige orden explicita de compra/venta. Reconoce planes por su contenido.
 """
 from __future__ import annotations
 
+PAPER_ONLY = True   # no ejecuta; solo describe/clasifica
+
 import re
 
 CLASIFICACIONES = ('NIVEL_REFERENCIADO', 'ZONA_DE_INTERES', 'ESCENARIO_CONDICIONAL',
