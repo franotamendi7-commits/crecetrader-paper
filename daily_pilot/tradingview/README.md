@@ -38,3 +38,16 @@ Activar **4 · Diagnostico** y mirar los tres plots:
 - si `maxAlto` y `tramoMin` tienen valor y `rango` > 0 -> el swing anda y el
   problema es el dibujo
 - si `rango` = 0 o `na` -> el swing no esta encontrando pivotes
+
+## PENDIENTE (2026-11-20, Francisco)
+
+**En 4H el indicador dibuja los niveles de 1D.** No se investigo mas por pedido
+de Francisco ("dejalo aca").
+
+Hipotesis a revisar:
+- el grafico tiene cargada una version vieja del indicador (cache del navegador)
+- `ta.pivothigh/pivotlow` en 4H agarrando la serie mal
+- el `request.security` del abanico/anual (hoy OFF) dejando lineas de la v1
+
+Proximo paso: en 4H con el indicador solo (v3), comparar `maxAlto` del label
+contra el tramo real de 4H calculado por `tramos.tramo_ciclo`.
