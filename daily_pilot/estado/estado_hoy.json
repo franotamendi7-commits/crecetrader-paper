@@ -2,15 +2,15 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "SIN VIDEO NUEVO",
-  "ultima_revision": "2026-11-20T00:05:24Z",
-  "deteccion_at": "2026-11-19T16:18:05.565213+00:00",
-  "analisis_at": "2026-11-19T16:18:05Z",
+  "estado": "ERROR DE ANALISIS",
+  "ultima_revision": "2026-11-20T16:57:13Z",
+  "deteccion_at": "2026-11-20T16:57:13Z",
+  "analisis_at": null,
   "video": {
-    "video_id": "EX-Rx_pnNpc",
-    "titulo": "Las actas de la FED abren la puerta a subir tipos: qué hago con Bitcoin",
-    "url": "https://www.youtube.com/watch?v=EX-Rx_pnNpc",
-    "publicado": "2026-11-19T10:06:07+00:00",
+    "video_id": "tKYVe6fkjdA",
+    "titulo": "Bitcoin toca los 61.247: por qué frena ahí y qué hacer ahora",
+    "url": "https://www.youtube.com/watch?v=tKYVe6fkjdA",
+    "publicado": "2026-11-20T10:10:20+00:00",
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
@@ -51,7 +51,9 @@
     "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7",
     "archivo": "daily_pilot/analisis/EX-Rx_pnNpc_analisis.json"
   },
-  "errores": [],
+  "errores": [
+    "tKYVe6fkjdA: [Errno 2] No such file or directory: 'yt-dlp'"
+  ],
   "ultimo_analisis_completo": {
     "video_id": "EX-Rx_pnNpc",
     "analizado_at": "2026-11-19T16:18:05Z",

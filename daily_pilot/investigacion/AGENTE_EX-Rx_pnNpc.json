@@ -1,0 +1,198 @@
+{
+  "video_id": "EX-Rx_pnNpc",
+  "precio_referencia": 69000.0,
+  "precio_referencia_menciones": 18,
+  "n_cues_con_precio": 96,
+  "niveles_dichos": [
+    {
+      "precio": 69000.0,
+      "menciones": 18,
+      "pistas": [],
+      "cita": "está ahí. La de la semana pasada lo llevó a los 69,000. Todavía no ha habido"
+    },
+    {
+      "precio": 56750.0,
+      "menciones": 12,
+      "pistas": [],
+      "cita": "voy a ampliar esta vela semanal, el contexto moviéndose en 69,000, 56,750,"
+    },
+    {
+      "precio": 61247.0,
+      "menciones": 9,
+      "pistas": [],
+      "cita": "que en el contado puede llegar a los 61,247, que le queda poquito. Están"
+    },
+    {
+      "precio": 6000.0,
+      "menciones": 6,
+      "pistas": [],
+      "cita": "y este está a tiro de piedra también, ya es que quedan unos $6,000 en número de"
+    },
+    {
+      "precio": 28400.0,
+      "menciones": 6,
+      "pistas": [
+        "retroceso"
+      ],
+      "cita": "exactamente igual y puede subir lo que él quiera, pero 28,26 y 28,400 a mí me"
+    },
+    {
+      "precio": 3600.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "que está ahora mismo cotizando sobre los $3,600"
+    },
+    {
+      "precio": 40000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "incluso comentarios de esto se va a 40,000 y a 10,000, pero y nosotros se lo"
+    },
+    {
+      "precio": 10000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "incluso comentarios de esto se va a 40,000 y a 10,000, pero y nosotros se lo"
+    },
+    {
+      "precio": 65520.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "\"Cuidado porque hay que tener el ojo puesto en los futuros porque 65,520"
+    },
+    {
+      "precio": 62616.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "de agosto, este de aquí, ¿vale? que este ya lo conocemos, 62,616."
+    },
+    {
+      "precio": 7000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "es que quedan unos $6,000 en número de redondos, 6,000 $7,000. Si esto ocurre,"
+    },
+    {
+      "precio": 81000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "referencia que nos ha dejado la acción del precio anda sobre los $81,000,"
+    },
+    {
+      "precio": 801000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "del precio anda sobre los $81,000, 801,000. Pero en ese caso, si empieza a"
+    },
+    {
+      "precio": 69500.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "801,000. Pero en ese caso, si empieza a llegar a 69,000, 69,500 y va entrando"
+    },
+    {
+      "precio": 117000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "sabemos que tenemos marcado hasta los 117,000. Pero cuidado, lo dejo tapado"
+    },
+    {
+      "precio": 62216.0,
+      "menciones": 3,
+      "pistas": [
+        "retroceso"
+      ],
+      "cita": "una reversión, si se atraviesa los 62,216"
+    },
+    {
+      "precio": 3906.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "en este momento, serie diaria, mediano plazo, perdido los 3,906 como era la"
+    },
+    {
+      "precio": 3624.0,
+      "menciones": 3,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "el escenario y la proyección. La proyección siempre ha sido 3,624, pues"
+    },
+    {
+      "precio": 3737.0,
+      "menciones": 3,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "proyección siempre ha sido 3,624, pues nuevo mínimo en el día de hoy, 3,737."
+    },
+    {
+      "precio": 7592.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "decrecientes en zona de toma de beneficio 7,592. Esto no cambia. Lo digo"
+    },
+    {
+      "precio": 25400.0,
+      "menciones": 3,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "corto porque nuevamente suele ser al menos de un 20% y 25,400"
+    },
+    {
+      "precio": 62978.0,
+      "menciones": 3,
+      "pistas": [
+        "anclaje"
+      ],
+      "cita": "negociación intrayaria de Bitcoin. Para acabar, punto de partida 62,978."
+    },
+    {
+      "precio": 62348.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "que le ha devuelto las posiciones es 62,348"
+    },
+    {
+      "precio": 63218.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "que el precio no caiga. Ahora, predisposición alcista 63,218,"
+    },
+    {
+      "precio": 64237.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "predisposición alcista 63,218, 367, 608, 922 y ya por último 64,237."
+    },
+    {
+      "precio": 61718.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "367, 608, 922 y ya por último 64,237. Por la parte de abajo está 61,718."
+    }
+  ],
+  "calculados": {
+    "abanico_intradia": {
+      "punto_cero": 69000.0,
+      "niveles": [
+        68310.0,
+        68482.5,
+        68655.0,
+        68827.5,
+        69000.0,
+        69172.5,
+        69345.0,
+        69517.5,
+        69690.0
+      ],
+      "unidad": "porcentaje del precio (0.25 = 0,25%)"
+    },
+    "fibo_por_plazo": null,
+    "fuente": "calculado (C05), no dicho por el canal",
+    "aviso": "SIN TRAMO: el canal no dio minimo/maximo. No se calcula fibo (no se inventa)."
+  },
+  "paper_only": true,
+  "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."
+}

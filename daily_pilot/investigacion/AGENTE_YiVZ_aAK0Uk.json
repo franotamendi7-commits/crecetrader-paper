@@ -1,0 +1,70 @@
+{
+  "video_id": "YiVZ_aAK0Uk",
+  "precio_referencia": 28963.0,
+  "precio_referencia_menciones": 21,
+  "n_cues_con_precio": 42,
+  "niveles_dichos": [
+    {
+      "precio": 28963.0,
+      "menciones": 21,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "teníamos como escenario venir a los 28.963 que era Nuestro objetivo por la"
+    },
+    {
+      "precio": 29716.0,
+      "menciones": 9,
+      "pistas": [],
+      "cita": "fuerte bitcoin que lo trajo ya lo veis a los 29.716 que es el refugio de mediano"
+    },
+    {
+      "precio": 27187.0,
+      "menciones": 7,
+      "pistas": [],
+      "cita": "enseñando era el sexto golpe en los 27.187 vale vamos a colocar aquí los"
+    },
+    {
+      "precio": 28900.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "y sabemos que tenemos por aquí los 28.900 donde en los 29.000 vale que está"
+    },
+    {
+      "precio": 29000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "y sabemos que tenemos por aquí los 28.900 donde en los 29.000 vale que está"
+    },
+    {
+      "precio": 31170.0,
+      "menciones": 3,
+      "pistas": [
+        "oferta"
+      ],
+      "cita": "saliendo entonces aquí tendría que ser a la compra en la ruptura de 31.170 y"
+    }
+  ],
+  "calculados": {
+    "abanico_intradia": {
+      "punto_cero": 28963.0,
+      "niveles": [
+        28673.37,
+        28745.7775,
+        28818.185,
+        28890.5925,
+        28963.0,
+        29035.4075,
+        29107.815,
+        29180.2225,
+        29252.63
+      ],
+      "unidad": "porcentaje del precio (0.25 = 0,25%)"
+    },
+    "fibo_por_plazo": null,
+    "fuente": "calculado (C05), no dicho por el canal",
+    "aviso": "SIN TRAMO: el canal no dio minimo/maximo. No se calcula fibo (no se inventa)."
+  },
+  "paper_only": true,
+  "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."
+}

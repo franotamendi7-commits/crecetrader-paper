@@ -1,0 +1,68 @@
+{
+  "video_id": "d-6Ud3BhQ0I",
+  "precio_referencia": 28963.0,
+  "precio_referencia_menciones": 9,
+  "n_cues_con_precio": 21,
+  "niveles_dichos": [
+    {
+      "precio": 28963.0,
+      "menciones": 9,
+      "pistas": [
+        "anclaje"
+      ],
+      "cita": "Este nivel como ha pasado con el 28,963,"
+    },
+    {
+      "precio": 8000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "crisis de su historia. El Dow Jones en esa época estaba en los 8,000 8300"
+    },
+    {
+      "precio": 19756.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "yo puedo calcularlos aquí. ¿Veis? 19,756."
+    },
+    {
+      "precio": 25238.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "variación. Calcúlalo. Y si a mí me dice aquí 25,238"
+    },
+    {
+      "precio": 30133.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "caiga el 50% de ganancia el tuyo. 30,133. que el mío dice 30,120. No"
+    },
+    {
+      "precio": 30120.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "caiga el 50% de ganancia el tuyo. 30,133. que el mío dice 30,120. No"
+    }
+  ],
+  "calculados": {
+    "abanico_intradia": {
+      "punto_cero": 28963.0,
+      "niveles": [
+        28673.37,
+        28745.7775,
+        28818.185,
+        28890.5925,
+        28963.0,
+        29035.4075,
+        29107.815,
+        29180.2225,
+        29252.63
+      ],
+      "unidad": "porcentaje del precio (0.25 = 0,25%)"
+    },
+    "fibo_por_plazo": null,
+    "fuente": "calculado (C05), no dicho por el canal",
+    "aviso": "SIN TRAMO: el canal no dio minimo/maximo. No se calcula fibo (no se inventa)."
+  },
+  "paper_only": true,
+  "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."
+}

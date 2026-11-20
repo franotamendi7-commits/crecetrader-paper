@@ -1,0 +1,10 @@
+{
+  "video_id": "JB0QyPbmdNg",
+  "precio_referencia": 0.0,
+  "precio_referencia_menciones": 0,
+  "n_cues_con_precio": 0,
+  "niveles_dichos": [],
+  "calculados": null,
+  "paper_only": true,
+  "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."
+}
