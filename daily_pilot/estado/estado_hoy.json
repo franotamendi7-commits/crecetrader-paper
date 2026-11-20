@@ -2,10 +2,10 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "ERROR DE ANALISIS",
-  "ultima_revision": "2026-11-19T15:51:54Z",
-  "deteccion_at": "2026-11-19T15:51:54Z",
-  "analisis_at": null,
+  "estado": "SIN VIDEO NUEVO",
+  "ultima_revision": "2026-11-20T00:05:24Z",
+  "deteccion_at": "2026-11-19T16:18:05.565213+00:00",
+  "analisis_at": "2026-11-19T16:18:05Z",
   "video": {
     "video_id": "EX-Rx_pnNpc",
     "titulo": "Las actas de la FED abren la puerta a subir tipos: qué hago con Bitcoin",
@@ -14,50 +14,50 @@
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
-    "frase": "Último análisis real: 9_91uE05BPE · 2707 cues · instrumentos ['BTC', 'XAUUSD']",
+    "frase": "Último análisis real: EX-Rx_pnNpc · 1168 cues · instrumentos ['BTC', 'XAUUSD', 'ETH', 'NQ']",
     "instrumento": [
       "BTC",
-      "XAUUSD"
+      "XAUUSD",
+      "ETH",
+      "NQ"
     ],
     "temporalidad": "NO DISPONIBLE",
     "evidencia": {
-      "video_id": "9_91uE05BPE",
-      "analizado_at": "2026-11-19T12:14:51Z",
-      "sha256_transcript": "5cb0b76f6e6db7ca250fb7a847ba0e54a4872c2d991b55b9b0a637f3af25b451"
+      "video_id": "EX-Rx_pnNpc",
+      "analizado_at": "2026-11-19T16:18:05Z",
+      "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7"
     },
     "limitaciones": [
       "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
       "Los numeros provienen de la transcripcion; no contrastados con feed.",
       "No se infirieron niveles: solo se transcribio lo dicho."
     ],
-    "fuente": "analisis/9_91uE05BPE_analisis.json"
+    "fuente": "analisis/EX-Rx_pnNpc_analisis.json"
   },
   "escenarios": {
-    "video_id": "9_91uE05BPE",
+    "video_id": "EX-Rx_pnNpc",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "macro": {
-    "video_id": "9_91uE05BPE",
+    "video_id": "EX-Rx_pnNpc",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "ultimo_analizado": {
-    "video_id": "9_91uE05BPE",
-    "analizado_at": "2026-11-19T12:14:51Z",
-    "n_cues": 2707,
-    "sha256_transcript": "5cb0b76f6e6db7ca250fb7a847ba0e54a4872c2d991b55b9b0a637f3af25b451",
-    "archivo": "daily_pilot/analisis/9_91uE05BPE_analisis.json"
+    "video_id": "EX-Rx_pnNpc",
+    "analizado_at": "2026-11-19T16:18:05Z",
+    "n_cues": 1168,
+    "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7",
+    "archivo": "daily_pilot/analisis/EX-Rx_pnNpc_analisis.json"
   },
-  "errores": [
-    "EX-Rx_pnNpc: [Errno 2] No such file or directory: 'yt-dlp'"
-  ],
+  "errores": [],
   "ultimo_analisis_completo": {
-    "video_id": "9_91uE05BPE",
-    "analizado_at": "2026-11-19T12:14:51Z",
-    "n_cues": 2707,
-    "sha256_transcript": "5cb0b76f6e6db7ca250fb7a847ba0e54a4872c2d991b55b9b0a637f3af25b451",
-    "archivo": "daily_pilot/analisis/9_91uE05BPE_analisis.json"
+    "video_id": "EX-Rx_pnNpc",
+    "analizado_at": "2026-11-19T16:18:05Z",
+    "n_cues": 1168,
+    "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7",
+    "archivo": "daily_pilot/analisis/EX-Rx_pnNpc_analisis.json"
   },
   "escenarios_estado": null
 }

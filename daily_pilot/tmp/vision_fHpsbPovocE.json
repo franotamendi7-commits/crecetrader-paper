@@ -1,0 +1,3893 @@
+{
+  "modelo": "qwen3-vl:8b-instruct",
+  "paper_only": true,
+  "n_frames": 119,
+  "json_validos": 119,
+  "tasa_json": 1.0,
+  "niveles_consolidados": {
+    "28963.0": 20,
+    "757.25": 14,
+    "1040.0": 12,
+    "920.0": 12,
+    "19126.0": 12,
+    "902.75": 10,
+    "880.0": 8,
+    "92000": 7,
+    "1000.0": 7,
+    "840.0": 7,
+    "940.0": 7,
+    "84000": 6,
+    "80000": 6,
+    "1120.0": 6,
+    "980.0": 6,
+    "860.0": 6,
+    "957.5": 6,
+    "88000": 5,
+    "1160.0": 5,
+    "1080.0": 5,
+    "800.0": 5,
+    "874.25": 5,
+    "86000": 5,
+    "82000": 5,
+    "1030.5": 5,
+    "959": 5,
+    "900": 5,
+    "1060.0": 5,
+    "1106.25": 5,
+    "960.0": 4,
+    "720.0": 4,
+    "550.0": 4,
+    "820.0": 4,
+    "780.0": 4,
+    "94000": 4,
+    "846": 4,
+    "1020.0": 4,
+    "1180.0": 4,
+    "1140.0": 4,
+    "1100.0": 4,
+    "96000": 3,
+    "1200.0": 3,
+    "760.0": 3,
+    "750.0": 3,
+    "650.0": 3,
+    "700.0": 3,
+    "575.0": 3,
+    "680.0": 3,
+    "90000": 3,
+    "78000": 3,
+    "884.5": 3,
+    "777.25": 3,
+    "95900": 3,
+    "1006.75": 3,
+    "26869": 3,
+    "100000": 2,
+    "76000": 2,
+    "856.75": 2,
+    "600.0": 2,
+    "725.0": 2,
+    "675.0": 2,
+    "625.0": 2,
+    "685.75": 2,
+    "740.0": 2,
+    "640.0": 2,
+    "975.25": 2,
+    "923.5": 2,
+    "872.5": 2,
+    "820.5": 2,
+    "769": 2,
+    "744.5": 2,
+    "714.5": 2,
+    "125000": 2,
+    "98000": 2,
+    "74000": 2,
+    "942.5": 2,
+    "817.5": 2,
+    "1032.5": 2,
+    "1024.5": 2,
+    "1103.5": 2,
+    "969": 2,
+    "1056": 2,
+    "1148": 2,
+    "932": 2,
+    "1077.25": 2,
+    "26856.78": 2,
+    "24000": 2,
+    "21000": 2,
+    "26662": 2,
+    "24176": 2,
+    "112000": 1,
+    "108000": 1,
+    "104000": 1,
+    "72000": 1,
+    "68000": 1,
+    "64000": 1,
+    "60000": 1,
+    "56000": 1,
+    "52000": 1,
+    "1280.0": 1,
+    "1240.0": 1,
+    "1550.0": 1,
+    "1450.0": 1,
+    "1350.0": 1,
+    "1250.0": 1,
+    "1150.0": 1,
+    "1050.0": 1,
+    "950.0": 1,
+    "850.0": 1,
+    "1508.5": 1,
+    "1460.25": 1,
+    "1421.25": 1,
+    "1382": 1,
+    "1338.25": 1,
+    "1255.5": 1,
+    "1172.75": 1,
+    "1090": 1,
+    "924.25": 1,
+    "856.78": 1,
+    "692.75": 1,
+    "616.0": 1,
+    "805.0": 1,
+    "777.75": 1,
+    "801.0": 1,
+    "771.0": 1,
+    "841.0": 1,
+    "833.5": 1,
+    "660.0": 1,
+    "949.0": 1,
+    "906.5": 1,
+    "879.25": 1,
+    "793.25": 1,
+    "665.75": 1,
+    "793.2": 1,
+    "821.25": 1,
+    "666.75": 1,
+    "620": 1,
+    "93000": 1,
+    "91000": 1,
+    "89000": 1,
+    "87000": 1,
+    "85000": 1,
+    "83000": 1,
+    "81000": 1,
+    "79000": 1,
+    "77000": 1,
+    "102000": 1,
+    "912": 1,
+    "811.75": 1,
+    "734.5": 1,
+    "102500": 1,
+    "94250": 1,
+    "76725": 1,
+    "1025.25": 1,
+    "883.5": 1,
+    "1007.25": 1,
+    "96500": 1,
+    "75471": 1,
+    "61800": 1,
+    "50000": 1,
+    "10400": 1,
+    "103250": 1,
+    "10200": 1,
+    "999": 1,
+    "1024.6": 1,
+    "1249.25": 1,
+    "1077": 1,
+    "973": 1,
+    "865": 1,
+    "984.25": 1,
+    "1107.5": 1,
+    "973.25": 1,
+    "865.25": 1,
+    "1177.25": 1,
+    "1147.25": 1,
+    "1163.5": 1,
+    "1144.0": 1,
+    "1020.25": 1,
+    "1166.5": 1,
+    "1116.5": 1,
+    "1075.5": 1,
+    "973.26": 1,
+    "1218.75": 1,
+    "1037.5": 1,
+    "1014.25": 1,
+    "1101.0": 1,
+    "1279.75": 1,
+    "1248.75": 1,
+    "30971.67": 1,
+    "34140.95": 1,
+    "31953.0": 1,
+    "29765.0": 1,
+    "28671.07": 1,
+    "27577.09": 1,
+    "26483.12": 1,
+    "25389.14": 1,
+    "24872.79": 1,
+    "24233.9": 1,
+    "23201.19": 1,
+    "28898.79": 1,
+    "26861.48": 1,
+    "26813": 1,
+    "26000": 1,
+    "2894.72": 1,
+    "2896.3": 1,
+    "26812.14": 1,
+    "26820": 1,
+    "23436": 1,
+    "26831": 1,
+    "26823.26": 1,
+    "20639.05": 1,
+    "26829": 1,
+    "25746": 1,
+    "26829.51": 1,
+    "23247.01": 1,
+    "31367": 1,
+    "29716": 1,
+    "26414": 1,
+    "24763": 1,
+    "26846": 1,
+    "26623": 1,
+    "26646": 1,
+    "26863": 1,
+    "36024": 1,
+    "30138": 1,
+    "27896": 1,
+    "26562": 1,
+    "21519": 1,
+    "20366": 1,
+    "19213": 1,
+    "28250": 1,
+    "26847": 1,
+    "26250": 1,
+    "23000": 1,
+    "22000": 1,
+    "20000": 1,
+    "26641.89": 1,
+    "26876.85": 1,
+    "24024.83": 1
+  },
+  "frames": [
+    {
+      "frame": "00001.jpg",
+      "segundos": 10.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00002.jpg",
+      "segundos": 35.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 112000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 108000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 104000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 100000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 96000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 92000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 88000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 84000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 76000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 72000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 68000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 64000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 60000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 56000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 52000,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00003.jpg",
+      "segundos": 12.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00004.jpg",
+      "segundos": 12.0,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00005.jpg",
+      "segundos": 12.5,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00006.jpg",
+      "segundos": 12.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00007.jpg",
+      "segundos": 12.5,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00008.jpg",
+      "segundos": 40.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1280.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1240.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1200.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1160.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1120.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1080.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1000.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 960.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 800.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 760.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 720.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango ascendente con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00009.jpg",
+      "segundos": 41.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 1550.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1450.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1350.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1250.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1150.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1050.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 950.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 850.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 750.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 650.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 550.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "El precio se encuentra en un rango descendente con niveles de resistencia visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00011.jpg",
+      "segundos": 40.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1508.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1460.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1421.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1382,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1338.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1255.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1172.75,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1090,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 924.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 856.75,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango ascendente con niveles de soporte y resistencia visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00012.jpg",
+      "segundos": 27.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 856.78,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 692.75,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio está en una tendencia bajista con niveles de resistencia visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00013.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00014.jpg",
+      "segundos": 53.7,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00015.jpg",
+      "segundos": 26.2,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 856.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 616.0,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "El precio se encuentra en un rango de resistencia y soporte.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00016.jpg",
+      "segundos": 53.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00017.jpg",
+      "segundos": 34.3,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 805.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 700.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 650.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 600.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 575.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 550.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una zona de resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00018.jpg",
+      "segundos": 26.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 777.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango de resistencia con niveles visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00019.jpg",
+      "segundos": 40.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 801.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 750.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 725.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 700.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 675.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 650.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 625.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 600.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 575.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 550.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango de resistencia con niveles clave visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00020.jpg",
+      "segundos": 53.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00021.jpg",
+      "segundos": 28.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 874.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 685.75,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio rompe la resistencia de 902.75 y se dirige hacia arriba.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00022.jpg",
+      "segundos": 28.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 771.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 750.0,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una zona de soporte y resistencia con tendencia alcista.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00023.jpg",
+      "segundos": 35.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 841.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 725.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 675.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 625.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 575.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 550.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con soportes y resistencias visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00024.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00025.jpg",
+      "segundos": 54.1,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00026.jpg",
+      "segundos": 20.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00027.jpg",
+      "segundos": 20.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00028.jpg",
+      "segundos": 16.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00029.jpg",
+      "segundos": 15.7,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00030.jpg",
+      "segundos": 15.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00031.jpg",
+      "segundos": 15.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00032.jpg",
+      "segundos": 20.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00033.jpg",
+      "segundos": 54.8,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1000.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 980.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 960.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 940.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 874.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 860.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 833.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 820.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 800.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 780.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 740.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 720.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 700.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 680.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 660.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 640.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "El precio se encuentra en una zona de resistencia clave a $902.75.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00034.jpg",
+      "segundos": 20.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00035.jpg",
+      "segundos": 20.8,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00036.jpg",
+      "segundos": 15.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00037.jpg",
+      "segundos": 15.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00038.jpg",
+      "segundos": 44.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 949.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 906.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 879.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 874.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 860.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 820.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 800.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 780.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 760.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00039.jpg",
+      "segundos": 16.0,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00040.jpg",
+      "segundos": 42.3,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 940.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 874.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 860.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 820.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 800.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 780.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 760.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia con niveles clave marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00041.jpg",
+      "segundos": 37.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "ruptura",
+        "niveles_visibles": [
+          {
+            "precio": 975.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 923.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 872.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 820.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 793.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 769,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 744.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 714.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 665.75,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio rompe por encima de la resistencia clave en 902.75.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00042.jpg",
+      "segundos": 15.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00043.jpg",
+      "segundos": 37.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 975.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 923.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 872.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 820.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 793.2,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 769,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 744.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 714.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 685.75,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango de niveles calculados, mostrando una tendencia alcista moderada.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00044.jpg",
+      "segundos": 54.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00045.jpg",
+      "segundos": 20.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00046.jpg",
+      "segundos": 43.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 957.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 940,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 902.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 874.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 821.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 780,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 720,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 680,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 666.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 640,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 620,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se mueve en un rango ascendente con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00047.jpg",
+      "segundos": 20.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00048.jpg",
+      "segundos": 20.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00049.jpg",
+      "segundos": 50.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 94000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 93000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 92000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 91000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 90000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 89000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 88000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 87000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 86000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 85000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 84000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 83000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 82000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 81000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 79000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 78000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 77000,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se mueve en un rango alcista con soportes y resistencias claras.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00050.jpg",
+      "segundos": 19.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00051.jpg",
+      "segundos": 14.7,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00052.jpg",
+      "segundos": 14.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00053.jpg",
+      "segundos": 42.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 125000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 102000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 98000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 96000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 94000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 92000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 88000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 86000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 84000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 82000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 80000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 78000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 76000,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 74000,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se mueve en un rango ascendente con niveles de soporte y resistencia claramente definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00054.jpg",
+      "segundos": 36.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1030.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 957.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 942.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 912,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 884.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 846,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 811.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 777.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 734.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 740,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00055.jpg",
+      "segundos": 39.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 125000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 102500,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 96000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 94250,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 92000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 88000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 86000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 84000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 82000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 78000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 76725,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 74000,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00056.jpg",
+      "segundos": 30.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1025.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 942.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 883.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 846,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 817.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 777.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00057.jpg",
+      "segundos": 49.4,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00058.jpg",
+      "segundos": 30.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1032.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1024.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1007.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 959,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 900,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00059.jpg",
+      "segundos": 39.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 100000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 96500,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 95900,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 92000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 90000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 88000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 86000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 84000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 82000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 75471,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 61800,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 50000,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de soporte y resistencia claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00060.jpg",
+      "segundos": 33.3,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 98000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 95900,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 94000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 92000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 90000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 86000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 84000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 82000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 80000,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio rompe resistencia y avanza con fuerza.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00061.jpg",
+      "segundos": 14.3,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00063.jpg",
+      "segundos": 29.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 10400,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 103250,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 10200,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 95900,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 94000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 92000,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una fase alcista con niveles de resistencia claramente marcados.",
+        "instrumento": "ES11",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00064.jpg",
+      "segundos": 49.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00065.jpg",
+      "segundos": 36.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1060.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1020.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 980.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 940.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 900.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 860.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 820.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00066.jpg",
+      "segundos": 45.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1160,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1120,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 999,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 800,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 720,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 680,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 757.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 777.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 817.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 846,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 884.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 957.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1030.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1103.5,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00067.jpg",
+      "segundos": 33.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1106.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1030.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 957.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1106.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1032.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1024.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1024.6,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 969,
+            "tipo": "soporte"
+          },
+          {
+            "precio": 969,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia y soporte claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00068.jpg",
+      "segundos": 27.3,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1106.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1030.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 957.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 884.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 846,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio ha superado múltiples niveles de resistencia.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00069.jpg",
+      "segundos": 49.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1200.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1180.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1160.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1140.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1120.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1100.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1080.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1060.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1020.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1000.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 980.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 960.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 940.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 900.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 860.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de resistencia y soporte visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00070.jpg",
+      "segundos": 47.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 1200,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1180,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1160,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1140,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1120,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1100,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1080,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1060,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1020,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 980,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 960,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 940,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 900,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 860,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 840,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia, con niveles clave en 1100 y 1000.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00071.jpg",
+      "segundos": 14.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00072.jpg",
+      "segundos": 14.3,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00073.jpg",
+      "segundos": 28.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1249.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1103.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1030.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 957.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 959,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1056,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en una zona de resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00074.jpg",
+      "segundos": 28.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1148,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1077,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1040,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 973,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 932,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 865,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de soporte y resistencia claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00075.jpg",
+      "segundos": 35.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1106.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1056.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1000.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 984.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 959.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 940.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 920.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 900.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 880.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00076.jpg",
+      "segundos": 31.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1107.5,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1077.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1040,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1006.75,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 973.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 932,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 865.25,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con niveles de soporte y resistencia claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00077.jpg",
+      "segundos": 40.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1180,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1177.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1160,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1147.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1140,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1120,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1100,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1080,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1060,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1020,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 980,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 959,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio rompe resistencia y muestra tendencia alcista.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00079.jpg",
+      "segundos": 49.9,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00080.jpg",
+      "segundos": 38.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1180.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1163.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1144.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1120.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1100.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1080.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1060.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1020.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1000.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 980.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 959.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se mueve en un rango alcista con niveles de resistencia bien definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00081.jpg",
+      "segundos": 31.2,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1166.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1140,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1116.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1075.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1040,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1006.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 973.26,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio está en una tendencia alcista con niveles de resistencia claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00082.jpg",
+      "segundos": 28.2,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1218.75,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1148.0,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1077.25,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1040.0,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 1006.75,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango ascendente con niveles de soporte y resistencia visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00083.jpg",
+      "segundos": 18.9,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00084.jpg",
+      "segundos": 26.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1037.5,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1014.25,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1101.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1106.25,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en una zona de resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00085.jpg",
+      "segundos": 19.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en una tendencia alcista con máximos crecientes.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00086.jpg",
+      "segundos": 19.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00087.jpg",
+      "segundos": 23.3,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 1279.75,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 1248.75,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se mueve en un rango ascendente con resistencias claras.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "diario",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00088.jpg",
+      "segundos": 28.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 30971.67,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 28963.0,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 26856.78,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 28963.0,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 26856.78,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio está en una fase alcista con niveles de soporte y resistencia visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00089.jpg",
+      "segundos": 49.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00090.jpg",
+      "segundos": 18.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00091.jpg",
+      "segundos": 39.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 34140.95,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 31953.0,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 29765.0,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 28671.07,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 27577.09,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 26483.12,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 25389.14,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 24872.79,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 24233.9,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 23201.19,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "El precio se encuentra en un rango de niveles calculados, con una tendencia bajista reciente.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00092.jpg",
+      "segundos": 27.2,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28898.79,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26861.48,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia con niveles visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00093.jpg",
+      "segundos": 15.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00094.jpg",
+      "segundos": 15.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00095.jpg",
+      "segundos": 15.7,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00096.jpg",
+      "segundos": 15.7,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00097.jpg",
+      "segundos": 28.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26813,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en una fase de consolidación cerca de una resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00098.jpg",
+      "segundos": 21.8,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "verde",
+        "observacion": "El gráfico muestra una tendencia bajista con soportes y resistencias visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00099.jpg",
+      "segundos": 54.4,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00100.jpg",
+      "segundos": 20.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00101.jpg",
+      "segundos": 28.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 2894.72,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 2896.3,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 26812.14,
+            "tipo": "calculado"
+          },
+          {
+            "precio": 19126.0,
+            "tipo": "calculado"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio rompe resistencia y avanza en tendencia alcista.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00102.jpg",
+      "segundos": 20.2,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00103.jpg",
+      "segundos": 29.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26820,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 23436,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia y soporte, con una vela roja indicando posible continuación de la caída.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00104.jpg",
+      "segundos": 26.2,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26831,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango con soporte y resistencia definidos.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00105.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00106.jpg",
+      "segundos": 30.0,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28963.0,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26823.26,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 20639.05,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126.0,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "El precio se encuentra en una zona de resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00107.jpg",
+      "segundos": 28.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26829,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 25746,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango de resistencia y soporte definido por niveles clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00108.jpg",
+      "segundos": 28.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26829.51,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 23247.01,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "verde",
+        "observacion": "El precio se encuentra en un rango con niveles de resistencia claramente marcados.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00109.jpg",
+      "segundos": 20.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "NO_VISIBLE",
+        "niveles_visibles": [],
+        "vela_actual": "NO_VISIBLE",
+        "observacion": "NO_VISIBLE",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00110.jpg",
+      "segundos": 31.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 31367,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 29716,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26414,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 24763,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencias y soportes clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00111.jpg",
+      "segundos": 30.6,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26846,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26623,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26646,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia y soporte, con una vela roja indicando posible continuación de la caída.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00112.jpg",
+      "segundos": 35.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26863,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 24000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 21000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia y soporte, con una vela roja en el último punto.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00113.jpg",
+      "segundos": 43.1,
+      "json_valido": true,
+      "data": {
+        "estructura": "ruptura",
+        "niveles_visibles": [
+          {
+            "precio": 36024,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 30138,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 27896,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26562,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 21519,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 20366,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19213,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26662,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 24176,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26662,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 24176,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio rompe por debajo de los niveles de resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1h",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00114.jpg",
+      "segundos": 38.8,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 28250,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26847,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26250,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 24000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 23000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 22000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 21000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 20000,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia con niveles clave visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00115.jpg",
+      "segundos": 27.5,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26641.89,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "soporte"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia y soporte, con una vela roja en el momento actual.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00116.jpg",
+      "segundos": 27.7,
+      "json_valido": true,
+      "data": {
+        "estructura": "maximos_crecientes",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26869,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26869,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26869,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en una zona de resistencia clave.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "1D",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00117.jpg",
+      "segundos": 53.8,
+      "json_valido": true,
+      "data": {
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00118.jpg",
+      "segundos": 28.4,
+      "json_valido": true,
+      "data": {
+        "estructura": "rango",
+        "niveles_visibles": [
+          {
+            "precio": 28963,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 26876.85,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 24024.83,
+            "tipo": "resistencia"
+          },
+          {
+            "precio": 19126,
+            "tipo": "resistencia"
+          }
+        ],
+        "vela_actual": "roja",
+        "observacion": "El precio se encuentra en un rango de resistencia con niveles clave visibles.",
+        "instrumento": "BTCUSD",
+        "tf_aparente": "4H",
+        "es_grafico": true
+      }
+    },
+    {
+      "frame": "00119.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00120.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00121.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
+      "frame": "00122.jpg",
+      "segundos": 15.6,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    }
+  ]
+}
