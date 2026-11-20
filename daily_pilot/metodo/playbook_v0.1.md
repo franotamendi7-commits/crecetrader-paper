@@ -242,3 +242,24 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 ## Verificación de este borrador
 Ejemplos contrastados contra `store.db`: todos existen (12, 1, 15, 15, 3, 9, 3 claims).
 Términos SMC: **0 claims**. El `NO_DETERMINABLE` de C12 es honesto.
+
+
+---
+
+## ANEXO C05-A — nomenclatura del indicador de CreceTrader (2026-11-20)
+
+**El indicador tira el fibo AL REVES**: `0 = MAXIMO` y `1 = MINIMO`.
+Por eso sus etiquetas aparecen invertidas respecto al fibo estandar:
+
+| etiqueta de CreceTrader | equivalente estandar |
+|---|---|
+| `0,61` | **0,382** |
+| `0,5` | 0,5 |
+| `0,382` | **0,618** |
+| `0,25` | 0,786 |
+
+**Validado contra las capturas reales del 2026-11-20** (BNBUSDT):
+- **1D**: su `0,5` = 672,41 (motor: 672,41 exacto) · su `0,382` = 640,35 (motor: 640,35 exacto) · su `1,25` = 876,16 (motor: 876,15)
+- **4H**: su `0,5` = 670,05 (motor: 670,06) · su `0,382` = 637,13 (motor: 637,13 exacto)
+
+**Las extensiones quedan arriba del maximo**: `1` = maximo, `1,25 / 1,5 / 1,75 / 2 / 3` por encima.

@@ -1,0 +1,40 @@
+{
+ "BNBUSDT": {
+  "4h": {
+   "min": 530.54,
+   "max": 809.57,
+   "etiquetas": {
+    "1": 809.57,
+    "0.61": 700.75,
+    "0.5": 670.05,
+    "0.382": 637.13,
+    "0": 530.54
+   },
+   "nota": "etiquetas invertidas del indicador CreceTrader: su '0,61' = 0,382 estandar; su '0,382' = 0,618"
+  },
+  "1d": {
+   "min": 536.58,
+   "max": 808.24,
+   "etiquetas": {
+    "1.25": 876.16,
+    "1": 808.24,
+    "0.61": 702.29,
+    "0.5": 672.41,
+    "0.382": 640.35,
+    "0": 536.58
+   },
+   "nota": "1,25 = 536.58 + rango*1.25 exacto; '0,382'(856.06) extra por encima"
+  },
+  "1w": {
+   "min": 537.21,
+   "max": 1371.9,
+   "etiquetas": {
+    "1": 1371.9,
+    "0.5": 954.55,
+    "0.382": 1101.99,
+    "0.618": 751.97
+   },
+   "nota": "0,5 cuadra exacto con rango 834,69; las otras dos no cuadran con ese rango -> pendiente imagen"
+  }
+ }
+}

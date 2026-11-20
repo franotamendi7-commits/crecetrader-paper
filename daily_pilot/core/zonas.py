@@ -24,7 +24,7 @@ from __future__ import annotations
 
 PAPER_ONLY = True
 
-RETROCESOS = (0.50, 0.618, 0.786)          # 50%, 61%, 78%
+RETROCESOS = (0.382, 0.50, 0.618, 0.786)    # 38,2 / 50 / 61,8 / 78,6
 EXTENSIONES = (0.50, 1.00, 1.25, 1.50, 1.75, 2.00, 3.00)  # sobre el maximo (Francisco)
 
 # Marco temporal segun el plazo de la tendencia ( Francisco ).
@@ -73,3 +73,20 @@ def cambio_tendencia(maximos_mayores: bool, minimos_menores: bool) -> bool:
 if __name__ == '__main__':
     print(zonas(56760.0, 75518.0, 'corto'))
     print(cambio_tendencia(True, False), cambio_tendencia(False, True))
+
+
+# --- nomenclatura del indicador de CreceTrader -------------------------
+# El indicador tira el fibo "al reves": 0 = MAXIMO, 1 = MINIMO.
+# Por eso sus etiquetas salen invertidas respecto al fibo estandar:
+#   su "0,61"  == nuestro 0,382
+#   su "0,382" == nuestro 0,618
+# Verificado contra las capturas reales del 2026-11-20 (BNBUSDT 1D y 4H).
+MAPA_INVERTIDO = {'0.382': '0,61', '0.5': '0,5', '0.618': '0,382', '0.786': '0,25'}
+
+
+def etiquetas_crecetrader(z: dict) -> dict:
+    """Reetiqueta las zonas con la nomenclatura del indicador de CreceTrader."""
+    out = {}
+    for k, v in (z.get('zonas_compra') or {}).items():
+        out[MAPA_INVERTIDO.get(k, k)] = v
+    return dict(sorted(out.items(), key=lambda kv: -kv[1]))

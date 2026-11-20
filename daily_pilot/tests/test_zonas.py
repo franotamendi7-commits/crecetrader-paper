@@ -23,7 +23,7 @@ def caso(nombre, cond, detalle=''):
 # 1. retrocesos 50 / 61 / 78  (formulacion: maximo - rango*r)
 z = Z.zonas(56760.0, 75518.0, 'corto')
 caso('marco_4h', z['marco'] == '4H', z['marco'])
-caso('tres_retrocesos', len(z['zonas_compra']) == 3, str(z['zonas_compra']))
+caso('cuatro_retrocesos', len(z['zonas_compra']) == 4, str(z['zonas_compra']))
 caso('retroceso_50', z['zonas_compra']['0.5'] == 66139.0, str(z['zonas_compra']))
 caso('retroceso_618', z['zonas_compra']['0.618'] == 63925.56, str(z['zonas_compra']))
 caso('retroceso_78', z['zonas_compra']['0.786'] == 60774.21, str(z['zonas_compra']))
