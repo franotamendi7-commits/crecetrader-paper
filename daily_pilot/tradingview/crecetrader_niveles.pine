@@ -78,10 +78,15 @@ if array.size(swPrecio) > 0
             maxBar  := array.get(swBar, i)
 
 // piso del ciclo = minimo de TODAS las velas posteriores al maximo
+// OJO: en Pine low[k] significa "k barras hacia atras" y k debe ser 0..5000.
+// Por eso se recorre k = 0..(bar_index - maxBar), no al reves.
 float tramoMin = low
 float tramoMax = na(maxAlto) ? high : maxAlto
 if not na(maxBar) and maxBar <= bar_index
-    for k = maxBar to bar_index
+    int nBarras = bar_index - maxBar
+    if nBarras > 4999
+        nBarras := 4999
+    for k = 0 to nBarras
         tramoMin := math.min(tramoMin, low[k])
 float rango = tramoMax - tramoMin
 
