@@ -96,6 +96,19 @@
     ],
     "BTCUSD": [
       {
+        "fecha": "2026-11-19",
+        "video_id": "EX-Rx_pnNpc",
+        "start": "00:21:41.440",
+        "timeframe": "neutro",
+        "nivel": 62978.0,
+        "banda": 2216,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "negociación intrayaria de Bitcoin. Para acabar, punto de partida 62,978."
+      },
+      {
         "fecha": "2026-11-17",
         "video_id": "i0qXzL0eSYs",
         "start": "00:06:15.759",

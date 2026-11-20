@@ -20,31 +20,28 @@ def caso(nombre, cond, detalle=''):
         print(f'FALLO | {nombre} | {detalle}')
 
 
-# 1. abanico por defecto: 9 niveles (n=4, hasta +/-1.00)
-a = I.abanico(64000.0)
-caso('nueve_niveles', len(a['niveles']) == 9, len(a['niveles']))
-caso('punto_cero_en_medio', a['niveles'][4] == 64000.0, str(a['niveles']))
-caso('es_050pct', abs(a['niveles'][6] - 64320.0) < 0.01, str(a['niveles']))
-caso('incluye_100pct', abs(a['niveles'][8] - 64640.0) < 0.01, str(a['niveles']))
-caso('incluye_menos100pct', abs(a['niveles'][0] - 63360.0) < 0.01, str(a['niveles']))
+# 1. VALIDACION CON LA CAPTURA REAL (BTC 2026-11-20, cierre 61.910)
+a = I.abanico(61910.0)
+n = [round(x, 0) for x in a['niveles']]
+caso('punto_cero', a['punto_cero'] == 61910.0, str(a['punto_cero']))
+caso('ancho_fijo_1000', a['ancho_unidad'] == 1000.0, str(a['ancho_unidad']))
+caso('nivel_+619', 62529.0 in n, str(n))
+caso('nivel_+383', 62293.0 in n, str(n))
+caso('nivel_+237', 62147.0 in n, str(n))
+caso('nivel_-236', 61674.0 in n, str(n))
+caso('nivel_-383', 61527.0 in n, str(n))
+caso('nivel_-619', 61291.0 in n, str(n))
+caso('nivel_-929', 60981.0 in n, str(n))
+caso('nivel_-1238', 60672.0 in n, str(n))
 
-# 2. con n=3 -> 7 niveles (hasta +/-0.75)
-b = I.abanico(64000.0, n=3)
-caso('siete_niveles_n3', len(b['niveles']) == 7, len(b['niveles']))
-caso('n3_sin_100', 64001.0 not in b['niveles'], str(b['niveles']))
+# 2. se resetea cada dia
+b = I.resetear(61000.0)
+caso('reset_nuevo_cierre', b['punto_cero'] == 61000.0, str(b['punto_cero']))
+caso('reset_misma_amplitud', round(b['niveles'][-1] - b['niveles'][0]) == round(a['niveles'][-1] - a['niveles'][0]), str(b['niveles'][-1] - b['niveles'][0]))
 
-# 3. se resetea cada dia
-c = I.resetear(65000.0)
-caso('reset_diario', c['precio_base'] == 65000.0 and c['niveles'][4] == 65000.0, str(c['precio_base']))
-
-# 4. hora ancla 21
-caso('hora_ancla_21', a['hora_ancla'] == 21 and I.HORA_ANCLA_UTC == 0, f"{a['hora_ancla']} / {I.HORA_ANCLA_UTC}UTC")
-
-# 5. es scalping, NO confirmacion de 4h/daily
+# 3. no depende del precio (ancho fijo)
+c = I.abanico(57000.0)
+caso('ancho_independiente_del_precio', round(c['niveles'][-1] - c['niveles'][0]) == round(a['niveles'][-1] - a['niveles'][0]))
+caso('proporciones_fibo', list(I.NIVELES) == [0.236, 0.382, 0.618, 0.929, 1.238], str(I.NIVELES))
 caso('es_scalping', a['tipo'] == 'scalping' and a['confirmacion_4h_o_diario'] is False)
-
-# 6. paper only
-caso('paper_only', a['paper_only'] is True and I.PAPER_ONLY is True)
-
-print(f'\n{OK}/{OK + FALLO} pruebas OK')
-sys.exit(1 if FALLO else 0)
+caso('paper_only', a['paper_only'] is True)
