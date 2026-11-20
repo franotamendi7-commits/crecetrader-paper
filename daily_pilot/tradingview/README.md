@@ -25,3 +25,16 @@ La logica del Pine esta **simulada en Python** y da **identico** que el motor
 | 4H | 530,00 -> 809,99 | 530,00 -> 809,99 | 530,54 -> 809,57 |
 
 **PENDIENTE**: pegarlo en TradingView y confirmar que compila y dibuja.
+
+## v2 (2026-11-20) — arregla que solo andaba en 1D
+- el **abanico intradia** ahora solo se dibuja en TF <= 1D (antes el
+  `request.security(..., "D")` rompia el indicador en 1W y 4H)
+- cada bloque es independiente: si el abanico o el anual fallan, los niveles
+  se siguen dibujando
+- nuevo grupo **4 · Diagnostico**: `maxAlto` / `tramoMin` / `rango` (plots)
+
+### Si no dibuja en una temporalidad
+Activar **4 · Diagnostico** y mirar los tres plots:
+- si `maxAlto` y `tramoMin` tienen valor y `rango` > 0 -> el swing anda y el
+  problema es el dibujo
+- si `rango` = 0 o `na` -> el swing no esta encontrando pivotes

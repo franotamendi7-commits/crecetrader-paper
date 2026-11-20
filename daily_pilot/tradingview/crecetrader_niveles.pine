@@ -1,10 +1,10 @@
 //@version=5
 // ============================================================================
-//  CreceTrader — Niveles del ciclo (C05)
+//  CreceTrader — Niveles del ciclo (C05)  ·  v2
 //  Reglas validadas contra las capturas reales de Francisco (2026-11-20, BNB)
 //
 //  · Cada TF tiene SU swing:  macro = semanal, micro = diario y 4h
-//  · Tramo = maximo mas alto -> minimo mas bajo del ciclo
+//  · Tramo = maximo mas alto -> piso mas bajo posterior
 //  · El fibo se tira AL REVES: 0 = minimo, 1 = maximo
 //  · Extensiones (1, 1,25, 1,5, 1,75, 2, 3) quedan ARRIBA del maximo
 //  · Niveles: 0,382 / 0,5 / 0,61 / 0,786
@@ -12,39 +12,42 @@
 //  · Nivel anual: cierre del 1 de enero
 //
 //  PAPER ONLY — dibuja, no opera.
+//
+//  v2: cada bloque es independiente; el abanico intradia solo se dibuja en
+//      TF <= 1D; y hay ploteo de diagnostico (maxAlto / tramoMin / rango).
 // ============================================================================
 indicator("CreceTrader — Niveles del ciclo [C05]", overlay=true, max_lines_count=500)
 
 // ---------- entradas ----------
-grupo1 = "Swing"
-nIzq      = input.int(3,  "Velas a cada lado del extremo", minval=1, maxval=50, group=grupo1)
-nDer     = input.int(3,  "Velas de confirmacion (derecha)", minval=1, maxval=50, group=grupo1)
-ventana  = input.int(60, "Cantidad de swings a mirar",      minval=5, maxval=500, group=grupo1)
+g1 = "1 · Swing"
+nIzq    = input.int(3,  "Velas a cada lado del extremo",   minval=1, maxval=50, group=g1)
+nDer    = input.int(3,  "Velas de confirmacion (derecha)", minval=1, maxval=50, group=g1)
+ventana = input.int(60, "Cantidad de swings a mirar",      minval=5, maxval=500, group=g1)
 
-grupo2 = "Niveles"
-mostrarRetro  = input.bool(true, "Retrocesos",  group=grupo2)
-mostrarExt    = input.bool(true, "Extensiones", group=grupo2)
-etiquetas     = input.bool(true, "Etiquetas",   group=grupo2)
+g2 = "2 · Niveles"
+mostrarRetro = input.bool(true, "Retrocesos",  group=g2)
+mostrarExt   = input.bool(true, "Extensiones", group=g2)
+etiquetas    = input.bool(true, "Etiquetas",   group=g2)
 
-grupo3 = "Extra"
-mostrarIntradia = input.bool(true, "Abanico intradia (cierre 21:00 UTC-3)", group=grupo3)
-mostrarAnual    = input.bool(true, "Nivel anual (cierre 1/01)",            group=grupo3)
+g3 = "3 · Extra"
+mostrarIntradia = input.bool(true, "Abanico intradia (cierre 21:00)", group=g3)
+mostrarAnual    = input.bool(true, "Nivel anual (cierre 1/01)",      group=g3)
+
+g4 = "4 · Diagnostico"
+mostrarDiag = input.bool(false, "Mostrar maxAlto / tramoMin / rango", group=g4)
 
 // ---------- colores ----------
-cRetro  = color.new(color.teal,  0)
-cExt    = color.new(color.red,   0)
-cIntra  = color.new(color.blue,  0)
-cAnual  = color.new(color.orange, 0)
-cBase   = color.new(color.gray, 60)
+cRetro = color.new(color.teal,   0)
+cExt   = color.new(color.red,    0)
+cIntra = color.new(color.blue,   0)
+cAnual = color.new(color.orange, 0)
+cBase  = color.new(color.gray,  60)
 
 // ---------- pivotes ----------
-// ta.pivothigh/pivotlow(leftbars, rightbars) devuelve el precio del pivote
-// confirmado (na si aun no se confirmo). Con nDer = nIzq es simetrico.
 ph = ta.pivothigh(high, nIzq, nDer)
 pl = ta.pivotlow(low,  nIzq, nDer)
 
 // UN solo array de swings (como el motor Python): [precio, esAlto, barra]
-// para que 'ventana' signifique lo mismo en ambos.
 var float[] swPrecio = array.new_float()
 var bool[]  swAlto   = array.new_bool()
 var int[]   swBar    = array.new_int()
@@ -63,8 +66,7 @@ if not na(ph)
 if not na(pl)
     pushSwing(pl, false)
 
-// ---------- el tramo ----------
-// maximo del ciclo (swing alto) y su barra
+// ---------- el tramo (vale para TODAS las temporalidades) ----------
 float maxAlto = na
 int   maxBar  = na
 if array.size(swPrecio) > 0
@@ -74,14 +76,18 @@ if array.size(swPrecio) > 0
             maxAlto := p
             maxBar  := array.get(swBar, i)
 
-// el piso del ciclo = minimo de TODAS las velas posteriores al maximo
-// (incluye el piso de hoy, que aun no esta confirmado como swing)
+// piso del ciclo = minimo de TODAS las velas posteriores al maximo
 float tramoMin = low
 float tramoMax = na(maxAlto) ? high : maxAlto
-if not na(maxBar)
+if not na(maxBar) and maxBar <= bar_index
     for k = maxBar to bar_index
         tramoMin := math.min(tramoMin, low[k])
 float rango = tramoMax - tramoMin
+
+// ---------- diagnostico ----------
+plot(mostrarDiag ? maxAlto : na, "maxAlto", color=color.new(color.gray, 100))
+plot(mostrarDiag ? tramoMin : na, "tramoMin", color=color.new(color.gray, 100))
+plot(mostrarDiag ? rango   : na, "rango",    color=color.new(color.gray, 100))
 
 // ---------- niveles ----------
 retrocesos  = array.from(0.382, 0.50, 0.61, 0.786)
@@ -92,28 +98,22 @@ drawNivel(float precio, string txt, color col) =>
         line.new(bar_index - 1, precio, bar_index, precio, color=col, extend=extend.right)
         label.new(bar_index, precio, txt, style=label.style_label_left, color=color.new(col, 60), textcolor=color.white, size=size.small)
 
-drawNivelSinTexto(float precio, color col) =>
-    if not na(precio)
-        line.new(bar_index - 1, precio, bar_index, precio, color=col, extend=extend.right)
-
-if barstate.islast and rango > 0
-    // linea base del tramo
+if barstate.islast and not na(tramoMin) and not na(tramoMax) and rango > 0
     line.new(bar_index, tramoMin, bar_index, tramoMax, color=cBase, style=line.style_dashed)
-    // retrocesos: minimo + rango*r
     if mostrarRetro
         for _r in retrocesos
             drawNivel(tramoMin + rango * _r, str.tostring(_r, "#.##"), cRetro)
-    // extensiones: minimo + rango*e  (quedan arriba del maximo)
     if mostrarExt
         for _e in extensiones
             drawNivel(tramoMin + rango * _e, str.tostring(_e, "#.##"), cExt)
 
-// ---------- abanico intradia ----------
-// punto cero = cierre del dia a las 21:00 (00:00 UTC); ancho 1.000 puntos fijos
+// ---------- abanico intradia (solo TF <= 1D) ----------
+// El cierre del dia (21:00 UTC-3) solo tiene sentido en intradiario o diario.
 intraNiveles = array.from(0.236, 0.382, 0.618, 0.929, 1.238)
+tfOk = timeframe.isintraday or timeframe.period == "D"
 float cierreDia = request.security(syminfo.tickerid, "D", close, lookahead=barmerge.lookahead_off)
 
-if mostrarIntradia and barstate.islast and not na(cierreDia)
+if mostrarIntradia and tfOk and barstate.islast and not na(cierreDia)
     for _n in intraNiveles
         pArriba = cierreDia + 1000.0 * _n
         pAbajo  = cierreDia - 1000.0 * _n
@@ -123,12 +123,9 @@ if mostrarIntradia and barstate.islast and not na(cierreDia)
             label.new(bar_index, pArriba, "+" + str.tostring(_n, "#.###"), style=label.style_label_left, color=color.new(cIntra, 60), textcolor=color.white, size=size.tiny)
             label.new(bar_index, pAbajo,  "-" + str.tostring(_n, "#.###"), style=label.style_label_left, color=color.new(cIntra, 60), textcolor=color.white, size=size.tiny)
 
-
 // ---------- nivel anual ----------
-// cierre de la vela del 1 de enero (00:00 UTC). Se pide la serie diaria y se
-// toma el valor del primer dia del anio.
-d_close  = request.security(syminfo.tickerid, "D", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
-es_1ene  = request.security(syminfo.tickerid, "D", month == 1 and dayofmonth == 1)
+d_close = request.security(syminfo.tickerid, "D", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+es_1ene = request.security(syminfo.tickerid, "D", month == 1 and dayofmonth == 1)
 float anual = ta.valuewhen(es_1ene, d_close, 0)
 
 if mostrarAnual and barstate.islast and not na(anual) and anual > 0
