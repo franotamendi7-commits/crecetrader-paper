@@ -250,11 +250,11 @@ def tramo_ciclo(velas: list[dict], n: int = 3, ventana: int = 60) -> dict:
     bajos = [x for x in post if x[1] == 'min']
     # el piso de HOY puede no estar confirmado como swing (le faltan velas);
     # se incluye el minimo de las velas posteriores al maximo
-    rec = [x for x in velas[alto[0]:] if x['low'] <= (bajos[-1][2] if bajos else alto[2])]
-    cand = bajos + [(i, 'min', x['low']) for i, x in enumerate(velas) if i >= alto[0]]
-    bajo = min(cand, key=lambda x: x[2]) if cand else min(post, key=lambda x: x[2])
-    seg = velas[alto[0]:bajo[0] + 1] if bajo[0] >= alto[0] else velas[bajo[0]:alto[0] + 1]
-    return {'direccion': 'bajista' if bajo[0] > alto[0] else 'alcista',
+    # el piso del ciclo = el minimo de TODAS las velas posteriores al maximo
+    # (incluye el piso de hoy, que aun no esta confirmado como swing)
+    seg = velas[alto[0]:]
+    bajo = min(seg, key=lambda x: x['low']) if seg else alto
+    return {'direccion': 'bajista' if bajo['ts'] > velas[alto[0]]['ts'] else 'alcista',
             'maximo': alto[2], 'maximo_fecha': velas[alto[0]]['ts'],
-            'minimo': bajo[2], 'minimo_fecha': velas[bajo[0]]['ts'],
+            'minimo': bajo['low'], 'minimo_fecha': bajo['ts'],
             'n_velas': len(seg)}
