@@ -12,7 +12,8 @@ from __future__ import annotations
 
 PAPER_ONLY = True
 from zonas import zonas, RETROCESOS, EXTENSIONES, tf_para   # noqa: E402
-from regimen import detectar, TENDENCIA_ALCISTA, TENDENCIA_BAJISTA, RANGO  # noqa: E402
+from regimen import (detectar, es_cambio, TENDENCIA_ALCISTA,  # noqa: E402
+                     TENDENCIA_BAJISTA, RANGO, NO_DETERMINADO)
 
 PLAZOS = ('largo', 'media', 'corto')
 
@@ -159,3 +160,67 @@ def nivel_anual(par: str, anio: int = None) -> dict:
         return {'error': f'no hay vela del 1/01/{anio} ({len(r["velas"])} velas)'}
     except Exception as e:
         return {'error': f'{type(e).__name__}: {e}'}
+
+
+def cambios_de_tendencia(velas: list[dict], n: int = 5, k: int = 3) -> list[dict]:
+    """Puntos donde la tendencia cambia (C07 + Francisco 2026-11-20).
+
+    Regla de Francisco: "si venimos todos maximos mayores y cambia a minimos
+    menores, ahi esta el cambio de tendencia". Se evalua sobre los ultimos k
+    swings (maximos y minimos relevantes).
+    """
+    s = swing(velas, n)
+    maximos = [p for _, p in s['altos']]
+    minimos = [p for _, p in s['bajos']]
+    if len(maximos) < k + 1 or len(minimos) < k + 1:
+        return []
+
+    def regimen(j):
+        """Regimen segun los ultimos k swings (hasta el swing j)."""
+        ms = maximos[max(0, j - k + 1):j + 1]
+        ns = minimos[max(0, j - k + 1):j + 1]
+        if len(ms) < k or len(ns) < k:
+            return NO_DETERMINADO
+        if all(b > a for a, b in zip(ms, ms[1:])) and all(b > a for a, b in zip(ns, ns[1:])):
+            return TENDENCIA_ALCISTA
+        if all(b < a for a, b in zip(ms, ms[1:])) and all(b < a for a, b in zip(ns, ns[1:])):
+            return TENDENCIA_BAJISTA
+        return RANGO
+
+    cambios, prev = [], None
+    # recorrer los swings en orden temporal
+    puntos = sorted([(i, 'max', p) for i, p in s['altos']] +
+                    [(i, 'min', p) for i, p in s['bajos']])
+    idx_max = [j for j, (_, t, _) in enumerate(puntos) if t == 'max']
+    for pos in range(k, len(puntos)):
+        j_max = sum(1 for j in idx_max if j <= pos)
+        if j_max < k + 1:
+            continue
+        r = regimen(j_max - 1)
+        if prev and r != prev and r in (TENDENCIA_ALCISTA, TENDENCIA_BAJISTA):
+            cambios.append({'i': puntos[pos][0], 'de': prev, 'a': r,
+                            'fecha': velas[puntos[pos][0]]['ts'],
+                            'precio': puntos[pos][2]})
+        if r in (TENDENCIA_ALCISTA, TENDENCIA_BAJISTA):
+            prev = r
+    return cambios
+
+
+def tramo_tendencia(velas: list[dict], n: int = 5, ultimo: bool = True, k: int = 3) -> dict:
+    """El tramo de la tendencia = entre dos cambios de tendencia.
+
+    ultimo=True  -> el tramo VIVO (desde el ultimo cambio hasta hoy)
+    ultimo=False -> el ultimo tramo COMPLETO (entre los dos ultimos cambios)
+    """
+    c = cambios_de_tendencia(velas, n, k)
+    if not c:
+        return {'error': 'sin cambios de tendencia', 'n': n, 'k': k}
+    elegido = c[-1] if (ultimo or len(c) < 2) else c[-2]
+    fin = len(velas) - 1 if ultimo or len(c) < 2 else c[-1]['i']
+    trozo = velas[elegido['i']:fin + 1]
+    if not trozo:
+        return {'error': 'tramo vacio'}
+    return {'desde': elegido['i'], 'hasta': fin, 'direccion': elegido['a'],
+            'desde_fecha': elegido['fecha'], 'hasta_fecha': velas[fin]['ts'],
+            'minimo': min(x['low'] for x in trozo), 'maximo': max(x['high'] for x in trozo),
+            'cambios': c}
