@@ -36,16 +36,21 @@ def _cache_path(par: str, tf: str) -> Path:
     return DIR_VELAS / f'{par}_{tf}.json'
 
 
-def _leer_cache(par: str, tf: str) -> list[dict] | None:
+def _leer_cache(par: str, tf: str, limite: int = 0) -> list[dict] | None:
     p = _cache_path(par, tf)
     if not p.exists():
         return None
     if time.time() - p.stat().st_mtime > CACHE_SEGUNDOS:
         return None
     try:
-        return json.loads(p.read_text())['velas']
+        v = json.loads(p.read_text())['velas']
     except Exception:
         return None
+    # la cache solo sirve si tiene velas suficientes para lo que se pidio
+    # (antes una consulta de 3 velas pizaba la cache de 60)
+    if limite and len(v) < limite:
+        return None
+    return v
 
 
 def _escribir_cache(par: str, tf: str, velas: list[dict]) -> None:
@@ -75,7 +80,7 @@ def velas(par: str, tf: str, limite: int = 500, forzar: bool = False) -> dict:
     Devuelve {'par','tf','fuente','velas'} o {'error': ...}
     """
     if not forzar:
-        c = _leer_cache(par, tf)
+        c = _leer_cache(par, tf, limite)
         if c:
             return {'par': par, 'tf': tf, 'fuente': 'cache', 'velas': c}
     try:
