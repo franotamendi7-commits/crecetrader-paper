@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[2]
-GEN = BASE / 'daily_pilot' / 'scripts' / 'generar_dashboard_v4.py'
+GEN = BASE / 'daily_pilot' / 'scripts' / 'generar_dashboard_v5.py'
 HTML = BASE / 'daily_pilot' / 'dashboard' / 'index.html'
 INFO = BASE / 'daily_pilot' / 'datos' / 'informe_hoy.json'
 
@@ -46,11 +46,11 @@ h = HTML.read_text()
 caso('existe', HTML.exists(), str(len(h)))
 caso('autocontenido', 'fetch(' not in h and not re.search(r'src="http|href="http', h))
 caso('paper_only_visible', 'PAPER ONLY' in h)
-caso('panel_niveles_mencionados', 'NIVELES MENCIONADOS' in h)
-caso('panel_risk', 'RISK MANAGER' in h)
-caso('panel_niveles', 'NIVELES CLAVE' in h)
-caso('panel_lectura', 'LECTURA DEL DÍA' in h)
-caso('panel_distribucion', 'DISTRIBUCIÓN' in h)
+caso('mercado_real', 'MERCADO REAL' in h)
+caso('velas_reales', 'VELAS REALES' in h)
+caso('ciclo_por_tf', 'CICLO BTC' in h)
+caso('ultimo_video', 'ULTIMO VIDEO' in h)
+caso('precio_del_video_etiquetado', 'precio del video, no feed' in h)
 caso('no_es_orden', 'NO ES UNA ORDEN' in h)
 caso('sin_plan_inventado', 'PLAN DE TRADING' not in h and 'OPERACIÓN PROPUESTA' not in h)
 
@@ -62,11 +62,11 @@ caso('fuente_unica', info.get('fuente_unica') == vid, str(info.get('fuente_unica
 caso('sin_video_viejo', 's_GjovZxQqY' not in h and 'fuente: s_' not in h)
 
 # sin grafico inventado
-caso('sin_velas_simuladas', 'stroke-width="5"' not in h and h.count('<svg') == 0,
+caso('velas_reales_presentes', h.count('<rect') >= 50 and h.count('<svg') >= 1,
      f'svg={h.count("<svg")}')
 
 # aviso de que no hay feed
-caso('aviso_sin_feed', 'sin feed' in h.lower() or 'NO_DISPONIBLE' in h)
+caso('aviso_sin_feed', 'no es un feed en vivo' in h.lower() or 'sin feed' in h.lower())
 
 print(f'\n{OK}/{OK + FALLO} pruebas OK')
 sys.exit(1 if FALLO else 0)

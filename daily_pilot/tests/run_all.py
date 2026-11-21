@@ -27,7 +27,6 @@ PY = sys.executable
 INTOCABLES = [
     PILOT / 'knowledge' / 'store.db',
     PILOT / 'registro' / 'registro.json',
-    PILOT / 'datos' / 'dashboard_data.json',
     PILOT / 'estado' / 'estado_hoy.json',
 ]
 # Artefactos derivados que los tests de integracion pueden reescribir
@@ -58,7 +57,7 @@ HERMETICOS = [
 ]
 # Integracion: reescriben artefactos derivados y/o tocan store.db.
 INTEGRACION = [
-    'daily_pilot/tests/test_dashboard_v4.py',  # escribe dashboard
+    'daily_pilot/tests/test_dashboard_v5.py',  # escribe dashboard
     'daily_pilot/tests/test_c2c3e6.py',           # anadir_temporalidad.py hace UPDATE en store.db
 ]
 

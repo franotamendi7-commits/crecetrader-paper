@@ -170,7 +170,9 @@ def panel_mercado(filas):
             f'<th style="text-align:right">24h</th><th style="text-align:right">max/min</th></tr>'
             f'{filas_html}</table>'
             f'<div class="nota">fuente: {esc(", ".join(x for x in fuentes if x))} · '
-            f'<b>no es un feed en vivo</b>: cache de 5 minutos. PAPER ONLY.</div></div>')
+            f'<b>no es un feed en vivo</b>: cache de 5 minutos. PAPER ONLY.</div>'
+            f'<div class="nota" style="color:var(--warn);font-weight:600">'
+            f'NO ES UNA ORDEN — muestra el mercado y los niveles. La decision la toma el trader.</div></div>')
 
 
 def panel_ciclo(ciclo_datos):
