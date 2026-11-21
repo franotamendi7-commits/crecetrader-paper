@@ -57,5 +57,11 @@ caso('ob_es_ingrediente_no_zona', 'pools_volumen_order_block' in L.COMPONENTES)
 # 8. paper only
 caso('paper_only', r['paper_only'] is True and L.PAPER_ONLY is True)
 
+# C12: el OB es POR TIMEFRAME
+_l4 = L.calcular(zonas_fibo={'zonas_compra': {'0.5': 100.0}}, timeframe='4H')
+caso('c12_timeframe', _l4['timeframe'] == '4H', str(_l4['timeframe']))
+_l0 = L.calcular(zonas_fibo={'zonas_compra': {'0.5': 100.0}})
+caso('c12_timeframe_default', _l0['timeframe'] is None, str(_l0['timeframe']))
+
 print(f'\n{OK}/{OK + FALLO} pruebas OK')
 sys.exit(1 if FALLO else 0)

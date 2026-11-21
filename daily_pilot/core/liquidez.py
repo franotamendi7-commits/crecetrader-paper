@@ -33,8 +33,13 @@ COMPONENTES = ('zonas_fibo_c05', 'precios_comienzo_ano', 'pools_volumen_order_bl
 
 def calcular(zonas_fibo: dict | None = None,
              precios_comienzo_ano: list | None = None,
-             pools_volumen: list | None = None) -> dict:
-    """Devuelve los puntos de liquidez institucional y los ingredientes usados."""
+             pools_volumen: list | None = None,
+             timeframe: str = None) -> dict:
+    """Devuelve los puntos de liquidez institucional y los ingredientes usados.
+
+    C12: el OB / FVG / BOS-CHoCH es **por timeframe** (4H/1H). Sin el TF no se
+    puede distinguir la liquidez de 4H de la de 1H.
+    """
     usadas = []
     if zonas_fibo:
         usadas.append('zonas_fibo_c05')
@@ -53,6 +58,7 @@ def calcular(zonas_fibo: dict | None = None,
         'liquidez_institucional': sorted(set(round(float(x), 2) for x in candidatos)),
         'componentes_usados': usadas,
         'n_componentes': len(usadas),
+        'timeframe': timeframe,
         'sesion': SESION,
         'nota_sesion': f'dentro de la sesion de {SESION} se buscan los niveles de volumen grande',
         'paper_only': PAPER_ONLY,

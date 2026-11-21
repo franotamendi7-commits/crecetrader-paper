@@ -37,7 +37,7 @@ Sin tu marca, queda `propuesto` o `a_validar`. Pasa a `aprobado_por_francisco` s
 | C09 | Objetivos / toma parcial | W/D/4H | **aprobado_en_conversacion** (4 extensiones C05 · 25% c/u · stop a break even) | ✅ |
 | C10 | Escenarios por confianza | todas | **aprobado_en_conversacion** (confianza %; CAUTELA en corrección; stop+BV) | ✅ |
 | C11 | Gestión de riesgo | entrada | **aprobado_en_conversacion** (riesgo = confianza, tope 5%) | ✅ |
-| C12 | Order block / FVG / BOS-CHoCH | 4H/1H | **aprobado_en_conversacion**: OB = zona de liquidez, **por timeframe** | ✅ |
+| C12 | Order block / FVG / BOS-CHoCH — **por timeframe** | 4H/1H | **aprobado_en_conversacion**: OB = zona de liquidez, **por timeframe** | ✅ |
 
 ## Detalle
 
