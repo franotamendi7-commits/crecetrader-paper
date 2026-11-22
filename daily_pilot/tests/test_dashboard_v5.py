@@ -36,11 +36,18 @@ def caso(nombre, cond, detalle=''):
 # idempotencia: regenerar NO debe cambiar el hash
 import hashlib
 def _sha(): return hashlib.sha256(HTML.read_bytes()).hexdigest()
-pre = _sha()
+def _estructura():
+    """El dashboard ya no es idempotente: los precios son vivos (Binance).
+    Lo que si debe ser estable es la ESTRUCTURA (paneles, tablas, avisos)."""
+    import re
+    txt = HTML.read_text()
+    return hashlib.sha256(re.sub(r'<td class="num">[0-9.,]+</td>', '', txt).encode()).hexdigest()
+
+pre = _estructura()
 r = subprocess.run([sys.executable, str(GEN)], capture_output=True, text=True)
 caso('generador_ok', r.returncode == 0, str(r.returncode))
-post = _sha()
-caso('idempotente', pre == post, f'{pre[:8]} == {post[:8]}')
+post = _estructura()
+caso('estructura_estable', pre == post, f'{pre[:8]} == {post[:8]}')
 h = HTML.read_text()
 
 caso('existe', HTML.exists(), str(len(h)))
