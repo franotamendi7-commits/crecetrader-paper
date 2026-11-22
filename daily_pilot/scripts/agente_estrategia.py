@@ -86,7 +86,7 @@ def calcular(precio: float, tramo: tuple | None) -> dict:
     Inventarlo con el rango de todos los numeros dichos da niveles absurdos.
     """
     ab = abanico(precio)
-    out = {'abanico_intradia': {'punto_cero': ab['precio_base'], 'niveles': ab['niveles'],
+    out = {'abanico_intradia': {'punto_cero': ab['punto_cero'], 'niveles': ab['niveles'],
                                 'unidad': ab['unidad']},
            'fibo_por_plazo': None,
            'fuente': 'calculado (C05), no dicho por el canal'}

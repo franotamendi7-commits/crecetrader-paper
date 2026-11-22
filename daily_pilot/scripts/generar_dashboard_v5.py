@@ -35,8 +35,6 @@ def cargar(ruta):
         return None
 
 
-def esc(s):
-    return html.escape(str(s or ''))
 
 
 def decimales(precio) -> int:
@@ -300,6 +298,9 @@ def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
     mer = mercado()
     ciclos = ciclos_pares()
+    esc_datos = escenario_pares()
+    _ag = PILOT / 'investigacion' / f'AGENTE_{info.get("video_id")}.json'
+    niveles = (cargar(_ag) or {}).get('niveles_dichos')
     graf = grafico_velas()
 
     doc = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
@@ -324,6 +325,14 @@ def main() -> int:
   {panel_grafico(graf)}
 </div>
 
+<div class="grid" style="margin-top:12px">
+  {panel_escenarios(esc_datos)}
+</div>
+
+<div class="grid" style="margin-top:12px">
+  {panel_estrategia(info, niveles)}
+</div>
+
 <div class="grid g2" style="margin-top:12px">
   {panel_video(info)}
   <div class="card"><h3>QUE ES ESTO</h3>
@@ -342,6 +351,78 @@ def main() -> int:
     SALIDA.write_text(doc)
     print(f'-> {SALIDA} ({len(doc)} B)')
     return 0
+
+
+
+
+# --------------------------------------------------------------- escenario
+def escenario_pares() -> list:
+    """Por cada par: regimen por TF + direccion (C01) + confianza (C10).
+
+    La probabilidad NO se inventa: es la confianza que sale de la jerarquia
+    W > D > 4H (core/jerarquia.py). Si el semanal esta en rango, no se opera.
+    """
+    from velas import velas
+    from tramos import regimen_de
+    from jerarquia import determinar
+    out = []
+    for par in PARES:
+        regs = {}
+        for tf in ('1w', '1d', '4h'):
+            r = velas(par, tf, limite=500)
+            regs[tf] = regimen_de(r['velas'])['regimen'] if 'error' not in r else 'no_determinado'
+        j = determinar(regs['1w'], regs['1d'], regs['4h'])
+        out.append({'par': par.replace('USDT', ''), 'w': regs['1w'], 'd': regs['1d'],
+                    'h': regs['4h'], 'direccion': j['direccion'],
+                    'confianza': j['confianza'], 'motivo': j['motivo']})
+    return out
+
+
+def panel_escenarios(datos):
+    filas = ''
+    for x in datos:
+        pct = int(round(float(x['confianza']) * 100))
+        largo = max(2, int(pct * 2.4))
+        color = 'var(--ok)' if x['direccion'] in ('long', 'short') else 'var(--muted)'
+        etiqueta = {'long': 'LONG', 'short': 'SHORT',
+                    'correccion': 'CORRECCION', 'no_operar': 'NO OPERAR'}.get(x['direccion'], x['direccion'])
+        motivo = esc(x['motivo'])
+        filas += (f'<tr><td><b>{esc(x["par"])}</b></td>'
+                  f'<td><div style="display:flex;align-items:center;gap:8px">'
+                  f'<div style="width:180px;height:10px;background:#21262d;border-radius:5px;overflow:hidden">'
+                  f'<i style="display:block;height:100%;width:{largo}px;background:{color}"></i></div>'
+                  f'<b style="font-variant-numeric:tabular-nums">{pct}%</b></div></td>'
+                  f'<td><b>{etiqueta}</b></td>'
+                  f'<td class="fuente">{esc(x["w"])} / {esc(x["d"])} / {esc(x["h"])}</td>'
+                  f'<td class="fuente">{motivo}</td></tr>')
+    return (f'<div class="card"><h3>PROBABILIDAD POR PAR · ¿TOMAMOS POSICIONES?</h3>'
+            f'<table><tr><th>par</th><th>probabilidad</th><th>direccion</th>'
+            f'<th>W / D / 4H</th><th>por que</th></tr>{filas}</table>'
+            f'<div class="nota">La probabilidad sale de la <b>confianza de la jerarquia '
+            f'W &gt; D &gt; 4H</b> (C01). Si el semanal esta en <b>rango</b>, no se opera: '
+            f'0%. NO es una senal de compra: es cuan alineados estan los marcos.</div></div>')
+
+
+def panel_estrategia(info, niveles):
+    """La estrategia VISIBLE: lo que el canal dice, con cita."""
+    filas = ''
+    for n in (niveles or [])[:8]:
+        cit = esc(n.get('cita', ''))[:150]
+        pistas = ', '.join(n.get('pistas', []))
+        filas += (f'<tr><td><span class="pill">{esc(n.get("precio"))}</span></td>'
+                  f'<td class="fuente">x{esc(n.get("menciones"))}</td>'
+                  f'<td class="fuente">{esc(pistas)}</td>'
+                  f'<td class="fuente">{cit}</td></tr>')
+    if not filas:
+        filas = '<tr><td colspan="4" class="fuente">sin niveles en el ultimo video</td></tr>'
+    return (f'<div class="card"><h3>ESTRATEGIA VISIBLE · lo que dice CreceTrader</h3>'
+            f'<table><tr><th>nivel</th><th>menciones</th><th>tipo</th><th>cita</th></tr>{filas}</table>'
+            f'<div class="nota">Salen de la transcripcion del ultimo video. '
+            f'<b>NO ES UNA ORDEN</b>: el metodo lo aplica el trader.</div></div>')
+
+
+def esc(s):
+    return html.escape(str(s or ''))
 
 
 if __name__ == '__main__':

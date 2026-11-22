@@ -76,15 +76,19 @@ def tramo(velas: list[dict]) -> dict:
             'n_velas': len(velas), 'ultimo_cierre': velas[-1].get('close')}
 
 
-def regimen_de(velas: list[dict]) -> dict:
-    """Regimen (C07) a partir de maximos y minimos de los tramos (swing)."""
-    if len(velas) < 4:
-        return {'regimen': 'NO_DETERMINADO', 'motivo': 'faltan velas'}
-    altos = [v['high'] for v in velas]
-    bajos = [v['low'] for v in velas]
-    # swing: ultimos 3 maximos y minimos relevantes
-    maxs = sorted(altos, reverse=True)[:3]
-    mins = sorted(bajos)[:3]
+def regimen_de(velas: list[dict], n: int = 5, k: int = 3) -> dict:
+    """Regimen (C07) sobre los ultimos k SWINGS (maximos y minimos relevantes).
+
+    Antes usaba los maximos/minimos globales y casi siempre caia en rango o
+    correccion. Con swings es la estructura real de la tendencia.
+    """
+    if len(velas) < n * 2 + 1:
+        return {'regimen': NO_DETERMINADO, 'motivo': 'faltan velas'}
+    s = swing(velas, n)
+    if len(s['altos']) < k or len(s['bajos']) < k:
+        return {'regimen': NO_DETERMINADO, 'motivo': 'faltan swings'}
+    maxs = [p for _, p in s['altos'][-k:]]
+    mins = [p for _, p in s['bajos'][-k:]]
     return detectar(maxs, mins)
 
 

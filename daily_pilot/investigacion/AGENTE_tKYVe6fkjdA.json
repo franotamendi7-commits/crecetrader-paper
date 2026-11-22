@@ -1,0 +1,165 @@
+{
+  "video_id": "tKYVe6fkjdA",
+  "precio_referencia": 56750.0,
+  "precio_referencia_menciones": 21,
+  "n_cues_con_precio": 76,
+  "niveles_dichos": [
+    {
+      "precio": 56750.0,
+      "menciones": 21,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "era nuestra proyección de momento hasta ahí. Debajo tenemos los 56.750 que es"
+    },
+    {
+      "precio": 61247.0,
+      "menciones": 12,
+      "pistas": [],
+      "cita": "ahora, porque como puedes ver en la imagen, los 61.247"
+    },
+    {
+      "precio": 69000.0,
+      "menciones": 9,
+      "pistas": [
+        "extension",
+        "retroceso"
+      ],
+      "cita": "de largo plazo. Pum, ahí los tenemos. 69.000 y 56.750 junto con los 61.247"
+    },
+    {
+      "precio": 83366.0,
+      "menciones": 6,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "¿Cuántas semanas lleva bitcoin cayendo desde que llegó a los 83.366?"
+    },
+    {
+      "precio": 80537.0,
+      "menciones": 6,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "en estos precios. Vale, ¿con qué objetivos? Pues si se rompía los 80.537"
+    },
+    {
+      "precio": 62216.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "efectivamente, después de haber estado en el mínimo de los 62.216,"
+    },
+    {
+      "precio": 61800.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "¿Por qué está frenado ahora en la zona de los 61.800"
+    },
+    {
+      "precio": 71509.0,
+      "menciones": 3,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "objetivo mayor, nosotros especulamos con que se parara en 69.000 71.509, pero"
+    },
+    {
+      "precio": 75500.0,
+      "menciones": 3,
+      "pistas": [
+        "oferta"
+      ],
+      "cita": "Vale, entonces, una de las cosas que te dije era 75.500 O sea, mejor dicho, los"
+    },
+    {
+      "precio": 69500.0,
+      "menciones": 3,
+      "pistas": [
+        "oferta"
+      ],
+      "cita": "dije era 75.500 O sea, mejor dicho, los precios de compra entre 69.500, 75.518,"
+    },
+    {
+      "precio": 75518.0,
+      "menciones": 3,
+      "pistas": [
+        "oferta"
+      ],
+      "cita": "dije era 75.500 O sea, mejor dicho, los precios de compra entre 69.500, 75.518,"
+    },
+    {
+      "precio": 65520.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "momento en que el precio había llegado a 65.520"
+    },
+    {
+      "precio": 51585.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "incluso cerca, sin que 1.000 dólares abajo están los 51.585."
+    },
+    {
+      "precio": 109765.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "tendencia de fondo es alcista, lo que pasa que llegó a los 109.765"
+    },
+    {
+      "precio": 69103.0,
+      "menciones": 3,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "bajista, objetivo 80.537 y después más importante, 69.103"
+    },
+    {
+      "precio": 57670.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "importante, 69.103 y el segundo que tenemos abajo, 57.670."
+    },
+    {
+      "precio": 80000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "precio se detuvo bastante bien en la zona de los 80.000, 83.360"
+    },
+    {
+      "precio": 83360.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "precio se detuvo bastante bien en la zona de los 80.000, 83.360"
+    },
+    {
+      "precio": 56770.0,
+      "menciones": 1,
+      "pistas": [],
+      "cita": "de distribución y acumulación y cómo llegó a los 56.770"
+    }
+  ],
+  "calculados": {
+    "abanico_intradia": {
+      "punto_cero": 56750.0,
+      "niveles": [
+        55512.0,
+        55821.0,
+        56132.0,
+        56368.0,
+        56514.0,
+        56750.0,
+        56986.0,
+        57132.0,
+        57368.0,
+        57679.0,
+        57988.0
+      ],
+      "unidad": "puntos fijos (1000 por unidad), no porcentaje"
+    },
+    "fibo_por_plazo": null,
+    "fuente": "calculado (C05), no dicho por el canal",
+    "aviso": "SIN TRAMO: el canal no dio minimo/maximo. No se calcula fibo (no se inventa)."
+  },
+  "paper_only": true,
+  "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."
+}
