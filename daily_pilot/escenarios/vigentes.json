@@ -96,6 +96,32 @@
     ],
     "BTCUSD": [
       {
+        "fecha": "2026-11-21",
+        "video_id": "c7AXSee1qfg",
+        "start": "00:13:19.320",
+        "timeframe": "neutro",
+        "nivel": 53994.0,
+        "banda": 2185,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "caso también los futuros de Bitcoin en el mercado CME. 53,994"
+      },
+      {
+        "fecha": "2026-11-21",
+        "video_id": "c7AXSee1qfg",
+        "start": "00:18:42.640",
+        "timeframe": "neutro",
+        "nivel": 56750.0,
+        "banda": 2195,
+        "sentido": "neutro",
+        "tipo": "ESCENARIO_CONDICIONAL",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "cuando le pasó a Bitcoin y no había llegado a los 56,750."
+      },
+      {
         "fecha": "2026-11-19",
         "video_id": "EX-Rx_pnNpc",
         "start": "00:21:41.440",
@@ -107,6 +133,32 @@
         "procedencia": "A",
         "origen_instrumento": "proximidad",
         "texto": "negociación intrayaria de Bitcoin. Para acabar, punto de partida 62,978."
+      },
+      {
+        "fecha": "2026-11-21",
+        "video_id": "c7AXSee1qfg",
+        "start": "00:04:18.519",
+        "timeframe": "neutro",
+        "nivel": 64115.0,
+        "banda": 2219,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "64,115 en el contado de Bitcoin. Así fuimos el sábado, 65,000 hasta ayer,"
+      },
+      {
+        "fecha": "2026-11-21",
+        "video_id": "c7AXSee1qfg",
+        "start": "00:04:18.519",
+        "timeframe": "neutro",
+        "nivel": 65000.0,
+        "banda": 2222,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "64,115 en el contado de Bitcoin. Así fuimos el sábado, 65,000 hasta ayer,"
       },
       {
         "fecha": "2026-11-17",
@@ -328,6 +380,19 @@
         "procedencia": "A",
         "origen_instrumento": "proximidad",
         "texto": "y que cada vez que cruza los 83,366, el precio de Bitcoin cae. [carraspeo]"
+      },
+      {
+        "fecha": "2026-11-20",
+        "video_id": "tKYVe6fkjdA",
+        "start": "00:11:36.698",
+        "timeframe": "semanal",
+        "nivel": 83366.0,
+        "banda": 2272,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "¿Cuántas semanas lleva bitcoin cayendo desde que llegó a los 83.366?"
       },
       {
         "fecha": "2026-10-24",

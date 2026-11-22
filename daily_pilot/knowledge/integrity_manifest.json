@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0.0",
   "migration_version": "1.0.0",
-  "run_at": "2026-11-19T16:18:54Z",
+  "run_at": "2026-11-22T19:00:16Z",
   "store_path": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db",
-  "store_sha256_pre": "4fc8097f4f3fd01d8ec0a25e632eb699e154df5312db138a6849608950e1be17",
+  "store_sha256_pre": "8fe1aa4c41aa2ce5229e8c0af4d72783ec1c3ef15dab65af98c9963652b3babb",
   "fuentes": {
-    "transcripciones": 111,
-    "vtt": 113,
+    "transcripciones": 113,
+    "vtt": 115,
     "analisis": 17,
     "progress": "/Users/franciscootamendi/YouTubeTradingAgent/experimental/results/historical_progress.json",
     "registro": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/registro/registro.json",
     "escenarios": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/datos/escenarios_s_GjovZxQqY.json"
   },
   "importacion": {
-    "videos": 111,
-    "cues": 128593,
+    "videos": 113,
+    "cues": 130973,
     "escenarios_manuales": 8,
-    "inserted": 0,
+    "inserted": 2380,
     "updated": 0,
     "unchanged": 128593,
     "missing": 0,
@@ -26,12 +26,12 @@
     "integrity_check": "ok",
     "foreign_key_check": 0,
     "timestamps_nulos": 0,
-    "metadata_conflicts": 188,
+    "metadata_conflicts": 194,
     "cue_history": 0
   },
   "hashes_store": {
-    "pre": "4fc8097f4f3fd01d8ec0a25e632eb699e154df5312db138a6849608950e1be17",
-    "post": "8fe1aa4c41aa2ce5229e8c0af4d72783ec1c3ef15dab65af98c9963652b3babb",
+    "pre": "8fe1aa4c41aa2ce5229e8c0af4d72783ec1c3ef15dab65af98c9963652b3babb",
+    "post": "9ea29e3742133f43adfbb5aa9c8e4eb49ac0d65e123dcec891da42f8815f46d0",
     "nota": "post = sha256(store.db) medido antes de tocar .control/Manifiesto"
   },
   "pruebas": {
@@ -41,9 +41,9 @@
     "fk_limpias": true
   },
   "backup": {
-    "backup": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db.bak-20261119T161854Z-8768",
+    "backup": "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/knowledge/store.db.bak-20261122T190015Z-55775",
     "integrity": "ok",
     "cues": 128593
   },
-  "hash_post_store": "8fe1aa4c41aa2ce5229e8c0af4d72783ec1c3ef15dab65af98c9963652b3babb"
+  "hash_post_store": "9ea29e3742133f43adfbb5aa9c8e4eb49ac0d65e123dcec891da42f8815f46d0"
 }

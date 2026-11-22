@@ -3,14 +3,14 @@
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
   "estado": "ERROR DE ANALISIS",
-  "ultima_revision": "2026-11-21T07:50:09Z",
-  "deteccion_at": "2026-11-20T16:57:13Z",
+  "ultima_revision": "2026-11-22T01:07:08Z",
+  "deteccion_at": "2026-11-22T01:07:08Z",
   "analisis_at": null,
   "video": {
-    "video_id": "tKYVe6fkjdA",
-    "titulo": "Bitcoin toca los 61.247: por qué frena ahí y qué hacer ahora",
-    "url": "https://www.youtube.com/watch?v=tKYVe6fkjdA",
-    "publicado": "2026-11-20T10:10:20+00:00",
+    "video_id": "c7AXSee1qfg",
+    "titulo": "Bitcoin cae a 56.750: cuando todo cae a la vez, manda la liquidez",
+    "url": "https://www.youtube.com/watch?v=c7AXSee1qfg",
+    "publicado": "2026-11-21T14:32:28+00:00",
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
@@ -51,7 +51,9 @@
     "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7",
     "archivo": "daily_pilot/analisis/EX-Rx_pnNpc_analisis.json"
   },
-  "errores": [],
+  "errores": [
+    "c7AXSee1qfg: [Errno 2] No such file or directory: 'yt-dlp'"
+  ],
   "ultimo_analisis_completo": {
     "video_id": "EX-Rx_pnNpc",
     "analizado_at": "2026-11-19T16:18:05Z",

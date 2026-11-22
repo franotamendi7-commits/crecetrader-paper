@@ -1095,12 +1095,23 @@
     },
     "tKYVe6fkjdA": {
       "video_id": "tKYVe6fkjdA",
-      "titulo": "",
-      "published": "",
+      "title": "Bitcoin toca los 61.247: por qué frena ahí y qué hacer ahora",
+      "published": "2026-11-20T10:10:20+00:00",
       "url": "https://www.youtube.com/watch?v=tKYVe6fkjdA",
-      "detectado": "2026-11-20T16:57:13Z",
-      "transcript": null,
-      "estado": "error: [Errno 2] No such file or directory: 'yt-dlp'"
+      "detectado": "2026-11-22T18:56:00.471222+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/tKYVe6fkjdA/tKYVe6fkjdA_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
+    },
+    "c7AXSee1qfg": {
+      "video_id": "c7AXSee1qfg",
+      "title": "Bitcoin cae a 56.750: cuando todo cae a la vez, manda la liquidez",
+      "published": "2026-11-21T14:32:28+00:00",
+      "url": "https://www.youtube.com/watch?v=c7AXSee1qfg",
+      "detectado": "2026-11-22T18:56:10.234728+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/c7AXSee1qfg/c7AXSee1qfg_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
     }
   }
 }

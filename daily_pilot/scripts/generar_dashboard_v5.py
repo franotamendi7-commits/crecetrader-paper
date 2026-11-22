@@ -86,14 +86,14 @@ def mercado() -> list:
     return filas
 
 
-def ciclo() -> list:
-    """Tramo del ciclo + niveles por TF (C05 + C05-B)."""
+def ciclo(par='BTCUSDT') -> list:
+    """Tramo del ciclo + niveles por TF (C05 + C05-B) para UN par."""
     from velas import velas
     from tramos import tramo_ciclo
     from zonas import zonas
     out = []
     for tf, plazo, etiqueta in PLAZOS:
-        r = velas('BTCUSDT', tf, limite=500)
+        r = velas(par, tf, limite=500)
         if 'error' in r:
             out.append({'tf': etiqueta, 'error': r['error']})
             continue
@@ -104,9 +104,14 @@ def ciclo() -> list:
         z = zonas(t['minimo'], t['maximo'], plazo=plazo)
         out.append({'tf': etiqueta, 'min': round(t['minimo'], 2), 'max': round(t['maximo'], 2),
                     'retrocesos': {k: round(v, 2) for k, v in z['zonas_compra'].items()},
-                    'extensiones': {k: round(v, 2) for k, v in z['extensiones'].items()},
+                    'extensiones': {k: round(v, 2) for k, v in list(z['extensiones'].items())[:4]},
                     'fuente': r['fuente']})
     return out
+
+
+def ciclos_pares() -> dict:
+    """Ciclo para cada par (los que tienen datos)."""
+    return {par: ciclo(par) for par in PARES}
 
 
 def grafico_velas(par='BTCUSDT', tf='1d', n=60) -> dict:
@@ -152,6 +157,25 @@ td.num{text-align:right}
 '''
 
 
+JS_TABS = '''<script>
+(function(){
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.tabpanel');
+  function mostrar(par){
+    for (var i=0;i<tabs.length;i++){ tabs[i].classList.remove('activo'); }
+    for (var j=0;j<panels.length;j++){
+      panels[j].style.display = (panels[j].getAttribute('data-par') === par) ? 'block' : 'none';
+    }
+  }
+  for (var k=0;k<tabs.length;k++){
+    tabs[k].addEventListener('click', function(){ mostrar(this.getAttribute('data-par')); });
+  }
+  if (panels.length) mostrar(panels[0].getAttribute('data-par'));
+})();
+</script>
+</body></html>'''
+
+
 def panel_mercado(filas):
     filas_html = ''
     for x in filas:
@@ -175,21 +199,53 @@ def panel_mercado(filas):
             f'NO ES UNA ORDEN — muestra el mercado y los niveles. La decision la toma el trader.</div></div>')
 
 
-def panel_ciclo(ciclo_datos):
-    bloques = ''
-    for c in ciclo_datos:
-        if 'error' in c:
-            bloques += f'<div class="ciclo-bloque"><div class="ciclo-t">{esc(c["tf"])}</div><div class="ciclo-l">sin datos</div></div>'
-            continue
-        retro = ' · '.join(f'{k}: <b>{fmt(v)}</b>' for k, v in c['retrocesos'].items())
-        ext = ' · '.join(f'{k}: <b>{fmt(v)}</b>' for k, v in list(c['extensiones'].items())[:4])
-        bloques += (f'<div class="ciclo-bloque"><div class="ciclo-t">{esc(c["tf"])}</div>'
-                    f'<div class="ciclo-l">tramo <b>{fmt(c["min"])}</b> → <b>{fmt(c["max"])}</b> · {esc(c["fuente"])}</div>'
-                    f'<div class="ciclo-l">{retro}</div>'
-                    f'<div class="ciclo-l">ext {ext}</div></div>')
-    return (f'<div class="card"><h3>CICLO BTC · tramo y niveles (C05 / C05-B)</h3>{bloques}'
+def panel_ciclo(ciclos: dict):
+    tabs = ''
+    paneles = ''
+    for i, (par, ciclo_datos) in enumerate(ciclos.items()):
+        activo = ' activo' if i == 0 else ''
+        alias = par.replace('USDT', '')
+        tabs += f'<button class="tab{activo}" data-par="{esc(par)}">{esc(alias)}</button>'
+        bloques = ''
+        for c in ciclo_datos:
+            if 'error' in c:
+                bloques += f'<div class="ciclo-bloque"><div class="ciclo-t">{esc(c["tf"])}</div><div class="ciclo-l">sin datos</div></div>'
+                continue
+            retro = ' · '.join(f'{k}: <b>{fmt(v)}</b>' for k, v in c['retrocesos'].items())
+            ext = ' · '.join(f'{k}: <b>{fmt(v)}</b>' for k, v in list(c['extensiones'].items())[:4])
+            bloques += (f'<div class="ciclo-bloque"><div class="ciclo-t">{esc(c["tf"])}</div>'
+                        f'<div class="ciclo-l">tramo <b>{fmt(c["min"])}</b> → <b>{fmt(c["max"])}</b> · {esc(c["fuente"])}</div>'
+                        f'<div class="ciclo-l">{retro}</div>'
+                        f'<div class="ciclo-l">ext {ext}</div></div>')
+        paneles += f'<div class="tabpanel" data-par="{esc(par)}">{bloques}</div>'
+    return (f'<div class="card"><h3>CICLO · tramo y niveles (C05 / C05-B)</h3>'
+            f'<div class="tabs">{tabs}</div>{paneles}'
             f'<div class="nota">0 = mínimo, 1 = máximo · retrocesos 0,382/0,5/0,61/0,786 · '
-            f'extensiones por encima. Cada TF tiene su swing.</div></div>')
+            f'extensiones por encima. Cada TF tiene su swing. '
+            f'<a href="#" id="cambiarPar" style="display:none"></a></div></div>')
+
+
+def panel_risk():
+    """Risk manager visible: C01 (jerarquia) + C02 (30/70) + C11 (riesgo)."""
+    try:
+        sys.path.insert(0, str(PILOT))
+        from risk_manager.risk_manager import Config, Signal, RiskManager
+        cfg = Config()
+        rm = RiskManager(cfg)
+        capital = getattr(cfg, 'capital_operable', None) or getattr(cfg, 'account_balance', 0) or 0
+        lineas = (f'<div class="ciclo-l">capital: <b>${f(capital)}</b> · '
+                  f'riesgo long tope: <b>{float(getattr(cfg, "riesgo_long_pct", 0.05)) * 100:.0f}%</b> · '
+                  f'correccion: <b>2%</b></div>'
+                  f'<div class="ciclo-l">C01: el semanal manda; diario y 4h confirman '
+                  f'(<span class="fuente">core/jerarquia.py</span>)</div>'
+                  f'<div class="ciclo-l">C02: 30% oferta + 70% confirmacion (2x35%)</div>'
+                  f'<div class="ciclo-l">C11: riesgo = confianza x tope · por defecto 0,50 = '
+                  f'<b>2,5%</b> sin confianza explicita</div>')
+    except Exception as e:
+        lineas = f'<div class="ciclo-l">risk manager no disponible: {esc(str(e)[:60])}</div>'
+    return (f'<div class="card"><h3>RISK MANAGER · C01 / C02 / C11</h3>{lineas}'
+            f'<div class="nota">PAPER ONLY: calcula, no ejecuta. Capital y topes de '
+            f'<span class="fuente">risk_manager/risk_manager.py</span>.</div></div>')
 
 
 def panel_video(info):
@@ -243,7 +299,7 @@ def panel_grafico(datos):
 def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
     mer = mercado()
-    cic = ciclo()
+    ciclos = ciclos_pares()
     graf = grafico_velas()
 
     doc = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
@@ -257,7 +313,11 @@ def main() -> int:
 
 <div class="grid g2">
   {panel_mercado(mer)}
-  {panel_ciclo(cic)}
+  {panel_risk()}
+</div>
+
+<div class="grid" style="margin-top:12px">
+  {panel_ciclo(ciclos)}
 </div>
 
 <div class="grid" style="margin-top:12px">
@@ -275,7 +335,8 @@ def main() -> int:
     · El método C01–C12 está firmado en <span class="fuente">metodo/FIRMA_C01_C12.md</span>.
     </div></div>
 </div>
-</div></body></html>'''
+</div>
+{JS_TABS}'''
 
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
     SALIDA.write_text(doc)

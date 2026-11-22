@@ -5,16 +5,11 @@
   "json_validos": 31,
   "tasa_json": 1.0,
   "niveles_consolidados": {
-    "71509": 6,
-    "69000": 6,
-    "83366": 5,
-    "56750": 5,
-    "78746": 4,
-    "69997": 4,
-    "51585": 4,
-    "62216": 3,
-    "92500": 3,
-    "90000": 3,
+    "71509": 5,
+    "69000": 5,
+    "83366": 4,
+    "56750": 4,
+    "51585": 3,
     "87500": 3,
     "85000": 3,
     "82500": 3,
@@ -31,26 +26,29 @@
     "55000": 3,
     "52500": 3,
     "50000": 3,
-    "81446": 2,
-    "75518": 2,
-    "72554": 2,
-    "61247": 2,
-    "52498": 2,
+    "78746": 3,
+    "69997": 3,
     "101575": 2,
     "65555": 2,
     "44100": 2,
     "68537": 2,
+    "92500": 2,
+    "90000": 2,
+    "62216": 2,
     "76852": 2,
     "73396": 2,
     "20000": 2,
-    "87496": 1,
-    "66337": 1,
     "93347": 1,
-    "88296": 1,
-    "65310": 1,
-    "63672": 1,
-    "87396": 1,
+    "68.537": 1,
+    "65.31": 1,
+    "63.672": 1,
+    "87496": 1,
+    "81446": 1,
+    "75518": 1,
+    "72554": 1,
     "69590": 1,
+    "61247": 1,
+    "52498": 1,
     "63687": 1,
     "62654": 1,
     "78580": 1,
@@ -90,7 +88,7 @@
   "frames": [
     {
       "frame": "00001.jpg",
-      "segundos": 14.3,
+      "segundos": 1677.1,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -100,7 +98,7 @@
     },
     {
       "frame": "00003.jpg",
-      "segundos": 10.2,
+      "segundos": 3112.1,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -110,7 +108,7 @@
     },
     {
       "frame": "00004.jpg",
-      "segundos": 10.2,
+      "segundos": 1031.7,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -120,7 +118,7 @@
     },
     {
       "frame": "00006.jpg",
-      "segundos": 10.3,
+      "segundos": 2055.9,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -130,7 +128,7 @@
     },
     {
       "frame": "00007.jpg",
-      "segundos": 10.5,
+      "segundos": 2126.4,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -140,7 +138,7 @@
     },
     {
       "frame": "00008.jpg",
-      "segundos": 10.6,
+      "segundos": 928.4,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -150,7 +148,7 @@
     },
     {
       "frame": "00009.jpg",
-      "segundos": 10.8,
+      "segundos": 854.9,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -160,7 +158,7 @@
     },
     {
       "frame": "00011.jpg",
-      "segundos": 10.9,
+      "segundos": 10.3,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -170,74 +168,9 @@
     },
     {
       "frame": "00012.jpg",
-      "segundos": 32.3,
+      "segundos": 38.7,
       "json_valido": true,
       "data": {
-        "estructura": "maximos_crecientes",
-        "niveles_visibles": [
-          {
-            "precio": 87496,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 83366,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 81446,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 78746,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 75518,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 72554,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 71509,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 69997,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 69000,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 66337,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 62216,
-            "tipo": "soporte"
-          },
-          {
-            "precio": 61247,
-            "tipo": "soporte"
-          },
-          {
-            "precio": 56750,
-            "tipo": "soporte"
-          },
-          {
-            "precio": 52498,
-            "tipo": "soporte"
-          },
-          {
-            "precio": 51585,
-            "tipo": "soporte"
-          }
-        ],
-        "vela_actual": "roja",
-        "observacion": "El precio se encuentra en una fase de consolidación después de una tendencia alcista.",
         "instrumento": "BTCUSD",
         "tf_aparente": "diario",
         "es_grafico": true
@@ -245,7 +178,7 @@
     },
     {
       "frame": "00013.jpg",
-      "segundos": 28.5,
+      "segundos": 29.5,
       "json_valido": true,
       "data": {
         "estructura": "maximos_crecientes",
@@ -304,7 +237,7 @@
     },
     {
       "frame": "00014.jpg",
-      "segundos": 11.1,
+      "segundos": 11.4,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -314,7 +247,7 @@
     },
     {
       "frame": "00015.jpg",
-      "segundos": 28.8,
+      "segundos": 29.3,
       "json_valido": true,
       "data": {
         "estructura": "maximos_crecientes",
@@ -352,20 +285,20 @@
             "tipo": "resistencia"
           },
           {
-            "precio": 88296,
-            "tipo": "resistencia"
+            "precio": 68.537,
+            "tipo": "calculado"
           },
           {
-            "precio": 65310,
-            "tipo": "resistencia"
+            "precio": 65.31,
+            "tipo": "calculado"
           },
           {
-            "precio": 63672,
-            "tipo": "resistencia"
+            "precio": 63.672,
+            "tipo": "calculado"
           }
         ],
         "vela_actual": "roja",
-        "observacion": "El precio se encuentra en una fase de acumulación con reversión semanal confirmada.",
+        "observacion": "Reversión semanal confirmada en zona de acumulación.",
         "instrumento": "BTCUSD",
         "tf_aparente": "semanal",
         "es_grafico": true
@@ -373,16 +306,6 @@
     },
     {
       "frame": "00018.jpg",
-      "segundos": 11.2,
-      "json_valido": true,
-      "data": {
-        "instrumento": "NO_VISIBLE",
-        "tf_aparente": "NO_VISIBLE",
-        "es_grafico": false
-      }
-    },
-    {
-      "frame": "00022.jpg",
       "segundos": 11.1,
       "json_valido": true,
       "data": {
@@ -392,8 +315,18 @@
       }
     },
     {
+      "frame": "00022.jpg",
+      "segundos": 11.2,
+      "json_valido": true,
+      "data": {
+        "instrumento": "NO_VISIBLE",
+        "tf_aparente": "NO_VISIBLE",
+        "es_grafico": false
+      }
+    },
+    {
       "frame": "00023.jpg",
-      "segundos": 37.0,
+      "segundos": 37.2,
       "json_valido": true,
       "data": {
         "estructura": "maximos_crecientes",
@@ -480,10 +413,10 @@
     },
     {
       "frame": "00024.jpg",
-      "segundos": 36.4,
+      "segundos": 36.9,
       "json_valido": true,
       "data": {
-        "estructura": "maximos_crecientes",
+        "estructura": "ruptura",
         "niveles_visibles": [
           {
             "precio": 92500,
@@ -567,13 +500,13 @@
     },
     {
       "frame": "00025.jpg",
-      "segundos": 36.2,
+      "segundos": 36.5,
       "json_valido": true,
       "data": {
         "estructura": "maximos_crecientes",
         "niveles_visibles": [
           {
-            "precio": 87396,
+            "precio": 87496,
             "tipo": "resistencia"
           },
           {
@@ -642,7 +575,7 @@
           }
         ],
         "vela_actual": "roja",
-        "observacion": "El precio se encuentra en una fase de consolidación después de un impulso alcista.",
+        "observacion": "El precio está en fase de corrección tras un impulso alcista.",
         "instrumento": "BTCUSD",
         "tf_aparente": "diario",
         "es_grafico": true
@@ -650,7 +583,7 @@
     },
     {
       "frame": "00030.jpg",
-      "segundos": 11.6,
+      "segundos": 11.7,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -660,7 +593,7 @@
     },
     {
       "frame": "00031.jpg",
-      "segundos": 11.6,
+      "segundos": 11.7,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -670,19 +603,11 @@
     },
     {
       "frame": "00032.jpg",
-      "segundos": 37.1,
+      "segundos": 37.4,
       "json_valido": true,
       "data": {
         "estructura": "ruptura",
         "niveles_visibles": [
-          {
-            "precio": 92500,
-            "tipo": "resistencia"
-          },
-          {
-            "precio": 90000,
-            "tipo": "resistencia"
-          },
           {
             "precio": 87500,
             "tipo": "resistencia"
@@ -757,7 +682,7 @@
     },
     {
       "frame": "00033.jpg",
-      "segundos": 11.5,
+      "segundos": 12.2,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -767,10 +692,10 @@
     },
     {
       "frame": "00034.jpg",
-      "segundos": 27.7,
+      "segundos": 29.2,
       "json_valido": true,
       "data": {
-        "estructura": "rango",
+        "estructura": "minimos_decrecientes",
         "niveles_visibles": [
           {
             "precio": 78580,
@@ -814,7 +739,7 @@
           }
         ],
         "vela_actual": "verde",
-        "observacion": "El precio se encuentra en un rango descendente con niveles de resistencia bien definidos.",
+        "observacion": "El precio se encuentra en una tendencia bajista con niveles de resistencia bien definidos.",
         "instrumento": "BTCUSD",
         "tf_aparente": "4H",
         "es_grafico": true
@@ -822,7 +747,7 @@
     },
     {
       "frame": "00035.jpg",
-      "segundos": 31.5,
+      "segundos": 32.7,
       "json_valido": true,
       "data": {
         "estructura": "minimos_decrecientes",
@@ -881,7 +806,7 @@
           }
         ],
         "vela_actual": "roja",
-        "observacion": "El precio está en una tendencia bajista con soporte clave en 62216.",
+        "observacion": "El precio está en una tendencia bajista con soportes y resistencias claramente marcados.",
         "instrumento": "BTCUSD",
         "tf_aparente": "4H",
         "es_grafico": true
@@ -889,7 +814,7 @@
     },
     {
       "frame": "00036.jpg",
-      "segundos": 25.7,
+      "segundos": 26.6,
       "json_valido": true,
       "data": {
         "estructura": "ruptura",
@@ -928,7 +853,7 @@
           }
         ],
         "vela_actual": "roja",
-        "observacion": "El precio rompe el soporte de 1780 y se dirige hacia niveles de resistencia superiores.",
+        "observacion": "El precio rompe el soporte clave en 1780 y avanza hacia niveles de resistencia superiores.",
         "instrumento": "ETHUSD",
         "tf_aparente": "1D",
         "es_grafico": true
@@ -936,7 +861,7 @@
     },
     {
       "frame": "00037.jpg",
-      "segundos": 12.0,
+      "segundos": 11.9,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -946,7 +871,7 @@
     },
     {
       "frame": "00038.jpg",
-      "segundos": 27.7,
+      "segundos": 22.8,
       "json_valido": true,
       "data": {
         "estructura": "rango",
@@ -981,7 +906,7 @@
     },
     {
       "frame": "00039.jpg",
-      "segundos": 13.2,
+      "segundos": 11.9,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
@@ -991,7 +916,7 @@
     },
     {
       "frame": "00040.jpg",
-      "segundos": 25.3,
+      "segundos": 24.7,
       "json_valido": true,
       "data": {
         "estructura": "rango",
@@ -1030,7 +955,7 @@
     },
     {
       "frame": "00041.jpg",
-      "segundos": 19.9,
+      "segundos": 20.2,
       "json_valido": true,
       "data": {
         "estructura": "rango",
@@ -1084,7 +1009,7 @@
           }
         ],
         "vela_actual": "roja",
-        "observacion": "El precio está en una zona de soporte y resistencia con niveles clave visibles.",
+        "observacion": "El precio está en una zona de soporte y resistencia con niveles clave marcados.",
         "instrumento": "NQ1!",
         "tf_aparente": "1D",
         "es_grafico": true
@@ -1092,7 +1017,7 @@
     },
     {
       "frame": "00046.jpg",
-      "segundos": 11.9,
+      "segundos": 12.0,
       "json_valido": true,
       "data": {
         "instrumento": "NO_VISIBLE",
