@@ -35,9 +35,10 @@ def determinar(regimen_semanal: str, regimen_diario: str | None = None,
 
     Los regimenes pueden ser 'alcista' | 'bajista' | 'correccion' | 'rango'.
     """
-    w = (regimen_semanal or NO_DETERMINADO).lower()
-    d = (regimen_diario or NO_DETERMINADO).lower()
-    h = (regimen_4h or NO_DETERMINADO).lower()
+    def _n(x):
+        s = (x or NO_DETERMINADO).lower()
+        return s.replace('tendencia_', '')
+    w, d, h = _n(regimen_semanal), _n(regimen_diario), _n(regimen_4h)
 
     if w in (RANGO, NO_DETERMINADO, ''):
         return {'direccion': NO_OPERAR, 'motivo': f'semanal {w}: no hay tendencia macro',
@@ -88,3 +89,34 @@ if __name__ == '__main__':
         r = determinar(w, d, h)
         ok = 'OK ' if r['direccion'] == esperado else 'FALLO'
         print(f"{ok} W={w:<10} D={d:<10} 4h={h:<10} -> {r['direccion']}")
+
+
+def sin_semanal(regimen_diario: str = None, regimen_4h: str = None) -> dict:
+    """REFERENCIA: la misma jerarquia pero SOLO con diario y 4h.
+
+    No es la regla (C01 manda el semanal). Sirve para ver que pasaria si el
+    semanal no estuviera en rango. Se marca como referencia.
+    """
+    # normalizar: 'TENDENCIA_BAJISTA' -> 'bajista'
+    def _n(x):
+        s = (x or NO_DETERMINADO).lower()
+        return s.replace('tendencia_', '')
+    d = _n(regimen_diario)
+    h = _n(regimen_4h)
+    if d in (RANGO, NO_DETERMINADO, ''):
+        return {'direccion': NO_OPERAR, 'confianza': 0.0,
+                'motivo': f'D {d}: sin tendencia en diario'}
+    correccion = h == CORRECCION
+    if d == ALCISTA:
+        if correccion:
+            return {'direccion': CORRECCION, 'confianza': 0.5, 'motivo': 'D alcista, 4H corrige'}
+        if h in (RANGO, NO_DETERMINADO):
+            return {'direccion': LONG, 'confianza': 0.6, 'motivo': 'D alcista; 4H sin confirmar'}
+        return {'direccion': LONG, 'confianza': 0.85, 'motivo': 'D y 4H alcistas'}
+    if d == BAJISTA:
+        if correccion:
+            return {'direccion': CORRECCION, 'confianza': 0.5, 'motivo': 'D bajista, 4H corrige'}
+        if h in (RANGO, NO_DETERMINADO):
+            return {'direccion': SHORT, 'confianza': 0.6, 'motivo': 'D bajista; 4H sin confirmar'}
+        return {'direccion': SHORT, 'confianza': 0.85, 'motivo': 'D y 4H bajistas'}
+    return {'direccion': NO_OPERAR, 'confianza': 0.0, 'motivo': f'D {d}: no operable'}

@@ -12,6 +12,8 @@ Interfaz:
 """
 from __future__ import annotations
 
+import os
+
 import json
 import sys
 from dataclasses import dataclass, field
@@ -46,7 +48,9 @@ NIVEL_POR_TIPO = {
 
 @dataclass
 class Config:
-    account_balance: float = 10000.0
+    # Capital real de la cuenta (Francisco, 2026-11-22: USD 6.000).
+    # Se puede pisar con la variable CAPITAL sin tocar el codigo.
+    account_balance: float = float(os.environ.get('CAPITAL', '6000'))
     max_risk_pct: float = 0.01        # max riesgo por operacion (fraccion del capital)
     max_exposure_pct: float = 0.05    # max exposicion agregada
     max_senales_por_instrumento: int = 2

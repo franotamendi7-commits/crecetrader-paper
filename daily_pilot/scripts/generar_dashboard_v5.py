@@ -364,7 +364,7 @@ def escenario_pares() -> list:
     """
     from velas import velas
     from tramos import regimen_de
-    from jerarquia import determinar
+    from jerarquia import determinar, sin_semanal
     out = []
     for par in PARES:
         regs = {}
@@ -372,35 +372,48 @@ def escenario_pares() -> list:
             r = velas(par, tf, limite=500)
             regs[tf] = regimen_de(r['velas'])['regimen'] if 'error' not in r else 'no_determinado'
         j = determinar(regs['1w'], regs['1d'], regs['4h'])
+        ref = sin_semanal(regs['1d'], regs['4h'])
         out.append({'par': par.replace('USDT', ''), 'w': regs['1w'], 'd': regs['1d'],
                     'h': regs['4h'], 'direccion': j['direccion'],
-                    'confianza': j['confianza'], 'motivo': j['motivo']})
+                    'confianza': j['confianza'], 'motivo': j['motivo'],
+                    'ref_direccion': ref['direccion'], 'ref_confianza': ref['confianza'],
+                    'ref_motivo': ref['motivo']})
     return out
+
+
+def _barra(pct, direccion):
+    largo = max(2, int(pct * 2.4))
+    color = 'var(--ok)' if direccion in ('long', 'short') else 'var(--warn)'
+    return (f'<div style="display:flex;align-items:center;gap:8px">'
+            f'<div style="width:150px;height:10px;background:#21262d;border-radius:5px;overflow:hidden">'
+            f'<i style="display:block;height:100%;width:{largo}px;background:{color}"></i></div>'
+            f'<b style="font-variant-numeric:tabular-nums">{pct}%</b></div>')
+
+
+def _etiq(d):
+    return {'long': 'LONG', 'short': 'SHORT', 'correccion': 'CORRECCION',
+            'no_operar': 'NO OPERAR'}.get(d, d)
 
 
 def panel_escenarios(datos):
     filas = ''
     for x in datos:
         pct = int(round(float(x['confianza']) * 100))
-        largo = max(2, int(pct * 2.4))
-        color = 'var(--ok)' if x['direccion'] in ('long', 'short') else 'var(--muted)'
-        etiqueta = {'long': 'LONG', 'short': 'SHORT',
-                    'correccion': 'CORRECCION', 'no_operar': 'NO OPERAR'}.get(x['direccion'], x['direccion'])
-        motivo = esc(x['motivo'])
+        ref_pct = int(round(float(x.get('ref_confianza', 0)) * 100))
         filas += (f'<tr><td><b>{esc(x["par"])}</b></td>'
-                  f'<td><div style="display:flex;align-items:center;gap:8px">'
-                  f'<div style="width:180px;height:10px;background:#21262d;border-radius:5px;overflow:hidden">'
-                  f'<i style="display:block;height:100%;width:{largo}px;background:{color}"></i></div>'
-                  f'<b style="font-variant-numeric:tabular-nums">{pct}%</b></div></td>'
-                  f'<td><b>{etiqueta}</b></td>'
-                  f'<td class="fuente">{esc(x["w"])} / {esc(x["d"])} / {esc(x["h"])}</td>'
-                  f'<td class="fuente">{motivo}</td></tr>')
+                  f'<td>{_barra(pct, x["direccion"])}</td>'
+                  f'<td><b>{_etiq(x["direccion"])}</b><div class="fuente">{esc(x["motivo"])}</div></td>'
+                  f'<td class="fuente">{_barra(ref_pct, x.get("ref_direccion"))} '
+                  f'<b>{_etiq(x.get("ref_direccion"))}</b>'
+                  f'<div class="fuente">{esc(x.get("ref_motivo"))}</div></td>'
+                  f'<td class="fuente">{esc(x["w"])} / {esc(x["d"])} / {esc(x["h"])}</td></tr>')
     return (f'<div class="card"><h3>PROBABILIDAD POR PAR · ¿TOMAMOS POSICIONES?</h3>'
-            f'<table><tr><th>par</th><th>probabilidad</th><th>direccion</th>'
-            f'<th>W / D / 4H</th><th>por que</th></tr>{filas}</table>'
-            f'<div class="nota">La probabilidad sale de la <b>confianza de la jerarquia '
-            f'W &gt; D &gt; 4H</b> (C01). Si el semanal esta en <b>rango</b>, no se opera: '
-            f'0%. NO es una senal de compra: es cuan alineados estan los marcos.</div></div>')
+            f'<table><tr><th>par</th><th>CON SEMANAL (C01)</th><th>direccion</th>'
+            f'<th>SIN SEMANAL (referencia)</th><th>W / D / 4H</th></tr>{filas}</table>'
+            f'<div class="nota"><b>CON SEMANAL</b> es la regla C01: si el semanal esta en '
+            f'<b>rango</b>, no se opera (0%). <b>SIN SEMANAL</b> es solo una referencia de '
+            f'que pasaria con diario y 4h — <b>no es la regla</b>. '
+            f'La probabilidad es la confianza de la jerarquia, no una senal de compra.</div></div>')
 
 
 def panel_estrategia(info, niveles):

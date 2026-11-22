@@ -2,10 +2,10 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "ERROR DE ANALISIS",
-  "ultima_revision": "2026-11-22T01:07:08Z",
-  "deteccion_at": "2026-11-22T01:07:08Z",
-  "analisis_at": null,
+  "estado": "VIDEO NUEVO ANALIZADO",
+  "ultima_revision": "2026-11-22T19:27:07Z",
+  "deteccion_at": "2026-11-22T18:56:10.234728+00:00",
+  "analisis_at": "2026-11-22T18:56:10Z",
   "video": {
     "video_id": "c7AXSee1qfg",
     "titulo": "Bitcoin cae a 56.750: cuando todo cae a la vez, manda la liquidez",
@@ -14,7 +14,7 @@
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
-    "frase": "Último análisis real: EX-Rx_pnNpc · 1168 cues · instrumentos ['BTC', 'XAUUSD', 'ETH', 'NQ']",
+    "frase": "Último análisis real: c7AXSee1qfg · 1054 cues · instrumentos ['BTC', 'XAUUSD', 'ETH', 'NQ']",
     "instrumento": [
       "BTC",
       "XAUUSD",
@@ -23,43 +23,41 @@
     ],
     "temporalidad": "NO DISPONIBLE",
     "evidencia": {
-      "video_id": "EX-Rx_pnNpc",
-      "analizado_at": "2026-11-19T16:18:05Z",
-      "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7"
+      "video_id": "c7AXSee1qfg",
+      "analizado_at": "2026-11-22T18:56:10Z",
+      "sha256_transcript": "582b6210b7f7049977a4c885b332b8fb3f8d2e06139fb8a6a99a2692cd1e63d7"
     },
     "limitaciones": [
       "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
       "Los numeros provienen de la transcripcion; no contrastados con feed.",
       "No se infirieron niveles: solo se transcribio lo dicho."
     ],
-    "fuente": "analisis/EX-Rx_pnNpc_analisis.json"
+    "fuente": "analisis/c7AXSee1qfg_analisis.json"
   },
   "escenarios": {
-    "video_id": "EX-Rx_pnNpc",
+    "video_id": "c7AXSee1qfg",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "macro": {
-    "video_id": "EX-Rx_pnNpc",
+    "video_id": "c7AXSee1qfg",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "ultimo_analizado": {
-    "video_id": "EX-Rx_pnNpc",
-    "analizado_at": "2026-11-19T16:18:05Z",
-    "n_cues": 1168,
-    "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7",
-    "archivo": "daily_pilot/analisis/EX-Rx_pnNpc_analisis.json"
+    "video_id": "c7AXSee1qfg",
+    "analizado_at": "2026-11-22T18:56:10Z",
+    "n_cues": 1054,
+    "sha256_transcript": "582b6210b7f7049977a4c885b332b8fb3f8d2e06139fb8a6a99a2692cd1e63d7",
+    "archivo": "daily_pilot/analisis/c7AXSee1qfg_analisis.json"
   },
-  "errores": [
-    "c7AXSee1qfg: [Errno 2] No such file or directory: 'yt-dlp'"
-  ],
+  "errores": [],
   "ultimo_analisis_completo": {
-    "video_id": "EX-Rx_pnNpc",
-    "analizado_at": "2026-11-19T16:18:05Z",
-    "n_cues": 1168,
-    "sha256_transcript": "a70ee1b2d8777d8404de5f9a749d5d6c2409139030b1468380ca845f19ca0de7",
-    "archivo": "daily_pilot/analisis/EX-Rx_pnNpc_analisis.json"
+    "video_id": "c7AXSee1qfg",
+    "analizado_at": "2026-11-22T18:56:10Z",
+    "n_cues": 1054,
+    "sha256_transcript": "582b6210b7f7049977a4c885b332b8fb3f8d2e06139fb8a6a99a2692cd1e63d7",
+    "archivo": "daily_pilot/analisis/c7AXSee1qfg_analisis.json"
   },
   "escenarios_estado": null
 }
