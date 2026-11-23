@@ -17,10 +17,14 @@ Archivo: `daily_pilot/metodo/playbook_v0.1.md`
 |---|---|---|
 | dictada (1ª firma) | `b4db713f392f9a17f1a60d97346ad5c3f02dda3a28bcfb20caecf2415562568a` | 2026-11-19 |
 | con 1ª firma incrustada | `7be1dd686be51c058c887b3aa032b40268bca1cd20fb1778b1294c1f1e99aeed` | 2026-11-19 |
-| **actual (2ª firma)** | `c676021f1581e7d85609f5c1e50b47f369d0f99edf78a4cfcf744665d9c3603b` | 2026-11-20 |
+| **actual (2ª firma)** | `a6739548004cca2040c386f6a9469200a62756c8a1775ba4bdcfb99850ab7a72` | 2026-11-22 |
 
 **Cómo se ancla:** el hash se registra **antes** de escribir la firma; al quedar
 incrustada, el hash cambia solo por eso. **Si cambia una regla, hay que re-firmar.**
+
+Los **anexos** (C05-A, C05-B, C13, C14) son contexto del operador y del mercado,
+**no reglas C01-C12**: no exigen re-firma, pero el hash se actualiza para que la
+verificación siga coincidiendo.
 
 ## Reglas firmadas — las 12
 

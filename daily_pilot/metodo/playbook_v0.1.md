@@ -317,3 +317,30 @@ La diferencia de 1D/1W es el **piso**: la captura se tomo el 20/11 16:36
 - **Quantfury** (trading 20x) — profit diario/semanal.
 - El sistema es **PAPER_ONLY**: el 20x se usa solo para calcular margen y
   notional, nunca para ejecutar.
+
+
+---
+
+## ANEXO C14 — pares de crypto de Quantfury (2026-11-22)
+
+Fuente: `help.quantfury.com/en/articles/5448756-crypto-pairs` (los de **Binance**,
+no los de Coinbase). **33 pares.**
+
+### FTM ya no existe: es S (Sonic)
+
+- Binance **convirtio FTM en Sonic (S)** el **2025-01-16** (1 FTM = 1 S) y
+  **delisto FTM** (hoy `FTMUSDT` esta en status `BREAK`).
+- Quantfury lista **S/USDT** -> ese es el par correcto. `SUSDT` esta `TRADING`.
+
+### TON
+
+- `TONUSDT` existe en Binance pero con status **`BREAK`** (trading pausado).
+  Los datos (klines) sirven; el dash lo marca con `(BREAK)`.
+
+### Lista usada en el dash
+
+AAVE · ADA · APT · ARB · ATOM · AVAX · BCH · BTC · DOGE · DOT · ETC · ETH · FIL ·
+HBAR · INJ · LINK · LTC · MANA · NEAR · NEO · ONDO · OP · POL · RUNE · SAND · SNX ·
+SOL · STX · THETA · UNI · XRP · **S** (Sonic) · **TON** (BREAK)
+
+> Si Quantfury cambia la lista, el dash deja de ser fiel: revisar la fuente.

@@ -29,8 +29,14 @@ PARES_QUANTFURY = [
     'INJUSDT', 'LINKUSDT', 'LTCUSDT', 'MANAUSDT', 'NEARUSDT', 'NEOUSDT', 'ONDOUSDT',
     'OPUSDT', 'POLUSDT', 'RUNEUSDT', 'SANDUSDT', 'SNXUSDT', 'SOLUSDT', 'STXUSDT',
     'THETAUSDT', 'UNIUSDT', 'XRPUSDT',
+    # FTM dejo de existir: Binance lo convirtio en Sonic (S) el 2025-01-16 (1:1)
+    # y delisto FTM. Quantfury lista S/USDT -> ese es el par correcto.
+    'SUSDT',
+    # TON existe en Binance pero con status BREAK (trading pausado)
+    'TONUSDT',
 ]
-# FTM y TON estaban en la lista de Quantfury pero no tienen datos en Binance spot
+# status de trading segun Binance (BREAK = pausado)
+STATUS_ESPERADO = {'SUSDT': 'TRADING', 'TONUSDT': 'BREAK'}
 PARES = PARES_QUANTFURY
 PLAZOS = (('1w', 'largo', '1S'), ('1d', 'media', '1D'), ('4h', 'corto', '4H'))
 
@@ -90,7 +96,7 @@ def mercado() -> list:
         cambio = (v['close'] - prev['close']) / prev['close'] * 100 if prev['close'] else 0.0
         filas.append({'par': par.replace('USDT', ''), 'precio': v['close'],
                       'cambio': round(cambio, 2), 'high': v['high'], 'low': v['low'],
-                      'fuente': r['fuente']})
+                      'fuente': r['fuente'], 'status': STATUS_ESPERADO.get(par, '')})
     return filas
 
 
@@ -197,7 +203,8 @@ def panel_mercado(filas):
             continue
         cls = 'up' if x['cambio'] >= 0 else 'down'
         signo = '+' if x['cambio'] >= 0 else ''
-        filas_html += (f'<tr><td><b>{esc(x["par"])}</b></td>'
+        st = ' <span style="color:var(--bad);font-size:10px">(BREAK)</span>' if x.get('status') == 'BREAK' else ''
+        filas_html += (f'<tr><td><b>{esc(x["par"])}</b>{st}</td>'
                        f'<td class="num">{fmt(x["precio"])}</td>'
                        f'<td class="num {cls}">{signo}{x["cambio"]:.2f}%</td>'
                        f'<td class="num fuente">{f(x["high"])} / {f(x["low"])}</td></tr>')
