@@ -231,6 +231,19 @@ def panel_risk():
         cfg = Config()
         rm = RiskManager(cfg)
         capital = getattr(cfg, 'capital_operable', None) or getattr(cfg, 'account_balance', 0) or 0
+        try:
+            from risk_manager.risk_manager import notional_de_riesgo
+            n5 = notional_de_riesgo(capital, 0.05)
+            n25 = notional_de_riesgo(capital, 0.025)
+            _20x = (
+                f'<div class="ciclo-l"><b>Quantfury 20x</b> · tendencia 5% = '
+                f'riesgo ${f(n5["riesgo_dinero"])} · notional <b>${f(n5["notional"])}</b> · '
+                f'margen ${f(n5["margen"])} · <span style="color:var(--bad)">liquida con '
+                f'{n5["movimiento_contrario_liquida_pct"]}% en contra</span></div>'
+                f'<div class="ciclo-l">correccion 2,5% = riesgo ${f(n25["riesgo_dinero"])} · '
+                f'notional ${f(n25["notional"])} · margen ${f(n25["margen"])}</div>')
+        except Exception:
+            _20x = ''
         lineas = (f'<div class="ciclo-l">capital: <b>${f(capital)}</b> · '
                   f'riesgo long tope: <b>{float(getattr(cfg, "riesgo_long_pct", 0.05)) * 100:.0f}%</b> · '
                   f'correccion: <b>2%</b></div>'
@@ -238,7 +251,7 @@ def panel_risk():
                   f'(<span class="fuente">core/jerarquia.py</span>)</div>'
                   f'<div class="ciclo-l">C02: 30% oferta + 70% confirmacion (2x35%)</div>'
                   f'<div class="ciclo-l">C11: riesgo = confianza x tope · por defecto 0,50 = '
-                  f'<b>2,5%</b> sin confianza explicita</div>')
+                  f'<b>2,5%</b> sin confianza explicita</div>{_20x}')
     except Exception as e:
         lineas = f'<div class="ciclo-l">risk manager no disponible: {esc(str(e)[:60])}</div>'
     return (f'<div class="card"><h3>RISK MANAGER · C01 / C02 / C11</h3>{lineas}'

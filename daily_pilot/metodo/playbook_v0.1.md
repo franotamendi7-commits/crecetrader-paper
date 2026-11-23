@@ -292,3 +292,28 @@ Parametros: `n=3` (velas que definen un extremo) · `ventana=60` (swings).
 
 La diferencia de 1D/1W es el **piso**: la captura se tomo el 20/11 16:36
 (536,58) y el precio luego siguio cayendo (530,00).
+
+
+---
+
+## ANEXO C13 — contexto del operador (NO es una regla del metodo)
+
+**Quantfury · 20x** (Francisco, 2026-11-22).
+
+- Exchange regulado, **sin comision**, 20x por defecto. Ahí opera Francisco.
+- **Capital real: USD 6.000** (antes era 10.000 en el default; se pisa con `CAPITAL`).
+
+### Que implica el 20x con el metodo (capital 6.000)
+
+| operacion | riesgo | notional | margen | liquidacion |
+|---|---|---|---|---|
+| tendencia 5% | **$300** | $6.000 | $300 | **5% en contra** |
+| correccion 2,5% | **$150** | $3.000 | $150 | **5% en contra** |
+
+> Con 20x, un movimiento del 5% en contra liquida la posicion. El stop del
+> metodo (C08) es lo unico que protege.
+
+- **Binance Spot** (hold, en earn) — sin apalancamiento.
+- **Quantfury** (trading 20x) — profit diario/semanal.
+- El sistema es **PAPER_ONLY**: el 20x se usa solo para calcular margen y
+  notional, nunca para ejecutar.

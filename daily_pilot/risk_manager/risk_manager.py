@@ -46,6 +46,35 @@ NIVEL_POR_TIPO = {
 }
 
 
+# --- contexto del operador (NO es una regla C01-C12, es un dato de la cuenta) ---
+# Francisco opera en Quantfury con **20x** (sin comision, pares regulados).
+# El sistema es PAPER_ONLY: esto solo se usa para calcular el margen y el
+# notional, nunca para ejecutar.
+APALANCAMIENTO = 20          # Quantfury
+APALANCAMIENTO_DEFAULT = 20
+
+
+def notional_de_riesgo(capital: float, riesgo_pct: float,
+                       apalancamiento: int = APALANCAMIENTO) -> dict:
+    """Que notional implica arriesgar `riesgo_pct` del capital con `apalancamiento` x.
+
+    Con 20x, arriesgar el 5% de 6.000 (300) implica un notional de 6.000.
+    Ojo: con 20x, un 5% en contra liquida la posicion.
+    """
+    riesgo_money = capital * riesgo_pct
+    notional = riesgo_money * apalancamiento
+    return {
+        'capital': capital,
+        'riesgo_pct': riesgo_pct,
+        'riesgo_dinero': round(riesgo_money, 2),
+        'apalancamiento': apalancamiento,
+        'notional': round(notional, 2),
+        'margen': round(notional / apalancamiento, 2),
+        'movimiento_contrario_liquida_pct': round(100.0 / apalancamiento, 2),
+        'paper_only': True,
+    }
+
+
 @dataclass
 class Config:
     # Capital real de la cuenta (Francisco, 2026-11-22: USD 6.000).
