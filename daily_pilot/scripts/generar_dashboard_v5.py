@@ -275,7 +275,7 @@ def panel_cuenta():
                 f'${v["total_usdt"]:,.2f} USD</div>'
                 f'<div class="fuente">total aproximado · {b["n_activos"]} activos</div>'
                 f'<table><tr><th>activo</th><th style="text-align:right">saldo</th>'
-                f'<th style="text-align:right">≈USD</th></tr>{filas}</table>'
+                f'<th style="text-align:right">≈USD</th></tr>{cuerpo}</table>'
                 f'{alerta}<div class="nota">La clave vive en '
                 f'<span class="fuente">~/.hermes/.env</span> (fuera del repo). '
                 f'<b>No ejecuta ordenes.</b></div></div>')
@@ -480,20 +480,33 @@ def _etiq(d):
 
 
 def panel_escenarios(datos):
-    filas = ''
-    for x in datos:
+    # ordenado por la probabilidad de la REGLA (C01): los operables primero
+    operables = sorted([x for x in datos if x['direccion'] != 'no_operar'],
+                       key=lambda x: -float(x['confianza']))
+    no_opera = sorted([x for x in datos if x['direccion'] == 'no_operar'],
+                      key=lambda x: -float(x.get('ref_confianza', 0)))
+    def fila(x):
         pct = int(round(float(x['confianza']) * 100))
         ref_pct = int(round(float(x.get('ref_confianza', 0)) * 100))
-        filas += (f'<tr><td><b>{esc(x["par"])}</b></td>'
-                  f'<td>{_barra(pct, x["direccion"])}</td>'
-                  f'<td><b>{_etiq(x["direccion"])}</b><div class="fuente">{esc(x["motivo"])}</div></td>'
-                  f'<td class="fuente">{_barra(ref_pct, x.get("ref_direccion"))} '
-                  f'<b>{_etiq(x.get("ref_direccion"))}</b>'
-                  f'<div class="fuente">{esc(x.get("ref_motivo"))}</div></td>'
-                  f'<td class="fuente">{esc(x["w"])} / {esc(x["d"])} / {esc(x["h"])}</td></tr>')
+        return (f'<tr><td><b>{esc(x["par"])}</b></td>'
+                f'<td>{_barra(pct, x["direccion"])}</td>'
+                f'<td><b>{_etiq(x["direccion"])}</b><div class="fuente">{esc(x["motivo"])}</div></td>'
+                f'<td class="fuente">{_barra(ref_pct, x.get("ref_direccion"))} '
+                f'<b>{_etiq(x.get("ref_direccion"))}</b>'
+                f'<div class="fuente">{esc(x.get("ref_motivo"))}</div></td>'
+                f'<td class="fuente">{esc(x["w"])} / {esc(x["d"])} / {esc(x["h"])}</td></tr>')
+    filas = ''.join(fila(x) for x in operables + no_opera)
+    sep = ('<tr><td colspan="5" style="border-bottom:2px solid var(--bd);padding:2px">'
+           '<span class="fuente">— sin tendencia macro: NO SE OPERA (C01) —</span></td></tr>')
+    if operables and no_opera:
+        cuerpo = ''.join(fila(x) for x in operables) + sep + ''.join(fila(x) for x in no_opera)
+    elif no_opera:
+        cuerpo = sep + ''.join(fila(x) for x in no_opera)
+    else:
+        cuerpo = filas
     return (f'<div class="card"><h3>PROBABILIDAD POR PAR · ¿TOMAMOS POSICIONES?</h3>'
             f'<table><tr><th>par</th><th>CON SEMANAL (C01)</th><th>direccion</th>'
-            f'<th>SIN SEMANAL (referencia)</th><th>W / D / 4H</th></tr>{filas}</table>'
+            f'<th>SIN SEMANAL (referencia)</th><th>W / D / 4H</th></tr>{cuerpo}</table>'
             f'<div class="nota"><b>CON SEMANAL</b> es la regla C01: si el semanal esta en '
             f'<b>rango</b>, no se opera (0%). <b>SIN SEMANAL</b> es solo una referencia de '
             f'que pasaria con diario y 4h — <b>no es la regla</b>. '

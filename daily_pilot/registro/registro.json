@@ -1115,12 +1115,13 @@
     },
     "u3T3rj62WXE": {
       "video_id": "u3T3rj62WXE",
-      "titulo": "",
-      "published": "",
+      "title": "Bitcoin frena en 56.750: ¿principio de una nueva subida?",
+      "published": "2026-11-23T09:56:22+00:00",
       "url": "https://www.youtube.com/watch?v=u3T3rj62WXE",
-      "detectado": "2026-11-23T10:09:00Z",
-      "transcript": null,
-      "estado": "error: [Errno 2] No such file or directory: 'yt-dlp'"
+      "detectado": "2026-11-23T16:50:17.307166+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/u3T3rj62WXE/u3T3rj62WXE_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
-  "run_at": "2026-11-22T19:00:16Z",
-  "cues": 130973,
-  "videos": 113,
+  "run_at": "2026-11-23T16:50:41Z",
+  "cues": 132034,
+  "videos": 114,
   "escenarios_manuales": 8,
-  "source_files": 248,
+  "source_files": 250,
   "hashes_post": {
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/-SpwGV1Ks1U/-SpwGV1Ks1U_transcript.json": "91d9a26e93f6b535b943b48ebc652df4ac1c0c9c67d401e3ca5dd907faaf30d2",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/-b6m3xpzuyE/-b6m3xpzuyE_transcript.json": "7b06067b8b91bd7c105c956107bb382e6199b36dffa66c291dd558dcfad1355c",
@@ -112,6 +112,7 @@
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/tKYVe6fkjdA/tKYVe6fkjdA_transcript.json": "aee237f5855d8e4eb872fb1e77ac9dae30bfbed1aff8f2080ea74aa93ed90bb6",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/tMqpZuA3ito/tMqpZuA3ito_transcript.json": "f36657944ea4711d3f0cba76d93f5b51682571621b9163187ea51e035eeca054",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/tQxbQf773QI/tQxbQf773QI_transcript.json": "bc0a94ea5a78830606d7b1d1a007748fc11d9d9bf08ea801a939f9401b2d6c1c",
+    "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/u3T3rj62WXE/u3T3rj62WXE_transcript.json": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/uvN83CwTmZ4/uvN83CwTmZ4_transcript.json": "9c6c3128a9e1bc7bdcbb34a7425c5fe71dd7327f3182d5a97d06e695d951dca2",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/vV4ZcSK9mk4/vV4ZcSK9mk4_transcript.json": "5aa966f9c6d2c76136b7fa1d0abc6fa575eb6f917e80a858a11f85454e14d7bc",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/vrgXNRJ7O58/vrgXNRJ7O58_transcript.json": "29ca14c3b09a527684e23f281e24e55fff33d74f7db6bba1fe3b0e833a147a3e",
@@ -119,11 +120,11 @@
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/y9gsOU6_Bzw/y9gsOU6_Bzw_transcript.json": "c6be00ea7ff36e2a8f588e33302fb90251da6c72298a262fd6eebc2543e2bb3c",
     "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/zUk0hNQ0YCs/zUk0hNQ0YCs_transcript.json": "6ea8466048092f7090ef00c13a027ab7e767f8893e0abb756c68ee6d90e1188e"
   },
-  "store_sha256": "9ea29e3742133f43adfbb5aa9c8e4eb49ac0d65e123dcec891da42f8815f46d0",
-  "manifest_sha256": "1600e8efd91f6aacb3b6bda9697ea894c77e59e56c2343b1da883113c9874ee0",
+  "store_sha256": "a785a0b2f993b747e33ba2752bba1898d25dc92ec92837b05254aaf95ec39861",
+  "manifest_sha256": "80e8eb16dad9fab154c467bdad4ca02ad4eefcd16546235ff3a6d46cca51ec14",
   "hashes_store": {
-    "pre": "8fe1aa4c41aa2ce5229e8c0af4d72783ec1c3ef15dab65af98c9963652b3babb",
-    "post": "9ea29e3742133f43adfbb5aa9c8e4eb49ac0d65e123dcec891da42f8815f46d0"
+    "pre": "9ea29e3742133f43adfbb5aa9c8e4eb49ac0d65e123dcec891da42f8815f46d0",
+    "post": "a785a0b2f993b747e33ba2752bba1898d25dc92ec92837b05254aaf95ec39861"
   },
   "sellado": "orden canonico: store -> manifiesto -> .control"
 }

@@ -1,56 +1,56 @@
 {
-  "video_id": "c7AXSee1qfg",
-  "titulo": "Bitcoin cae a 56.750: cuando todo cae a la vez, manda la liquidez",
-  "publicado": "2026-11-21T14:32:28+00:00",
+  "video_id": "u3T3rj62WXE",
+  "titulo": "Bitcoin frena en 56.750: ¿principio de una nueva subida?",
+  "publicado": "2026-11-23T09:56:22+00:00",
   "fuente": "registro",
   "papel_only": true,
   "niveles_top": [
     {
       "precio": 56750,
-      "menciones": 33
+      "menciones": 21
+    },
+    {
+      "precio": 61247,
+      "menciones": 15
     },
     {
       "precio": 69000,
-      "menciones": 6
-    },
-    {
-      "precio": 25400,
-      "menciones": 6
+      "menciones": 9
     },
     {
       "precio": 51585,
       "menciones": 6
     },
     {
-      "precio": 61247,
+      "precio": 61404,
+      "menciones": 6
+    },
+    {
+      "precio": 61549,
+      "menciones": 6
+    },
+    {
+      "precio": 61782,
+      "menciones": 6
+    },
+    {
+      "precio": 1500,
       "menciones": 3
     },
     {
-      "precio": 64115,
+      "precio": 71500,
       "menciones": 3
     },
     {
-      "precio": 65000,
+      "precio": 30000,
       "menciones": 3
     },
     {
-      "precio": 58806,
+      "precio": 69590,
       "menciones": 3
     },
     {
-      "precio": 3470,
-      "menciones": 3
-    },
-    {
-      "precio": 6902,
-      "menciones": 3
-    },
-    {
-      "precio": 25479,
-      "menciones": 3
-    },
-    {
-      "precio": 53994,
+      "precio": 56000,
       "menciones": 3
     }
   ],
@@ -59,29 +59,30 @@
     "estado": "PAPER_ONLY"
   },
   "precio_referencia": 56750.0,
-  "precio_procedencia": "dicho en c7AXSee1qfg",
+  "precio_procedencia": "dicho en u3T3rj62WXE",
   "instrumentos": [
     "BTC",
-    "XAUUSD",
+    "NQ",
     "ETH",
-    "NQ"
+    "XAUUSD"
   ],
   "temporalidades": [
-    "Daily",
+    "Weekly",
     "4H",
-    "Weekly"
+    "Intradia",
+    "Daily"
   ],
   "mercado": {
     "VIDEO": {
       "niveles_originales": [
         56750,
-        69000,
-        25400,
-        51585,
         61247,
-        64115,
-        65000,
-        58806
+        69000,
+        51585,
+        61404,
+        61549,
+        61782,
+        1500
       ],
       "nota": "niveles dichos en el video (no discriminados por instrumento)"
     }
@@ -89,40 +90,40 @@
   "escenarios": [
     {
       "escenario": {
-        "id": "ESC-c7AXSee1qfg-0",
+        "id": "ESC-u3T3rj62WXE-0",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
           "valor": 56750
         },
-        "justificacion": "cuidado porque 61,247 no es tan importante como los 56,750,",
+        "justificacion": "Bitcoin ha desarrollado al final en los 56.750",
         "timestamp_explicacion": ""
       }
     },
     {
       "escenario": {
-        "id": "ESC-c7AXSee1qfg-1",
+        "id": "ESC-u3T3rj62WXE-1",
+        "instrumento": "BTC",
+        "direccion": null,
+        "nivel": {
+          "valor": 61247
+        },
+        "justificacion": "apoyado el comienzo de la jornada en los 61.247.",
+        "timestamp_explicacion": ""
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-u3T3rj62WXE-2",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
           "valor": 69000
         },
-        "justificacion": "que es el objetivo de largo plazo después de los 69,000. y tenía tiene",
-        "timestamp_explicacion": ""
-      }
-    },
-    {
-      "escenario": {
-        "id": "ESC-c7AXSee1qfg-2",
-        "instrumento": "BTC",
-        "direccion": null,
-        "nivel": {
-          "valor": 25400
-        },
-        "justificacion": "y en el Nasdaq que sí que lo tenemos con refugio de largo plazo, 25,400 25,479,",
+        "justificacion": "esta semana y para lo que acaba de mes, 69.000 y 71.500 nueve. Por abajo hay",
         "timestamp_explicacion": ""
       }
     }
   ],
-  "fuente_unica": "c7AXSee1qfg"
+  "fuente_unica": "u3T3rj62WXE"
 }
