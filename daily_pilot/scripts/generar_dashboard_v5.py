@@ -21,7 +21,17 @@ PILOT = BASE / 'daily_pilot'
 sys.path.insert(0, str(PILOT / 'core'))
 SALIDA = PILOT / 'dashboard' / 'index.html'
 
-PARES = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'XRPUSDT', 'SOLUSDT', 'ADAUSDT']
+# Los pares de crypto de Quantfury (exchange Binance) — NO los de Coinbase.
+# Fuente: https://help.quantfury.com/en/articles/5448756-crypto-pairs (2026-11)
+PARES_QUANTFURY = [
+    'AAVEUSDT', 'ADAUSDT', 'APTUSDT', 'ARBUSDT', 'ATOMUSDT', 'AVAXUSDT', 'BCHUSDT',
+    'BTCUSDT', 'DOGEUSDT', 'DOTUSDT', 'ETCUSDT', 'ETHUSDT', 'FILUSDT', 'HBARUSDT',
+    'INJUSDT', 'LINKUSDT', 'LTCUSDT', 'MANAUSDT', 'NEARUSDT', 'NEOUSDT', 'ONDOUSDT',
+    'OPUSDT', 'POLUSDT', 'RUNEUSDT', 'SANDUSDT', 'SNXUSDT', 'SOLUSDT', 'STXUSDT',
+    'THETAUSDT', 'UNIUSDT', 'XRPUSDT',
+]
+# FTM y TON estaban en la lista de Quantfury pero no tienen datos en Binance spot
+PARES = PARES_QUANTFURY
 PLAZOS = (('1w', 'largo', '1S'), ('1d', 'media', '1D'), ('4h', 'corto', '4H'))
 
 
@@ -107,9 +117,14 @@ def ciclo(par='BTCUSDT') -> list:
     return out
 
 
+# El ciclo (3 TF x 500 velas) es caro: se calcula solo para los primeros
+# CICLO_TOP pares. El resto queda en el panel de mercado con su precio real.
+CICLO_TOP = 12
+
+
 def ciclos_pares() -> dict:
-    """Ciclo para cada par (los que tienen datos)."""
-    return {par: ciclo(par) for par in PARES}
+    """Ciclo para cada par de la lista corta (los que tienen datos)."""
+    return {par: ciclo(par) for par in PARES[:CICLO_TOP]}
 
 
 def grafico_velas(par='BTCUSDT', tf='1d', n=60) -> dict:
