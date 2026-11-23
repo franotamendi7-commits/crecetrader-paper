@@ -49,7 +49,9 @@ caso('c3_no_borra', len(h['instrumentos']) >= 3, list(h['instrumentos']))
 r = run('daily_pilot/scripts/anadir_temporalidad.py')
 caso('e6_ejecuta', r.returncode == 0, r.stdout.strip().splitlines()[0] if r.stdout else '')
 import sqlite3
-c = sqlite3.connect(f"file:{BASE / 'daily_pilot/knowledge/store.db'}?mode=ro", uri=True)
+sys.path.insert(0, str(BASE / 'daily_pilot' / 'knowledge'))
+import store as _S
+c = sqlite3.connect(f"file:{_S.STORE_PATH}?mode=ro", uri=True)
 tipos = dict(c.execute('SELECT temporalidad, COUNT(*) FROM claims GROUP BY temporalidad').fetchall())
 c.close()
 caso('e6_clasificados', sum(tipos.values()) >= 6831, str(tipos))   # P2: robusto, no exacto

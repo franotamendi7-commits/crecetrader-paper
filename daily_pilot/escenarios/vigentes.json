@@ -109,17 +109,43 @@
         "texto": "caso también los futuros de Bitcoin en el mercado CME. 53,994"
       },
       {
-        "fecha": "2026-11-21",
-        "video_id": "c7AXSee1qfg",
-        "start": "00:18:42.640",
+        "fecha": "2026-11-23",
+        "video_id": "u3T3rj62WXE",
+        "start": "00:14:02.399",
+        "timeframe": "neutro",
+        "nivel": 56000.0,
+        "banda": 2192,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "¿verdad? Cuenta bitcoin, 56.000 ehm 56.750,"
+      },
+      {
+        "fecha": "2026-11-23",
+        "video_id": "u3T3rj62WXE",
+        "start": "00:14:02.399",
         "timeframe": "neutro",
         "nivel": 56750.0,
         "banda": 2195,
         "sentido": "neutro",
-        "tipo": "ESCENARIO_CONDICIONAL",
+        "tipo": "NIVEL_MENCIONADO",
         "procedencia": "A",
         "origen_instrumento": "proximidad",
-        "texto": "cuando le pasó a Bitcoin y no había llegado a los 56,750."
+        "texto": "¿verdad? Cuenta bitcoin, 56.000 ehm 56.750,"
+      },
+      {
+        "fecha": "2026-11-23",
+        "video_id": "u3T3rj62WXE",
+        "start": "00:09:27.797",
+        "timeframe": "neutro",
+        "nivel": 61247.0,
+        "banda": 2210,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "contado y futuros de Bitcoin y 61.247 tiene la clave. Aquí utilizaría también"
       },
       {
         "fecha": "2026-11-19",
@@ -161,9 +187,9 @@
         "texto": "64,115 en el contado de Bitcoin. Así fuimos el sábado, 65,000 hasta ayer,"
       },
       {
-        "fecha": "2026-11-17",
-        "video_id": "i0qXzL0eSYs",
-        "start": "00:06:15.759",
+        "fecha": "2026-11-23",
+        "video_id": "u3T3rj62WXE",
+        "start": "00:10:39.298",
         "timeframe": "neutro",
         "nivel": 69000.0,
         "banda": 2234,
@@ -171,7 +197,7 @@
         "tipo": "NIVEL_MENCIONADO",
         "procedencia": "A",
         "origen_instrumento": "proximidad",
-        "texto": "equivalente a los $69,000 aproximadamente de Bitcoin al contado."
+        "texto": "está, en el contado de Bitcoin entonces 69.000 empezaría a estar en los precios"
       },
       {
         "fecha": "2026-11-13",
@@ -447,6 +473,19 @@
         "procedencia": "A",
         "origen_instrumento": "proximidad",
         "texto": "rápidamente Ethereum que ha roto con fuerza los 2,373. Vamos a ver si"
+      },
+      {
+        "fecha": "2026-11-23",
+        "video_id": "u3T3rj62WXE",
+        "start": "00:14:04.099",
+        "timeframe": "neutro",
+        "nivel": 2500.0,
+        "banda": 1569,
+        "sentido": "neutro",
+        "tipo": "NIVEL_MENCIONADO",
+        "procedencia": "A",
+        "origen_instrumento": "proximidad",
+        "texto": "56.750, Ethereum, 2500. Ahora el oro, en la"
       }
     ]
   }

@@ -99,7 +99,8 @@ cod = ''
 for p in PILOT.rglob('*.py'):
     if '__pycache__' in str(p):
         continue
-    if p.name == 'autoauditoria.py':     # no auditarse a si mismo
+    if p.name in ('autoauditoria.py', 'test_binance_readonly.py'):
+        continue   # se auditan a si mismos (listan las palabras prohibidas)
         continue
     cod += p.read_text(errors='ignore')
 caso('paper_only_false', 'PAPER_ONLY = False' not in cod and 'PAPER_ONLY=False' not in cod, '')
