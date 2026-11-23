@@ -1,6 +1,6 @@
 //@version=5
 // ============================================================================
-//  CreceTrader — Niveles del ciclo (C05)  ·  v4
+//  CreceTrader — Niveles del ciclo (C05)  ·  v5
 //
 //  Logica validada contra las capturas reales de Francisco (BNB, 2026-11-20):
 //    · Cada TF tiene SU swing: macro = semanal, micro = diario y 4h
@@ -12,10 +12,12 @@
 //
 //  PAPER ONLY — dibuja, no opera. No hay ninguna funcion de orden.
 //
-//  v4: sin request.security suelto (rompia en 4H/1H), un solo array de
-//      swings, barrido del piso con tope 4999, diagnostico por label.
+//  v5: dynamic_requests=true (Pine no deja request.security dentro de un if
+//      sin eso). Un solo array de swings, barrido del piso con tope 4999,
+//      diagnostico por label.
 // ============================================================================
-indicator("CreceTrader — Niveles del ciclo [C05]", overlay=true, max_lines_count=500)
+indicator("CreceTrader — Niveles del ciclo [C05]", overlay=true, max_lines_count=500,
+     dynamic_requests=true)
 
 // ---------------- entradas ----------------
 g1 = "1 · Swing"
