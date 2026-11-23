@@ -71,7 +71,12 @@ caso('working_tree_solo_derivados', not sucio, '; '.join(sucio)[:80])
 # ------------------------------------------------------- 2. integridad store
 print('\n=== 2 · INTEGRIDAD DEL STORE ===')
 rc, out = sh([PY, str(PILOT / 'knowledge' / 'verify_integrity.py')])
-caso('store_integridad', 'RESULTADO: OK' in out, out.strip().splitlines()[-1][:70] if out.strip() else '')
+if 'RESULTADO: OK' in out:
+    caso('store_integridad', True, out.strip().splitlines()[-1][:70])
+else:
+    caso('store_integridad', False,
+         'el sello quedo viejo (paso una migracion). Arreglar: '
+         'python3 daily_pilot/knowledge/sellado_integridad.py')
 m = re.search(r'videos/cues/claims\s*:\s*([\d/]+)', out)
 caso('store_conteos', bool(m), m.group(1) if m else 'sin conteos')
 

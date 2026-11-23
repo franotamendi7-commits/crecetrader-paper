@@ -31,7 +31,7 @@
   },
   "hashes_store": {
     "pre": "9ea29e3742133f43adfbb5aa9c8e4eb49ac0d65e123dcec891da42f8815f46d0",
-    "post": "a785a0b2f993b747e33ba2752bba1898d25dc92ec92837b05254aaf95ec39861",
+    "post": "430641961131715b88c20685608ceb523fa4dfb3fa2607265d051b507e1139e4",
     "nota": "post = sha256(store.db) medido antes de tocar .control/Manifiesto"
   },
   "pruebas": {
@@ -45,5 +45,5 @@
     "integrity": "ok",
     "cues": 130973
   },
-  "hash_post_store": "a785a0b2f993b747e33ba2752bba1898d25dc92ec92837b05254aaf95ec39861"
+  "hash_post_store": "430641961131715b88c20685608ceb523fa4dfb3fa2607265d051b507e1139e4"
 }
