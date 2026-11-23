@@ -1112,6 +1112,15 @@
       "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/c7AXSee1qfg/c7AXSee1qfg_transcript.json",
       "estado": "transcrito",
       "fuente": "importacion_retroactiva"
+    },
+    "u3T3rj62WXE": {
+      "video_id": "u3T3rj62WXE",
+      "titulo": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=u3T3rj62WXE",
+      "detectado": "2026-11-23T10:09:00Z",
+      "transcript": null,
+      "estado": "error: [Errno 2] No such file or directory: 'yt-dlp'"
     }
   }
 }

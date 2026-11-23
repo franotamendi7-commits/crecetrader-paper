@@ -245,6 +245,46 @@ def panel_ciclo(ciclos: dict):
             f'<a href="#" id="cambiarPar" style="display:none"></a></div></div>')
 
 
+def panel_cuenta():
+    """Cuenta de Binance SOLO LECTURA: capital real y activos con saldo."""
+    try:
+        import binance_readonly as B
+        ak, sk = B._credenciales()
+    except Exception as e:
+        return ('<div class="card"><h3>CUENTA BINANCE · solo lectura</h3>'
+                '<div class="nota">sin clave cargada ('
+                '<span class="fuente">~/.hermes/.env</span>): '
+                + esc(str(e)[:70]) + '</div></div>')
+    try:
+        b = B.balance()
+        alerta = ('<div class="nota" style="color:var(--bad);font-weight:600">'
+                  '⚠️ la cuenta PUEDE OPERAR: la clave deberia ser SOLO LECTURA.</div>'
+                  if b.get('canTrade') else
+                  '<div class="nota" style="color:var(--ok)">'
+                  '✅ solo lectura efectiva (no puede operar)</div>')
+        px = B.precios([f"{a['activo']}USDT" for a in b['activos']] or None)
+        v = B.valor_usd(b, px)
+        filas = ''
+        for f in v['filas'][:12]:
+            val = f"${f['valor_usdt']:,.2f}" if f['valor_usdt'] is not None else '—'
+            filas += (f'<tr><td><b>{esc(f["activo"])}</b></td>'
+                      f'<td class="num">{f["total"]:,.6f}</td>'
+                      f'<td class="num fuente">{val}</td></tr>')
+        return (f'<div class="card"><h3>CUENTA BINANCE · solo lectura</h3>'
+                f'<div style="font-size:22px;font-weight:700;margin-bottom:4px">'
+                f'${v["total_usdt"]:,.2f} USD</div>'
+                f'<div class="fuente">total aproximado · {b["n_activos"]} activos</div>'
+                f'<table><tr><th>activo</th><th style="text-align:right">saldo</th>'
+                f'<th style="text-align:right">≈USD</th></tr>{filas}</table>'
+                f'{alerta}<div class="nota">La clave vive en '
+                f'<span class="fuente">~/.hermes/.env</span> (fuera del repo). '
+                f'<b>No ejecuta ordenes.</b></div></div>')
+    except Exception as e:
+        return (f'<div class="card"><h3>CUENTA BINANCE · solo lectura</h3>'
+                f'<div class="nota">error al leer: {esc(type(e).__name__)} '
+                f'{esc(str(e)[:80])}</div></div>')
+
+
 def panel_risk():
     """Risk manager visible: C01 (jerarquia) + C02 (30/70) + C11 (riesgo)."""
     try:
@@ -351,6 +391,10 @@ def main() -> int:
 <div class="grid g2">
   {panel_mercado(mer)}
   {panel_risk()}
+</div>
+
+<div class="grid" style="margin-top:12px">
+  {panel_cuenta()}
 </div>
 
 <div class="grid" style="margin-top:12px">

@@ -2,15 +2,15 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "VIDEO NUEVO ANALIZADO",
-  "ultima_revision": "2026-11-22T23:27:11Z",
-  "deteccion_at": "2026-11-22T18:56:10.234728+00:00",
-  "analisis_at": "2026-11-22T18:56:10Z",
+  "estado": "ERROR DE ANALISIS",
+  "ultima_revision": "2026-11-23T14:09:03Z",
+  "deteccion_at": "2026-11-23T10:09:00Z",
+  "analisis_at": null,
   "video": {
-    "video_id": "c7AXSee1qfg",
-    "titulo": "Bitcoin cae a 56.750: cuando todo cae a la vez, manda la liquidez",
-    "url": "https://www.youtube.com/watch?v=c7AXSee1qfg",
-    "publicado": "2026-11-21T14:32:28+00:00",
+    "video_id": "u3T3rj62WXE",
+    "titulo": "Bitcoin frena en 56.750: ¿principio de una nueva subida?",
+    "url": "https://www.youtube.com/watch?v=u3T3rj62WXE",
+    "publicado": "2026-11-23T09:56:22+00:00",
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
