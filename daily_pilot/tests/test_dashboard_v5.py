@@ -41,7 +41,10 @@ def _estructura():
     Lo que si debe ser estable es la ESTRUCTURA (paneles, tablas, avisos)."""
     import re
     txt = HTML.read_text()
-    return hashlib.sha256(re.sub(r'<td class="num">[0-9.,]+</td>', '', txt).encode()).hexdigest()
+    # quita TODOS los numeros vivos: precio, 24h, max/min y los de los niveles
+    limpio = re.sub(r'<td class="num[^"]*">[0-9.,]+%?</td>', '', txt)
+    limpio = re.sub(r'<b style="font-variant-numeric:tabular-nums">[0-9.,]+%</b>', '', limpio)
+    return hashlib.sha256(limpio.encode()).hexdigest()
 
 pre = _estructura()
 r = subprocess.run([sys.executable, str(GEN)], capture_output=True, text=True)
