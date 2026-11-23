@@ -1,139 +1,92 @@
 //@version=5
 // ============================================================================
-//  CreceTrader — Niveles del ciclo (C05)  ·  v6
+//  CreceTrader — Niveles por TEMPORALIDAD (C05)  ·  v7
 //
-//  Logica validada contra las capturas reales de Francisco (BNB, 2026-11-20):
-//    · Cada TF tiene SU swing: macro = semanal, micro = diario y 4h
+//  El metodo trabaja en 3 marcos: MACRO = semanal, MICRO = diario y 4h.
+//  Este indicador dibuja el tramo y los niveles de CADA temporalidad en el
+//  mismo grafico, con un color distinto, para no confundirse:
+//
+//    1S  gris     (macro)
+//    1D  azul     (micro)
+//    4H  violeta  (micro)
+//
+//  Reglas validadas contra las capturas reales de Francisco (BNB, 2026-11-20):
 //    · Tramo = maximo mas alto -> piso mas bajo posterior
 //    · El fibo se tira AL REVES: 0 = minimo, 1 = maximo
-//    · Extensiones (1, 1,25, 1,5, 1,75, 2, 3) quedan ARRIBA del maximo
+//    · Extensiones (1 .. 3) quedan ARRIBA del maximo
 //    · Retrocesos: 0,382 / 0,5 / 0,61 / 0,786
-//    · Abanico intradia: cierre 21:00 +/- fibo x 1.000 puntos (solo TF <= 1D)
 //
 //  PAPER ONLY — dibuja, no opera. No hay ninguna funcion de orden.
-//
-//  v6: SIN request.security (era el error: Pine no lo deja en un if). El cierre
-//      del dia sale de los datos locales con ta.valuewhen(nuevoDia, close[1]).
-//      Un solo array de swings, barrido del piso con tope 4999, diagnostico.
+//  Usa request.security (multi-temporal). Si algo falla, apagar el TF en entradas.
 // ============================================================================
-indicator("CreceTrader — Niveles del ciclo [C05]", overlay=true, max_lines_count=500)
+indicator("CreceTrader — Niveles por temporalidad [C05]", overlay=true,
+     max_lines_count=500, dynamic_requests=true)
 
 // ---------------- entradas ----------------
-g1 = "1 · Swing"
-nIzq    = input.int(3,  "Velas a cada lado del extremo",   minval=1, maxval=50, group=g1)
-nDer    = input.int(3,  "Velas de confirmacion (derecha)", minval=1, maxval=50, group=g1)
-ventana = input.int(60, "Cantidad de swings a mirar",      minval=5, maxval=500, group=g1)
+g1 = "1 · Marco"
+ver1W = input.bool(true, "1S  semanal (macro)", group=g1)
+ver1D = input.bool(true, "1D  diario",          group=g1)
+ver4H = input.bool(true, "4H  4 horas",         group=g1)
+velasMarco = input.int(12, "Velas del ciclo (12 ~ 3 meses)", minval=3, maxval=250, group=g1)
 
 g2 = "2 · Niveles"
 mostrarRetro = input.bool(true, "Retrocesos",  group=g2)
 mostrarExt   = input.bool(true, "Extensiones", group=g2)
 etiquetas    = input.bool(true, "Etiquetas",   group=g2)
 
-g3 = "3 · Extra"
-mostrarIntradia = input.bool(true, "Abanico intradia (cierre 21:00)", group=g3)
-
 g4 = "4 · Diagnostico"
-mostrarDiag = input.bool(false, "Mostrar maxAlto / tramoMin / rango", group=g4)
+mostrarDiag = input.bool(false, "Mostrar tramo de cada TF", group=g4)
 
 // ---------------- colores ----------------
-cRetro = color.new(color.teal,   0)
-cExt   = color.new(color.red,    0)
-cIntra = color.new(color.blue,   0)
-cBase  = color.new(color.gray,  60)
+cRetro = color.new(color.teal, 0)
+cExt   = color.new(color.red,  0)
+cW = color.new(color.gray,    30)
+cD = color.new(color.blue,    30)
+cH = color.new(color.fuchsia, 30)
 
-// ---------------- pivotes ----------------
-ph = ta.pivothigh(high, nIzq, nDer)
-pl = ta.pivotlow(low,  nIzq, nDer)
-
-// UN solo array de swings: [precio, esAlto, barra]. Asi 'ventana' significa lo
-// mismo que en el motor Python.
-var float[] swPrecio = array.new_float()
-var bool[]  swAlto   = array.new_bool()
-var int[]   swBar    = array.new_int()
-
-pushSwing(float precio, bool esAlto) =>
-    array.push(swPrecio, precio)
-    array.push(swAlto, esAlto)
-    array.push(swBar, bar_index)
-    if array.size(swPrecio) > ventana
-        array.shift(swPrecio)
-        array.shift(swAlto)
-        array.shift(swBar)
-
-if not na(ph)
-    pushSwing(ph, true)
-if not na(pl)
-    pushSwing(pl, false)
-
-// ---------------- el tramo ----------------
-float maxAlto = na
-int   maxBar  = na
-if array.size(swPrecio) > 0
-    for i = 0 to array.size(swPrecio) - 1
-        p = array.get(swPrecio, i)
-        if array.get(swAlto, i) and (na(maxAlto) or p > maxAlto)
-            maxAlto := p
-            maxBar  := array.get(swBar, i)
-
-// Piso del ciclo = minimo de TODAS las velas posteriores al maximo.
-// OJO: low[k] es "k barras hacia atras" y acepta 0..5000 -> se barre de 0.
-float tramoMin = na(maxAlto) ? low : low
-float tramoMax = na(maxAlto) ? high : maxAlto
-if not na(maxBar) and maxBar <= bar_index
-    int nBarras = math.min(bar_index - maxBar, 4999)
-    for k = 0 to nBarras
-        tramoMin := math.min(tramoMin, low[k])
-float rango = tramoMax - tramoMin
-
-// ---------------- niveles ----------------
+// ---------------- utilidades ----------------
 retrocesos  = array.from(0.382, 0.50, 0.61, 0.786)
 extensiones = array.from(1.0, 1.25, 1.50, 1.75, 2.0, 3.0)
 
+// Tramo de una temporalidad: maximo y minimo de las ultimas N velas de ese marco.
+calcularTramo(string tf) =>
+    [h, l] = request.security(syminfo.tickerid, tf, [high, low],
+                             gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+    float mx = ta.highest(h, velasMarco)
+    float mn = ta.lowest(l, velasMarco)
+    [mn, mx]
+
 drawNivel(float precio, string txt, color col) =>
-    if not na(precio) and etiquetas
+    if not na(precio) and etiquetas and barstate.islast
         line.new(bar_index - 1, precio, bar_index, precio, color=col, extend=extend.right)
         label.new(bar_index, precio, txt, style=label.style_label_left,
-                  color=color.new(col, 60), textcolor=color.white, size=size.small)
+                  color=color.new(col, 70), textcolor=color.white, size=size.small)
 
-if barstate.islast and not na(tramoMin) and not na(tramoMax) and rango > 0
-    line.new(bar_index, tramoMin, bar_index, tramoMax, color=cBase, style=line.style_dashed)
-    if mostrarRetro
-        for _r in retrocesos
-            drawNivel(tramoMin + rango * _r, str.tostring(_r, "#.##"), cRetro)
-    if mostrarExt
-        for _e in extensiones
-            drawNivel(tramoMin + rango * _e, str.tostring(_e, "#.##"), cExt)
+dibujarMarco(string tf, bool visible, color col) =>
+    if visible and barstate.islast
+        [mn, mx] = calcularTramo(tf)
+        if not na(mn) and not na(mx) and mx > mn
+            float rg = mx - mn
+            line.new(bar_index, mn, bar_index, mx, color=col, style=line.style_dashed)
+            if mostrarRetro
+                for _r in retrocesos
+                    drawNivel(mn + rg * _r, tf + " " + str.tostring(_r, "#.##"), cRetro)
+            if mostrarExt
+                for _e in extensiones
+                    drawNivel(mn + rg * _e, tf + " " + str.tostring(_e, "#.##"), cExt)
 
-// ---------------- abanico intradia (solo TF <= 1D) ----------------
-// SIN request.security (Pine no lo deja dentro de un if y rompia el indicador).
-// El punto cero = el cierre del dia anterior, detectado con el cambio de dia.
-intraNiveles = array.from(0.236, 0.382, 0.618, 0.929, 1.238)
-tfAplica = timeframe.isintraday or timeframe.period == "D"
-
-// nuevo dia -> el cierre de la vela anterior es el cierre del dia que termino
-bool nuevoDia = na(dayofmonth) ? false : dayofmonth != dayofmonth[1]
-float cierreDia = ta.valuewhen(nuevoDia, close[1], 0)
-
-if mostrarIntradia and tfAplica and barstate.islast and not na(cierreDia) and cierreDia > 0
-    for _n in intraNiveles
-        pArriba = cierreDia + 1000.0 * _n
-        pAbajo  = cierreDia - 1000.0 * _n
-        line.new(bar_index, pArriba, bar_index, pArriba, color=cIntra, extend=extend.right)
-        line.new(bar_index, pAbajo,  bar_index, pAbajo,  color=cIntra, extend=extend.right)
-        if etiquetas
-            label.new(bar_index, pArriba, "+" + str.tostring(_n, "#.###"),
-                      style=label.style_label_left, color=color.new(cIntra, 60),
-                      textcolor=color.white, size=size.tiny)
-            label.new(bar_index, pAbajo, "-" + str.tostring(_n, "#.###"),
-                      style=label.style_label_left, color=color.new(cIntra, 60),
-                      textcolor=color.white, size=size.tiny)
+// ---------------- dibujo ----------------
+dibujarMarco("1W", ver1W, cW)
+dibujarMarco("1D", ver1D, cD)
+dibujarMarco("4H", ver4H, cH)
 
 // ---------------- diagnostico ----------------
 if mostrarDiag and barstate.islast
-    lbl = "maxAlto=" + str.tostring(maxAlto, "#.##") + "\n" +
-          "tramoMin=" + str.tostring(tramoMin, "#.##") + "\n" +
-          "rango=" + str.tostring(rango, "#.##") + "\n" +
-          "swings=" + str.tostring(array.size(swPrecio)) + "\n" +
-          "tf=" + timeframe.period
+    [mnW, mxW] = calcularTramo("1W")
+    [mnD, mxD] = calcularTramo("1D")
+    [mnH, mxH] = calcularTramo("4H")
+    lbl = "1S  " + str.tostring(mnW, "#.##") + " -> " + str.tostring(mxW, "#.##") + "\n" +
+          "1D  " + str.tostring(mnD, "#.##") + " -> " + str.tostring(mxD, "#.##") + "\n" +
+          "4H  " + str.tostring(mnH, "#.##") + " -> " + str.tostring(mxH, "#.##")
     label.new(bar_index, high, lbl, style=label.style_label_down,
               color=color.new(color.yellow, 20), textcolor=color.black, size=size.small)
