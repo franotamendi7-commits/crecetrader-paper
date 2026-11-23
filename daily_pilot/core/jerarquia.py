@@ -11,6 +11,7 @@ equivocada.
     W bajista  + D bajista  + 4h bajista   -> SHORT a favor de los 3
     W bajista  + D correccion               -> CORRECCION (long temporal)
     cualquier rango / no determinado        -> NO OPERAR
+    4H en contra de W (decisión Francisco 2026-11-23) -> NO OPERAR
 
 PAPER_ONLY: describe, no ejecuta.
 """
@@ -42,6 +43,12 @@ def determinar(regimen_semanal: str, regimen_diario: str | None = None,
 
     if w in (RANGO, NO_DETERMINADO, ''):
         return {'direccion': NO_OPERAR, 'motivo': f'semanal {w}: no hay tendencia macro',
+                'confianza': 0.0}
+
+    # 4H en contra del semanal -> no operar (decision Francisco, 2026-11-23)
+    if (w == ALCISTA and h == BAJISTA) or (w == BAJISTA and h == ALCISTA):
+        return {'direccion': NO_OPERAR,
+                'motivo': f'{w} en W pero {h} en 4H: 4H en contra, no operar',
                 'confianza': 0.0}
 
     correccion_d = d == CORRECCION
@@ -106,6 +113,9 @@ def sin_semanal(regimen_diario: str = None, regimen_4h: str = None) -> dict:
     if d in (RANGO, NO_DETERMINADO, ''):
         return {'direccion': NO_OPERAR, 'confianza': 0.0,
                 'motivo': f'D {d}: sin tendencia en diario'}
+    if (d == ALCISTA and h == BAJISTA) or (d == BAJISTA and h == ALCISTA):
+        return {'direccion': NO_OPERAR, 'confianza': 0.0,
+                'motivo': f'D {d} pero 4H {h}: 4H en contra, no operar'}
     correccion = h == CORRECCION
     if d == ALCISTA:
         if correccion:

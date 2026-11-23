@@ -115,7 +115,7 @@ def ciclo(par='BTCUSDT') -> list:
         if 'error' in t:
             out.append({'tf': etiqueta, 'error': t['error']})
             continue
-        z = zonas(t['minimo'], t['maximo'], plazo=plazo)
+        z = zonas(t['minimo'], t['maximo'], plazo=plazo, direccion=t['direccion'])
         out.append({'tf': etiqueta, 'min': round(t['minimo'], 2), 'max': round(t['maximo'], 2),
                     'retrocesos': {k: round(v, 2) for k, v in z['zonas_compra'].items()},
                     'extensiones': {k: round(v, 2) for k, v in list(z['extensiones'].items())[:4]},
@@ -275,7 +275,7 @@ def panel_cuenta():
                 f'${v["total_usdt"]:,.2f} USD</div>'
                 f'<div class="fuente">total aproximado · {b["n_activos"]} activos</div>'
                 f'<table><tr><th>activo</th><th style="text-align:right">saldo</th>'
-                f'<th style="text-align:right">≈USD</th></tr>{cuerpo}</table>'
+                f'<th style="text-align:right">≈USD</th></tr>{filas}</table>'
                 f'{alerta}<div class="nota">La clave vive en '
                 f'<span class="fuente">~/.hermes/.env</span> (fuera del repo). '
                 f'<b>No ejecuta ordenes.</b></div></div>')
@@ -386,13 +386,17 @@ def panel_alertas() -> str:
             if 'BTCUSDT' in precios:
                 niveles.append({'par': 'BTCUSDT', 'precio': float(precio),
                                 'tipo': f'concordancia ({len(videos)} videos)'})
+        # tambien los niveles del ciclo de cada par (C05)
+        for par in PARES[:6]:
+            for x in niveles_par(par):
+                niveles.append(dict(x, tipo=f"{x['tipo']} · {par.replace('USDT','')}"))
         avisos = alertas(precios, niveles, 1.5)
         filas = ''.join(
             f'<tr><td>{x["par"].replace("USDT","")}</td>'
-            f'<td class="num">{x["precio"]:.2f}</td>'
+            f'<td class="num">{x["precio"]:.4f}</td>'
             f'<td class="num">{x["distancia_pct"]:.2f}%</td>'
             f'<td class="dim">{x["tipo"]}</td></tr>'
-            for x in avisos[:6]) or '<tr><td colspan="4" class="dim">ninguno ahora</td></tr>'
+            for x in avisos[:8]) or '<tr><td colspan="4" class="dim">ninguno ahora</td></tr>'
         return ('<div class="card"><h3>ALERTAS DE NIVEL</h3>'
                 f'<div class="nota">{len(avisos)} avisos · umbral 1,5%</div>'
                 f'<table><thead><tr><th>par</th><th>nivel</th><th>dist</th><th>que</th></tr></thead>'
@@ -409,18 +413,21 @@ def panel_backtest(par: str) -> str:
         if 'error' in r:
             raise RuntimeError(r['error'])
         top = sorted([f for f in r['niveles'] if f['toques']],
-                     key=lambda x: -(x['tasa'] or 0))[:4]
+                     key=lambda x: -x['toques'])
         filas = ''.join(
             f'<tr><td class="dim">{f["etiqueta"]}</td>'
             f'<td class="num">{f["nivel"]:.2f}</td>'
             f'<td class="num">{f["toques"]}</td>'
-            f'<td class="num">{f["tasa"]:.0f}%</td></tr>' for f in top)
+            f'<td class="num">{f["hold"]}</td>'
+            f'<td class="num">{f["tasa_hold"]:.0f}%</td></tr>' for f in top)
         return ('<div class="card"><h3>BACKTEST DE NIVELES</h3>'
-                f'<div class="nota">{par.replace("USDT","")} 1D · tramo {r["tramo"]["min"]:.0f}'
-                f' → {r["tramo"]["max"]:.0f} · rebote medio '
-                f'{r["promedio_tasa"]}%</div>'
+                f'<div class="nota">{par.replace("USDT","")} 1D · tramo '
+                f'{r["tramo"]["min"]:.0f} → {r["tramo"]["max"]:.0f} '
+                f'({r["tramo"]["direccion"]}) · respetados con n≥'
+                f'{r["min_muestra"]}: {r["promedio_hold"]}%</div>'
                 f'<table><thead><tr><th>nivel</th><th>precio</th><th>toques</th>'
-                f'<th>rebote</th></tr></thead><tbody>{filas}</tbody></table></div>')
+                f'<th>hold</th><th>respeta</th></tr></thead>'
+                f'<tbody>{filas}</tbody></table></div>')
     except Exception as e:
         return f'<div class="card"><h3>BACKTEST DE NIVELES</h3><div class="nota">sin datos ({e})</div></div>'
 
@@ -536,6 +543,10 @@ def _etiq(d):
             'no_operar': 'NO OPERAR'}.get(d, d)
 
 
+# C10 (playbook:215): confianza por marcos confluentes. La asigna el trader.
+CONFIANZA_POR_MARCOS = {3: 1.00, 2: 0.75, 1: 0.50}
+
+
 def panel_escenarios(datos):
     # ordenado por la probabilidad de la REGLA (C01): los operables primero
     operables = sorted([x for x in datos if x['direccion'] != 'no_operar'],
@@ -543,7 +554,12 @@ def panel_escenarios(datos):
     no_opera = sorted([x for x in datos if x['direccion'] == 'no_operar'],
                       key=lambda x: -float(x.get('ref_confianza', 0)))
     def fila(x):
-        pct = int(round(float(x['confianza']) * 100))
+        # C10: la confianza la asigna el trader (FIRMA). Se muestra la tabla del
+        # playbook por marcos confluentes, no un 85% inventado.
+        marcos = sum(1 for r in (x.get('w'), x.get('d'), x.get('h'))
+                     if r in ('alcista', 'bajista'))
+        conf = CONFIANZA_POR_MARCOS.get(marcos, 0.0)
+        pct = int(round(conf * 100))
         ref_pct = int(round(float(x.get('ref_confianza', 0)) * 100))
         return (f'<tr><td><b>{esc(x["par"])}</b></td>'
                 f'<td>{_barra(pct, x["direccion"])}</td>'
@@ -561,13 +577,14 @@ def panel_escenarios(datos):
         cuerpo = sep + ''.join(fila(x) for x in no_opera)
     else:
         cuerpo = filas
-    return (f'<div class="card"><h3>PROBABILIDAD POR PAR · ¿TOMAMOS POSICIONES?</h3>'
+    return (f'<div class="card"><h3>CONFIANZA POR PAR · ¿TOMAMOS POSICIONES? (heuristica)</h3>'
             f'<table><tr><th>par</th><th>CON SEMANAL (C01)</th><th>direccion</th>'
             f'<th>SIN SEMANAL (referencia)</th><th>W / D / 4H</th></tr>{cuerpo}</table>'
             f'<div class="nota"><b>CON SEMANAL</b> es la regla C01: si el semanal esta en '
-            f'<b>rango</b>, no se opera (0%). <b>SIN SEMANAL</b> es solo una referencia de '
+            f'<b>rango</b>, no se opera. <b>SIN SEMANAL</b> es solo una referencia de '
             f'que pasaria con diario y 4h — <b>no es la regla</b>. '
-            f'La probabilidad es la confianza de la jerarquia, no una senal de compra.</div></div>')
+            f'La confianza la asigna el trader (FIRMA C10); el numero es heuristico, '
+            f'<b>no una probabilidad</b> ni una senal de compra.</div></div>')
 
 
 def panel_estrategia(info, niveles):

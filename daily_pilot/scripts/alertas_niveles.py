@@ -42,7 +42,7 @@ def concordancia(n=4) -> dict:
         for x in d.get('niveles_dichos', []):
             pr = x.get('precio')
             if pr is not None:
-                ap[round(float(pr), 0)].add(vid)
+                ap[round(float(pr), 2)].add(vid)   # 2 decimales: DOGE/ADA no colapsan
     return {k: sorted(v) for k, v in ap.items() if len(v) >= 2}
 
 
@@ -57,7 +57,7 @@ def niveles_par(par: str) -> list:
     t = tramo_ciclo(r['velas'], 3, 60)
     if 'error' in t:
         return []
-    z = zonas(t['minimo'], t['maximo'], plazo='media')
+    z = zonas(t['minimo'], t['maximo'], plazo='media', direccion=t['direccion'])
     out = [{'precio': float(x), 'tipo': f'retroceso {k}', 'par': par}
            for k, x in z['zonas_compra'].items()]
     out += [{'precio': float(x), 'tipo': f'extensión {k}', 'par': par}
@@ -70,7 +70,7 @@ def alertas(precios: dict, niveles: list, umbral_pct: float) -> list:
     salidas = []
     for n in niveles:
         px = precios.get(n['par'])
-        if not px:
+        if not px or not n.get('precio') or n['precio'] <= 0:
             continue
         dist = abs(px - n['precio']) / n['precio'] * 100
         if dist <= umbral_pct:
@@ -83,7 +83,7 @@ def alertas(precios: dict, niveles: list, umbral_pct: float) -> list:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument('--umbral', type=float, default=1.0)
+    ap.add_argument('--umbral', type=float, default=1.5)
     ap.add_argument('--json', action='store_true')
     a = ap.parse_args()
 
@@ -95,13 +95,10 @@ def main() -> int:
             precios[par] = float(r['velas'][-1]['close'])
 
     conc = concordancia(4)
-    # los concordantes entran con su par si podemos deducirlo (BTC por defecto)
-    niveles = []
-    for precio, videos in conc.items():
-        for par in ['BTCUSDT']:
-            if par in precios:
-                niveles.append({'par': par, 'precio': float(precio),
-                                'tipo': f'concordancia ({len(videos)} videos)'})
+    print('AVISO: los niveles del canal no traen par; se asume BTCUSDT')
+    niveles = [{'par': 'BTCUSDT', 'precio': float(precio),
+                'tipo': f'concordancia ({len(videos)} videos)'}
+               for precio, videos in conc.items() if 'BTCUSDT' in precios]
     for par in PARES:
         niveles += niveles_par(par)
 

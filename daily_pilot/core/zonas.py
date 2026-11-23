@@ -56,6 +56,9 @@ def zonas(minimo: float, maximo: float, plazo: str = 'corto',
     else:  # bajista: espejo -> 0 = maximo, 1 = minimo
         zonas_compra = {f'{r:g}': round(maximo - rango * r, 2) for r in RETROCESOS}
         extensiones = {f'{e:g}': round(maximo - rango * e, 2) for e in EXTENSIONES}
+    # extensiones en bajista pueden dar <= 0 (BTC 1d ext 3,00 = -9.401,34)
+    zonas_compra = {k: v for k, v in zonas_compra.items() if v > 0}
+    extensiones = {k: v for k, v in extensiones.items() if v > 0}
     return {
         'marco': tf,
         'direccion': direccion,

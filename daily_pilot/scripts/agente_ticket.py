@@ -68,7 +68,7 @@ def analizar(par: str, tf: str = '1d', n: int = 12, ventana: int = 60,
     if 'error' in t:
         out['error'] = t['error']
         return out
-    z = zonas(t['minimo'], t['maximo'], plazo=_tf_par(tf))
+    z = zonas(t['minimo'], t['maximo'], plazo=_tf_par(tf), direccion=t['direccion'])
     out['tramo'] = {'min': round(t['minimo'], 4), 'max': round(t['maximo'], 4)}
     out['retrocesos'] = {k: round(x, 4) for k, x in z['zonas_compra'].items()}
     out['extensiones'] = {k: round(x, 4) for k, x in z['extensiones'].items()}
