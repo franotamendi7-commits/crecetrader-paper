@@ -38,17 +38,17 @@ import hashlib
 def _sha(): return hashlib.sha256(HTML.read_bytes()).hexdigest()
 def _estructura():
     """El dashboard ya no es idempotente: los precios son vivos (Binance).
-    Lo que si debe ser estable es la ESTRUCTURA (paneles, tablas, avisos)."""
+    Lo que si debe ser estable es la ESTRUCTURA (paneles, tablas, avisos).
+    Para eso se quitan TODOS los numeros y el origen de los datos."""
     import re
     txt = HTML.read_text()
-    # quita TODOS los numeros vivos: precio, 24h, max/min y los de los niveles
-    limpio = re.sub(r'<td class="num[^"]*">[+-]?[0-9.,]+%?</td>', '', txt)
-    limpio = re.sub(r'<svg.*?</svg>', '<svg>velas</svg>', limpio, flags=re.S)
-    limpio = re.sub(r'<b style="font-variant-numeric:tabular-nums">[0-9.,]+%</b>', '', limpio)
-    # el origen de los datos (cache/binance) puede cambiar entre corridas
-    limpio = re.sub(r'>\((cache|binance)\)<', '>(origen)<', limpio)
-    limpio = re.sub(r'fuente: (cache|binance)(, (cache|binance))?', 'fuente: origen', limpio)
-    return hashlib.sha256(limpio.encode()).hexdigest()
+    l = re.sub(r'<svg.*?</svg>', '<svg>velas</svg>', txt, flags=re.S)
+    l = re.sub(r'>\((cache|binance)\)<', '>(origen)<', l)
+    l = re.sub(r'fuente: (cache|binance)(, (cache|binance))?', 'fuente: origen', l)
+    l = re.sub(r'\s*\u00b7 (cache|binance)', ' \u00b7 origen', l)
+    # fuera todo numero (con signo, decimales, %, miles)
+    l = re.sub(r'[+-]?[0-9][0-9.,]*%?', 'N', l)
+    return hashlib.sha256(l.encode()).hexdigest()
 
 pre = _estructura()
 r = subprocess.run([sys.executable, str(GEN)], capture_output=True, text=True)
