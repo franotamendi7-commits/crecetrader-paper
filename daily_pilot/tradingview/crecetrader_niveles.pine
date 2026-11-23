@@ -1,25 +1,23 @@
 //@version=5
 // ============================================================================
-//  CreceTrader — Niveles del ciclo (C05)  ·  v3
-//  Reglas validadas contra las capturas reales de Francisco (2026-11-20, BNB)
+//  CreceTrader — Niveles del ciclo (C05)  ·  v4
 //
-//  · Cada TF tiene SU swing:  macro = semanal, micro = diario y 4h
-//  · Tramo = maximo mas alto -> piso mas bajo posterior
-//  · El fibo se tira AL REVES: 0 = minimo, 1 = maximo
-//  · Extensiones (1, 1,25, 1,5, 1,75, 2, 3) quedan ARRIBA del maximo
-//  · Niveles: 0,382 / 0,5 / 0,61 / 0,786
-//  · Abanico intradia: cierre 21:00 (00:00 UTC) +/- fibo x 1.000 puntos
-//  · Nivel anual: cierre del 1 de enero
+//  Logica validada contra las capturas reales de Francisco (BNB, 2026-11-20):
+//    · Cada TF tiene SU swing: macro = semanal, micro = diario y 4h
+//    · Tramo = maximo mas alto -> piso mas bajo posterior
+//    · El fibo se tira AL REVES: 0 = minimo, 1 = maximo
+//    · Extensiones (1, 1,25, 1,5, 1,75, 2, 3) quedan ARRIBA del maximo
+//    · Retrocesos: 0,382 / 0,5 / 0,61 / 0,786
+//    · Abanico intradia: cierre 21:00 +/- fibo x 1.000 puntos (solo TF <= 1D)
 //
-//  PAPER ONLY — dibuja, no opera.
+//  PAPER ONLY — dibuja, no opera. No hay ninguna funcion de orden.
 //
-//  v3: se SACARON el abanico y el nivel anual (usan request.security "D",
-//      que es lo que falla en 4H/1H). Aca solo estan los retrocesos y las
-//      extensiones. Diagnostico por label, no por plot.
+//  v4: sin request.security suelto (rompia en 4H/1H), un solo array de
+//      swings, barrido del piso con tope 4999, diagnostico por label.
 // ============================================================================
 indicator("CreceTrader — Niveles del ciclo [C05]", overlay=true, max_lines_count=500)
 
-// ---------- entradas ----------
+// ---------------- entradas ----------------
 g1 = "1 · Swing"
 nIzq    = input.int(3,  "Velas a cada lado del extremo",   minval=1, maxval=50, group=g1)
 nDer    = input.int(3,  "Velas de confirmacion (derecha)", minval=1, maxval=50, group=g1)
@@ -31,24 +29,23 @@ mostrarExt   = input.bool(true, "Extensiones", group=g2)
 etiquetas    = input.bool(true, "Etiquetas",   group=g2)
 
 g3 = "3 · Extra"
-mostrarIntradia = input.bool(false, "Abanico intradia (cierre 21:00)", group=g3)
-mostrarAnual    = input.bool(false, "Nivel anual (cierre 1/01)",      group=g3)
+mostrarIntradia = input.bool(true, "Abanico intradia (cierre 21:00)", group=g3)
 
 g4 = "4 · Diagnostico"
 mostrarDiag = input.bool(false, "Mostrar maxAlto / tramoMin / rango", group=g4)
 
-// ---------- colores ----------
+// ---------------- colores ----------------
 cRetro = color.new(color.teal,   0)
 cExt   = color.new(color.red,    0)
 cIntra = color.new(color.blue,   0)
-cAnual = color.new(color.orange, 0)
 cBase  = color.new(color.gray,  60)
 
-// ---------- pivotes ----------
+// ---------------- pivotes ----------------
 ph = ta.pivothigh(high, nIzq, nDer)
 pl = ta.pivotlow(low,  nIzq, nDer)
 
-// UN solo array de swings (como el motor Python): [precio, esAlto, barra]
+// UN solo array de swings: [precio, esAlto, barra]. Asi 'ventana' significa lo
+// mismo que en el motor Python.
 var float[] swPrecio = array.new_float()
 var bool[]  swAlto   = array.new_bool()
 var int[]   swBar    = array.new_int()
@@ -67,7 +64,7 @@ if not na(ph)
 if not na(pl)
     pushSwing(pl, false)
 
-// ---------- el tramo (vale para TODAS las temporalidades) ----------
+// ---------------- el tramo ----------------
 float maxAlto = na
 int   maxBar  = na
 if array.size(swPrecio) > 0
@@ -77,34 +74,25 @@ if array.size(swPrecio) > 0
             maxAlto := p
             maxBar  := array.get(swBar, i)
 
-// piso del ciclo = minimo de TODAS las velas posteriores al maximo
-// OJO: en Pine low[k] significa "k barras hacia atras" y k debe ser 0..5000.
-// Por eso se recorre k = 0..(bar_index - maxBar), no al reves.
-float tramoMin = low
+// Piso del ciclo = minimo de TODAS las velas posteriores al maximo.
+// OJO: low[k] es "k barras hacia atras" y acepta 0..5000 -> se barre de 0.
+float tramoMin = na(maxAlto) ? low : low
 float tramoMax = na(maxAlto) ? high : maxAlto
 if not na(maxBar) and maxBar <= bar_index
-    int nBarras = bar_index - maxBar
-    if nBarras > 4999
-        nBarras := 4999
+    int nBarras = math.min(bar_index - maxBar, 4999)
     for k = 0 to nBarras
         tramoMin := math.min(tramoMin, low[k])
 float rango = tramoMax - tramoMin
 
-// ---------- diagnostico (label, no plot) ----------
-if mostrarDiag and barstate.islast
-    lbl = "maxAlto=" + str.tostring(maxAlto, "#.##") + "\n" +
-          "tramoMin=" + str.tostring(tramoMin, "#.##") + "\n" +
-          "rango=" + str.tostring(rango, "#.##")
-    label.new(bar_index, high, lbl, style=label.style_label_down, color=color.new(color.yellow, 20), textcolor=color.black, size=size.small)
-
-// ---------- niveles ----------
+// ---------------- niveles ----------------
 retrocesos  = array.from(0.382, 0.50, 0.61, 0.786)
 extensiones = array.from(1.0, 1.25, 1.50, 1.75, 2.0, 3.0)
 
 drawNivel(float precio, string txt, color col) =>
     if not na(precio) and etiquetas
         line.new(bar_index - 1, precio, bar_index, precio, color=col, extend=extend.right)
-        label.new(bar_index, precio, txt, style=label.style_label_left, color=color.new(col, 60), textcolor=color.white, size=size.small)
+        label.new(bar_index, precio, txt, style=label.style_label_left,
+                  color=color.new(col, 60), textcolor=color.white, size=size.small)
 
 if barstate.islast and not na(tramoMin) and not na(tramoMax) and rango > 0
     line.new(bar_index, tramoMin, bar_index, tramoMax, color=cBase, style=line.style_dashed)
@@ -115,34 +103,36 @@ if barstate.islast and not na(tramoMin) and not na(tramoMax) and rango > 0
         for _e in extensiones
             drawNivel(tramoMin + rango * _e, str.tostring(_e, "#.##"), cExt)
 
-// ---------- abanico intradia (solo TF <= 1D) ----------
-// El cierre del dia (21:00 UTC-3) solo tiene sentido en intradiario o diario.
-// OJO: en Pine las llamadas se ejecutan SIEMPRE si estan sueltas; por eso la
-// request.security va DENTRO del if (asi no se ejecuta cuando esta apagada).
+// ---------------- abanico intradia (solo TF <= 1D) ----------------
+// La request.security va DENTRO del if: suelta se ejecuta siempre y rompia
+// el indicador fuera de 1D.
 intraNiveles = array.from(0.236, 0.382, 0.618, 0.929, 1.238)
-tfOk = timeframe.isintraday or timeframe.period == "D"
+tfAplica = timeframe.isintraday or timeframe.period == "D"
 float cierreDia = na
-if mostrarIntradia and tfOk
-    cierreDia := request.security(syminfo.tickerid, "D", close, lookahead=barmerge.lookahead_off)
+if mostrarIntradia and tfAplica
+    cierreDia := request.security(syminfo.tickerid, "D", close[1],
+                                  gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
 
-if mostrarIntradia and tfOk and barstate.islast and not na(cierreDia)
+if mostrarIntradia and tfAplica and barstate.islast and not na(cierreDia)
     for _n in intraNiveles
         pArriba = cierreDia + 1000.0 * _n
         pAbajo  = cierreDia - 1000.0 * _n
         line.new(bar_index, pArriba, bar_index, pArriba, color=cIntra, extend=extend.right)
         line.new(bar_index, pAbajo,  bar_index, pAbajo,  color=cIntra, extend=extend.right)
         if etiquetas
-            label.new(bar_index, pArriba, "+" + str.tostring(_n, "#.###"), style=label.style_label_left, color=color.new(cIntra, 60), textcolor=color.white, size=size.tiny)
-            label.new(bar_index, pAbajo,  "-" + str.tostring(_n, "#.###"), style=label.style_label_left, color=color.new(cIntra, 60), textcolor=color.white, size=size.tiny)
+            label.new(bar_index, pArriba, "+" + str.tostring(_n, "#.###"),
+                      style=label.style_label_left, color=color.new(cIntra, 60),
+                      textcolor=color.white, size=size.tiny)
+            label.new(bar_index, pAbajo, "-" + str.tostring(_n, "#.###"),
+                      style=label.style_label_left, color=color.new(cIntra, 60),
+                      textcolor=color.white, size=size.tiny)
 
-// ---------- nivel anual ----------
-float anual = na
-if mostrarAnual
-    _d = request.security(syminfo.tickerid, "D", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
-    _e = request.security(syminfo.tickerid, "D", month == 1 and dayofmonth == 1)
-    anual := ta.valuewhen(_e, _d, 0)
-
-if mostrarAnual and barstate.islast and not na(anual) and anual > 0
-    line.new(bar_index, anual, bar_index, anual, color=cAnual, extend=extend.right)
-    if etiquetas
-        label.new(bar_index, anual, "1/01 " + str.tostring(anual, "#.##"), style=label.style_label_left, color=color.new(cAnual, 60), textcolor=color.white, size=size.small)
+// ---------------- diagnostico ----------------
+if mostrarDiag and barstate.islast
+    lbl = "maxAlto=" + str.tostring(maxAlto, "#.##") + "\n" +
+          "tramoMin=" + str.tostring(tramoMin, "#.##") + "\n" +
+          "rango=" + str.tostring(rango, "#.##") + "\n" +
+          "swings=" + str.tostring(array.size(swPrecio)) + "\n" +
+          "tf=" + timeframe.period
+    label.new(bar_index, high, lbl, style=label.style_label_down,
+              color=color.new(color.yellow, 20), textcolor=color.black, size=size.small)
