@@ -1,6 +1,6 @@
 //@version=5
 // ============================================================================
-//  CreceTrader — Niveles por TEMPORALIDAD (C05)  ·  v7
+//  CreceTrader — Niveles por TEMPORALIDAD (C05)  ·  v8
 //
 //  El metodo trabaja en 3 marcos: MACRO = semanal, MICRO = diario y 4h.
 //  Este indicador dibuja el tramo y los niveles de CADA temporalidad en el
@@ -8,7 +8,7 @@
 //
 //    1S  gris     (macro)
 //    1D  azul     (micro)
-//    4H  violeta  (micro)
+//    4H ("240" en Pine) violeta (micro)
 //
 //  Reglas validadas contra las capturas reales de Francisco (BNB, 2026-11-20):
 //    · Tramo = maximo mas alto -> piso mas bajo posterior
@@ -78,13 +78,13 @@ dibujarMarco(string tf, bool visible, color col) =>
 // ---------------- dibujo ----------------
 dibujarMarco("1W", ver1W, cW)
 dibujarMarco("1D", ver1D, cD)
-dibujarMarco("4H", ver4H, cH)
+dibujarMarco("240", ver4H, cH)
 
 // ---------------- diagnostico ----------------
 if mostrarDiag and barstate.islast
     [mnW, mxW] = calcularTramo("1W")
     [mnD, mxD] = calcularTramo("1D")
-    [mnH, mxH] = calcularTramo("4H")
+    [mnH, mxH] = calcularTramo("240")
     lbl = "1S  " + str.tostring(mnW, "#.##") + " -> " + str.tostring(mxW, "#.##") + "\n" +
           "1D  " + str.tostring(mnD, "#.##") + " -> " + str.tostring(mxD, "#.##") + "\n" +
           "4H  " + str.tostring(mnH, "#.##") + " -> " + str.tostring(mxH, "#.##")
