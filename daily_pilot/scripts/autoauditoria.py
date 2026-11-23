@@ -117,8 +117,9 @@ caso('sin_claves', not re.search(r'(api[_-]?key|secret[_-]?key)\s*=\s*[\'"][A-Za
 print('\n=== 5 · DASH ===')
 html = (PILOT / 'dashboard' / 'index.html').read_text()
 caso('dash_existe', len(html) > 5000, f'{len(html)} B')
-for s in ('MERCADO REAL', 'PROBABILIDAD POR PAR', 'RISK MANAGER', 'VELAS REALES',
-          'CONCORDANCIA', 'ESTRATEGIA VISIBLE', 'PAPER ONLY', 'NO ES UNA ORDEN'):
+for s in ('MERCADO REAL', 'CONFIANZA POR PAR', 'RISK MANAGER', 'ALERTAS DE NIVEL',
+          'BACKTEST DE NIVELES', 'CONCORDANCIA', 'ESTRATEGIA VISIBLE',
+          'PAPER ONLY', 'NO ES UNA ORDEN'):
     caso(f'dash_{s[:18]}', s in html, '')
 caso('dash_sin_orden', 'OPERACIÓN PROPUESTA' not in html and 'PLAN DE TRADING' not in html, '')
 caso('dash_autocontenido', 'fetch(' not in html and not re.search(r'src="http', html), '')
