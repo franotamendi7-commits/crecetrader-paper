@@ -369,6 +369,62 @@ def panel_grafico(datos):
             f'<b>no es una simulación</b></div></div>')
 
 
+def panel_alertas() -> str:
+    """Niveles que el precio tiene cerca (concordancia + ciclo)."""
+    try:
+        sys.path.insert(0, str(PILOT / 'scripts'))
+        from alertas_niveles import concordancia, niveles_par, alertas, PARES
+        from velas import velas
+        precios = {}
+        for par in PARES[:6]:
+            r = velas(par, '1d', limite=2)
+            if 'error' not in r and r['velas']:
+                precios[par] = float(r['velas'][-1]['close'])
+        conc = concordancia(4)
+        niveles = []
+        for precio, videos in list(conc.items())[:8]:
+            if 'BTCUSDT' in precios:
+                niveles.append({'par': 'BTCUSDT', 'precio': float(precio),
+                                'tipo': f'concordancia ({len(videos)} videos)'})
+        avisos = alertas(precios, niveles, 1.5)
+        filas = ''.join(
+            f'<tr><td>{x["par"].replace("USDT","")}</td>'
+            f'<td class="num">{x["precio"]:.2f}</td>'
+            f'<td class="num">{x["distancia_pct"]:.2f}%</td>'
+            f'<td class="dim">{x["tipo"]}</td></tr>'
+            for x in avisos[:6]) or '<tr><td colspan="4" class="dim">ninguno ahora</td></tr>'
+        return ('<div class="card"><h3>ALERTAS DE NIVEL</h3>'
+                f'<div class="nota">{len(avisos)} avisos · umbral 1,5%</div>'
+                f'<table><thead><tr><th>par</th><th>nivel</th><th>dist</th><th>que</th></tr></thead>'
+                f'<tbody>{filas}</tbody></table></div>')
+    except Exception as e:
+        return f'<div class="card"><h3>ALERTAS DE NIVEL</h3><div class="nota">sin datos ({e})</div></div>'
+
+
+def panel_backtest(par: str) -> str:
+    """Cuanto respeta el precio los niveles del metodo."""
+    try:
+        from backtest_niveles import backtest
+        r = backtest(par, '1d')
+        if 'error' in r:
+            raise RuntimeError(r['error'])
+        top = sorted([f for f in r['niveles'] if f['toques']],
+                     key=lambda x: -(x['tasa'] or 0))[:4]
+        filas = ''.join(
+            f'<tr><td class="dim">{f["etiqueta"]}</td>'
+            f'<td class="num">{f["nivel"]:.2f}</td>'
+            f'<td class="num">{f["toques"]}</td>'
+            f'<td class="num">{f["tasa"]:.0f}%</td></tr>' for f in top)
+        return ('<div class="card"><h3>BACKTEST DE NIVELES</h3>'
+                f'<div class="nota">{par.replace("USDT","")} 1D · tramo {r["tramo"]["min"]:.0f}'
+                f' → {r["tramo"]["max"]:.0f} · rebote medio '
+                f'{r["promedio_tasa"]}%</div>'
+                f'<table><thead><tr><th>nivel</th><th>precio</th><th>toques</th>'
+                f'<th>rebote</th></tr></thead><tbody>{filas}</tbody></table></div>')
+    except Exception as e:
+        return f'<div class="card"><h3>BACKTEST DE NIVELES</h3><div class="nota">sin datos ({e})</div></div>'
+
+
 def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
     mer = mercado()
@@ -401,8 +457,9 @@ def main() -> int:
   {panel_ciclo(ciclos)}
 </div>
 
-<div class="grid" style="margin-top:12px">
-  {panel_grafico(graf)}
+<div class="grid g2" style="margin-top:12px">
+  {panel_alertas()}
+  {panel_backtest('BTCUSDT')}
 </div>
 
 <div class="grid" style="margin-top:12px">
