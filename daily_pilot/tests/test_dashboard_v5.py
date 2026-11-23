@@ -42,8 +42,12 @@ def _estructura():
     import re
     txt = HTML.read_text()
     # quita TODOS los numeros vivos: precio, 24h, max/min y los de los niveles
-    limpio = re.sub(r'<td class="num[^"]*">[0-9.,]+%?</td>', '', txt)
+    limpio = re.sub(r'<td class="num[^"]*">[+-]?[0-9.,]+%?</td>', '', txt)
+    limpio = re.sub(r'<svg.*?</svg>', '<svg>velas</svg>', limpio, flags=re.S)
     limpio = re.sub(r'<b style="font-variant-numeric:tabular-nums">[0-9.,]+%</b>', '', limpio)
+    # el origen de los datos (cache/binance) puede cambiar entre corridas
+    limpio = re.sub(r'>\((cache|binance)\)<', '>(origen)<', limpio)
+    limpio = re.sub(r'fuente: (cache|binance)(, (cache|binance))?', 'fuente: origen', limpio)
     return hashlib.sha256(limpio.encode()).hexdigest()
 
 pre = _estructura()
