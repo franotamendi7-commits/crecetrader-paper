@@ -15,7 +15,12 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent   # YouTubeTradingAgent
 KNOWLEDGE_DIR = Path(__file__).resolve().parent
-STORE_PATH = KNOWLEDGE_DIR / 'store.db'
+
+# El store vive FUERA del repo (por el tamano: 50 MB y subiendo).
+# Se puede pisar con STORE_DIR / STORE_DB. Default: ~/store-local/store.db
+_DEFAULT_STORE_DIR = Path.home() / 'store-local'
+STORE_DIR = Path(os.environ.get('STORE_DIR', str(_DEFAULT_STORE_DIR)))
+STORE_PATH = Path(os.environ.get('STORE_DB', str(STORE_DIR / 'store.db')))
 
 SCHEMA_VERSION = '1.0.0'
 MIGRATION_VERSION = '1.0.0'
@@ -167,11 +172,11 @@ def _validar_path(path: Path) -> Path:
     """
     p = Path(path).resolve()
     try:
-        p.relative_to(KNOWLEDGE_DIR.resolve())
+        p.relative_to(STORE_DIR.resolve())
     except ValueError:
         raise SystemExit(
-            f'GUARD: se intento abrir un store fuera del piloto: {p} '
-            f'(esperado dentro de {KNOWLEDGE_DIR.resolve()})')
+            f'GUARD: se intento abrir un store fuera de STORE_DIR: {p} '
+            f'(esperado dentro de {STORE_DIR.resolve()})')
     return p
 
 

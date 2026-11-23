@@ -2,10 +2,10 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "ERROR DE ANALISIS",
-  "ultima_revision": "2026-11-23T14:09:03Z",
-  "deteccion_at": "2026-11-23T10:09:00Z",
-  "analisis_at": null,
+  "estado": "VIDEO NUEVO ANALIZADO",
+  "ultima_revision": "2026-11-23T17:25:44Z",
+  "deteccion_at": "2026-11-23T16:50:17.307166+00:00",
+  "analisis_at": "2026-11-23T16:50:17Z",
   "video": {
     "video_id": "u3T3rj62WXE",
     "titulo": "Bitcoin frena en 56.750: ¿principio de una nueva subida?",
@@ -14,50 +14,50 @@
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
-    "frase": "Último análisis real: c7AXSee1qfg · 1054 cues · instrumentos ['BTC', 'XAUUSD', 'ETH', 'NQ']",
+    "frase": "Último análisis real: u3T3rj62WXE · 1061 cues · instrumentos ['BTC', 'NQ', 'ETH', 'XAUUSD']",
     "instrumento": [
       "BTC",
-      "XAUUSD",
+      "NQ",
       "ETH",
-      "NQ"
+      "XAUUSD"
     ],
     "temporalidad": "NO DISPONIBLE",
     "evidencia": {
-      "video_id": "c7AXSee1qfg",
-      "analizado_at": "2026-11-22T18:56:10Z",
-      "sha256_transcript": "582b6210b7f7049977a4c885b332b8fb3f8d2e06139fb8a6a99a2692cd1e63d7"
+      "video_id": "u3T3rj62WXE",
+      "analizado_at": "2026-11-23T16:50:17Z",
+      "sha256_transcript": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b"
     },
     "limitaciones": [
       "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
       "Los numeros provienen de la transcripcion; no contrastados con feed.",
       "No se infirieron niveles: solo se transcribio lo dicho."
     ],
-    "fuente": "analisis/c7AXSee1qfg_analisis.json"
+    "fuente": "analisis/u3T3rj62WXE_analisis.json"
   },
   "escenarios": {
-    "video_id": "c7AXSee1qfg",
+    "video_id": "u3T3rj62WXE",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "macro": {
-    "video_id": "c7AXSee1qfg",
+    "video_id": "u3T3rj62WXE",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "ultimo_analizado": {
-    "video_id": "c7AXSee1qfg",
-    "analizado_at": "2026-11-22T18:56:10Z",
-    "n_cues": 1054,
-    "sha256_transcript": "582b6210b7f7049977a4c885b332b8fb3f8d2e06139fb8a6a99a2692cd1e63d7",
-    "archivo": "daily_pilot/analisis/c7AXSee1qfg_analisis.json"
+    "video_id": "u3T3rj62WXE",
+    "analizado_at": "2026-11-23T16:50:17Z",
+    "n_cues": 1061,
+    "sha256_transcript": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b",
+    "archivo": "daily_pilot/analisis/u3T3rj62WXE_analisis.json"
   },
   "errores": [],
   "ultimo_analisis_completo": {
-    "video_id": "c7AXSee1qfg",
-    "analizado_at": "2026-11-22T18:56:10Z",
-    "n_cues": 1054,
-    "sha256_transcript": "582b6210b7f7049977a4c885b332b8fb3f8d2e06139fb8a6a99a2692cd1e63d7",
-    "archivo": "daily_pilot/analisis/c7AXSee1qfg_analisis.json"
+    "video_id": "u3T3rj62WXE",
+    "analizado_at": "2026-11-23T16:50:17Z",
+    "n_cues": 1061,
+    "sha256_transcript": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b",
+    "archivo": "daily_pilot/analisis/u3T3rj62WXE_analisis.json"
   },
   "escenarios_estado": null
 }

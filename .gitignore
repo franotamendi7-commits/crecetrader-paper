@@ -9,3 +9,10 @@ data_hist/*.vtt
 *.wav
 *.mp4
 *.mov
+
+# --- store.db vive fuera del repo (50 MB y subiendo) ---
+*.db
+*.db-shm
+*.db-wal
+*.bak-*
+daily_pilot/knowledge/store.db*
