@@ -111,6 +111,13 @@
       "cita": "semana? Así, aquí hay un doble bloque 51,585,498,"
     }
   ],
+  "tramo_real": {
+    "minimo": 55130.0,
+    "maximo": 87395.67,
+    "par": "BTCUSDT",
+    "tf": "1d",
+    "fuente": "cache"
+  },
   "calculados": {
     "abanico_intradia": {
       "punto_cero": 56750.0,
@@ -129,9 +136,103 @@
       ],
       "unidad": "puntos fijos (1000 por unidad), no porcentaje"
     },
-    "fibo_por_plazo": null,
+    "fibo_por_plazo": {
+      "largo": {
+        "tf": "semanal",
+        "marco": "semanal",
+        "direccion": "alcista",
+        "minimo": 55130.0,
+        "maximo": 87395.67,
+        "zonas_compra": {
+          "0.382": 67455.49,
+          "0.5": 71262.83,
+          "0.61": 74812.06,
+          "0.786": 80490.82
+        },
+        "extensiones": {
+          "0.5": 71262.83,
+          "1": 87395.67,
+          "1.25": 95462.09,
+          "1.5": 103528.51,
+          "1.75": 111594.92,
+          "2": 119661.34,
+          "3": 151927.01
+        },
+        "tipo": "nivel_calculado",
+        "no_es": [
+          "soporte",
+          "resistencia",
+          "order_block",
+          "FVG"
+        ],
+        "paper_only": true
+      },
+      "media": {
+        "tf": "diario",
+        "marco": "diario",
+        "direccion": "alcista",
+        "minimo": 55130.0,
+        "maximo": 87395.67,
+        "zonas_compra": {
+          "0.382": 67455.49,
+          "0.5": 71262.83,
+          "0.61": 74812.06,
+          "0.786": 80490.82
+        },
+        "extensiones": {
+          "0.5": 71262.83,
+          "1": 87395.67,
+          "1.25": 95462.09,
+          "1.5": 103528.51,
+          "1.75": 111594.92,
+          "2": 119661.34,
+          "3": 151927.01
+        },
+        "tipo": "nivel_calculado",
+        "no_es": [
+          "soporte",
+          "resistencia",
+          "order_block",
+          "FVG"
+        ],
+        "paper_only": true
+      },
+      "corto": {
+        "tf": "4H",
+        "marco": "4H",
+        "direccion": "alcista",
+        "minimo": 55130.0,
+        "maximo": 87395.67,
+        "zonas_compra": {
+          "0.382": 67455.49,
+          "0.5": 71262.83,
+          "0.61": 74812.06,
+          "0.786": 80490.82
+        },
+        "extensiones": {
+          "0.5": 71262.83,
+          "1": 87395.67,
+          "1.25": 95462.09,
+          "1.5": 103528.51,
+          "1.75": 111594.92,
+          "2": 119661.34,
+          "3": 151927.01
+        },
+        "tipo": "nivel_calculado",
+        "no_es": [
+          "soporte",
+          "resistencia",
+          "order_block",
+          "FVG"
+        ],
+        "paper_only": true
+      }
+    },
     "fuente": "calculado (C05), no dicho por el canal",
-    "aviso": "SIN TRAMO: el canal no dio minimo/maximo. No se calcula fibo (no se inventa)."
+    "tramo": {
+      "minimo": 55130.0,
+      "maximo": 87395.67
+    }
   },
   "paper_only": true,
   "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."

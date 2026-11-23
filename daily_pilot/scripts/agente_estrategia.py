@@ -79,7 +79,7 @@ def consolidar(dichos: list[dict], umbral: int = 1) -> dict:
             for p, n in cnt.items() if n >= umbral and p > 1000}
 
 
-def calcular(precio: float, tramo: tuple | None) -> dict:
+def calcular(precio: float, tramo=None) -> dict:
     """Niveles que el metodo manda aunque el canal no los diga (C05).
 
     SIN TRAMO NO SE CALCULA: el fibo necesita un minimo y un maximo reales.
@@ -90,6 +90,12 @@ def calcular(precio: float, tramo: tuple | None) -> dict:
                                 'unidad': ab['unidad']},
            'fibo_por_plazo': None,
            'fuente': 'calculado (C05), no dicho por el canal'}
+    # tramo puede venir como dict (tramo_real) o como secuencia
+    if isinstance(tramo, dict):
+        if 'error' in tramo:
+            out['aviso'] = f'SIN TRAMO REAL: {tramo["error"]}. No se calcula fibo (no se inventa).'
+            return out
+        tramo = (tramo['minimo'], tramo['maximo'])
     if not tramo:
         out['aviso'] = 'SIN TRAMO: el canal no dio minimo/maximo. No se calcula fibo (no se inventa).'
         return out
@@ -105,6 +111,27 @@ def calcular(precio: float, tramo: tuple | None) -> dict:
     return out
 
 
+def tramo_real(par: str = 'BTCUSDT', tf: str = '1d', n: int = 3, ventana: int = 60) -> dict:
+    """El tramo del ciclo (C05-B) con velas reales de Binance.
+
+    Cada TF tiene su swing; el agente usa el tramo del diario como referencia
+    (el fibo por plazo se calcula sobre ese tramo).
+    """
+    try:
+        from velas import velas
+        from tramos import tramo_ciclo
+        r = velas(par, tf, limite=500)
+        if 'error' in r:
+            return {'error': r['error']}
+        t = tramo_ciclo(r['velas'], n=n, ventana=ventana)
+        if 'error' in t:
+            return {'error': t['error']}
+        return {'minimo': t['minimo'], 'maximo': t['maximo'],
+                'par': par, 'tf': tf, 'fuente': r['fuente']}
+    except Exception as e:
+        return {'error': f'{type(e).__name__}: {e}'}
+
+
 def informe(vid: str) -> dict:
     dichos = niveles_dichos(vid)
     cons = consolidar(dichos)
@@ -116,7 +143,8 @@ def informe(vid: str) -> dict:
         'precio_referencia_menciones': top[0]['menciones'] if top else 0,
         'n_cues_con_precio': len(dichos),
         'niveles_dichos': top,
-        'calculados': calcular(base, None) if base else None,
+        'tramo_real': tramo_real(),
+        'calculados': calcular(base, tramo_real()) if base else None,
         'paper_only': True,
         'nota': 'Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal).',
     }

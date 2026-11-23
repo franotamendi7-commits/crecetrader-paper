@@ -314,6 +314,7 @@ def main() -> int:
     esc_datos = escenario_pares()
     _ag = PILOT / 'investigacion' / f'AGENTE_{info.get("video_id")}.json'
     niveles = (cargar(_ag) or {}).get('niveles_dichos')
+    conc = concordancia(4)
     graf = grafico_velas()
 
     doc = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
@@ -344,6 +345,10 @@ def main() -> int:
 
 <div class="grid" style="margin-top:12px">
   {panel_estrategia(info, niveles)}
+</div>
+
+<div class="grid" style="margin-top:12px">
+  {panel_concordancia(conc)}
 </div>
 
 <div class="grid g2" style="margin-top:12px">
@@ -449,6 +454,47 @@ def panel_estrategia(info, niveles):
 
 def esc(s):
     return html.escape(str(s or ''))
+
+
+def concordancia(n=4) -> list:
+    """Niveles que se REPITEN en los ultimos n videos (confluencia temporal).
+
+    Fuente: los AGENTE_<video>.json del agente de estrategia. No se inventa.
+    """
+    import collections
+    raiz = PILOT / 'investigacion'
+    vids = sorted(raiz.glob('AGENTE_*.json'), key=lambda p: p.stat().st_mtime, reverse=True)[:n]
+    ap = collections.defaultdict(set)
+    for p in vids:
+        try:
+            d = json.loads(p.read_text())
+        except Exception:
+            continue
+        vid = d.get('video_id') or p.stem.replace('AGENTE_', '')
+        for x in d.get('niveles_dichos', []):
+            pr = x.get('precio')
+            if pr is None:
+                continue
+            ap[round(float(pr), 0)].add(vid)
+    out = [{'precio': k, 'n_videos': len(v), 'videos': sorted(v)}
+           for k, v in ap.items() if len(v) >= 2]
+    out.sort(key=lambda x: -x['n_videos'])
+    return out
+
+
+def panel_concordancia(datos):
+    filas = ''
+    for x in datos[:10]:
+        filas += (f'<tr><td><span class="pill">{esc(x["precio"])}</span></td>'
+                  f'<td class="num"><b>{x["n_videos"]}</b></td>'
+                  f'<td class="fuente">{esc(", ".join(x["videos"]))}</td></tr>')
+    if not filas:
+        filas = '<tr><td colspan="3" class="fuente">sin niveles repetidos</td></tr>'
+    return (f'<div class="card"><h3>CONCORDANCIA · niveles repetidos en los ultimos videos</h3>'
+            f'<table><tr><th>nivel</th><th style="text-align:right">videos</th><th>cuales</th></tr>{filas}</table>'
+            f'<div class="nota">Un nivel que el canal repite en varios videos es mas '
+            f'forte que uno que dice una vez. No es una orden: es la confluencia '
+            f'<b>temporal</b> (la espacial es el tramo del ciclo).</div></div>')
 
 
 if __name__ == '__main__':
