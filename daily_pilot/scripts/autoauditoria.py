@@ -62,7 +62,11 @@ rc2, rama = sh(['git', 'branch', '--show-current'])
 rc3, st = sh(['git', 'status', '--short'])
 caso('git_head', rc == 0 and head, head[:12])
 caso('rama', rama.strip() == 'crecetrader-limpio', rama.strip())
-caso('working_tree_limpio', st.strip() == '', st.strip()[:60])
+# el dashboard y las velas son DERIVADOS: cambian al regenerar. Lo que no debe
+# aparecer es codigo, tests, playbook ni store.
+derivados = ('dashboard/', 'datos/velas/')
+sucio = [l for l in st.splitlines() if not any(d in l for d in derivados)]
+caso('working_tree_solo_derivados', not sucio, '; '.join(sucio)[:80])
 
 # ------------------------------------------------------- 2. integridad store
 print('\n=== 2 · INTEGRIDAD DEL STORE ===')
