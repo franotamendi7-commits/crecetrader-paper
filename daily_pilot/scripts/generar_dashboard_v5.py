@@ -432,6 +432,68 @@ def panel_backtest(par: str) -> str:
         return f'<div class="card"><h3>BACKTEST DE NIVELES</h3><div class="nota">sin datos ({e})</div></div>'
 
 
+def panel_ticket(par: str = 'BTCUSDT', tf: str = '4h') -> str:
+    """El ticket del metodo: regimen, direccion, tramo y niveles."""
+    try:
+        from agente_ticket import analizar
+        r = analizar(par, tf)
+        if 'error' in r:
+            raise RuntimeError(r['error'])
+        ret = sorted(r['retrocesos'].items(), key=lambda kv: float(kv[0]))
+        filas = ''.join(
+            f'<tr><td class="dim">{k}</td><td class="num">{v:.2f}</td></tr>'
+            for k, v in ret[:5])
+        pos = r.get('posicion_en_tramo_pct')
+        return ('<div class="card"><h3>TICKET</h3>'
+                f'<div class="nota">{par.replace("USDT","")} {tf} · '
+                f'{r["regimen"].get("1w")} / {r["regimen"].get("1d")} / '
+                f'{r["regimen"].get("4h")}</div>'
+                f'<div style="font-size:20px;font-weight:700;margin:6px 0">'
+                f'{_etiq(r["direccion"])}</div>'
+                f'<div class="fuente" style="margin-bottom:6px">{esc(r["motivo"])}</div>'
+                f'<div class="fuente">tramo {r["tramo"]["min"]:.2f} → '
+                f'{r["tramo"]["max"]:.2f} · precio {r["precio_actual"]:.2f}'
+                + (f' ({pos}% del tramo)' if pos is not None else '')
+                + '</div><table><thead><tr><th>retroceso</th><th>nivel</th></tr></thead>'
+                f'<tbody>{filas}</tbody></table>'
+                f'<div class="nota">Analisis del metodo, <b>no una orden</b>.</div></div>')
+    except Exception as e:
+        return f'<div class="card"><h3>TICKET</h3><div class="nota">sin datos ({e})</div></div>'
+
+
+def panel_paper() -> str:
+    """Operaciones simuladas registradas. PAPER_ONLY."""
+    try:
+        p = PILOT / 'datos' / 'paper_trades.json'
+        if not p.exists():
+            return ('<div class="card"><h3>PAPER TRADING</h3><div class="nota">'
+                    'sin operaciones registradas. Papel de $1.000 · '
+                    '<b>no manda ordenes</b>.</div></div>')
+        d = cargar(p) or {}
+        ops = d.get('operaciones', [])
+        cerradas = [o for o in ops if not o.get('abierta')]
+        abiertas = [o for o in ops if o.get('abierta')]
+        tot = sum(o.get('resultado_usd') or 0 for o in cerradas)
+        g = sum(1 for o in cerradas if (o.get('resultado_usd') or 0) > 0)
+        filas = ''.join(
+            f'<tr><td>#{o["id"]}</td><td>{o["lado"].upper()}</td>'
+            f'<td>{o["par"].replace("USDT","")}</td>'
+            f'<td class="num">{o["entrada"]:.2f}</td>'
+            f'<td class="num">{o.get("resultado_usd", "—")}</td></tr>'
+            for o in ops[-6:])
+        return ('<div class="card"><h3>PAPER TRADING</h3>'
+                f'<div class="nota">papel ${d.get("papel_inicial", 1000):,.0f} · '
+                f'{len(cerradas)} cerradas · ganadoras {g} · '
+                f'acumulado <b>${tot:+.2f}</b></div>'
+                f'<table><thead><tr><th>#</th><th>lado</th><th>par</th>'
+                f'<th>entrada</th><th>USD</th></tr></thead>'
+                f'<tbody>{filas}</tbody></table>'
+                f'<div class="nota">{len(abiertas)} abierta(s). '
+                f'<b>No ejecuta ordenes reales.</b></div></div>')
+    except Exception as e:
+        return f'<div class="card"><h3>PAPER TRADING</h3><div class="nota">sin datos ({e})</div></div>'
+
+
 def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
     mer = mercado()
@@ -467,6 +529,11 @@ def main() -> int:
 <div class="grid g2" style="margin-top:12px">
   {panel_alertas()}
   {panel_backtest('BTCUSDT')}
+</div>
+
+<div class="grid g2" style="margin-top:12px">
+  {panel_ticket('BTCUSDT', '4h')}
+  {panel_paper()}
 </div>
 
 <div class="grid" style="margin-top:12px">
