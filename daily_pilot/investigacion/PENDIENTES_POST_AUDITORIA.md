@@ -7,6 +7,12 @@ La idea es **hacerlo todo junto** después del veredicto de la auditoría
 
 ## A · Lo que pidió Francisco (anotado)
 
+0. **Al dash faltan 2 de las 5 herramientas**
+   Hoy solo estan montadas **ALERTAS** y **BACKTEST**. Pendiente:
+   - [ ] panel **TICKET** (analisis del par principal, sin abrir el CLI)
+   - [ ] panel **PAPER** (operaciones abiertas/cerradas + resultado)
+   - [x] NO montar **canal_acierta**: hoy daria un numero mentiroso (6,1% sin historial)
+
 1. **Test de humo del dashboard**
    Verificar que los paneles nuevos (**ALERTAS DE NIVEL**, **BACKTEST DE NIVELES**)
    cargan bien y no rompen nada: HTML autocontenido, sin errores, números reales.
