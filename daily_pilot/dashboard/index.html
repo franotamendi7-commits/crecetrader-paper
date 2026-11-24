@@ -1,50 +1,87 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>YouTubeTradingAgent · tablero</title><style>
-:root{--bg:#0b0f14;--card:#141b24;--bd:#263141;--fg:#e8eef5;--muted:#8a97a6;
---acc:#4f9dff;--ok:#35c26a;--bad:#e5534b;--warn:#d9a441}
+:root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
+--muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px}
-.wrap{max-width:1200px;margin:0 auto;padding:20px 20px 40px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.dot{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#f7931a,#ffb84d);
-display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:19px}
-h1{font-size:22px;margin:0;font-weight:700}
-.sub{color:var(--muted);font-size:13px;margin-top:3px}
-.pill{margin-left:auto;color:var(--ok);border:1px solid var(--ok);border-radius:20px;
-padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:.4px}
-.hoy{display:flex;gap:10px;align-items:center;background:var(--card);
-border:1px solid var(--bd);border-radius:12px;padding:12px 16px;margin-bottom:20px;font-size:13px}
-.hoy .lbl{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
-.badge{background:rgba(53,194,106,.14);border:1px solid rgba(53,194,106,.5);color:var(--ok);
-border-radius:8px;padding:6px 12px;font-weight:700}
-.badge.no{background:rgba(229,83,75,.12);border-color:rgba(229,83,75,.5);color:var(--bad)}
-section{margin-bottom:26px}
-h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--acc);
-margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--bd);font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.mcard{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px}
-.mcard .par{font-weight:700;font-size:14px}
-.mcard .precio{font-size:19px;font-weight:700;margin:5px 0 2px;
-font-variant-numeric:tabular-nums}
-.mcard .chg{font-size:13px;font-weight:600}
+body{margin:0;background:
+radial-gradient(1200px 500px at 80% -10%,rgba(90,162,255,.10),transparent),
+linear-gradient(180deg,#0a1018,#070a0f);color:var(--fg);
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;font-size:14px;
+-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:26px 22px 48px}
+
+header{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.dot{width:42px;height:42px;border-radius:12px;
+background:linear-gradient(135deg,#f7931a 0%,#ffb84d 100%);
+box-shadow:0 6px 20px rgba(247,147,26,.35);
+display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:20px}
+h1{font-size:23px;margin:0;font-weight:700;letter-spacing:-.3px}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.pill{margin-left:auto;display:flex;align-items:center;gap:7px;color:var(--ok);
+border:1px solid rgba(62,207,122,.45);background:rgba(62,207,122,.10);
+border-radius:20px;padding:7px 15px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.pill .p{width:7px;height:7px;border-radius:50%;background:var(--ok);
+box-shadow:0 0 0 3px rgba(62,207,122,.22)}
+
+.hoy{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,var(--card),var(--bg2));
+border:1px solid var(--bd);border-radius:14px;padding:13px 18px;margin:18px 0 24px;
+font-size:13px;flex-wrap:wrap}
+.lbl{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.8px}
+.badge{background:rgba(62,207,122,.14);border:1px solid rgba(62,207,122,.45);color:var(--ok);
+border-radius:9px;padding:6px 12px;font-weight:700;font-size:12px}
+.badge.no{background:rgba(255,107,99,.12);border-color:rgba(255,107,99,.45);color:var(--bad)}
+.sep{color:var(--bd)}
+
+section{margin-bottom:30px}
+.shead{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;padding-bottom:10px;
+border-bottom:1px solid var(--bd)}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--acc);
+margin:0;font-weight:700;white-space:nowrap}
+.shead .n{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.shead .hint{margin-left:auto;color:var(--muted);font-size:11px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(152px,1fr));gap:10px}
+.mcard{background:linear-gradient(180deg,var(--card),var(--bg2));
+border:1px solid var(--bd);border-radius:11px;padding:13px 14px;
+transition:border-color .15s,transform .15s}
+.mcard:hover{border-color:var(--acc);transform:translateY(-1px)}
+.mcard .par{font-weight:700;font-size:14px;letter-spacing:.2px}
+.mcard .precio{font-size:19px;font-weight:700;margin:6px 0 3px;
+font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.mcard .chg{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
 .up{color:var(--ok)} .down{color:var(--bad)} .flat{color:var(--muted)}
-.leer{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.lcard{border-radius:12px;padding:16px;border:1px solid}
-.lcard.a{background:rgba(53,194,106,.08);border-color:rgba(53,194,106,.35)}
-.lcard.b{background:rgba(229,83,75,.08);border-color:rgba(229,83,75,.35)}
-.lcard.c{background:rgba(217,164,65,.08);border-color:rgba(217,164,65,.35)}
-.lcard .t{font-size:15px;font-weight:700;display:flex;justify-content:space-between}
-.lcard .p{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chip{background:rgba(255,255,255,.06);border-radius:20px;padding:5px 11px;font-size:12px;color:var(--muted)}
-.nivel{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px;
-display:flex;justify-content:space-between;align-items:center;gap:12px}
-.nivel b{font-variant-numeric:tabular-nums;font-size:15px}
+.brk{color:var(--bad);font-size:10px;font-weight:700;letter-spacing:.4px}
+
+.leer{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.lcard{border-radius:13px;padding:17px 18px;border:1px solid;position:relative;overflow:hidden}
+.lcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.lcard.a{background:linear-gradient(180deg,rgba(62,207,122,.10),rgba(62,207,122,.03));
+border-color:rgba(62,207,122,.35)} .lcard.a::before{background:var(--ok)}
+.lcard.b{background:linear-gradient(180deg,rgba(255,107,99,.10),rgba(255,107,99,.03));
+border-color:rgba(255,107,99,.35)} .lcard.b::before{background:var(--bad)}
+.lcard.c{background:linear-gradient(180deg,rgba(224,170,76,.10),rgba(224,170,76,.03));
+border-color:rgba(224,170,76,.35)} .lcard.c::before{background:var(--warn)}
+.lcard .t{font-size:14px;font-weight:700;display:flex;justify-content:space-between;
+align-items:center}
+.lcard .p{font-size:31px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.chip{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07);
+border-radius:20px;padding:5px 12px;font-size:12px;color:var(--muted)}
+.nivel{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--bd);
+border-radius:11px;padding:13px 15px;display:flex;justify-content:space-between;
+align-items:center;gap:14px}
+.nivel b{font-variant-numeric:tabular-nums;font-size:15px;font-weight:700}
 .nivel .men{color:var(--muted);font-size:12px}
-footer{color:var(--muted);font-size:12px;margin-top:26px;line-height:1.6}
+.nivel .cita{color:var(--muted);font-size:11px;max-width:380px;
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.7;
+border-top:1px solid var(--bd);padding-top:16px}
 .warn{color:var(--warn);font-weight:600}
+.kpi{display:flex;gap:26px;margin-top:10px;flex-wrap:wrap}
+.kpi div{font-size:12px;color:var(--muted)}
+.kpi b{display:block;font-size:17px;color:var(--fg);font-variant-numeric:tabular-nums;
+margin-top:3px}
 </style></head>
 <body><div class="wrap">
 
@@ -62,12 +99,12 @@ footer{color:var(--muted);font-size:12px;margin-top:26px;line-height:1.6}
 </div>
 
 <section>
-  <h2>Mercado Quantfury · 33 criptos operables</h2>
-  <div class="grid"><div class="mcard"><div class="par">AAVE</div><div class="precio">93.190</div><div class="chg down">▼ -4.18%</div></div><div class="mcard"><div class="par">ADA</div><div class="precio">0.14440</div><div class="chg down">▼ -2.83%</div></div><div class="mcard"><div class="par">APT</div><div class="precio">0.37090</div><div class="chg down">▼ -2.91%</div></div><div class="mcard"><div class="par">ARB</div><div class="precio">0.11060</div><div class="chg down">▼ -2.12%</div></div><div class="mcard"><div class="par">ATOM</div><div class="precio">1.257</div><div class="chg down">▼ -2.10%</div></div><div class="mcard"><div class="par">AVAX</div><div class="precio">6.554</div><div class="chg down">▼ -3.50%</div></div><div class="mcard"><div class="par">BCH</div><div class="precio">195.00</div><div class="chg down">▼ -2.84%</div></div><div class="mcard"><div class="par">BTC</div><div class="precio">59,758</div><div class="chg down">▼ -2.47%</div></div><div class="mcard"><div class="par">DOGE</div><div class="precio">0.05520</div><div class="chg down">▼ -2.13%</div></div><div class="mcard"><div class="par">DOT</div><div class="precio">0.65600</div><div class="chg down">▼ -2.96%</div></div><div class="mcard"><div class="par">ETC</div><div class="precio">5.800</div><div class="chg down">▼ -1.69%</div></div><div class="mcard"><div class="par">ETH</div><div class="precio">1,676</div><div class="chg down">▼ -2.02%</div></div><div class="mcard"><div class="par">FIL</div><div class="precio">0.53970</div><div class="chg down">▼ -2.49%</div></div><div class="mcard"><div class="par">HBAR</div><div class="precio">0.05001</div><div class="chg down">▼ -4.76%</div></div><div class="mcard"><div class="par">INJ</div><div class="precio">5.812</div><div class="chg down">▼ -7.69%</div></div><div class="mcard"><div class="par">LINK</div><div class="precio">8.853</div><div class="chg down">▼ -1.79%</div></div><div class="mcard"><div class="par">LTC</div><div class="precio">40.790</div><div class="chg down">▼ -1.66%</div></div><div class="mcard"><div class="par">MANA</div><div class="precio">0.05570</div><div class="chg down">▼ -2.45%</div></div><div class="mcard"><div class="par">NEAR</div><div class="precio">2.848</div><div class="chg down">▼ -4.69%</div></div><div class="mcard"><div class="par">NEO</div><div class="precio">1.524</div><div class="chg down">▼ -2.31%</div></div><div class="mcard"><div class="par">ONDO</div><div class="precio">0.27880</div><div class="chg down">▼ -3.66%</div></div><div class="mcard"><div class="par">OP</div><div class="precio">0.06880</div><div class="chg down">▼ -2.41%</div></div><div class="mcard"><div class="par">POL</div><div class="precio">0.07592</div><div class="chg down">▼ -1.77%</div></div><div class="mcard"><div class="par">RUNE</div><div class="precio">0.50900</div><div class="chg down">▼ -1.36%</div></div><div class="mcard"><div class="par">SAND</div><div class="precio">0.03196</div><div class="chg down">▼ -3.88%</div></div><div class="mcard"><div class="par">SNX</div><div class="precio">0.14420</div><div class="chg down">▼ -6.30%</div></div><div class="mcard"><div class="par">SOL</div><div class="precio">69.100</div><div class="chg down">▼ -4.07%</div></div><div class="mcard"><div class="par">STX</div><div class="precio">0.25740</div><div class="chg down">▼ -1.04%</div></div><div class="mcard"><div class="par">THETA</div><div class="precio">0.12760</div><div class="chg down">▼ -0.70%</div></div><div class="mcard"><div class="par">UNI</div><div class="precio">4.713</div><div class="chg down">▼ -2.74%</div></div><div class="mcard"><div class="par">XRP</div><div class="precio">0.91860</div><div class="chg down">▼ -2.35%</div></div><div class="mcard"><div class="par">S</div><div class="precio">0.02770</div><div class="chg down">▼ -2.43%</div></div><div class="mcard"><div class="par">TON <span style="color:var(--bad);font-size:10px">(BREAK)</span></div><div class="precio">1.600</div><div class="chg down">▼ -0.19%</div></div></div>
+  <div class="shead"><h2>Mercado Quantfury</h2><span class="n">33 criptos operables</span><span class="hint">precio y cambio 24h</span></div>
+  <div class="grid"><div class="mcard"><div class="par">AAVE</div><div class="precio">93.070</div><div class="chg down">▼ -4.31%</div></div><div class="mcard"><div class="par">ADA</div><div class="precio">0.14410</div><div class="chg down">▼ -3.03%</div></div><div class="mcard"><div class="par">APT</div><div class="precio">0.36880</div><div class="chg down">▼ -3.46%</div></div><div class="mcard"><div class="par">ARB</div><div class="precio">0.11050</div><div class="chg down">▼ -2.21%</div></div><div class="mcard"><div class="par">ATOM</div><div class="precio">1.256</div><div class="chg down">▼ -2.18%</div></div><div class="mcard"><div class="par">AVAX</div><div class="precio">6.546</div><div class="chg down">▼ -3.62%</div></div><div class="mcard"><div class="par">BCH</div><div class="precio">194.90</div><div class="chg down">▼ -2.89%</div></div><div class="mcard"><div class="par">BTC</div><div class="precio">59,710</div><div class="chg down">▼ -2.55%</div></div><div class="mcard"><div class="par">DOGE</div><div class="precio">0.05525</div><div class="chg down">▼ -2.04%</div></div><div class="mcard"><div class="par">DOT</div><div class="precio">0.65400</div><div class="chg down">▼ -3.25%</div></div><div class="mcard"><div class="par">ETC</div><div class="precio">5.800</div><div class="chg down">▼ -1.69%</div></div><div class="mcard"><div class="par">ETH</div><div class="precio">1,676</div><div class="chg down">▼ -2.05%</div></div><div class="mcard"><div class="par">FIL</div><div class="precio">0.53830</div><div class="chg down">▼ -2.75%</div></div><div class="mcard"><div class="par">HBAR</div><div class="precio">0.04991</div><div class="chg down">▼ -4.95%</div></div><div class="mcard"><div class="par">INJ</div><div class="precio">5.789</div><div class="chg down">▼ -8.05%</div></div><div class="mcard"><div class="par">LINK</div><div class="precio">8.838</div><div class="chg down">▼ -1.95%</div></div><div class="mcard"><div class="par">LTC</div><div class="precio">40.830</div><div class="chg down">▼ -1.57%</div></div><div class="mcard"><div class="par">MANA</div><div class="precio">0.05520</div><div class="chg down">▼ -3.33%</div></div><div class="mcard"><div class="par">NEAR</div><div class="precio">2.844</div><div class="chg down">▼ -4.82%</div></div><div class="mcard"><div class="par">NEO</div><div class="precio">1.512</div><div class="chg down">▼ -3.08%</div></div><div class="mcard"><div class="par">ONDO</div><div class="precio">0.27760</div><div class="chg down">▼ -4.08%</div></div><div class="mcard"><div class="par">OP</div><div class="precio">0.06850</div><div class="chg down">▼ -2.84%</div></div><div class="mcard"><div class="par">POL</div><div class="precio">0.07575</div><div class="chg down">▼ -1.99%</div></div><div class="mcard"><div class="par">RUNE</div><div class="precio">0.50300</div><div class="chg down">▼ -2.52%</div></div><div class="mcard"><div class="par">SAND</div><div class="precio">0.03174</div><div class="chg down">▼ -4.54%</div></div><div class="mcard"><div class="par">SNX</div><div class="precio">0.14350</div><div class="chg down">▼ -6.76%</div></div><div class="mcard"><div class="par">SOL</div><div class="precio">69.200</div><div class="chg down">▼ -3.93%</div></div><div class="mcard"><div class="par">STX</div><div class="precio">0.25830</div><div class="chg down">▼ -0.69%</div></div><div class="mcard"><div class="par">THETA</div><div class="precio">0.12710</div><div class="chg down">▼ -1.09%</div></div><div class="mcard"><div class="par">UNI</div><div class="precio">4.702</div><div class="chg down">▼ -2.97%</div></div><div class="mcard"><div class="par">XRP</div><div class="precio">0.92080</div><div class="chg down">▼ -2.12%</div></div><div class="mcard"><div class="par">S</div><div class="precio">0.02760</div><div class="chg down">▼ -2.78%</div></div><div class="mcard"><div class="par">TON <span class="brk">BREAK</span></div><div class="precio">1.600</div><div class="chg down">▼ -0.19%</div></div></div>
 </section>
 
 <section>
-  <h2>Análisis CreceTrader · lo que dice el canal</h2>
+  <div class="shead"><h2>Análisis CreceTrader</h2><span class="n">lo que dice el canal</span><span class="hint">lectura de niveles, no predicción</span></div>
   <div class="leer">
     <div class="lcard a"><div class="t"><span>Alcista</span><span class="p" style="color:var(--ok)">33%</span></div></div>
     <div class="lcard b"><div class="t"><span>Bajista</span><span class="p" style="color:var(--bad)">67%</span></div></div>
@@ -83,7 +120,7 @@ footer{color:var(--muted);font-size:12px;margin-top:26px;line-height:1.6}
 <footer>
   · Los precios son <b>reales</b> (Binance, solo lectura), caché de 5 minutos — no es un feed en vivo.<br>
   · El reparto Alcista/Bajista/Lateral se calcula de los <b>niveles dichos en el video</b>: es una lectura del texto, no una predicción.<br>
-  · Fuente: binance · video hb9YEJMgjAU<br>
+  · Fuente: binance, cache · video hb9YEJMgjAU<br>
   · <span class="warn">PAPER ONLY</span> — no ejecuta órdenes. La decisión la toma el trader.
 </footer>
 

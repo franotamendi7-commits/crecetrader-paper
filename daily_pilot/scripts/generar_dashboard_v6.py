@@ -108,56 +108,93 @@ def lectura_agente(info: dict, niveles: list) -> dict:
 
 # ------------------------------------------------------------------ HTML
 CSS = '''
-:root{--bg:#0b0f14;--card:#141b24;--bd:#263141;--fg:#e8eef5;--muted:#8a97a6;
---acc:#4f9dff;--ok:#35c26a;--bad:#e5534b;--warn:#d9a441}
+:root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
+--muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px}
-.wrap{max-width:1200px;margin:0 auto;padding:20px 20px 40px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.dot{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#f7931a,#ffb84d);
-display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:19px}
-h1{font-size:22px;margin:0;font-weight:700}
-.sub{color:var(--muted);font-size:13px;margin-top:3px}
-.pill{margin-left:auto;color:var(--ok);border:1px solid var(--ok);border-radius:20px;
-padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:.4px}
-.hoy{display:flex;gap:10px;align-items:center;background:var(--card);
-border:1px solid var(--bd);border-radius:12px;padding:12px 16px;margin-bottom:20px;font-size:13px}
-.hoy .lbl{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
-.badge{background:rgba(53,194,106,.14);border:1px solid rgba(53,194,106,.5);color:var(--ok);
-border-radius:8px;padding:6px 12px;font-weight:700}
-.badge.no{background:rgba(229,83,75,.12);border-color:rgba(229,83,75,.5);color:var(--bad)}
-section{margin-bottom:26px}
-h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--acc);
-margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--bd);font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.mcard{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px}
-.mcard .par{font-weight:700;font-size:14px}
-.mcard .precio{font-size:19px;font-weight:700;margin:5px 0 2px;
-font-variant-numeric:tabular-nums}
-.mcard .chg{font-size:13px;font-weight:600}
+body{margin:0;background:
+radial-gradient(1200px 500px at 80% -10%,rgba(90,162,255,.10),transparent),
+linear-gradient(180deg,#0a1018,#070a0f);color:var(--fg);
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;font-size:14px;
+-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:26px 22px 48px}
+
+header{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.dot{width:42px;height:42px;border-radius:12px;
+background:linear-gradient(135deg,#f7931a 0%,#ffb84d 100%);
+box-shadow:0 6px 20px rgba(247,147,26,.35);
+display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:20px}
+h1{font-size:23px;margin:0;font-weight:700;letter-spacing:-.3px}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.pill{margin-left:auto;display:flex;align-items:center;gap:7px;color:var(--ok);
+border:1px solid rgba(62,207,122,.45);background:rgba(62,207,122,.10);
+border-radius:20px;padding:7px 15px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.pill .p{width:7px;height:7px;border-radius:50%;background:var(--ok);
+box-shadow:0 0 0 3px rgba(62,207,122,.22)}
+
+.hoy{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,var(--card),var(--bg2));
+border:1px solid var(--bd);border-radius:14px;padding:13px 18px;margin:18px 0 24px;
+font-size:13px;flex-wrap:wrap}
+.lbl{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.8px}
+.badge{background:rgba(62,207,122,.14);border:1px solid rgba(62,207,122,.45);color:var(--ok);
+border-radius:9px;padding:6px 12px;font-weight:700;font-size:12px}
+.badge.no{background:rgba(255,107,99,.12);border-color:rgba(255,107,99,.45);color:var(--bad)}
+.sep{color:var(--bd)}
+
+section{margin-bottom:30px}
+.shead{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;padding-bottom:10px;
+border-bottom:1px solid var(--bd)}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--acc);
+margin:0;font-weight:700;white-space:nowrap}
+.shead .n{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.shead .hint{margin-left:auto;color:var(--muted);font-size:11px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(152px,1fr));gap:10px}
+.mcard{background:linear-gradient(180deg,var(--card),var(--bg2));
+border:1px solid var(--bd);border-radius:11px;padding:13px 14px;
+transition:border-color .15s,transform .15s}
+.mcard:hover{border-color:var(--acc);transform:translateY(-1px)}
+.mcard .par{font-weight:700;font-size:14px;letter-spacing:.2px}
+.mcard .precio{font-size:19px;font-weight:700;margin:6px 0 3px;
+font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.mcard .chg{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
 .up{color:var(--ok)} .down{color:var(--bad)} .flat{color:var(--muted)}
-.leer{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.lcard{border-radius:12px;padding:16px;border:1px solid}
-.lcard.a{background:rgba(53,194,106,.08);border-color:rgba(53,194,106,.35)}
-.lcard.b{background:rgba(229,83,75,.08);border-color:rgba(229,83,75,.35)}
-.lcard.c{background:rgba(217,164,65,.08);border-color:rgba(217,164,65,.35)}
-.lcard .t{font-size:15px;font-weight:700;display:flex;justify-content:space-between}
-.lcard .p{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chip{background:rgba(255,255,255,.06);border-radius:20px;padding:5px 11px;font-size:12px;color:var(--muted)}
-.nivel{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px;
-display:flex;justify-content:space-between;align-items:center;gap:12px}
-.nivel b{font-variant-numeric:tabular-nums;font-size:15px}
+.brk{color:var(--bad);font-size:10px;font-weight:700;letter-spacing:.4px}
+
+.leer{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.lcard{border-radius:13px;padding:17px 18px;border:1px solid;position:relative;overflow:hidden}
+.lcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.lcard.a{background:linear-gradient(180deg,rgba(62,207,122,.10),rgba(62,207,122,.03));
+border-color:rgba(62,207,122,.35)} .lcard.a::before{background:var(--ok)}
+.lcard.b{background:linear-gradient(180deg,rgba(255,107,99,.10),rgba(255,107,99,.03));
+border-color:rgba(255,107,99,.35)} .lcard.b::before{background:var(--bad)}
+.lcard.c{background:linear-gradient(180deg,rgba(224,170,76,.10),rgba(224,170,76,.03));
+border-color:rgba(224,170,76,.35)} .lcard.c::before{background:var(--warn)}
+.lcard .t{font-size:14px;font-weight:700;display:flex;justify-content:space-between;
+align-items:center}
+.lcard .p{font-size:31px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.chip{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07);
+border-radius:20px;padding:5px 12px;font-size:12px;color:var(--muted)}
+.nivel{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--bd);
+border-radius:11px;padding:13px 15px;display:flex;justify-content:space-between;
+align-items:center;gap:14px}
+.nivel b{font-variant-numeric:tabular-nums;font-size:15px;font-weight:700}
 .nivel .men{color:var(--muted);font-size:12px}
-footer{color:var(--muted);font-size:12px;margin-top:26px;line-height:1.6}
+.nivel .cita{color:var(--muted);font-size:11px;max-width:380px;
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.7;
+border-top:1px solid var(--bd);padding-top:16px}
 .warn{color:var(--warn);font-weight:600}
+.kpi{display:flex;gap:26px;margin-top:10px;flex-wrap:wrap}
+.kpi div{font-size:12px;color:var(--muted)}
+.kpi b{display:block;font-size:17px;color:var(--fg);font-variant-numeric:tabular-nums;
+margin-top:3px}
 '''
 
 
 def mcard(x) -> str:
     par = esc(x['par'])
-    st = ' <span style="color:var(--bad);font-size:10px">(BREAK)</span>' if x.get('status') == 'BREAK' else ''
+    st = ' <span class="brk">BREAK</span>' if x.get('status') == 'BREAK' else ''
     if x['precio'] is None:
         return f'<div class="mcard"><div class="par">{par}{st}</div><div class="precio flat">—</div><div class="chg flat">sin datos</div></div>'
     cls = 'up' if x['cambio'] >= 0 else 'down'
@@ -218,12 +255,12 @@ def main() -> int:
 </div>
 
 <section>
-  <h2>Mercado Quantfury · {len(mer)} criptos operables</h2>
+  <div class="shead"><h2>Mercado Quantfury</h2><span class="n">{len(mer)} criptos operables</span><span class="hint">precio y cambio 24h</span></div>
   <div class="grid">{cards}</div>
 </section>
 
 <section>
-  <h2>Análisis CreceTrader · lo que dice el canal</h2>
+  <div class="shead"><h2>Análisis CreceTrader</h2><span class="n">lo que dice el canal</span><span class="hint">lectura de niveles, no predicción</span></div>
   <div class="leer">
     {lcard('a', 'Alcista', lec['alcista'], 'var(--ok)')}
     {lcard('b', 'Bajista', lec['bajista'], 'var(--bad)')}
