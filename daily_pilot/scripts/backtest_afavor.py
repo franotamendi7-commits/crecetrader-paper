@@ -30,6 +30,7 @@ sys.path.insert(0, str(BASE / 'daily_pilot' / 'scripts'))
 
 PLAZO = {'1w': 'largo', '1d': 'media', '4h': 'corto'}
 NIVELES_PERMITIDOS = {'0.61', '0.786'}          # P3
+NIVELES_FUERTES = {'0.786'}                     # P4
 ATR_N = 14
 
 
@@ -135,6 +136,8 @@ def backtest_afavor(par, tf='1d', detalle=150, filtros=None, stop_modo='pct',
         return {'par': par, 'tf': tf, 'skip': 'tramo corto (<30 velas)'}
     if 'P3' in filtros:
         niveles = [x for x in niveles if x[0] in NIVELES_PERMITIDOS]
+    if 'P4' in filtros:
+        niveles = [x for x in niveles if x[0] in NIVELES_FUERTES]
 
     por_nivel, ops_planas = {}, []
     for etq, nivel, tipo in niveles:

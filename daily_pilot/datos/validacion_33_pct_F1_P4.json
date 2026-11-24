@@ -1,0 +1,411 @@
+{
+ "por_par": [
+  {
+   "par": "BTCUSDT",
+   "dir": "bajista",
+   "n": 1,
+   "acierto": 100.0,
+   "fb": null,
+   "esp": 10.023,
+   "dd": 0.0
+  },
+  {
+   "par": "ETHUSDT",
+   "dir": "bajista",
+   "n": 1,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -1.0
+  },
+  {
+   "par": "SOLUSDT",
+   "dir": "bajista",
+   "n": 2,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -2.0
+  },
+  {
+   "par": "BNBUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 33.3,
+   "fb": 6.208,
+   "esp": 3.472,
+   "dd": -6.0
+  },
+  {
+   "par": "XRPUSDT",
+   "dir": "bajista",
+   "n": 8,
+   "acierto": 12.5,
+   "fb": 2.239,
+   "esp": 1.084,
+   "dd": -7.0
+  },
+  {
+   "par": "ADAUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "AVAXUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "DOGEUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "LINKUSDT",
+   "dir": "bajista",
+   "n": 4,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -4.0
+  },
+  {
+   "par": "DOTUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "LTCUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 3.451,
+   "esp": 2.043,
+   "dd": -5.0
+  },
+  {
+   "par": "ATOMUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "NEARUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "UNIUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -9.0
+  },
+  {
+   "par": "AAVEUSDT",
+   "dir": "bajista",
+   "n": 16,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -16.0
+  },
+  {
+   "par": "APTUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "ARBUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -10.0
+  },
+  {
+   "par": "OPUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "FILUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "HBARUSDT",
+   "dir": "bajista",
+   "n": 3,
+   "acierto": 33.3,
+   "fb": 7.335,
+   "esp": 4.223,
+   "dd": -2.0
+  },
+  {
+   "par": "INJUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -6.0
+  },
+  {
+   "par": "MANAUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "SANDUSDT",
+   "dir": "alcista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "STXUSDT",
+   "dir": "bajista",
+   "n": 15,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -15.0
+  },
+  {
+   "par": "THETAUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 4.432,
+   "esp": 2.86,
+   "dd": -5.0
+  },
+  {
+   "par": "ALGOUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 20.0,
+   "fb": 4.229,
+   "esp": 2.583,
+   "dd": -8.0
+  },
+  {
+   "par": "EGLDUSDT",
+   "dir": "bajista",
+   "n": 2,
+   "acierto": 50.0,
+   "fb": 25.848,
+   "esp": 12.424,
+   "dd": -1.0
+  },
+  {
+   "par": "FTMUSDT",
+   "dir": "bajista",
+   "n": 2,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -2.0
+  },
+  {
+   "par": "TONUSDT",
+   "dir": "bajista",
+   "n": 23,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -23.0
+  },
+  {
+   "par": "NEOUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "ONDOUSDT",
+   "dir": "bajista",
+   "n": 13,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -13.0
+  },
+  {
+   "par": "RUNEUSDT",
+   "dir": "bajista",
+   "n": 7,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -7.0
+  }
+ ],
+ "resumen": [
+  {
+   "par": "BNBUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 33.3,
+   "fb": 6.208,
+   "esp": 3.472,
+   "dd": -6.0
+  },
+  {
+   "par": "XRPUSDT",
+   "dir": "bajista",
+   "n": 8,
+   "acierto": 12.5,
+   "fb": 2.239,
+   "esp": 1.084,
+   "dd": -7.0
+  },
+  {
+   "par": "LTCUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 3.451,
+   "esp": 2.043,
+   "dd": -5.0
+  },
+  {
+   "par": "UNIUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -9.0
+  },
+  {
+   "par": "AAVEUSDT",
+   "dir": "bajista",
+   "n": 16,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -16.0
+  },
+  {
+   "par": "ARBUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -10.0
+  },
+  {
+   "par": "INJUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -6.0
+  },
+  {
+   "par": "STXUSDT",
+   "dir": "bajista",
+   "n": 15,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -15.0
+  },
+  {
+   "par": "THETAUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 4.432,
+   "esp": 2.86,
+   "dd": -5.0
+  },
+  {
+   "par": "ALGOUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 20.0,
+   "fb": 4.229,
+   "esp": 2.583,
+   "dd": -8.0
+  },
+  {
+   "par": "TONUSDT",
+   "dir": "bajista",
+   "n": 23,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -23.0
+  },
+  {
+   "par": "ONDOUSDT",
+   "dir": "bajista",
+   "n": 13,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -13.0
+  },
+  {
+   "par": "RUNEUSDT",
+   "dir": "bajista",
+   "n": 7,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -7.0
+  }
+ ]
+}
