@@ -1,0 +1,510 @@
+{
+ "por_par": [
+  {
+   "par": "BTCUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 30.0,
+   "fb": 3.454,
+   "esp": 1.718,
+   "dd": -7.0
+  },
+  {
+   "par": "ETHUSDT",
+   "dir": "bajista",
+   "n": 3,
+   "acierto": 66.7,
+   "fb": 20.673,
+   "esp": 6.558,
+   "dd": -1.0
+  },
+  {
+   "par": "SOLUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 10.0,
+   "fb": 1.241,
+   "esp": 0.217,
+   "dd": -7.0
+  },
+  {
+   "par": "BNBUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 33.3,
+   "fb": 6.208,
+   "esp": 3.472,
+   "dd": -6.0
+  },
+  {
+   "par": "XRPUSDT",
+   "dir": "bajista",
+   "n": 13,
+   "acierto": 7.7,
+   "fb": 1.304,
+   "esp": 0.28,
+   "dd": -7.0
+  },
+  {
+   "par": "ADAUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "AVAXUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "DOGEUSDT",
+   "dir": "bajista",
+   "n": 13,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -13.0
+  },
+  {
+   "par": "LINKUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 33.3,
+   "fb": 3.809,
+   "esp": 1.872,
+   "dd": -4.0
+  },
+  {
+   "par": "DOTUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "LTCUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 3.451,
+   "esp": 2.043,
+   "dd": -5.0
+  },
+  {
+   "par": "ATOMUSDT",
+   "dir": "bajista",
+   "n": 2,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -2.0
+  },
+  {
+   "par": "NEARUSDT",
+   "dir": "bajista",
+   "n": 18,
+   "acierto": 44.4,
+   "fb": 5.167,
+   "esp": 2.315,
+   "dd": -5.0
+  },
+  {
+   "par": "UNIUSDT",
+   "dir": "bajista",
+   "n": 42,
+   "acierto": 14.3,
+   "fb": 1.181,
+   "esp": 0.155,
+   "dd": -19.0
+  },
+  {
+   "par": "AAVEUSDT",
+   "dir": "bajista",
+   "n": 19,
+   "acierto": 15.8,
+   "fb": 2.914,
+   "esp": 1.612,
+   "dd": -16.0
+  },
+  {
+   "par": "APTUSDT",
+   "dir": "bajista",
+   "n": 11,
+   "acierto": 72.7,
+   "fb": 0.234,
+   "esp": -0.209,
+   "dd": -2.39
+  },
+  {
+   "par": "ARBUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -10.0
+  },
+  {
+   "par": "OPUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 66.7,
+   "fb": 1.444,
+   "esp": 0.148,
+   "dd": -1.56
+  },
+  {
+   "par": "FILUSDT",
+   "dir": "bajista",
+   "n": 5,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -0.4,
+   "dd": -2.0
+  },
+  {
+   "par": "HBARUSDT",
+   "dir": "bajista",
+   "n": 18,
+   "acierto": 11.1,
+   "fb": 1.659,
+   "esp": 0.585,
+   "dd": -14.0
+  },
+  {
+   "par": "INJUSDT",
+   "dir": "bajista",
+   "n": 26,
+   "acierto": 7.7,
+   "fb": 0.641,
+   "esp": -0.331,
+   "dd": -21.0
+  },
+  {
+   "par": "MANAUSDT",
+   "dir": "bajista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "SANDUSDT",
+   "dir": "alcista",
+   "n": 0,
+   "acierto": null,
+   "fb": null,
+   "esp": null,
+   "dd": null
+  },
+  {
+   "par": "STXUSDT",
+   "dir": "bajista",
+   "n": 27,
+   "acierto": 22.2,
+   "fb": 3.061,
+   "esp": 1.603,
+   "dd": -16.0
+  },
+  {
+   "par": "THETAUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 4.545,
+   "esp": 2.955,
+   "dd": -5.0
+  },
+  {
+   "par": "ALGOUSDT",
+   "dir": "bajista",
+   "n": 23,
+   "acierto": 8.7,
+   "fb": 1.587,
+   "esp": 0.536,
+   "dd": -13.0
+  },
+  {
+   "par": "EGLDUSDT",
+   "dir": "bajista",
+   "n": 4,
+   "acierto": 25.0,
+   "fb": 25.848,
+   "esp": 6.212,
+   "dd": -1.0
+  },
+  {
+   "par": "FTMUSDT",
+   "dir": "bajista",
+   "n": 43,
+   "acierto": 23.3,
+   "fb": 2.061,
+   "esp": 0.814,
+   "dd": -12.0
+  },
+  {
+   "par": "TONUSDT",
+   "dir": "bajista",
+   "n": 35,
+   "acierto": 8.6,
+   "fb": 0.764,
+   "esp": -0.215,
+   "dd": -32.0
+  },
+  {
+   "par": "NEOUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -9.0
+  },
+  {
+   "par": "ONDOUSDT",
+   "dir": "bajista",
+   "n": 16,
+   "acierto": 6.2,
+   "fb": 0.97,
+   "esp": -0.028,
+   "dd": -13.0
+  },
+  {
+   "par": "RUNEUSDT",
+   "dir": "bajista",
+   "n": 25,
+   "acierto": 16.0,
+   "fb": 1.827,
+   "esp": 0.694,
+   "dd": -10.0
+  }
+ ],
+ "resumen": [
+  {
+   "par": "BTCUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 30.0,
+   "fb": 3.454,
+   "esp": 1.718,
+   "dd": -7.0
+  },
+  {
+   "par": "SOLUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 10.0,
+   "fb": 1.241,
+   "esp": 0.217,
+   "dd": -7.0
+  },
+  {
+   "par": "BNBUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 33.3,
+   "fb": 6.208,
+   "esp": 3.472,
+   "dd": -6.0
+  },
+  {
+   "par": "XRPUSDT",
+   "dir": "bajista",
+   "n": 13,
+   "acierto": 7.7,
+   "fb": 1.304,
+   "esp": 0.28,
+   "dd": -7.0
+  },
+  {
+   "par": "DOGEUSDT",
+   "dir": "bajista",
+   "n": 13,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -13.0
+  },
+  {
+   "par": "LINKUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 33.3,
+   "fb": 3.809,
+   "esp": 1.872,
+   "dd": -4.0
+  },
+  {
+   "par": "LTCUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 3.451,
+   "esp": 2.043,
+   "dd": -5.0
+  },
+  {
+   "par": "NEARUSDT",
+   "dir": "bajista",
+   "n": 18,
+   "acierto": 44.4,
+   "fb": 5.167,
+   "esp": 2.315,
+   "dd": -5.0
+  },
+  {
+   "par": "UNIUSDT",
+   "dir": "bajista",
+   "n": 42,
+   "acierto": 14.3,
+   "fb": 1.181,
+   "esp": 0.155,
+   "dd": -19.0
+  },
+  {
+   "par": "AAVEUSDT",
+   "dir": "bajista",
+   "n": 19,
+   "acierto": 15.8,
+   "fb": 2.914,
+   "esp": 1.612,
+   "dd": -16.0
+  },
+  {
+   "par": "APTUSDT",
+   "dir": "bajista",
+   "n": 11,
+   "acierto": 72.7,
+   "fb": 0.234,
+   "esp": -0.209,
+   "dd": -2.39
+  },
+  {
+   "par": "ARBUSDT",
+   "dir": "bajista",
+   "n": 10,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -10.0
+  },
+  {
+   "par": "OPUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 66.7,
+   "fb": 1.444,
+   "esp": 0.148,
+   "dd": -1.56
+  },
+  {
+   "par": "FILUSDT",
+   "dir": "bajista",
+   "n": 5,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -0.4,
+   "dd": -2.0
+  },
+  {
+   "par": "HBARUSDT",
+   "dir": "bajista",
+   "n": 18,
+   "acierto": 11.1,
+   "fb": 1.659,
+   "esp": 0.585,
+   "dd": -14.0
+  },
+  {
+   "par": "INJUSDT",
+   "dir": "bajista",
+   "n": 26,
+   "acierto": 7.7,
+   "fb": 0.641,
+   "esp": -0.331,
+   "dd": -21.0
+  },
+  {
+   "par": "STXUSDT",
+   "dir": "bajista",
+   "n": 27,
+   "acierto": 22.2,
+   "fb": 3.061,
+   "esp": 1.603,
+   "dd": -16.0
+  },
+  {
+   "par": "THETAUSDT",
+   "dir": "bajista",
+   "n": 6,
+   "acierto": 16.7,
+   "fb": 4.545,
+   "esp": 2.955,
+   "dd": -5.0
+  },
+  {
+   "par": "ALGOUSDT",
+   "dir": "bajista",
+   "n": 23,
+   "acierto": 8.7,
+   "fb": 1.587,
+   "esp": 0.536,
+   "dd": -13.0
+  },
+  {
+   "par": "FTMUSDT",
+   "dir": "bajista",
+   "n": 43,
+   "acierto": 23.3,
+   "fb": 2.061,
+   "esp": 0.814,
+   "dd": -12.0
+  },
+  {
+   "par": "TONUSDT",
+   "dir": "bajista",
+   "n": 35,
+   "acierto": 8.6,
+   "fb": 0.764,
+   "esp": -0.215,
+   "dd": -32.0
+  },
+  {
+   "par": "NEOUSDT",
+   "dir": "bajista",
+   "n": 9,
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -9.0
+  },
+  {
+   "par": "ONDOUSDT",
+   "dir": "bajista",
+   "n": 16,
+   "acierto": 6.2,
+   "fb": 0.97,
+   "esp": -0.028,
+   "dd": -13.0
+  },
+  {
+   "par": "RUNEUSDT",
+   "dir": "bajista",
+   "n": 25,
+   "acierto": 16.0,
+   "fb": 1.827,
+   "esp": 0.694,
+   "dd": -10.0
+  }
+ ]
+}
