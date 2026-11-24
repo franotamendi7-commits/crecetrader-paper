@@ -2,62 +2,62 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "SIN VIDEO NUEVO",
-  "ultima_revision": "2026-11-24T03:42:16Z",
-  "deteccion_at": "2026-11-23T16:50:17.307166+00:00",
-  "analisis_at": "2026-11-23T16:50:17Z",
+  "estado": "VIDEO NUEVO ANALIZADO",
+  "ultima_revision": "2026-11-24T14:44:36Z",
+  "deteccion_at": "2026-11-24T13:59:17.078745+00:00",
+  "analisis_at": "2026-11-24T14:01:09Z",
   "video": {
-    "video_id": "u3T3rj62WXE",
-    "titulo": "Bitcoin frena en 56.750: ¿principio de una nueva subida?",
-    "url": "https://www.youtube.com/watch?v=u3T3rj62WXE",
-    "publicado": "2026-11-23T09:56:22+00:00",
+    "video_id": "hb9YEJMgjAU",
+    "titulo": "Bitcoin rebota en los 56.750: ¿compras de verdad o trampa?",
+    "url": "https://www.youtube.com/watch?v=hb9YEJMgjAU",
+    "publicado": "2026-11-24T10:16:06+00:00",
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
-    "frase": "Último análisis real: u3T3rj62WXE · 1061 cues · instrumentos ['BTC', 'NQ', 'ETH', 'XAUUSD']",
+    "frase": "Último análisis real: hb9YEJMgjAU · 979 cues · instrumentos ['BTC', 'ETH', 'NQ', 'XAUUSD']",
     "instrumento": [
       "BTC",
-      "NQ",
       "ETH",
+      "NQ",
       "XAUUSD"
     ],
     "temporalidad": "NO DISPONIBLE",
     "evidencia": {
-      "video_id": "u3T3rj62WXE",
-      "analizado_at": "2026-11-23T16:50:17Z",
-      "sha256_transcript": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b"
+      "video_id": "hb9YEJMgjAU",
+      "analizado_at": "2026-11-24T14:01:09Z",
+      "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4"
     },
     "limitaciones": [
       "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
       "Los numeros provienen de la transcripcion; no contrastados con feed.",
       "No se infirieron niveles: solo se transcribio lo dicho."
     ],
-    "fuente": "analisis/u3T3rj62WXE_analisis.json"
+    "fuente": "analisis/hb9YEJMgjAU_analisis.json"
   },
   "escenarios": {
-    "video_id": "u3T3rj62WXE",
+    "video_id": "hb9YEJMgjAU",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "macro": {
-    "video_id": "u3T3rj62WXE",
+    "video_id": "hb9YEJMgjAU",
     "estado": "NO DETERMINADO",
     "motivo": "no corresponde al ultimo analisis; recalcular desde analisis/"
   },
   "ultimo_analizado": {
-    "video_id": "u3T3rj62WXE",
-    "analizado_at": "2026-11-23T16:50:17Z",
-    "n_cues": 1061,
-    "sha256_transcript": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b",
-    "archivo": "daily_pilot/analisis/u3T3rj62WXE_analisis.json"
+    "video_id": "hb9YEJMgjAU",
+    "analizado_at": "2026-11-24T14:01:09Z",
+    "n_cues": 979,
+    "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4",
+    "archivo": "daily_pilot/analisis/hb9YEJMgjAU_analisis.json"
   },
   "errores": [],
   "ultimo_analisis_completo": {
-    "video_id": "u3T3rj62WXE",
-    "analizado_at": "2026-11-23T16:50:17Z",
-    "n_cues": 1061,
-    "sha256_transcript": "11d824719eec52c730dfa5f960de7efa0bc39908f93e710727afaaf7f37b974b",
-    "archivo": "daily_pilot/analisis/u3T3rj62WXE_analisis.json"
+    "video_id": "hb9YEJMgjAU",
+    "analizado_at": "2026-11-24T14:01:09Z",
+    "n_cues": 979,
+    "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4",
+    "archivo": "daily_pilot/analisis/hb9YEJMgjAU_analisis.json"
   },
   "escenarios_estado": null
 }
