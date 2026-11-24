@@ -137,7 +137,7 @@ Ningún gestor de posición lo resolvió, y operar menos niveles lo empeoró.
 
 **Para poder operarla habría que:**
 1. **Reducir el tamaño**: con $120/R el peor caso es −$3.840. Con **$40/R** (riesgo 0,6%) sería −$1.280 (−21%). Ganás menos, pero sobrevivís.
-2. **Elegir pares**: quedarse solo con los de esperanza alta y dd contenido (BNB, NEAR, LINK).
+2. **Elegir pares**: NEAR, LINK, THETA, LTC, BTC (los de mejor esperanza y dd contenido).
 3. **Aceptar la cola**: saber que pueden venir 15–20 pérdidas seguidas.
 
 **Antes de seguir, la decisión es tuya.**
