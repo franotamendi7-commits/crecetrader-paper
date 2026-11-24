@@ -28,7 +28,7 @@ import validacion_protocolo as VP
 PAPER_ONLY = True
 
 PAR = 'BTCUSDT'
-TF = '1d'
+TF = '1d'               # linea 31: default; override con --tf
 STOP_PCT = 2.0          # stop fijo 2%
 TARGET_MULT = 2.0       # target = 2 * stop = 4%
 HORIZON = 30            # barras max para resolver un trade
@@ -488,16 +488,21 @@ def backtest_expectancy(series, rule_func):
 
 
 def main():
+    global TF
     ap = argparse.ArgumentParser()
+    ap.add_argument('--tf', choices=['1w', '1d', '4h'], default=TF,
+                    help='Timeframe a correr (default: valor de linea 31)')
     ap.add_argument('--n-sim', type=int, default=N_SIM)
     ap.add_argument('--seed', type=int, default=SEED)
     ap.add_argument('--out', default=str(BASE / 'daily_pilot' / 'investigacion' / 'BANCO_CANDIDATOS_BTC.md'))
     ap.add_argument('--no-write', action='store_true')
     a = ap.parse_args()
 
+    TF = a.tf
+
     velas = cargar_velas(forzar=True)
     n_velas = len(velas)
-    print(f'BTCUSDT 1d: {n_velas} velas', file=sys.stderr)
+    print(f'BTCUSDT {TF}: {n_velas} velas', file=sys.stderr)
 
     rows = []
     for nombre, rfunc in CANDIDATOS:
