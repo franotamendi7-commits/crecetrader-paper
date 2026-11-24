@@ -5,45 +5,45 @@
    "dir": "bajista",
    "n": 10,
    "acierto": 30.0,
-   "fb": 3.454,
-   "esp": 1.718,
+   "fb": 3.215,
+   "esp": 1.55,
    "dd": -7.0
   },
   {
    "par": "ETHUSDT",
    "dir": "bajista",
    "n": 3,
-   "acierto": 66.7,
-   "fb": 20.673,
-   "esp": 6.558,
-   "dd": -1.0
+   "acierto": 33.3,
+   "fb": 5.152,
+   "esp": 2.768,
+   "dd": -2.0
   },
   {
    "par": "SOLUSDT",
    "dir": "bajista",
    "n": 10,
    "acierto": 10.0,
-   "fb": 1.241,
-   "esp": 0.217,
+   "fb": 1.138,
+   "esp": 0.124,
    "dd": -7.0
   },
   {
    "par": "BNBUSDT",
    "dir": "bajista",
    "n": 9,
-   "acierto": 33.3,
-   "fb": 6.208,
-   "esp": 3.472,
-   "dd": -6.0
+   "acierto": 11.1,
+   "fb": 1.351,
+   "esp": 0.312,
+   "dd": -8.0
   },
   {
    "par": "XRPUSDT",
    "dir": "bajista",
    "n": 13,
    "acierto": 7.7,
-   "fb": 1.304,
-   "esp": 0.28,
-   "dd": -7.0
+   "fb": 1.206,
+   "esp": 0.19,
+   "dd": -10.0
   },
   {
    "par": "ADAUSDT",
@@ -77,9 +77,9 @@
    "dir": "bajista",
    "n": 9,
    "acierto": 33.3,
-   "fb": 3.809,
-   "esp": 1.872,
-   "dd": -4.0
+   "fb": 2.958,
+   "esp": 1.305,
+   "dd": -3.0
   },
   {
    "par": "DOTUSDT",
@@ -95,8 +95,8 @@
    "dir": "bajista",
    "n": 6,
    "acierto": 16.7,
-   "fb": 3.451,
-   "esp": 2.043,
+   "fb": 3.328,
+   "esp": 1.94,
    "dd": -5.0
   },
   {
@@ -112,37 +112,37 @@
    "par": "NEARUSDT",
    "dir": "bajista",
    "n": 18,
-   "acierto": 44.4,
-   "fb": 5.167,
-   "esp": 2.315,
-   "dd": -5.0
+   "acierto": 11.1,
+   "fb": 0.747,
+   "esp": -0.225,
+   "dd": -10.0
   },
   {
    "par": "UNIUSDT",
    "dir": "bajista",
    "n": 42,
-   "acierto": 14.3,
-   "fb": 1.181,
-   "esp": 0.155,
-   "dd": -19.0
+   "acierto": 4.8,
+   "fb": 0.334,
+   "esp": -0.634,
+   "dd": -37.0
   },
   {
    "par": "AAVEUSDT",
    "dir": "bajista",
    "n": 19,
-   "acierto": 15.8,
-   "fb": 2.914,
-   "esp": 1.612,
-   "dd": -16.0
+   "acierto": 10.5,
+   "fb": 1.74,
+   "esp": 0.662,
+   "dd": -12.0
   },
   {
    "par": "APTUSDT",
    "dir": "bajista",
    "n": 11,
-   "acierto": 72.7,
-   "fb": 0.234,
-   "esp": -0.209,
-   "dd": -2.39
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.114,
+   "dd": -12.25
   },
   {
    "par": "ARBUSDT",
@@ -157,10 +157,10 @@
    "par": "OPUSDT",
    "dir": "bajista",
    "n": 9,
-   "acierto": 66.7,
-   "fb": 1.444,
-   "esp": 0.148,
-   "dd": -1.56
+   "acierto": 11.1,
+   "fb": 0.053,
+   "esp": -0.674,
+   "dd": -6.06
   },
   {
    "par": "FILUSDT",
@@ -168,26 +168,26 @@
    "n": 5,
    "acierto": 0.0,
    "fb": 0.0,
-   "esp": -0.4,
-   "dd": -2.0
+   "esp": -1.295,
+   "dd": -6.47
   },
   {
    "par": "HBARUSDT",
    "dir": "bajista",
    "n": 18,
    "acierto": 11.1,
-   "fb": 1.659,
-   "esp": 0.585,
-   "dd": -14.0
+   "fb": 1.495,
+   "esp": 0.44,
+   "dd": -12.0
   },
   {
    "par": "INJUSDT",
    "dir": "bajista",
    "n": 26,
    "acierto": 7.7,
-   "fb": 0.641,
-   "esp": -0.331,
-   "dd": -21.0
+   "fb": 0.58,
+   "esp": -0.388,
+   "dd": -17.0
   },
   {
    "par": "MANAUSDT",
@@ -211,55 +211,55 @@
    "par": "STXUSDT",
    "dir": "bajista",
    "n": 27,
-   "acierto": 22.2,
-   "fb": 3.061,
-   "esp": 1.603,
-   "dd": -16.0
+   "acierto": 11.1,
+   "fb": 0.87,
+   "esp": -0.115,
+   "dd": -14.0
   },
   {
    "par": "THETAUSDT",
    "dir": "bajista",
    "n": 6,
    "acierto": 16.7,
-   "fb": 4.545,
-   "esp": 2.955,
+   "fb": 4.197,
+   "esp": 2.664,
    "dd": -5.0
   },
   {
    "par": "ALGOUSDT",
    "dir": "bajista",
-   "n": 23,
-   "acierto": 8.7,
-   "fb": 1.587,
-   "esp": 0.536,
-   "dd": -13.0
+   "n": 24,
+   "acierto": 4.2,
+   "fb": 0.669,
+   "esp": -0.317,
+   "dd": -19.0
   },
   {
    "par": "EGLDUSDT",
    "dir": "bajista",
    "n": 4,
    "acierto": 25.0,
-   "fb": 25.848,
-   "esp": 6.212,
-   "dd": -1.0
+   "fb": 5.723,
+   "esp": 5.119,
+   "dd": -3.34
   },
   {
    "par": "FTMUSDT",
    "dir": "bajista",
    "n": 43,
-   "acierto": 23.3,
-   "fb": 2.061,
-   "esp": 0.814,
-   "dd": -12.0
+   "acierto": 18.6,
+   "fb": 1.205,
+   "esp": 0.167,
+   "dd": -18.0
   },
   {
    "par": "TONUSDT",
    "dir": "bajista",
    "n": 35,
-   "acierto": 8.6,
-   "fb": 0.764,
-   "esp": -0.215,
-   "dd": -32.0
+   "acierto": 5.7,
+   "fb": 0.41,
+   "esp": -0.556,
+   "dd": -25.0
   },
   {
    "par": "NEOUSDT",
@@ -274,19 +274,19 @@
    "par": "ONDOUSDT",
    "dir": "bajista",
    "n": 16,
-   "acierto": 6.2,
-   "fb": 0.97,
-   "esp": -0.028,
-   "dd": -13.0
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -16.0
   },
   {
    "par": "RUNEUSDT",
    "dir": "bajista",
    "n": 25,
-   "acierto": 16.0,
-   "fb": 1.827,
-   "esp": 0.694,
-   "dd": -10.0
+   "acierto": 8.0,
+   "fb": 0.489,
+   "esp": -0.47,
+   "dd": -13.0
   }
  ],
  "resumen": [
@@ -295,8 +295,8 @@
    "dir": "bajista",
    "n": 10,
    "acierto": 30.0,
-   "fb": 3.454,
-   "esp": 1.718,
+   "fb": 3.215,
+   "esp": 1.55,
    "dd": -7.0
   },
   {
@@ -304,27 +304,27 @@
    "dir": "bajista",
    "n": 10,
    "acierto": 10.0,
-   "fb": 1.241,
-   "esp": 0.217,
+   "fb": 1.138,
+   "esp": 0.124,
    "dd": -7.0
   },
   {
    "par": "BNBUSDT",
    "dir": "bajista",
    "n": 9,
-   "acierto": 33.3,
-   "fb": 6.208,
-   "esp": 3.472,
-   "dd": -6.0
+   "acierto": 11.1,
+   "fb": 1.351,
+   "esp": 0.312,
+   "dd": -8.0
   },
   {
    "par": "XRPUSDT",
    "dir": "bajista",
    "n": 13,
    "acierto": 7.7,
-   "fb": 1.304,
-   "esp": 0.28,
-   "dd": -7.0
+   "fb": 1.206,
+   "esp": 0.19,
+   "dd": -10.0
   },
   {
    "par": "DOGEUSDT",
@@ -340,54 +340,54 @@
    "dir": "bajista",
    "n": 9,
    "acierto": 33.3,
-   "fb": 3.809,
-   "esp": 1.872,
-   "dd": -4.0
+   "fb": 2.958,
+   "esp": 1.305,
+   "dd": -3.0
   },
   {
    "par": "LTCUSDT",
    "dir": "bajista",
    "n": 6,
    "acierto": 16.7,
-   "fb": 3.451,
-   "esp": 2.043,
+   "fb": 3.328,
+   "esp": 1.94,
    "dd": -5.0
   },
   {
    "par": "NEARUSDT",
    "dir": "bajista",
    "n": 18,
-   "acierto": 44.4,
-   "fb": 5.167,
-   "esp": 2.315,
-   "dd": -5.0
+   "acierto": 11.1,
+   "fb": 0.747,
+   "esp": -0.225,
+   "dd": -10.0
   },
   {
    "par": "UNIUSDT",
    "dir": "bajista",
    "n": 42,
-   "acierto": 14.3,
-   "fb": 1.181,
-   "esp": 0.155,
-   "dd": -19.0
+   "acierto": 4.8,
+   "fb": 0.334,
+   "esp": -0.634,
+   "dd": -37.0
   },
   {
    "par": "AAVEUSDT",
    "dir": "bajista",
    "n": 19,
-   "acierto": 15.8,
-   "fb": 2.914,
-   "esp": 1.612,
-   "dd": -16.0
+   "acierto": 10.5,
+   "fb": 1.74,
+   "esp": 0.662,
+   "dd": -12.0
   },
   {
    "par": "APTUSDT",
    "dir": "bajista",
    "n": 11,
-   "acierto": 72.7,
-   "fb": 0.234,
-   "esp": -0.209,
-   "dd": -2.39
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.114,
+   "dd": -12.25
   },
   {
    "par": "ARBUSDT",
@@ -402,10 +402,10 @@
    "par": "OPUSDT",
    "dir": "bajista",
    "n": 9,
-   "acierto": 66.7,
-   "fb": 1.444,
-   "esp": 0.148,
-   "dd": -1.56
+   "acierto": 11.1,
+   "fb": 0.053,
+   "esp": -0.674,
+   "dd": -6.06
   },
   {
    "par": "FILUSDT",
@@ -413,71 +413,71 @@
    "n": 5,
    "acierto": 0.0,
    "fb": 0.0,
-   "esp": -0.4,
-   "dd": -2.0
+   "esp": -1.295,
+   "dd": -6.47
   },
   {
    "par": "HBARUSDT",
    "dir": "bajista",
    "n": 18,
    "acierto": 11.1,
-   "fb": 1.659,
-   "esp": 0.585,
-   "dd": -14.0
+   "fb": 1.495,
+   "esp": 0.44,
+   "dd": -12.0
   },
   {
    "par": "INJUSDT",
    "dir": "bajista",
    "n": 26,
    "acierto": 7.7,
-   "fb": 0.641,
-   "esp": -0.331,
-   "dd": -21.0
+   "fb": 0.58,
+   "esp": -0.388,
+   "dd": -17.0
   },
   {
    "par": "STXUSDT",
    "dir": "bajista",
    "n": 27,
-   "acierto": 22.2,
-   "fb": 3.061,
-   "esp": 1.603,
-   "dd": -16.0
+   "acierto": 11.1,
+   "fb": 0.87,
+   "esp": -0.115,
+   "dd": -14.0
   },
   {
    "par": "THETAUSDT",
    "dir": "bajista",
    "n": 6,
    "acierto": 16.7,
-   "fb": 4.545,
-   "esp": 2.955,
+   "fb": 4.197,
+   "esp": 2.664,
    "dd": -5.0
   },
   {
    "par": "ALGOUSDT",
    "dir": "bajista",
-   "n": 23,
-   "acierto": 8.7,
-   "fb": 1.587,
-   "esp": 0.536,
-   "dd": -13.0
+   "n": 24,
+   "acierto": 4.2,
+   "fb": 0.669,
+   "esp": -0.317,
+   "dd": -19.0
   },
   {
    "par": "FTMUSDT",
    "dir": "bajista",
    "n": 43,
-   "acierto": 23.3,
-   "fb": 2.061,
-   "esp": 0.814,
-   "dd": -12.0
+   "acierto": 18.6,
+   "fb": 1.205,
+   "esp": 0.167,
+   "dd": -18.0
   },
   {
    "par": "TONUSDT",
    "dir": "bajista",
    "n": 35,
-   "acierto": 8.6,
-   "fb": 0.764,
-   "esp": -0.215,
-   "dd": -32.0
+   "acierto": 5.7,
+   "fb": 0.41,
+   "esp": -0.556,
+   "dd": -25.0
   },
   {
    "par": "NEOUSDT",
@@ -492,19 +492,19 @@
    "par": "ONDOUSDT",
    "dir": "bajista",
    "n": 16,
-   "acierto": 6.2,
-   "fb": 0.97,
-   "esp": -0.028,
-   "dd": -13.0
+   "acierto": 0.0,
+   "fb": 0.0,
+   "esp": -1.0,
+   "dd": -16.0
   },
   {
    "par": "RUNEUSDT",
    "dir": "bajista",
    "n": 25,
-   "acierto": 16.0,
-   "fb": 1.827,
-   "esp": 0.694,
-   "dd": -10.0
+   "acierto": 8.0,
+   "fb": 0.489,
+   "esp": -0.47,
+   "dd": -13.0
   }
  ]
 }
