@@ -37,20 +37,17 @@ font-variant-numeric:tabular-nums}
 
 
 def _veredicto(txt: str) -> tuple[str, bool]:
-    """Saca el veredicto del markdown."""
-    m = re.search(r'VEREDICTO[^#\n]*', txt, re.I)
-    if not m:
-        return '', False
-    seg = m.group(0).upper()
-    if 'NO EXISTE' in seg or 'NO HAY' in segment(seg):
-        return 'NO EXISTE', False
-    if 'EXISTE' in seg:
-        return 'EXISTE', True
+    """Saca el veredicto del markdown: busca lineas que arranquen con VEREDICTO."""
+    for linea in txt.splitlines():
+        l = linea.strip().strip('*').strip()
+        if not l.upper().startswith('VEREDICTO'):
+            continue
+        seg = l.upper()
+        if 'NO EXISTE' in seg or 'NO HAY' in seg or 'INCONCLUSO' in seg:
+            return 'NO EXISTE', False
+        if 'EXISTE' in seg:
+            return 'EXISTE', True
     return '', False
-
-
-def segment(s: str) -> str:
-    return s.upper()
 
 
 def _filas(txt: str, limite: int = 8) -> list[list[str]]:
