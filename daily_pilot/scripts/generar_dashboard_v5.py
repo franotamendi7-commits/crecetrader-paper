@@ -557,8 +557,7 @@ def main() -> int:
   {panel_paper()}
 </div>
 
-<div class="grid g2" style="margin-top:12px">
-  {panel_video(info)}
+<div class="grid" style="margin-top:12px">
   <div class="card"><h3>QUE ES ESTO</h3>
     <div class="nota" style="font-size:12px;line-height:1.6">
     · Los precios y las velas son <b>reales</b> (Binance, solo lectura).<br>
