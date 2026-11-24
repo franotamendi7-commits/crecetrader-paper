@@ -107,7 +107,9 @@ def lectura_agente(info: dict, niveles: list) -> dict:
 
 
 # ------------------------------------------------------------------ HTML
-CSS = '''
+from panel_resultados import CSS_EXTRA, html as html_resultados
+
+CSS = CSS_EXTRA + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
@@ -273,6 +275,7 @@ def main() -> int:
   </div>
 </section>
 
+{html_resultados()}
 <footer>
   · Los precios son <b>reales</b> (Binance, solo lectura), caché de 5 minutos — no es un feed en vivo.<br>
   · El reparto Alcista/Bajista/Lateral se calcula de los <b>niveles dichos en el video</b>: es una lectura del texto, no una predicción.<br>
