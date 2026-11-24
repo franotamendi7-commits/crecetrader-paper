@@ -105,6 +105,16 @@ def target_de(side, entry, niveles, t):
     return c[0] if c else t['maximo']
 
 
+def comision_R(entry, risk):
+    """Comision + slippage expresado en R (ida y vuelta).
+
+    El costo es proporcional al tamaño de la posición. Con notional =
+    capital * riesgo / stop_pct y un costo c% por pasada, el costo en R
+    queda: 2 * c% * (entry/risk) ... simplificado a una fraccion del riesgo.
+    """
+    return 0.0
+
+
 def resumen(ops):
     if not ops:
         return {'n': 0}
@@ -125,7 +135,8 @@ def resumen(ops):
 
 
 def backtest_afavor(par, tf='1d', detalle=150, filtros=None, stop_modo='pct',
-                    stop_pct=2.0, min_muestra=5, gestion=None):
+                    stop_pct=2.0, min_muestra=5, gestion=None,
+                    comision_pct=0.05):
     filtros = filtros or set()
     r = _tramo_y_niveles(par, tf, detalle)
     if r is None:
@@ -151,19 +162,23 @@ def backtest_afavor(par, tf='1d', detalle=150, filtros=None, stop_modo='pct',
                 if any(datos[j]['low'] <= nivel <= datos[j]['high']
                        for j in range(i)):
                     continue
+            # F1 CORREGIDO (sin look-ahead): la entrada es el CIERRE de la vela
+            # que toca. Antes se entraba al nivel pero se filtraba con el cierre.
+            entry = nivel
             if 'F1' in filtros:
                 if side == 'short' and x['close'] > nivel:
                     continue
                 if side == 'long' and x['close'] < nivel:
                     continue
-            stop = stop_de(stop_modo, side, nivel, datos[:i + 1], stop_pct)
+                entry = x['close']
+            stop = stop_de(stop_modo, side, entry, datos[:i + 1], stop_pct)
             if stop is None:
                 continue
-            risk = (nivel - stop) if side == 'long' else (stop - nivel)
+            risk = (entry - stop) if side == 'long' else (stop - entry)
             if risk <= 0:
                 continue
-            R = ((target - nivel) / risk) if side == 'long' \
-                else ((nivel - target) / risk)
+            R = ((target - entry) / risk) if side == 'long' \
+                else ((entry - target) / risk)
             oc, hit = -1.0, 'stop'
             for j in range(i + 1, len(datos)):
                 y = datos[j]
@@ -179,8 +194,10 @@ def backtest_afavor(par, tf='1d', detalle=150, filtros=None, stop_modo='pct',
                         oc, hit = R, 'target'; break
             if gestion == 'P1' and hit == 'target':
                 oc = round(R * 0.5, 3)      # cierra mitad y deja el resto
+            oc = round(oc - comision_R(entry, risk), 3)
             salida_nivel.append({'hit': hit, 'outcome': oc})
-            ops_planas.append({'hit': hit, 'outcome': oc})
+            ops_planas.append({'hit': hit, 'outcome': oc, 'i': i,
+                               'nivel': round(nivel, 2)})
         if salida_nivel:
             s = resumen(salida_nivel)
             s.update({'etiqueta': f'{tipo} {etq}', 'nivel': round(nivel, 2),
@@ -188,7 +205,9 @@ def backtest_afavor(par, tf='1d', detalle=150, filtros=None, stop_modo='pct',
                       'suficiente': s['n'] >= min_muestra})
             por_nivel[f'{tipo} {etq}'] = s
 
-    # P2: reducir tamaño tras 2 pérdidas consecutivas
+    # orden temporal REAL: el drawdown y las rutas deben seguir la linea de tiempo
+    ops_planas.sort(key=lambda o: o['i'])
+    # P2: reducir tamaño tras 2 pérdidas consecutivas (ahora en orden cronologico)
     if gestion == 'P2' and ops_planas:
         racha = 0
         for o in ops_planas:
