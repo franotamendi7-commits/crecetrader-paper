@@ -1,0 +1,278 @@
+{
+  "video_id": "hb9YEJMgjAU",
+  "precio_referencia": 61247.0,
+  "precio_referencia_menciones": 24,
+  "n_cues_con_precio": 114,
+  "niveles_dichos": [
+    {
+      "precio": 61247.0,
+      "menciones": 24,
+      "pistas": [
+        "retroceso"
+      ],
+      "cita": "nuevas compras, lo han llevado a los 61,247."
+    },
+    {
+      "precio": 56750.0,
+      "menciones": 18,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "Bitcoin había llegado a un precio como los 56,750,"
+    },
+    {
+      "precio": 69000.0,
+      "menciones": 12,
+      "pistas": [
+        "retroceso"
+      ],
+      "cita": "compras aquí y lo elevan hacia los 69,000, ¿cómo actuarías? Entonces, para"
+    },
+    {
+      "precio": 53994.0,
+      "menciones": 9,
+      "pistas": [],
+      "cita": "abrir su gráfico porque en este caso no ha llegado a los 53,994,"
+    },
+    {
+      "precio": 59793.0,
+      "menciones": 9,
+      "pistas": [],
+      "cita": "las que si entran las compras, 58,851, 59,793,"
+    },
+    {
+      "precio": 59950.0,
+      "menciones": 9,
+      "pistas": [],
+      "cita": "diferencia de $2. Bueno, y por la parte de abajo ya estamos viendo hasta 59,950,"
+    },
+    {
+      "precio": 58851.0,
+      "menciones": 3,
+      "pistas": [
+        "oferta"
+      ],
+      "cita": "ver que aparezcan precios de compra en las que si entran las compras, 58,851,"
+    },
+    {
+      "precio": 60735.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "59,793, 60,735,"
+    },
+    {
+      "precio": 66860.0,
+      "menciones": 3,
+      "pistas": [
+        "extension"
+      ],
+      "cita": "objetivos? Pues mira, primero cae en los 66,860,"
+    },
+    {
+      "precio": 69216.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "66,860, el segundo cae ya en los 69,000 69,216,"
+    },
+    {
+      "precio": 73928.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "el segundo cae ya en los 69,000 69,216, el tercero ya cae alejado en los 73,928,"
+    },
+    {
+      "precio": 65000.0,
+      "menciones": 3,
+      "pistas": [
+        "oferta",
+        "retroceso"
+      ],
+      "cita": "a mínimo de 13 14 meses. Bitcoin pues por debajo de los 65,000. Strategi dice"
+    },
+    {
+      "precio": 15529.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "contrario, máximos y mínimos decrecientes, faltó para los 15,529,"
+    },
+    {
+      "precio": 6902.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "en ese precio del oro. Entonces, en los índices SP500 tocó los 6,902, precio de"
+    },
+    {
+      "precio": 25400.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "escaso. Vamos a ver cómo se comporta los 25,400, pero caída hacia la zona de los"
+    },
+    {
+      "precio": 22000.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "25,400, pero caída hacia la zona de los 22,000, 22,241,"
+    },
+    {
+      "precio": 22241.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "25,400, pero caída hacia la zona de los 22,000, 22,241,"
+    },
+    {
+      "precio": 61173.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "volatilidad mayor del promedio habitual, con el eje central en los 61,173,"
+    },
+    {
+      "precio": 61171.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "con el eje central en los 61,173, ayer estaba en 61,171. Para que veas la"
+    },
+    {
+      "precio": 5950.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "este es un precio clave junto con el que vimos en 4 horas y una hora, 5,950"
+    },
+    {
+      "precio": 62396.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "y por la parte de arriba está los 62,396."
+    },
+    {
+      "precio": 62620.0,
+      "menciones": 3,
+      "pistas": [],
+      "cita": "a llegar aquí y que pase lo mismo. Otra cosa es, por ejemplo, los 62,620,"
+    }
+  ],
+  "tramo_real": {
+    "minimo": 55130.0,
+    "maximo": 87395.67,
+    "par": "BTCUSDT",
+    "tf": "1d",
+    "fuente": "binance"
+  },
+  "calculados": {
+    "abanico_intradia": {
+      "punto_cero": 61247.0,
+      "niveles": [
+        60009.0,
+        60318.0,
+        60629.0,
+        60865.0,
+        61011.0,
+        61247.0,
+        61483.0,
+        61629.0,
+        61865.0,
+        62176.0,
+        62485.0
+      ],
+      "unidad": "puntos fijos (1000 por unidad), no porcentaje"
+    },
+    "fibo_por_plazo": {
+      "largo": {
+        "tf": "semanal",
+        "marco": "semanal",
+        "direccion": "alcista",
+        "minimo": 55130.0,
+        "maximo": 87395.67,
+        "zonas_compra": {
+          "0.382": 67455.49,
+          "0.5": 71262.83,
+          "0.61": 74812.06,
+          "0.786": 80490.82
+        },
+        "extensiones": {
+          "0.5": 71262.83,
+          "1": 87395.67,
+          "1.25": 95462.09,
+          "1.5": 103528.51,
+          "1.75": 111594.92,
+          "2": 119661.34,
+          "3": 151927.01
+        },
+        "tipo": "nivel_calculado",
+        "no_es": [
+          "soporte",
+          "resistencia",
+          "order_block",
+          "FVG"
+        ],
+        "paper_only": true
+      },
+      "media": {
+        "tf": "diario",
+        "marco": "diario",
+        "direccion": "alcista",
+        "minimo": 55130.0,
+        "maximo": 87395.67,
+        "zonas_compra": {
+          "0.382": 67455.49,
+          "0.5": 71262.83,
+          "0.61": 74812.06,
+          "0.786": 80490.82
+        },
+        "extensiones": {
+          "0.5": 71262.83,
+          "1": 87395.67,
+          "1.25": 95462.09,
+          "1.5": 103528.51,
+          "1.75": 111594.92,
+          "2": 119661.34,
+          "3": 151927.01
+        },
+        "tipo": "nivel_calculado",
+        "no_es": [
+          "soporte",
+          "resistencia",
+          "order_block",
+          "FVG"
+        ],
+        "paper_only": true
+      },
+      "corto": {
+        "tf": "4H",
+        "marco": "4H",
+        "direccion": "alcista",
+        "minimo": 55130.0,
+        "maximo": 87395.67,
+        "zonas_compra": {
+          "0.382": 67455.49,
+          "0.5": 71262.83,
+          "0.61": 74812.06,
+          "0.786": 80490.82
+        },
+        "extensiones": {
+          "0.5": 71262.83,
+          "1": 87395.67,
+          "1.25": 95462.09,
+          "1.5": 103528.51,
+          "1.75": 111594.92,
+          "2": 119661.34,
+          "3": 151927.01
+        },
+        "tipo": "nivel_calculado",
+        "no_es": [
+          "soporte",
+          "resistencia",
+          "order_block",
+          "FVG"
+        ],
+        "paper_only": true
+      }
+    },
+    "fuente": "calculado (C05), no dicho por el canal",
+    "tramo": {
+      "minimo": 55130.0,
+      "maximo": 87395.67
+    }
+  },
+  "paper_only": true,
+  "nota": "Los niveles_dichos salen del audio (fuentes). Los calculados salen de C05 (no los dice el canal)."
+}

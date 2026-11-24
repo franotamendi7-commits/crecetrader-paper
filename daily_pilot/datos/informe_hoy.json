@@ -1,56 +1,56 @@
 {
-  "video_id": "u3T3rj62WXE",
-  "titulo": "Bitcoin frena en 56.750: ¿principio de una nueva subida?",
-  "publicado": "2026-11-23T09:56:22+00:00",
+  "video_id": "hb9YEJMgjAU",
+  "titulo": "Bitcoin rebota en los 56.750: ¿compras de verdad o trampa?",
+  "publicado": "2026-11-24T10:16:06+00:00",
   "fuente": "registro",
   "papel_only": true,
   "niveles_top": [
     {
-      "precio": 56750,
-      "menciones": 21
+      "precio": 61247,
+      "menciones": 24
     },
     {
-      "precio": 61247,
-      "menciones": 15
+      "precio": 56750,
+      "menciones": 18
     },
     {
       "precio": 69000,
+      "menciones": 12
+    },
+    {
+      "precio": 53994,
       "menciones": 9
     },
     {
-      "precio": 51585,
-      "menciones": 6
+      "precio": 59793,
+      "menciones": 9
     },
     {
-      "precio": 61404,
-      "menciones": 6
+      "precio": 59950,
+      "menciones": 9
     },
     {
-      "precio": 61549,
-      "menciones": 6
-    },
-    {
-      "precio": 61782,
-      "menciones": 6
-    },
-    {
-      "precio": 1500,
+      "precio": 58851,
       "menciones": 3
     },
     {
-      "precio": 71500,
+      "precio": 60735,
       "menciones": 3
     },
     {
-      "precio": 30000,
+      "precio": 66860,
       "menciones": 3
     },
     {
-      "precio": 69590,
+      "precio": 69216,
       "menciones": 3
     },
     {
-      "precio": 56000,
+      "precio": 73928,
+      "menciones": 3
+    },
+    {
+      "precio": 65000,
       "menciones": 3
     }
   ],
@@ -58,31 +58,31 @@
     "resumen": "LO QUE DICE EL CANAL (transcripcion). El metodo C01-C12 lo aplica el trader; este panel no ejecuta el motor.",
     "estado": "PAPER_ONLY"
   },
-  "precio_referencia": 56750.0,
-  "precio_procedencia": "dicho en u3T3rj62WXE",
+  "precio_referencia": 61247.0,
+  "precio_procedencia": "dicho en hb9YEJMgjAU",
   "instrumentos": [
     "BTC",
-    "NQ",
     "ETH",
+    "NQ",
     "XAUUSD"
   ],
   "temporalidades": [
+    "Daily",
     "Weekly",
     "4H",
-    "Intradia",
-    "Daily"
+    "Intradia"
   ],
   "mercado": {
     "VIDEO": {
       "niveles_originales": [
-        56750,
         61247,
+        56750,
         69000,
-        51585,
-        61404,
-        61549,
-        61782,
-        1500
+        53994,
+        59793,
+        59950,
+        58851,
+        60735
       ],
       "nota": "niveles dichos en el video (no discriminados por instrumento)"
     }
@@ -90,40 +90,40 @@
   "escenarios": [
     {
       "escenario": {
-        "id": "ESC-u3T3rj62WXE-0",
-        "instrumento": "BTC",
-        "direccion": null,
-        "nivel": {
-          "valor": 56750
-        },
-        "justificacion": "Bitcoin ha desarrollado al final en los 56.750",
-        "timestamp_explicacion": ""
-      }
-    },
-    {
-      "escenario": {
-        "id": "ESC-u3T3rj62WXE-1",
+        "id": "ESC-hb9YEJMgjAU-0",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
           "valor": 61247
         },
-        "justificacion": "apoyado el comienzo de la jornada en los 61.247.",
+        "justificacion": "nuevas compras, lo han llevado a los 61,247.",
         "timestamp_explicacion": ""
       }
     },
     {
       "escenario": {
-        "id": "ESC-u3T3rj62WXE-2",
+        "id": "ESC-hb9YEJMgjAU-1",
+        "instrumento": "BTC",
+        "direccion": null,
+        "nivel": {
+          "valor": 56750
+        },
+        "justificacion": "Bitcoin había llegado a un precio como los 56,750,",
+        "timestamp_explicacion": ""
+      }
+    },
+    {
+      "escenario": {
+        "id": "ESC-hb9YEJMgjAU-2",
         "instrumento": "BTC",
         "direccion": null,
         "nivel": {
           "valor": 69000
         },
-        "justificacion": "esta semana y para lo que acaba de mes, 69.000 y 71.500 nueve. Por abajo hay",
+        "justificacion": "compras aquí y lo elevan hacia los 69,000, ¿cómo actuarías? Entonces, para",
         "timestamp_explicacion": ""
       }
     }
   ],
-  "fuente_unica": "u3T3rj62WXE"
+  "fuente_unica": "hb9YEJMgjAU"
 }

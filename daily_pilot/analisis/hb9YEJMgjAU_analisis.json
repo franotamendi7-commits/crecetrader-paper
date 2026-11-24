@@ -1,0 +1,463 @@
+{
+  "video_id": "hb9YEJMgjAU",
+  "analizado_at": "2026-11-24T14:01:09Z",
+  "metodo": "extraccion textual asistida sobre la transcripcion (sin vision)",
+  "n_cues": 979,
+  "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4",
+  "transcript_path": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/hb9YEJMgjAU/hb9YEJMgjAU_transcript.json",
+  "instrumentos": {
+    "BTC": 45,
+    "ETH": 6,
+    "NQ": 9,
+    "XAUUSD": 15
+  },
+  "temporalidades": {
+    "Daily": 23,
+    "Weekly": 6,
+    "4H": 18,
+    "Intradia": 11
+  },
+  "conceptos": {
+    "liquidez": {
+      "menciones": 3,
+      "primeros": [
+        "00:08",
+        "00:08",
+        "00:08"
+      ]
+    },
+    "fomo": {
+      "menciones": 3,
+      "primeros": [
+        "00:16",
+        "00:16",
+        "00:16"
+      ]
+    },
+    "holders": {
+      "menciones": 6,
+      "primeros": [
+        "00:11",
+        "00:11",
+        "00:11",
+        "00:18",
+        "00:18",
+        "00:18"
+      ]
+    },
+    "estructura": {
+      "menciones": 7,
+      "primeros": [
+        "00:04",
+        "00:14",
+        "00:14",
+        "00:14",
+        "00:19",
+        "00:19"
+      ]
+    },
+    "tendencia": {
+      "menciones": 3,
+      "primeros": [
+        "00:15",
+        "00:15",
+        "00:15"
+      ]
+    },
+    "objetivo": {
+      "menciones": 3,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03"
+      ]
+    },
+    "entrada": {
+      "menciones": 17,
+      "primeros": [
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:03",
+        "00:16"
+      ]
+    },
+    "volumen": {
+      "menciones": 3,
+      "primeros": [
+        "00:13",
+        "00:13",
+        "00:13"
+      ]
+    }
+  },
+  "niveles_explicitos_top": [
+    {
+      "valor": "61247",
+      "menciones": 24,
+      "ejemplos": [
+        {
+          "minuto": "00:01",
+          "contexto": "nuevas compras, lo han llevado a los 61,247."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "61,247."
+        },
+        {
+          "minuto": "00:01",
+          "contexto": "61,247. Y si ahora miramos el gráfico en la"
+        }
+      ]
+    },
+    {
+      "valor": "56750",
+      "menciones": 18,
+      "ejemplos": [
+        {
+          "minuto": "00:00",
+          "contexto": "Bitcoin había llegado a un precio como los 56,750,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "los 56,750,"
+        },
+        {
+          "minuto": "00:00",
+          "contexto": "los 56,750, que es un precio objetivo de largo"
+        }
+      ]
+    },
+    {
+      "valor": "69000",
+      "menciones": 12,
+      "ejemplos": [
+        {
+          "minuto": "00:06",
+          "contexto": "compras aquí y lo elevan hacia los 69,000, ¿cómo actuarías? Entonces, para"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "69,000, ¿cómo actuarías? Entonces, para"
+        },
+        {
+          "minuto": "00:06",
+          "contexto": "69,000, ¿cómo actuarías? Entonces, para esto lo que voy a hacer es ayudarme."
+        }
+      ]
+    },
+    {
+      "valor": "53994",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:05",
+          "contexto": "abrir su gráfico porque en este caso no ha llegado a los 53,994,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "ha llegado a los 53,994,"
+        },
+        {
+          "minuto": "00:05",
+          "contexto": "ha llegado a los 53,994, que vendría siendo el homólogo de los"
+        }
+      ]
+    },
+    {
+      "valor": "59793",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "las que si entran las compras, 58,851, 59,793,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "59,793,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "59,793, 60,735,"
+        }
+      ]
+    },
+    {
+      "valor": "59950",
+      "menciones": 9,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "diferencia de $2. Bueno, y por la parte de abajo ya estamos viendo hasta 59,950,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "de abajo ya estamos viendo hasta 59,950,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "de abajo ya estamos viendo hasta 59,950, que es el último cálculo. Entonces, otro"
+        }
+      ]
+    },
+    {
+      "valor": "58851",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "ver que aparezcan precios de compra en las que si entran las compras, 58,851,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "las que si entran las compras, 58,851,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "las que si entran las compras, 58,851, 59,793,"
+        }
+      ]
+    },
+    {
+      "valor": "60735",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "59,793, 60,735,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "60,735,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "60,735, etcétera. ¿Vale? Es decir, si el precio"
+        }
+      ]
+    },
+    {
+      "valor": "66860",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "objetivos? Pues mira, primero cae en los 66,860,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "66,860,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "66,860, el segundo cae ya en los 69,000 69,216,"
+        }
+      ]
+    },
+    {
+      "valor": "69216",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "66,860, el segundo cae ya en los 69,000 69,216,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "el segundo cae ya en los 69,000 69,216,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "el segundo cae ya en los 69,000 69,216, el tercero ya cae alejado en los 73,928,"
+        }
+      ]
+    },
+    {
+      "valor": "73928",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:09",
+          "contexto": "el segundo cae ya en los 69,000 69,216, el tercero ya cae alejado en los 73,928,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "el tercero ya cae alejado en los 73,928,"
+        },
+        {
+          "minuto": "00:09",
+          "contexto": "el tercero ya cae alejado en los 73,928, bro. Entonces, como esto es algo"
+        }
+      ]
+    },
+    {
+      "valor": "65000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:12",
+          "contexto": "a mínimo de 13 14 meses. Bitcoin pues por debajo de los 65,000. Strategi dice"
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "por debajo de los 65,000. Strategi dice"
+        },
+        {
+          "minuto": "00:12",
+          "contexto": "por debajo de los 65,000. Strategi dice que compra en ese retroceso y Antropic"
+        }
+      ]
+    },
+    {
+      "valor": "15529",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:14",
+          "contexto": "contrario, máximos y mínimos decrecientes, faltó para los 15,529,"
+        },
+        {
+          "minuto": "00:14",
+          "contexto": "decrecientes, faltó para los 15,529,"
+        },
+        {
+          "minuto": "00:14",
+          "contexto": "decrecientes, faltó para los 15,529, igual que Bitcoin todavía tiene con"
+        }
+      ]
+    },
+    {
+      "valor": "6902",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:15",
+          "contexto": "en ese precio del oro. Entonces, en los índices SP500 tocó los 6,902, precio de"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "índices SP500 tocó los 6,902, precio de"
+        },
+        {
+          "minuto": "00:15",
+          "contexto": "índices SP500 tocó los 6,902, precio de apertura de este año. Ya tiene"
+        }
+      ]
+    },
+    {
+      "valor": "25400",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:16",
+          "contexto": "escaso. Vamos a ver cómo se comporta los 25,400, pero caída hacia la zona de los"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "25,400, pero caída hacia la zona de los"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "25,400, pero caída hacia la zona de los 22,000, 22,241,"
+        }
+      ]
+    },
+    {
+      "valor": "22000",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:16",
+          "contexto": "25,400, pero caída hacia la zona de los 22,000, 22,241,"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "22,000, 22,241,"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "22,000, 22,241, 931."
+        }
+      ]
+    },
+    {
+      "valor": "22241",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:16",
+          "contexto": "25,400, pero caída hacia la zona de los 22,000, 22,241,"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "22,000, 22,241,"
+        },
+        {
+          "minuto": "00:16",
+          "contexto": "22,000, 22,241, 931."
+        }
+      ]
+    },
+    {
+      "valor": "61173",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "volatilidad mayor del promedio habitual, con el eje central en los 61,173,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "con el eje central en los 61,173,"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "con el eje central en los 61,173, ayer estaba en 61,171. Para que veas la"
+        }
+      ]
+    },
+    {
+      "valor": "61171",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "con el eje central en los 61,173, ayer estaba en 61,171. Para que veas la"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "ayer estaba en 61,171. Para que veas la"
+        },
+        {
+          "minuto": "00:17",
+          "contexto": "ayer estaba en 61,171. Para que veas la diferencia entre el día de ayer y el de"
+        }
+      ]
+    },
+    {
+      "valor": "5950",
+      "menciones": 3,
+      "ejemplos": [
+        {
+          "minuto": "00:17",
+          "contexto": "este es un precio clave junto con el que vimos en 4 horas y una hora, 5,950"
+        },
+        {
+          "minuto": "00:18",
+          "contexto": "vimos en 4 horas y una hora, 5,950"
+        },
+        {
+          "minuto": "00:18",
+          "contexto": "vimos en 4 horas y una hora, 5,950 y por la parte de arriba está los"
+        }
+      ]
+    }
+  ],
+  "procedencia_niveles": "A (dicho por CreceTrader segun la transcripcion)",
+  "limitaciones": [
+    "Analisis TEXTUAL: sin verificacion visual de graficos (vision no autorizada).",
+    "Los numeros provienen de la transcripcion; no contrastados con feed.",
+    "No se infirieron niveles: solo se transcribio lo dicho."
+  ]
+}

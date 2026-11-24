@@ -1122,6 +1122,16 @@
       "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/u3T3rj62WXE/u3T3rj62WXE_transcript.json",
       "estado": "transcrito",
       "fuente": "importacion_retroactiva"
+    },
+    "hb9YEJMgjAU": {
+      "video_id": "hb9YEJMgjAU",
+      "title": "Bitcoin rebota en los 56.750: ¿compras de verdad o trampa?",
+      "published": "2026-11-24T10:16:06+00:00",
+      "url": "https://www.youtube.com/watch?v=hb9YEJMgjAU",
+      "detectado": "2026-11-24T13:59:17.078745+00:00",
+      "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/hb9YEJMgjAU/hb9YEJMgjAU_transcript.json",
+      "estado": "transcrito",
+      "fuente": "importacion_retroactiva"
     }
   }
 }
