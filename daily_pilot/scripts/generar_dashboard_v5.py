@@ -157,6 +157,8 @@ h1{font-size:19px;margin:0}
 .pill-only{color:var(--ok);border:1px solid var(--ok);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600}
 .feed{color:var(--muted);font-size:11px;margin-top:3px}
 .grid{display:grid;gap:12px}
+.sep-seccion{margin-top:22px;padding:8px 0;border-bottom:2px solid var(--bd);
+  font-size:12px;font-weight:700;letter-spacing:.6px;color:var(--acc);text-transform:uppercase}
 .g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
 .g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:13px}
@@ -513,7 +515,21 @@ def main() -> int:
   <div class="pill-only">● PAPER ONLY</div>
 </header>
 
-<div class="grid g2">
+<div class="sep-seccion">CRECETRADER · REPORTE DEL DIA</div>
+<div class="grid" style="margin-top:12px">
+  {panel_video(info)}
+</div>
+
+<div class="grid" style="margin-top:12px">
+  {panel_estrategia(info, niveles)}
+</div>
+
+<div class="grid" style="margin-top:12px">
+  {panel_concordancia(conc)}
+</div>
+
+<div class="sep-seccion">MERCADO QUANTFURY · 33 PARES</div>
+<div class="grid g2" style="margin-top:12px">
   {panel_mercado(mer)}
   {panel_risk()}
 </div>
@@ -526,6 +542,11 @@ def main() -> int:
   {panel_ciclo(ciclos)}
 </div>
 
+<div class="grid" style="margin-top:12px">
+  {panel_escenarios(esc_datos)}
+</div>
+
+<div class="sep-seccion">ESTRATEGIA Y ANALISIS</div>
 <div class="grid g2" style="margin-top:12px">
   {panel_alertas()}
   {panel_backtest('BTCUSDT')}
@@ -534,18 +555,6 @@ def main() -> int:
 <div class="grid g2" style="margin-top:12px">
   {panel_ticket('BTCUSDT', '4h')}
   {panel_paper()}
-</div>
-
-<div class="grid" style="margin-top:12px">
-  {panel_escenarios(esc_datos)}
-</div>
-
-<div class="grid" style="margin-top:12px">
-  {panel_estrategia(info, niveles)}
-</div>
-
-<div class="grid" style="margin-top:12px">
-  {panel_concordancia(conc)}
 </div>
 
 <div class="grid g2" style="margin-top:12px">
