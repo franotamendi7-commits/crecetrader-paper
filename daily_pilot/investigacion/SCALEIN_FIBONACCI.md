@@ -101,6 +101,23 @@ Total 9 ops, 8/9 wins, **+$87,76 (+1,54%)**, DD −$78,81.
 
 El scale-in gana justo en los meses malos de la cartera.
 
+## Riesgo: por qué 2% y no 1% ni 5%
+
+Inicialmente bajé a 1% porque el DD era −10% del capital. Eso era **antes**
+del filtro R≥4%. Con el filtro, el DD cae a casi cero:
+
+| riesgo | retorno BTC | DD BTC | DD cartera 5 pares |
+|---|---:|---:|---:|
+| 1% | +22,2% | −0,09% | −0,15% |
+| **2% (elegido)** | **+44,4%** | **−0,19%** | **−0,30%** |
+| 5% | +111,0% | −0,46% | −0,76% |
+
+El 5% es estadísticamente tentador pero el 96-100% de acierto es
+sospechosamente perfecto: el simulador asume fills al cierre, sin gaps ni
+slippage, y scale-in completo. Con 20x un gap del 5% puede comerse varias
+operaciones. **2% duplica el retorno con DD de −0,30%** y deja margen para
+los errores que el backtest no ve.
+
 ## Próximo paso
 
 Integrarlo al tracker con `config_version`, y correr el forward. PAPER_ONLY.

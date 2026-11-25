@@ -18,7 +18,7 @@ sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scr
 
 V = Path('/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/datos/velas')
 CAPITAL = 5680.38          # capital real de la captura de Quantfury
-RIESGO_TOTAL = 0.01        # 1% del capital por operación
+RIESGO_TOTAL = 0.02        # 2% del capital por operación (ver SCALEIN_FIBONACCI.md)
 MIN_R = 0.04               # filtro: target al menos 4% sobre el stop
 
 
