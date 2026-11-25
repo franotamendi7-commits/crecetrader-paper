@@ -266,10 +266,17 @@ def _pdetalles(mer: list, niveles: list, est: dict) -> str:
     """Vista por par: datos reales del mercado + estrategia validada cuando existe."""
     m = {x['par']: x for x in mer}
     pares_est = {p.get('par'): p for p in (est or {}).get('pares') or []}
+    estrategias = {e.get('clave'): e for e in (est or {}).get('estrategias') or []}
+    cartera = (est or {}).get('cartera') or {}
+    capital = _es_num(cartera.get('capital'), 0)
+    riesgo_pct = _es_num(cartera.get('riesgo_por_operacion_pct'), 2)
+    riesgo_usd = _es_num(cartera.get('riesgo_usd'), 2)
+    pie = (f'capital ${capital} · riesgo {riesgo_pct}% = ${riesgo_usd} · '
+           '20x · PAPER ONLY')
     bloques = []
     for par in PARES_QUANTFURY:
-        x = m.get(par) or {}
         disp = par.replace('USDT', '')
+        x = m.get(disp) or {}
         precio_s = fmt_precio(x.get('precio')) if x.get('precio') is not None else '—'
         chg_s = f'{x["cambio"]:+.2f}%' if x.get('cambio') is not None else '—'
         niv = '<div class="meta">sin niveles configurados</div>'
@@ -280,18 +287,37 @@ def _pdetalles(mer: list, niveles: list, est: dict) -> str:
                 f'<span class="men">x{n.get("menciones")} menciones</span></div>' for n in top)
         e = pares_est.get(par)
         if e:
-            label = {'VALIDADA': 'VALIDADA', 'VALIDADA CON RESERVA': 'CON RESERVA',
+            label = {'VALIDADA': 'VALIDADA', 'CON RESERVA': 'CON RESERVA',
+                     'VALIDADA CON RESERVA': 'CON RESERVA', 'DÉBIL': 'DÉBIL',
                      'DEBIL': 'DÉBIL'}.get(e.get('estado'), e.get('estado') or '—')
+            ed = estrategias.get(e.get('estrategia')) or {}
+            nombre_est = ed.get('nombre') or e.get('estrategia') or '—'
+            regla = ed.get('regla') or '—'
+            if e.get('null_p') is not None:
+                null_txt = (f'Null p {_es_num(e.get("null_p"), 3)} · '
+                            f'seeds {e.get("seeds") or "—"}')
+            else:
+                null_txt = f'Null seeds {e.get("null_seeds") or "—"}'
+            if e.get('wf_train') is not None:
+                wf_txt = (f'WF train → test {_es_num(e.get("wf_train"), 3, True)} → '
+                          f'{_es_num(e.get("wf_test"), 3, True)}')
+            else:
+                wf_txt = f'WF test {_es_num(e.get("wf_test"), 3, True)}'
+            nota = (f'<div class="meta">{esc(e.get("nota"))}</div>'
+                    if e.get('nota') else '')
             ar = (f'<div class="kpi">'
                   f'<div><span>Estado</span><b>{esc(label)}</b></div>'
                   f'<div><span>Señales/mes</span><b>{_es_num(e.get("por_mes"), 1)}</b></div>'
-                  f'<div><span>Esperanza</span><b>{_es_num(e.get("esperanza_R"), 3, True)}R</b></div>'
+                  f'<div><span>E(R)</span><b>{_es_num(e.get("E_R"), 3, True)}R</b></div>'
                   f'<div><span>Acierto</span><b>{_es_num(e.get("acierto_pct"), 1)}%</b></div>'
                   f'<div><span>DD</span><b>{_es_num(e.get("dd_R"), 1)}R</b></div>'
                   f'<div><span>PF</span><b>{_es_num(e.get("pf"), 2)}</b></div>'
                   f'</div>'
-                  f'<div class="meta">regla: stop swing fijo · 50% en 1R → BE → target Fib 1.5</div>'
-                  f'<div class="meta">riesgo 0,35% de $300 = $1,05 por operación · apalancamiento 20x</div>')
+                  f'<div class="meta">estrategia: {esc(nombre_est)}</div>'
+                  f'<div class="meta">regla: {esc(regla)}</div>'
+                  f'<div class="meta">{esc(null_txt)}</div>'
+                  f'<div class="meta">{esc(wf_txt)}</div>'
+                  f'{nota}')
         else:
             ar = '<div class="meta">sin estrategia validada</div>'
         bloques.append(
@@ -299,7 +325,7 @@ def _pdetalles(mer: list, niveles: list, est: dict) -> str:
             f'<div class="res">'
             f'<div class="shead"><h2>{esc(par)}</h2><span class="n">{esc(disp)}</span>'
             f'<span class="hint">detalle operativo</span></div>'
-            f'<div class="kpi>'
+            f'<div class="kpi">'
             f'<div><span>Activo</span><b>{esc(disp)}</b></div>'
             f'<div><span>Precio</span><b>{esc(precio_s)}</b></div>'
             f'<div><span>Cambio 24h</span><b>{esc(chg_s)}</b></div>'
@@ -307,7 +333,7 @@ def _pdetalles(mer: list, niveles: list, est: dict) -> str:
             f'</div>'
             f'<h3>Niveles</h3>{niv}'
             f'<h3>Estrategia validada</h3>{ar}'
-            f'<div class="meta">capital de referencia USD 300 · PAPER ONLY · apalancamiento 20x</div>'
+            f'<div class="meta">{esc(pie)}</div>'
             f'</div></section>')
     return ''.join(bloques)
 
@@ -324,7 +350,7 @@ def main() -> int:
 
     fuen = sorted({x.get('fuente', '') for x in mer if x.get('fuente')})
     cards = ''.join(mcard(x) for x in mer)
-    secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'estrategias_validadas.json'))
+    secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'cartera_mixta.json'))
 
     ev = ''.join(f'<span class="chip">{esc(e)}</span>' for e in lec['evidencia'])
     top = [n for n in sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]]

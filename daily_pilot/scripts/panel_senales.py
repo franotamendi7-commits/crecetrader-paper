@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""Panel ESTRATEGIA VALIDADA para el dashboard v6.
+"""Panel CARTERA MIXTA para el dashboard v6.
 
-Lee daily_pilot/datos/estrategias_validadas.json y muestra la cartera de
-4 pares validada con null sintetico multi-seed y walk-forward 70/30.
-PAPER_ONLY: muestra, no ejecuta.
+Lee daily_pilot/datos/cartera_mixta.json y muestra la cartera de 6 pares
+con las dos estrategias (pullback + reversion), null corregido y
+walk-forward. PAPER_ONLY: muestra, no ejecuta.
 """
 from __future__ import annotations
 
 import html as _h
 import json
+import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[2]
-EST = BASE / 'daily_pilot' / 'datos' / 'estrategias_validadas.json'
+CARTERA = BASE / 'daily_pilot' / 'datos' / 'cartera_mixta.json'
 
 CSS_EXTRA = '''
 .mon{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
@@ -57,62 +58,112 @@ def _n(x, dec=2, signo=False):
 
 _ESTADOS = {
     'VALIDADA': ('VALIDADA', 'abierta'),
+    'CON RESERVA': ('CON RESERVA', 'sin'),
     'VALIDADA CON RESERVA': ('CON RESERVA', 'sin'),
+    'DÉBIL': ('DÉBIL', 'cerrada'),
     'DEBIL': ('DÉBIL', 'cerrada'),
 }
 
+_ESTRATEGIAS = {
+    'pullback': 'Pullback',
+    'reversion': 'Reversión',
+}
+
+
+def _fmt_mejora(txt: str) -> str:
+    """Formatea la mejora del JSON: menos tipografico, coma decimal y flechas."""
+    t = str(txt or '')
+    t = re.sub(r'-(\d+(?:\.\d+)?)', lambda m: '−' + m.group(1).replace('.', ','), t)
+    t = t.replace('DD de ', 'DD bajó de ', 1)
+    t = t.replace('2018 de ', '2018: ', 1)
+    t = t.replace('2025 de ', '2025: ', 1)
+    partes = t.split('. ')
+    for i in range(1, len(partes)):
+        partes[i] = re.sub(r'(\dR) a (−?\d)', r'\1 → \2', partes[i])
+    return '. '.join(partes)
+
+
+def _vacio(msg: str = 'sin datos de la cartera mixta') -> str:
+    return ('<div class="mon"><div class="mt">CARTERA MIXTA</div>'
+            f'<div class="nota">{_e(msg)}</div></div>')
+
 
 def html() -> str:
-    if not EST.exists():
-        return ('<div class="mon"><div class="mt">Estrategia validada</div>'
-                '<div class="nota">sin datos</div></div>')
+    if not CARTERA.exists():
+        return _vacio()
     try:
-        d = json.loads(EST.read_text(encoding='utf-8'))
+        d = json.loads(CARTERA.read_text(encoding='utf-8'))
     except Exception:
-        return '<div class="mon"><div class="nota">estrategias ilegibles</div></div>'
+        return _vacio('cartera mixta ilegible')
 
-    regla = d.get('regla') or {}
     cartera = d.get('cartera') or {}
-    pares = sorted(d.get('pares') or [],
-                   key=lambda p: {'VALIDADA': 0,
-                                  'VALIDADA CON RESERVA': 1}.get(p.get('estado'), 2))
+    pares = d.get('pares') or []
+    estrategias = {e.get('clave'): e for e in d.get('estrategias') or []}
 
     filas = []
     for p in pares:
         label, cls = _ESTADOS.get(p.get('estado'), (p.get('estado') or '—', 'sin'))
+        est = _ESTRATEGIAS.get(p.get('estrategia'), p.get('estrategia') or '—')
+        if p.get('null_p') is not None:
+            null_txt = f'p {_n(p.get("null_p"), 3)} · {_e(p.get("seeds"))}'
+        else:
+            null_txt = f'{_e(p.get("null_seeds"))} seeds'
+        if p.get('wf_train') is not None:
+            wf_txt = (f'{_n(p.get("wf_train"), 3, True)} → '
+                      f'{_n(p.get("wf_test"), 3, True)}')
+        else:
+            wf_txt = _n(p.get('wf_test'), 3, True)
         filas.append(
             '<tr>'
             f'<td><b>{_e(p.get("par"))}</b></td>'
+            f'<td>{_e(est)}</td>'
             f'<td>{_n(p.get("por_mes"), 1)}</td>'
-            f'<td>{_n(p.get("esperanza_R"), 3, True)}</td>'
+            f'<td>{_n(p.get("E_R"), 3, True)}R</td>'
             f'<td>{_n(p.get("acierto_pct"), 1)}%</td>'
             f'<td>{_n(p.get("dd_R"), 1)}R</td>'
             f'<td>{_n(p.get("pf"), 2)}</td>'
-            f'<td>{_n(p.get("null_p"), 3)}</td>'
-            f'<td>{_e(p.get("null_seeds"))}</td>'
-            f'<td>{_n(p.get("wf_test"), 3, True)}</td>'
-            f'<td><span class="estado {cls}">{label}</span></td>'
+            f'<td>{null_txt}</td>'
+            f'<td>{wf_txt}</td>'
+            f'<td><span class="estado {cls}">{_e(label)}</span></td>'
             '</tr>')
 
-    octu = cartera.get('octubre_2026') or {}
+    reversion = [p for p in pares if p.get('estrategia') == 'reversion'
+                 and p.get('wf_train') is not None and p.get('wf_test') is not None]
+    nota_wf = ''
+    if reversion:
+        det = ' y '.join(
+            f'{_n(p.get("wf_train"), 3, True)} → {_n(p.get("wf_test"), 3, True)}'
+            for p in reversion)
+        nombres = ' y '.join(_e((p.get('par') or '').replace('USDT', '')) for p in reversion)
+        nota_wf = (f'<div class="nota">{nombres} · walk-forward mejora: '
+                   f'{det}.</div>')
+
+    nombre_ests = ' + '.join(_e(e.get('nombre')) for e in estrategias.values()
+                             if e.get('nombre'))
+    capital = _n(cartera.get('capital'), 0)
+    riesgo_pct = _n(cartera.get('riesgo_por_operacion_pct'), 2)
+    riesgo_usd = _n(cartera.get('riesgo_usd'), 2)
 
     return (
         '<div class="mon">'
-        f'<div class="mt">ESTRATEGIA VALIDADA · {len(pares)} PARES · '
-        f'{_n(cartera.get("por_mes"), 1)} señales/mes</div>'
-        f'<div class="head">{_e(regla.get("nombre"))} · {_e(regla.get("timeframe"))} · '
-        f'{_e(d.get("fuente"))} · actualizado {_e(d.get("generado"))}</div>'
+        f'<div class="mt">CARTERA MIXTA · {len(pares)} PARES · '
+        f'{_n(cartera.get("senales_por_mes"), 1)} señales/mes</div>'
+        f'<div class="head">{nombre_ests} · actualizado {_e(d.get("generado"))} · '
+        f'{_e(d.get("aviso"))}</div>'
         '<div class="kv">'
         f'<div><span>E</span><b>{_n(cartera.get("esperanza_R"), 3, True)}R</b></div>'
         f'<div><span>Acierto</span><b>{_n(cartera.get("acierto_pct"), 1)}%</b></div>'
         f'<div><span>PF</span><b>{_n(cartera.get("pf"), 2)}</b></div>'
         f'<div><span>DD</span><b>{_n(cartera.get("dd_R"), 1)}R</b></div>'
         '</div>'
+        f'<div class="nota">Riesgo {riesgo_pct}% de ${capital} = ${riesgo_usd} '
+        'por operación.</div>'
+        f'<div class="nota">{_e(_fmt_mejora(cartera.get("mejora")))}</div>'
         '<div style="overflow-x:auto"><table class="rtab"><tr>'
-        '<th>Par</th><th>Señales/mes</th><th>E(R)</th><th>Acierto</th><th>DD</th>'
-        '<th>PF</th><th>Null p</th><th>Seeds</th><th>WF test</th><th>Estado</th>'
+        '<th>Par</th><th>Estrategia</th><th>Señales/mes</th><th>E(R)</th>'
+        '<th>Acierto</th><th>DD</th><th>PF</th><th>Null</th><th>WF</th>'
+        '<th>Estado</th>'
         '</tr>' + ''.join(filas) + '</table></div>'
-        f'<div class="nota">Octubre: cartera {_n(octu.get("cartera_R"), 2)}R vs BTC solo '
-        f'{_n(octu.get("btc_solo_R"), 2)}R — la diversificación reduce el mes malo.</div>'
-        f'<div class="nota">{_e(d.get("aviso"))}</div>'
+        f'{nota_wf}'
+        '<div class="nota">PAPER ONLY: cartera de investigación; no ejecuta órdenes.</div>'
         '</div>')

@@ -20,6 +20,7 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parents[2]
 INF = BASE / 'daily_pilot' / 'investigacion' / 'ESTRATEGIA_GANADORA.md'
 EST = BASE / 'daily_pilot' / 'datos' / 'estrategias_validadas.json'
+CARTERA = BASE / 'daily_pilot' / 'datos' / 'cartera_mixta.json'
 
 CSS_EXTRA = '''
 .res{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
@@ -144,9 +145,26 @@ def html() -> str:
         except Exception:
             linea_est = ''
 
+    linea_null = ''
+    if CARTERA.exists():
+        try:
+            cd = json.loads(CARTERA.read_text(encoding='utf-8'))
+            arb = next((p for p in cd.get('pares') or []
+                        if p.get('par') == 'ARBUSDT'), None)
+            if (arb and arb.get('null_seeds')
+                    and arb.get('wf_train') and arb.get('wf_test') is not None):
+                wf = round((float(arb['wf_test']) / float(arb['wf_train']) - 1) * 100)
+                wf_s = f'+{wf}%' if wf >= 0 else f'{wf}%'
+                linea_null = (f'<div class="meta" style="margin-top:8px">Null por '
+                              f'permutación de signos: ARB {_esc(arb.get("null_seeds"))} '
+                              f'seeds, WF {_esc(wf_s)}</div>')
+        except Exception:
+            linea_null = ''
+
     return (f'<div class="res"><div class="verdict {"si" if gana else "no"}">{_esc(vered_real)}</div>'
             f'{cuerpo}'
             f'{linea_est}'
+            f'{linea_null}'
             f'<div class="meta" style="margin-top:12px">fuente: {_esc(INF.name)} · veredicto: {_esc(veredicto)}</div></div>')
 
 
