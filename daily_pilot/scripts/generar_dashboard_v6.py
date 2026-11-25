@@ -120,7 +120,8 @@ CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + '''
 body{margin:0;background:
 radial-gradient(1200px 500px at 80% -10%,rgba(90,162,255,.10),transparent),
 linear-gradient(180deg,#0a1018,#070a0f);color:var(--fg);
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;font-size:14px;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Inter",sans-serif;font-size:14px;
+ font-variant-numeric:tabular-nums;
 -webkit-font-smoothing:antialiased}
 .wrap{max-width:1240px;margin:0 auto;padding:26px 22px 48px}
 
@@ -198,6 +199,19 @@ border-top:1px solid var(--bd);padding-top:16px}
 margin-top:3px}
 .graf{width:100%;height:150px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:10px}
 .sin-datos{color:var(--muted);font-size:12px;padding:14px}
+.dom-a{border-left:3px solid rgba(62,207,122,.55)}
+.dom-b{border-left:3px solid rgba(224,170,74,.55)}
+@media (max-width:1024px){
+ body{padding:18px 16px 40px}
+ .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+ .leer{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+}
+@media (max-width:640px){
+ body{padding:14px 12px 32px}
+ .grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+ h1{font-size:19px}
+ .kpi{gap:14px}
+}
 '''
 
 
@@ -334,14 +348,14 @@ def main() -> int:
   <span>Tablero: {esc(tablero)}</span>
 </div>
 
-<section>
+<section class="dom-a">
   <div class="shead"><h2>Mercado Quantfury</h2><span class="n">{len(mer)} criptos operables</span><span class="hint">precio y cambio 24h</span></div>
   <div class="grid">{cards}</div>
 </section>
 
 {secciones_pdetalles}
 
-<section>
+<section class="dom-b">
   <div class="shead"><h2>Análisis CreceTrader</h2><span class="n">lo que dice el canal</span><span class="hint">lectura de niveles, no predicción</span></div>
   <div class="leer">
     {lcard('a', 'Alcista', lec['alcista'], 'var(--ok)')}
