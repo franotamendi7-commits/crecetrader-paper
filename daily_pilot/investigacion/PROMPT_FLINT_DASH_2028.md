@@ -119,6 +119,24 @@ genérico: eso se elimina o se convierte en algo con evidencia real.
 
 ---
 
+## 4B. CORRECCIONES DE FLINT — YA VERIFICADAS POR HERMES (ejecutar, no discutir)
+
+Flint propuso 6 arreglos. Hermes los contrastó contra el código real. Resultado:
+
+| # | Recomendación | Veredicto | Evidencia |
+|---|---|---|---|
+| 1 | Veredicto incompleto | **CIERTO** | HTML real: `<div class="verdict no">RESULTADO DE LA BÚSQUEDA</div>`. Causa: `_veredicto()` en `panel_resultados.py` solo detecta líneas que arrancan con `VEREDICTO`, pero el MD dice `## 6. VEREDICTO FINAL` → no matchea. Arreglar el parser para que encuentre `VEREDICTO FINAL` y muestre el resultado real: `PASA (p=0.020)` / `RUIDO`. |
+| 2 | `class="badge "` con espacio | **CIERTO** | HTML real: `class="badge "`. Causa: `badge_cls = '' if vid else 'no'` interpolado con espacio. Normalizar con `.strip()` o armar la clase condicionalmente. |
+| 3 | Tabla mezcla mantenimiento con estrategia | **CIERTO** | HTML real: una sola `<table class="rtab">` con filas `BTCUSDT 1d 3387 2017-08-17...` (mantenimiento de datos) junto a `4h 8 3.0 swing3 full long ... PASA (p=0.020)`. Separar en DOS tablas: "Análisis de mercado" (cobertura de velas) y "Resultados de estrategia" (variantes), cada una con su header. |
+| 4 | CSS muerto `.vid .esc`, `ul`, `blockquote`, `.vid .link` | **FALSO** | Conteo real en el HTML generado: `class="esc"`=1, `<ul>`=1, `<blockquote>`=5, `class="link"`=1. Se usan. NO eliminar. Si querés simplificar, primero verificá con grep, no por inspección visual. |
+| 5 | Fecha hardcodeada | **CIERTO (parcial)** | No es literal hardcodeada: viene de `info.get('publicado')` del JSON del video. Pero muestra SOLO la fecha del video. Mostrar además `generado` del monitor y etiquetar cada una: "Video: 24/11 10:16 · Tablero: 25/11 14:07". |
+| 6 | Reparto Alcista/Bajista/Lateral 33/67/66 | **CIERTO** | HTML real confirma 33% / 67% / 66% (suma 166%). Causa: `lateral = 100 - abs(pct_ar - pct_ab)` es una métrica de simetría, no un reparto. Reemplazar por un reparto que sume 100% con significado claro, o sacar la card y mostrar evidencia textual. **Prohibido mostrar porcentajes que no sumen 100** sin explicar qué miden. |
+
+Regla general derivada: antes de eliminar CSS o cambiar una fórmula, verificar con
+grep/conteo sobre el HTML generado. No asumir por mirada.
+
+---
+
 ## 5. VERIFICACIÓN OBLIGATORIA (no termines sin esto)
 
 1. `python3 daily_pilot/scripts/generar_dashboard_v6.py` (o el v7) → sin errores.
@@ -150,6 +168,12 @@ genérico: eso se elimina o se convierte en algo con evidencia real.
 - [ ] Responsive 1440 → 390.
 - [ ] Suite 15/15 y fuentes intactas.
 - [ ] `index.html` regenerado por el generador, nunca editado a mano.
+- [ ] Veredicto real visible (`PASA (p=0.020)` o `RUIDO`), no texto genérico.
+- [ ] Sin `class="badge "` con espacio en el HTML generado.
+- [ ] Dos tablas separadas: cobertura de mercado y resultados de estrategia.
+- [ ] Clases `.esc`, `ul`, `blockquote`, `.link` conservadas (se usan).
+- [ ] Fechas etiquetadas: video y tablero por separado.
+- [ ] Reparto con porcentajes que sumen 100 o evidencia textual en su lugar.
 - [ ] Commit en rama correcta con identidad correcta.
 
 ---
