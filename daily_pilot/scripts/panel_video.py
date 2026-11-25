@@ -36,7 +36,7 @@ background:rgba(255,255,255,.025)}
 .vid .n .d{font-size:11px;color:var(--muted);line-height:1.45}
 .vid .esc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}
 .vid .e{border:1px solid var(--bd);border-radius:10px;padding:12px 13px;
-background:rgba(255,255,255,.03)}
+background:rgba(255,255,255,.03);}
 .vid .e b{display:block;font-size:13px;margin-bottom:5px}
 .vid .e .prob{font-size:10px;color:var(--warn);font-weight:700;text-transform:uppercase}
 .vid .e span{font-size:11px;color:var(--muted);line-height:1.5;display:block;margin-top:4px}

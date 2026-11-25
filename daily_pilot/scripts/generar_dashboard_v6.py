@@ -277,7 +277,7 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
             else:
                 ar = f'<div class="meta">sin senal abierta · ultima: {esc(sig.get("fecha_senal") or "—")}</div>'
         bloques.append(
-            f'<section class="pdetail" id="par-{esc(par)}">'
+            f'<section class="pdetail" id="par-{esc(disp)}">'
             f'<div class="res">'
             f'<div class="shead"><h2>{esc(par)}</h2><span class="n">{esc(disp)}</span>'
             f'<span class="hint">detalle operativo</span></div>'
