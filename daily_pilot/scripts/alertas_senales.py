@@ -101,8 +101,10 @@ def escribir_estado(d: dict):
 
 def enviar(msg: str, url: str) -> bool:
     data = json.dumps({'content': msg}).encode()
-    req = urllib.request.Request(url, data=data,
-                                 headers={'Content-Type': 'application/json'})
+    req = urllib.request.Request(
+        url, data=data,
+        headers={'Content-Type': 'application/json',
+                 'User-Agent': 'CreceTrader-Paper/1.0'})
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
             return r.status == 204
