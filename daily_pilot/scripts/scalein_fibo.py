@@ -18,7 +18,8 @@ sys.path.insert(0, '/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scr
 
 V = Path('/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/datos/velas')
 CAPITAL = 5680.38          # capital real de la captura de Quantfury
-RIESGO_TOTAL = 0.05        # 5% del capital = $284
+RIESGO_TOTAL = 0.01        # 1% del capital por operación
+MIN_R = 0.04               # filtro: target al menos 4% sobre el stop
 
 
 def ema(vals, n):
@@ -98,10 +99,21 @@ def detectar(v1, v4, cfg):
             pnl += und*(exit_price-entry)
         ops.append({'i':i,'ts':v1[i]['ts'],'legs':len(legs),
                     'stop':stop,'target':exit_price,'pnl':pnl,
-                    'ret_pct':100*pnl/CAPITAL})
+                    'ret_pct':100*pnl/CAPITAL,
+                    'R':(exit_price-stop)/stop})
         # salto para no solapar
         i = exit_i+1
     return ops
+
+
+PARES_VALIDADOS = ['BTCUSDT','ETHUSDT','SOLUSDT','XRPUSDT','ADAUSDT']
+
+
+def detectar_validados(v1, v4):
+    """Scale-in con el filtro R>=4% ya aplicado (5 pares validados)."""
+    ops = detectar(v1, v4, dict(look=24, max_rango=0.12, stop_pct=0.03,
+                                target=1.25, swing_n=5, max_bars=72))
+    return [o for o in ops if o.get('R', 0) >= MIN_R]
 
 
 def metricas(ops):
