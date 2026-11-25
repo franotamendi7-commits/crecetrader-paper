@@ -18,7 +18,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 9368.26,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2017-11-29 05:00"
@@ -38,7 +38,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 8100.47,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2018-02-13 20:00"
@@ -58,7 +58,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 6168.23,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2018-11-04 16:00"
@@ -78,7 +78,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 201.39,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2018-11-06 07:00"
@@ -98,7 +98,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 201.39,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2018-11-06 11:00"
@@ -121,7 +121,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1551916800000",
@@ -138,7 +138,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3698.7,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-03-07 00:00"
@@ -158,7 +158,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3850.53,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-03-19 16:00"
@@ -178,7 +178,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3881.94,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-03-29 02:00"
@@ -198,7 +198,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3885.03,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-03-29 08:00"
@@ -221,7 +221,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1554080400000",
@@ -238,7 +238,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3944.99,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-04-01 01:00"
@@ -258,7 +258,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 4850.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-04-14 20:00"
@@ -278,7 +278,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 5034.3,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-04-22 16:00"
@@ -298,7 +298,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.29,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-05-11 05:00"
@@ -318,7 +318,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 7769.73,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-06-13 16:00"
@@ -338,7 +338,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 10302.18,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-06-24 16:00"
@@ -358,7 +358,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 275.72,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-07-07 16:00"
@@ -378,7 +378,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.05,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-09-17 23:00"
@@ -398,7 +398,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.28,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-10-18 21:00"
@@ -418,7 +418,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.28,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-11-04 18:00"
@@ -438,7 +438,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.04,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-11-04 22:00"
@@ -458,7 +458,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 6951.03,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2019-12-26 19:00"
@@ -478,7 +478,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 7814.21,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-01-13 20:00"
@@ -498,7 +498,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.04,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-01-16 20:00"
@@ -518,7 +518,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 252.47,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-02-14 13:00"
@@ -538,7 +538,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.19,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-04-26 10:00"
@@ -558,7 +558,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 9282.9,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-06-09 22:00"
@@ -578,7 +578,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.18,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-06-17 10:00"
@@ -601,7 +601,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1594173600000",
@@ -618,7 +618,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 8926.91,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-07-08 02:00"
@@ -638,7 +638,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.19,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-07-12 00:00"
@@ -658,7 +658,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.19,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-07-18 10:00"
@@ -678,7 +678,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 372.45,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-08-05 14:00"
@@ -698,7 +698,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 10325.34,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-09-27 00:00"
@@ -718,7 +718,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 10202.33,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-10-04 20:00"
@@ -738,7 +738,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 411.42,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-11-08 10:00"
@@ -758,7 +758,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.24,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-11-13 10:00"
@@ -778,7 +778,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 561.22,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-12-15 20:00"
@@ -798,7 +798,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1.55,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2020-12-16 14:00"
@@ -818,7 +818,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 42415.19,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-02-11 09:00"
@@ -838,7 +838,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1629.6,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-02-11 09:00"
@@ -858,7 +858,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 13.44,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-03-19 14:00"
@@ -878,7 +878,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.7,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-08-06 21:00"
@@ -898,7 +898,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.74,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-08-09 07:00"
@@ -918,10 +918,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 46329.66,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-08-29 16:00"
+    },
+    {
+      "id": "AVAXUSDT-1634767200000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1634767200000,
+      "senal_fecha": "2021-10-20 22:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 2,
+      "entrada": 54.27,
+      "stop": 54.27,
+      "target": 63.06,
+      "R": 0.162,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2021-10-20 22:00",
+      "resultado_usd": 62.2,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "SOLUSDT-1640484000000",
@@ -938,7 +958,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 183.41,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2021-12-26 02:00"
@@ -961,7 +981,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1643979600000",
@@ -978,7 +998,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 35181.9,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-02-04 13:00"
@@ -998,7 +1018,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.8,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-03-27 17:00"
@@ -1018,7 +1038,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.48,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-08-05 12:00"
@@ -1038,7 +1058,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.37,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-08-14 02:00"
@@ -1058,7 +1078,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.3,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-12-02 11:00"
@@ -1078,10 +1098,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 16352.98,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-12-04 19:00"
+    },
+    {
+      "id": "AVAXUSDT-1670684400000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1670684400000,
+      "senal_fecha": "2022-12-10 15:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 12.94,
+      "stop": 12.94,
+      "target": 13.62,
+      "R": 0.0522,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2022-12-10 15:00",
+      "resultado_usd": 30.63,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1670684400000",
@@ -1098,7 +1138,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 16555.09,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-12-10 15:00"
@@ -1118,7 +1158,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 16219.37,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2022-12-26 03:00"
@@ -1141,7 +1181,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1672635600000",
@@ -1158,7 +1198,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 16004.04,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-02 05:00"
@@ -1178,7 +1218,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.25,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-05 18:00"
@@ -1198,7 +1238,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 16178.63,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-06 20:00"
@@ -1218,7 +1258,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 15.1,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-10 17:00"
@@ -1238,7 +1278,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 16796.13,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-11 18:00"
@@ -1258,7 +1298,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 20399.1,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-18 13:00"
@@ -1281,7 +1321,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1674406800000",
@@ -1298,7 +1338,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.39,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-22 17:00"
@@ -1318,7 +1358,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 21631.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-25 22:00"
@@ -1338,7 +1378,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 22192.11,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-01-29 00:00"
@@ -1358,10 +1398,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.37,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-02-17 15:00"
+    },
+    {
+      "id": "AVAXUSDT-1676646000000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1676646000000,
+      "senal_fecha": "2023-02-17 15:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 17.93,
+      "stop": 17.93,
+      "target": 20.76,
+      "R": 0.1578,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2023-02-17 15:00",
+      "resultado_usd": 113.49,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "SOLUSDT-1676653200000",
@@ -1378,7 +1438,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 21.33,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-02-17 17:00"
@@ -1398,7 +1458,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 23180.04,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-03-16 09:00"
@@ -1418,10 +1478,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.32,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-03-19 12:00"
+    },
+    {
+      "id": "AVAXUSDT-1681156800000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1681156800000,
+      "senal_fecha": "2023-04-10 20:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 16.85,
+      "stop": 16.85,
+      "target": 18.02,
+      "R": 0.0695,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2023-04-10 20:00",
+      "resultado_usd": 28.95,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ETHUSDT-1681156800000",
@@ -1438,7 +1518,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1791.01,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-04-10 20:00"
@@ -1458,7 +1538,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 28748.28,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-04-13 09:00"
@@ -1478,7 +1558,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1787.36,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-05-03 20:00"
@@ -1501,7 +1581,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ADAUSDT-1685214000000",
@@ -1518,7 +1598,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.35,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-05-27 19:00"
@@ -1541,7 +1621,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1685224800000",
@@ -1558,7 +1638,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 25754.47,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-05-27 22:00"
@@ -1578,7 +1658,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.49,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-06-01 18:00"
@@ -1598,7 +1678,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 25468.17,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-06-19 12:00"
@@ -1621,7 +1701,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1689109200000",
@@ -1638,7 +1718,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.46,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-07-11 21:00"
@@ -1658,7 +1738,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1806.51,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-07-12 04:00"
@@ -1678,7 +1758,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1799.19,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-07-28 13:00"
@@ -1701,7 +1781,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1695006000000",
@@ -1718,7 +1798,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 25586.03,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-09-18 03:00"
@@ -1738,7 +1818,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 25328.7,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-09-28 10:00"
@@ -1758,7 +1838,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.24,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-09-28 11:00"
@@ -1781,7 +1861,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1696082400000",
@@ -1798,7 +1878,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 25865.21,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-09-30 14:00"
@@ -1818,7 +1898,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.5,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-10-01 09:00"
@@ -1838,7 +1918,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 26004.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-10-15 22:00"
@@ -1858,7 +1938,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 28441.37,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-10-21 09:00"
@@ -1878,7 +1958,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.27,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-10-27 12:00"
@@ -1898,7 +1978,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1769.31,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-11-05 00:00"
@@ -1918,7 +1998,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 33547.62,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-11-05 01:00"
@@ -1938,7 +2018,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1773.22,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-11-05 13:00"
@@ -1958,10 +2038,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 34532.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-11-10 13:00"
+    },
+    {
+      "id": "AVAXUSDT-1700820000000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1700820000000,
+      "senal_fecha": "2023-11-24 10:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 19.81,
+      "stop": 19.81,
+      "target": 21.73,
+      "R": 0.0972,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2023-11-24 10:00",
+      "resultado_usd": 63.48,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1701396000000",
@@ -1978,7 +2078,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 36375.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-12-01 02:00"
@@ -1998,7 +2098,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 37466.84,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-12-02 18:00"
@@ -2018,7 +2118,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.59,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-12-02 22:00"
@@ -2038,7 +2138,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2084.53,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-12-03 23:00"
@@ -2058,7 +2158,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 59.66,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-12-07 19:00"
@@ -2078,7 +2178,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 41666.35,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2023-12-08 11:00"
@@ -2098,7 +2198,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.51,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-01-28 03:00"
@@ -2118,7 +2218,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3107.61,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-02-28 11:00"
@@ -2138,7 +2238,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 103.64,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-02-28 19:00"
@@ -2158,7 +2258,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 59480.4,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-03-03 14:00"
@@ -2178,7 +2278,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 65840.59,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-03-10 02:00"
@@ -2198,7 +2298,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 66308.4,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-03-28 06:00"
@@ -2218,7 +2318,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 67453.8,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-03-31 15:00"
@@ -2238,7 +2338,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 65424.4,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-04-06 21:00"
@@ -2258,7 +2358,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3207.48,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-04-07 00:00"
@@ -2278,7 +2378,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2997.99,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-05-19 02:00"
@@ -2298,7 +2398,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.5,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-06-04 11:00"
@@ -2318,7 +2418,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 66445.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-06-04 13:00"
@@ -2338,7 +2438,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3430.66,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-06-16 14:00"
@@ -2358,10 +2458,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.47,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-06-17 05:00"
+    },
+    {
+      "id": "AVAXUSDT-1719727200000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1719727200000,
+      "senal_fecha": "2024-06-30 06:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 26.58,
+      "stop": 26.58,
+      "target": 29.0,
+      "R": 0.0911,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2024-06-30 06:00",
+      "resultado_usd": 64.37,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1719792000000",
@@ -2378,7 +2498,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.46,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-07-01 00:00"
@@ -2398,7 +2518,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 63852.79,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-07-20 16:00"
@@ -2421,7 +2541,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1722189600000",
@@ -2438,7 +2558,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 64650.5,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-07-28 18:00"
@@ -2458,7 +2578,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.58,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-07-29 02:00"
@@ -2478,7 +2598,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2515.21,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-08-18 10:00"
@@ -2498,7 +2618,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.57,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-09-28 08:00"
@@ -2518,7 +2638,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 59849.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-10-06 12:00"
@@ -2538,7 +2658,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 59849.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-10-06 17:00"
@@ -2558,7 +2678,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2339.64,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-10-12 11:00"
@@ -2578,7 +2698,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 64666.02,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-10-18 04:00"
@@ -2598,7 +2718,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 64906.32,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-10-27 18:00"
@@ -2618,7 +2738,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 92823.06,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-12-01 23:00"
@@ -2641,7 +2761,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1734224400000",
@@ -2658,7 +2778,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 97591.13,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2024-12-15 01:00"
@@ -2678,7 +2798,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3319.14,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-01-03 13:00"
@@ -2698,7 +2818,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3465.25,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-01-04 17:00"
@@ -2718,7 +2838,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 94589.35,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-01-04 20:00"
@@ -2738,7 +2858,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 124.28,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-03-23 05:00"
@@ -2758,7 +2878,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81116.35,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-03-23 12:00"
@@ -2778,7 +2898,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81459.38,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-03-24 01:00"
@@ -2798,7 +2918,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81774.84,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-04-19 02:00"
@@ -2818,7 +2938,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81774.84,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-04-19 05:00"
@@ -2841,7 +2961,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1745316000000",
@@ -2858,7 +2978,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-04-22 10:00"
@@ -2878,7 +2998,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 99245.69,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-05-10 07:00"
@@ -2898,7 +3018,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.75,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-05-10 08:00"
@@ -2918,7 +3038,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2203.36,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-05-10 08:00"
@@ -2938,10 +3058,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.76,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-05-11 18:00"
+    },
+    {
+      "id": "AVAXUSDT-1747008000000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1747008000000,
+      "senal_fecha": "2025-05-12 00:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 23.44,
+      "stop": 23.44,
+      "target": 26.48,
+      "R": 0.1301,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2025-05-12 00:00",
+      "resultado_usd": 96.87,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1747008000000",
@@ -2958,7 +3098,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2.26,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-05-12 00:00"
@@ -2978,7 +3118,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 99560.82,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-05-18 09:00"
@@ -2998,7 +3138,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 100754.96,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-06-07 16:00"
@@ -3018,7 +3158,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 101815.22,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-06-08 17:00"
@@ -3038,7 +3178,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 102158.82,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-06-09 13:00"
@@ -3058,7 +3198,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2347.06,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-06-29 08:00"
@@ -3078,7 +3218,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2.11,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-06-29 10:00"
@@ -3098,7 +3238,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 104853.65,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-07-09 13:00"
@@ -3118,7 +3258,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 113393.05,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-07-13 15:00"
@@ -3138,7 +3278,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 113929.96,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-07-17 17:00"
@@ -3158,7 +3298,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 112644.16,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-07-22 13:00"
@@ -3178,7 +3318,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 113639.12,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-07-27 02:00"
@@ -3198,7 +3338,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 112402.35,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-08-09 08:00"
@@ -3218,7 +3358,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.76,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-08-11 01:00"
@@ -3238,7 +3378,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 114508.61,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-08-12 14:00"
@@ -3258,7 +3398,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 115201.43,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-08-13 14:00"
@@ -3278,7 +3418,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.87,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-08-17 06:00"
@@ -3298,10 +3438,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 106894.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-09-03 16:00"
+    },
+    {
+      "id": "AVAXUSDT-1757307600000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1757307600000,
+      "senal_fecha": "2025-09-08 05:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 23.53,
+      "stop": 23.53,
+      "target": 25.21,
+      "R": 0.0713,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2025-09-08 05:00",
+      "resultado_usd": 38.71,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1757336400000",
@@ -3318,7 +3478,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 107303.13,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-09-08 13:00"
@@ -3338,10 +3498,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 107443.66,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-09-10 08:00"
+    },
+    {
+      "id": "AVAXUSDT-1757635200000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1757635200000,
+      "senal_fecha": "2025-09-12 00:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 27.45,
+      "stop": 27.45,
+      "target": 30.41,
+      "R": 0.1079,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2025-09-12 00:00",
+      "resultado_usd": 67.44,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1757916000000",
@@ -3358,7 +3538,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 111380.25,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-09-15 06:00"
@@ -3378,7 +3558,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 111295.0,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-09-17 03:00"
@@ -3401,7 +3581,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1759413600000",
@@ -3418,7 +3598,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2.83,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-10-02 14:00"
@@ -3438,7 +3618,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 4339.78,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-10-06 06:00"
@@ -3458,7 +3638,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3712.23,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-10-20 00:00"
@@ -3478,7 +3658,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 107829.46,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-10-26 10:00"
@@ -3498,7 +3678,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3801.46,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-10-26 10:00"
@@ -3518,7 +3698,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 106411.58,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-11-02 04:00"
@@ -3538,7 +3718,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 85161.89,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-12-21 08:00"
@@ -3558,10 +3738,50 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2872.58,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-12-21 08:00"
+    },
+    {
+      "id": "AVAXUSDT-1766804400000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1766804400000,
+      "senal_fecha": "2025-12-27 03:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 11.78,
+      "stop": 11.78,
+      "target": 12.69,
+      "R": 0.0776,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2025-12-27 03:00",
+      "resultado_usd": 50.72,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
+    },
+    {
+      "id": "AVAXUSDT-1766872800000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1766872800000,
+      "senal_fecha": "2025-12-27 22:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 2,
+      "entrada": 11.95,
+      "stop": 11.95,
+      "target": 12.79,
+      "R": 0.0707,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2025-12-27 22:00",
+      "resultado_usd": 21.34,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1767175200000",
@@ -3578,7 +3798,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 85103.04,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-12-31 10:00"
@@ -3598,7 +3818,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2856.42,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2025-12-31 12:00"
@@ -3618,7 +3838,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2870.14,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-01-01 11:00"
@@ -3638,10 +3858,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 85242.66,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-01-02 15:00"
+    },
+    {
+      "id": "AVAXUSDT-1767567600000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1767567600000,
+      "senal_fecha": "2026-01-04 23:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 13.48,
+      "stop": 13.48,
+      "target": 14.64,
+      "R": 0.0856,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2026-01-04 23:00",
+      "resultado_usd": 49.95,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ETHUSDT-1768143600000",
@@ -3658,7 +3898,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2986.35,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-01-11 15:00"
@@ -3678,7 +3918,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3193.68,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-01-18 09:00"
@@ -3698,7 +3938,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 3197.45,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-01-18 15:00"
@@ -3718,7 +3958,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1.31,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-03-10 13:00"
@@ -3741,7 +3981,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1773237600000",
@@ -3758,7 +3998,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 66908.57,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-03-11 14:00"
@@ -3778,10 +4018,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1.32,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-03-13 02:00"
+    },
+    {
+      "id": "AVAXUSDT-1775318400000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1775318400000,
+      "senal_fecha": "2026-04-04 16:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 8.57,
+      "stop": 8.57,
+      "target": 9.23,
+      "R": 0.0776,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2026-04-04 16:00",
+      "resultado_usd": 64.63,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ADAUSDT-1775322000000",
@@ -3798,7 +4058,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.24,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-04 17:00"
@@ -3818,7 +4078,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2092.59,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-09 16:00"
@@ -3838,7 +4098,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81.29,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-11 16:00"
@@ -3858,7 +4118,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2162.13,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-11 17:00"
@@ -3881,7 +4141,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "XRPUSDT-1776258000000",
@@ -3898,7 +4158,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1.31,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-15 13:00"
@@ -3918,7 +4178,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 0.24,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-26 08:00"
@@ -3938,7 +4198,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 74826.02,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-26 08:00"
@@ -3961,7 +4221,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "SOLUSDT-1777237200000",
@@ -3978,7 +4238,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 83.17,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-26 21:00"
@@ -3998,7 +4258,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 75006.71,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-04-26 22:00"
@@ -4018,7 +4278,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2210.61,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-05-02 15:00"
@@ -4038,7 +4298,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 75741.56,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-05-03 20:00"
@@ -4058,7 +4318,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 78155.59,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-05-10 18:00"
@@ -4078,7 +4338,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 61067.32,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-06-13 07:00"
@@ -4098,7 +4358,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 64.38,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-06-13 11:00"
@@ -4121,7 +4381,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ETHUSDT-1783263600000",
@@ -4138,7 +4398,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1696.33,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-07-05 15:00"
@@ -4158,7 +4418,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 60563.49,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-07-05 21:00"
@@ -4178,7 +4438,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 61746.32,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-07-11 14:00"
@@ -4198,7 +4458,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 61967.82,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-07-18 19:00"
@@ -4221,7 +4481,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "LINKUSDT-1784509200000",
@@ -4241,7 +4501,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1786089600000",
@@ -4258,7 +4518,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 62241.02,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-08-07 08:00"
@@ -4278,7 +4538,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 62589.25,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-08-08 14:00"
@@ -4301,7 +4561,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1786968000000",
@@ -4318,7 +4578,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 60834.52,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-08-17 12:00"
@@ -4341,7 +4601,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ETHUSDT-1787133600000",
@@ -4358,10 +4618,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1837.18,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-08-19 10:00"
+    },
+    {
+      "id": "AVAXUSDT-1787162400000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1787162400000,
+      "senal_fecha": "2026-08-19 18:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 6.1,
+      "stop": 6.1,
+      "target": 6.84,
+      "R": 0.1206,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2026-08-19 18:00",
+      "resultado_usd": 68.91,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ETHUSDT-1787583600000",
@@ -4378,10 +4658,30 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2349.21,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-08-24 15:00"
+    },
+    {
+      "id": "AVAXUSDT-1788750000000",
+      "par": "AVAXUSDT",
+      "senal_ts": 1788750000000,
+      "senal_fecha": "2026-09-07 03:00",
+      "origen": "replay",
+      "estrategia": "scalein_fibo",
+      "legs": 3,
+      "entrada": 7.31,
+      "stop": 7.31,
+      "target": 8.07,
+      "R": 0.1045,
+      "estado": "CERRADA_SCALEIN",
+      "cierre_fecha": "2026-09-07 03:00",
+      "resultado_usd": 66.42,
+      "capital": 5680.38,
+      "riesgo_pct": 2.0,
+      "riesgo_usd": 113.61,
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "BTCUSDT-1789387200000",
@@ -4398,7 +4698,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 74097.06,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-09-14 12:00"
@@ -4418,7 +4718,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1.33,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-09-20 15:00"
@@ -4438,7 +4738,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 112.07,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-09-22 18:00"
@@ -4458,7 +4758,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81322.86,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-09-27 02:00"
@@ -4478,7 +4778,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2584.85,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-09-27 02:00"
@@ -4498,7 +4798,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81322.86,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-09-27 11:00"
@@ -4521,7 +4821,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z"
+      "actualizado": "2026-11-25T20:25:43Z"
     },
     {
       "id": "ETHUSDT-1790917200000",
@@ -4538,7 +4838,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2592.94,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-10-02 05:00"
@@ -4558,7 +4858,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 81371.36,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-10-03 13:00"
@@ -4578,7 +4878,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 115.37,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-10-04 04:00"
@@ -4598,7 +4898,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 2597.09,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-10-04 08:00"
@@ -4618,7 +4918,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 1.44,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-10-04 12:00"
@@ -4638,7 +4938,7 @@
       "capital": 5680.38,
       "riesgo_pct": 2.0,
       "riesgo_usd": 113.61,
-      "actualizado": "2026-11-25T20:17:41Z",
+      "actualizado": "2026-11-25T20:25:43Z",
       "entrada": 80320.51,
       "estado": "CERRADA_SCALEIN",
       "cierre_fecha": "2026-10-11 17:00"
@@ -4646,11 +4946,11 @@
   ],
   "desde_ts": 1791738000000,
   "desde": "2026-10-11 17:00",
-  "generado": "2026-11-25T20:17:41Z",
+  "generado": "2026-11-25T20:25:43Z",
   "resumen": {
-    "n": 232,
-    "win": 97.4,
-    "total_usd": 7813.48,
+    "n": 247,
+    "win": 97.6,
+    "total_usd": 8701.59,
     "dd_usd": -17.18,
     "forward_n": 0
   },
@@ -4663,7 +4963,8 @@
       "SOLUSDT",
       "XRPUSDT",
       "ADAUSDT",
-      "LINKUSDT"
+      "LINKUSDT",
+      "AVAXUSDT"
     ]
   }
 }

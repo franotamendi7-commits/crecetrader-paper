@@ -69,7 +69,8 @@
         "SOLUSDT",
         "XRPUSDT",
         "ADAUSDT",
-        "LINKUSDT"
+        "LINKUSDT",
+        "AVAXUSDT"
       ],
       "validacion": "null estricto p=0.00 en 5 pares, WF positivo"
     }
@@ -199,6 +200,17 @@
       "dd_R": 0.0,
       "pf": 3.0,
       "nota": "Scale-in Fibo validado: 24 ops, +$1104, null p=0.00, WF positivo."
+    },
+    {
+      "par": "AVAXUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 1.4,
+      "E_R": 0.45,
+      "acierto_pct": 100.0,
+      "dd_R": 0.0,
+      "pf": 3.0,
+      "nota": "15 ops, +$888, null p=0.00, WF positivo."
     }
   ],
   "tracker_paper": {

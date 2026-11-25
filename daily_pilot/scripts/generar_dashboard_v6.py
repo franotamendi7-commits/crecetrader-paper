@@ -30,7 +30,7 @@ PARES_QUANTFURY = [
     # Tablero operativo: SOLO pares con esperanza positiva validada.
     # El universo completo de 34 sigue en datos/velas/ para backtests.
     'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'XRPUSDT', 'ADAUSDT',
-    'THETAUSDT', 'HBARUSDT', 'ETCUSDT', 'ARBUSDT', 'LINKUSDT',
+    'THETAUSDT', 'HBARUSDT', 'ETCUSDT', 'ARBUSDT', 'LINKUSDT', 'AVAXUSDT',
 ]
 STATUS_ESPERADO = {'SUSDT': 'TRADING', 'TONUSDT': 'BREAK'}
 
