@@ -114,7 +114,12 @@ def detectar(v, ema_fast=13, ema_trend=200, swing_n=5, regimen='new_high',
     return out
 
 
-def simular(v, senales):
+def simular(v, senales, salida='half'):
+    """salida='full' → target entero; 'half' → 50% en 1R, resto al target.
+
+    Break-Even correcto: se activa cuando el precio ALCANZA 1R (hi >= entry+risk).
+    No requiere que en la misma vela toque el stop (bug anterior).
+    """
     res = []
     for s in senales:
         i, e, st0, tg = s['i'], s['entry'], s['stop'], s['target']
@@ -123,17 +128,33 @@ def simular(v, senales):
             continue
         R = (tg - e) / risk
         be_at = s.get('be_at')
+        be_trigger = e + be_at * risk if be_at else None
         st = st0
+        be = False
+        partial = False
+        realized = 0.0
         outcome = 0.0
         for j in range(i + 1, min(i + s.get('max_bars', 120), len(v))):
             hi, lo = v[j]['high'], v[j]['low']
-            if be_at and lo <= st0 and hi >= e + be_at * risk:
+            if be_trigger and not be and hi >= be_trigger:
+                be = True
                 st = e
+            if salida == 'half' and not partial and hi >= e + risk:
+                partial = True
+                realized += 0.5
             if lo <= st:
-                outcome = 0.0 if st == e else -1.0
+                if partial and salida == 'half':
+                    realized += 0.5 * (0.0 if st == e else -1.0)
+                else:
+                    realized += (0.0 if st == e else -1.0)
+                outcome = realized
                 break
             if hi >= tg:
-                outcome = R
+                if partial and salida == 'half':
+                    realized += 0.5 * R
+                else:
+                    realized += R
+                outcome = realized
                 break
         res.append(outcome)
     return res

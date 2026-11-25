@@ -23,13 +23,14 @@ sys.path.insert(0, str(BASE / 'daily_pilot' / 'scripts'))
 import estrategia_bull as Z  # noqa: E402
 
 CONFIG = {
+    # BTC: valida con BE corregido + salida parcial (null p=0.000, WF test +0.221R)
     'BTC': dict(ema_fast=13, ema_trend=200, swing_n=5,
                 regimen='ret_pos', fibo_ext=1.5, be_at=1.0),
-    'ETH': dict(ema_fast=21, ema_trend=100, swing_n=3,
-                regimen='ret_pos', fibo_ext=1.5, be_at=1.0),
+    # ETH: con el BE corregido NO pasa el null (p=0.06-0.12). Descartada.
 }
+SALIDA = 'half'   # 50% en 1R, resto al target
 CAPITAL = 300.0
-RIESGO = 0.01     # 1% recomendado (0.5% si queres mas colchon)
+RIESGO = 0.01
 
 
 def analizar(par: str) -> dict:
@@ -39,7 +40,7 @@ def analizar(par: str) -> dict:
     kw = CONFIG[par]
     det = lambda vv: Z.detectar(vv, **kw)
     sen = det(v)
-    out = Z.simular(v, sen)
+    out = Z.simular(v, sen, salida=SALIDA)
     m = Z.E.metricas(out)
     A = Z.E.anios(v)
     m['/mes'] = round(m['n'] / A / 12, 1)
@@ -64,8 +65,8 @@ def analizar(par: str) -> dict:
 
 
 def main():
-    res = {'estrategia': 'bull-run pullback · stop swing fijo · target fib1.5 · BE@1R',
-           'validacion': 'BTC null p=0.000 / WF test +0.170R · ETH null p=0.050 / WF test +0.102R',
+    res = {'estrategia': 'bull-run pullback BTC · stop swing fijo · target fib1.5 · 50% en 1R + BE',
+           'validacion': 'BTC null p=0.000 / WF test +0.221R · ETH descartada (BE corregido, null p>0.05)',
            'capital': CAPITAL, 'riesgo_pct': RIESGO * 100,
            'generado': datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC'),
            'pares': [analizar(p) for p in CONFIG],
