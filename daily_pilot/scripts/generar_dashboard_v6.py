@@ -207,6 +207,21 @@ margin-top:3px}
  h1{font-size:19px}
  .kpi{gap:14px}
 }
+#modal-overlay{display:none;position:fixed;inset:0;z-index:60;background:rgba(3,6,10,.72);align-items:center;justify-content:center;padding:18px}
+#modal-overlay.open{display:flex}
+#modal-overlay .modal{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;max-width:780px;width:100%;max-height:84vh;overflow-y:auto;padding:24px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+#modal-overlay .modal h2{font-size:15px;text-transform:uppercase;letter-spacing:1.2px;color:var(--acc);margin:0 0 4px}
+#modal-overlay .modal h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--acc);margin:18px 0 8px}
+#modal-overlay .modal .meta{color:var(--muted);font-size:12px;line-height:1.7}
+#modal-overlay .modal .kpi{display:flex;gap:26px;margin-top:10px;flex-wrap:wrap}
+#modal-overlay .modal .kpi div{font-size:12px;color:var(--muted)}
+#modal-overlay .modal .kpi b{display:block;font-size:17px;color:var(--fg);font-variant-numeric:tabular-nums;margin-top:3px}
+#modal-overlay .modal .nivel{background:var(--card);border:1px solid var(--bd);border-radius:11px;padding:13px 15px;display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:8px}
+#modal-overlay .modal .graf{width:100%;height:150px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:10px}
+#modal-overlay .modal .sin-datos{color:var(--muted);font-size:12px;padding:14px}
+#modal-overlay .modal .res{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);background:var(--card);margin-bottom:0}
+#modal-x{position:absolute;top:12px;right:14px;background:none;border:1px solid var(--bd);color:var(--muted);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;line-height:1}
+#modal-x:hover{color:var(--fg);border-color:var(--acc)}
 '''
 
 
@@ -214,11 +229,11 @@ def mcard(x) -> str:
     par = esc(x['par'])
     st = ' <span class="brk">BREAK</span>' if x.get('status') == 'BREAK' else ''
     if x['precio'] is None:
-        return (f'<a class="mcard-link" href="#par-{par}"><div class="mcard"><div class="par">{par}{st}</div>'
+        return (f'<a class="mcard-link" href="#par-{par}" onclick="abrirModal(this)"><div class="mcard"><div class="par">{par}{st}</div>'
                 f'<div class="precio flat">—</div><div class="chg flat">sin datos</div></div></a>')
     cls = 'up' if x['cambio'] >= 0 else 'down'
     flecha = '▲' if x['cambio'] > 0.05 else ('▼' if x['cambio'] < -0.05 else '·')
-    return (f'<a class="mcard-link" href="#par-{par}"><div class="mcard"><div class="par">{par}{st}</div>'
+    return (f'<a class="mcard-link" href="#par-{par}" onclick="abrirModal(this)"><div class="mcard"><div class="par">{par}{st}</div>'
             f'<div class="precio">{fmt_precio(x["precio"])}</div>'
             f'<div class="chg {cls}">{flecha} {x["cambio"]:+.2f}%</div></div></a>')
 
@@ -245,17 +260,6 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
                 break
         precio_s = fmt_precio(x.get('precio')) if x.get('precio') is not None else '—'
         chg_s = f'{x["cambio"]:+.2f}%' if x.get('cambio') is not None else '—'
-        vv = _velas(par, '1d', limite=60)
-        vl = vv.get('velas') or []
-        graf = '<div class="sin-datos">sin datos de velas</div>'
-        if 'error' not in vv and len(vl) >= 2:
-            closes = [float(z['close']) for z in vl]
-            y0, y1 = min(closes), max(closes)
-            span = (y1 - y0) or 1.0
-            step = 300 / max(1, len(closes) - 1)
-            pts = ' '.join(f'{i * step:.1f},{(150 - ((c - y0) / span) * 140):.1f}' for i, c in enumerate(closes))
-            graf = ('<div class="graf"><svg viewBox="0 0 300 150" preserveAspectRatio="none">'
-                    f'<polyline points="{pts}" fill="none" stroke="var(--acc)" stroke-width="2"/></svg></div>')
         niv = '<div class="meta">sin niveles configurados</div>'
         if par == 'BTCUSDT' and niveles:
             top = sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]
@@ -287,7 +291,6 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
             f'<div><span>Cambio 24h</span><b>{esc(chg_s)}</b></div>'
             f'<div><span>Estado</span><b>{esc(x.get("status") or "—")}</b></div>'
             f'</div>'
-            f'<h3>Cierre 1d (velas)</h3>{graf}'
             f'<h3>Niveles</h3>{niv}'
             f'<h3>Alertas / riesgo</h3>{ar}'
             f'<div class="meta">capital de referencia USD 300 · riesgo uno al uno · apalancamiento 20x</div>'
@@ -322,6 +325,34 @@ def main() -> int:
     gen = cargar(PILOT / 'datos' / 'monitor_senales.json') or {}
     tablero = (gen.get('generado') or '')[:16].replace('T', ' ').replace('Z', '') or '—'
     titulo = f'Análisis de {info.get("par") or "Mercado"}'
+
+    modal_html = '''
+<div id="modal-overlay" onclick="cerrarModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-x" onclick="cerrarModal()" aria-label="Cerrar">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+<script>
+document.addEventListener('click', function(ev) {
+  var a = ev.target && ev.target.closest ? ev.target.closest('a.mcard-link') : null;
+  if (a) { ev.preventDefault(); abrirModal(a.getAttribute('href').slice(1)); }
+});
+function cerrarModal() {
+  var m = document.getElementById('modal-overlay');
+  if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+}
+function abrirModal(id) {
+  var el = document.getElementById(id);
+  var b = document.getElementById('modal-body');
+  if (!el || !b) { return; }
+  b.innerHTML = el.innerHTML;
+  var m = document.getElementById('modal-overlay');
+  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+}
+document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { cerrarModal(); } });
+</script>
+'''
 
     doc = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -374,6 +405,8 @@ def main() -> int:
   · Fuente: {esc(", ".join(f for f in fuen if f))} · video {esc(vid)}<br>
   · <span class="warn">PAPER ONLY</span> — no ejecuta órdenes. La decisión la toma el trader.
 </footer>
+
+{modal_html}
 
 </div></body></html>'''
 
