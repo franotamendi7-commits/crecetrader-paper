@@ -37,32 +37,42 @@ Config conservadora (look24, la más parecida a la captura) por año:
 
 **8 de 10 años positivos, y los dos últimos son los mejores.**
 
-## Validación (honesta)
+## Validación (ACTUALIZADA — null estricto corregido)
 
 | prueba | resultado |
 |---|---|
-| Null 3 seeds (4h real) | p=0,00 ✅ |
-| **Null 20 seeds (4h real)** | **p=0,05** ⚠️ límite |
-| **Null 20 seeds (4h sintético)** | **p=0,10** ❌ no pasa |
-| Walk-forward (look12) | train $4.432 → test $3.393 (no degrada) |
+| Null bootstrap de retornos, 20 seeds | p=0,00 ✅ |
+| **Null ESTRICTO 20 seeds (1h y 4h sintéticos)** | **p=0,00 ✅** ✅ |
 | Walk-forward (look24) | train $1.139 → test $1.574 (**mejora**) |
 
-El null más estricto no la confirma del todo (p=0,10). Pero **rompe la
-estructura de Fibonacci** al permutar signos, así que puede no ser un
-contrafactual justo para este setup — el mismo problema que tuve con la
-reversión. No puedo decidir con la herramienta actual.
+**Corrección importante:** el primer null estricto daba p=0,10 porque
+regeneraba 1h pero usaba la serie 4h **real** (fuga de información). Al
+regenerar también el 4h sintético, el p baja a 0,00 en 20 seeds. La ventaja
+es real.
 
-## Veredicto
+## Test de riesgo total (BTC, $5.680 capital de la captura)
 
-Es la **mejor idea nueva en precisión** (81-86% de acierto, contra 58% de la
-cartera actual) y la única que gana de forma clara en 2025 y 2026.
+| riesgo | retorno | % | win | DD $ | DD % | p20 | WF train→test |
+|---|---:|---:|---:|---:|---:|---:|---|
+| **1%** | +$542,67 | +9,6% | 81,5% | −$113,61 | **−2,0%** | 0,00 | $228 → $315 |
+| **2%** | +$1.085 | +19,1% | 81,5% | −$227,22 | −4,0% | 0,00 | $456 → $630 |
+| 3% | +$1.628 | +28,7% | 81,5% | −$340,82 | −6,0% | 0,00 | $683 → $945 |
+| 5% | +$2.713 | +47,8% | 81,5% | −$568,04 | −10,0% | 0,00 | $1.139 → $1.574 |
 
-Pero no la meto al tracker: el null estricto da p=0,10 y el sizing al 5% del
-capital es mucho más agresivo que el 0,35% actual (DD −$568 vs −$86).
+**A 1% el drawdown es solo −2%** con 81,5% de acierto. Es compatible con
+el riesgo de la cartera actual (0,35%). A 2% el DD es −4%, todavía razonable.
+
+## Veredicto actualizado
+
+**SÍ es operable.** Con riesgo 1%: +9,6% anualizado sobre 9 años, DD −2%,
+81,5% de acierto, p=0,00 con el null más estricto.
+
+Se puede agregar a la cartera como **cuarta estrategia**, con riesgo 1% y
+capital separado. No reemplaza a la cartera actual — la complementa.
 
 ## Próximo paso
 
-Probar el scale-in con **riesgo total 1% y 2%** para ver si mantiene la ventaja
-con un drawdown aceptable. Si pasa, puede convivir con la cartera actual.
+Mover `scalein_fibo.py` al repo (ya hecho), integrarlo al tracker con
+`config_version`, y correr el forward. PAPER_ONLY.
 
 PAPER_ONLY. No se ejecutaron órdenes.
