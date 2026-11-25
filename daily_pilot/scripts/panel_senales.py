@@ -16,7 +16,7 @@ MON = BASE / 'daily_pilot' / 'datos' / 'monitor_senales.json'
 
 CSS_EXTRA = '''
 .mon{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
-background:linear-gradient(180deg,var(--card),var(--bg2));margin-bottom:26px}
+background:var(--card);margin-bottom:26px}
 .mon .mt{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--acc);margin-bottom:12px}
 .mon .estado{display:inline-block;padding:5px 11px;border-radius:8px;font-size:11px;font-weight:800;
 letter-spacing:.4px}

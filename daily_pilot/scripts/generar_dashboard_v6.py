@@ -117,9 +117,7 @@ CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
-body{margin:0;background:
-radial-gradient(1200px 500px at 80% -10%,rgba(90,162,255,.10),transparent),
-linear-gradient(180deg,#0a1018,#070a0f);color:var(--fg);
+body{margin:0;background:var(--bg);color:var(--fg);
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Inter",sans-serif;font-size:14px;
  font-variant-numeric:tabular-nums;
 -webkit-font-smoothing:antialiased}
@@ -127,7 +125,7 @@ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"In
 
 header{display:flex;align-items:center;gap:14px;margin-bottom:6px}
 .dot{width:42px;height:42px;border-radius:12px;
-background:linear-gradient(135deg,#f7931a 0%,#ffb84d 100%);
+background:#f7931a;
 box-shadow:0 6px 20px rgba(247,147,26,.35);
 display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:20px}
 h1{font-size:23px;margin:0;font-weight:700;letter-spacing:-.3px}
@@ -138,7 +136,7 @@ border-radius:20px;padding:7px 15px;font-size:12px;font-weight:700;letter-spacin
 .pill .p{width:7px;height:7px;border-radius:50%;background:var(--ok);
 box-shadow:0 0 0 3px rgba(62,207,122,.22)}
 
-.hoy{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,var(--card),var(--bg2));
+.hoy{display:flex;gap:14px;align-items:center;background:var(--card);
 border:1px solid var(--bd);border-radius:14px;padding:13px 18px;margin:18px 0 24px;
 font-size:13px;flex-wrap:wrap}
 .lbl{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.8px}
@@ -156,7 +154,7 @@ margin:0;font-weight:700;white-space:nowrap}
 .shead .hint{margin-left:auto;color:var(--muted);font-size:11px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(152px,1fr));gap:10px}
-.mcard{background:linear-gradient(180deg,var(--card),var(--bg2));
+.mcard{background:var(--card);
 border:1px solid var(--bd);border-radius:11px;padding:13px 14px;
 transition:border-color .15s,transform .15s}
 .mcard:hover{border-color:var(--acc);transform:translateY(-1px)}
@@ -171,19 +169,16 @@ font-variant-numeric:tabular-nums;letter-spacing:-.2px}
 .leer{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
 .lcard{border-radius:13px;padding:17px 18px;border:1px solid;position:relative;overflow:hidden}
 .lcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
-.lcard.a{background:linear-gradient(180deg,rgba(62,207,122,.10),rgba(62,207,122,.03));
-border-color:rgba(62,207,122,.35)} .lcard.a::before{background:var(--ok)}
-.lcard.b{background:linear-gradient(180deg,rgba(255,107,99,.10),rgba(255,107,99,.03));
-border-color:rgba(255,107,99,.35)} .lcard.b::before{background:var(--bad)}
-.lcard.c{background:linear-gradient(180deg,rgba(224,170,76,.10),rgba(224,170,76,.03));
-border-color:rgba(224,170,76,.35)} .lcard.c::before{background:var(--warn)}
+.lcard.a{background:rgba(62,207,122,.08);border-color:rgba(62,207,122,.35)} .lcard.a::before{background:var(--ok)}
+.lcard.b{background:rgba(255,107,99,.08);border-color:rgba(255,107,99,.35)} .lcard.b::before{background:var(--bad)}
+.lcard.c{background:rgba(224,170,76,.08);border-color:rgba(224,170,76,.35)} .lcard.c::before{background:var(--warn)}
 .lcard .t{font-size:14px;font-weight:700;display:flex;justify-content:space-between;
 align-items:center}
 .lcard .p{font-size:31px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
 .chip{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07);
 border-radius:20px;padding:5px 12px;font-size:12px;color:var(--muted)}
-.nivel{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--bd);
+.nivel{background:var(--card);border:1px solid var(--bd);
 border-radius:11px;padding:13px 15px;display:flex;justify-content:space-between;
 align-items:center;gap:14px}
 .nivel b{font-variant-numeric:tabular-nums;font-size:15px;font-weight:700}

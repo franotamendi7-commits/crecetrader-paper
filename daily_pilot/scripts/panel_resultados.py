@@ -21,7 +21,7 @@ INF = BASE / 'daily_pilot' / 'investigacion' / 'ESTRATEGIA_GANADORA.md'
 
 CSS_EXTRA = '''
 .res{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
-background:linear-gradient(180deg,var(--card),var(--bg2));margin-bottom:26px}
+background:var(--card);margin-bottom:26px}
 .verdict{font-size:20px;font-weight:800;letter-spacing:-.3px;margin-bottom:6px}
 .verdict.si{color:var(--ok)} .verdict.no{color:var(--warn)}
 .res .meta{color:var(--muted);font-size:12px;line-height:1.7}

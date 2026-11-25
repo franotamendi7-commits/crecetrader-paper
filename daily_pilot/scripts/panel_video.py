@@ -18,7 +18,7 @@ RES = BASE / 'daily_pilot' / 'analisis' / 'resumen_video.json'
 
 CSS_EXTRA = '''
 .vid{border-radius:14px;padding:20px 22px;border:1px solid var(--bd);
-background:linear-gradient(180deg,var(--card),var(--bg2));margin-bottom:26px}
+background:var(--card);margin-bottom:26px}
 .vid .tit{font-size:17px;font-weight:800;letter-spacing:-.2px}
 .vid .meta{color:var(--muted);font-size:12px;margin-top:4px;line-height:1.6}
 .vid .sesgo{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;
@@ -36,7 +36,7 @@ background:rgba(255,255,255,.025)}
 .vid .n .d{font-size:11px;color:var(--muted);line-height:1.45}
 .vid .esc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}
 .vid .e{border:1px solid var(--bd);border-radius:10px;padding:12px 13px;
-background:linear-gradient(180deg,rgba(255,255,255,.035),transparent)}
+background:rgba(255,255,255,.03)}
 .vid .e b{display:block;font-size:13px;margin-bottom:5px}
 .vid .e .prob{font-size:10px;color:var(--warn);font-weight:700;text-transform:uppercase}
 .vid .e span{font-size:11px;color:var(--muted);line-height:1.5;display:block;margin-top:4px}
