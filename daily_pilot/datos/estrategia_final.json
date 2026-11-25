@@ -1,0 +1,64 @@
+{
+  "estrategia": "bull-run pullback \u00b7 stop swing fijo \u00b7 target fib1.5 \u00b7 BE@1R",
+  "validacion": "BTC null p=0.000 / WF test +0.170R \u00b7 ETH null p=0.050 / WF test +0.102R",
+  "capital": 300.0,
+  "riesgo_pct": 1.0,
+  "generado": "2026-11-25 14:57 UTC",
+  "pares": [
+    {
+      "par": "BTC",
+      "precio": 59724.01,
+      "actualizado": "2026-11-24 20:00",
+      "backtest": {
+        "n": 2393,
+        "E": 0.25,
+        "win": 51.4,
+        "total": 597.7,
+        "DD": -79.9,
+        "PF": 1.58,
+        "/mes": 21.5
+      },
+      "ultima_senal": {
+        "fecha": "2026-10-21 04:00",
+        "entrada": 83153.78,
+        "stop_fijo": 81200.0,
+        "target": 84137.0,
+        "estado": "CERRADA",
+        "sizing_1pct": {
+          "unidades": 0.001535,
+          "notional": 127.68,
+          "margen_20x": 6.38,
+          "dist_stop": 1953.78
+        }
+      }
+    },
+    {
+      "par": "ETH",
+      "precio": 1676.23,
+      "actualizado": "2026-11-24 20:00",
+      "backtest": {
+        "n": 1483,
+        "E": 0.165,
+        "win": 38.8,
+        "total": 245.2,
+        "DD": -57.3,
+        "PF": 1.3,
+        "/mes": 13.3
+      },
+      "ultima_senal": {
+        "fecha": "2026-10-06 08:00",
+        "entrada": 2714.09,
+        "stop_fijo": 2679.63,
+        "target": 2769.43,
+        "estado": "CERRADA",
+        "sizing_1pct": {
+          "unidades": 0.087057,
+          "notional": 236.28,
+          "margen_20x": 11.81,
+          "dist_stop": 34.46
+        }
+      }
+    }
+  ],
+  "aviso": "PAPER ONLY. No ejecuta ordenes."
+}

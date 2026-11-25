@@ -1132,6 +1132,15 @@
       "transcript": "/Users/franciscootamendi/YouTubeTradingAgent/data_hist/hb9YEJMgjAU/hb9YEJMgjAU_transcript.json",
       "estado": "transcrito",
       "fuente": "importacion_retroactiva"
+    },
+    "S9F-R400Zo8": {
+      "video_id": "S9F-R400Zo8",
+      "titulo": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=S9F-R400Zo8",
+      "detectado": "2026-11-25T14:57:47Z",
+      "transcript": null,
+      "estado": "error: [Errno 2] No such file or directory: 'yt-dlp'"
     }
   }
 }

@@ -2,15 +2,15 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "SIN VIDEO NUEVO",
-  "ultima_revision": "2026-11-25T02:44:40Z",
-  "deteccion_at": "2026-11-24T13:59:17.078745+00:00",
-  "analisis_at": "2026-11-24T14:01:09Z",
+  "estado": "ERROR DE ANALISIS",
+  "ultima_revision": "2026-11-25T14:57:47Z",
+  "deteccion_at": "2026-11-25T14:57:47Z",
+  "analisis_at": null,
   "video": {
-    "video_id": "hb9YEJMgjAU",
-    "titulo": "Bitcoin rebota en los 56.750: ¿compras de verdad o trampa?",
-    "url": "https://www.youtube.com/watch?v=hb9YEJMgjAU",
-    "publicado": "2026-11-24T10:16:06+00:00",
+    "video_id": "S9F-R400Zo8",
+    "titulo": "Bitcoin en los 60.000: ¿compras con miedo o con un plan?",
+    "url": "https://www.youtube.com/watch?v=S9F-R400Zo8",
+    "publicado": "2026-11-25T10:11:20+00:00",
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
@@ -51,7 +51,9 @@
     "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4",
     "archivo": "daily_pilot/analisis/hb9YEJMgjAU_analisis.json"
   },
-  "errores": [],
+  "errores": [
+    "S9F-R400Zo8: [Errno 2] No such file or directory: 'yt-dlp'"
+  ],
   "ultimo_analisis_completo": {
     "video_id": "hb9YEJMgjAU",
     "analizado_at": "2026-11-24T14:01:09Z",
