@@ -196,6 +196,8 @@ border-top:1px solid var(--bd);padding-top:16px}
 .kpi div{font-size:12px;color:var(--muted)}
 .kpi b{display:block;font-size:17px;color:var(--fg);font-variant-numeric:tabular-nums;
 margin-top:3px}
+.graf{width:100%;height:150px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:10px}
+.sin-datos{color:var(--muted);font-size:12px;padding:14px}
 '''
 
 
@@ -221,6 +223,7 @@ def lcard(clase, titulo, pct, color_var) -> str:
 
 def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
     """Vista por par: datos reales del mercado + niveles/alertas/riesgo cuando existen."""
+    from velas import velas as _velas
     m = {x['par']: x for x in mer}
     bloques = []
     for par in PARES_QUANTFURY:
@@ -233,19 +236,53 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
                 break
         precio_s = fmt_precio(x.get('precio')) if x.get('precio') is not None else '—'
         chg_s = f'{x["cambio"]:+.2f}%' if x.get('cambio') is not None else '—'
+        vv = _velas(par, '1d', limite=60)
+        vl = vv.get('velas') or []
+        graf = '<div class="sin-datos">sin datos de velas</div>'
+        if 'error' not in vv and len(vl) >= 2:
+            closes = [float(z['close']) for z in vl]
+            y0, y1 = min(closes), max(closes)
+            span = (y1 - y0) or 1.0
+            step = 300 / max(1, len(closes) - 1)
+            pts = ' '.join(f'{i * step:.1f},{(150 - ((c - y0) / span) * 140):.1f}' for i, c in enumerate(closes))
+            graf = ('<div class="graf"><svg viewBox="0 0 300 150" preserveAspectRatio="none">'
+                    f'<polyline points="{pts}" fill="none" stroke="var(--acc)" stroke-width="2"/></svg></div>')
+        niv = '<div class="meta">sin niveles configurados</div>'
+        if par == 'BTCUSDT' and niveles:
+            top = sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]
+            niv = ''.join(
+                f'<div class="niv"><b>{fmt_precio(float(n.get("precio")))}</b>'
+                f'<span class="men">x{n.get("menciones")} menciones</span></div>' for n in top)
+        ar = '<div class="meta">sin alertas ni senales para este par</div>'
+        if sig is not None:
+            if sig.get('senal'):
+                t = sig.get('ticket') or {}
+                ar = (f'<div class="kpi">'
+                      f'<div><span>Entry</span><b>{fmt_precio(t.get("entry"))}</b></div>'
+                      f'<div><span>Stop</span><b style="color:var(--bad)">{fmt_precio(t.get("stop"))}</b></div>'
+                      f'<div><span>Target</span><b style="color:var(--ok)">{fmt_precio(t.get("target"))}</b></div>'
+                      f'<div><span>Riesgo/unidad</span><b>{fmt_precio(t.get("riesgo_por_unidad"))}</b></div>'
+                      f'<div><span>Unidades</span><b>{fmt_precio(t.get("unidades"))}</b></div>'
+                      f'<div><span>Margen 20x</span><b>{fmt_precio(t.get("margen_20x"))}</b></div>'
+                      '</div>')
+            else:
+                ar = f'<div class="meta">sin senal abierta · ultima: {esc(sig.get("fecha_senal") or "—")}</div>'
         bloques.append(
-            '<section class="pdetail" id="par-%s">'
-            '<div class="res">'
-            '<div class="shead"><h2>%s</h2><span class="n">%s</span>'
-            '<span class="hint">detalle operativo</span></div>'
-            '<div class="kpi">'
-            '<div><span>Activo</span><b>%s</b></div>'
-            '<div><span>Precio</span><b>%s</b></div>'
-            '<div><span>Cambio 24h</span><b>%s</b></div>'
-            '<div><span>Estado</span><b>%s</b></div>'
-            '</div>'
-            '<div class="meta">capital de referencia USD 300 · riesgo uno al uno · apalancamiento 20x</div>'
-            '</div></section>' % (esc(disp), esc(par), esc(disp), esc(disp), esc(precio_s), esc(chg_s), esc(x.get('status') or '—')))
+            f'<section class="pdetail" id="par-{esc(par)}">'
+            f'<div class="res">'
+            f'<div class="shead"><h2>{esc(par)}</h2><span class="n">{esc(disp)}</span>'
+            f'<span class="hint">detalle operativo</span></div>'
+            f'<div class="kpi>'
+            f'<div><span>Activo</span><b>{esc(disp)}</b></div>'
+            f'<div><span>Precio</span><b>{esc(precio_s)}</b></div>'
+            f'<div><span>Cambio 24h</span><b>{esc(chg_s)}</b></div>'
+            f'<div><span>Estado</span><b>{esc(x.get("status") or "—")}</b></div>'
+            f'</div>'
+            f'<h3>Cierre 1d (velas)</h3>{graf}'
+            f'<h3>Niveles</h3>{niv}'
+            f'<h3>Alertas / riesgo</h3>{ar}'
+            f'<div class="meta">capital de referencia USD 300 · riesgo uno al uno · apalancamiento 20x</div>'
+            f'</div></section>')
     return ''.join(bloques)
 
 
