@@ -86,9 +86,9 @@ def mercado() -> list:
 
 
 def lectura_agente(info: dict, niveles: list) -> dict:
-    """Reparto alcista/bajista/lateral a partir de lo dicho por el canal.
+    """Reparto alcista/bajista a partir de lo dicho por el canal.
 
-    Es una lectura del texto, NO una prediccion.
+    Es una lectura del texto, NO una prediccion. La suma es 100.
     """
     if not info or not niveles:
         return {'alcista': None, 'bajista': None, 'lateral': None, 'evidencia': []}
@@ -102,7 +102,7 @@ def lectura_agente(info: dict, niveles: list) -> dict:
     lateral = max(0, 100 - abs(pct_ar - pct_ab))
     alcista = pct_ar
     bajista = pct_ab
-    return {'alcista': alcista, 'bajista': bajista, 'lateral': lateral,
+    return {'alcista': pct_ar, 'bajista': round(100 - pct_ar, 2), 'lateral': None,
             'evidencia': ['Basado en los niveles dichos en el video']}
 
 
@@ -236,8 +236,10 @@ def main() -> int:
         for n in top) or '<div class="nota">sin niveles hoy</div>'
 
     hay_video = 'SÍ' if vid else 'NO'
-    badge_cls = '' if vid else 'no'
+    badge_cls = 'badge no' if not vid else 'badge'
     revisado = info.get('publicado', '')[:16].replace('T', ' ') or '—'
+    gen = cargar(PILOT / 'datos' / 'monitor_senales.json') or {}
+    tablero = (gen.get('generado') or '')[:16].replace('T', ' ').replace('Z', '') or '—'
     titulo = f'Análisis de {info.get("par") or "Mercado"}'
 
     doc = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
@@ -253,9 +255,11 @@ def main() -> int:
 
 <div class="hoy">
   <span class="lbl">Hoy</span>
-  <span class="badge {badge_cls}">▶ Video nuevo: {hay_video}</span>
+  <span class="{badge_cls}">▶ Video nuevo: {hay_video}</span>
   <span class="lbl">·</span>
-  <span>Última revisión: {esc(revisado)}</span>
+  <span>Video: {esc(revisado)}</span>
+  <span class="sep">·</span>
+  <span>Tablero: {esc(tablero)}</span>
 </div>
 
 <section>
@@ -268,7 +272,6 @@ def main() -> int:
   <div class="leer">
     {lcard('a', 'Alcista', lec['alcista'], 'var(--ok)')}
     {lcard('b', 'Bajista', lec['bajista'], 'var(--bad)')}
-    {lcard('c', 'Lateral', lec['lateral'], 'var(--warn)')}
   </div>
   <div class="chips" style="margin-top:12px">{ev}</div>
   <div class="chips" style="margin-top:16px;flex-direction:column;align-items:stretch;gap:8px">
@@ -284,7 +287,7 @@ def main() -> int:
 {html_resultados()}
 <footer>
   · Los precios son <b>reales</b> (Binance, solo lectura), caché de 5 minutos — no es un feed en vivo.<br>
-  · El reparto Alcista/Bajista/Lateral se calcula de los <b>niveles dichos en el video</b>: es una lectura del texto, no una predicción.<br>
+  · El reparto Alcista/Bajista se calcula de los <b>niveles dichos en el video</b>: es una lectura del texto, no una predicción.<br>
   · Fuente: {esc(", ".join(f for f in fuen if f))} · video {esc(vid)}<br>
   · <span class="warn">PAPER ONLY</span> — no ejecuta órdenes. La decisión la toma el trader.
 </footer>

@@ -37,35 +37,59 @@ font-variant-numeric:tabular-nums}
 
 
 def _veredicto(txt: str) -> tuple[str, bool]:
-    """Saca el veredicto del markdown: busca lineas que arranquen con VEREDICTO."""
+    """Saca el veredicto de la seccion 'VEREDICTO FINAL' del markdown.
+
+    El encabezado '## 6. VEREDICTO FINAL' no debe romperse por el prefijo '## '.
+    Devuelve (veredicto_final, existe): ej. ('PASA', True) o ('NO EXISTE', False).
+    """
+    seccion = []
+    en = False
     for linea in txt.splitlines():
-        l = linea.strip().strip('*').strip()
-        if not l.upper().startswith('VEREDICTO'):
+        s = linea.strip()
+        if s.upper().startswith('## '):
+            en = 'VEREDICTO' in s.upper()
+            seccion = []
             continue
-        seg = l.upper()
-        if 'NO EXISTE' in seg or 'NO HAY' in seg or 'INCONCLUSO' in seg:
-            return 'NO EXISTE', False
-        if 'EXISTE' in seg:
-            return 'EXISTE', True
-    return '', False
+        if en:
+            seccion.append(linea.strip().strip('*').strip())
+    u_all = '\n'.join(seccion).upper()
+    if 'NO EXISTE' in u_all or 'NO HAY' in u_all or 'INCONCLUSO' in u_all:
+        return 'NO EXISTE', False
+    if 'EXISTE' in u_all:
+        vered = 'PASA' if 'PASA' in u_all else ('RUIDO' if 'RUIDO' in u_all else 'EXISTE')
+        return (vered, True)
+    return 'NO EXISTE', False
+
+
+def _bloques(txt: str) -> list[list[list[str]]]:
+    """Separa el markdown en bloques de tabla markdown (filas de celdas)."""
+    bloques: list[list[list[str]]] = []
+    actual: list[list[str]] = []
+    for linea in txt.splitlines():
+        l = linea.strip()
+        if l.startswith('|'):
+            actual.append([c.strip() for c in l.strip('|').split('|')])
+        elif actual:
+            bloques.append(actual)
+            actual = []
+    if actual:
+        bloques.append(actual)
+    return bloques
 
 
 def _filas(txt: str, limite: int = 8) -> list[list[str]]:
-    """Parsea la primera tabla markdown en filas de celdas."""
-    out = []
-    for linea in txt.splitlines():
-        l = linea.strip()
-        if not l.startswith('|'):
+    """Devuelve el bloque de variantes: [header, fila1, fila2, ...].
+
+    Es el bloque que contiene filas con veredicto (PASA / RUIDO). Evita mezclar
+    la tabla de cobertura de mercado (Par/TF/Velas) con la de variantes.
+    """
+    for b in _bloques(txt):
+        if len(b) < 2:
             continue
-        celdas = [c.strip() for c in l.strip('|').split('|')]
-        if all(set(c) <= set('-: ') for c in celdas):   # separador
-            continue
-        if celdas and celdas[0].lower() in ('tf', 'regla', 'variante', 'par', 'par/tf'):
-            continue                                       # encabezado
-        out.append(celdas)
-        if len(out) >= limite:
-            break
-    return out
+        datos = [r for r in b[1:] if not all(set(c) <= set('-: ') for c in r)]
+        if any('PASA' in ' '.join(r).upper() or 'RUIDO' in ' '.join(r).upper() for r in datos):
+            return [b[0]] + datos
+    return []
 
 
 def html() -> str:
@@ -77,12 +101,18 @@ def html() -> str:
 
     txt = INF.read_text(encoding='utf-8', errors='replace')
     veredicto, gana = _veredicto(txt)
+    filas = _filas(txt)
 
-    titulo = 'ESTRATEGIA GANADORA · EXISTE' if gana else \
-             'ESTRATEGIA GANADORA · NO EXISTE' if veredicto == 'NO EXISTE' else 'RESULTADO DE LA BÚSQUEDA'
+    vered_real = veredicto
+    if len(filas) > 1:
+        for f in filas[1:]:
+            if 'PASA' in f[-1].upper() or 'RUIDO' in f[-1].upper():
+                vered_real = f[-1]
+                break
+
+    titulo = f'ESTRATEGIA GANADORA · {vered_real}'
 
     cuerpo = ''
-    filas = _filas(txt)
     if filas:
         cab = ''.join(f'<th>{c}</th>' for c in filas[0]) if len(filas[0]) > 1 else ''
         cuerpo += f'<table class="rtab"><tr>{cab}</tr>'
@@ -96,9 +126,9 @@ def html() -> str:
                   if l.strip() and not l.strip().startswith('#')][:12]
         cuerpo = '<div class="meta">' + '<br>'.join(_esc(l) for l in lineas) + '</div>'
 
-    return (f'<div class="res"><div class="verdict {"si" if gana else "no"}">{_esc(titulo)}</div>'
+    return (f'<div class="res"><div class="verdict {"si" if gana else "no"}">{_esc(vered_real)}</div>'
             f'{cuerpo}'
-            f'<div class="meta" style="margin-top:12px">fuente: {_esc(INF.name)}</div></div>')
+            f'<div class="meta" style="margin-top:12px">fuente: {_esc(INF.name)} · veredicto: {_esc(veredicto)}</div></div>')
 
 
 def _esc(s) -> str:
