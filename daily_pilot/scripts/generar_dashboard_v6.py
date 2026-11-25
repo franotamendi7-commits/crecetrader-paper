@@ -231,7 +231,7 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
         disp = par.replace('USDT', '')
         sig = None
         for p in (mon or {}).get('pares') or []:
-            if p.get('par') == par:
+            if p.get('par') == disp:
                 sig = p
                 break
         precio_s = fmt_precio(x.get('precio')) if x.get('precio') is not None else '—'
