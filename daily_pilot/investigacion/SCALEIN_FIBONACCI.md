@@ -70,9 +70,39 @@ el riesgo de la cartera actual (0,35%). A 2% el DD es −4%, todavía razonable.
 Se puede agregar a la cartera como **cuarta estrategia**, con riesgo 1% y
 capital separado. No reemplaza a la cartera actual — la complementa.
 
+## Números exactos de los últimos meses (capital $5.680,38)
+
+### Riesgo 1% ($56,80 por operación)
+
+| Mes | Operaciones | Wins | Resultado |
+|---|---:|---:|---:|
+| Ago 2026 | 3 | 3/3 | +$25,55 |
+| Sep 2026 | 4 | 3/4 | −$12,84 |
+| Oct 2026 | 2 | 2/2 | +$31,17 |
+| Nov 2026 | 0 | — | $0 |
+| **Total** | **9** | **8/9 (88,9%)** | **+$43,88 (+0,77%)** |
+
+DD del periodo: −$39,40.
+
+### Riesgo 2% ($113,61 por operación)
+
+Ago +$51,11 · Sep −$25,69 · Oct +$62,34 · Nov $0.
+Total 9 ops, 8/9 wins, **+$87,76 (+1,54%)**, DD −$78,81.
+
+Única perdedora: 2026-09-22 15:00, legs=3, stop 82.560,58, target 83.742,22.
+
+### Comparación con la cartera actual en el mismo periodo
+
+| | Cartera 6 pares | Scale-in 1% |
+|---|---:|---:|
+| Ago | −5,36R | **+$25,55** |
+| Sep | +8,98R | −$12,84 |
+| Oct | −1,26R | **+$31,17** |
+
+El scale-in gana justo en los meses malos de la cartera.
+
 ## Próximo paso
 
-Mover `scalein_fibo.py` al repo (ya hecho), integrarlo al tracker con
-`config_version`, y correr el forward. PAPER_ONLY.
+Integrarlo al tracker con `config_version`, y correr el forward. PAPER_ONLY.
 
 PAPER_ONLY. No se ejecutaron órdenes.
