@@ -44,8 +44,12 @@
     {"par": "XRPUSDT", "estrategia": "reversion", "estado": "CON RESERVA", "por_mes": 3.6, "E_R": 0.270, "acierto_pct": 38.0, "dd_R": -10.0, "pf": 1.82, "null_seeds": "4/8", "wf_train": 0.264, "wf_test": 0.307, "nota": "Walk-forward mejora 16%."}
   ],
   "tracker_paper": {
-    "estado": "PENDIENTE DE PROGRAMAR",
-    "frecuencia": "cada 4h",
-    "nota": "RegistrarOperacion(ts, par, estrategia, entry, stop, target, resultado_R, capital_usd). El script动作 será daily_pilot/scripts/tracker_paper.py"
+    "estado": "ACTIVO",
+    "script": "daily_pilot/scripts/tracker_paper.py",
+    "launchd": "~/Library/LaunchAgents/com.crecetrader.tracker-paper.plist",
+    "frecuencia": "cada 4h (StartInterval 14400) + RunAtLoad",
+    "pares": ["BTCUSDT", "THETAUSDT", "HBARUSDT", "ETCUSDT", "ARBUSDT", "XRPUSDT"],
+    "journal": "daily_pilot/datos/tracker_paper.json",
+    "nota": "Idempotente por (par, timestamp). Registra replay + forward con sizing al 0,35%."
   }
 }
