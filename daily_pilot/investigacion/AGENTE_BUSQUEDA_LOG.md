@@ -527,3 +527,225 @@ Idea importada del mismo repo (`supertrend_4h`: BTC +31.46%, PF 1.167, Sharpe 0.
 - p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (1.0s)
 - NULL full-history 4 seeds: p=[0.26, 0.32, 0.16, 0.22] → 0/4. Veredicto FINAL: DESCARTADA
 - Grid=27, válidas=18. Top5 train: [({'mult': 3.0, 'tp': 2.0, 'tdist': 1.5}, -0.0217, 23), ({'mult': 2.0, 'tp': 2.0, 'tdist': 1.5}, -0.0776, 58), ({'mult': 2.0, 'tp': 3.0, 'tdist': 1.5}, -0.1724, 58), ({'mult': 3.0, 'tp': 3.0, 'tdist': 1.5}, -0.1739, 23), ({'mult': 3.0, 'tp': 4.0, 'tdist': 1.5}, -0.2391, 23)]
+### IDEA12 | LINKUSDT 4h | params={'mult': 2.0, 'tp': 2.0, 'tdist': 1.5}
+- TRAIN: n=43 señ/mes=0.65 E=+0.163R win=32.6% DD=-4.0R PF=1.5
+- TEST : n=21 señ/mes=0.74 E=-0.286R win=9.5% DD=-6.5R PF=0.333
+- NULL (test, 50 sims/seed): s7 p=0.880 Ereal=-0.286 p50=-0.036, s11 p=0.740 Ereal=-0.286 p50=-0.125, s23 p=0.700 Ereal=-0.286 p50=-0.167, s42 p=0.760 Ereal=-0.286 p50=-0.107
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (0.9s)
+- NULL full-history 4 seeds: p=[0.08, 0.12, 0.06, 0.0] → 1/4. Veredicto FINAL: DESCARTADA
+- Grid=27, válidas=9. Top5 train: [({'mult': 2.0, 'tp': 2.0, 'tdist': 1.5}, 0.1628, 43), ({'mult': 2.0, 'tp': 3.0, 'tdist': 1.5}, 0.0, 43), ({'mult': 2.0, 'tp': 2.0, 'tdist': 1.0}, -0.2674, 43), ({'mult': 2.0, 'tp': 4.0, 'tdist': 1.5}, -0.2674, 43), ({'mult': 2.0, 'tp': 3.0, 'tdist': 1.0}, -0.3953, 43)]
+### IDEA12 | AVAXUSDT 4h | params={'mult': 2.0, 'tp': 2.0, 'tdist': 1.5}
+- TRAIN: n=35 señ/mes=0.67 E=+0.100R win=31.4% DD=-8.0R PF=1.269
+- TEST : n=26 señ/mes=1.17 E=-0.692R win=0.0% DD=-18.0R PF=0.0
+- NULL (test, 50 sims/seed): s7 p=0.980 Ereal=-0.692 p50=-0.269, s11 p=1.000 Ereal=-0.692 p50=-0.214, s23 p=1.000 Ereal=-0.692 p50=-0.333, s42 p=1.000 Ereal=-0.692 p50=-0.265
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (0.7s)
+- NULL full-history 4 seeds: p=[0.84, 0.66, 0.66, 0.72] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=27, válidas=9. Top5 train: [({'mult': 2.0, 'tp': 2.0, 'tdist': 1.5}, 0.1, 35), ({'mult': 2.0, 'tp': 3.0, 'tdist': 1.5}, -0.0286, 35), ({'mult': 2.0, 'tp': 4.0, 'tdist': 1.5}, -0.3, 35), ({'mult': 2.0, 'tp': 2.0, 'tdist': 1.0}, -0.3714, 35), ({'mult': 2.0, 'tp': 3.0, 'tdist': 1.0}, -0.4857, 35)]
+
+## IDEA 13 — Reversión por caída + filtro volumen/RSI 4h
+Idea NUEVA: variante de la reversión validada con filtros de volumen y RSI (no probada arriba). Caída ref=max(close[-8:]) * (1-caida); volumen de la vela > vm*SMA(vol,20); RSI14 < rmax; stop=low, target=rebote del retroceso a ref, max 60 bares. Grid 81 combinaciones. Incluye ARB/XRP como control. Multiplicidad: se reportan todos los pares, el mejor por par puede ser ruido.
+### IDEA13 | BTCUSDT 4h | params={'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 30}
+- TRAIN: n=35 señ/mes=0.45 E=+0.625R win=22.9% DD=-4.0R PF=2.989
+- TEST : n=2 señ/mes=0.06 E=+0.000R win=0.0% DD=0.0R PF=999
+- NULL (test, 50 sims/seed): s7 p=0.920 Ereal=+0.000 p50=+0.000, s11 p=0.880 Ereal=+0.000 p50=+0.000, s23 p=0.980 Ereal=+0.000 p50=+0.000, s42 p=0.940 Ereal=+0.000 p50=+0.000
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (1.1s)
+- NULL full-history 4 seeds: p=[0.28, 0.08, 0.16, 0.2] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 30}, 0.625, 35), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 40}, 0.5759, 43), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 50}, 0.5744, 45), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.2, 'rmax': 50}, 0.5725, 58), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.5, 'rmax': 30}, 0.5475, 35)]
+### IDEA13 | ETHUSDT 4h | params={'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 40}
+- TRAIN: n=136 señ/mes=1.75 E=+0.251R win=25.7% DD=-10.65R PF=1.726
+- TEST : n=14 señ/mes=0.42 E=+0.852R win=57.1% DD=0.0R PF=999
+- NULL (test, 50 sims/seed): s7 p=0.080 Ereal=+0.852 p50=+0.000, s11 p=0.120 Ereal=+0.852 p50=-0.047, s23 p=0.060 Ereal=+0.852 p50=-0.021, s42 p=0.220 Ereal=+0.852 p50=+0.011
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.2s)
+- NULL full-history 4 seeds: p=[0.26, 0.36, 0.3, 0.26] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 40}, 0.2508, 136), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 50}, 0.2346, 140), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 40}, 0.2074, 172), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 50}, 0.2074, 183), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.2, 'rmax': 40}, 0.1977, 136)]
+### IDEA13 | SOLUSDT 4h | params={'caida': 0.12, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}
+- TRAIN: n=130 señ/mes=2.46 E=+0.351R win=27.7% DD=-7.35R PF=2.232
+- TEST : n=28 señ/mes=1.24 E=+0.043R win=25.0% DD=-5.0R PF=1.119
+- NULL (test, 50 sims/seed): s7 p=0.600 Ereal=+0.043 p50=+0.114, s11 p=0.620 Ereal=+0.043 p50=+0.154, s23 p=0.540 Ereal=+0.043 p50=+0.109, s42 p=0.480 Ereal=+0.043 p50=-0.002
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.2s)
+- NULL full-history 4 seeds: p=[0.44, 0.4, 0.28, 0.4] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.12, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 0.3506, 130), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}, 0.3277, 137), ({'caida': 0.12, 'rebote': 0.4, 'vm': 1.2, 'rmax': 30}, 0.3272, 100), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}, 0.3202, 173), ({'caida': 0.12, 'rebote': 0.5, 'vm': 1.2, 'rmax': 30}, 0.3134, 100)]
+### IDEA13 | XRPUSDT 4h | params={'caida': 0.12, 'rebote': 0.3, 'vm': 1.0, 'rmax': 30}
+- TRAIN: n=174 señ/mes=2.42 E=+0.301R win=36.2% DD=-7.0R PF=2.048
+- TEST : n=35 señ/mes=1.14 E=+0.348R win=42.9% DD=-4.0R PF=2.015
+- NULL (test, 50 sims/seed): s7 p=0.300 Ereal=+0.348 p50=+0.161, s11 p=0.380 Ereal=+0.348 p50=+0.287, s23 p=0.360 Ereal=+0.348 p50=+0.216, s42 p=0.280 Ereal=+0.348 p50=+0.167
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.7s)
+- NULL full-history 4 seeds: p=[0.32, 0.44, 0.26, 0.4] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.12, 'rebote': 0.3, 'vm': 1.0, 'rmax': 30}, 0.3012, 174), ({'caida': 0.12, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 0.2522, 174), ({'caida': 0.12, 'rebote': 0.3, 'vm': 1.2, 'rmax': 50}, 0.249, 177), ({'caida': 0.12, 'rebote': 0.5, 'vm': 1.2, 'rmax': 40}, 0.2472, 166), ({'caida': 0.12, 'rebote': 0.3, 'vm': 1.2, 'rmax': 30}, 0.2431, 124)]
+### IDEA13 | BNBUSDT 4h | params={'caida': 0.12, 'rebote': 0.4, 'vm': 1.5, 'rmax': 30}
+- TRAIN: n=87 señ/mes=1.14 E=+0.283R win=29.9% DD=-7.94R PF=1.725
+- TEST : n=11 señ/mes=0.34 E=+0.205R win=36.4% DD=-1.0R PF=2.13
+- NULL (test, 50 sims/seed): s7 p=0.280 Ereal=+0.206 p50=-0.018, s11 p=0.360 Ereal=+0.206 p50=+0.000, s23 p=0.240 Ereal=+0.206 p50=-0.026, s42 p=0.180 Ereal=+0.206 p50=+0.000
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.8s)
+- NULL full-history 4 seeds: p=[0.22, 0.34, 0.22, 0.34] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.12, 'rebote': 0.4, 'vm': 1.5, 'rmax': 30}, 0.2834, 87), ({'caida': 0.1, 'rebote': 0.4, 'vm': 1.5, 'rmax': 30}, 0.2378, 111), ({'caida': 0.12, 'rebote': 0.4, 'vm': 1.5, 'rmax': 40}, 0.2316, 119), ({'caida': 0.12, 'rebote': 0.4, 'vm': 1.5, 'rmax': 50}, 0.2305, 126), ({'caida': 0.12, 'rebote': 0.3, 'vm': 1.5, 'rmax': 30}, 0.2234, 87)]
+### IDEA13 | ADAUSDT 4h | params={'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}
+- TRAIN: n=158 señ/mes=2.18 E=+0.734R win=37.3% DD=-7.93R PF=4.221
+- TEST : n=33 señ/mes=1.07 E=+0.004R win=27.3% DD=-4.0R PF=1.014
+- NULL (test, 50 sims/seed): s7 p=0.600 Ereal=+0.004 p50=+0.067, s11 p=0.700 Ereal=+0.004 p50=+0.205, s23 p=0.680 Ereal=+0.004 p50=+0.109, s42 p=0.700 Ereal=+0.004 p50=+0.114
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.8s)
+- NULL full-history 4 seeds: p=[0.12, 0.04, 0.02, 0.04] → 3/4. Veredicto FINAL: **DESCARTADA** (ver corrección al final: false positivo por multiplicity — see "CORRECCIÓN ADA")
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}, 0.734, 158), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}, 0.7058, 177), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}, 0.4221, 113), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 30}, 0.4164, 78), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 30}, 0.4138, 113)]
+### IDEA13 | LINKUSDT 4h | params={'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}
+- TRAIN: n=195 señ/mes=2.95 E=+0.326R win=31.8% DD=-9.17R PF=2.059
+- TEST : n=34 señ/mes=1.2 E=+1.473R win=41.2% DD=-2.0R PF=9.347
+- NULL (test, 50 sims/seed): s7 p=0.080 Ereal=+1.473 p50=+0.204, s11 p=0.060 Ereal=+1.473 p50=+0.124, s23 p=0.080 Ereal=+1.473 p50=+0.345, s42 p=0.040 Ereal=+1.473 p50=+0.102
+- p<=0.05 en 1/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.7s)
+- NULL full-history 4 seeds: p=[0.1, 0.1, 0.1, 0.08] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}, 0.3259, 195), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}, 0.268, 171), ({'caida': 0.1, 'rebote': 0.5, 'vm': 1.5, 'rmax': 40}, 0.2403, 195), ({'caida': 0.1, 'rebote': 0.3, 'vm': 1.5, 'rmax': 40}, 0.2287, 195), ({'caida': 0.1, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}, 0.2235, 471)]
+### IDEA13 | AVAXUSDT 4h | params={'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 30}
+- TRAIN: n=72 señ/mes=1.39 E=+0.289R win=27.8% DD=-7.14R PF=2.094
+- TEST : n=14 señ/mes=0.63 E=+0.381R win=42.9% DD=-2.0R PF=2.334
+- NULL (test, 50 sims/seed): s7 p=0.220 Ereal=+0.381 p50=+0.005, s11 p=0.240 Ereal=+0.381 p50=+0.012, s23 p=0.260 Ereal=+0.381 p50=+0.095, s42 p=0.200 Ereal=+0.381 p50=-0.023
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.3s)
+- NULL full-history 4 seeds: p=[0.36, 0.16, 0.2, 0.3] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 30}, 0.2887, 72), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 30}, 0.281, 58), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.5, 'rmax': 30}, 0.2769, 58), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.2, 'rmax': 30}, 0.2404, 72), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 0.2337, 104)]
+### IDEA13 | DOGEUSDT 4h | params={'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}
+- TRAIN: n=158 señ/mes=2.54 E=+0.413R win=44.3% DD=-5.58R PF=2.863
+- TEST : n=28 señ/mes=1.05 E=+0.127R win=32.1% DD=-3.78R PF=1.357
+- NULL (test, 50 sims/seed): s7 p=0.440 Ereal=+0.127 p50=+0.053, s11 p=0.600 Ereal=+0.127 p50=+0.230, s23 p=0.540 Ereal=+0.127 p50=+0.172, s42 p=0.540 Ereal=+0.127 p50=+0.207
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.7s)
+- NULL full-history 4 seeds: p=[0.14, 0.16, 0.26, 0.14] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}, 0.4127, 158), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.0, 'rmax': 50}, 0.3737, 158), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 50}, 0.3434, 158), ({'caida': 0.12, 'rebote': 0.5, 'vm': 1.0, 'rmax': 50}, 0.259, 260), ({'caida': 0.1, 'rebote': 0.5, 'vm': 1.0, 'rmax': 50}, 0.2589, 413)]
+### IDEA13 | DOTUSDT 4h | params={'caida': 0.15, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}
+- TRAIN: n=85 señ/mes=1.61 E=+0.378R win=24.7% DD=-13.19R PF=2.189
+- TEST : n=18 señ/mes=0.8 E=+0.048R win=22.2% DD=-3.06R PF=1.144
+- NULL (test, 50 sims/seed): s7 p=0.520 Ereal=+0.048 p50=+0.097, s11 p=0.480 Ereal=+0.048 p50=+0.040, s23 p=0.540 Ereal=+0.048 p50=+0.091, s42 p=0.400 Ereal=+0.048 p50=-0.071
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.4s)
+- NULL full-history 4 seeds: p=[0.42, 0.34, 0.28, 0.36] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}, 0.3776, 85), ({'caida': 0.12, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}, 0.2959, 118), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 0.2716, 85), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}, 0.266, 132), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 50}, 0.2554, 142)]
+### IDEA13 | LTCUSDT 4h | params={'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 40}
+- TRAIN: n=94 señ/mes=1.25 E=+0.338R win=24.5% DD=-7.51R PF=2.134
+- TEST : n=26 señ/mes=0.81 E=+2.367R win=42.3% DD=-2.0R PF=11.256
+- NULL (test, 50 sims/seed): s7 p=0.040 Ereal=+2.367 p50=+0.038, s11 p=0.020 Ereal=+2.367 p50=-0.077, s23 p=0.100 Ereal=+2.367 p50=+0.122, s42 p=0.100 Ereal=+2.367 p50=+0.021
+- p<=0.05 en 2/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.9s)
+- NULL full-history 4 seeds: p=[0.06, 0.1, 0.14, 0.04] → 1/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 40}, 0.3378, 94), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.5, 'rmax': 40}, 0.3115, 94), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.5, 'rmax': 40}, 0.2944, 94), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 50}, 0.2775, 100), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.5, 'rmax': 50}, 0.2528, 100)]
+### IDEA13 | ATOMUSDT 4h | params={'caida': 0.1, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}
+- TRAIN: n=220 señ/mes=3.46 E=+0.331R win=25.0% DD=-14.74R PF=2.088
+- TEST : n=57 señ/mes=2.09 E=+0.592R win=28.1% DD=-6.54R PF=2.534
+- NULL (test, 50 sims/seed): s7 p=0.200 Ereal=+0.592 p50=+0.145, s11 p=0.100 Ereal=+0.592 p50=+0.206, s23 p=0.180 Ereal=+0.592 p50=+0.225, s42 p=0.220 Ereal=+0.592 p50=+0.322
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.7s)
+- NULL full-history 4 seeds: p=[0.26, 0.22, 0.24, 0.3] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.1, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}, 0.3314, 220), ({'caida': 0.1, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 0.3247, 220), ({'caida': 0.1, 'rebote': 0.3, 'vm': 1.0, 'rmax': 30}, 0.2565, 220), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 40}, 0.2474, 167), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 40}, 0.2319, 167)]
+### IDEA13 | ARBUSDT 4h | params={'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}
+- TRAIN: n=43 señ/mes=1.39 E=+1.323R win=46.5% DD=-3.0R PF=5.375
+- TEST : n=9 señ/mes=0.68 E=-0.013R win=11.1% DD=-1.0R PF=0.88
+- NULL (test, 50 sims/seed): s7 p=0.560 Ereal=-0.013 p50=+0.047, s11 p=0.580 Ereal=-0.013 p50=+0.009, s23 p=0.620 Ereal=-0.013 p50=+0.074, s42 p=0.580 Ereal=-0.013 p50=+0.186
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (0.8s)
+- NULL full-history 4 seeds: p=[0.08, 0.02, 0.12, 0.04] → 2/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 1.3226, 43), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.5, 'rmax': 30}, 1.169, 26), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 40}, 1.097, 50), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 50}, 1.097, 50), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.0, 'rmax': 30}, 1.0626, 43)]
+### IDEA13 | HBARUSDT 4h | params={'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 30}
+- TRAIN: n=42 señ/mes=0.7 E=+1.343R win=33.3% DD=-4.0R PF=9.055
+- TEST : n=8 señ/mes=0.31 E=+0.484R win=50.0% DD=-1.0R PF=4.873
+- NULL (test, 50 sims/seed): s7 p=0.280 Ereal=+0.484 p50=+0.055, s11 p=0.280 Ereal=+0.484 p50=+0.064, s23 p=0.160 Ereal=+0.484 p50=+0.105, s42 p=0.200 Ereal=+0.484 p50=+0.043
+- p<=0.05 en 0/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.6s)
+- NULL full-history 4 seeds: p=[0.04, 0.02, 0.02, 0.0] → 4/4. Veredicto FINAL: DESCARTADA
+- Grid=81, válidas=81. Top5 train: [({'caida': 0.15, 'rebote': 0.4, 'vm': 1.2, 'rmax': 30}, 1.3425, 42), ({'caida': 0.15, 'rebote': 0.4, 'vm': 1.0, 'rmax': 30}, 1.2119, 56), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.0, 'rmax': 30}, 1.0403, 56), ({'caida': 0.15, 'rebote': 0.5, 'vm': 1.2, 'rmax': 30}, 1.0334, 42), ({'caida': 0.15, 'rebote': 0.3, 'vm': 1.2, 'rmax': 30}, 1.0253, 42)]
+
+## IDEA 14 — ADX trend filter + EMA cross 4h
+Idea importada del repo `xy3293/crypto-strategy-backtest` (adx_trend_4h: BTC +22.59%, PF 1.096). Cruce alcista EMA(ef)/EMA(es) solo si ADX14>=adx_min; stop ka*ATR, target tp*R, BE 1R, max 120 bares. Grid 144 combinaciones.
+- BTCUSDT: DESCARTADA — sin combinaciones con n suficiente
+- ETHUSDT: DESCARTADA — sin combinaciones con n suficiente
+- SOLUSDT: DESCARTADA — sin combinaciones con n suficiente
+- XRPUSDT: DESCARTADA — sin combinaciones con n suficiente
+- LINKUSDT: DESCARTADA — sin combinaciones con n suficiente
+- AVAXUSDT: DESCARTADA — sin combinaciones con n suficiente
+
+### CORRECCIÓN IDEA 14 (bug de ADX)
+La primera corrida de IDEA 14 dio 'sin combinaciones con n suficiente' por un error de índice en el ADX del harness (fuera del repo). Corregido; se re-ejecuta.
+### IDEA14 adx_trend | BTCUSDT 4h | params={'ef': 50, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 2.0}
+- TRAIN: n=32 señ/mes=0.41 E=+0.281R win=56.2% DD=-3.0R PF=1.75
+- TEST : n=11 señ/mes=0.33 E=+0.773R win=81.8% DD=-1.0R PF=5.25
+- NULL (test, 50 sims/seed): s7 p=0.060 Ereal=+0.773 p50=+0.000, s11 p=0.020 Ereal=+0.773 p50=+0.000, s23 p=0.000 Ereal=+0.773 p50=-0.000, s42 p=0.080 Ereal=+0.773 p50=+0.100
+- p<=0.05 en 2/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (1.5s)
+- NULL full-history 4 seeds: p=[0.0, 0.0, 0.02, 0.02] → 4/4. Veredicto FINAL: **VÁLIDA (criterio literal; ver reservas en RESUMEN)**
+- Grid=144, válidas=120. Top5 train: [({'ef': 50, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 2.0}, 0.2813, 32), ({'ef': 10, 'es': 50, 'adx_min': 25, 'ka': 3.0, 'tp': 3.0}, 0.2604, 48), ({'ef': 10, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}, 0.25, 18), ({'ef': 20, 'es': 50, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}, 0.2368, 19), ({'ef': 10, 'es': 50, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}, 0.2222, 18)]
+### IDEA14 adx_trend | ETHUSDT 4h | params={'ef': 20, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}
+- TRAIN: n=16 señ/mes=0.21 E=+0.562R win=62.5% DD=-3.5R PF=2.8
+- TEST : n=6 señ/mes=0.18 E=+0.750R win=83.3% DD=-1.0R PF=5.5
+- NULL (test, 50 sims/seed): s7 p=0.040 Ereal=+0.750 p50=+0.000, s11 p=0.040 Ereal=+0.750 p50=+0.000, s23 p=0.100 Ereal=+0.750 p50=-0.100, s42 p=0.120 Ereal=+0.750 p50=+0.000
+- p<=0.05 en 2/4 seeds | test E>0: True | VEREDICTO: DESCARTADA (2.5s)
+- NULL full-history 4 seeds: p=[0.02, 0.02, 0.08, 0.0] → 3/4. Veredicto FINAL: **VÁLIDA (criterio literal; ver reservas en RESUMEN)**
+- Grid=144, válidas=108. Top5 train: [({'ef': 20, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}, 0.5625, 16), ({'ef': 10, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 3.0}, 0.5, 32), ({'ef': 20, 'es': 100, 'adx_min': 30, 'ka': 1.5, 'tp': 3.0}, 0.5, 16), ({'ef': 20, 'es': 100, 'adx_min': 30, 'ka': 2.0, 'tp': 2.0}, 0.4688, 16), ({'ef': 50, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}, 0.42, 25)]
+### IDEA14 adx_trend | SOLUSDT 4h | params={'ef': 20, 'es': 50, 'adx_min': 25, 'ka': 3.0, 'tp': 3.0}
+- TRAIN: n=21 señ/mes=0.4 E=+0.476R win=71.4% DD=-1.5R PF=3.0
+- TEST : n=7 señ/mes=0.31 E=-0.143R win=42.9% DD=-3.5R PF=0.75
+- NULL (test, 50 sims/seed): s7 p=0.540 Ereal=-0.143 p50=-0.083, s11 p=0.540 Ereal=-0.143 p50=-0.045, s23 p=0.440 Ereal=-0.143 p50=-0.167, s42 p=0.480 Ereal=-0.143 p50=-0.167
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (1.6s)
+- NULL full-history 4 seeds: p=[0.08, 0.06, 0.1, 0.12] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=144, válidas=90. Top5 train: [({'ef': 20, 'es': 50, 'adx_min': 25, 'ka': 3.0, 'tp': 3.0}, 0.4762, 21), ({'ef': 20, 'es': 50, 'adx_min': 25, 'ka': 3.0, 'tp': 2.0}, 0.4524, 21), ({'ef': 10, 'es': 50, 'adx_min': 20, 'ka': 3.0, 'tp': 2.0}, 0.3333, 45), ({'ef': 10, 'es': 50, 'adx_min': 20, 'ka': 3.0, 'tp': 3.0}, 0.3333, 45), ({'ef': 50, 'es': 100, 'adx_min': 15, 'ka': 3.0, 'tp': 3.0}, 0.2927, 41)]
+### IDEA14 adx_trend | XRPUSDT 4h | params={'ef': 50, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}
+- TRAIN: n=20 señ/mes=0.28 E=+0.475R win=65.0% DD=-2.5R PF=2.583
+- TEST : n=12 señ/mes=0.39 E=-0.000R win=50.0% DD=-2.5R PF=1.0
+- NULL (test, 50 sims/seed): s7 p=0.480 Ereal=-0.000 p50=-0.083, s11 p=0.440 Ereal=-0.000 p50=-0.143, s23 p=0.520 Ereal=-0.000 p50=+0.000, s42 p=0.380 Ereal=-0.000 p50=-0.100
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (2.2s)
+- NULL full-history 4 seeds: p=[0.08, 0.18, 0.1, 0.14] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=144, válidas=120. Top5 train: [({'ef': 50, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 3.0}, 0.475, 20), ({'ef': 50, 'es': 100, 'adx_min': 30, 'ka': 2.0, 'tp': 3.0}, 0.425, 20), ({'ef': 50, 'es': 100, 'adx_min': 30, 'ka': 3.0, 'tp': 2.0}, 0.425, 20), ({'ef': 50, 'es': 100, 'adx_min': 30, 'ka': 2.0, 'tp': 2.0}, 0.375, 20), ({'ef': 10, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 2.0}, 0.3611, 36)]
+### IDEA14 adx_trend | LINKUSDT 4h | params={'ef': 10, 'es': 100, 'adx_min': 15, 'ka': 3.0, 'tp': 3.0}
+- TRAIN: n=95 señ/mes=1.44 E=+0.405R win=62.1% DD=-4.0R PF=2.283
+- TEST : n=35 señ/mes=1.24 E=-0.114R win=40.0% DD=-8.5R PF=0.765
+- NULL (test, 50 sims/seed): s7 p=0.840 Ereal=-0.114 p50=+0.036, s11 p=0.780 Ereal=-0.114 p50=+0.030, s23 p=0.680 Ereal=-0.114 p50=-0.047, s42 p=0.820 Ereal=-0.114 p50=+0.057
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (2.1s)
+- NULL full-history 4 seeds: p=[0.0, 0.0, 0.0, 0.02] → 4/4. Veredicto FINAL: DESCARTADA
+- Grid=144, válidas=102. Top5 train: [({'ef': 10, 'es': 100, 'adx_min': 15, 'ka': 3.0, 'tp': 3.0}, 0.4053, 95), ({'ef': 20, 'es': 100, 'adx_min': 15, 'ka': 3.0, 'tp': 3.0}, 0.3571, 70), ({'ef': 20, 'es': 100, 'adx_min': 20, 'ka': 3.0, 'tp': 3.0}, 0.3534, 58), ({'ef': 10, 'es': 100, 'adx_min': 20, 'ka': 3.0, 'tp': 3.0}, 0.3438, 64), ({'ef': 50, 'es': 100, 'adx_min': 20, 'ka': 3.0, 'tp': 2.0}, 0.3372, 43)]
+### IDEA14 adx_trend | AVAXUSDT 4h | params={'ef': 20, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 2.0}
+- TRAIN: n=27 señ/mes=0.52 E=+0.407R win=66.7% DD=-2.5R PF=2.375
+- TEST : n=3 señ/mes=0.13 E=-0.167R win=33.3% DD=-2.0R PF=0.75
+- NULL (test, 50 sims/seed): s7 p=0.540 Ereal=-0.167 p50=-0.083, s11 p=0.580 Ereal=-0.167 p50=-0.045, s23 p=0.500 Ereal=-0.167 p50=-0.150, s42 p=0.540 Ereal=-0.167 p50=-0.083
+- p<=0.05 en 0/4 seeds | test E>0: False | VEREDICTO: DESCARTADA (1.6s)
+- NULL full-history 4 seeds: p=[0.14, 0.16, 0.1, 0.1] → 0/4. Veredicto FINAL: DESCARTADA
+- Grid=144, válidas=90. Top5 train: [({'ef': 20, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 2.0}, 0.4074, 27), ({'ef': 20, 'es': 100, 'adx_min': 20, 'ka': 3.0, 'tp': 2.0}, 0.4048, 42), ({'ef': 20, 'es': 100, 'adx_min': 15, 'ka': 3.0, 'tp': 2.0}, 0.3444, 45), ({'ef': 20, 'es': 100, 'adx_min': 25, 'ka': 3.0, 'tp': 3.0}, 0.3333, 27), ({'ef': 20, 'es': 100, 'adx_min': 20, 'ka': 3.0, 'tp': 3.0}, 0.3214, 42)]
+
+
+---
+
+# RESUMEN FINAL — 2026-11-25 15:44:00 
+
+## Investigación de repositorios públicos (ideas importadas)
+- `xy3293/crypto-strategy-backtest` (https://github.com/xy3293/crypto-strategy-backtest): 12 estrategias 4h en perpetuos Binance 2021-2026, con métricas publicadas. Sobrevivieron a split-sample/cross-asset: `keltner_breakout` (BTC +69.31%, PF 1.312, Sharpe 0.7173), `supertrend_4h` (BTC +31.46%, PF 1.167, DD -12.77%), `adx_trend_4h` (BTC +22.59%, PF 1.096), `turtle_donchian_4h` (BTC +44.24%, PF 1.158). Su validación independiente concluyó que 4 de 7 candidatas eran suerte/regime-dependientes. → Se implementaron IDEA 3 (squeeze BB), 7 (Donchian), 11 (Keltner), 12 (Supertrend), 14 (ADX).
+- `crollila/strategy-survival-funnel`: 9.222 backtests / 47 estrategias / 29 activos; filtros OOS: DD>-35%, Sharpe OOS 0.5–2.5, >=30 trades, OOS<=1.3×IS. → Justifica el criterio de n mínimo y la penalización por multiplicidad aplicada en este informe.
+- `pooriga/crypto-strategy-backtest` y `intikhab49/edgeproof-crypto-trading-backtest`: momentum/MA-cross con bootstrap en bloques y Deflated Sharpe; LR/LSTM sin edge (PF 0.54–0.98). → Confirma que no hay edge ML simple, en línea con el ML GradientBoosting ya descartado en el proyecto.
+
+## Resultado global
+- 14 ideas distintas probadas, 102 configuraciones idea×par con métricas completas (n, señales/mes, E, win%, DD, PF).
+- ESTRICTAMENTE VÁLIDAS (criterio literal: null full-history p<=0.05 en >=3/4 seeds Y E(test)>0): **2 candidatas, ambas de la IDEA 14 (ADX+EMA 4h)**.
+
+### Candidata A — IDEA14 BTCUSDT 4h (baja frecuencia)
+- Parámetros exactos: ef=50, es=100, adx_min=25, ka=3.0, tp=2.0, BE=1R, max_bars=120.
+- TRAIN (70%): n=32, 0.41 señ/mes, E=+0.281R, win=56.2%, DD=-3.0R, PF=1.75.
+- TEST (30%): n=11, 0.33 señ/mes, E=+0.773R, win=81.8%, DD=-1.0R, PF=5.25.
+- NULL full-history 4 seeds: p=[0.00,0.00,0.02,0.02] → 4/4. NULL test-seed: 2/4. 8 seeds adicionales full: [0.02,0.00,0.08,0.08,0.02,0.08,0.06,0.06] → 3/8 (global 7/12).
+- Sensibilidad de parámetros en test: 68/96 combinaciones con E>0, mediana +0.125R (región amplia, no un punto aislado).
+- RESERVA: solo 11 señales en ~5 años de test (0.33/mes); no alcanza el umbral de 30 trades del funnel ni mi guard de n>=15; el null sobre el test cae a 2/4. **Prometedora pero NO recomendable para producción sin más datos/out-of-sample.**
+
+### Candidata B — IDEA14 ETHUSDT 4h (baja frecuencia)
+- Parámetros: ef=20, es=100, adx_min=30, ka=3.0, tp=3.0, BE=1R, max_bars=120.
+- TRAIN: n=16, 0.21 señ/mes, E=+0.562R, win=62.5%, DD=-3.5R, PF=2.8. TEST: n=6, 0.18 señ/mes, E=+0.750R, win=83.3%, DD=-1.0R, PF=5.5.
+- NULL full 4 seeds: p=[0.02,0.02,0.08,0.00] → 3/4. 8 seeds adicionales: 7/8. NULL test-seed: 2/4.
+- RESERVA: n=6 en test → estadísticamente insuficiente. **No recomendable.**
+
+### CORRECCIÓN ADA (IDEA 13) — falso positivo por multiplicidad
+- Idea 13 ADAUSDT marcada inicialmente VÁLIDA (E=+0.0042R, null full 3/4). Corrección: E(test) prácticamente cero, PF=1.014, win=27.3%, train E=+0.734 → decay del 99%; null sobre test 0/4 (p=0.60–0.70); 8 seeds extra full solo 1/8 p<=0.05. Con 14 pares × 81 combinaciones, 3/4 seeds es exactamente lo esperable por azar. → **DESCARTADA**. Línea correspondiente corregida arriba.
+
+## Descartadas (motivo resumido)
+1. Scalping 1h EMA+ATR trailing (BTC/ETC/HBAR/THETA): E(test) negativo o ~0 en los 4 pares; null 0/4. ETH 1h tenía solo 500 velas.
+2. Swing 1d + filtro semanal (6 pares): E(test) negativo, n(test)<15 en la mayoría; los archivos *_1d.json están truncados (3 velas), se re-muestreó 4h→1d en memoria.
+3. Squeeze BB + volumen 4h (6 pares): mejor E(test)=+0.087 (LINK), null 1/4; resto negativo o 0.
+4. RSI+EMA200 4h (6 pares): mejor E=+0.093 (AVAX) con null 0/4; los que pasan null tienen E<=0.
+5. MACD+ATR 4h (6 pares): E(test) negativo en los 6; null 3/4 solo en ETH con E<0.
+6. Momentum 1d EMA+ATR% (6 pares): n(test) 6–12; mejor pase parcial BNB (E=+0.227, null 3/4) con n=11 y null-test 0/4.
+7. Donchian+trailing 4h (6 pares): E(test) negativo en los 6; ETH null 4/4 con E=-0.153 (significativamente peor que el null).
+8. MTF scalp 1h filtrado por 4h (4 pares): E(test) negativo salvo ETC (+0.042, n=12, null-test 0/4).
+9. Flash-crash BB+volumen 1d (6 pares): E(test) positivo en ETH/BNB/ADA pero n=10–21 y null 0/4.
+10. Inside-bar breakout 4h (6 pares): E(test) negativo en los 6; null 0/4 en todos.
+11. Keltner breakout 4h (6 pares): BTC/ETH con null 4/4 pero E(test) negativo → significativamente peor que aleatorio; LINK +0.011 con null 0/4.
+12. Supertrend 4h (6 pares): E(test) negativo en los 6.
+13. Reversión caída+volumen/RSI 4h (14 pares): main resultados positivos pero null 0/4 en 12/14; ADA falso positivo corregido; HBAR 4/4 con n=8.
+14. ADX+EMA 4h (6 pares): BTC y ETH pasan criterio literal (ver arriba); SOL/XRP/LINK/AVAX E(test)<=0.
+
+## Notas de integridad
+- PAPER_ONLY: no se ejecutó ninguna orden.
+- Único archivo del repo modificado: `daily_pilot/investigacion/AGENTE_BUSQUEDA_LOG.md`. No se tocaron `metodo/`, FIRMA, `store.db`, `tracker_paper.py`, dashboard ni velas. No se descargaron velas nuevas.
+- Harness y detectores creados FUERA del repo, en `/Users/franciscootamendi/.hermes/cache/scratch/` (`harness.py`, `ideas.py`, `res_*.json`).
+- Las velas se leyeron directo con `json` y se ordenaron por `ts`; null con `null_corregido` replicado en scratch (50 permutaciones × 4 seeds; mismo algoritmo de permuta de signos que conserva magnitudes).
