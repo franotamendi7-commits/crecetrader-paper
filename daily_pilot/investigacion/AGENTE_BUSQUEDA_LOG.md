@@ -1,6 +1,20 @@
 # AGENTE_BUSQUEDA_LOG — Exploración autónoma de nuevas estrategias
 PAPER_ONLY. Sin órdenes. Sin modificaciones al repo salvo este archivo.
 
+## 2026-11-25 · Scale-in Fibo — prueba uno por uno sobre los 24 pares restantes
+
+Aplicando la regla validada (Fase1 → Fase2 retroceso 38,2% → entradas 61,8%/100%, filtro R≥4%, riesgo 2%):
+
+| Par | ops | win | resultado | DD | null | WF | veredicto |
+|---|---:|---:|---:|---:|---|---|---|
+| LINK | 24 | 100% | +$1104 | $0 | p=0.00 | $629→$475 | **VALIDADO** |
+| AVAX | 15 | 100% | +$888 | $0 | p=0.00 | $566→$322 | **VALIDADO** |
+| DOT | 14 | 92,9% | +$301 | −$44 | **p=1.00** | $198→$104 | **DESCARTADO** |
+
+Nota DOT: sin filtro 19 ops, 68,4%, −$198, DD −$288. Con filtro mejora pero el null sintético gana más ($523 media, $684 max) → el resultado es azar, no ventaja. No se agrega a la cartera.
+
+Cartera scale-in tras LINK+AVAX: 247 ops · 97,6% · +$8701,59 · DD −$17,18 · 7 pares.
+
 Protocolo aplicado a CADA idea:
 - Velas leídas DIRECTO con `json` desde `daily_pilot/datos/velas/*.json` (nunca `velas()`).
 - Walk-forward 70/30: optimización de parámetros SOLO en train (primer 70% de velas ordenadas por ts), evaluación en test (último 30%).
