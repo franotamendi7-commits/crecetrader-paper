@@ -244,8 +244,8 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
             '<div><span>Cambio 24h</span><b>%s</b></div>'
             '<div><span>Estado</span><b>%s</b></div>'
             '</div>'
-            '<div class="meta">capital de referencia: USD 300 · riesgo 1% · apalancamiento 20x</div>'
-            '</div></section>' % (esc(par), esc(par), esc(disp), esc(disp), esc(precio_s), esc(chg_s), esc(x.get('status') or '—')))
+            '<div class="meta">capital de referencia USD 300 · riesgo uno al uno · apalancamiento 20x</div>'
+            '</div></section>' % (esc(disp), esc(par), esc(disp), esc(disp), esc(precio_s), esc(chg_s), esc(x.get('status') or '—')))
     return ''.join(bloques)
 
 
