@@ -31,13 +31,20 @@ INTERVALOS = {'1m': '1m', '5m': '5m', '15m': '15m', '1h': '1h', '4h': '4h',
               '1d': '1d', '1w': '1w', '1M': '1M'}
 
 
-def _cache_path(par: str, tf: str) -> Path:
+def _cache_path(par: str, tf: str, corta: bool = False) -> Path:
+    """Ruta de cache.
+
+    IMPORTANTE: las consultas cortas (limite pequeño, usadas por el dashboard)
+    VAN EN OTRO ARCHIVO. Antes escribian sobre el historico completo y lo
+    destruian: una consulta de 500 velas borraba 20.000 velas de backtest.
+    """
     DIR_VELAS.mkdir(parents=True, exist_ok=True)
-    return DIR_VELAS / f'{par}_{tf}.json'
+    suf = '_cache' if corta else ''
+    return DIR_VELAS / f'{par}_{tf}{suf}.json'
 
 
-def _leer_cache(par: str, tf: str, limite: int = 0) -> list[dict] | None:
-    p = _cache_path(par, tf)
+def _leer_cache(par: str, tf: str, limite: int = 0, corta: bool = False) -> list[dict] | None:
+    p = _cache_path(par, tf, corta)
     if not p.exists():
         return None
     if time.time() - p.stat().st_mtime > CACHE_SEGUNDOS:
@@ -53,9 +60,9 @@ def _leer_cache(par: str, tf: str, limite: int = 0) -> list[dict] | None:
     return v
 
 
-def _escribir_cache(par: str, tf: str, velas: list[dict]) -> None:
+def _escribir_cache(par: str, tf: str, velas: list[dict], corta: bool = False) -> None:
     DIR_VELAS.mkdir(parents=True, exist_ok=True)
-    _cache_path(par, tf).write_text(json.dumps(
+    _cache_path(par, tf, corta).write_text(json.dumps(
         {'par': par, 'tf': tf, 'fuente': 'binance', 'velas': velas},
         indent=1, ensure_ascii=False))
 
@@ -79,17 +86,20 @@ def velas(par: str, tf: str, limite: int = 500, forzar: bool = False) -> dict:
 
     Devuelve {'par','tf','fuente','velas'} o {'error': ...}
     """
+    # Una consulta "corta" (limite <= 1000) NUNCA debe escribir sobre el
+    # historico completo: va a su propio archivo _cache.json.
+    corta = 0 < limite <= 1000
     if not forzar:
-        c = _leer_cache(par, tf, limite)
+        c = _leer_cache(par, tf, limite, corta)
         if c:
             return {'par': par, 'tf': tf, 'fuente': 'cache', 'velas': c}
     try:
         v = binance_klines(par, tf, limite)
-        _escribir_cache(par, tf, v)
+        _escribir_cache(par, tf, v, corta)
         return {'par': par, 'tf': tf, 'fuente': 'binance', 'velas': v}
     except Exception as e:
         # fallback: cache vieja aunque este vencida
-        c = _leer_cache(par, tf) or _leer_cache_vieja(par, tf)
+        c = _leer_cache(par, tf, 0, corta) or _leer_cache_vieja(par, tf)
         if c:
             return {'par': par, 'tf': tf, 'fuente': 'cache', 'velas': c}
         return {'par': par, 'tf': tf, 'error': f'{type(e).__name__}: {e}'}
