@@ -86,7 +86,7 @@ def _escribir_json(p: Path, d: dict) -> None:
 
 def _velas_cerradas(par: str):
     """Últimas LIMITE velas 4h cerradas. Devuelve (velas, fuente, error)."""
-    r = velas(par, TF, limite=LIMITE + 1)
+    r = velas(par, TF, limite=LIMITE)
     if 'error' in r or not r.get('velas'):
         return [], None, r.get('error', 'sin velas')
     v = r['velas']
@@ -284,6 +284,15 @@ def actualizar(verbose: bool = False) -> dict:
             o['actualizado'] = ahora
             actualizadas += 1
 
+    # 4) podar replay fuera de la ventana actual (forward se conserva siempre)
+    ventanas = {par: v[0]['ts'] for par, (v, _sen) in datos.items()}
+    antes = len(ops)
+    ops[:] = [o for o in ops
+              if not (o.get('origen') == 'replay'
+                      and o.get('par') in ventanas
+                      and int(o.get('senal_ts') or 0) < ventanas[o['par']])]
+    podadas = antes - len(ops)
+
     ops.sort(key=lambda o: (o.get('senal_ts') or 0, o.get('par') or ''))
 
     j['generado'] = ahora
@@ -303,14 +312,16 @@ def actualizar(verbose: bool = False) -> dict:
     _escribir_json(JOURNAL, j)
 
     if verbose:
-        _imprimir_resumen(j, nuevas, actualizadas)
+        _imprimir_resumen(j, nuevas, actualizadas, podadas)
     return j
 
 
-def _imprimir_resumen(j: dict, nuevas: int = 0, actualizadas: int = 0) -> None:
+def _imprimir_resumen(j: dict, nuevas: int = 0, actualizadas: int = 0,
+                      podadas: int = 0) -> None:
     r = metricas_ops(j.get('operaciones') or [])
     print(f"TRACKER PAPER · {r['n']} operaciones ({r['cerradas']} cerradas, "
-          f"{r['abiertas']} abiertas) · +{nuevas} nuevas / {actualizadas} actualizadas")
+          f"{r['abiertas']} abiertas) · +{nuevas} nuevas / {actualizadas} "
+          f"actualizadas / -{podadas} podadas")
     print(f"  E {r['E']}R · acierto {r['acierto']}% · PF {r['pf']} · "
           f"DD {r['dd']}R · total {r['total']}R (${r['usd']:+.2f} a 0,35%)")
     print(f"  forward: {r['forward_n']} ops · "

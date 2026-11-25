@@ -88,14 +88,15 @@ def _color(x) -> str:
         return 'var(--muted)'
 
 
-def _cargar_meta() -> dict:
+def _cargar_meta() -> tuple[dict, dict]:
     if not EST.exists():
-        return {}
+        return {}, {}
     try:
         d = json.loads(EST.read_text(encoding='utf-8'))
-        return {p.get('par'): p for p in d.get('pares') or [] if p.get('par')}
+        meta = {p.get('par'): p for p in d.get('pares') or [] if p.get('par')}
+        return meta, d.get('cartera') or {}
     except Exception:
-        return {}
+        return {}, {}
 
 
 def _fecha_corta(iso: str) -> str:
@@ -119,7 +120,7 @@ def html() -> str:
     ops = j.get('operaciones') or []
     if not isinstance(ops, list):
         return _vacio()
-    meta = _cargar_meta()
+    meta, cartera = _cargar_meta()
     pares = list(j.get('estrategia', {}).get('pares') or meta)
     pares.sort(key=lambda p: {'VALIDADA': 0, 'VALIDADA CON RESERVA': 1}
                .get((meta.get(p) or {}).get('estado'), 2))
@@ -134,6 +135,8 @@ def html() -> str:
         ('Cerradas', str(g['cerradas'])),
         ('Abiertas', str(g['abiertas'])),
         ('E replay', f"{_n(g['E'], 3, True)}R" if g['E'] is not None else '—'),
+        ('E backtest', f"{_n(cartera.get('esperanza_R'), 3, True)}R"
+         if cartera.get('esperanza_R') is not None else '—'),
         ('Acierto', f"{_n(g['acierto'], 1)}%" if g['acierto'] is not None else '—'),
         ('PF', _n(g['pf'], 2)),
         ('DD', f"{_n(g['dd'], 1)}R" if g['cerradas'] else '—'),
@@ -255,6 +258,9 @@ def html() -> str:
         f'{abiertas_html}'
         f'{cerradas_html}'
         f'<div class="nota" style="margin-top:12px">{nota_fwd}</div>'
+        '<div class="nota">E replay = ventana de las últimas 1000 velas 4h · '
+        'E backtest = histórico completo del JSON validado (null multi-seed + '
+        'walk-forward).</div>'
         f'<div class="nota">Riesgo 0,35% de $300 = {_money(RIESGO_USD)} por operación '
         '· 1R = $1,05 · sizing con stop fijo.</div>'
         f'{err_html}'
