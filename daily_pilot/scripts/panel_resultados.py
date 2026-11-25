@@ -13,11 +13,13 @@ PAPER_ONLY: muestra, no ejecuta.
 """
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[2]
 INF = BASE / 'daily_pilot' / 'investigacion' / 'ESTRATEGIA_GANADORA.md'
+EST = BASE / 'daily_pilot' / 'datos' / 'estrategias_validadas.json'
 
 CSS_EXTRA = '''
 .res{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
@@ -127,8 +129,24 @@ def html() -> str:
                   if l.strip() and not l.strip().startswith('#')][:12]
         cuerpo = '<div class="meta">' + '<br>'.join(_esc(l) for l in lineas) + '</div>'
 
+    linea_est = ''
+    if EST.exists():
+        try:
+            ed = json.loads(EST.read_text(encoding='utf-8'))
+            desc = ed.get('descartados') or {}
+            tot = desc.get('total_pares_quantfury')
+            pos = desc.get('con_expectativa_positiva')
+            validos = [p for p in ed.get('pares') or [] if p.get('estado') == 'VALIDADA']
+            val = (validos[0].get('par') or '').replace('USDT', '') if validos else '—'
+            if tot and pos is not None:
+                linea_est = (f'<div class="meta" style="margin-top:8px">{pos} de {tot} pares con '
+                             f'E&gt;0 · solo {_esc(val)} valida estrictamente.</div>')
+        except Exception:
+            linea_est = ''
+
     return (f'<div class="res"><div class="verdict {"si" if gana else "no"}">{_esc(vered_real)}</div>'
             f'{cuerpo}'
+            f'{linea_est}'
             f'<div class="meta" style="margin-top:12px">fuente: {_esc(INF.name)} · veredicto: {_esc(veredicto)}</div></div>')
 
 

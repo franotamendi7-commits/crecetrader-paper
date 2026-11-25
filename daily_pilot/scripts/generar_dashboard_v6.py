@@ -246,19 +246,28 @@ def lcard(clase, titulo, pct, color_var) -> str:
             f'<span class="p" style="color:{color_var}">{pct}%</span></div></div>')
 
 
-def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
-    """Vista por par: datos reales del mercado + niveles/alertas/riesgo cuando existen."""
-    from velas import velas as _velas
+def _es_num(x, dec=2, signo=False) -> str:
+    """Numero con coma decimal; negativo con signo menos tipografico."""
+    try:
+        v = float(x)
+    except Exception:
+        return '—'
+    s = f'{v:.{dec}f}'.replace('.', ',')
+    if v < 0:
+        return '−' + s.lstrip('-')
+    if signo and v > 0:
+        return '+' + s
+    return s
+
+
+def _pdetalles(mer: list, niveles: list, est: dict) -> str:
+    """Vista por par: datos reales del mercado + estrategia validada cuando existe."""
     m = {x['par']: x for x in mer}
+    pares_est = {p.get('par'): p for p in (est or {}).get('pares') or []}
     bloques = []
     for par in PARES_QUANTFURY:
         x = m.get(par) or {}
         disp = par.replace('USDT', '')
-        sig = None
-        for p in (mon or {}).get('pares') or []:
-            if p.get('par') == disp:
-                sig = p
-                break
         precio_s = fmt_precio(x.get('precio')) if x.get('precio') is not None else '—'
         chg_s = f'{x["cambio"]:+.2f}%' if x.get('cambio') is not None else '—'
         niv = '<div class="meta">sin niveles configurados</div>'
@@ -267,20 +276,22 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
             niv = ''.join(
                 f'<div class="niv"><b>{fmt_precio(float(n.get("precio")))}</b>'
                 f'<span class="men">x{n.get("menciones")} menciones</span></div>' for n in top)
-        ar = '<div class="meta">sin alertas ni senales para este par</div>'
-        if sig is not None:
-            if sig.get('senal'):
-                t = sig.get('ticket') or {}
-                ar = (f'<div class="kpi">'
-                      f'<div><span>Entry</span><b>{fmt_precio(t.get("entry"))}</b></div>'
-                      f'<div><span>Stop</span><b style="color:var(--bad)">{fmt_precio(t.get("stop"))}</b></div>'
-                      f'<div><span>Target</span><b style="color:var(--ok)">{fmt_precio(t.get("target"))}</b></div>'
-                      f'<div><span>Riesgo/unidad</span><b>{fmt_precio(t.get("riesgo_por_unidad"))}</b></div>'
-                      f'<div><span>Unidades</span><b>{fmt_precio(t.get("unidades"))}</b></div>'
-                      f'<div><span>Margen 20x</span><b>{fmt_precio(t.get("margen_20x"))}</b></div>'
-                      '</div>')
-            else:
-                ar = f'<div class="meta">sin senal abierta · ultima: {esc(sig.get("fecha_senal") or "—")}</div>'
+        e = pares_est.get(par)
+        if e:
+            label = {'VALIDADA': 'VALIDADA', 'VALIDADA CON RESERVA': 'CON RESERVA',
+                     'DEBIL': 'DÉBIL'}.get(e.get('estado'), e.get('estado') or '—')
+            ar = (f'<div class="kpi">'
+                  f'<div><span>Estado</span><b>{esc(label)}</b></div>'
+                  f'<div><span>Señales/mes</span><b>{_es_num(e.get("por_mes"), 1)}</b></div>'
+                  f'<div><span>Esperanza</span><b>{_es_num(e.get("esperanza_R"), 3, True)}R</b></div>'
+                  f'<div><span>Acierto</span><b>{_es_num(e.get("acierto_pct"), 1)}%</b></div>'
+                  f'<div><span>DD</span><b>{_es_num(e.get("dd_R"), 1)}R</b></div>'
+                  f'<div><span>PF</span><b>{_es_num(e.get("pf"), 2)}</b></div>'
+                  f'</div>'
+                  f'<div class="meta">regla: stop swing fijo · 50% en 1R → BE → target Fib 1.5</div>'
+                  f'<div class="meta">riesgo 0,35% de $300 = $1,05 por operación · apalancamiento 20x</div>')
+        else:
+            ar = '<div class="meta">sin estrategia validada</div>'
         bloques.append(
             f'<section class="pdetail" id="par-{esc(disp)}">'
             f'<div class="res">'
@@ -293,8 +304,8 @@ def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
             f'<div><span>Estado</span><b>{esc(x.get("status") or "—")}</b></div>'
             f'</div>'
             f'<h3>Niveles</h3>{niv}'
-            f'<h3>Alertas / riesgo</h3>{ar}'
-            f'<div class="meta">capital de referencia USD 300 · riesgo uno al uno · apalancamiento 20x</div>'
+            f'<h3>Estrategia validada</h3>{ar}'
+            f'<div class="meta">capital de referencia USD 300 · PAPER ONLY · apalancamiento 20x</div>'
             f'</div></section>')
     return ''.join(bloques)
 
@@ -310,7 +321,7 @@ def main() -> int:
 
     fuen = sorted({x.get('fuente', '') for x in mer if x.get('fuente')})
     cards = ''.join(mcard(x) for x in mer)
-    secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'monitor_senales.json'))
+    secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'estrategias_validadas.json'))
 
     ev = ''.join(f'<span class="chip">{esc(e)}</span>' for e in lec['evidencia'])
     top = [n for n in sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]]

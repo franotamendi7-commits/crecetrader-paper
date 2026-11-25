@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Panel MONITOR DE SEÑALES para el dashboard v6.
+"""Panel ESTRATEGIA VALIDADA para el dashboard v6.
 
-Lee daily_pilot/datos/monitor_senales.json y muestra el estado actual
-de la estrategia validada en BTC y ETH.
+Lee daily_pilot/datos/estrategias_validadas.json y muestra la cartera de
+4 pares validada con null sintetico multi-seed y walk-forward 70/30.
 PAPER_ONLY: muestra, no ejecuta.
 """
 from __future__ import annotations
@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[2]
-MON = BASE / 'daily_pilot' / 'datos' / 'monitor_senales.json'
+EST = BASE / 'daily_pilot' / 'datos' / 'estrategias_validadas.json'
 
 CSS_EXTRA = '''
 .mon{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
@@ -41,59 +41,78 @@ def _e(s):
     return _h.escape(str(s or ''))
 
 
-def _num(x, dec=2):
+def _n(x, dec=2, signo=False):
+    """Numero con coma decimal; negativo con signo menos tipografico."""
     try:
-        return f"{float(x):,.{dec}f}"
+        v = float(x)
     except Exception:
         return '—'
+    s = f'{v:.{dec}f}'.replace('.', ',')
+    if v < 0:
+        return '−' + s.lstrip('-')
+    if signo and v > 0:
+        return '+' + s
+    return s
+
+
+_ESTADOS = {
+    'VALIDADA': ('VALIDADA', 'abierta'),
+    'VALIDADA CON RESERVA': ('CON RESERVA', 'sin'),
+    'DEBIL': ('DÉBIL', 'cerrada'),
+}
 
 
 def html() -> str:
-    if not MON.exists():
-        return '<div class="mon"><div class="mt">Monitor de señales</div><div class="nota">sin datos</div></div>'
+    if not EST.exists():
+        return ('<div class="mon"><div class="mt">Estrategia validada</div>'
+                '<div class="nota">sin datos</div></div>')
     try:
-        d = json.loads(MON.read_text(encoding='utf-8'))
+        d = json.loads(EST.read_text(encoding='utf-8'))
     except Exception:
-        return '<div class="mon"><div class="nota">monitor ilegible</div></div>'
+        return '<div class="mon"><div class="nota">estrategias ilegibles</div></div>'
+
+    regla = d.get('regla') or {}
+    cartera = d.get('cartera') or {}
+    pares = sorted(d.get('pares') or [],
+                   key=lambda p: {'VALIDADA': 0,
+                                  'VALIDADA CON RESERVA': 1}.get(p.get('estado'), 2))
 
     filas = []
-    for p in d.get('pares', []):
-        estado = p.get('estado', '—')
-        cls = ('abierta' if estado == 'ABIERTA'
-               else 'sin' if estado == 'SIN SEÑAL' else 'cerrada')
-        if p.get('error'):
-            filas.append(f'<div class="fila"><div class="top"><span class="nom">{_e(p.get("par"))}</span>'
-                         f'<span class="estado sin">SIN DATOS</span></div></div>')
-            continue
-        t = p.get('ticket', {})
-        kv = ''
-        if p.get('senal') or estado == 'ABIERTA':
-            kv = (f'<div class="kv">'
-                  f'<div><span>Entry</span><b>{_num(p.get("entry"))}</b></div>'
-                  f'<div><span>Stop</span><b style="color:var(--bad)">{_num(p.get("stop"))}</b></div>'
-                  f'<div><span>Target 3.0</span><b style="color:var(--ok)">{_num(p.get("target"))}</b></div>'
-                  f'<div><span>Riesgo/unidad</span><b>{_num(p.get("riesgo_por_unidad"))}</b></div>'
-                  f'<div><span>Riesgo</span><b>${_num(t.get("riesgo_usd"))}</b></div>'
-                  f'<div><span>Unidades</span><b>{_num(t.get("unidades"), 4)}</b></div>'
-                  f'<div><span>Margen 20x</span><b>${_num(t.get("margen_20x"))}</b></div>'
-                  f'</div>')
-        else:
-            kv = (f'<div class="kv">'
-                  f'<div><span>Ultima señal</span><b style="font-size:12px">{_e(p.get("fecha_senal", "—"))}</b></div>'
-                  f'<div><span>Entry</span><b>{_num(p.get("entry"))}</b></div>'
-                  f'<div><span>Stop</span><b style="color:var(--bad)">{_num(p.get("stop"))}</b></div>'
-                  f'<div><span>Op. historicas</span><b>{_e(p.get("n_ops_historicas", "—"))}</b></div>'
-                  f'</div>')
+    for p in pares:
+        label, cls = _ESTADOS.get(p.get('estado'), (p.get('estado') or '—', 'sin'))
         filas.append(
-            f'<div class="fila"><div class="top">'
-            f'<span class="nom">{_e(p.get("par"))}</span>'
-            f'<span class="estado {cls}">{_e(estado)}</span>'
-            f'<span class="precio">{_num(p.get("precio_actual"))}</span>'
-            f'</div>{kv}'
-            f'<div class="nota">{_e(p.get("nota"))}</div></div>')
+            '<tr>'
+            f'<td><b>{_e(p.get("par"))}</b></td>'
+            f'<td>{_n(p.get("por_mes"), 1)}</td>'
+            f'<td>{_n(p.get("esperanza_R"), 3, True)}</td>'
+            f'<td>{_n(p.get("acierto_pct"), 1)}%</td>'
+            f'<td>{_n(p.get("dd_R"), 1)}R</td>'
+            f'<td>{_n(p.get("pf"), 2)}</td>'
+            f'<td>{_n(p.get("null_p"), 3)}</td>'
+            f'<td>{_e(p.get("null_seeds"))}</td>'
+            f'<td>{_n(p.get("wf_test"), 3, True)}</td>'
+            f'<td><span class="estado {cls}">{label}</span></td>'
+            '</tr>')
 
-    return (f'<div class="mon"><div class="mt">Monitor de señales · estrategia validada</div>'
-            f'<div class="head">{_e(d.get("estrategia"))} · {_e(d.get("validacion"))} · '
-            f'actualizado {_e(d.get("generado"))}</div>'
-            f'{"".join(filas)}'
-            f'<div class="nota">{_e(d.get("aviso"))}</div></div>')
+    octu = cartera.get('octubre_2026') or {}
+
+    return (
+        '<div class="mon">'
+        f'<div class="mt">ESTRATEGIA VALIDADA · {len(pares)} PARES · '
+        f'{_n(cartera.get("por_mes"), 1)} señales/mes</div>'
+        f'<div class="head">{_e(regla.get("nombre"))} · {_e(regla.get("timeframe"))} · '
+        f'{_e(d.get("fuente"))} · actualizado {_e(d.get("generado"))}</div>'
+        '<div class="kv">'
+        f'<div><span>E</span><b>{_n(cartera.get("esperanza_R"), 3, True)}R</b></div>'
+        f'<div><span>Acierto</span><b>{_n(cartera.get("acierto_pct"), 1)}%</b></div>'
+        f'<div><span>PF</span><b>{_n(cartera.get("pf"), 2)}</b></div>'
+        f'<div><span>DD</span><b>{_n(cartera.get("dd_R"), 1)}R</b></div>'
+        '</div>'
+        '<div style="overflow-x:auto"><table class="rtab"><tr>'
+        '<th>Par</th><th>Señales/mes</th><th>E(R)</th><th>Acierto</th><th>DD</th>'
+        '<th>PF</th><th>Null p</th><th>Seeds</th><th>WF test</th><th>Estado</th>'
+        '</tr>' + ''.join(filas) + '</table></div>'
+        f'<div class="nota">Octubre: cartera {_n(octu.get("cartera_R"), 2)}R vs BTC solo '
+        f'{_n(octu.get("btc_solo_R"), 2)}R — la diversificación reduce el mes malo.</div>'
+        f'<div class="nota">{_e(d.get("aviso"))}</div>'
+        '</div>')
