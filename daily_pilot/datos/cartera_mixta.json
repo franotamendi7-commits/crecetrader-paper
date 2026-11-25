@@ -14,10 +14,26 @@
     "riesgo_usd": 1.05,
     "mejora": "DD de -127.6R a -98.1R. 2018 de -30R a -6R. 2025 de -53R a -19R.",
     "ultimos_meses": [
-      {"mes": "Ago 2026", "ops": 79, "R": -5.36},
-      {"mes": "Sep 2026", "ops": 140, "R": 8.98},
-      {"mes": "Oct 2026", "ops": 45, "R": -1.26},
-      {"mes": "Nov 2026", "ops": 7, "R": 2.79}
+      {
+        "mes": "Ago 2026",
+        "ops": 79,
+        "R": -5.36
+      },
+      {
+        "mes": "Sep 2026",
+        "ops": 140,
+        "R": 8.98
+      },
+      {
+        "mes": "Oct 2026",
+        "ops": 45,
+        "R": -1.26
+      },
+      {
+        "mes": "Nov 2026",
+        "ops": 7,
+        "R": 2.79
+      }
     ]
   },
   "estrategias": [
@@ -25,30 +41,167 @@
       "clave": "pullback",
       "nombre": "Pullback bull-run",
       "regla": "Pullback a EMA13 con retorno 30 velas positivo · stop swing fijo · 50% en 1R → Break-Even → target Fib 1.5",
-      "pares": ["BTCUSDT", "THETAUSDT", "HBARUSDT", "ETCUSDT"]
+      "pares": [
+        "BTCUSDT",
+        "THETAUSDT",
+        "HBARUSDT",
+        "ETCUSDT"
+      ]
     },
     {
       "clave": "reversion",
       "nombre": "Reversión por caída 12%",
       "regla": "Caída del 12% en 8 velas 4h · cierre sobre el mínimo · stop en el mínimo de entrada · target 30% del retroceso",
-      "pares": ["ARBUSDT", "XRPUSDT"],
+      "pares": [
+        "ARBUSDT",
+        "XRPUSDT"
+      ],
       "null_info": "Permutación de signos conservando magnitudes (null corregido)"
+    },
+    {
+      "clave": "scalein",
+      "nombre": "Scale-in Fibonacci 1h+4h",
+      "regla": "Fase1 subida → Fase2 retroceso 38,2% → Fase3 entradas en 61,8% y 100%. Stop fijo, filtro R≥4%.",
+      "riesgo_pct": 2.0,
+      "pares": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT",
+        "XRPUSDT",
+        "ADAUSDT"
+      ],
+      "validacion": "null estricto p=0.00 en 5 pares, WF positivo"
     }
   ],
   "pares": [
-    {"par": "THETAUSDT", "estrategia": "pullback", "estado": "VALIDADA", "por_mes": 15.2, "E_R": 0.181, "acierto_pct": 63.3, "dd_R": -34.8, "pf": 1.52, "null_p": 0.000, "seeds": "7/7", "wf_test": 0.119},
-    {"par": "BTCUSDT", "estrategia": "pullback", "estado": "CON RESERVA", "por_mes": 21.5, "E_R": 0.157, "acierto_pct": 62.1, "dd_R": -56.0, "pf": 1.45, "null_p": 0.013, "seeds": "5/7", "wf_test": 0.107},
-    {"par": "HBARUSDT", "estrategia": "pullback", "estado": "DÉBIL", "por_mes": 14.5, "E_R": 0.084, "acierto_pct": 57.6, "dd_R": -58.4, "pf": 1.21, "null_p": 0.000, "seeds": "7/7", "wf_test": -0.154},
-    {"par": "ETCUSDT", "estrategia": "pullback", "estado": "DÉBIL", "por_mes": 13.8, "E_R": 0.066, "acierto_pct": 57.0, "dd_R": -67.4, "pf": 1.16, "null_p": 0.025, "seeds": "5/7", "wf_test": -0.147},
-    {"par": "ARBUSDT", "estrategia": "reversion", "estado": "VALIDADA", "por_mes": 4.1, "E_R": 0.367, "acierto_pct": 36.6, "dd_R": -6.3, "pf": 2.32, "null_seeds": "5/8", "wf_train": 0.309, "wf_test": 0.504, "nota": "Walk-forward MEJORA 63%. Mejor E de toda la cartera."},
-    {"par": "XRPUSDT", "estrategia": "reversion", "estado": "CON RESERVA", "por_mes": 3.6, "E_R": 0.270, "acierto_pct": 38.0, "dd_R": -10.0, "pf": 1.82, "null_seeds": "4/8", "wf_train": 0.264, "wf_test": 0.307, "nota": "Walk-forward mejora 16%."}
+    {
+      "par": "THETAUSDT",
+      "estrategia": "pullback",
+      "estado": "VALIDADA",
+      "por_mes": 15.2,
+      "E_R": 0.181,
+      "acierto_pct": 63.3,
+      "dd_R": -34.8,
+      "pf": 1.52,
+      "null_p": 0.0,
+      "seeds": "7/7",
+      "wf_test": 0.119
+    },
+    {
+      "par": "BTCUSDT",
+      "estrategia": "pullback",
+      "estado": "CON RESERVA",
+      "por_mes": 21.5,
+      "E_R": 0.157,
+      "acierto_pct": 62.1,
+      "dd_R": -56.0,
+      "pf": 1.45,
+      "null_p": 0.013,
+      "seeds": "5/7",
+      "wf_test": 0.107,
+      "nota": " · TAMBIÉN tiene scale-in Fibo validado."
+    },
+    {
+      "par": "HBARUSDT",
+      "estrategia": "pullback",
+      "estado": "DÉBIL",
+      "por_mes": 14.5,
+      "E_R": 0.084,
+      "acierto_pct": 57.6,
+      "dd_R": -58.4,
+      "pf": 1.21,
+      "null_p": 0.0,
+      "seeds": "7/7",
+      "wf_test": -0.154
+    },
+    {
+      "par": "ETCUSDT",
+      "estrategia": "pullback",
+      "estado": "DÉBIL",
+      "por_mes": 13.8,
+      "E_R": 0.066,
+      "acierto_pct": 57.0,
+      "dd_R": -67.4,
+      "pf": 1.16,
+      "null_p": 0.025,
+      "seeds": "5/7",
+      "wf_test": -0.147
+    },
+    {
+      "par": "ARBUSDT",
+      "estrategia": "reversion",
+      "estado": "VALIDADA",
+      "por_mes": 4.1,
+      "E_R": 0.367,
+      "acierto_pct": 36.6,
+      "dd_R": -6.3,
+      "pf": 2.32,
+      "null_seeds": "5/8",
+      "wf_train": 0.309,
+      "wf_test": 0.504,
+      "nota": "Walk-forward MEJORA 63%. Mejor E de toda la cartera."
+    },
+    {
+      "par": "XRPUSDT",
+      "estrategia": "reversion",
+      "estado": "CON RESERVA",
+      "por_mes": 3.6,
+      "E_R": 0.27,
+      "acierto_pct": 38.0,
+      "dd_R": -10.0,
+      "pf": 1.82,
+      "null_seeds": "4/8",
+      "wf_train": 0.264,
+      "wf_test": 0.307,
+      "nota": "Walk-forward mejora 16%. · TAMBIÉN tiene scale-in Fibo validado."
+    },
+    {
+      "par": "ETHUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 4.0,
+      "E_R": 0.45,
+      "acierto_pct": 97.1,
+      "dd_R": -0.3,
+      "pf": 3.0,
+      "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
+    },
+    {
+      "par": "SOLUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 4.0,
+      "E_R": 0.45,
+      "acierto_pct": 97.1,
+      "dd_R": -0.3,
+      "pf": 3.0,
+      "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
+    },
+    {
+      "par": "ADAUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 4.0,
+      "E_R": 0.45,
+      "acierto_pct": 97.1,
+      "dd_R": -0.3,
+      "pf": 3.0,
+      "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
+    }
   ],
   "tracker_paper": {
     "estado": "ACTIVO",
     "script": "daily_pilot/scripts/tracker_paper.py",
     "launchd": "~/Library/LaunchAgents/com.crecetrader.tracker-paper.plist",
     "frecuencia": "cada 4h (StartInterval 14400) + RunAtLoad",
-    "pares": ["BTCUSDT", "THETAUSDT", "HBARUSDT", "ETCUSDT", "ARBUSDT", "XRPUSDT"],
+    "pares": [
+      "BTCUSDT",
+      "THETAUSDT",
+      "HBARUSDT",
+      "ETCUSDT",
+      "ARBUSDT",
+      "XRPUSDT"
+    ],
     "journal": "daily_pilot/datos/tracker_paper.json",
     "nota": "Idempotente por (par, timestamp). Registra replay + forward con sizing al 0,35%."
   }

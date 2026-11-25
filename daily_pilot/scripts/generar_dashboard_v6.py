@@ -27,11 +27,10 @@ sys.path.insert(0, str(PILOT / 'core'))
 sys.path.insert(0, str(PILOT / 'scripts'))
 
 PARES_QUANTFURY = [
-    'AAVEUSDT', 'ADAUSDT', 'APTUSDT', 'ARBUSDT', 'ATOMUSDT', 'AVAXUSDT', 'BCHUSDT',
-    'BTCUSDT', 'DOGEUSDT', 'DOTUSDT', 'ETCUSDT', 'ETHUSDT', 'FILUSDT', 'HBARUSDT',
-    'INJUSDT', 'LINKUSDT', 'LTCUSDT', 'MANAUSDT', 'NEARUSDT', 'NEOUSDT', 'ONDOUSDT',
-    'OPUSDT', 'POLUSDT', 'RUNEUSDT', 'SANDUSDT', 'SNXUSDT', 'SOLUSDT', 'STXUSDT',
-    'THETAUSDT', 'UNIUSDT', 'XRPUSDT', 'SUSDT', 'TONUSDT',
+    # Tablero operativo: SOLO pares con esperanza positiva validada.
+    # El universo completo de 34 sigue en datos/velas/ para backtests.
+    'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'XRPUSDT', 'ADAUSDT',
+    'THETAUSDT', 'HBARUSDT', 'ETCUSDT', 'ARBUSDT',
 ]
 STATUS_ESPERADO = {'SUSDT': 'TRADING', 'TONUSDT': 'BREAK'}
 
@@ -113,9 +112,10 @@ from panel_resultados import CSS_EXTRA, html as html_resultados
 from panel_video import CSS_EXTRA as CSS_VIDEO, html as html_video
 from panel_senales import CSS_EXTRA as CSS_SENALES, html as html_senales
 from panel_tracker import CSS_EXTRA as CSS_TRACKER, html as html_tracker
+from panel_operativo import CSS as CSS_OPERATIVO, html as html_operativo
 from tracker_paper import actualizar as actualizar_tracker
 
-CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + CSS_TRACKER + '''
+CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + CSS_TRACKER + CSS_OPERATIVO + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
@@ -435,6 +435,7 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
   </div>
 </section>
 
+{html_operativo()}
 {html_senales()}
 
 {html_tracker()}
