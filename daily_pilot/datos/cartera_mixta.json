@@ -68,7 +68,8 @@
         "ETHUSDT",
         "SOLUSDT",
         "XRPUSDT",
-        "ADAUSDT"
+        "ADAUSDT",
+        "LINKUSDT"
       ],
       "validacion": "null estricto p=0.00 en 5 pares, WF positivo"
     }
@@ -187,6 +188,17 @@
       "dd_R": -0.3,
       "pf": 3.0,
       "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
+    },
+    {
+      "par": "LINKUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 2.2,
+      "E_R": 0.45,
+      "acierto_pct": 100.0,
+      "dd_R": 0.0,
+      "pf": 3.0,
+      "nota": "Scale-in Fibo validado: 24 ops, +$1104, null p=0.00, WF positivo."
     }
   ],
   "tracker_paper": {
