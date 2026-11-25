@@ -2,8 +2,8 @@
   "schema": "ytra_estado_v1",
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
-  "estado": "VIDEO NUEVO ANALIZADO",
-  "ultima_revision": "2026-11-24T16:44:36Z",
+  "estado": "SIN VIDEO NUEVO",
+  "ultima_revision": "2026-11-25T02:44:40Z",
   "deteccion_at": "2026-11-24T13:59:17.078745+00:00",
   "analisis_at": "2026-11-24T14:01:09Z",
   "video": {

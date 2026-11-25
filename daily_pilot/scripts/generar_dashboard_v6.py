@@ -108,8 +108,10 @@ def lectura_agente(info: dict, niveles: list) -> dict:
 
 # ------------------------------------------------------------------ HTML
 from panel_resultados import CSS_EXTRA, html as html_resultados
+from panel_video import CSS_EXTRA as CSS_VIDEO, html as html_video
+from panel_senales import CSS_EXTRA as CSS_SENALES, html as html_senales
 
-CSS = CSS_EXTRA + '''
+CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
@@ -274,6 +276,10 @@ def main() -> int:
     {niv_html}
   </div>
 </section>
+
+{html_senales()}
+
+{html_video()}
 
 {html_resultados()}
 <footer>

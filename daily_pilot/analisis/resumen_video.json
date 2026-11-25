@@ -1,0 +1,46 @@
+{
+  "video_id": "hb9YEJMgjAU",
+  "titulo": "Bitcoin rebota en los 56.750: ¿compras de verdad o trampa?",
+  "publicado": "2026-11-24T10:16:06+00:00",
+  "duracion_min": 20,
+  "fuente": "transcript real (978 cues, VTT es)",
+  "sesgo": "CAUTELOSO — espera confirmación, no compra todavía",
+  "tesis": "BTC tocó 56.750 (objetivo de largo plazo) y rebotó hasta 61.247. Son 'primeras compras': el precio en ningún momento cerró por debajo de 56.750. Pero el rebote aún no confirma: hay que esperar a ver si se sostiene.",
+  "niveles": [
+    {"precio": 56750, "tipo": "zona de compras / invalidación", "detalle": "Objetivo de largo plazo. Si cierra por debajo en 4h, se invalida el escenario."},
+    {"precio": 61247, "tipo": "resistencia / origen de la caída", "detalle": "Donde comenzó el precio y donde aparecieron nuevas compras."},
+    {"precio": 59950, "tipo": "soporte intradía", "detalle": "Referencia de precios de la sesión."},
+    {"precio": 59793, "tipo": "soporte intradía", "detalle": "El mercado está detenido aquí; ahí se sitúan órdenes de compras."},
+    {"precio": 58851, "tipo": "referencia intradía", "detalle": "Siguiente nivel de la zona."},
+    {"precio": 60735, "tipo": "referencia intradía", "detalle": "Nivel intermedio."},
+    {"precio": 62396, "tipo": "resistencia intradía", "detalle": "Techo de la sesión."},
+    {"precio": 62620, "tipo": "resistencia intradía", "detalle": "Por encima del precio actual."},
+    {"precio": 66860, "tipo": "objetivo 1", "detalle": "Si entran compras en 61.247."},
+    {"precio": 69000, "tipo": "objetivo 2", "detalle": "Zona 69.000 / 69.216."},
+    {"precio": 73928, "tipo": "objetivo 3", "detalle": "Objetivo alejado."},
+    {"precio": 53994, "tipo": "siguiente soporte", "detalle": "Homólogo de 56.750 en futuros; si cae, podría visitarse."},
+    {"precio": 5185, "tipo": "soporte extremo", "detalle": "Mínimo inferior, no tiene por qué ocurrir."}
+  ],
+  "escenarios": [
+    {"nombre": "Rebote confirmado", "probabilidad": "sin cuantificar", "detalle": "Compras en 61.247 -> objetivos 66.860 / 69.216 / 73.928."},
+    {"nombre": "Pullback a la zona", "probabilidad": "bastante notable", "detalle": "Vuelve a 56.750 (o 59.793/59.950) y aparecen compras. Mismo plan."},
+    {"nombre": "Invalidación", "probabilidad": "vigilada", "detalle": "Cierre 4h por debajo de 56.750 -> activan órdenes con cierre de periodo. Siguiente: 53.994 / 51.85."}
+  ],
+  "macro": [
+    "Minutas de la Fed: confirman sesgo hacia MÁS subidas de tipos.",
+    "PCE de octubre y próximos datos de política monetaria: clave.",
+    "Índice de miedo extremo: 11-12-17, peor que ayer (7 días atrás estaban en 12).",
+    "Bolsas rebotaron por la readmisión del Sr. Wan en Nvidia; Nasdaq -21% en el año.",
+    "SP500 tocó 6.902 (precio de apertura del año); escenario activo hacia 6.436.",
+    "Oro y plata caen; 3.623,4 en el oro.",
+    "Radar acciones: CRWD, ZS, MU, NBIS, CRWV, WD."
+  ],
+  "frases_clave": [
+    "56.750, que es un precio objetivo de largo plazo, donde podían estar refugiadas las primeras compras.",
+    "Cuidado, no nos vayamos ahora mismo a tirarnos a la piscina.",
+    "El precio en ningún momento ha hecho un cierre por debajo de ese precio.",
+    "Si entran compras en 61.247, este sería el plan: 66.860, 69.216, 73.928.",
+    "No se pregunta cuándo compras, se pregunta cuánto vas a arriesgar, qué posición."
+  ],
+  "conexion_estrategia": "El video describe exactamente el setup que validamos: zona de compras, invalidación por cierre de periodo en 4h y objetivo medido. Nuestra versión mecanizada: n=52, E=+1,237R, p=0,020, DD=-6,35R. El propio canal dice 'no tirarse a la piscina': coincide con la recomendación de operar en PAPER."
+}
