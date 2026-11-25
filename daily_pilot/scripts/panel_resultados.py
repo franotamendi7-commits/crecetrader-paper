@@ -48,7 +48,8 @@ def _veredicto(txt: str) -> tuple[str, bool]:
         s = linea.strip()
         if s.upper().startswith('## '):
             en = 'VEREDICTO' in s.upper()
-            seccion = []
+            if en:
+                seccion = []
             continue
         if en:
             seccion.append(linea.strip().strip('*').strip())

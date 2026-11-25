@@ -84,17 +84,28 @@ def detectar_rango(v, lookback=30, max_rango_pct=0.12, tol=0.001, target_k=0.5, 
 
 
 # ------------------------------------------------------------------ detector 2
-def detectar_pullback(v, ema_fast=21, ema_trend=200, tol=0.002, sweeps=3, target_R=2.0):
-    """Long: tendencia alcista + precio que vuelve a EMA rápida y cierra arriba."""
+def detectar_pullback(v, ema_fast=21, ema_trend=200, tol=0.002, sweeps=3,
+                      target_R=2.0, regimen=None):
+    """Long: tendencia alcista + precio que vuelve a EMA rápida y cierra arriba.
+
+    regimen=None       → sin filtro extra
+    regimen='ema50_up' → EMA50 con pendiente positiva (10 velas)
+    regimen='strong'   → precio >= 3% sobre EMA200
+    """
     lows = [x['low'] for x in v]
     closes = [x['close'] for x in v]
     ef = ema(closes, ema_fast)
     et = ema(closes, ema_trend)
+    e50 = ema(closes, 50) if regimen == 'ema50_up' else None
     out = []
     for i in range(ema_trend + sweeps, len(v) - 1):
         if et[i] is None or ef[i] is None:
             continue
         if closes[i] <= et[i] or ef[i] <= et[i]:   # sin tendencia alcista
+            continue
+        if regimen == 'ema50_up' and (e50[i] is None or e50[i - 10] is None or e50[i] <= e50[i - 10]):
+            continue
+        if regimen == 'strong' and closes[i] < et[i] * 1.03:
             continue
         if lows[i] > ef[i] * (1 + tol):            # no hizo pullback
             continue
