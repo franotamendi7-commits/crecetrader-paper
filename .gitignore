@@ -16,3 +16,6 @@ data_hist/*.vtt
 *.db-wal
 *.bak-*
 daily_pilot/knowledge/store.db*
+
+# caches de velas generadas (consultas cortas; el historico completo SI se versiona)
+daily_pilot/datos/velas/*_cache.json
