@@ -3,7 +3,7 @@
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
   "estado": "ERROR DE ANALISIS",
-  "ultima_revision": "2026-11-25T14:57:47Z",
+  "ultima_revision": "2026-11-25T16:57:47Z",
   "deteccion_at": "2026-11-25T14:57:47Z",
   "analisis_at": null,
   "video": {
@@ -51,9 +51,7 @@
     "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4",
     "archivo": "daily_pilot/analisis/hb9YEJMgjAU_analisis.json"
   },
-  "errores": [
-    "S9F-R400Zo8: [Errno 2] No such file or directory: 'yt-dlp'"
-  ],
+  "errores": [],
   "ultimo_analisis_completo": {
     "video_id": "hb9YEJMgjAU",
     "analizado_at": "2026-11-24T14:01:09Z",
