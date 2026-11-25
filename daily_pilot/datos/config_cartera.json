@@ -1,0 +1,31 @@
+{
+  "version_activa": "original",
+  "versiones": {
+    "original": {
+      "descripcion": "Cartera mixta 6 pares sin filtro de día",
+      "filtro_dias": null,
+      "pares_filtrados": [],
+      "esperanza_R": 0.142,
+      "dd_R": -98.1,
+      "por_mes": 63.9
+    },
+    "filtro_dia": {
+      "descripcion": "Jue+Vie+Sáb solo en BTC y THETA (null 4/4)",
+      "filtro_dias": [
+        3,
+        4,
+        5
+      ],
+      "pares_filtrados": [
+        "BTCUSDT",
+        "THETAUSDT"
+      ],
+      "esperanza_R": 0.161,
+      "dd_R": -82.2,
+      "por_mes": 50.0
+    }
+  },
+  "creado": "2026-11-25T18:23:52Z",
+  "nota": "Cambiar con --usar. El journal conserva config_version por operación.",
+  "cambiado": "2026-11-25T18:23:52Z"
+}
