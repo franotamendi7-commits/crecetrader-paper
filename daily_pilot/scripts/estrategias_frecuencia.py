@@ -52,16 +52,57 @@ def prev_max(vals, n):
     return out
 
 
+def swing_lows(velas, n=3):
+    """Bajos swing reales: un minimo es swing si es el mas bajo de n velas a cada lado."""
+    bajos = []
+    for i in range(len(velas)):
+        der = velas[i + 1:i + 1 + n]
+        izq = velas[max(0, i - n):i]
+        if len(der) < n:
+            continue
+        if all(velas[i]['low'] <= x['low'] for x in izq + der):
+            bajos.append((i, velas[i]['low']))
+    return bajos
+
+
+def stop_swing_entry(entry_idx, lows, velas, n=3):
+    """STOP FIJO: el ultimo swing LOW antes de la entrada.
+
+    Es el bajo posterior al cambio de tendencia (estructura), no un minimo
+    movil de las ultimas N velas. Se calcula UNA VEZ y no se mueve.
+    """
+    cand = [p for (i, p) in lows if i < entry_idx]
+    return cand[-1] if cand else None
+
+
+def size_position(riesgo_usd, entry, stop):
+    """Cantidad segun el stop FIJO: unidades = riesgo_usd / distancia_al_stop.
+
+    Devuelve ademas notional y margen a 20x. Nunca se mueve el stop para
+    cambiar el tamano: siempre se mueve la cantidad.
+    """
+    dist = entry - stop
+    if dist <= 0:
+        return None
+    und = riesgo_usd / dist
+    return {'unidades': round(und, 6),
+            'notional': round(und * entry, 2),
+            'margen_20x': round(und * entry / 20, 2),
+            'dist_stop': round(dist, 4)}
+
+
 # ------------------------------------------------------------------ detector 1
-def detectar_rango(v, lookback=30, max_rango_pct=0.12, tol=0.001, target_k=0.5, sweeps=3):
+def detectar_rango(v, lookback=30, max_rango_pct=0.12, tol=0.001,
+                   target_k=0.5, swing_n=3):
     """Long: el precio toca el soporte del rango y cierra por encima."""
     lows = [x['low'] for x in v]
     highs = [x['high'] for x in v]
     closes = [x['close'] for x in v]
     sups = prev_min(lows, lookback)
     ress = prev_max(highs, lookback)
+    sw = swing_lows(v, swing_n)
     out = []
-    for i in range(lookback + sweeps, len(v) - 1):
+    for i in range(lookback + swing_n, len(v) - 1):
         sup, res = sups[i], ress[i]
         if not sup or not res or sup <= 0:
             continue
@@ -73,8 +114,8 @@ def detectar_rango(v, lookback=30, max_rango_pct=0.12, tol=0.001, target_k=0.5, 
         if closes[i] <= sup:               # no recuperó
             continue
         entry = closes[i]
-        stop = min(lows[i - sweeps:i + 1])
-        if stop >= entry:
+        stop = stop_swing_entry(i, sw, v, swing_n)
+        if stop is None or stop >= entry:
             continue
         target = sup + rng * target_k
         if target <= entry:
@@ -84,8 +125,8 @@ def detectar_rango(v, lookback=30, max_rango_pct=0.12, tol=0.001, target_k=0.5, 
 
 
 # ------------------------------------------------------------------ detector 2
-def detectar_pullback(v, ema_fast=21, ema_trend=200, tol=0.002, sweeps=3,
-                      target_R=2.0, regimen=None):
+def detectar_pullback(v, ema_fast=21, ema_trend=200, tol=0.002,
+                      swing_n=3, target_R=2.0, regimen=None):
     """Long: tendencia alcista + precio que vuelve a EMA rápida y cierra arriba.
 
     regimen=None       → sin filtro extra
@@ -97,8 +138,9 @@ def detectar_pullback(v, ema_fast=21, ema_trend=200, tol=0.002, sweeps=3,
     ef = ema(closes, ema_fast)
     et = ema(closes, ema_trend)
     e50 = ema(closes, 50) if regimen == 'ema50_up' else None
+    sw = swing_lows(v, swing_n)
     out = []
-    for i in range(ema_trend + sweeps, len(v) - 1):
+    for i in range(ema_trend + swing_n, len(v) - 1):
         if et[i] is None or ef[i] is None:
             continue
         if closes[i] <= et[i] or ef[i] <= et[i]:   # sin tendencia alcista
@@ -112,8 +154,8 @@ def detectar_pullback(v, ema_fast=21, ema_trend=200, tol=0.002, sweeps=3,
         if closes[i] <= ef[i]:                     # no recuperó
             continue
         entry = closes[i]
-        stop = min(lows[i - sweeps:i + 1])
-        if stop >= entry:
+        stop = stop_swing_entry(i, sw, v, swing_n)
+        if stop is None or stop >= entry:
             continue
         target = entry + target_R * (entry - stop)
         out.append({'i': i, 'entry': entry, 'stop': stop, 'target': target})

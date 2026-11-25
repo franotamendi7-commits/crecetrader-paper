@@ -10,6 +10,8 @@ Sin paneles de estrategia: no hay backtest, ni ticket, ni paper, ni alertas.
 Uso:
     python3 daily_pilot/scripts/generar_dashboard_v6.py
     open daily_pilot/dashboard/index.html
+    # o via servidor local:
+    python3 -m http.server 8765 --directory daily_pilot/dashboard
 
 PAPER_ONLY: muestra, no ejecuta.
 """
@@ -157,6 +159,7 @@ margin:0;font-weight:700;white-space:nowrap}
 border:1px solid var(--bd);border-radius:11px;padding:13px 14px;
 transition:border-color .15s,transform .15s}
 .mcard:hover{border-color:var(--acc);transform:translateY(-1px)}
+.mcard-link{display:block;text-decoration:none;color:inherit}
 .mcard .par{font-weight:700;font-size:14px;letter-spacing:.2px}
 .mcard .precio{font-size:19px;font-weight:700;margin:6px 0 3px;
 font-variant-numeric:tabular-nums;letter-spacing:-.2px}
@@ -200,12 +203,13 @@ def mcard(x) -> str:
     par = esc(x['par'])
     st = ' <span class="brk">BREAK</span>' if x.get('status') == 'BREAK' else ''
     if x['precio'] is None:
-        return f'<div class="mcard"><div class="par">{par}{st}</div><div class="precio flat">—</div><div class="chg flat">sin datos</div></div>'
+        return (f'<a class="mcard-link" href="#par-{par}"><div class="mcard"><div class="par">{par}{st}</div>'
+                f'<div class="precio flat">—</div><div class="chg flat">sin datos</div></div></a>')
     cls = 'up' if x['cambio'] >= 0 else 'down'
     flecha = '▲' if x['cambio'] > 0.05 else ('▼' if x['cambio'] < -0.05 else '·')
-    return (f'<div class="mcard"><div class="par">{par}{st}</div>'
+    return (f'<a class="mcard-link" href="#par-{par}"><div class="mcard"><div class="par">{par}{st}</div>'
             f'<div class="precio">{fmt_precio(x["precio"])}</div>'
-            f'<div class="chg {cls}">{flecha} {x["cambio"]:+.2f}%</div></div>')
+            f'<div class="chg {cls}">{flecha} {x["cambio"]:+.2f}%</div></div></a>')
 
 
 def lcard(clase, titulo, pct, color_var) -> str:
@@ -213,6 +217,36 @@ def lcard(clase, titulo, pct, color_var) -> str:
         return f'<div class="lcard {clase}"><div class="t"><span>{titulo}</span></div><div class="p" style="color:var(--muted)">—</div></div>'
     return (f'<div class="lcard {clase}"><div class="t"><span>{titulo}</span>'
             f'<span class="p" style="color:{color_var}">{pct}%</span></div></div>')
+
+
+def _pdetalles(mer: list, niveles: list, mon: dict) -> str:
+    """Vista por par: datos reales del mercado + niveles/alertas/riesgo cuando existen."""
+    m = {x['par']: x for x in mer}
+    bloques = []
+    for par in PARES_QUANTFURY:
+        x = m.get(par) or {}
+        disp = par.replace('USDT', '')
+        sig = None
+        for p in (mon or {}).get('pares') or []:
+            if p.get('par') == par:
+                sig = p
+                break
+        precio_s = fmt_precio(x.get('precio')) if x.get('precio') is not None else '—'
+        chg_s = f'{x["cambio"]:+.2f}%' if x.get('cambio') is not None else '—'
+        bloques.append(
+            '<section class="pdetail" id="par-%s">'
+            '<div class="res">'
+            '<div class="shead"><h2>%s</h2><span class="n">%s</span>'
+            '<span class="hint">detalle operativo</span></div>'
+            '<div class="kpi">'
+            '<div><span>Activo</span><b>%s</b></div>'
+            '<div><span>Precio</span><b>%s</b></div>'
+            '<div><span>Cambio 24h</span><b>%s</b></div>'
+            '<div><span>Estado</span><b>%s</b></div>'
+            '</div>'
+            '<div class="meta">capital de referencia: USD 300 · riesgo 1% · apalancamiento 20x</div>'
+            '</div></section>' % (esc(par), esc(par), esc(disp), esc(disp), esc(precio_s), esc(chg_s), esc(x.get('status') or '—')))
+    return ''.join(bloques)
 
 
 def main() -> int:
@@ -226,6 +260,7 @@ def main() -> int:
 
     fuen = sorted({x.get('fuente', '') for x in mer if x.get('fuente')})
     cards = ''.join(mcard(x) for x in mer)
+    secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'monitor_senales.json'))
 
     ev = ''.join(f'<span class="chip">{esc(e)}</span>' for e in lec['evidencia'])
     top = [n for n in sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]]
@@ -266,6 +301,8 @@ def main() -> int:
   <div class="shead"><h2>Mercado Quantfury</h2><span class="n">{len(mer)} criptos operables</span><span class="hint">precio y cambio 24h</span></div>
   <div class="grid">{cards}</div>
 </section>
+
+{secciones_pdetalles}
 
 <section>
   <div class="shead"><h2>Análisis CreceTrader</h2><span class="n">lo que dice el canal</span><span class="hint">lectura de niveles, no predicción</span></div>

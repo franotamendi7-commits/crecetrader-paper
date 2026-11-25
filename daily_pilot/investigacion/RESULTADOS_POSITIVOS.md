@@ -1,3 +1,12 @@
+# ⚠️ OBSOLETO — reemplazado por STOP_CORREGIDO_RESULTADOS.md
+
+Estos números se calcularon con `stop = min(lows[i-5:i+1])` ( STOP MÓVIL ),
+que NO es el método de Francisco. El stop correcto es el **swing low fijo
+posterior al cambio de tendencia**, y el lote se calcula desde ahí.
+Ver `STOP_CORREGIDO_RESULTADOS.md` para los números válidos.
+
+---
+
 # MEJORES RESULTADOS POSITIVOS ENCONTRADOS (búsqueda de frecuencia)
 
 Fecha: 2026-11-25. Grid de 216 combinaciones de pullback (ema 8/13/21/34,
