@@ -194,6 +194,7 @@ border-top:1px solid var(--bd);padding-top:16px}
 margin-top:3px}
 .graf{width:100%;height:150px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:10px}
 .sin-datos{color:var(--muted);font-size:12px;padding:14px}
+.pdetail{display:none}
 .dom-a{border-left:3px solid rgba(62,207,122,.55)}
 .dom-b{border-left:3px solid rgba(224,170,74,.55)}
 @media (max-width:1024px){
