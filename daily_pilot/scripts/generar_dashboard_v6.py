@@ -113,9 +113,10 @@ from panel_video import CSS_EXTRA as CSS_VIDEO, html as html_video
 from panel_senales import CSS_EXTRA as CSS_SENALES, html as html_senales
 from panel_tracker import CSS_EXTRA as CSS_TRACKER, html as html_tracker
 from panel_operativo import CSS as CSS_OPERATIVO, html as html_operativo
+from panel_senales_vivo import CSS as CSS_SENALES_VIVO, html as html_senales_vivo
 from tracker_paper import actualizar as actualizar_tracker
 
-CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + CSS_TRACKER + CSS_OPERATIVO + '''
+CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + CSS_TRACKER + CSS_OPERATIVO + CSS_SENALES_VIVO + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
@@ -436,6 +437,7 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
 </section>
 
 {html_operativo()}
+{html_senales_vivo()}
 {html_senales()}
 
 {html_tracker()}

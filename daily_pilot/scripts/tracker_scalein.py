@@ -68,8 +68,11 @@ def actualizar(verbose=False):
                 nuevas += 1
             rec = idx[key]
             rec.update({'estrategia': 'scalein_fibo', 'legs': o['legs'],
+                        'entrada': round(o.get('entry', o['stop']), 2),
                         'stop': round(o['stop'], 2), 'target': round(o['target'], 2),
                         'R': round(o.get('R', 0), 4),
+                        'estado': 'CERRADA_SCALEIN',
+                        'cierre_fecha': fecha(ts),
                         'resultado_usd': round(o['pnl'], 2),
                         'capital': S.CAPITAL, 'riesgo_pct': 2.0,
                         'riesgo_usd': round(S.CAPITAL * 0.02, 2),
