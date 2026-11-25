@@ -51,7 +51,7 @@ def swing_points(v, n=5):
 
 def detectar(v, ema_fast=13, ema_trend=200, swing_n=5, regimen='new_high',
              look_high=120, tol_high=0.03, ret_min=0.0, fibo_ext=1.5,
-             be_at=1.0, max_bars=120):
+             be_at=1.0, max_bars=120, incluir_ultima=False):
     closes = [x['close'] for x in v]
     highs = [x['high'] for x in v]
     lows = [x['low'] for x in v]
@@ -60,7 +60,10 @@ def detectar(v, ema_fast=13, ema_trend=200, swing_n=5, regimen='new_high',
     altos, bajos = swing_points(v, swing_n)
     out = []
     start = ema_trend + swing_n + look_high
-    for i in range(start, len(v) - 1):
+    # incluir_ultima: permite detectar la señal en la ultima vela cerrada
+    # (el tracker la registra como ABIERTA; el backtest sigue usando len-1).
+    fin = len(v) if incluir_ultima else len(v) - 1
+    for i in range(start, fin):
         if et[i] is None or ef[i] is None:
             continue
         # --- tendencia base
