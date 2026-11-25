@@ -2,7 +2,7 @@
   "generado": "2026-11-25",
   "criterio": "Solo pares con esperanza positiva validada (null sintetico + walk-forward)",
   "universo_original": 34,
-  "pares_con_profit_positivo": 11,
+  "pares_con_profit_positivo": 10,
   "estrategias": [
     {
       "clave": "pullback",
@@ -30,12 +30,12 @@
       "riesgo_pct": 2.0,
       "pares": [
         "BTCUSDT",
-        "ETHUSDT",
-        "SOLUSDT",
         "XRPUSDT",
-        "ADAUSDT",
+        "HBARUSDT",
         "LINKUSDT",
-        "AVAXUSDT"
+        "AVAXUSDT",
+        "FILUSDT",
+        "NEARUSDT"
       ],
       "cartera": {
         "n": 247,
@@ -47,50 +47,6 @@
     }
   ],
   "pares": [
-    {
-      "par": "BTCUSDT",
-      "estrategias": [
-        "pullback",
-        "scalein"
-      ],
-      "estado": "VALIDADA"
-    },
-    {
-      "par": "ETHUSDT",
-      "estrategias": [
-        "scalein"
-      ],
-      "estado": "VALIDADA"
-    },
-    {
-      "par": "SOLUSDT",
-      "estrategias": [
-        "scalein"
-      ],
-      "estado": "VALIDADA"
-    },
-    {
-      "par": "XRPUSDT",
-      "estrategias": [
-        "pullback",
-        "scalein"
-      ],
-      "estado": "VALIDADA"
-    },
-    {
-      "par": "ADAUSDT",
-      "estrategias": [
-        "scalein"
-      ],
-      "estado": "VALIDADA"
-    },
-    {
-      "par": "LINKUSDT",
-      "estrategias": [
-        "scalein"
-      ],
-      "estado": "VALIDADA"
-    },
     {
       "par": "THETAUSDT",
       "estrategias": [
@@ -120,7 +76,42 @@
       "estado": "VALIDADA"
     },
     {
+      "par": "BTCUSDT",
+      "estrategias": [
+        "scalein"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
+      "par": "XRPUSDT",
+      "estrategias": [
+        "scalein"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
+      "par": "LINKUSDT",
+      "estrategias": [
+        "scalein"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
       "par": "AVAXUSDT",
+      "estrategias": [
+        "scalein"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
+      "par": "FILUSDT",
+      "estrategias": [
+        "scalein"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
+      "par": "NEARUSDT",
       "estrategias": [
         "scalein"
       ],
@@ -129,7 +120,7 @@
   ],
   "tablero": {
     "total_estrategias": 2,
-    "pares_unicos": 11,
+    "pares_unicos": 10,
     "nota": "Los 25 pares restantes no tienen estrategia validada: no mostrar en el tablero."
   }
 }

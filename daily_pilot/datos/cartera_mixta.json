@@ -65,12 +65,12 @@
       "riesgo_pct": 2.0,
       "pares": [
         "BTCUSDT",
-        "ETHUSDT",
-        "SOLUSDT",
         "XRPUSDT",
-        "ADAUSDT",
+        "HBARUSDT",
         "LINKUSDT",
-        "AVAXUSDT"
+        "AVAXUSDT",
+        "FILUSDT",
+        "NEARUSDT"
       ],
       "validacion": "null estricto p=0.00 en 5 pares, WF positivo"
     }
@@ -158,59 +158,48 @@
       "nota": "Walk-forward mejora 16%. · TAMBIÉN tiene scale-in Fibo validado."
     },
     {
-      "par": "ETHUSDT",
-      "estrategia": "scalein",
-      "estado": "VALIDADA",
-      "por_mes": 4.0,
-      "E_R": 0.45,
-      "acierto_pct": 97.1,
-      "dd_R": -0.3,
-      "pf": 3.0,
-      "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
-    },
-    {
-      "par": "SOLUSDT",
-      "estrategia": "scalein",
-      "estado": "VALIDADA",
-      "por_mes": 4.0,
-      "E_R": 0.45,
-      "acierto_pct": 97.1,
-      "dd_R": -0.3,
-      "pf": 3.0,
-      "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
-    },
-    {
-      "par": "ADAUSDT",
-      "estrategia": "scalein",
-      "estado": "VALIDADA",
-      "por_mes": 4.0,
-      "E_R": 0.45,
-      "acierto_pct": 97.1,
-      "dd_R": -0.3,
-      "pf": 3.0,
-      "nota": "Scale-in Fibo validado con null p=0.00. 5 pares, riesgo 2%."
-    },
-    {
       "par": "LINKUSDT",
       "estrategia": "scalein",
       "estado": "VALIDADA",
-      "por_mes": 2.2,
+      "por_mes": 0.2,
       "E_R": 0.45,
       "acierto_pct": 100.0,
       "dd_R": 0.0,
       "pf": 3.0,
-      "nota": "Scale-in Fibo validado: 24 ops, +$1104, null p=0.00, WF positivo."
+      "nota": "20 seeds p=0.048, 24 ops, $+1104.14, WF $629→$475."
     },
     {
       "par": "AVAXUSDT",
       "estrategia": "scalein",
       "estado": "VALIDADA",
-      "por_mes": 1.4,
+      "por_mes": 0.1,
       "E_R": 0.45,
       "acierto_pct": 100.0,
       "dd_R": 0.0,
       "pf": 3.0,
-      "nota": "15 ops, +$888, null p=0.00, WF positivo."
+      "nota": "20 seeds p=0.048, 15 ops, $+888.11, WF $566→$322."
+    },
+    {
+      "par": "FILUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 0.1,
+      "E_R": 0.45,
+      "acierto_pct": 100.0,
+      "dd_R": 0.0,
+      "pf": 3.0,
+      "nota": "20 seeds p=0.048, 14 ops, $+812.45, WF $432→$381."
+    },
+    {
+      "par": "NEARUSDT",
+      "estrategia": "scalein",
+      "estado": "VALIDADA",
+      "por_mes": 0.1,
+      "E_R": 0.45,
+      "acierto_pct": 100.0,
+      "dd_R": 0.0,
+      "pf": 3.0,
+      "nota": "20 seeds p=0.048, 9 ops, $+513.41, WF $314→$199."
     }
   ],
   "tracker_paper": {

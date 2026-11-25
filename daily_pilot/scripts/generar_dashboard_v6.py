@@ -27,10 +27,8 @@ sys.path.insert(0, str(PILOT / 'core'))
 sys.path.insert(0, str(PILOT / 'scripts'))
 
 PARES_QUANTFURY = [
-    # Tablero operativo: SOLO pares con esperanza positiva validada.
-    # El universo completo de 34 sigue en datos/velas/ para backtests.
-    'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'XRPUSDT', 'ADAUSDT',
-    'THETAUSDT', 'HBARUSDT', 'ETCUSDT', 'ARBUSDT', 'LINKUSDT', 'AVAXUSDT',
+    # 10 pares con estrategia validada con 20 seeds (test robusto)
+    'ARBUSDT', 'AVAXUSDT', 'BTCUSDT', 'ETCUSDT', 'FILUSDT', 'HBARUSDT', 'LINKUSDT', 'NEARUSDT', 'THETAUSDT', 'XRPUSDT',
 ]
 STATUS_ESPERADO = {'SUSDT': 'TRADING', 'TONUSDT': 'BREAK'}
 

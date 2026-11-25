@@ -106,7 +106,7 @@ def detectar(v1, v4, cfg):
     return ops
 
 
-PARES_VALIDADOS = ['BTCUSDT','ETHUSDT','SOLUSDT','XRPUSDT','ADAUSDT','LINKUSDT','AVAXUSDT']
+PARES_VALIDADOS = ['BTCUSDT','XRPUSDT','HBARUSDT','LINKUSDT','AVAXUSDT','FILUSDT','NEARUSDT']
 
 
 def detectar_validados(v1, v4):
