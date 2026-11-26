@@ -1,0 +1,52 @@
+{"par": "AUDUSD", "estrategia": "pullback", "n": 978, "win": 54.0, "real": -44.425, "dd": -115.87, "null_media": 80.419, "p": 0.9524, "train": -12.428, "test": -31.997, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "AUDUSD", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "AUDUSD", "estrategia": "bos", "n": 138, "win": 27.5, "real": -35.25, "dd": -36.0, "null_media": -19.5, "p": 0.9048, "train": -25.5, "test": -9.75, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "EURUSD", "estrategia": "scalein", "n": 55, "win": 100.0, "real": 369.079, "dd": 0.0, "null_media": 596.589, "p": 1.0, "train": 275.908, "test": 93.171, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "EURUSD", "estrategia": "pullback", "n": 844, "win": 57.0, "real": 7.031, "dd": -56.18, "null_media": 225.747, "p": 1.0, "train": 13.536, "test": -6.505, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "EURUSD", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "EURUSD", "estrategia": "bos", "n": 119, "win": 31.9, "real": -12.25, "dd": -20.5, "null_media": -18.6, "p": 0.3333, "train": -4.75, "test": -7.5, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "GBPUSD", "estrategia": "scalein", "n": 77, "win": 100.0, "real": 533.333, "dd": 0.0, "null_media": 394.71, "p": 0.0952, "train": 365.845, "test": 167.488, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "GBPUSD", "estrategia": "pullback", "n": 885, "win": 56.7, "real": -34.926, "dd": -81.31, "null_media": 7.123, "p": 0.619, "train": 25.644, "test": -60.571, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "GBPUSD", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "GBPUSD", "estrategia": "bos", "n": 131, "win": 30.5, "real": -17.25, "dd": -25.75, "null_media": -32.075, "p": 0.2857, "train": -9.25, "test": -8.0, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "NZDUSD", "estrategia": "scalein", "n": 92, "win": 100.0, "real": 589.377, "dd": 0.0, "null_media": 597.94, "p": 0.4762, "train": 418.399, "test": 170.978, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "NZDUSD", "estrategia": "pullback", "n": 594, "win": 51.3, "real": -38.762, "dd": -93.1, "null_media": -22.275, "p": 0.5238, "train": 27.422, "test": -66.184, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "NZDUSD", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "NZDUSD", "estrategia": "bos", "n": 121, "win": 34.7, "real": -17.25, "dd": -26.5, "null_media": -19.613, "p": 0.5238, "train": -14.25, "test": -3.0, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDBRL", "estrategia": "scalein", "n": 52, "win": 100.0, "real": 576.584, "dd": 0.0, "null_media": 1084.772, "p": 1.0, "train": 414.041, "test": 162.543, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDBRL", "estrategia": "pullback", "n": 588, "win": 55.6, "real": -14.244, "dd": -126.53, "null_media": 303.429, "p": 1.0, "train": 6.563, "test": -20.807, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDBRL", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDCAD", "estrategia": "scalein", "n": 26, "win": 100.0, "real": 148.335, "dd": 0.0, "null_media": 235.879, "p": 0.9524, "train": 102.568, "test": 45.767, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCAD", "estrategia": "pullback", "n": 988, "win": 66.0, "real": 94.191, "dd": -38.11, "null_media": 42.511, "p": 0.381, "train": 40.417, "test": 53.774, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCAD", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDCAD", "estrategia": "bos", "n": 118, "win": 36.4, "real": -5.0, "dd": -15.0, "null_media": -26.537, "p": 0.0952, "train": -12.75, "test": 7.75, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCHF", "estrategia": "scalein", "n": 75, "win": 100.0, "real": 605.814, "dd": 0.0, "null_media": 451.957, "p": 0.1429, "train": 438.349, "test": 167.465, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCHF", "estrategia": "pullback", "n": 779, "win": 54.3, "real": -55.088, "dd": -118.6, "null_media": -4.856, "p": 0.7619, "train": -60.871, "test": 5.784, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCHF", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDCHF", "estrategia": "bos", "n": 129, "win": 34.1, "real": -7.75, "dd": -23.5, "null_media": -30.025, "p": 0.0952, "train": -16.25, "test": 8.5, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCNY", "estrategia": "scalein", "n": 3, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDCNY", "estrategia": "pullback", "n": 563, "win": 53.8, "real": 2.047, "dd": -78.57, "null_media": 1043.182, "p": 1.0, "train": 69.851, "test": -67.804, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDCNY", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDCNY", "estrategia": "bos", "n": 45, "win": 24.4, "real": -11.25, "dd": -12.25, "null_media": -9.1, "p": 0.619, "train": -4.5, "test": -6.75, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDHKD", "estrategia": "scalein", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDHKD", "estrategia": "pullback", "n": 1108, "win": 45.4, "real": -248.169, "dd": -255.02, "null_media": 131.669, "p": 1.0, "train": -187.938, "test": -60.231, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDHKD", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDHKD", "estrategia": "bos", "n": 16, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDJPY", "estrategia": "scalein", "n": 101, "win": 99.0, "real": 696.696, "dd": -1.79, "null_media": 610.81, "p": 0.1429, "train": 462.063, "test": 234.634, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDJPY", "estrategia": "pullback", "n": 1125, "win": 63.6, "real": 127.988, "dd": -55.21, "null_media": 111.392, "p": 0.381, "train": 124.355, "test": 3.633, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDJPY", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDJPY", "estrategia": "bos", "n": 130, "win": 40.0, "real": 8.25, "dd": -10.5, "null_media": -18.175, "p": 0.0476, "train": 10.25, "test": -2.0, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDMXN", "estrategia": "pullback", "n": 557, "win": 54.6, "real": -21.941, "dd": -93.9, "null_media": -35.387, "p": 0.5714, "train": -22.662, "test": 0.722, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDMXN", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDMXN", "estrategia": "bos", "n": 127, "win": 37.0, "real": -9.75, "dd": -32.5, "null_media": -13.688, "p": 0.5714, "train": -10.75, "test": 1.0, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDNOK", "estrategia": "pullback", "n": 602, "win": 56.1, "real": 24.488, "dd": -69.59, "null_media": -20.604, "p": 0.2381, "train": 20.316, "test": 4.172, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "USDNOK", "estrategia": "reversion", "n": 0, "veredicto": "MUESTRA_CORTA"}
+{"par": "USDNOK", "estrategia": "bos", "n": 111, "win": 36.9, "real": -3.75, "dd": -19.0, "null_media": -29.663, "p": 0.0476, "train": 3.0, "test": -6.75, "seeds": 20, "veredicto": "DESCARTAR"}
+{"par": "AUDUSD", "estrategia": "scalein", "n": 120, "win": 100.0, "real": 861.961, "dd": 0.0, "null_media": 698.101, "p": 0.0476, "train": 656.251, "test": 205.71, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "original"}
+{"par": "USDBRL", "estrategia": "bos", "n": 148, "win": 54.7, "real": 35.25, "dd": -19.0, "null_media": -4.05, "p": 0.0476, "train": 31.0, "test": 4.25, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "original"}
+{"par": "USDMXN", "estrategia": "scalein", "n": 84, "win": 100.0, "real": 863.514, "dd": 0.0, "null_media": 399.497, "p": 0.0476, "train": 605.419, "test": 258.095, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "original"}
+{"par": "USDNOK", "estrategia": "scalein", "n": 108, "win": 100.0, "real": 953.89, "dd": 0.0, "null_media": 514.477, "p": 0.0476, "train": 635.487, "test": 318.403, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "original"}
+{"par": "AUDUSD", "estrategia": "scalein", "n": 120, "win": 100.0, "real": 861.961, "dd": 0.0, "null_media": 687.083, "p": 0.0952, "train": 656.251, "test": 205.71, "seeds": 20, "veredicto": "DESCARTAR", "verificacion": "semillas_distintas"}
+{"par": "USDBRL", "estrategia": "bos", "n": 148, "win": 54.7, "real": 35.25, "dd": -19.0, "null_media": -3.625, "p": 0.0476, "train": 31.0, "test": 4.25, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "semillas_distintas"}
+{"par": "USDMXN", "estrategia": "scalein", "n": 84, "win": 100.0, "real": 863.514, "dd": 0.0, "null_media": 429.36, "p": 0.0476, "train": 605.419, "test": 258.095, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "semillas_distintas"}
+{"par": "USDNOK", "estrategia": "scalein", "n": 108, "win": 100.0, "real": 953.89, "dd": 0.0, "null_media": 504.867, "p": 0.0476, "train": 635.487, "test": 318.403, "seeds": 20, "veredicto": "VALIDAR", "verificacion": "semillas_distintas"}
