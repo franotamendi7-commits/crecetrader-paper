@@ -1,8 +1,9 @@
 name: CreceTrader · publicar dash (GitHub Pages)
 
-# Publica el dash generado en https://franotamendi7-commits.github.io/crecetrader-paper/
-# El ciclo-paper.yml regenera index.html cada hora a las :07 y hace commit.
-# Este workflow se dispara tras ese push y publica el HTML.
+# Se dispara cuando ciclo-paper.yml commitea el index.html generado.
+# Publica ese HTML en la rama gh-pages, que GitHub Pages sirve en:
+# https://franotamendi7-commits.github.io/crecetrader-paper/
+# Sin artifacts: push directo, confiable.
 
 on:
   push:
@@ -12,9 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -22,25 +21,28 @@ concurrency:
 
 jobs:
   publicar:
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Preparar sitio
-        run: |
-          mkdir -p public
-          cp daily_pilot/dashboard/index.html public/index.html
-          echo "dash publicado: $(wc -c < public/index.html) bytes"
-
-      - name: Subir artifact de Pages
-        uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          fetch-depth: 0
 
-      - name: Publicar
-        id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Publicar en rama gh-pages
+        run: |
+          set -e
+          git config user.name "franotamendi7-commits"
+          git config user.email "franotamendi7-commits@users.noreply.github.com"
+          mkdir -p /tmp/pub
+          cp daily_pilot/dashboard/index.html /tmp/pub/index.html
+          git checkout -B gh-pages
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'index.html' -exec rm -rf {} +
+          cp /tmp/pub/index.html index.html
+          git add -A -f
+          if git diff --cached --quiet; then
+            echo "dash sin cambios"
+          else
+            git commit -m "AUTO dash $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push -f origin gh-pages
+            echo "publicado: $(wc -c < index.html) bytes"
+          fi
