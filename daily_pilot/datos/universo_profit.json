@@ -2,7 +2,7 @@
   "generado": "2026-11-25",
   "criterio": "Solo pares con esperanza positiva validada (null sintetico + walk-forward)",
   "universo_original": 34,
-  "pares_con_profit_positivo": 13,
+  "pares_con_profit_positivo": 14,
   "estrategias": [
     {
       "clave": "pullback",
@@ -52,7 +52,8 @@
       "pares": [
         "INJUSDT",
         "DOGEUSDT",
-        "DOTUSDT"
+        "DOTUSDT",
+        "USDBRL"
       ],
       "cartera": {
         "n": 768,
@@ -153,11 +154,18 @@
         "bos"
       ],
       "estado": "VALIDADA"
+    },
+    {
+      "par": "USDBRL",
+      "estrategias": [
+        "bos"
+      ],
+      "estado": "VALIDADA"
     }
   ],
   "tablero": {
     "total_estrategias": 2,
-    "pares_unicos": 13,
+    "pares_unicos": 14,
     "nota": "Los 25 pares restantes no tienen estrategia validada: no mostrar en el tablero."
   }
 }
