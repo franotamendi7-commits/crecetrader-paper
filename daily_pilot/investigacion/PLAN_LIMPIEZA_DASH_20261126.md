@@ -12,7 +12,19 @@
    - **Sin tantos números** — informe simple, legible, no un volcado de datos
    - Irá **al último**, después de todo lo demás
 3. ❌ **PANEL DE RESULTADOS / BÚSQUEDA** (`PASA (p=0.020)`, tabla TF/TRAMO_N/EXT/STOP/GESTIÓN/DIR/FILTRO/N/WIN/E/DD/RACHA/VEREDICTO, "19 de 34 pares...", "Null por permutación...", "fuente: ESTRATEGIA_GANADORA.md") → **SACAR**. "No da información valiosa, hace ruido y confunde". Es backtest viejo de la estrategia descartada (`ruptura tramo`, n=52). Viene de `panel_resultados.py`.
-4. (Faltan las próximas capturas / decisiones — agregar acá.)
+4. ❌ **SACAR los dos bloques que se sobreponen**: "Cartera mixta" (63,9 señales/mes, E +0,142R, PF 1,39, DD −98,1R, tabla por par con Null/WF) y "Tracker paper" (286 ops, E replay +0,009R, E backtest +0,128R, PF 1,02, DD −23,5R). Son la misma info con otro formato y confunden.
+5. ✅ **UN NUEVO PANEL DE SEÑALES, unificado y de mayor calidad**, reemplazando a los dos anteriores y al panel actual de activas/cerradas. Basado en la referencia que mandó Francisco:
+   - **Una señal activa bien presentada** arriba: par, LONG/SHORT, TF, estado ACTIVA, confianza, R:R.
+   - **Plan de la señal**: Dirección · Entrada · Stop Loss · TP1 · TP2 · Salida (plan) · R:R · Timeframe · Estado · Emitida.
+   - **Detalle de la estrategia**: método, contexto, zona, validación.
+   - **Historial de señales (últimas 10)**: fecha/hora · par · dirección · TF · entrada · stop · TP1 · TP2 · salida · R:R · estado.
+   - **Sin gráfico** (la referencia lo tiene pero es muy cargado; se omite o queda opcional).
+   - **CRÍTICO — métricas SOLO de FORWARD REAL**: el historial arranca en **0**, se va cargando con cada señal nueva que detecten los trackers. PF real, DD real, acierto real — **nada de replay ni backtest** en este panel. Es la evidencia verdadera de los trades que el sistema tomó.
+   - Si un dato no existe en los trackers (ej. "confianza"), **no inventarlo**: se deriva del p-value/null o se omite.
+
+> Nota: los trackers ya tienen campo `origen: replay|forward`, así que se puede filtrar limpio. Hoy `forward_n = 0` en los 4 → el panel debe mostrar 0 y KPIs en cero, no los números históricos.
+
+6. (Faltan las próximas capturas / decisiones — agregar acá.)
 
 > Instrucción del usuario: "si preferis guarda todo lo que digo y despues hace todo junto". **NO aplicar nada hasta que diga que ya mandó todas las capturas.**
 
