@@ -105,15 +105,10 @@ def lectura_agente(info: dict, niveles: list) -> dict:
 
 
 # ------------------------------------------------------------------ HTML
-from panel_resultados import CSS_EXTRA, html as html_resultados
-from panel_video import CSS_EXTRA as CSS_VIDEO, html as html_video
-from panel_senales import CSS_EXTRA as CSS_SENALES, html as html_senales
-from panel_tracker import CSS_EXTRA as CSS_TRACKER, html as html_tracker
 from panel_operativo import CSS as CSS_OPERATIVO, html as html_operativo
-from panel_senales_vivo import CSS as CSS_SENALES_VIVO, html as html_senales_vivo
 from tracker_paper import actualizar as actualizar_tracker
 
-CSS = CSS_EXTRA + CSS_VIDEO + CSS_SENALES + CSS_TRACKER + CSS_OPERATIVO + CSS_SENALES_VIVO + '''
+CSS = CSS_OPERATIVO + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
@@ -197,6 +192,7 @@ margin-top:3px}
 .pdetail{display:none}
 .dom-a{border-left:3px solid rgba(62,207,122,.55)}
 .dom-b{border-left:3px solid rgba(224,170,74,.55)}
+.dom-c{border-left:3px solid rgba(224,170,74,.55)}
 @media (max-width:1024px){
  body{padding:18px 16px 40px}
  .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
@@ -223,6 +219,17 @@ margin-top:3px}
 #modal-overlay .modal .res{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);background:var(--card);margin-bottom:0}
 #modal-x{position:absolute;top:12px;right:14px;background:none;border:1px solid var(--bd);color:var(--muted);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;line-height:1}
 #modal-x:hover{color:var(--fg);border-color:var(--acc)}
+.sg-c{border-radius:14px;padding:18px 20px;border:1px solid var(--bd);
+ background:var(--card);margin-bottom:26px}
+.sg-c .mt{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--acc);margin-bottom:12px}
+.sg-c .op{border:1px solid var(--bd);border-radius:9px;padding:10px 12px;margin-bottom:7px;
+ background:rgba(255,255,255,.02);font-size:12px}
+.sg-c .op .h{display:flex;justify-content:space-between;gap:8px;font-weight:700;margin-bottom:5px}
+.sg-c .op .d{color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.55}
+.sg-c .vacio{color:var(--muted);font-size:12px;padding:10px 0}
+.sg-c .kpi{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+.sg-c .kpi div{font-size:12px;color:var(--muted)}
+.sg-c .kpi b{display:block;font-size:16px;color:var(--fg);font-variant-numeric:tabular-nums;margin-top:2px}
 '''
 
 
@@ -336,6 +343,41 @@ def _pdetalles(mer: list, niveles: list, est: dict) -> str:
     return ''.join(bloques)
 
 
+def html_senales_unificado() -> str:
+    """Panel de señales unificado — SOLO operaciones con origen == 'forward'."""
+    ops_fwd = []
+    for nombre in ('tracker_scalein.json', 'tracker_bos.json', 'tracker_paper.json'):
+        j = cargar(PILOT / 'datos' / nombre) or {}
+        for o in (j.get('operaciones') or []):
+            if o.get('origen') == 'forward':
+                ops_fwd.append(o)
+    ops_fwd.sort(key=lambda o: int(o.get('senal_ts') or 0))
+    hist = ops_fwd[-10:]
+    n_fwd = len(ops_fwd)
+    n_act = len([o for o in hist if not str(o.get('estado') or '').startswith('CERRADA')])
+    if not hist:
+        items = ('<div class="vacio">Sin señales forward nuevas hoy. '
+                 'El panel se carga con cada nueva señal emitida por los trackers.</div>')
+    else:
+        items = ''
+        for o in hist:
+            par = _e((o.get('par') or '').replace('USDT', ''))
+            d = _e(o.get('senal_fecha') or '')
+            ent = _e(o.get('entrada') or o.get('stop_inicial') or '—')
+            sto = _e(o.get('stop') or o.get('stop_inicial') or '—')
+            tgt = _e(o.get('target') or '—')
+            ec = _e(o.get('estado') or 'ABIERTA')
+            tag = 'ok' if not str(o.get('estado') or '').startswith('CERRADA') else 'muted'
+            items += (f'<div class="op"><div class="h"><span>{par} · {_e(o.get("estrategia") or "")}</span>'
+                       f'<span class="{tag}">{ec}</span></div>'
+                       f'<div class="d">{d} · entrada {ent} · stop {sto} · tp {tgt}</div></div>')
+    return (f'<div class="sg-c"><div class="mt">Señales · paper trading · FORWARD</div>'
+            f'<div class="kpi"><div><span>Señales forward</span><b>{n_fwd}</b></div>'
+            f'<div><span>Activas</span><b>{n_act}</b></div>'
+            f'<div><span>Historial (últimas 10)</span><b>{len(hist)}</b></div></div>'
+            f'{items}</div>')
+
+
 def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
     vid = info.get('video_id') or ''
@@ -354,7 +396,6 @@ def main() -> int:
     top = [n for n in sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]]
     niv_html = ''.join(
         f'<div class="nivel"><b>{fmt_precio(float(n["precio"]))}</b>'
-        f'<span class="men">x{n.get("menciones")} menciones</span>'
         f'<span class="men">{esc(str(n.get("cita") or "")[:70])}</span></div>'
         for n in top) or '<div class="nota">sin niveles hoy</div>'
 
@@ -420,8 +461,12 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
 
 {secciones_pdetalles}
 
-<section class="dom-b">
-  <div class="shead"><h2>Análisis CreceTrader</h2><span class="n">lo que dice el canal</span><span class="hint">lectura de niveles, no predicción</span></div>
+{html_operativo()}
+
+{html_senales_unificado()}
+
+<section class="dom-c">
+  <div class="shead"><h2>Resumen CreceTrader</h2><span class="n">lo que dice el canal</span><span class="hint">resumen diario simple</span></div>
   <div class="leer">
     {lcard('a', 'Alcista', lec['alcista'], 'var(--ok)')}
     {lcard('b', 'Bajista', lec['bajista'], 'var(--bad)')}
@@ -431,17 +476,11 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
     <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px">Niveles clave que mencionó</div>
     {niv_html}
   </div>
+  <div class="kpi">
+    <div><span>Posibles entradas</span><b>según niveles · lectura</b></div>
+  </div>
 </section>
 
-{html_operativo()}
-{html_senales_vivo()}
-{html_senales()}
-
-{html_tracker()}
-
-{html_video()}
-
-{html_resultados()}
 <footer>
   · Los precios son <b>reales</b> (Binance, solo lectura), caché de 5 minutos — no es un feed en vivo.<br>
   · El reparto Alcista/Bajista se calcula de los <b>niveles dichos en el video</b>: es una lectura del texto, no una predicción.<br>

@@ -13,7 +13,7 @@ Genera un HTML estático → se sirve con `python3 -m http.server`
 Actualiza velas con urllib a api.binance.com (solo lectura)
 ```
 
-**Conclusión: corre en cualquier VPS mínimo.** No hay dependencias pesadas. El workspace completo sin velas es liviano; las velas 1h/4h de 13 pares son lo único voluminoso (~50 MB).
+**Conclusión: corre en cualquier VPS mínimo.** No hay dependencias pesadas. El workspace completo sin velas es liviano; las velas 1h/4h de 13 pares son lo único voluminoso (~125,2 MB; 294 MB el directorio completo con 1d/1w/caches).
 
 ## 2. Opciones reales (datos de fuentes públicas, 2026)
 

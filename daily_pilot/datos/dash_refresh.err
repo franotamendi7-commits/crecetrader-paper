@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scripts/generar_dashboard_v6.py", line 503, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scripts/generar_dashboard_v6.py", line 477, in main
+    {html_senales_vivo()}
+     ^^^^^^^^^^^^^^^^^
+NameError: name 'html_senales_vivo' is not defined. Did you mean: 'html_senales_unificado'?
