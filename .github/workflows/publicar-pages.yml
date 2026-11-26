@@ -1,0 +1,46 @@
+name: CreceTrader · publicar dash (GitHub Pages)
+
+# Publica el dash generado en https://franotamendi7-commits.github.io/crecetrader-paper/
+# El ciclo-paper.yml regenera index.html cada hora a las :07 y hace commit.
+# Este workflow se dispara tras ese push y publica el HTML.
+
+on:
+  push:
+    branches: [crecetrader-limpio]
+    paths:
+      - 'daily_pilot/dashboard/index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Preparar sitio
+        run: |
+          mkdir -p public
+          cp daily_pilot/dashboard/index.html public/index.html
+          echo "dash publicado: $(wc -c < public/index.html) bytes"
+
+      - name: Subir artifact de Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Publicar
+        id: deploy
+        uses: actions/deploy-pages@v4
