@@ -82,7 +82,8 @@
       "pares": [
         "INJUSDT",
         "DOGEUSDT",
-        "DOTUSDT"
+        "DOTUSDT",
+        "USDBRL"
       ],
       "validacion": "20 seeds doble verificación, p=0.048, WF test positivo en 3 pares"
     }
@@ -245,6 +246,17 @@
       "dd_R": -21.0,
       "pf": 1.2,
       "nota": "BOS 4h+1h: 289 ops, +9.25R, p=0.0476, WF +6.2→+3.0R."
+    },
+    {
+      "par": "USDBRL",
+      "estrategia": "bos",
+      "estado": "VALIDADA",
+      "por_mes": 7.4,
+      "E_R": 0.238,
+      "acierto_pct": 54.7,
+      "dd_R": -19.0,
+      "pf": 1.2,
+      "nota": "Division Quantfury. BOS 4h+1h: 148 ops, +35.25R, doble verificacion p=0.048, null -4.05."
     }
   ],
   "tracker_paper": {
