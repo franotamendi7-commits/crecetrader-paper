@@ -30,7 +30,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Sin dependencias externas
         run: python3 -c "import json,urllib.request,pathlib; print('stdlib OK')"
