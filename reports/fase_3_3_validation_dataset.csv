@@ -1,7 +1,0 @@
-Timestamp,Frame,Transcripcion,Interpretacion_Humana,Interpretacion_Sistema_Anterior,Interpretacion_Modelo_Nuevo,Coincidencias,Errores,Estado
-305.5,scene_5,"refugiadas institucionales entre los 72.554 hasta los 69.000","Zona de compra institucional visible en gráfico","OCR: Fase de Acumulacion","[PROPUESTO] Gráfico con zona rectangular 72.554-69.000","Texto coincide con zona","Ninguno","PENDIENTE"
-106.2,scene_4,"le esperan los 72.838 69.840 65.520","Niveles de soporte en gráfico semanal","OCR: BITCOIN Serie semanal","[PROPUESTO] Gráfico semanal con tendencia","Texto coincide","Niveles no visibles","PENDIENTE"
-317.9,scene_5,"desde que lleva los 83.366 la vuelta a buscar liquidez a 71.509 y 69.000","Máximo histórico en gráfico","OCR: Fase de Acumulacion","[PROPUESTO] Gráfico con anotación","Texto coincide","Niveles no visibles","PENDIENTE"
-481.2,scene_12,"eje central para la jornada 74.761","Nivel central en gráfico intradía","OCR: Como esta el animo VIX","[PROPUESTO] Gráfico intradía con nivel","Texto coincide","Nivel no visible","PENDIENTE"
-558.3,scene_10,"2.077","Nivel de ETH en gráfico","OCR: ETHEREUM","[PROPUESTO] Gráfico de ETH","Texto coincide","Nivel no visible","PENDIENTE"
-EOF
