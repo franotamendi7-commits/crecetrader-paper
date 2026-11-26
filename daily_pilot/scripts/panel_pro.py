@@ -28,8 +28,11 @@ justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .po .top h2{margin:0;font-size:15px;letter-spacing:.3px}
 .po .top .sub{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 .po .nav{display:flex;gap:6px;flex-wrap:wrap}
-.po .nav span{font-size:11px;padding:5px 10px;border-radius:20px;border:1px solid var(--bd);color:var(--muted)}
+.po .nav span{cursor:pointer;font-size:11px;padding:5px 10px;border-radius:20px;border:1px solid var(--bd);color:var(--muted)}
+.po .nav span:hover{border-color:var(--acc);color:var(--fg)}
 .po .nav span.on{border-color:rgba(62,207,122,.5);color:var(--ok);background:rgba(62,207,122,.08)}
+.po .po-panel{display:none}
+.po .po-panel.on{display:block}
 .po .grid{display:grid;grid-template-columns:220px 1fr;gap:0}
 .po .side{border-right:1px solid var(--bd);padding:14px}
 .po .side .h{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
@@ -229,22 +232,52 @@ def html() -> str:
              f'{kv("Señales", len(ops))}{kv("Acierto", f"{100*wins/len(vals):.0f}%" if vals else "—")}'
              f'{kv("Profit factor", _n(pf, 2) if pf is not None else "—")}'
              f'{spark(vals)}</div>')
+    analisis_html = ('<div class="cards">'
+        '<div class="cd"><h4>Validación técnica (confluencia)</h4>'
+        + kv('Estructura', '—') + kv('Zona', '—') + kv('Volumen', '—')
+        + kv('Contexto', '—') + kv('Estrategia', '—') + '</div>'
+        '<div class="cd"><h4>Multi-temporalidad</h4>'
+        + kv('Semanal', '—') + kv('Diario', '—') + kv('4H', '—') + kv('1H', '—') + '</div>'
+        '<div class="cd"><h4>Justificación de la señal</h4>'
+        '<div style="font-size:12px;color:var(--muted);line-height:1.6">'
+        'Sin señal forward registrada todavía. Los trackers corren cada hora sobre velas '
+        'cerradas; cuando aparezca una señal real se mostrará acá con su validación, '
+        'multi-temporalidad y justificación. PAPER_ONLY.</div></div></div>')
 
     return f'''<div class="po">
       <div class="top">
         <div><h2>Señales Crypto</h2><div class="sub">análisis técnico · price action · CreceTrader</div></div>
-        <div class="nav"><span class="on">Señales</span><span>Análisis</span>
-          <span>Historial</span><span>Estadísticas</span></div>
+        <div class="nav"><span class="on" data-po="senales">Señales</span><span data-po="analisis">Análisis</span>
+          <span data-po="historial">Historial</span><span data-po="estadisticas">Estadísticas</span></div>
       </div>
       <div class="grid">
         <div class="side"><div class="h">Activos ({len(activas)})</div>{side}</div>
-        <div class="main">{detalle(activas[0] if activas else None)}</div>
+        <div class="main">
+          <div class="po-panel on" data-po="senales">{detalle(activas[0] if activas else None)}</div>
+          <div class="po-panel" data-po="analisis">{analisis_html}</div>
+          <div class="po-panel" data-po="historial">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">
+              Historial de señales · forward real</div>
+            {tabla(ops)}
+          </div>
+          <div class="po-panel" data-po="estadisticas"><div class="cards">{stats}</div></div>
+        </div>
       </div>
-      <div style="padding:14px 16px;border-top:1px solid var(--bd)">
-        <div class="h" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">
-          Historial de señales · forward real</div>
-        {tabla(ops)}
-      </div>
-      <div style="padding:0 16px 16px"><div class="cards">{stats}</div></div>
       <div class="foot">PAPER ONLY — ninguna orden real · datos solo de señales forward emitidas por los trackers · sin gráfico</div>
-    </div>'''
+    </div>
+    <script>
+    (function(){{
+      function poTab(name){{
+        var root=document.querySelector('.po'); if(!root) return;
+        root.querySelectorAll('.nav span').forEach(function(s){{
+          s.classList.toggle('on', s.getAttribute('data-po')===name);
+        }});
+        root.querySelectorAll('.po-panel').forEach(function(p){{
+          p.classList.toggle('on', p.getAttribute('data-po')===name);
+        }});
+      }}
+      document.querySelectorAll('.po .nav span[data-po]').forEach(function(s){{
+        s.addEventListener('click', function(){{ poTab(s.getAttribute('data-po')); }});
+      }});
+    }})();
+    </script>'''
