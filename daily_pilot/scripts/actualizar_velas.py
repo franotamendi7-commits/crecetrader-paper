@@ -10,7 +10,7 @@ from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(BASE / 'daily_pilot' / 'scripts'))
-from descargar_velas import BINANCE, BINANCE_TF, DIR  # noqa: E402
+from descargar_velas import BINANCE, BINANCE_FALLBACK, BINANCE_TF, DIR, klines_page  # noqa: E402
 
 PARESES = [
     'BTCUSDT','XRPUSDT','HBARUSDT','LINKUSDT','AVAXUSDT','FILUSDT','NEARUSDT',
@@ -20,11 +20,7 @@ LIM = 1000
 
 
 def fetch(par: str, tf: str, desde: int | None):
-    url = (f'{BINANCE}/api/v3/klines?symbol={par}&interval={BINANCE_TF[tf]}'
-           f'&limit={LIM}' + (f'&startTime={desde}' if desde else ''))
-    req = urllib.request.Request(url, headers={'User-Agent': 'CreceTrader-pilot/0.2'})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+    return klines_page(par, tf, desde or 1483228800000, LIM)
 
 
 def actualizar(par: str, tf: str, verbose=False) -> dict:

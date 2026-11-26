@@ -19,6 +19,9 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parents[2]
 DIR = BASE / 'daily_pilot' / 'datos' / 'velas'
 BINANCE = 'https://api.binance.com'
+# IP de GitHub Actions / datacenters reciben HTTP 451 de api.binance.com.
+# Este mirror publico de SOLO LECTURA devuelve los mismos klines sin restriccion.
+BINANCE_FALLBACK = 'https://data-api.binance.vision'
 
 TF_MS = {
     '1m': 60_000, '5m': 300_000, '15m': 900_000, '1h': 3_600_000,
@@ -31,16 +34,20 @@ PAPER_ONLY = True
 
 
 def klines_page(par, tf, start_ms, limit=1000):
-    url = (f'{BINANCE}/api/v3/klines?symbol={par}&interval={BINANCE_TF[tf]}'
-           f'&startTime={start_ms}&limit={limit}')
-    for attempt in range(5):
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'CreceTrader-pilot/0.1'})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                data = json.loads(r.read().decode())
-            return data
-        except Exception as e:
-            time.sleep(1 + attempt)
+    path = (f'/api/v3/klines?symbol={par}&interval={BINANCE_TF[tf]}'
+            f'&startTime={start_ms}&limit={limit}')
+    for base in (BINANCE, BINANCE_FALLBACK):
+        url = base + path
+        for attempt in range(2):
+            try:
+                req = urllib.request.Request(url, headers={'User-Agent': 'CreceTrader-pilot/0.2'})
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    return json.loads(r.read().decode())
+            except Exception as e:
+                code = getattr(e, 'code', None)
+                if code in (451, 403, 429) or attempt == 1:
+                    break   # probar mirror directo
+                time.sleep(1)
     raise RuntimeError(f'fallo descarga {par} {tf} @ {start_ms}')
 
 
