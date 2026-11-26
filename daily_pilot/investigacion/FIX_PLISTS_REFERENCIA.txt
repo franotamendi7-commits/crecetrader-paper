@@ -1,0 +1,68 @@
+CONTENIDO EXACTO DE LOS 6 PLISTS — regenerar en formato OpenStep (NO JSON array).
+
+Ruta: ~/Library/LaunchAgents/com.crecetrader.<nombre>.plist
+Python: /Users/franciscootamendi/.hermes/hermes-agent/venv/bin/python3
+Proyecto: /Users/franciscootamendi/YouTubeTradingAgent
+
+────────────────────────────────────────────────────────────
+1) com.crecetrader.actualizar-velas.plist
+   StartInterval 900 · RunAtLoad true
+   script: daily_pilot/scripts/actualizar_velas.py
+   logs: daily_pilot/datos/actualizar_velas.log / .err
+
+2) com.crecetrader.tracker-scalein.plist
+   StartCalendarInterval → Minute 1 · RunAtLoad true
+   script: daily_pilot/scripts/tracker_scalein.py
+   logs: daily_pilot/datos/tracker_scalein.log / .err
+
+3) com.crecetrader.tracker-paper.plist
+   StartCalendarInterval → Minute 2 · RunAtLoad true
+   script: daily_pilot/scripts/tracker_paper.py
+   logs: daily_pilot/datos/tracker_paper.log / .err
+
+4) com.crecetrader.tracker-bos.plist
+   StartCalendarInterval → Minute 3 · RunAtLoad true
+   script: daily_pilot/scripts/tracker_bos.py
+   logs: daily_pilot/datos/tracker_bos.log / .err
+
+5) com.crecetrader.alertas-senales.plist
+   StartCalendarInterval → 24 entradas: Hour 0..23, todas Minute 5
+   script: daily_pilot/scripts/alertas_senales.py
+   logs: daily_pilot/datos/alertas_senales.log / .err
+   (NO tiene RunAtLoad, a propósito: no mandar mensajes viejos al boot)
+
+6) com.crecetrader.dash-refresh.plist
+   StartInterval 300 · RunAtLoad true
+   script: daily_pilot/scripts/generar_dashboard_v6.py
+   logs: daily_pilot/datos/dash_refresh.log / .err
+
+────────────────────────────────────────────────────────────
+Estructura OpenStep que deben tener TODOS:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.crecetrader.NOMBRE</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/franciscootamendi/.hermes/hermes-agent/venv/bin/python3</string>
+        <string>/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/scripts/SCRIPT.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/franciscootamendi/YouTubeTradingAgent</string>
+    ... horario correspondiente ...
+    <key>StandardOutPath</key>
+    <string>/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/datos/LOG.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/franciscootamendi/YouTubeTradingAgent/daily_pilot/datos/ERR.err</string>
+</dict>
+</plist>
+
+────────────────────────────────────────────────────────────
+Verificación obligatoria tras regenerar:
+  plutil -lint ~/Library/LaunchAgents/com.crecetrader.*.plist  → OK en los 6
+  launchctl unload + load de los 6
+  launchctl list | grep crecetrader → 6 jobs
+  Los 6 archivos deben empezar con <?xml y NO con [
