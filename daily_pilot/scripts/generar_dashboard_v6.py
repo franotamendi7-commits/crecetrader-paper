@@ -27,7 +27,7 @@ sys.path.insert(0, str(PILOT / 'core'))
 sys.path.insert(0, str(PILOT / 'scripts'))
 
 PARES_QUANTFURY = [
-    'ARBUSDT', 'AVAXUSDT', 'BTCUSDT', 'DOGEUSDT', 'DOTUSDT', 'ETCUSDT', 'FILUSDT', 'HBARUSDT', 'INJUSDT', 'LINKUSDT', 'NEARUSDT', 'THETAUSDT', 'XRPUSDT', 'USDBRL',
+    'ARBUSDT', 'AVAXUSDT', 'BTCUSDT', 'DOGEUSDT', 'DOTUSDT', 'ETCUSDT', 'FILUSDT', 'HBARUSDT', 'INJUSDT', 'LINKUSDT', 'NEARUSDT', 'THETAUSDT', 'XRPUSDT', 'USDBRL', 'BOVA11', 'COPX', 'DIA', 'ECH',
 ]
 STATUS_ESPERADO = {'SUSDT': 'TRADING', 'TONUSDT': 'BREAK'}
 
@@ -61,19 +61,42 @@ def fmt_precio(x) -> str:
 
 # ------------------------------------------------------------------ datos
 def mercado() -> list:
-    """Precio real + cambio 24h de cada par de Quantfury."""
+    """Precio real + cambio 24h de cada par de Quantfury.
+
+    Cripto: Binance via velas(). Divisas/ETF: ultimo close de las velas
+    Yahoo ya descargadas ( paso 1h )
+    """
     from velas import velas
+    OUT = PILOT / 'datos' / 'velas'
+    DIV = {'USDBRL','EURUSD','GBPUSD','AUDUSD','NZDUSD','USDCAD','USDCHF',
+           'USDCNY','USDHKD','USDJPY','USDMXN','USDNOK'}
+    ETF = {'BOVA11','COPX','DIA','ECH'}
     out = []
     for par in PARES_QUANTFURY:
+        disp = par.replace('USDT', '')
+        if disp in DIV | ETF:
+            p = OUT / f'{disp}_1h.json'
+            if p.exists():
+                v = json.loads(p.read_text())['velas']
+                if len(v) >= 25:
+                    ult, ant = v[-1], v[-25]
+                    out.append({'par': disp, 'precio': float(ult['close']),
+                                'cambio': round((ult['close']-ant['close'])/ant['close']*100,2)
+                                if ant['close'] else 0.0,
+                                'fuente': 'yahoo', 'status': ''})
+                    continue
+            out.append({'par':disp,'precio':None,'cambio':None,
+                        'fuente':'sin velas locales','status':''})
+            continue
         r = velas(par, '1d', limite=3)
         if 'error' in r or len(r['velas']) < 2:
-            out.append({'par': par.replace('USDT', ''), 'precio': None,
+            out.append({'par': disp, 'precio': None,
                         'cambio': None, 'fuente': r.get('error', 'sin datos'),
                         'status': STATUS_ESPERADO.get(par, '')})
             continue
         v, prev = r['velas'][-1], r['velas'][-2]
         out.append({
-            'par': par.replace('USDT', ''),
+            'par': disp,
             'precio': float(v['close']),
             'cambio': round((v['close'] - prev['close']) / prev['close'] * 100, 2)
             if prev['close'] else 0.0,
@@ -196,6 +219,12 @@ margin-top:3px}
 .grupo .gtit{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--ok);
   margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
 .grupo:last-child .gtit{color:var(--warn)}
+.sem{display:flex;align-items:center;gap:5px;font-size:9px;margin-top:6px;letter-spacing:.2px}
+.sem i{width:7px;height:7px;border-radius:50%;display:inline-block;flex:none}
+.sem.verde{color:var(--ok)} .sem.verde i{background:var(--ok);box-shadow:0 0 7px var(--ok)}
+.sem.amarillo{color:var(--warn)} .sem.amarillo i{background:var(--warn)}
+.sem.rojo{color:var(--muted)} .sem.rojo i{background:var(--bad)}
+.mcard.link{text-decoration:none}
 .dom-b{border-left:3px solid rgba(224,170,74,.55)}
 .dom-c{border-left:3px solid rgba(224,170,74,.55)}
 @media (max-width:1024px){
@@ -238,17 +267,24 @@ margin-top:3px}
 '''
 
 
-def mcard(x) -> str:
+def mcard(x, sem=None) -> str:
     par = esc(x['par'])
     st = ' <span class="brk">BREAK</span>' if x.get('status') == 'BREAK' else ''
+    sem_html = ''
+    if sem:
+        color = sem.get('color', 'rojo')
+        txt = sem.get('estado', '')
+        dist = sem.get('dist')
+        dTxt = f'{dist:.2f}%' if dist is not None else '—'
+        sem_html = (f'<div class="sem {color}"><i></i>{esc(txt)} · {dTxt}</div>')
     if x['precio'] is None:
         return (f'<a class="mcard-link" href="#par-{par}" onclick="abrirModal(this)"><div class="mcard"><div class="par">{par}{st}</div>'
-                f'<div class="precio flat">—</div><div class="chg flat">sin datos</div></div></a>')
+                f'<div class="precio flat">—</div><div class="chg flat">sin datos</div>{sem_html}</div></a>')
     cls = 'up' if x['cambio'] >= 0 else 'down'
     flecha = '▲' if x['cambio'] > 0.05 else ('▼' if x['cambio'] < -0.05 else '·')
     return (f'<a class="mcard-link" href="#par-{par}" onclick="abrirModal(this)"><div class="mcard"><div class="par">{par}{st}</div>'
             f'<div class="precio">{fmt_precio(x["precio"])}</div>'
-            f'<div class="chg {cls}">{flecha} {x["cambio"]:+.2f}%</div></div></a>')
+            f'<div class="chg {cls}">{flecha} {x["cambio"]:+.2f}%</div>{sem_html}</div></a>')
 
 
 def lcard(clase, titulo, pct, color_var) -> str:
@@ -399,12 +435,25 @@ def main() -> int:
     DIVISAS_NOMBRES = {'USDBRL', 'EURUSD', 'GBPUSD', 'AUDUSD', 'NZDUSD',
                        'USDCAD', 'USDCHF', 'USDCNY', 'USDHKD', 'USDJPY',
                        'USDMXN', 'USDNOK'}
-    crip = [x for x in mer if x['par'] not in DIVISAS_NOMBRES]
+    ETFS_NOMBRES = {'BOVA11', 'COPX', 'DIA', 'ECH'}
+    crip = [x for x in mer if x['par'] not in DIVISAS_NOMBRES | ETFS_NOMBRES]
     div = [x for x in mer if x['par'] in DIVISAS_NOMBRES]
+    etf = [x for x in mer if x['par'] in ETFS_NOMBRES]
+    from semaforo import calcular as semaforo_calcular
+    _carga = cargar(PILOT / 'datos' / 'cartera_mixta.json') or {}
+    _sp = [(p if p in DIVISAS_NOMBRES | ETFS_NOMBRES else p.replace('USDT',''), e['clave'])
+           for e in _carga.get('estrategias',[]) for p in e.get('pares',[])]
+    sem = {s['par']: s for s in semaforo_calcular(_sp)}
+    orden = {'verde':0,'amarillo':1,'rojo':2}
+    def key(x):
+        s = sem.get(x['par'], {})
+        return (orden.get(s.get('color','rojo'),2), s.get('dist') if s.get('dist') is not None else 999)
     cards = (f'<div class="grupo"><div class="gtit">CRIPTOS · {len(crip)} pares</div>'
-             f'<div class="grid">{"".join(mcard(x) for x in crip)}</div></div>'
+             f'<div class="grid">{"".join(mcard(x, sem.get(x["par"])) for x in sorted(crip,key=key))}</div></div>'
              f'<div class="grupo"><div class="gtit">DIVISAS · {len(div)} {"par" if len(div)==1 else "pares"}</div>'
-             f'<div class="grid">{"".join(mcard(x) for x in div) or "<div class=nota>sin divisas activas</div>"}</div></div>')
+             f'<div class="grid">{"".join(mcard(x, sem.get(x["par"])) for x in sorted(div,key=key)) or "<div class=nota>sin divisas activas</div>"}</div></div>'
+             f'<div class="grupo"><div class="gtit">ETFS · {len(etf)}</div>'
+             f'<div class="grid">{"".join(mcard(x, sem.get(x["par"])) for x in sorted(etf,key=key)) or "<div class=nota>sin etfs activos</div>"}</div></div>')
     secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'cartera_mixta.json'))
 
     ev = ''.join(f'<span class="chip">{esc(e)}</span>' for e in lec['evidencia'])
