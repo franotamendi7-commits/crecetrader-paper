@@ -106,9 +106,10 @@ def lectura_agente(info: dict, niveles: list) -> dict:
 
 # ------------------------------------------------------------------ HTML
 from panel_operativo import CSS as CSS_OPERATIVO, html as html_operativo
+from panel_pro import CSS as CSS_PRO, html as html_pro
 from tracker_paper import actualizar as actualizar_tracker
 
-CSS = CSS_OPERATIVO + '''
+CSS = CSS_OPERATIVO + CSS_PRO + '''
 :root{--bg:#080c12;--bg2:#0d1420;--card:#131b28;--card2:#182233;--bd:#232f42;--fg:#eaf1f9;
 --muted:#7f8ea3;--acc:#5aa2ff;--ok:#3ecf7a;--bad:#ff6b63;--warn:#e0aa4c}
 *{box-sizing:border-box}
@@ -469,6 +470,7 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
 
 {html_operativo()}
 
+{html_pro()}
 {html_senales_unificado()}
 
 <section class="dom-c">
