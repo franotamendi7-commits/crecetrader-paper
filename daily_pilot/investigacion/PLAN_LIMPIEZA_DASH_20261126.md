@@ -2,6 +2,19 @@
 
 2026-11-26 · Auditoría de lectura. El dash NO fue modificado.
 
+## DECISIONES DEL USUARIO (en orden, esperando las próximas capturas)
+
+1. ✅ **MERCADO QUANTFURY + header + barra HOY** → SE MANTIENE TAL CUAL.
+2. ⚠️ **ANÁLISIS CRECETRADER (bloque actual: 33/67, niveles xN menciones, soportes/resistencias/escenarios)** → **UNIFICAR Y SIMPLIFICAR**. Es prácticamente la misma info repetida en dos lugares. Hacer **un resumen del video diario** abajo de todo (al final del dash), con:
+   - **Niveles** (solo los importante, sin "x24 menciones" ni contexto crudo)
+   - **Tendencia** (alcista/bajista, simple)
+   - **Posibles entradas según CreceTrader**
+   - **Sin tantos números** — informe simple, legible, no un volcado de datos
+   - Irá **al último**, después de todo lo demás
+3. (Faltan las próximas capturas / decisiones — agregar acá.)
+
+> Instrucción del usuario: "si preferis guarda todo lo que digo y despues hace todo junto". **NO aplicar nada hasta que diga que ya mandó todas las capturas.**
+
 ## Inventario de lo que hoy muestra el dash
 
 | # | Bloque | Clase/origen | Qué muestra | Naturaleza |
