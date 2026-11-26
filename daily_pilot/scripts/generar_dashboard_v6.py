@@ -192,6 +192,10 @@ margin-top:3px}
 .sin-datos{color:var(--muted);font-size:12px;padding:14px}
 .pdetail{display:none}
 .dom-a{border-left:3px solid rgba(62,207,122,.55)}
+.grupo{margin-bottom:18px}
+.grupo .gtit{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--ok);
+  margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.grupo:last-child .gtit{color:var(--warn)}
 .dom-b{border-left:3px solid rgba(224,170,74,.55)}
 .dom-c{border-left:3px solid rgba(224,170,74,.55)}
 @media (max-width:1024px){
@@ -391,7 +395,16 @@ def main() -> int:
     lec = lectura_agente(info, niveles)
 
     fuen = sorted({x.get('fuente', '') for x in mer if x.get('fuente')})
-    cards = ''.join(mcard(x) for x in mer)
+    # Los nombres en mercado() vienen sin sufijo (BTC, USDBRL, ...).
+    DIVISAS_NOMBRES = {'USDBRL', 'EURUSD', 'GBPUSD', 'AUDUSD', 'NZDUSD',
+                       'USDCAD', 'USDCHF', 'USDCNY', 'USDHKD', 'USDJPY',
+                       'USDMXN', 'USDNOK'}
+    crip = [x for x in mer if x['par'] not in DIVISAS_NOMBRES]
+    div = [x for x in mer if x['par'] in DIVISAS_NOMBRES]
+    cards = (f'<div class="grupo"><div class="gtit">CRIPTOS · {len(crip)} pares</div>'
+             f'<div class="grid">{"".join(mcard(x) for x in crip)}</div></div>'
+             f'<div class="grupo"><div class="gtit">DIVISAS · {len(div)} {"par" if len(div)==1 else "pares"}</div>'
+             f'<div class="grid">{"".join(mcard(x) for x in div) or "<div class=nota>sin divisas activas</div>"}</div></div>')
     secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'cartera_mixta.json'))
 
     ev = ''.join(f'<span class="chip">{esc(e)}</span>' for e in lec['evidencia'])
@@ -462,7 +475,7 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
 </div>
 
 <section class="dom-a">
-  <div class="shead"><h2>Mercado Quantfury</h2><span class="n">{len(mer)} criptos operables</span><span class="hint">precio y cambio 24h</span></div>
+  <div class="shead"><h2>Mercado Quantfury</h2><span class="n">{len(mer)} pares operables</span><span class="hint">precio y cambio 24h</span></div>
   <div class="grid">{cards}</div>
 </section>
 
