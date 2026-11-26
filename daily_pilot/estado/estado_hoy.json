@@ -3,14 +3,14 @@
   "paper_only": true,
   "aviso": "PAPER ONLY · no ejecuta órdenes",
   "estado": "ERROR DE ANALISIS",
-  "ultima_revision": "2026-11-26T00:03:57Z",
-  "deteccion_at": "2026-11-25T14:57:47Z",
+  "ultima_revision": "2026-11-26T10:04:03Z",
+  "deteccion_at": "2026-11-26T10:04:03Z",
   "analisis_at": null,
   "video": {
-    "video_id": "S9F-R400Zo8",
-    "titulo": "Bitcoin en los 60.000: ¿compras con miedo o con un plan?",
-    "url": "https://www.youtube.com/watch?v=S9F-R400Zo8",
-    "publicado": "2026-11-25T10:11:20+00:00",
+    "video_id": "cwLaYdJqpfU",
+    "titulo": "Bitcoin en Acción de Gracias: menos liquidez, más trampas",
+    "url": "https://www.youtube.com/watch?v=cwLaYdJqpfU",
+    "publicado": "2026-11-26T09:57:51+00:00",
     "fuente": "RSS CreceTrader"
   },
   "situacion": {
@@ -51,7 +51,9 @@
     "sha256_transcript": "1fc1e05161ea80bbc90df9086762e8e4e0a81b42a575fa0acaaf8387fb67cfb4",
     "archivo": "daily_pilot/analisis/hb9YEJMgjAU_analisis.json"
   },
-  "errores": [],
+  "errores": [
+    "cwLaYdJqpfU: [Errno 2] No such file or directory: 'yt-dlp'"
+  ],
   "ultimo_analisis_completo": {
     "video_id": "hb9YEJMgjAU",
     "analizado_at": "2026-11-24T14:01:09Z",

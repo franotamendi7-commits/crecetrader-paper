@@ -1141,6 +1141,15 @@
       "detectado": "2026-11-25T14:57:47Z",
       "transcript": null,
       "estado": "error: [Errno 2] No such file or directory: 'yt-dlp'"
+    },
+    "cwLaYdJqpfU": {
+      "video_id": "cwLaYdJqpfU",
+      "titulo": "",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=cwLaYdJqpfU",
+      "detectado": "2026-11-26T10:04:03Z",
+      "transcript": null,
+      "estado": "error: [Errno 2] No such file or directory: 'yt-dlp'"
     }
   }
 }

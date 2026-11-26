@@ -1,6 +1,6 @@
 # AUDITORÍA COMPLETA PARA FLINT — CreceTrader PAPER_ONLY
 
-Fecha: 2026-11-26 · Rama: `crecetrader-limpio` · HEAD: `252a753` + cambios de cadencia pendientes de commit.
+Fecha: 2026-11-26 · Rama: `crecetrader-limpio` · HEAD: `6f203ea` (cadencia operativa final + auditoría; working tree limpio e in sync con origin).
 **NO tocar: `daily_pilot/metodo/`, la FIRMA, `store.db`, velas de `datos/velas/`.**
 **NO escribir en el repo el webhook de Discord** (vive en `~/.hermes/.env`, permisos 600).
 
@@ -80,7 +80,7 @@ Chequear los 6 plists en `~/Library/LaunchAgents/com.crecetrader.*.plist`:
 4. **Dash:** HTTP 200 en `http://localhost:8765/index.html`, 13 `.mcard`, 0 "sin estrategia validada", `PAPER ONLY` visible.
 5. **Números:** TODO lo que muestra el panel operativo debe salir de `tracker_*.json`. Si un número no está en un JSON, es un bug.
 6. **Suite:** `python3 daily_pilot/tests/run_all.py` → 15 OK.
-7. **Secreto:** `git grep discord.com/api/webhooks` → 0 resultados.
+7. **Secreto:** `git grep -l 'discord.com/api/webhooks' -- . ':!daily_pilot/investigacion'` → 0 resultados. Excluir `investigacion/` porque el propio spec menciona el patrón y da un falso positivo.
 
 ---
 
