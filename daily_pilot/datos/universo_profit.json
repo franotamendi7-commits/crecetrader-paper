@@ -2,7 +2,7 @@
   "generado": "2026-11-25",
   "criterio": "Solo pares con esperanza positiva validada (null sintetico + walk-forward)",
   "universo_original": 34,
-  "pares_con_profit_positivo": 10,
+  "pares_con_profit_positivo": 13,
   "estrategias": [
     {
       "clave": "pullback",
@@ -44,6 +44,22 @@
         "dd_usd": -17.18
       },
       "tracker": "daily_pilot/datos/tracker_scalein.json"
+    },
+    {
+      "clave": "bos",
+      "nombre": "BOS 4h + confirmación 1h",
+      "riesgo_pct": 0.35,
+      "pares": [
+        "INJUSDT",
+        "DOGEUSDT",
+        "DOTUSDT"
+      ],
+      "cartera": {
+        "n": 768,
+        "win_pct": 50.0,
+        "total_R": 49.75,
+        "dd_R": -27.5
+      }
     }
   ],
   "pares": [
@@ -116,11 +132,32 @@
         "scalein"
       ],
       "estado": "VALIDADA"
+    },
+    {
+      "par": "INJUSDT",
+      "estrategias": [
+        "bos"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
+      "par": "DOGEUSDT",
+      "estrategias": [
+        "bos"
+      ],
+      "estado": "VALIDADA"
+    },
+    {
+      "par": "DOTUSDT",
+      "estrategias": [
+        "bos"
+      ],
+      "estado": "VALIDADA"
     }
   ],
   "tablero": {
     "total_estrategias": 2,
-    "pares_unicos": 10,
+    "pares_unicos": 13,
     "nota": "Los 25 pares restantes no tienen estrategia validada: no mostrar en el tablero."
   }
 }

@@ -73,6 +73,18 @@
         "NEARUSDT"
       ],
       "validacion": "null estricto p=0.00 en 5 pares, WF positivo"
+    },
+    {
+      "clave": "bos",
+      "nombre": "BOS 4h + confirmación 1h",
+      "regla": "Ruptura de estructura en 4h con confirmación de cierre en 1h. Stop en swing, target 1.5R, BE en 1R.",
+      "riesgo_pct": 0.0035,
+      "pares": [
+        "INJUSDT",
+        "DOGEUSDT",
+        "DOTUSDT"
+      ],
+      "validacion": "20 seeds doble verificación, p=0.048, WF test positivo en 3 pares"
     }
   ],
   "pares": [
@@ -200,6 +212,39 @@
       "dd_R": 0.0,
       "pf": 3.0,
       "nota": "20 seeds p=0.048, 9 ops, $+513.41, WF $314→$199."
+    },
+    {
+      "par": "INJUSDT",
+      "estrategia": "bos",
+      "estado": "VALIDADA",
+      "por_mes": 2.3,
+      "E_R": 0.118,
+      "acierto_pct": 53.1,
+      "dd_R": -14.5,
+      "pf": 1.2,
+      "nota": "BOS 4h+1h: 226 ops, +26.75R, p=0.0476, WF +23.5→+3.2R."
+    },
+    {
+      "par": "DOGEUSDT",
+      "estrategia": "bos",
+      "estado": "VALIDADA",
+      "por_mes": 3.5,
+      "E_R": 0.064,
+      "acierto_pct": 50.7,
+      "dd_R": -13.25,
+      "pf": 1.2,
+      "nota": "BOS 4h+1h: 349 ops, +22.50R, p=0.0476, WF +9.5→+13.0R."
+    },
+    {
+      "par": "DOTUSDT",
+      "estrategia": "bos",
+      "estado": "VALIDADA",
+      "por_mes": 2.9,
+      "E_R": 0.032,
+      "acierto_pct": 48.1,
+      "dd_R": -21.0,
+      "pf": 1.2,
+      "nota": "BOS 4h+1h: 289 ops, +9.25R, p=0.0476, WF +6.2→+3.0R."
     }
   ],
   "tracker_paper": {

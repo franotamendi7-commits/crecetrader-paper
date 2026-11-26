@@ -57,6 +57,7 @@ def construir() -> list[str]:
     msgs = []
     estado = leer_estado()
     for nombre, titulo in (('tracker_scalein.json', 'SCALE-IN FIBO'),
+                           ('tracker_bos.json', 'BOS 4H+1H'),
                            ('tracker_paper.json', 'PULLBACK 4H')):
         j = leer(nombre)
         ops = j.get('operaciones') or []

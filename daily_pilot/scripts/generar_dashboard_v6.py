@@ -27,8 +27,7 @@ sys.path.insert(0, str(PILOT / 'core'))
 sys.path.insert(0, str(PILOT / 'scripts'))
 
 PARES_QUANTFURY = [
-    # 10 pares con estrategia validada con 20 seeds (test robusto)
-    'ARBUSDT', 'AVAXUSDT', 'BTCUSDT', 'ETCUSDT', 'FILUSDT', 'HBARUSDT', 'LINKUSDT', 'NEARUSDT', 'THETAUSDT', 'XRPUSDT',
+    'ARBUSDT', 'AVAXUSDT', 'BTCUSDT', 'DOGEUSDT', 'DOTUSDT', 'ETCUSDT', 'FILUSDT', 'HBARUSDT', 'INJUSDT', 'LINKUSDT', 'NEARUSDT', 'THETAUSDT', 'XRPUSDT',
 ]
 STATUS_ESPERADO = {'SUSDT': 'TRADING', 'TONUSDT': 'BREAK'}
 
