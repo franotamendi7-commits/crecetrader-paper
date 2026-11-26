@@ -13,7 +13,7 @@ import test_bos as T  # noqa: E402
 
 D = B / 'daily_pilot' / 'datos'
 J = D / 'tracker_bos.json'
-PARES = ['INJUSDT', 'DOGEUSDT', 'DOTUSDT']
+PARES = ['INJUSDT', 'DOGEUSDT', 'DOTUSDT', 'USDBRL']
 
 
 def iso():
