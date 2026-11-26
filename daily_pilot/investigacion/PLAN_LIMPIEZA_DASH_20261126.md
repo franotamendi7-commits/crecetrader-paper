@@ -11,7 +11,8 @@
    - **Posibles entradas según CreceTrader**
    - **Sin tantos números** — informe simple, legible, no un volcado de datos
    - Irá **al último**, después de todo lo demás
-3. (Faltan las próximas capturas / decisiones — agregar acá.)
+3. ❌ **PANEL DE RESULTADOS / BÚSQUEDA** (`PASA (p=0.020)`, tabla TF/TRAMO_N/EXT/STOP/GESTIÓN/DIR/FILTRO/N/WIN/E/DD/RACHA/VEREDICTO, "19 de 34 pares...", "Null por permutación...", "fuente: ESTRATEGIA_GANADORA.md") → **SACAR**. "No da información valiosa, hace ruido y confunde". Es backtest viejo de la estrategia descartada (`ruptura tramo`, n=52). Viene de `panel_resultados.py`.
+4. (Faltan las próximas capturas / decisiones — agregar acá.)
 
 > Instrucción del usuario: "si preferis guarda todo lo que digo y despues hace todo junto". **NO aplicar nada hasta que diga que ya mandó todas las capturas.**
 
