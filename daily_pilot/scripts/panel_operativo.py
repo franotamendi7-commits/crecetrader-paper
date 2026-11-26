@@ -53,5 +53,5 @@ def html() -> str:
         f'</div>'
         f'<div class="live">Entradas: <b>{_e(", ".join(p.replace("USDT","") for p in pares))}</b>'
         f' · stop fijo + scale-in en Fibo 0.5/0.618 · filtro R≥4% · riesgo {_e(cs.get("riesgo_pct",2))}%'
-        f'<br>FORWARD EN CURSO — los trackers corren cada 4h y registran señales nuevas. '
-        f'Las señales de hoy se ven en el detalle de cada par.</div></div>')
+        f'<br>FORWARD EN CURSO — los trackers corren cada hora sobre velas actualizadas cada 15 min. '
+        f'Las señales nuevas se ven en el panel de señales y llegan a Discord.</div></div>')

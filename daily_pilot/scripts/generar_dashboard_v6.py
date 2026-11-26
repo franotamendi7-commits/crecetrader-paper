@@ -380,10 +380,11 @@ def html_senales_unificado() -> str:
 
 def main() -> int:
     info = cargar(PILOT / 'datos' / 'informe_hoy.json') or {}
-    vid = info.get('video_id') or ''
-    ag = PILOT / 'investigacion' / f'AGENTE_{vid}.json'
-    datos_ag = cargar(ag) or {}
-    niveles = datos_ag.get('niveles_dichos') or []
+    # El resumen simple del video debe venir SIEMPRE de resumen_video.json
+    # (analisis vigente), no del AGENTE_<video viejo>.json.
+    rv = cargar(PILOT / 'analisis' / 'resumen_video.json') or {}
+    vid = rv.get('video_id') or info.get('video_id') or ''
+    niveles = rv.get('niveles') or []
     mer = mercado()
     actualizar_tracker()          # journal paper de la estrategia validada
     lec = lectura_agente(info, niveles)
@@ -393,11 +394,16 @@ def main() -> int:
     secciones_pdetalles = _pdetalles(mer, niveles, cargar(PILOT / 'datos' / 'cartera_mixta.json'))
 
     ev = ''.join(f'<span class="chip">{esc(e)}</span>' for e in lec['evidencia'])
-    top = [n for n in sorted(niveles, key=lambda z: -(z.get('menciones') or 0))[:8]]
+    top = [n for n in niveles[:6]]
     niv_html = ''.join(
         f'<div class="nivel"><b>{fmt_precio(float(n["precio"]))}</b>'
-        f'<span class="men">{esc(str(n.get("cita") or "")[:70])}</span></div>'
+        f'<span>{esc(str(n.get("tipo") or ""))}</span></div>'
         for n in top) or '<div class="nota">sin niveles hoy</div>'
+    ent_html = ''.join(
+        f'<div class="chip">{esc(str(e.get("nombre") or ""))}: '
+        f'{esc(str(e.get("detalle") or "")[:110])}</div>'
+        for e in (rv.get('escenarios') or [])[:3]) or '<div class="nota">sin entradas definidas</div>'
+    sesgo = esc(str(rv.get('sesgo') or '—'))
 
     hay_video = 'SÍ' if vid else 'NO'
     badge_cls = 'badge no' if not vid else 'badge'
@@ -473,11 +479,15 @@ document.addEventListener('keydown', function(ev) { if (ev.key === 'Escape') { c
   </div>
   <div class="chips" style="margin-top:12px">{ev}</div>
   <div class="chips" style="margin-top:16px;flex-direction:column;align-items:stretch;gap:8px">
-    <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px">Niveles clave que mencionó</div>
+    <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px">Niveles clave</div>
     {niv_html}
   </div>
-  <div class="kpi">
-    <div><span>Posibles entradas</span><b>según niveles · lectura</b></div>
+  <div class="kpi" style="margin-top:14px">
+    <div><span>Sesgo</span><b>{sesgo}</b></div>
+  </div>
+  <div class="chips" style="margin-top:12px;flex-direction:column;align-items:stretch;gap:8px">
+    <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px">Posibles entradas según CreceTrader</div>
+    {ent_html}
   </div>
 </section>
 
